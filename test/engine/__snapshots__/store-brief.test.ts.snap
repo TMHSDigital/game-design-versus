@@ -82,7 +82,7 @@ exports[`brief > matches the snapshot for a fixed scripted session 1`] = `
       "note": undefined,
     },
   ],
-  "elevator": "Snapshot Brawler is a action and fighting game. Think Half Sword meets Gang Beasts. Original pitch: Physics sword duels It is built on leans physics-simulated, grim and 2 to 5.",
+  "elevator": "Snapshot Brawler is an action and fighting game. Think Half Sword meets Gang Beasts. Original pitch: Physics sword duels Its pillars: Combat simulation: Leans Physics-simulated; Tone: Grim; Team size: 2 to 5.",
   "experience": {
     "aesthetics": [],
     "challenge": "Undecided",

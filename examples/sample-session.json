@@ -1,0 +1,3044 @@
+{
+  "schemaVersion": 1,
+  "id": "sim-physics_brawler",
+  "createdAt": "2026-11-23T00:00:00.000Z",
+  "updatedAt": "2026-11-23T00:00:00.000Z",
+  "events": [
+    {
+      "type": "start",
+      "at": "2026-11-23T00:00:00.000Z",
+      "sessionId": "sim-physics_brawler",
+      "seed": 7,
+      "title": "Steel and Momentum",
+      "pitch": "A physics-driven medieval sword fighter where momentum, edge contact and armor decide every hit."
+    },
+    {
+      "type": "set",
+      "at": "2026-11-23T00:00:00.000Z",
+      "axis": "frame.platform",
+      "value": [
+        "pc"
+      ],
+      "confidence": 0.9,
+      "source": "user_statement"
+    },
+    {
+      "type": "set",
+      "at": "2026-11-23T00:00:00.000Z",
+      "axis": "frame.players",
+      "value": "local_versus",
+      "confidence": 0.9,
+      "source": "user_statement"
+    },
+    {
+      "type": "set",
+      "at": "2026-11-23T00:00:00.000Z",
+      "axis": "genre.family",
+      "value": [
+        "action",
+        "fighting"
+      ],
+      "confidence": 0.9,
+      "source": "user_statement"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q1",
+        "axis": "genre.form",
+        "module": "genre",
+        "format": "poles",
+        "multi": true,
+        "page": 1,
+        "pages": 2,
+        "options": [
+          {
+            "key": "a",
+            "pole": "roguelite",
+            "label": "Roguelite",
+            "how": "Runs with persistent unlocks"
+          },
+          {
+            "key": "b",
+            "pole": "immersive_sim",
+            "label": "Immersive sim",
+            "how": "Systemic levels with many solutions"
+          },
+          {
+            "key": "c",
+            "pole": "survivors_like",
+            "label": "Survivors-like",
+            "how": "Auto-attacks against hordes"
+          },
+          {
+            "key": "d",
+            "pole": "soulslike",
+            "label": "Soulslike",
+            "how": "Punishing melee, corpse runs, bonfires"
+          }
+        ],
+        "prompt": "Which established forms is it closest to? Pick all that apply. (page 1 of 2)",
+        "score": 3.279635211718234,
+        "answerMap": {
+          "Roguelite": "a",
+          "Immersive sim": "b",
+          "Survivors-like": "c",
+          "Soulslike": "d",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Which established forms is it closest to? Pick all that apply. (page 1 of 2)",
+          "header": "Form",
+          "multiSelect": true,
+          "options": [
+            {
+              "label": "Roguelite",
+              "description": "Runs with persistent unlocks"
+            },
+            {
+              "label": "Immersive sim",
+              "description": "Systemic levels with many solutions"
+            },
+            {
+              "label": "Survivors-like",
+              "description": "Auto-attacks against hordes"
+            },
+            {
+              "label": "Soulslike",
+              "description": "Punishing melee, corpse runs, bonfires"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q2",
+        "axis": "frame.team",
+        "module": "frame",
+        "format": "poles",
+        "multi": false,
+        "page": 1,
+        "pages": 2,
+        "options": [
+          {
+            "key": "a",
+            "pole": "solo",
+            "label": "Solo",
+            "how": "One developer"
+          },
+          {
+            "key": "b",
+            "pole": "small",
+            "label": "2 to 5",
+            "how": "A small indie team"
+          },
+          {
+            "key": "c",
+            "pole": "medium",
+            "label": "6 to 20",
+            "how": "A mid-size studio team"
+          },
+          {
+            "key": "d",
+            "pole": "large",
+            "label": "20 or more",
+            "how": "A large production team"
+          }
+        ],
+        "prompt": "Team size: which fits your game? (page 1 of 2)",
+        "score": 2.5573541926695906,
+        "answerMap": {
+          "Solo": "a",
+          "2 to 5": "b",
+          "6 to 20": "c",
+          "20 or more": "d",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Team size: which fits your game? (page 1 of 2)",
+          "header": "Team",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Solo",
+              "description": "One developer"
+            },
+            {
+              "label": "2 to 5",
+              "description": "A small indie team"
+            },
+            {
+              "label": "6 to 20",
+              "description": "A mid-size studio team"
+            },
+            {
+              "label": "20 or more",
+              "description": "A large production team"
+            }
+          ]
+        }
+      },
+      "choice": "b"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q3",
+        "axis": "frame.timeline",
+        "module": "frame",
+        "format": "poles",
+        "multi": false,
+        "page": 1,
+        "pages": 2,
+        "options": [
+          {
+            "key": "a",
+            "pole": "jam",
+            "label": "Jam (under 1 month)",
+            "how": "A game jam or prototype"
+          },
+          {
+            "key": "b",
+            "pole": "months",
+            "label": "3 to 6 months",
+            "how": "A short commercial project"
+          },
+          {
+            "key": "c",
+            "pole": "years",
+            "label": "1 to 2 years",
+            "how": "A typical indie production"
+          },
+          {
+            "key": "d",
+            "pole": "long",
+            "label": "3 years or more",
+            "how": "A long production"
+          }
+        ],
+        "prompt": "Timeline: which fits your game? (page 1 of 2)",
+        "score": 2.5573541926695906,
+        "answerMap": {
+          "Jam (under 1 month)": "a",
+          "3 to 6 months": "b",
+          "1 to 2 years": "c",
+          "3 years or more": "d",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Timeline: which fits your game? (page 1 of 2)",
+          "header": "Timeline",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Jam (under 1 month)",
+              "description": "A game jam or prototype"
+            },
+            {
+              "label": "3 to 6 months",
+              "description": "A short commercial project"
+            },
+            {
+              "label": "1 to 2 years",
+              "description": "A typical indie production"
+            },
+            {
+              "label": "3 years or more",
+              "description": "A long production"
+            }
+          ]
+        }
+      },
+      "choice": "c"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q4",
+        "axis": "prog.presence",
+        "module": "progression",
+        "format": "poles",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "none",
+            "label": "No progression",
+            "how": "Power stays the same; only player skill grows"
+          },
+          {
+            "key": "b",
+            "pole": "core",
+            "label": "Progression matters",
+            "how": "Characters or accounts grow stronger or wider"
+          }
+        ],
+        "prompt": "Character progression: No progression or Progression matters?",
+        "score": 2.466818027540733,
+        "answerMap": {
+          "No progression": "a",
+          "Progression matters": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Character progression: No progression or Progression matters?",
+          "header": "Progression",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "No progression",
+              "description": "Power stays the same; only player skill grows"
+            },
+            {
+              "label": "Progression matters",
+              "description": "Characters or accounts grow stronger or wider"
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "a"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q5",
+        "axis": "ctl.embodiment",
+        "module": "camera_controls",
+        "format": "comparison",
+        "comparisonId": "cmp.ctl.embodiment.animalcrossing-thesims",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "avatar",
+            "label": "Animal Crossing",
+            "game": "Animal Crossing",
+            "year": 2001,
+            "how": "The player walks one villager around town to talk to neighbors and fish."
+          },
+          {
+            "key": "b",
+            "pole": "command",
+            "label": "The Sims",
+            "game": "The Sims",
+            "year": 2000,
+            "how": "The player queues actions for a household of Sims, who also act on their own needs."
+          }
+        ],
+        "prompt": "Embodiment: Animal Crossing or The Sims?",
+        "score": 1.9516488146745004,
+        "answerMap": {
+          "Animal Crossing": "a",
+          "The Sims": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Embodiment: Animal Crossing or The Sims?",
+          "header": "Embodiment",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Animal Crossing",
+              "description": "The player walks one villager around town to talk to neighbors and fish.",
+              "preview": "**Animal Crossing** (2001)\n\nEmbodiment: Direct avatar\n\nThe player walks one villager around town to talk to neighbors and fish."
+            },
+            {
+              "label": "The Sims",
+              "description": "The player queues actions for a household of Sims, who also act on their own needs.",
+              "preview": "**The Sims** (2000)\n\nEmbodiment: Indirect command\n\nThe player queues actions for a household of Sims, who also act on their own needs."
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "a"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q6",
+        "axis": "frame.dimension",
+        "module": "frame",
+        "format": "comparison",
+        "comparisonId": "cmp.frame.dimension.cavestory-octopathtraveler-outerwilds",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "d2",
+            "label": "Cave Story",
+            "game": "Cave Story",
+            "year": 2004,
+            "how": "Flat 2D sprite levels on a single plane, small enough for one person to draw and build alone."
+          },
+          {
+            "key": "b",
+            "pole": "d25",
+            "label": "Octopath Traveler",
+            "game": "Octopath Traveler",
+            "year": 2018,
+            "how": "HD-2D: retro pixel sprites placed in polygonal 3D environments with modern lighting and depth effects."
+          },
+          {
+            "key": "c",
+            "pole": "d3",
+            "label": "Outer Wilds",
+            "game": "Outer Wilds",
+            "year": 2019,
+            "how": "A fully 3D solar system whose planets are packed with hidden locations to reach and explore."
+          }
+        ],
+        "prompt": "Dimensionality: which game handles this most like yours?",
+        "score": 2.2289078636577484,
+        "answerMap": {
+          "Cave Story": "a",
+          "Octopath Traveler": "b",
+          "Outer Wilds": "c",
+          "None of these": "neither",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Dimensionality: which game handles this most like yours?",
+          "header": "Dimension",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Cave Story",
+              "description": "Flat 2D sprite levels on a single plane, small enough for one person to draw and build alone.",
+              "preview": "**Cave Story** (2004)\n\nDimensionality: 2D\n\nFlat 2D sprite levels on a single plane, small enough for one person to draw and build alone."
+            },
+            {
+              "label": "Octopath Traveler",
+              "description": "HD-2D: retro pixel sprites placed in polygonal 3D environments with modern lighting and depth effects.",
+              "preview": "**Octopath Traveler** (2018)\n\nDimensionality: 2.5D\n\nHD-2D: retro pixel sprites placed in polygonal 3D environments with modern lighting and depth effects."
+            },
+            {
+              "label": "Outer Wilds",
+              "description": "A fully 3D solar system whose planets are packed with hidden locations to reach and explore.",
+              "preview": "**Outer Wilds** (2019)\n\nDimensionality: 3D\n\nA fully 3D solar system whose planets are packed with hidden locations to reach and explore."
+            },
+            {
+              "label": "None of these",
+              "description": "None of these fit; show other options"
+            }
+          ]
+        }
+      },
+      "choice": "c"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q7",
+        "axis": "econ.presence",
+        "module": "economy",
+        "format": "poles",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "none",
+            "label": "No economy",
+            "how": "No currency or trade loop"
+          },
+          {
+            "key": "b",
+            "pole": "core",
+            "label": "Economy matters",
+            "how": "Earning and spending shapes play"
+          }
+        ],
+        "prompt": "Economy: No economy or Economy matters?",
+        "score": 2.18827559932137,
+        "answerMap": {
+          "No economy": "a",
+          "Economy matters": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Economy: No economy or Economy matters?",
+          "header": "Economy",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "No economy",
+              "description": "No currency or trade loop"
+            },
+            {
+              "label": "Economy matters",
+              "description": "Earning and spending shapes play"
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "a"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q8",
+        "axis": "frame.monetization",
+        "module": "frame",
+        "format": "comparison",
+        "comparisonId": "cmp.frame.monetization.candycrushsaga-crossyroad-papersplease",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "f2p_gacha",
+            "label": "Candy Crush Saga",
+            "game": "Candy Crush Saga",
+            "year": 2012,
+            "how": "Free, but sells extra moves, extra lives, boosters and gold bars to push past hard levels."
+          },
+          {
+            "key": "b",
+            "pole": "ad_supported",
+            "label": "Crossy Road",
+            "game": "Crossy Road",
+            "year": 2014,
+            "how": "Free with no paywalls or timers; video ads grossed over $1 million alongside optional cosmetic characters."
+          },
+          {
+            "key": "c",
+            "pole": "premium",
+            "label": "Papers, Please",
+            "game": "Papers, Please",
+            "year": 2013,
+            "how": "One up-front price with no DLC or in-app purchases."
+          }
+        ],
+        "prompt": "Business model: which game handles this most like yours?",
+        "score": 1.9065475528502809,
+        "answerMap": {
+          "Candy Crush Saga": "a",
+          "Crossy Road": "b",
+          "Papers, Please": "c",
+          "None of these": "neither",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Business model: which game handles this most like yours?",
+          "header": "Business",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Candy Crush Saga",
+              "description": "Free, but sells extra moves, extra lives, boosters and gold bars to push past hard levels.",
+              "preview": "**Candy Crush Saga** (2012)\n\nBusiness model: F2P gacha or progression\n\nFree, but sells extra moves, extra lives, boosters and gold bars to push past hard levels."
+            },
+            {
+              "label": "Crossy Road",
+              "description": "Free with no paywalls or timers; video ads grossed over $1 million alongside optional cosmetic characters.",
+              "preview": "**Crossy Road** (2014)\n\nBusiness model: Ad-supported\n\nFree with no paywalls or timers; video ads grossed over $1 million alongside optional cosmetic characters."
+            },
+            {
+              "label": "Papers, Please",
+              "description": "One up-front price with no DLC or in-app purchases.",
+              "preview": "**Papers, Please** (2013)\n\nBusiness model: Premium\n\nOne up-front price with no DLC or in-app purchases."
+            },
+            {
+              "label": "None of these",
+              "description": "None of these fit; show other options"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q9",
+        "axis": "frame.realism",
+        "module": "frame",
+        "format": "comparison",
+        "comparisonId": "cmp.frame.realism.arma3-splatoon",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "grounded",
+            "label": "Arma 3",
+            "game": "Arma 3",
+            "year": 2013,
+            "how": "A massive military sandbox sold on authentic, true combat gameplay across infantry and vehicle warfare."
+          },
+          {
+            "key": "b",
+            "pole": "arcade",
+            "label": "Splatoon",
+            "game": "Splatoon",
+            "year": 2015,
+            "how": "Swaps bullets for paint guns and ink bombs in the cartoony city of Inkopolis, so every hit reads at a glance."
+          }
+        ],
+        "prompt": "Realism: Arma 3 or Splatoon?",
+        "score": 1.3967149712443745,
+        "answerMap": {
+          "Arma 3": "a",
+          "Splatoon": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Realism: Arma 3 or Splatoon?",
+          "header": "Realism",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Arma 3",
+              "description": "A massive military sandbox sold on authentic, true combat gameplay across infantry and vehicle warfare.",
+              "preview": "**Arma 3** (2013)\n\nRealism: Grounded simulation\n\nA massive military sandbox sold on authentic, true combat gameplay across infantry and vehicle warfare."
+            },
+            {
+              "label": "Splatoon",
+              "description": "Swaps bullets for paint guns and ink bombs in the cartoony city of Inkopolis, so every hit reads at a glance.",
+              "preview": "**Splatoon** (2015)\n\nRealism: Stylized arcade\n\nSwaps bullets for paint guns and ink bombs in the cartoony city of Inkopolis, so every hit reads at a glance."
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "a"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q10",
+        "axis": "frame.input",
+        "module": "frame",
+        "format": "comparison",
+        "comparisonId": "cmp.frame.input.fruitninja-halowars-amongus",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "touch",
+            "label": "Fruit Ninja",
+            "game": "Fruit Ninja",
+            "year": 2010,
+            "how": "Slice fruit tossed across a phone screen while avoiding bombs; the slice gesture is the whole control scheme."
+          },
+          {
+            "key": "b",
+            "pole": "gamepad",
+            "label": "Halo Wars",
+            "game": "Halo Wars",
+            "year": 2009,
+            "how": "An RTS rebuilt for the Xbox 360 controller, with a radial Circle Menu and base-centred economy replacing mouse micro."
+          },
+          {
+            "key": "c",
+            "pole": "mixed",
+            "label": "Among Us",
+            "game": "Among Us",
+            "year": 2018,
+            "how": "Cross-platform lobbies mix Android, iOS, PC and console players in the same 4 to 15 player game."
+          }
+        ],
+        "prompt": "Primary input: which game handles this most like yours?",
+        "score": 1.0959018118113488,
+        "answerMap": {
+          "Fruit Ninja": "a",
+          "Halo Wars": "b",
+          "Among Us": "c",
+          "None of these": "neither",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Primary input: which game handles this most like yours?",
+          "header": "Input",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Fruit Ninja",
+              "description": "Slice fruit tossed across a phone screen while avoiding bombs; the slice gesture is the whole control scheme.",
+              "preview": "**Fruit Ninja** (2010)\n\nPrimary input: Touch\n\nSlice fruit tossed across a phone screen while avoiding bombs; the slice gesture is the whole control scheme."
+            },
+            {
+              "label": "Halo Wars",
+              "description": "An RTS rebuilt for the Xbox 360 controller, with a radial Circle Menu and base-centred economy replacing mouse micro.",
+              "preview": "**Halo Wars** (2009)\n\nPrimary input: Gamepad\n\nAn RTS rebuilt for the Xbox 360 controller, with a radial Circle Menu and base-centred economy replacing mouse micro."
+            },
+            {
+              "label": "Among Us",
+              "description": "Cross-platform lobbies mix Android, iOS, PC and console players in the same 4 to 15 player game.",
+              "preview": "**Among Us** (2018)\n\nPrimary input: Mixed\n\nCross-platform lobbies mix Android, iOS, PC and console players in the same 4 to 15 player game."
+            },
+            {
+              "label": "None of these",
+              "description": "None of these fit; show other options"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q11",
+        "axis": "cam.view",
+        "module": "camera_controls",
+        "format": "comparison",
+        "comparisonId": "cmp.cam.view.re1-re4-alyx",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "fixed_cinematic",
+            "label": "Resident Evil",
+            "game": "Resident Evil",
+            "year": 1996,
+            "how": "Pre-rendered rooms seen from fixed cinematic angles; tank controls stay relative to the character, not the camera."
+          },
+          {
+            "key": "b",
+            "pole": "third_shoulder",
+            "label": "Resident Evil 4 (2005)",
+            "game": "Resident Evil 4 (2005)",
+            "year": 2005,
+            "how": "An over-the-shoulder camera follows Leon; aiming zooms in further and he cannot move while aiming."
+          },
+          {
+            "key": "c",
+            "pole": "vr",
+            "label": "Half-Life: Alyx",
+            "game": "Half-Life: Alyx",
+            "year": 2020,
+            "how": "VR-native: players reach out with tracked hands and use gravity gloves to pull objects toward them."
+          }
+        ],
+        "prompt": "Camera view: which game handles this most like yours?",
+        "score": 1.6396697885926899,
+        "answerMap": {
+          "Resident Evil": "a",
+          "Resident Evil 4 (2005)": "b",
+          "Half-Life: Alyx": "c",
+          "None of these": "neither",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Camera view: which game handles this most like yours?",
+          "header": "Camera",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Resident Evil",
+              "description": "Pre-rendered rooms seen from fixed cinematic angles; tank controls stay relative to the character, not the camera.",
+              "preview": "**Resident Evil** (1996)\n\nCamera view: Fixed cinematic\n\nPre-rendered rooms seen from fixed cinematic angles; tank controls stay relative to the character, not the camera."
+            },
+            {
+              "label": "Resident Evil 4 (2005)",
+              "description": "An over-the-shoulder camera follows Leon; aiming zooms in further and he cannot move while aiming.",
+              "preview": "**Resident Evil 4 (2005)** (2005)\n\nCamera view: Over-shoulder third person\n\nAn over-the-shoulder camera follows Leon; aiming zooms in further and he cannot move while aiming."
+            },
+            {
+              "label": "Half-Life: Alyx",
+              "description": "VR-native: players reach out with tracked hands and use gravity gloves to pull objects toward them.",
+              "preview": "**Half-Life: Alyx** (2020)\n\nCamera view: VR\n\nVR-native: players reach out with tracked hands and use gravity gloves to pull objects toward them."
+            },
+            {
+              "label": "None of these",
+              "description": "None of these fit; show other options"
+            }
+          ]
+        }
+      },
+      "choice": "b"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q12",
+        "axis": "frame.length",
+        "module": "frame",
+        "format": "comparison",
+        "comparisonId": "cmp.frame.length.amnesiathedarkdescent-deadbydaylight",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "finite",
+            "label": "Amnesia: The Dark Descent",
+            "game": "Amnesia: The Dark Descent",
+            "year": 2010,
+            "how": "A roughly eight-hour descent through a castle that ends in one of three endings decided in the final room."
+          },
+          {
+            "key": "b",
+            "pole": "endless",
+            "label": "Dead by Daylight",
+            "game": "Dead by Daylight",
+            "year": 2016,
+            "how": "A live service that keeps adding chapters with new killers and survivors, still on a yearly roadmap at its 10th anniversary."
+          }
+        ],
+        "prompt": "Product length: Amnesia: The Dark Descent or Dead by Daylight?",
+        "score": 0.8814571635353925,
+        "answerMap": {
+          "Amnesia: The Dark Descent": "a",
+          "Dead by Daylight": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Product length: Amnesia: The Dark Descent or Dead by Daylight?",
+          "header": "Length",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Amnesia: The Dark Descent",
+              "description": "A roughly eight-hour descent through a castle that ends in one of three endings decided in the final room.",
+              "preview": "**Amnesia: The Dark Descent** (2010)\n\nProduct length: Finite experience\n\nA roughly eight-hour descent through a castle that ends in one of three endings decided in the final room."
+            },
+            {
+              "label": "Dead by Daylight",
+              "description": "A live service that keeps adding chapters with new killers and survivors, still on a yearly roadmap at its 10th anniversary.",
+              "preview": "**Dead by Daylight** (2016)\n\nProduct length: Endless or live\n\nA live service that keeps adding chapters with new killers and survivors, still on a yearly roadmap at its 10th anniversary."
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q13",
+        "axis": "mgmt.presence",
+        "module": "management",
+        "format": "poles",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "none",
+            "label": "No management",
+            "how": "No people or facilities to run"
+          },
+          {
+            "key": "b",
+            "pole": "core",
+            "label": "Management matters",
+            "how": "You run people, facilities or a settlement"
+          }
+        ],
+        "prompt": "Management layer: No management or Management matters?",
+        "score": 0.804319499729622,
+        "answerMap": {
+          "No management": "a",
+          "Management matters": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Management layer: No management or Management matters?",
+          "header": "Management",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "No management",
+              "description": "No people or facilities to run"
+            },
+            {
+              "label": "Management matters",
+              "description": "You run people, facilities or a settlement"
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "a"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q14",
+        "axis": "narr.presence",
+        "module": "narrative",
+        "format": "poles",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "none",
+            "label": "No story",
+            "how": "Story is absent or minimal"
+          },
+          {
+            "key": "b",
+            "pole": "core",
+            "label": "Story matters",
+            "how": "Narrative is a reason to play"
+          }
+        ],
+        "prompt": "Narrative: No story or Story matters?",
+        "score": 1.3016753138956036,
+        "answerMap": {
+          "No story": "a",
+          "Story matters": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Narrative: No story or Story matters?",
+          "header": "Story",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "No story",
+              "description": "Story is absent or minimal"
+            },
+            {
+              "label": "Story matters",
+              "description": "Narrative is a reason to play"
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "a"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q15",
+        "axis": "build.presence",
+        "module": "crafting_building_survival",
+        "format": "poles",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "none",
+            "label": "No building",
+            "how": "The world is not player-built"
+          },
+          {
+            "key": "b",
+            "pole": "core",
+            "label": "Building matters",
+            "how": "Players construct structures"
+          }
+        ],
+        "prompt": "Building: No building or Building matters?",
+        "score": 0.776160152006027,
+        "answerMap": {
+          "No building": "a",
+          "Building matters": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Building: No building or Building matters?",
+          "header": "Building",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "No building",
+              "description": "The world is not player-built"
+            },
+            {
+              "label": "Building matters",
+              "description": "Players construct structures"
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "a"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q16",
+        "axis": "craft.presence",
+        "module": "crafting_building_survival",
+        "format": "poles",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "none",
+            "label": "No crafting",
+            "how": "Items come from loot or shops"
+          },
+          {
+            "key": "b",
+            "pole": "core",
+            "label": "Crafting matters",
+            "how": "Players make their own items"
+          }
+        ],
+        "prompt": "Crafting: No crafting or Crafting matters?",
+        "score": 0.617217447420128,
+        "answerMap": {
+          "No crafting": "a",
+          "Crafting matters": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Crafting: No crafting or Crafting matters?",
+          "header": "Crafting",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "No crafting",
+              "description": "Items come from loot or shops"
+            },
+            {
+              "label": "Crafting matters",
+              "description": "Players make their own items"
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "a"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q17",
+        "axis": "combat.range",
+        "module": "combat",
+        "format": "comparison",
+        "comparisonId": "cmp.combat.range.chivalry2-battlefield1",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "melee",
+            "label": "Chivalry 2",
+            "game": "Chivalry 2",
+            "year": 2021,
+            "how": "A first-person slasher: clashing swords and deep melee combat on foot or horseback decide most fights, with archers as a side class"
+          },
+          {
+            "key": "b",
+            "pole": "ranged",
+            "label": "Battlefield 1",
+            "game": "Battlefield 1",
+            "year": 2016,
+            "how": "Kits are built around semi-auto rifles, scoped bolt-actions and support guns plus tanks and planes; melee got more focus but is secondary"
+          }
+        ],
+        "prompt": "Combat range: Chivalry 2 or Battlefield 1?",
+        "score": 0.6182732037931737,
+        "answerMap": {
+          "Chivalry 2": "a",
+          "Battlefield 1": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Combat range: Chivalry 2 or Battlefield 1?",
+          "header": "Range",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Chivalry 2",
+              "description": "A first-person slasher: clashing swords and deep melee combat on foot or horseback decide most fights, with archers as a side class",
+              "preview": "**Chivalry 2** (2021)\n\nCombat range: Melee-focused\n\nA first-person slasher: clashing swords and deep melee combat on foot or horseback decide most fights, with archers as a side class"
+            },
+            {
+              "label": "Battlefield 1",
+              "description": "Kits are built around semi-auto rifles, scoped bolt-actions and support guns plus tanks and planes; melee got more focus but is secondary",
+              "preview": "**Battlefield 1** (2016)\n\nCombat range: Ranged-focused\n\nKits are built around semi-auto rifles, scoped bolt-actions and support guns plus tanks and planes; melee got more focus but is secondary"
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "a"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q18",
+        "axis": "surv.presence",
+        "module": "crafting_building_survival",
+        "format": "poles",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "none",
+            "label": "No survival needs",
+            "how": "No hunger, thirst or exposure"
+          },
+          {
+            "key": "b",
+            "pole": "core",
+            "label": "Survival needs matter",
+            "how": "Staying fed, warm and healthy is play"
+          }
+        ],
+        "prompt": "Survival needs: No survival needs or Survival needs matter?",
+        "score": 0.4580749412498641,
+        "answerMap": {
+          "No survival needs": "a",
+          "Survival needs matter": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Survival needs: No survival needs or Survival needs matter?",
+          "header": "Survival",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "No survival needs",
+              "description": "No hunger, thirst or exposure"
+            },
+            {
+              "label": "Survival needs matter",
+              "description": "Staying fed, warm and healthy is play"
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "a"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q19",
+        "axis": "frame.engine",
+        "module": "frame",
+        "format": "comparison",
+        "comparisonId": "cmp.frame.engine.citiesskylines-satisfactory-terraria",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "unity",
+            "label": "Cities: Skylines",
+            "game": "Cities: Skylines",
+            "year": 2015,
+            "how": "Colossal Order built it in Unity, switching to Unity 5 late in the beta and keeping it for the whole project."
+          },
+          {
+            "key": "b",
+            "pole": "unreal",
+            "label": "Satisfactory",
+            "game": "Satisfactory",
+            "year": 2019,
+            "how": "Built in Unreal and moved to Unreal Engine 5 in Update 8, gaining Lumen lighting and World Partition streaming."
+          },
+          {
+            "key": "c",
+            "pole": "custom",
+            "label": "Terraria",
+            "game": "Terraria",
+            "year": 2011,
+            "how": "Re-Logic wrote it in C# on Microsoft's XNA framework instead of licensing a commercial engine."
+          }
+        ],
+        "prompt": "Engine: which game handles this most like yours?",
+        "score": 0.5989829008976598,
+        "answerMap": {
+          "Cities: Skylines": "a",
+          "Satisfactory": "b",
+          "Terraria": "c",
+          "None of these": "neither",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Engine: which game handles this most like yours?",
+          "header": "Engine",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Cities: Skylines",
+              "description": "Colossal Order built it in Unity, switching to Unity 5 late in the beta and keeping it for the whole project.",
+              "preview": "**Cities: Skylines** (2015)\n\nEngine: Unity\n\nColossal Order built it in Unity, switching to Unity 5 late in the beta and keeping it for the whole project."
+            },
+            {
+              "label": "Satisfactory",
+              "description": "Built in Unreal and moved to Unreal Engine 5 in Update 8, gaining Lumen lighting and World Partition streaming.",
+              "preview": "**Satisfactory** (2019)\n\nEngine: Unreal\n\nBuilt in Unreal and moved to Unreal Engine 5 in Update 8, gaining Lumen lighting and World Partition streaming."
+            },
+            {
+              "label": "Terraria",
+              "description": "Re-Logic wrote it in C# on Microsoft's XNA framework instead of licensing a commercial engine.",
+              "preview": "**Terraria** (2011)\n\nEngine: Custom\n\nRe-Logic wrote it in C# on Microsoft's XNA framework instead of licensing a commercial engine."
+            },
+            {
+              "label": "None of these",
+              "description": "None of these fit; show other options"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q20",
+        "axis": "stealth.presence",
+        "module": "combat",
+        "format": "poles",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "none",
+            "label": "No stealth",
+            "how": "Being seen has no special meaning"
+          },
+          {
+            "key": "b",
+            "pole": "core",
+            "label": "Stealth is core",
+            "how": "Avoiding detection is a main way to play"
+          }
+        ],
+        "prompt": "Stealth: No stealth or Stealth is core?",
+        "score": 0.43746941621310853,
+        "answerMap": {
+          "No stealth": "a",
+          "Stealth is core": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Stealth: No stealth or Stealth is core?",
+          "header": "Stealth",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "No stealth",
+              "description": "Being seen has no special meaning"
+            },
+            {
+              "label": "Stealth is core",
+              "description": "Avoiding detection is a main way to play"
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "a"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q21",
+        "axis": "loop.time",
+        "module": "loop",
+        "format": "comparison",
+        "comparisonId": "cmp.loop.time.commandandconquer-xcom",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "realtime",
+            "label": "Command & Conquer",
+            "game": "Command & Conquer",
+            "year": 1995,
+            "how": "Units and enemy production keep moving while the player issues orders."
+          },
+          {
+            "key": "b",
+            "pole": "turns",
+            "label": "X-COM: UFO Defense",
+            "game": "X-COM: UFO Defense",
+            "year": 1994,
+            "how": "Tactical battles use time units; aliens act only after the player ends the turn."
+          }
+        ],
+        "prompt": "Time model: Command & Conquer or X-COM: UFO Defense?",
+        "score": 0.2540785598477546,
+        "answerMap": {
+          "Command & Conquer": "a",
+          "X-COM: UFO Defense": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Time model: Command & Conquer or X-COM: UFO Defense?",
+          "header": "Time",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Command & Conquer",
+              "description": "Units and enemy production keep moving while the player issues orders.",
+              "preview": "**Command & Conquer** (1995)\n\nTime model: Real-time\n\nUnits and enemy production keep moving while the player issues orders."
+            },
+            {
+              "label": "X-COM: UFO Defense",
+              "description": "Tactical battles use time units; aliens act only after the player ends the turn.",
+              "preview": "**X-COM: UFO Defense** (1994)\n\nTime model: Turn-based\n\nTactical battles use time units; aliens act only after the player ends the turn."
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "a"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q22",
+        "axis": "frame.rating",
+        "module": "frame",
+        "format": "comparison",
+        "comparisonId": "cmp.frame.rating.journey-thelastofuspart1",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "all_ages",
+            "label": "Journey",
+            "game": "Journey",
+            "year": 2012,
+            "how": "No combat: players glide over sand and ruins alone or with a fellow traveler, and the store tags it Family Friendly."
+          },
+          {
+            "key": "b",
+            "pole": "mature",
+            "label": "The Last of Us Part I",
+            "game": "The Last of Us Part I",
+            "year": 2022,
+            "how": "Close-up stealth kills, dismemberment, themes of suicide and torture, and frequent strong language."
+          }
+        ],
+        "prompt": "Audience rating: Journey or The Last of Us Part I?",
+        "score": 0.20501493939861523,
+        "answerMap": {
+          "Journey": "a",
+          "The Last of Us Part I": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Audience rating: Journey or The Last of Us Part I?",
+          "header": "Rating",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Journey",
+              "description": "No combat: players glide over sand and ruins alone or with a fellow traveler, and the store tags it Family Friendly.",
+              "preview": "**Journey** (2012)\n\nAudience rating: All ages\n\nNo combat: players glide over sand and ruins alone or with a fellow traveler, and the store tags it Family Friendly."
+            },
+            {
+              "label": "The Last of Us Part I",
+              "description": "Close-up stealth kills, dismemberment, themes of suicide and torture, and frequent strong language.",
+              "preview": "**The Last of Us Part I** (2022)\n\nAudience rating: Mature\n\nClose-up stealth kills, dismemberment, themes of suicide and torture, and frequent strong language."
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "b"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q23",
+        "axis": "move.vehicles",
+        "module": "movement",
+        "format": "poles",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "none",
+            "label": "No vehicles",
+            "how": "Characters travel on foot"
+          },
+          {
+            "key": "b",
+            "pole": "matter",
+            "label": "Vehicles or mounts matter",
+            "how": "Driving, riding or piloting is significant"
+          }
+        ],
+        "prompt": "Vehicles: No vehicles or Vehicles or mounts matter?",
+        "score": 0.4011086515090866,
+        "answerMap": {
+          "No vehicles": "a",
+          "Vehicles or mounts matter": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Vehicles: No vehicles or Vehicles or mounts matter?",
+          "header": "Vehicles",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "No vehicles",
+              "description": "Characters travel on foot"
+            },
+            {
+              "label": "Vehicles or mounts matter",
+              "description": "Driving, riding or piloting is significant"
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "a"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q24",
+        "axis": "frame.session",
+        "module": "frame",
+        "format": "comparison",
+        "comparisonId": "cmp.frame.session.clashroyale-heartsofiron4",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "short",
+            "label": "Clash Royale",
+            "game": "Clash Royale",
+            "year": 2016,
+            "how": "Real-time matches are capped at five minutes including a two-minute overtime, so a session is one or two battles on a phone."
+          },
+          {
+            "key": "b",
+            "pole": "long",
+            "label": "Hearts of Iron IV",
+            "game": "Hearts of Iron IV",
+            "year": 2016,
+            "how": "Start in 1939 with war already lined up, or in 1936 to build up yourself; either way a campaign is a multi-sitting commitment."
+          }
+        ],
+        "prompt": "Session length: Clash Royale or Hearts of Iron IV?",
+        "score": 0.20147929988056493,
+        "answerMap": {
+          "Clash Royale": "a",
+          "Hearts of Iron IV": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Session length: Clash Royale or Hearts of Iron IV?",
+          "header": "Session",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Clash Royale",
+              "description": "Real-time matches are capped at five minutes including a two-minute overtime, so a session is one or two battles on a phone.",
+              "preview": "**Clash Royale** (2016)\n\nSession length: Short sessions\n\nReal-time matches are capped at five minutes including a two-minute overtime, so a session is one or two battles on a phone."
+            },
+            {
+              "label": "Hearts of Iron IV",
+              "description": "Start in 1939 with war already lined up, or in 1936 to build up yourself; either way a campaign is a multi-sitting commitment.",
+              "preview": "**Hearts of Iron IV** (2016)\n\nSession length: Long sessions\n\nStart in 1939 with war already lined up, or in 1936 to build up yourself; either way a campaign is a multi-sitting commitment."
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "a"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q25",
+        "axis": "loop.run",
+        "module": "loop",
+        "format": "comparison",
+        "comparisonId": "cmp.loop.run.borderlands2-riskofrain2",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "campaign",
+            "label": "Borderlands 2",
+            "game": "Borderlands 2",
+            "year": 2012,
+            "how": "Levels, skills and gear persist through one story campaign and replays."
+          },
+          {
+            "key": "b",
+            "pole": "runs",
+            "label": "Risk of Rain 2",
+            "game": "Risk of Rain 2",
+            "year": 2019,
+            "how": "Items stack within a run and are lost on death; only unlocks carry over."
+          }
+        ],
+        "prompt": "Run structure: Borderlands 2 or Risk of Rain 2?",
+        "score": 0.37644829259420154,
+        "answerMap": {
+          "Borderlands 2": "a",
+          "Risk of Rain 2": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Run structure: Borderlands 2 or Risk of Rain 2?",
+          "header": "Runs",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Borderlands 2",
+              "description": "Levels, skills and gear persist through one story campaign and replays.",
+              "preview": "**Borderlands 2** (2012)\n\nRun structure: Persistent campaign\n\nLevels, skills and gear persist through one story campaign and replays."
+            },
+            {
+              "label": "Risk of Rain 2",
+              "description": "Items stack within a run and are lost on death; only unlocks carry over.",
+              "preview": "**Risk of Rain 2** (2019)\n\nRun structure: Run-based\n\nItems stack within a run and are lost on death; only unlocks carry over."
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "b"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q26",
+        "axis": "fail.penalty",
+        "module": "failure_difficulty",
+        "format": "comparison",
+        "comparisonId": "cmp.fail.penalty.darksouls-celeste-xcom2",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "drop_recover",
+            "label": "Dark Souls",
+            "game": "Dark Souls",
+            "year": 2011,
+            "how": "Death leaves your souls and humanity at a bloodstain; touch it to recover them, but die again first and they are gone for good."
+          },
+          {
+            "key": "b",
+            "pole": "none",
+            "label": "Celeste",
+            "game": "Celeste",
+            "year": 2018,
+            "how": "Death returns Madeline to the start of the screen instantly with infinite lives; the only cost is a few seconds."
+          },
+          {
+            "key": "c",
+            "pole": "permadeath",
+            "label": "XCOM 2",
+            "game": "XCOM 2",
+            "year": 2016,
+            "how": "On Ironman, one save is overwritten through every mission, so a soldier killed in combat is gone for good with no reload."
+          }
+        ],
+        "prompt": "Failure penalty: which game handles this most like yours?",
+        "score": 1.6066735100185043,
+        "answerMap": {
+          "Dark Souls": "a",
+          "Celeste": "b",
+          "XCOM 2": "c",
+          "None of these": "neither",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Failure penalty: which game handles this most like yours?",
+          "header": "On failure",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Dark Souls",
+              "description": "Death leaves your souls and humanity at a bloodstain; touch it to recover them, but die again first and they are gone for good.",
+              "preview": "**Dark Souls** (2011)\n\nFailure penalty: Drop and recover\n\nDeath leaves your souls and humanity at a bloodstain; touch it to recover them, but die again first and they are gone for good."
+            },
+            {
+              "label": "Celeste",
+              "description": "Death returns Madeline to the start of the screen instantly with infinite lives; the only cost is a few seconds.",
+              "preview": "**Celeste** (2018)\n\nFailure penalty: None (instant retry)\n\nDeath returns Madeline to the start of the screen instantly with infinite lives; the only cost is a few seconds."
+            },
+            {
+              "label": "XCOM 2",
+              "description": "On Ironman, one save is overwritten through every mission, so a soldier killed in combat is gone for good with no reload.",
+              "preview": "**XCOM 2** (2016)\n\nFailure penalty: Permadeath\n\nOn Ironman, one save is overwritten through every mission, so a soldier killed in combat is gone for good with no reload."
+            },
+            {
+              "label": "None of these",
+              "description": "None of these fit; show other options"
+            }
+          ]
+        }
+      },
+      "choice": "b"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q27",
+        "axis": "fail.save",
+        "module": "failure_difficulty",
+        "format": "poles",
+        "multi": false,
+        "page": 1,
+        "pages": 2,
+        "options": [
+          {
+            "key": "a",
+            "pole": "checkpoints",
+            "label": "Checkpoints",
+            "how": "Automatic checkpoints"
+          },
+          {
+            "key": "b",
+            "pole": "free",
+            "label": "Free save",
+            "how": "Save anywhere, any time"
+          },
+          {
+            "key": "c",
+            "pole": "limited",
+            "label": "Limited saves",
+            "how": "Save points or consumable saves"
+          },
+          {
+            "key": "d",
+            "pole": "ironman",
+            "label": "Ironman",
+            "how": "One autosave you cannot reload"
+          }
+        ],
+        "prompt": "Saving: which fits your game? (page 1 of 2)",
+        "score": 1.7015942315185701,
+        "answerMap": {
+          "Checkpoints": "a",
+          "Free save": "b",
+          "Limited saves": "c",
+          "Ironman": "d",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Saving: which fits your game? (page 1 of 2)",
+          "header": "Saving",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Checkpoints",
+              "description": "Automatic checkpoints"
+            },
+            {
+              "label": "Free save",
+              "description": "Save anywhere, any time"
+            },
+            {
+              "label": "Limited saves",
+              "description": "Save points or consumable saves"
+            },
+            {
+              "label": "Ironman",
+              "description": "One autosave you cannot reload"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q28",
+        "axis": "combat.defense",
+        "module": "combat",
+        "format": "comparison",
+        "comparisonId": "cmp.combat.defense.vanquish-maxpayne-serioussam",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "cover",
+            "label": "Vanquish",
+            "game": "Vanquish",
+            "year": 2010,
+            "how": "Cover-based shooting with destructible cover: you slide-boost into and out of cover at speed, and score drops for time spent there"
+          },
+          {
+            "key": "b",
+            "pole": "dodge",
+            "label": "Max Payne",
+            "game": "Max Payne",
+            "year": 2001,
+            "how": "Shootdodge: Max dives through the air in bullet time to avoid enemy fire while shooting back"
+          },
+          {
+            "key": "c",
+            "pole": "none",
+            "label": "Serious Sam: The First Encounter",
+            "game": "Serious Sam: The First Encounter",
+            "year": 2001,
+            "how": "No block, cover or dodge move: large arenas fill with waves of enemies and you survive by moving and killing fast"
+          }
+        ],
+        "prompt": "Primary defense: which game handles this most like yours?",
+        "score": 1.2638751194112898,
+        "answerMap": {
+          "Vanquish": "a",
+          "Max Payne": "b",
+          "Serious Sam: The First Encounter": "c",
+          "None of these": "neither",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Primary defense: which game handles this most like yours?",
+          "header": "Defense",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Vanquish",
+              "description": "Cover-based shooting with destructible cover: you slide-boost into and out of cover at speed, and score drops for time spent there",
+              "preview": "**Vanquish** (2010)\n\nPrimary defense: Cover\n\nCover-based shooting with destructible cover: you slide-boost into and out of cover at speed, and score drops for time spent there"
+            },
+            {
+              "label": "Max Payne",
+              "description": "Shootdodge: Max dives through the air in bullet time to avoid enemy fire while shooting back",
+              "preview": "**Max Payne** (2001)\n\nPrimary defense: Dodge with i-frames\n\nShootdodge: Max dives through the air in bullet time to avoid enemy fire while shooting back"
+            },
+            {
+              "label": "Serious Sam: The First Encounter",
+              "description": "No block, cover or dodge move: large arenas fill with waves of enemies and you survive by moving and killing fast",
+              "preview": "**Serious Sam: The First Encounter** (2001)\n\nPrimary defense: No active defense\n\nNo block, cover or dodge move: large arenas fill with waves of enemies and you survive by moving and killing fast"
+            },
+            {
+              "label": "None of these",
+              "description": "None of these fit; show other options"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q29",
+        "axis": "mp.structure",
+        "module": "multiplayer",
+        "format": "comparison",
+        "comparisonId": "cmp.mp.structure.eveonline-rocketleague",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "persistent",
+            "label": "EVE Online",
+            "game": "EVE Online",
+            "year": 2003,
+            "how": "One persistent universe on a single shard (Tranquility); every player shares the same economy, space and history."
+          },
+          {
+            "key": "b",
+            "pole": "sessions",
+            "label": "Rocket League",
+            "game": "Rocket League",
+            "year": 2015,
+            "how": "Short matches with a five-minute clock; ranked playlists of up to 3v3 reset the field every match."
+          }
+        ],
+        "prompt": "Multiplayer structure: EVE Online or Rocket League?",
+        "score": 1.251948350314501,
+        "answerMap": {
+          "EVE Online": "a",
+          "Rocket League": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Multiplayer structure: EVE Online or Rocket League?",
+          "header": "MP world",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "EVE Online",
+              "description": "One persistent universe on a single shard (Tranquility); every player shares the same economy, space and history.",
+              "preview": "**EVE Online** (2003)\n\nMultiplayer structure: Persistent shared world\n\nOne persistent universe on a single shard (Tranquility); every player shares the same economy, space and history."
+            },
+            {
+              "label": "Rocket League",
+              "description": "Short matches with a five-minute clock; ranked playlists of up to 3v3 reset the field every match.",
+              "preview": "**Rocket League** (2015)\n\nMultiplayer structure: Session matches\n\nShort matches with a five-minute clock; ranked playlists of up to 3v3 reset the field every match."
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q30",
+        "axis": "world.structure",
+        "module": "world",
+        "format": "poles",
+        "multi": false,
+        "page": 1,
+        "pages": 2,
+        "options": [
+          {
+            "key": "a",
+            "pole": "arena",
+            "label": "Single arena",
+            "how": "One map or board, replayed"
+          },
+          {
+            "key": "b",
+            "pole": "level_select",
+            "label": "Level select",
+            "how": "Pick discrete stages from a menu or map"
+          },
+          {
+            "key": "c",
+            "pole": "linear",
+            "label": "Linear",
+            "how": "A sequence of levels or chapters"
+          }
+        ],
+        "prompt": "World structure: which fits your game? (page 1 of 2)",
+        "score": 1.43752872298995,
+        "answerMap": {
+          "Single arena": "a",
+          "Level select": "b",
+          "Linear": "c",
+          "None of these": "neither",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "World structure: which fits your game? (page 1 of 2)",
+          "header": "Structure",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Single arena",
+              "description": "One map or board, replayed"
+            },
+            {
+              "label": "Level select",
+              "description": "Pick discrete stages from a menu or map"
+            },
+            {
+              "label": "Linear",
+              "description": "A sequence of levels or chapters"
+            },
+            {
+              "label": "None of these",
+              "description": "None of these fit; show other options"
+            }
+          ]
+        }
+      },
+      "choice": "a"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q31",
+        "axis": "fight.win",
+        "module": "fighting",
+        "format": "comparison",
+        "comparisonId": "cmp.fight.win.brawl-blazbluecentralfiction",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "ringout",
+            "label": "Super Smash Bros. Brawl",
+            "game": "Super Smash Bros. Brawl",
+            "year": 2008,
+            "how": "A stock ends when a fighter is knocked past the blast lines, so a high-percent fighter can lose it to one strong hit."
+          },
+          {
+            "key": "b",
+            "pole": "health",
+            "label": "BlazBlue: Central Fiction",
+            "game": "BlazBlue: Central Fiction",
+            "year": 2016,
+            "how": "Rounds end when health empties; values vary by character, and Ragna's Drive steals life to offset his below average health."
+          }
+        ],
+        "prompt": "Win condition: Super Smash Bros. Brawl or BlazBlue: Central Fiction?",
+        "score": 1.2519138283816904,
+        "answerMap": {
+          "Super Smash Bros. Brawl": "a",
+          "BlazBlue: Central Fiction": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Win condition: Super Smash Bros. Brawl or BlazBlue: Central Fiction?",
+          "header": "Fight win",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Super Smash Bros. Brawl",
+              "description": "A stock ends when a fighter is knocked past the blast lines, so a high-percent fighter can lose it to one strong hit.",
+              "preview": "**Super Smash Bros. Brawl** (2008)\n\nWin condition: Ring-outs\n\nA stock ends when a fighter is knocked past the blast lines, so a high-percent fighter can lose it to one strong hit."
+            },
+            {
+              "label": "BlazBlue: Central Fiction",
+              "description": "Rounds end when health empties; values vary by character, and Ragna's Drive steals life to offset his below average health.",
+              "preview": "**BlazBlue: Central Fiction** (2016)\n\nWin condition: Health bars\n\nRounds end when health empties; values vary by character, and Ragna's Drive steals life to offset his below average health."
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q32",
+        "axis": "combat.time_model",
+        "module": "combat",
+        "format": "poles",
+        "multi": false,
+        "page": 1,
+        "pages": 2,
+        "options": [
+          {
+            "key": "a",
+            "pole": "realtime",
+            "label": "Real-time",
+            "how": "Fights run continuously"
+          },
+          {
+            "key": "b",
+            "pole": "rtwp",
+            "label": "Real-time with pause",
+            "how": "Continuous fights you can pause to issue orders"
+          },
+          {
+            "key": "c",
+            "pole": "alternating",
+            "label": "Alternating turns",
+            "how": "Sides take turns in sequence"
+          }
+        ],
+        "prompt": "Combat time model: which fits your game? (page 1 of 2)",
+        "score": 1.4968361067857836,
+        "answerMap": {
+          "Real-time": "a",
+          "Real-time with pause": "b",
+          "Alternating turns": "c",
+          "None of these": "neither",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Combat time model: which fits your game? (page 1 of 2)",
+          "header": "Fight time",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Real-time",
+              "description": "Fights run continuously"
+            },
+            {
+              "label": "Real-time with pause",
+              "description": "Continuous fights you can pause to issue orders"
+            },
+            {
+              "label": "Alternating turns",
+              "description": "Sides take turns in sequence"
+            },
+            {
+              "label": "None of these",
+              "description": "None of these fit; show other options"
+            }
+          ]
+        }
+      },
+      "choice": "a"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q33",
+        "axis": "mp.mode",
+        "module": "multiplayer",
+        "format": "comparison",
+        "comparisonId": "cmp.mp.mode.deeprockgalactic-dota2-lol",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "coop",
+            "label": "Deep Rock Galactic",
+            "game": "Deep Rock Galactic",
+            "year": 2020,
+            "how": "1 to 4 players drop into a cave together; four classes (Scout, Gunner, Engineer, Driller) each cover a job the team needs to finish the mission."
+          },
+          {
+            "key": "b",
+            "pole": "competitive",
+            "label": "Dota 2",
+            "game": "Dota 2",
+            "year": 2013,
+            "how": "Two teams of five fight over lanes; you can deny allied creeps below 50% health so the enemy loses the gold and experience."
+          },
+          {
+            "key": "c",
+            "pole": "competitive",
+            "label": "League of Legends",
+            "game": "League of Legends",
+            "year": 2009,
+            "how": "Two teams of five; last hits on minions earn gold, but you cannot kill your own minions, so lane pressure comes only from attacking."
+          }
+        ],
+        "prompt": "Multiplayer mode: Deep Rock Galactic, Dota 2 or League of Legends?",
+        "score": 1.2519311876061248,
+        "answerMap": {
+          "Deep Rock Galactic": "a",
+          "Dota 2": "b",
+          "League of Legends": "c",
+          "Blend of both": "blend",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Multiplayer mode: Deep Rock Galactic, Dota 2 or League of Legends?",
+          "header": "MP mode",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Deep Rock Galactic",
+              "description": "1 to 4 players drop into a cave together; four classes (Scout, Gunner, Engineer, Driller) each cover a job the team needs to finish the mission.",
+              "preview": "**Deep Rock Galactic** (2020)\n\nMultiplayer mode: Cooperative\n\n1 to 4 players drop into a cave together; four classes (Scout, Gunner, Engineer, Driller) each cover a job the team needs to finish the mission."
+            },
+            {
+              "label": "Dota 2",
+              "description": "Two teams of five fight over lanes; you can deny allied creeps below 50% health so the enemy loses the gold and experience.",
+              "preview": "**Dota 2** (2013)\n\nMultiplayer mode: Competitive\n\nTwo teams of five fight over lanes; you can deny allied creeps below 50% health so the enemy loses the gold and experience."
+            },
+            {
+              "label": "League of Legends",
+              "description": "Two teams of five; last hits on minions earn gold, but you cannot kill your own minions, so lane pressure comes only from attacking.",
+              "preview": "**League of Legends** (2009)\n\nMultiplayer mode: Competitive\n\nTwo teams of five; last hits on minions earn gold, but you cannot kill your own minions, so lane pressure comes only from attacking."
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q34",
+        "axis": "mp.size",
+        "module": "multiplayer",
+        "format": "comparison",
+        "comparisonId": "cmp.mp.size.ittakestwo-pubg",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "two",
+            "label": "It Takes Two",
+            "game": "It Takes Two",
+            "year": 2021,
+            "how": "Exactly two players, co-op only; the Friend's Pass lets one owner invite a second player free, so every level is built for a pair."
+          },
+          {
+            "key": "b",
+            "pole": "hundred",
+            "label": "PUBG: Battlegrounds",
+            "game": "PUBG: Battlegrounds",
+            "year": 2017,
+            "how": "Up to 100 players parachute onto one map; a shrinking Blue Zone forces the crowd together until one player or squad is left."
+          }
+        ],
+        "prompt": "Match size: It Takes Two or PUBG: Battlegrounds?",
+        "score": 1.251898956187628,
+        "answerMap": {
+          "It Takes Two": "a",
+          "PUBG: Battlegrounds": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Match size: It Takes Two or PUBG: Battlegrounds?",
+          "header": "MP size",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "It Takes Two",
+              "description": "Exactly two players, co-op only; the Friend's Pass lets one owner invite a second player free, so every level is built for a pair.",
+              "preview": "**It Takes Two** (2021)\n\nMatch size: 2 players\n\nExactly two players, co-op only; the Friend's Pass lets one owner invite a second player free, so every level is built for a pair."
+            },
+            {
+              "label": "PUBG: Battlegrounds",
+              "description": "Up to 100 players parachute onto one map; a shrinking Blue Zone forces the crowd together until one player or squad is left.",
+              "preview": "**PUBG: Battlegrounds** (2017)\n\nMatch size: 100 or more\n\nUp to 100 players parachute onto one map; a shrinking Blue Zone forces the crowd together until one player or squad is left."
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q35",
+        "axis": "world.setting",
+        "module": "world",
+        "format": "comparison",
+        "comparisonId": "cmp.world.setting.gta5-ftl-baldursgate",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "modern",
+            "label": "Grand Theft Auto V",
+            "game": "Grand Theft Auto V",
+            "year": 2013,
+            "how": "Present-day Los Santos and Blaine County: cars, phones, stock market and satire of current life drive missions and systems."
+          },
+          {
+            "key": "b",
+            "pole": "scifi",
+            "label": "FTL: Faster Than Light",
+            "game": "FTL: Faster Than Light",
+            "year": 2012,
+            "how": "Captain a spaceship across a generated galaxy; shields, FTL drives, oxygen and teleporting boarders are the core systems."
+          },
+          {
+            "key": "c",
+            "pole": "fantasy",
+            "label": "Baldur's Gate",
+            "game": "Baldur's Gate",
+            "year": 1998,
+            "how": "The Forgotten Realms' Sword Coast under AD&D 2nd Edition rules: spell memorization, magic items and monsters come from D&D."
+          }
+        ],
+        "prompt": "Setting: which game handles this most like yours?",
+        "score": 0.8516661492738656,
+        "answerMap": {
+          "Grand Theft Auto V": "a",
+          "FTL: Faster Than Light": "b",
+          "Baldur's Gate": "c",
+          "None of these": "neither",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Setting: which game handles this most like yours?",
+          "header": "Setting",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Grand Theft Auto V",
+              "description": "Present-day Los Santos and Blaine County: cars, phones, stock market and satire of current life drive missions and systems.",
+              "preview": "**Grand Theft Auto V** (2013)\n\nSetting: Modern\n\nPresent-day Los Santos and Blaine County: cars, phones, stock market and satire of current life drive missions and systems."
+            },
+            {
+              "label": "FTL: Faster Than Light",
+              "description": "Captain a spaceship across a generated galaxy; shields, FTL drives, oxygen and teleporting boarders are the core systems.",
+              "preview": "**FTL: Faster Than Light** (2012)\n\nSetting: Sci-fi\n\nCaptain a spaceship across a generated galaxy; shields, FTL drives, oxygen and teleporting boarders are the core systems."
+            },
+            {
+              "label": "Baldur's Gate",
+              "description": "The Forgotten Realms' Sword Coast under AD&D 2nd Edition rules: spell memorization, magic items and monsters come from D&D.",
+              "preview": "**Baldur's Gate** (1998)\n\nSetting: Fantasy\n\nThe Forgotten Realms' Sword Coast under AD&D 2nd Edition rules: spell memorization, magic items and monsters come from D&D."
+            },
+            {
+              "label": "None of these",
+              "description": "None of these fit; show other options"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q36",
+        "axis": "fight.input",
+        "module": "fighting",
+        "format": "comparison",
+        "comparisonId": "cmp.fight.input.dragonballfighterz-granbluefantasyversusrising",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "motion",
+            "label": "Dragon Ball FighterZ",
+            "game": "Dragon Ball FighterZ",
+            "year": 2018,
+            "how": "Specials are motion commands like 236 and 214 on the light, medium or heavy button, as in Goku's 236H reversal."
+          },
+          {
+            "key": "b",
+            "pole": "simplified",
+            "label": "Granblue Fantasy Versus: Rising",
+            "game": "Granblue Fantasy Versus: Rising",
+            "year": 2023,
+            "how": "Simple inputs perform skills with a single button press, so newcomers need not memorize complicated controls."
+          }
+        ],
+        "prompt": "Fighting input: Dragon Ball FighterZ or Granblue Fantasy Versus: Rising?",
+        "score": 1.2517885813633802,
+        "answerMap": {
+          "Dragon Ball FighterZ": "a",
+          "Granblue Fantasy Versus: Rising": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Fighting input: Dragon Ball FighterZ or Granblue Fantasy Versus: Rising?",
+          "header": "Fight input",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Dragon Ball FighterZ",
+              "description": "Specials are motion commands like 236 and 214 on the light, medium or heavy button, as in Goku's 236H reversal.",
+              "preview": "**Dragon Ball FighterZ** (2018)\n\nFighting input: Motion inputs\n\nSpecials are motion commands like 236 and 214 on the light, medium or heavy button, as in Goku's 236H reversal."
+            },
+            {
+              "label": "Granblue Fantasy Versus: Rising",
+              "description": "Simple inputs perform skills with a single button press, so newcomers need not memorize complicated controls.",
+              "preview": "**Granblue Fantasy Versus: Rising** (2023)\n\nFighting input: Simplified inputs\n\nSimple inputs perform skills with a single button press, so newcomers need not memorize complicated controls."
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q37",
+        "axis": "mp.symmetry",
+        "module": "multiplayer",
+        "format": "comparison",
+        "comparisonId": "cmp.mp.symmetry.amongus-rocketleague",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "asymmetric",
+            "label": "Among Us",
+            "game": "Among Us",
+            "year": 2018,
+            "how": "Crewmates do tasks and vote; hidden Impostors kill, sabotage, fake tasks and travel through vents."
+          },
+          {
+            "key": "b",
+            "pole": "symmetric",
+            "label": "Rocket League",
+            "game": "Rocket League",
+            "year": 2015,
+            "how": "Teams of up to three drive cars with the same boost, jump and flip; only the goal you defend differs."
+          }
+        ],
+        "prompt": "Role symmetry: Among Us or Rocket League?",
+        "score": 0.8678936040667367,
+        "answerMap": {
+          "Among Us": "a",
+          "Rocket League": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Role symmetry: Among Us or Rocket League?",
+          "header": "Symmetry",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Among Us",
+              "description": "Crewmates do tasks and vote; hidden Impostors kill, sabotage, fake tasks and travel through vents.",
+              "preview": "**Among Us** (2018)\n\nRole symmetry: Asymmetric roles\n\nCrewmates do tasks and vote; hidden Impostors kill, sabotage, fake tasks and travel through vents."
+            },
+            {
+              "label": "Rocket League",
+              "description": "Teams of up to three drive cars with the same boost, jump and flip; only the goal you defend differs.",
+              "preview": "**Rocket League** (2015)\n\nRole symmetry: Symmetric\n\nTeams of up to three drive cars with the same boost, jump and flip; only the goal you defend differs."
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q38",
+        "axis": "mp.loss",
+        "module": "multiplayer",
+        "format": "comparison",
+        "comparisonId": "cmp.mp.loss.albiononline-guildwars",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "loot",
+            "label": "Albion Online",
+            "game": "Albion Online",
+            "year": 2017,
+            "how": "In red and black zones a killed player drops all equipped and carried gear for others to loot; yellow zones only knock down."
+          },
+          {
+            "key": "b",
+            "pole": "nothing",
+            "label": "Guild Wars",
+            "game": "Guild Wars",
+            "year": 2005,
+            "how": "Dying adds a stacking health and energy penalty up to 60% that clears in town; no items or experience are lost."
+          }
+        ],
+        "prompt": "Loss on death: Albion Online or Guild Wars?",
+        "score": 0.8679722797408237,
+        "answerMap": {
+          "Albion Online": "a",
+          "Guild Wars": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Loss on death: Albion Online or Guild Wars?",
+          "header": "MP loss",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Albion Online",
+              "description": "In red and black zones a killed player drops all equipped and carried gear for others to loot; yellow zones only knock down.",
+              "preview": "**Albion Online** (2017)\n\nLoss on death: Loot lost on death\n\nIn red and black zones a killed player drops all equipped and carried gear for others to loot; yellow zones only knock down."
+            },
+            {
+              "label": "Guild Wars",
+              "description": "Dying adds a stacking health and energy penalty up to 60% that clears in town; no items or experience are lost.",
+              "preview": "**Guild Wars** (2005)\n\nLoss on death: Nothing lost\n\nDying adds a stacking health and energy penalty up to 60% that clears in town; no items or experience are lost."
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q39",
+        "axis": "combat.resource",
+        "module": "combat",
+        "format": "comparison",
+        "comparisonId": "cmp.combat.resource.darksouls-doometernal",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "stamina",
+            "label": "Dark Souls",
+            "game": "Dark Souls",
+            "year": 2011,
+            "how": "One stamina bar gates attacks, blocks and rolls"
+          },
+          {
+            "key": "b",
+            "pole": "aggression",
+            "label": "DOOM Eternal",
+            "game": "DOOM Eternal",
+            "year": 2020,
+            "how": "No stamina: chainsaw for ammo, glory kills for health, flame belch for armor reward aggression"
+          }
+        ],
+        "prompt": "Combat resource: Dark Souls or DOOM Eternal?",
+        "score": 0.8678758591168169,
+        "answerMap": {
+          "Dark Souls": "a",
+          "DOOM Eternal": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Combat resource: Dark Souls or DOOM Eternal?",
+          "header": "Resource",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Dark Souls",
+              "description": "One stamina bar gates attacks, blocks and rolls",
+              "preview": "**Dark Souls** (2011)\n\nCombat resource: Stamina-gated restraint\n\nOne stamina bar gates attacks, blocks and rolls"
+            },
+            {
+              "label": "DOOM Eternal",
+              "description": "No stamina: chainsaw for ammo, glory kills for health, flame belch for armor reward aggression",
+              "preview": "**DOOM Eternal** (2020)\n\nCombat resource: Resource-loop aggression\n\nNo stamina: chainsaw for ammo, glory kills for health, flame belch for armor reward aggression"
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q40",
+        "axis": "mp.matching",
+        "module": "multiplayer",
+        "format": "comparison",
+        "comparisonId": "cmp.mp.matching.diablo2-lol",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "friends",
+            "label": "Diablo II",
+            "game": "Diablo II",
+            "year": 2000,
+            "how": "On Battle.net you create a named game, optionally with a password, and friends join it by name from the game list."
+          },
+          {
+            "key": "b",
+            "pole": "ranked",
+            "label": "League of Legends",
+            "game": "League of Legends",
+            "year": 2009,
+            "how": "Ranked Solo/Duo uses placements and LP to move you through tiers; duo queuing is limited at the top tiers."
+          }
+        ],
+        "prompt": "Matching: Diablo II or League of Legends?",
+        "score": 0.8679567402891621,
+        "answerMap": {
+          "Diablo II": "a",
+          "League of Legends": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Matching: Diablo II or League of Legends?",
+          "header": "Matching",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Diablo II",
+              "description": "On Battle.net you create a named game, optionally with a password, and friends join it by name from the game list.",
+              "preview": "**Diablo II** (2000)\n\nMatching: Friends and lobbies\n\nOn Battle.net you create a named game, optionally with a password, and friends join it by name from the game list."
+            },
+            {
+              "label": "League of Legends",
+              "description": "Ranked Solo/Duo uses placements and LP to move you through tiers; duo queuing is limited at the top tiers.",
+              "preview": "**League of Legends** (2009)\n\nMatching: Ranked matchmaking\n\nRanked Solo/Duo uses placements and LP to move you through tiers; duo queuing is limited at the top tiers."
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q41",
+        "axis": "world.time",
+        "module": "world",
+        "format": "poles",
+        "multi": false,
+        "page": 1,
+        "pages": 2,
+        "options": [
+          {
+            "key": "a",
+            "pole": "calendar",
+            "label": "Seasons or calendar",
+            "how": "Days, seasons and dates"
+          },
+          {
+            "key": "b",
+            "pole": "day_night",
+            "label": "Day and night",
+            "how": "A day-night cycle"
+          },
+          {
+            "key": "c",
+            "pole": "static",
+            "label": "Static",
+            "how": "Time does not pass"
+          }
+        ],
+        "prompt": "World time: which fits your game? (page 1 of 2)",
+        "score": 0.5719520942335248,
+        "answerMap": {
+          "Seasons or calendar": "a",
+          "Day and night": "b",
+          "Static": "c",
+          "None of these": "neither",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "World time: which fits your game? (page 1 of 2)",
+          "header": "World time",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Seasons or calendar",
+              "description": "Days, seasons and dates"
+            },
+            {
+              "label": "Day and night",
+              "description": "A day-night cycle"
+            },
+            {
+              "label": "Static",
+              "description": "Time does not pass"
+            },
+            {
+              "label": "None of these",
+              "description": "None of these fit; show other options"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q42",
+        "axis": "exp.motivation",
+        "module": "experience",
+        "format": "poles",
+        "multi": true,
+        "page": 1,
+        "pages": 2,
+        "options": [
+          {
+            "key": "a",
+            "pole": "competition",
+            "label": "Competition",
+            "how": "Duels, matches and high rankings"
+          },
+          {
+            "key": "b",
+            "pole": "excitement",
+            "label": "Excitement",
+            "how": "Fast-paced action, surprises and thrills"
+          },
+          {
+            "key": "c",
+            "pole": "challenge",
+            "label": "Challenge",
+            "how": "Practice and high difficulty"
+          },
+          {
+            "key": "d",
+            "pole": "destruction",
+            "label": "Destruction",
+            "how": "Guns, explosives, chaos and mayhem"
+          }
+        ],
+        "prompt": "Which player motivations should the game serve most? Pick up to 4. (page 1 of 2)",
+        "score": 0.5059725196195408,
+        "answerMap": {
+          "Competition": "a",
+          "Excitement": "b",
+          "Challenge": "c",
+          "Destruction": "d",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Which player motivations should the game serve most? Pick up to 4. (page 1 of 2)",
+          "header": "Motivation",
+          "multiSelect": true,
+          "options": [
+            {
+              "label": "Competition",
+              "description": "Duels, matches and high rankings"
+            },
+            {
+              "label": "Excitement",
+              "description": "Fast-paced action, surprises and thrills"
+            },
+            {
+              "label": "Challenge",
+              "description": "Practice and high difficulty"
+            },
+            {
+              "label": "Destruction",
+              "description": "Guns, explosives, chaos and mayhem"
+            }
+          ]
+        }
+      },
+      "choice": "neither",
+      "selected": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q43",
+        "axis": "mp.hosting",
+        "module": "multiplayer",
+        "format": "comparison",
+        "comparisonId": "cmp.mp.hosting.doom-planetside2",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "player",
+            "label": "Doom",
+            "game": "Doom",
+            "year": 1993,
+            "how": "Peer-to-peer: the players' own PCs run the game in lockstep over IPX or a modem, with no server at all."
+          },
+          {
+            "key": "b",
+            "pole": "dedicated",
+            "label": "PlanetSide 2",
+            "game": "PlanetSide 2",
+            "year": 2012,
+            "how": "The developer's servers hold each continent's war for thousands of players at once; nobody can host it themselves."
+          }
+        ],
+        "prompt": "Hosting: Doom or PlanetSide 2?",
+        "score": 0.867858759945693,
+        "answerMap": {
+          "Doom": "a",
+          "PlanetSide 2": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Hosting: Doom or PlanetSide 2?",
+          "header": "Hosting",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Doom",
+              "description": "Peer-to-peer: the players' own PCs run the game in lockstep over IPX or a modem, with no server at all.",
+              "preview": "**Doom** (1993)\n\nHosting: Player-hosted\n\nPeer-to-peer: the players' own PCs run the game in lockstep over IPX or a modem, with no server at all."
+            },
+            {
+              "label": "PlanetSide 2",
+              "description": "The developer's servers hold each continent's war for thousands of players at once; nobody can host it themselves.",
+              "preview": "**PlanetSide 2** (2012)\n\nHosting: Dedicated servers\n\nThe developer's servers hold each continent's war for thousands of players at once; nobody can host it themselves."
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "no_pref"
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q44",
+        "axis": "loop.verb",
+        "module": "loop",
+        "format": "poles",
+        "multi": true,
+        "page": 1,
+        "pages": 2,
+        "options": [
+          {
+            "key": "a",
+            "pole": "fight",
+            "label": "Fight",
+            "how": "Defeat opponents"
+          },
+          {
+            "key": "b",
+            "pole": "create",
+            "label": "Create",
+            "how": "Make art, music or levels"
+          },
+          {
+            "key": "c",
+            "pole": "explore",
+            "label": "Explore",
+            "how": "Uncover places and secrets"
+          },
+          {
+            "key": "d",
+            "pole": "solve",
+            "label": "Solve",
+            "how": "Work out puzzles"
+          }
+        ],
+        "prompt": "What does the player mostly do, minute to minute? Pick all that apply. (page 1 of 2)",
+        "score": 0.7588166212497616,
+        "answerMap": {
+          "Fight": "a",
+          "Create": "b",
+          "Explore": "c",
+          "Solve": "d",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "What does the player mostly do, minute to minute? Pick all that apply. (page 1 of 2)",
+          "header": "Core verbs",
+          "multiSelect": true,
+          "options": [
+            {
+              "label": "Fight",
+              "description": "Defeat opponents"
+            },
+            {
+              "label": "Create",
+              "description": "Make art, music or levels"
+            },
+            {
+              "label": "Explore",
+              "description": "Uncover places and secrets"
+            },
+            {
+              "label": "Solve",
+              "description": "Work out puzzles"
+            }
+          ]
+        }
+      },
+      "choice": "neither",
+      "selected": [
+        "a"
+      ]
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q45",
+        "axis": "combat.sim",
+        "module": "combat",
+        "format": "comparison",
+        "comparisonId": "cmp.combat.sim.bladeandsorcery-arkhamasylum",
+        "multi": false,
+        "options": [
+          {
+            "key": "a",
+            "pole": "physics",
+            "label": "Blade & Sorcery",
+            "game": "Blade & Sorcery",
+            "year": 2018,
+            "how": "VR combat where objects have weight, collisions use fine hitboxes, creatures have full body physics and blades can penetrate soft materials"
+          },
+          {
+            "key": "b",
+            "pole": "animated",
+            "label": "Batman: Arkham Asylum",
+            "game": "Batman: Arkham Asylum",
+            "year": 2009,
+            "how": "FreeFlow combat chains animated strikes into seamless combos against groups of henchmen; button presses trigger whole moves"
+          }
+        ],
+        "prompt": "Combat simulation: Blade & Sorcery or Batman: Arkham Asylum?",
+        "score": 0.2505935198095978,
+        "answerMap": {
+          "Blade & Sorcery": "a",
+          "Batman: Arkham Asylum": "b",
+          "Blend of both": "blend",
+          "Not in my game": "na",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Combat simulation: Blade & Sorcery or Batman: Arkham Asylum?",
+          "header": "Combat sim",
+          "multiSelect": false,
+          "options": [
+            {
+              "label": "Blade & Sorcery",
+              "description": "VR combat where objects have weight, collisions use fine hitboxes, creatures have full body physics and blades can penetrate soft materials",
+              "preview": "**Blade & Sorcery** (2018)\n\nCombat simulation: Physics-simulated\n\nVR combat where objects have weight, collisions use fine hitboxes, creatures have full body physics and blades can penetrate soft materials"
+            },
+            {
+              "label": "Batman: Arkham Asylum",
+              "description": "FreeFlow combat chains animated strikes into seamless combos against groups of henchmen; button presses trigger whole moves",
+              "preview": "**Batman: Arkham Asylum** (2009)\n\nCombat simulation: Animation and stat driven\n\nFreeFlow combat chains animated strikes into seamless combos against groups of henchmen; button presses trigger whole moves"
+            },
+            {
+              "label": "Blend of both",
+              "description": "Somewhere in between, or a mix of both approaches"
+            },
+            {
+              "label": "Not in my game",
+              "description": "This axis does not apply to my game"
+            }
+          ]
+        }
+      },
+      "choice": "a"
+    }
+  ],
+  "pending": {},
+  "issued": 45
+}

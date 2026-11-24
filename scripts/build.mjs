@@ -20,5 +20,6 @@ await build({
 // With charset ascii, any remaining non-ASCII text can only sit in comments that esbuild preserved from
 // dependencies. Replace it so the artifact is pure ASCII (and free of em dashes).
 const src = readFileSync(outfile, 'utf8');
+// eslint-disable-next-line no-control-regex
 writeFileSync(outfile, src.replace(/[^\x00-\x7f]/g, '-').replace(/\r\n/g, '\n'));
 console.error(`built ${outfile}`);

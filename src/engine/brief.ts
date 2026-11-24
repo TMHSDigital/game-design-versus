@@ -52,8 +52,8 @@ export function positionText(s: AxisState): string {
     if (s.lean === 'B') return pct >= 85 ? `${pb?.label}` : `Leans ${pb?.label}`;
     return `Blend of ${pa?.label} and ${pb?.label}`;
   }
+  if (s.status === 'flexible') return s.notes.length ? `Other: ${s.notes.join('; ')}` : 'Flexible (no strong preference)';
   const sel = (s.selected ?? []).map((p) => poleLabel(a, p)).filter(Boolean);
-  if (s.status === 'flexible' && s.notes.length) return `Other: ${s.notes.join('; ')}`;
   return sel.length ? sel.join(', ') : 'Undecided';
 }
 
@@ -83,9 +83,12 @@ function joinAnd(xs: string[]): string {
 export function buildBrief(k: Knowledge, state: SessionState): Brief {
   const sum = claritySummary(k, state);
   const ax = (id: string) => state.axes.get(id);
+  // Only values the user decided (or, for single-choice axes, confidently inferred) count as selections.
   const sel = (id: string) => {
     const s = ax(id);
-    return s && s.status !== 'open' ? (s.selected ?? []) : s && s.clarity >= 0.6 ? (s.selected ?? []) : [];
+    if (!s || s.status === 'na' || s.status === 'flexible') return [];
+    if (s.status === 'decided') return s.selected ?? [];
+    return s.axis.kind === 'categorical' && s.clarity >= 0.6 ? (s.selected ?? []) : [];
   };
   const labelsOf = (id: string) => {
     const a = k.axisById.get(id);
@@ -140,11 +143,13 @@ export function buildBrief(k: Knowledge, state: SessionState): Brief {
   const families = labelsOf('genre.family');
   const forms = labelsOf('genre.form');
   const setting = labelsOf('world.setting')[0];
+  const article = (w: string) => (/^[aeiou]/i.test(w) ? 'an' : 'a');
+  const kind = forms.length ? forms.slice(0, 2).join(' and ').toLowerCase() : families.length ? `${families.slice(0, 2).join(' and ').toLowerCase()} game` : `${arch[0]?.label.toLowerCase() ?? 'new'} game`;
   const elevator = [
-    `${state.title ?? 'This game'} is ${forms.length ? `a ${forms.slice(0, 2).join(' and ').toLowerCase()}` : families.length ? `a ${families.slice(0, 2).join(' and ').toLowerCase()} game` : `a ${arch[0]?.label.toLowerCase() ?? 'new'} game`}${setting ? ` in a ${setting.toLowerCase()} setting` : ''}.`,
+    `${state.title ?? 'This game'} is ${article(kind)} ${kind}${setting ? ` in a ${setting.toLowerCase()} setting` : ''}.`,
     `Think ${headline}.`,
     state.pitch ? `Original pitch: ${state.pitch}` : '',
-    pillars.length ? `It is built on ${joinAnd(pillars.slice(0, 3).map((p) => p.title.split(': ')[1]?.toLowerCase() ?? p.title))}.` : '',
+    pillars.length ? `Its pillars: ${pillars.slice(0, 3).map((p) => p.title).join('; ')}.` : '',
   ].filter(Boolean).join(' ');
 
   const frameIds = ['frame.platform', 'frame.input', 'frame.players', 'frame.session', 'frame.length', 'frame.monetization', 'frame.team', 'frame.timeline', 'frame.engine', 'frame.rating', 'frame.dimension', 'frame.realism'];

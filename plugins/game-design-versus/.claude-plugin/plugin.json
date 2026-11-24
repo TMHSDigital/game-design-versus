@@ -1,0 +1,9 @@
+{
+  "name": "game-design-versus",
+  "version": "0.1.0",
+  "description": "This-or-that game design interviewer. Each question puts real games head to head on one design axis; answers gate out whole modules until the game is clear, then it writes a GDD seed brief.",
+  "author": { "name": "TMHSDigital" },
+  "repository": "https://github.com/TMHSDigital/game-design-versus",
+  "license": "MIT",
+  "keywords": ["game-design", "gdd", "questionnaire", "mcp", "design-interview"]
+}

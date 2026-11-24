@@ -1,0 +1,14 @@
+{
+  "name": "tmhs-digital",
+  "owner": {
+    "name": "TMHSDigital"
+  },
+  "description": "TMHSDigital plugins for game developers.",
+  "plugins": [
+    {
+      "name": "game-design-versus",
+      "source": "./plugins/game-design-versus",
+      "description": "This-or-that game design interviewer: real games head to head on one design axis at a time, narrowing to a GDD seed brief."
+    }
+  ]
+}
