@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { knowledge } from '../../src/engine/data';
 import { claritySummary, foldSession, type SessionEvent, type Question } from '../../src/engine/session';
-import { eigBinary, nextQuestions } from '../../src/engine/selection';
+import { candidates, eigBinary, nextQuestions } from '../../src/engine/selection';
 
 const k = knowledge();
 const at = '2026-11-23T00:00:00.000Z';
@@ -110,6 +110,25 @@ describe('session fold', () => {
     expect(s.axes.get('frame.players')?.selected).toEqual(['local_versus']);
     expect(s.flags.is_online).toBe(false);
     expect(s.tensions.map((t) => t.id)).not.toContain('physics_melee_online_pvp');
+  });
+
+  it('"None of these" on page 1 of a multi axis keeps it open; none on every page is no answer (#3)', () => {
+    const page = (n: number, poles: string[]): Question => ({
+      questionId: `p${n}`, axis: 'frame.platform', module: 'frame', format: 'poles', multi: true, page: n, pages: 2,
+      options: poles.map((p, i) => ({ key: (['a', 'b', 'c', 'd'] as const)[i] as 'a', pole: p, label: p })),
+    });
+    const first = foldSession(k, [start, answer(page(1, ['pc', 'console', 'handheld', 'mobile']), 'neither', { selected: [] })]);
+    expect(first.axes.get('frame.platform')?.status).toBe('open');
+    const next = candidates(k, first).find((c) => c.axis.axis.id === 'frame.platform');
+    expect(next?.page).toBe(2);
+    expect(next?.options.map((o) => o.pole).sort()).toEqual(['vr', 'web']);
+    const both = foldSession(k, [
+      start,
+      answer(page(1, ['pc', 'console', 'handheld', 'mobile']), 'neither', { selected: [] }),
+      answer(page(2, ['vr', 'web']), 'neither', { selected: [] }),
+    ]);
+    expect(both.axes.get('frame.platform')?.status).toBe('flexible');
+    expect(both.axes.get('frame.platform')?.selected).toEqual([]);
   });
 
   it('a binary A answer leans the axis to pole A even against the archetype prior', () => {

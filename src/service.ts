@@ -38,8 +38,10 @@ export function summarize(k: Knowledge, f: SessionFile, state?: SessionState): S
   const settled = [...s.axes.values()]
     .filter((a) => a.status === 'decided' && a.applicable !== false)
     .sort((x, y) => y.axis.importance - x.axis.importance)
+    .map((a) => ({ a, pos: positionText(a) }))
+    .filter((x) => x.pos !== 'Undecided')
     .slice(0, 12)
-    .map((a) => `${a.axis.label}: ${positionText(a)}`);
+    .map(({ a, pos }) => `${a.axis.label}: ${pos}`);
   return {
     sessionId: f.id,
     title: s.title,

@@ -299,7 +299,12 @@ export function foldSession(k: Knowledge, events: SessionEvent[]): SessionState 
     // everything on the first page (more may apply) or, for rank axes, picked fewer than `keep`.
     const takenAll = picked.size === q.options.length;
     const rankShort = a.kind === 'rank' && Object.keys(r.rankPoints).length < (a.keep ?? 3);
-    if (r.pagesSeen >= ENGINE.maxMultiPages || unseen.length === 0 || (!takenAll && !rankShort)) r.status = 'decided';
+    const lastPage = r.pagesSeen >= ENGINE.maxMultiPages || unseen.length === 0;
+    if (Object.keys(r.rankPoints).length === 0) {
+      // Nothing picked yet: "None of these" means "not on this page", so the next page is still worth asking.
+      // Nothing picked on any page is no answer at all, not a decision.
+      if (lastPage) r.status = 'flexible';
+    } else if (lastPage || (!takenAll && !rankShort)) r.status = 'decided';
     r.source = 'answer';
   }
 

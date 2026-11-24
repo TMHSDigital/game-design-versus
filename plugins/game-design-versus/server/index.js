@@ -75898,7 +75898,10 @@ function foldSession(k2, events) {
     const unseen = a.poles.filter((p) => !r.seen.has(p.id));
     const takenAll = picked.size === q.options.length;
     const rankShort = a.kind === "rank" && Object.keys(r.rankPoints).length < (a.keep ?? 3);
-    if (r.pagesSeen >= ENGINE.maxMultiPages || unseen.length === 0 || !takenAll && !rankShort) r.status = "decided";
+    const lastPage = r.pagesSeen >= ENGINE.maxMultiPages || unseen.length === 0;
+    if (Object.keys(r.rankPoints).length === 0) {
+      if (lastPage) r.status = "flexible";
+    } else if (lastPage || !takenAll && !rankShort) r.status = "decided";
     r.source = "answer";
   }
   const archetypePost = updateArchetypes(k2, uniformArchetypes(k2), evidence);
@@ -76770,7 +76773,7 @@ function round2(x) {
 function summarize(k2, f, state) {
   const s = state ?? foldSession(k2, f.events);
   const c = claritySummary(k2, s);
-  const settled = [...s.axes.values()].filter((a) => a.status === "decided" && a.applicable !== false).sort((x, y) => y.axis.importance - x.axis.importance).slice(0, 12).map((a) => `${a.axis.label}: ${positionText(a)}`);
+  const settled = [...s.axes.values()].filter((a) => a.status === "decided" && a.applicable !== false).sort((x, y) => y.axis.importance - x.axis.importance).map((a) => ({ a, pos: positionText(a) })).filter((x) => x.pos !== "Undecided").slice(0, 12).map(({ a, pos }) => `${a.axis.label}: ${pos}`);
   return {
     sessionId: f.id,
     title: s.title,
