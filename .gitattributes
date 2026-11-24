@@ -1,0 +1,2 @@
+* text=auto eol=lf
+plugins/game-design-versus/server/index.js -diff linguist-generated

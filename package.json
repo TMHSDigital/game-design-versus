@@ -1,0 +1,60 @@
+{
+  "name": "game-design-versus",
+  "version": "0.1.0",
+  "description": "Agentic this-or-that game design questionnaire as an MCP server: real games head to head on one design axis at a time, narrowing to a GDD seed brief.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Thomas Mathes (TMHSDigital)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TMHSDigital/game-design-versus.git"
+  },
+  "keywords": [
+    "mcp",
+    "game-design",
+    "gdd",
+    "claude-code",
+    "questionnaire"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "game-design-versus": "plugins/game-design-versus/server/index.js"
+  },
+  "files": [
+    "plugins/game-design-versus/server/index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "tsx watch src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "validate:data": "tsx scripts/validate-data.ts",
+    "coverage": "tsx scripts/coverage-report.ts",
+    "simulate": "tsx scripts/simulate.ts",
+    "inspect": "npx -y @modelcontextprotocol/inspector@2.16.0 node plugins/game-design-versus/server/index.js",
+    "check": "npm run typecheck && npm run lint && npm run validate:data && npm run build && npm run test && npm run coverage"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.4.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@modelcontextprotocol/client": "2.4.0",
+    "@types/node": "22.20.5",
+    "esbuild": "0.28.2",
+    "eslint": "10.15.0",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.74.0",
+    "vitest": "4.1.12"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}
