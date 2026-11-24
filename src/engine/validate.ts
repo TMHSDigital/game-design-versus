@@ -52,7 +52,7 @@ function dupes(ids: string[]): string[] {
 }
 
 export function validateKnowledge(k: Knowledge, raw: RawData): string[] {
-  const errs: string[] = [];
+  const errs: string[] = [...k.loadErrors];
   for (const d of dupes(k.axes.map((a) => a.id))) errs.push(`duplicate axis id ${d}`);
   for (const d of dupes(k.modules.map((m) => m.id))) errs.push(`duplicate module id ${d}`);
   for (const d of dupes(k.archetypes.map((a) => a.id))) errs.push(`duplicate archetype id ${d}`);

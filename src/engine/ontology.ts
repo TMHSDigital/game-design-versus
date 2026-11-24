@@ -47,7 +47,7 @@ export const AXIS_KINDS = ['bipolar', 'categorical', 'multi', 'rank', 'gate'] as
 export type AxisKind = (typeof AXIS_KINDS)[number];
 
 export const PoleSchema = z
-  .object({ id: z.string().regex(/^[a-z0-9_]+$/), label: z.string().min(1), summary: z.string().min(1) })
+  .object({ id: z.string().regex(/^[a-z0-9_]+$/), label: z.string().min(1), summary: z.string().min(1), noExemplar: z.boolean().optional() })
   .strict();
 export type Pole = z.infer<typeof PoleSchema>;
 

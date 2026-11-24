@@ -32,6 +32,8 @@ export type Knowledge = {
   comparisonById: Map<string, Comparison>;
   /** Which file each comparison came from (module file name). */
   fileOf: Map<string, string>;
+  /** Comparisons that failed schema validation and were dropped (validate-data reports these). */
+  loadErrors: string[];
 };
 
 export type RawData = {
@@ -51,11 +53,22 @@ export function buildKnowledge(raw: RawData, opts: { allowUnverified?: boolean }
   const tensions = z.array(TensionSchema).parse(raw.tensions);
   const allComparisons: Comparison[] = [];
   const fileOf = new Map<string, string>();
+  const loadErrors: string[] = [];
   for (const [file, list] of Object.entries(raw.comparisonFiles)) {
-    for (const c of z.array(ComparisonSchema).parse(list)) {
-      allComparisons.push(c);
-      fileOf.set(c.id, file);
+    if (!Array.isArray(list)) {
+      loadErrors.push(`comparisons/${file}.json is not an array`);
+      continue;
     }
+    list.forEach((item, i) => {
+      const r = ComparisonSchema.safeParse(item);
+      if (!r.success) {
+        const id = (item as { id?: unknown })?.id;
+        loadErrors.push(`comparisons/${file}.json[${i}] ${typeof id === 'string' ? id : ''}: ${r.error.issues.map((x) => `${x.path.join('.')} ${x.message}`).join('; ')}`);
+        return;
+      }
+      allComparisons.push(r.data);
+      fileOf.set(r.data.id, file);
+    });
   }
   const allow = opts.allowUnverified ?? process.env.GDV_ALLOW_UNVERIFIED === '1';
   const comparisons = allComparisons.filter((c) => allow || c.verification.status === 'verified');
@@ -78,6 +91,7 @@ export function buildKnowledge(raw: RawData, opts: { allowUnverified?: boolean }
     comparisonsByAxis,
     comparisonById: new Map(allComparisons.map((c) => [c.id, c])),
     fileOf,
+    loadErrors,
   };
 }
 

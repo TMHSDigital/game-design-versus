@@ -68,7 +68,7 @@ export function coverageReport(k: Knowledge): CoverageReport {
       if (n < T.perBipolarAxis) thinBipolarAxes.push({ axis: a.id, count: n });
     }
     if (a.kind === 'categorical') {
-      for (const p of a.poles) if (!poleSeen.has(`${a.id}:${p.id}`)) uncoveredPoles.push({ axis: a.id, pole: p.id });
+      for (const p of a.poles) if (!p.noExemplar && !poleSeen.has(`${a.id}:${p.id}`)) uncoveredPoles.push({ axis: a.id, pole: p.id });
     }
   }
   if (thinBipolarAxes.length) failures.push(`${thinBipolarAxes.length} bipolar axes below ${T.perBipolarAxis} comparisons`);
