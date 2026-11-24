@@ -75369,6 +75369,11 @@ var ENGINE = {
   pageSize: 4,
   /** Multi and rank axes stop paginating after this many pages; unseen poles count as not selected. */
   maxMultiPages: 2,
+  /**
+   * A multi or rank pole counts as selected only when its inclusion clears 0.5 by this margin. Inclusion of exactly
+   * 0.5 means "no information" (no archetype or answer speaks to the pole), and float noise around it must not decide.
+   */
+  multiSelectMargin: 0.01,
   /** A skipped axis is not offered again for this many answers. */
   skipCooldown: 5
 };
@@ -75926,8 +75931,9 @@ function foldSession(k2, events) {
       st.selected = [argmax(st.poleDist)];
     } else {
       st.inclusion = multiPosterior(multiPrior(k2, a, archetypePost), r.multiObs);
-      const sel = a.poles.filter((p) => (st.inclusion?.[p.id] ?? 0) >= 0.5).map((p) => p.id);
-      if (a.kind === "rank") {
+      const sel = a.poles.filter((p) => (st.inclusion?.[p.id] ?? 0) > 0.5 + ENGINE.multiSelectMargin).map((p) => p.id);
+      if (st.status === "flexible") st.selected = [];
+      else if (a.kind === "rank") {
         const ordered = [...st.ranked, ...sel.filter((p) => !st.ranked.includes(p))];
         const byProb = a.poles.map((p) => p.id).sort((x, y) => (st.inclusion?.[y] ?? 0) - (st.inclusion?.[x] ?? 0));
         for (const p of byProb) if (!ordered.includes(p)) ordered.push(p);

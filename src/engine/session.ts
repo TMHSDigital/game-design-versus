@@ -324,8 +324,10 @@ export function foldSession(k: Knowledge, events: SessionEvent[]): SessionState 
       st.selected = [argmax(st.poleDist) as string];
     } else {
       st.inclusion = multiPosterior(multiPrior(k, a, archetypePost), r.multiObs);
-      const sel = a.poles.filter((p) => (st.inclusion?.[p.id] ?? 0) >= 0.5).map((p) => p.id);
-      if (a.kind === 'rank') {
+      const sel = a.poles.filter((p) => (st.inclusion?.[p.id] ?? 0) > 0.5 + ENGINE.multiSelectMargin).map((p) => p.id);
+      // "No preference" is not a choice of poles: a flexible multi or rank axis selects nothing, so it sets no flags.
+      if (st.status === 'flexible') st.selected = [];
+      else if (a.kind === 'rank') {
         const ordered = [...st.ranked, ...sel.filter((p) => !st.ranked.includes(p))];
         const byProb = a.poles.map((p) => p.id).sort((x, y) => (st.inclusion?.[y] ?? 0) - (st.inclusion?.[x] ?? 0));
         for (const p of byProb) if (!ordered.includes(p)) ordered.push(p);

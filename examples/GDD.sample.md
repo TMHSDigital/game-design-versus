@@ -1,10 +1,10 @@
 # Steel and Momentum
 
-> The player fights in order to reach their goals, with melee-focused combat range.
+> The player plays in order to beat everyone else, with melee-focused combat range.
 
 Steel and Momentum is an action and fighting game. Think Celeste meets Outer Wilds. Original pitch: A physics-driven medieval sword fighter where momentum, edge contact and armor decide every hit. Its pillars: Camera view: Over-shoulder third person; Combat range: Melee-focused; Failure penalty: None (instant retry).
 
-Overall clarity 0.81 after 45 questions.
+Overall clarity 0.82 after 45 questions.
 
 ## 1. Frame
 
@@ -25,8 +25,8 @@ Overall clarity 0.81 after 45 questions.
 
 ## 2. Experience targets
 
-- MDA aesthetics: Undecided
-- Player motivations: Undecided
+- MDA aesthetics: Sensation, Challenge, Expression
+- Player motivations: Competition, Excitement, Challenge, Destruction
 - Tone: Leans Grim
 - Pace: Intense
 - Challenge: Punishing
@@ -36,7 +36,7 @@ Overall clarity 0.81 after 45 questions.
 - Families: Action, Fighting
 - Forms: None
 - Tags: Action, Fighting, Over-shoulder third person, 3D, Local versus
-- Closest archetypes: Physics brawler (100%), Arena FPS (0%), Fighting game (0%)
+- Closest archetypes: Physics brawler (100%), Arena FPS (0%), Rhythm game (0%)
 
 ## 4. Design pillars
 
@@ -48,7 +48,7 @@ Overall clarity 0.81 after 45 questions.
 
 ## 5. Core loop
 
-- Seconds: the player fights under constant pressure, reading the situation and executing in the moment; combat is physics-simulated.
+- Seconds: the player plays under constant pressure, reading the situation and executing in the moment; combat is physics-simulated.
 - Minutes: a session of under 20 minutes is one or more runs that reset on failure, toward goals the player sets.
 - Weeks: mastery and variety keep the player returning.
 
@@ -63,11 +63,10 @@ Overall clarity 0.81 after 45 questions.
 | Control complexity | Leans Few inputs (lean 26) | inferred |  |
 | Input physicality | Physics-driven input (lean 3) | inferred |  |
 
-### Core loop (clarity 0.84)
+### Core loop (clarity 0.7)
 
 | Axis | Position | Status | Reference |
 | --- | --- | --- | --- |
-| Core verbs | Fight | decided |  |
 | Decision cadence | Moment-to-moment execution (lean 3) | inferred |  |
 | Goal source | Leans Self-directed goals (lean 74) | inferred |  |
 | Run structure | Run-based (lean 81) | decided | like Risk of Rain 2 (Items stack within a run and are lost on death; only unlocks carry over.), not Borderlands 2 |
@@ -108,7 +107,7 @@ Overall clarity 0.81 after 45 questions.
 | Axis | Position | Status | Reference |
 | --- | --- | --- | --- |
 | World structure | Single arena | decided |  |
-| World authoring | Leans Handcrafted (lean 26) | inferred |  |
+| World authoring | Handcrafted (lean 25) | inferred |  |
 | World size | Compact and dense (lean 3) | inferred |  |
 | World persistence | Resets (lean 3) | inferred |  |
 | Destruction | Leans Fully destructible (lean 74) | inferred |  |
@@ -124,7 +123,7 @@ Overall clarity 0.81 after 45 questions.
 | Difficulty options | Leans One tuned difficulty (lean 26) | inferred |  |
 | Dynamic difficulty | Leans Static (lean 26) | inferred |  |
 
-### Multiplayer (clarity 0.92)
+### Multiplayer (clarity 0.91)
 
 | Axis | Position | Status | Reference |
 | --- | --- | --- | --- |
@@ -136,7 +135,6 @@ Overall clarity 0.81 after 45 questions.
 | Asynchronous play | Leans None (lean 26) | inferred |  |
 | Role symmetry | Flexible (no strong preference) (lean 50) | flexible |  |
 | Communication | Blend of Voice-reliant and Ping and contextual comms (lean 50) | inferred |  |
-| Hosting | Flexible (no strong preference) (lean 50) | flexible |  |
 
 ### Presentation (clarity 0.72)
 
@@ -206,13 +204,11 @@ Overall clarity 0.81 after 45 questions.
 
 ## 10. Risks
 
-- **risk**: Physics-simulated melee in online PvP is hard to network: ragdoll and contact results diverge between clients. Probe: Would you accept server-authoritative physics with input delay, or keep PvP local or co-op only?
 - **warn**: Scope: 18 active modules for a team of 2 to 5 on a timeline of 1 to 2 years. Cut to the pillars (Camera view, Combat range, Failure penalty) for the MVP.
 
 ## 11. Open questions
 
-- (3) MDA aesthetics: Which kinds of fun matter most? Pick the strongest. (clarity 0.27)
-- (2) Player motivations: Which player motivations should the game serve most? (clarity 0.45)
+- (3) Core verbs: What does the player mostly do, minute to minute? Pick all that apply. (clarity 0.27)
 
 ## 12. Decision log
 
@@ -263,6 +259,6 @@ Overall clarity 0.81 after 45 questions.
 | 2026-11-23T00:00:00.000Z | answer | mp.matching | no_pref |
 | 2026-11-23T00:00:00.000Z | answer | world.time | no_pref |
 | 2026-11-23T00:00:00.000Z | answer | exp.motivation | selected: Competition, Excitement, Challenge, Destruction |
-| 2026-11-23T00:00:00.000Z | answer | mp.hosting | no_pref |
-| 2026-11-23T00:00:00.000Z | answer | loop.verb | selected: Fight |
+| 2026-11-23T00:00:00.000Z | answer | exp.aesthetics | selected: Sensation, Challenge, Expression |
+| 2026-11-23T00:00:00.000Z | answer | exp.motivation | neither |
 | 2026-11-23T00:00:00.000Z | answer | combat.sim | Blade & Sorcery |

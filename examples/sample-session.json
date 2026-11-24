@@ -2838,73 +2838,8 @@
       "at": "2026-11-23T00:00:00.000Z",
       "question": {
         "questionId": "sim-physics_brawler:q43",
-        "axis": "mp.hosting",
-        "module": "multiplayer",
-        "format": "comparison",
-        "comparisonId": "cmp.mp.hosting.doom-planetside2",
-        "multi": false,
-        "options": [
-          {
-            "key": "a",
-            "pole": "player",
-            "label": "Doom",
-            "game": "Doom",
-            "year": 1993,
-            "how": "Peer-to-peer: the players' own PCs run the game in lockstep over IPX or a modem, with no server at all."
-          },
-          {
-            "key": "b",
-            "pole": "dedicated",
-            "label": "PlanetSide 2",
-            "game": "PlanetSide 2",
-            "year": 2012,
-            "how": "The developer's servers hold each continent's war for thousands of players at once; nobody can host it themselves."
-          }
-        ],
-        "prompt": "Hosting: Doom or PlanetSide 2?",
-        "score": 0.867858759945693,
-        "answerMap": {
-          "Doom": "a",
-          "PlanetSide 2": "b",
-          "Blend of both": "blend",
-          "Not in my game": "na",
-          "Other": "neither"
-        },
-        "askUserQuestion": {
-          "question": "Hosting: Doom or PlanetSide 2?",
-          "header": "Hosting",
-          "multiSelect": false,
-          "options": [
-            {
-              "label": "Doom",
-              "description": "Peer-to-peer: the players' own PCs run the game in lockstep over IPX or a modem, with no server at all.",
-              "preview": "**Doom** (1993)\n\nHosting: Player-hosted\n\nPeer-to-peer: the players' own PCs run the game in lockstep over IPX or a modem, with no server at all."
-            },
-            {
-              "label": "PlanetSide 2",
-              "description": "The developer's servers hold each continent's war for thousands of players at once; nobody can host it themselves.",
-              "preview": "**PlanetSide 2** (2012)\n\nHosting: Dedicated servers\n\nThe developer's servers hold each continent's war for thousands of players at once; nobody can host it themselves."
-            },
-            {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
-            },
-            {
-              "label": "Not in my game",
-              "description": "This axis does not apply to my game"
-            }
-          ]
-        }
-      },
-      "choice": "no_pref"
-    },
-    {
-      "type": "answer",
-      "at": "2026-11-23T00:00:00.000Z",
-      "question": {
-        "questionId": "sim-physics_brawler:q44",
-        "axis": "loop.verb",
-        "module": "loop",
+        "axis": "exp.aesthetics",
+        "module": "experience",
         "format": "poles",
         "multi": true,
         "page": 1,
@@ -2912,66 +2847,141 @@
         "options": [
           {
             "key": "a",
-            "pole": "fight",
-            "label": "Fight",
-            "how": "Defeat opponents"
+            "pole": "sensation",
+            "label": "Sensation",
+            "how": "Game as sense-pleasure"
           },
           {
             "key": "b",
-            "pole": "create",
-            "label": "Create",
-            "how": "Make art, music or levels"
+            "pole": "challenge",
+            "label": "Challenge",
+            "how": "Game as obstacle course"
           },
           {
             "key": "c",
-            "pole": "explore",
-            "label": "Explore",
-            "how": "Uncover places and secrets"
+            "pole": "expression",
+            "label": "Expression",
+            "how": "Game as self-discovery and creation"
           },
           {
             "key": "d",
-            "pole": "solve",
-            "label": "Solve",
-            "how": "Work out puzzles"
+            "pole": "fellowship",
+            "label": "Fellowship",
+            "how": "Game as social framework"
           }
         ],
-        "prompt": "What does the player mostly do, minute to minute? Pick all that apply. (page 1 of 2)",
-        "score": 0.7588166212497616,
+        "prompt": "Which kinds of fun matter most? Pick the strongest. Pick up to 3. (page 1 of 2)",
+        "score": 0.758844299499811,
         "answerMap": {
-          "Fight": "a",
-          "Create": "b",
-          "Explore": "c",
-          "Solve": "d",
+          "Sensation": "a",
+          "Challenge": "b",
+          "Expression": "c",
+          "Fellowship": "d",
           "Other": "neither"
         },
         "askUserQuestion": {
-          "question": "What does the player mostly do, minute to minute? Pick all that apply. (page 1 of 2)",
-          "header": "Core verbs",
+          "question": "Which kinds of fun matter most? Pick the strongest. Pick up to 3. (page 1 of 2)",
+          "header": "Aesthetics",
           "multiSelect": true,
           "options": [
             {
-              "label": "Fight",
-              "description": "Defeat opponents"
+              "label": "Sensation",
+              "description": "Game as sense-pleasure"
             },
             {
-              "label": "Create",
-              "description": "Make art, music or levels"
+              "label": "Challenge",
+              "description": "Game as obstacle course"
             },
             {
-              "label": "Explore",
-              "description": "Uncover places and secrets"
+              "label": "Expression",
+              "description": "Game as self-discovery and creation"
             },
             {
-              "label": "Solve",
-              "description": "Work out puzzles"
+              "label": "Fellowship",
+              "description": "Game as social framework"
             }
           ]
         }
       },
       "choice": "neither",
       "selected": [
-        "a"
+        "a",
+        "b",
+        "c"
       ]
+    },
+    {
+      "type": "answer",
+      "at": "2026-11-23T00:00:00.000Z",
+      "question": {
+        "questionId": "sim-physics_brawler:q44",
+        "axis": "exp.motivation",
+        "module": "experience",
+        "format": "poles",
+        "multi": true,
+        "page": 2,
+        "pages": 2,
+        "options": [
+          {
+            "key": "a",
+            "pole": "power",
+            "label": "Power",
+            "how": "Powerful characters and equipment"
+          },
+          {
+            "key": "b",
+            "pole": "fantasy",
+            "label": "Fantasy",
+            "how": "Being someone else, somewhere else"
+          },
+          {
+            "key": "c",
+            "pole": "design",
+            "label": "Design",
+            "how": "Expression and customization"
+          },
+          {
+            "key": "d",
+            "pole": "discovery",
+            "label": "Discovery",
+            "how": "Explore, tinker and experiment"
+          }
+        ],
+        "prompt": "Which player motivations should the game serve most? Pick up to 4. (page 2 of 2)",
+        "score": 0.3558715907462088,
+        "answerMap": {
+          "Power": "a",
+          "Fantasy": "b",
+          "Design": "c",
+          "Discovery": "d",
+          "Other": "neither"
+        },
+        "askUserQuestion": {
+          "question": "Which player motivations should the game serve most? Pick up to 4. (page 2 of 2)",
+          "header": "Motivation",
+          "multiSelect": true,
+          "options": [
+            {
+              "label": "Power",
+              "description": "Powerful characters and equipment"
+            },
+            {
+              "label": "Fantasy",
+              "description": "Being someone else, somewhere else"
+            },
+            {
+              "label": "Design",
+              "description": "Expression and customization"
+            },
+            {
+              "label": "Discovery",
+              "description": "Explore, tinker and experiment"
+            }
+          ]
+        }
+      },
+      "choice": "neither",
+      "selected": []
     },
     {
       "type": "answer",
@@ -3002,7 +3012,7 @@
           }
         ],
         "prompt": "Combat simulation: Blade & Sorcery or Batman: Arkham Asylum?",
-        "score": 0.2505935198095978,
+        "score": 0.2502385139098411,
         "answerMap": {
           "Blade & Sorcery": "a",
           "Batman: Arkham Asylum": "b",

@@ -77,6 +77,41 @@ describe('session fold', () => {
     expect(s2.axes.get('exp.tone')?.status).toBe('na');
   });
 
+  it('a no_pref multi axis selects no poles and sets no flags (#2)', () => {
+    const q: Question = {
+      questionId: 'f', axis: 'genre.form', module: 'genre', format: 'poles', multi: true,
+      options: [{ key: 'a', pole: 'moba', label: 'MOBA' }, { key: 'b', pole: 'battle_royale', label: 'Battle royale' }],
+    };
+    const s = foldSession(k, [
+      start,
+      { type: 'set', at, axis: 'frame.players', value: 'local_versus', confidence: 0.9, source: 'user_statement' },
+      answer(q, 'no_pref'),
+    ]);
+    expect(s.axes.get('genre.form')?.status).toBe('flexible');
+    expect(s.axes.get('genre.form')?.selected).toEqual([]);
+    expect(s.flags.is_online).toBe(false);
+  });
+
+  it('prior inclusion at 0.5 plus rounding noise never counts as selected (#2)', () => {
+    const s = foldSession(k, [start]);
+    for (const a of s.axes.values()) {
+      if (!a.inclusion) continue;
+      for (const p of a.selected ?? []) {
+        if (a.axis.kind === 'rank') continue;
+        expect(a.inclusion[p], `${a.axis.id}.${p}`).toBeGreaterThan(0.5 + 1e-6);
+      }
+    }
+  });
+
+  it('the sample session no longer reports online play for a local versus game (#2)', async () => {
+    const { readFileSync } = await import('node:fs');
+    const f = JSON.parse(readFileSync(new URL('../../examples/sample-session.json', import.meta.url), 'utf8'));
+    const s = foldSession(k, f.events);
+    expect(s.axes.get('frame.players')?.selected).toEqual(['local_versus']);
+    expect(s.flags.is_online).toBe(false);
+    expect(s.tensions.map((t) => t.id)).not.toContain('physics_melee_online_pvp');
+  });
+
   it('a binary A answer leans the axis to pole A even against the archetype prior', () => {
     const q: Question = { questionId: 'x', axis: 'exp.tone', module: 'experience', format: 'poles', multi: false, options: [{ key: 'a', pole: 'light', label: 'Lighthearted' }, { key: 'b', pole: 'grim', label: 'Grim' }] };
     const s = foldSession(k, [start, answer(q, 'a')]);

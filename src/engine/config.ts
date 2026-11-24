@@ -48,6 +48,11 @@ export const ENGINE = {
   pageSize: 4,
   /** Multi and rank axes stop paginating after this many pages; unseen poles count as not selected. */
   maxMultiPages: 2,
+  /**
+   * A multi or rank pole counts as selected only when its inclusion clears 0.5 by this margin. Inclusion of exactly
+   * 0.5 means "no information" (no archetype or answer speaks to the pole), and float noise around it must not decide.
+   */
+  multiSelectMargin: 0.01,
   /** A skipped axis is not offered again for this many answers. */
   skipCooldown: 5,
 } as const;

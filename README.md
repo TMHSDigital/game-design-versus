@@ -102,7 +102,7 @@ questions, none is asked about a module that does not apply, and each persona's 
 
 | Persona | Questions | Clarity | Top archetype |
 | --- | --- | --- | --- |
-| Physics brawler (Half Sword) | 45 | 0.812 | physics_brawler |
+| Physics brawler (Half Sword) | 45 | 0.816 | physics_brawler |
 | Business sim (Big Ambitions) | 35 | 0.802 | business_tycoon |
 | 4X (Civilization VI) | 44 | 0.801 | x4 |
 | Cozy farming | 36 | 0.800 | cozy_farming |
