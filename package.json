@@ -37,7 +37,9 @@
     "coverage": "tsx scripts/coverage-report.ts",
     "simulate": "tsx scripts/simulate.ts",
     "inspect": "npx -y @modelcontextprotocol/inspector@2.16.0 node plugins/game-design-versus/server/index.js",
-    "check": "npm run typecheck && npm run lint && npm run validate:data && npm run build && npm run test && npm run coverage"
+    "check": "npm run typecheck && npm run lint && npm run validate:data && npm run build && npm run test && npm run coverage",
+    "site:build": "node scripts/build-site.mjs",
+    "site": "node scripts/build-site.mjs && npx -y http-server@14.1.1 _site -p 4173 -c-1"
   },
   "dependencies": {
     "@modelcontextprotocol/server": "2.4.0",
