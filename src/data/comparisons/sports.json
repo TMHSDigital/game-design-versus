@@ -1,0 +1,199 @@
+[
+  {
+    "id": "cmp.sport.realism.eafc24-rocketleague",
+    "axis": "sport.realism",
+    "options": [
+      { "pole": "licensed", "game": "EA SPORTS FC 24", "year": 2023, "how": "Licensed clubs and players, HyperMotionV animation and Opta-informed PlayStyles; Ultimate Team collects real players." },
+      { "pole": "arcade", "game": "Rocket League", "year": 2015, "how": "Rocket cars hit an oversized ball in arcade soccer; boost, jumps and physics replace any real league." }
+    ],
+    "tags": { "genres": ["sports", "racing"], "platforms": ["pc", "console"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/2195250/", "note": "EA SPORTS FC 24: HyperMotionV, PlayStyles optimised by Opta, Ultimate Team" },
+      { "url": "https://store.steampowered.com/app/252950/", "note": "Rocket League: arcade-style soccer and vehicular mayhem, physics-driven" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.sport.realism.nba2k24-mariohoops",
+    "axis": "sport.realism",
+    "options": [
+      { "pole": "licensed", "game": "NBA 2K24", "year": 2023, "how": "Real NBA teams and stars, legends like Kobe Bryant, and MyTEAM built from licensed player cards." },
+      { "pole": "arcade", "game": "Mario Hoops 3-on-3", "year": 2006, "how": "3-on-3 Mario basketball: dribble through ? Panels for coins that boost your score, and use items on defense." }
+    ],
+    "tags": { "genres": ["sports"], "platforms": ["pc", "console", "handheld"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/2338770/", "note": "NBA 2K24: Kobe edition, MyTEAM packs, NBA 2K franchise" },
+      { "url": "https://www.mariowiki.com/Mario_Hoops_3-on-3", "note": "Mario Hoops 3-on-3: ? Panels give coins and items, not the real sport" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.sport.realism.madden25-speedball2",
+    "axis": "sport.realism",
+    "options": [
+      { "pole": "licensed", "game": "Madden NFL 25", "year": 2024, "how": "Licensed NFL teams in Franchise mode with a rebuilt NFL Draft, Roger Goodell, records and Super Bowl." },
+      { "pole": "arcade", "game": "Speedball 2: Brutal Deluxe", "year": 1990, "how": "An invented, brutal mix of handball and ice hockey at break-neck pace, with power-ups on the pitch." }
+    ],
+    "tags": { "genres": ["sports"], "platforms": ["pc", "console"], "era": "pre2000", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/2582560/", "note": "Madden NFL 25: Franchise mode, NFL Draft with Roger Goodell" },
+      { "url": "https://store.steampowered.com/app/251690/", "note": "Speedball 2: brutal mix of handball and ice hockey, power-ups, 1990 original" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.sport.realism.efootball-mariostrikerscharged",
+    "axis": "sport.realism",
+    "options": [
+      { "pole": "licensed", "game": "eFootball", "year": 2021, "how": "Play as real clubs and national sides, sign current stars and legends, and get updates from real-life matches." },
+      { "pole": "arcade", "game": "Mario Strikers Charged", "year": 2007, "how": "Mario soccer with captain Super Abilities and Mega Strikes that can score up to six goals at once." }
+    ],
+    "tags": { "genres": ["sports"], "platforms": ["pc", "console", "mobile"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/1665460/", "note": "eFootball: real clubs and national sides, data from real-life matches" },
+      { "url": "https://www.mariowiki.com/Mario_Strikers_Charged", "note": "Mario Strikers Charged: Super Abilities and Mega Strike for up to six goals" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.sport.realism.topspin2k25-mariotennisaces",
+    "axis": "sport.realism",
+    "options": [
+      { "pole": "licensed", "game": "TopSpin 2K25", "year": 2024, "how": "Real pros such as Federer and Serena Williams with custom animations mirroring their real-life form, plus realistic physics." },
+      { "pole": "arcade", "game": "Mario Tennis Aces", "year": 2018, "how": "Zone Shots and Special Shots can break rackets; lose all your rackets and you retire from the match." }
+    ],
+    "tags": { "genres": ["sports"], "platforms": ["pc", "console"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/1785650/", "note": "TopSpin 2K25: play as icons like Federer and Serena, realistic physics" },
+      { "url": "https://www.mariowiki.com/Mario_Tennis_Aces", "note": "Mario Tennis Aces: Zone and Special Shots damage rackets" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.sport.realism.pgatour-golfwithyourfriends",
+    "axis": "sport.realism",
+    "options": [
+      { "pole": "licensed", "game": "EA SPORTS PGA TOUR", "year": 2023, "how": "Licensed Majors and Augusta National, with the Pure Strike swing system for realistic shot-making." },
+      { "pole": "arcade", "game": "Golf With Your Friends", "year": 2020, "how": "Up to 12 players putt simultaneously on themed mini golf courses where nothing is out of bounds." }
+    ],
+    "tags": { "genres": ["sports", "party"], "platforms": ["pc", "console"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/1677350/", "note": "EA SPORTS PGA TOUR: Augusta National, the Majors, Pure Strike" },
+      { "url": "https://store.steampowered.com/app/431240/", "note": "Golf With Your Friends: simultaneous mini golf for up to 12 players" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.sport.realism.nba2k24-lethalleagueblaze",
+    "axis": "sport.realism",
+    "options": [
+      { "pole": "licensed", "game": "NBA 2K24", "year": 2023, "how": "Built on the real league: licensed NBA players and legends drive modes like MyTEAM." },
+      { "pole": "arcade", "game": "Lethal League Blaze", "year": 2018, "how": "An invented anti-gravity ball game: every strike speeds the ball up, doubling to extreme velocities." }
+    ],
+    "tags": { "genres": ["sports", "fighting"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/2338770/", "note": "NBA 2K24: NBA 2K franchise, Kobe edition, MyTEAM" },
+      { "url": "https://store.steampowered.com/app/553310/", "note": "Lethal League Blaze: anti-gravity ball game, strikes speed up the ball" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.sport.realism.pgatour-mariogolfsuperrush",
+    "axis": "sport.realism",
+    "options": [
+      { "pole": "licensed", "game": "EA SPORTS PGA TOUR", "year": 2023, "how": "Recreates real tournaments, including the Masters at Augusta National, shot by shot." },
+      { "pole": "arcade", "game": "Mario Golf: Super Rush", "year": 2021, "how": "Speed Golf and Battle Golf make golfers physically run to the ball between swings under time pressure." }
+    ],
+    "tags": { "genres": ["sports"], "platforms": ["pc", "console"], "era": "2020s", "indie": false },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/1677350/", "note": "EA SPORTS PGA TOUR: Augusta National and the Masters" },
+      { "url": "https://www.mariowiki.com/Mario_Golf:_Super_Rush", "note": "Mario Golf: Super Rush: Speed Golf and Battle Golf, run to the ball between swings" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.sport.realism.fc25-rematch",
+    "axis": "sport.realism",
+    "options": [
+      { "pole": "licensed", "game": "EA SPORTS FC 25", "year": 2024, "how": "19,000+ licensed players across 700+ teams, with FC IQ player roles driven by an AI model trained on real-world data." },
+      { "pole": "arcade", "game": "Rematch", "year": 2025, "how": "Online football with no fouls, no offsides and no pauses; winning rests on accuracy, fast reactions and team collaboration." }
+    ],
+    "tags": { "genres": ["sports"], "platforms": ["pc", "console"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://www.ea.com/games/ea-sports-fc/fc-25", "note": "EA SPORTS FC 25: 19,000+ players across 700+ teams; FC IQ uses an AI model powered by real-world data" },
+      { "url": "https://www.playrematch.com/", "note": "Rematch: no fouls, no offsides, no pauses; accuracy, fast reactions and team collaboration" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.sport.realism.fc25-captaintsubasa",
+    "axis": "sport.realism",
+    "options": [
+      { "pole": "licensed", "game": "EA SPORTS FC 25", "year": 2024, "how": "Real clubs, competitions and stars; career modes can start from real-world storylines through Live Start Points." },
+      { "pole": "arcade", "game": "Captain Tsubasa: Rise of New Champions", "year": 2020, "how": "Anime action football built around flashy super plays from the Captain Tsubasa series, with two story modes." }
+    ],
+    "tags": { "genres": ["sports"], "platforms": ["pc", "console"], "era": "2020s", "indie": false },
+    "sources": [
+      { "url": "https://www.ea.com/games/ea-sports-fc/fc-25", "note": "EA SPORTS FC 25: football's biggest competitions, clubs and stars; Live Start Points for real-world storylines" },
+      { "url": "https://www.nintendo.com/us/store/products/captain-tsubasa-rise-of-new-champions-switch/", "note": "Captain Tsubasa: Rise of New Champions: action soccer game with super plays, based on the anime" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.sport.realism.nba2k25-nintendoswitchsports",
+    "axis": "sport.realism",
+    "options": [
+      { "pole": "licensed", "game": "NBA 2K25", "year": 2024, "how": "Licensed NBA and WNBA teams; ProPLAY turns movement from actual NBA footage into on-court gameplay." },
+      { "pole": "arcade", "game": "Nintendo Switch Sports", "year": 2022, "how": "Motion-controlled sports with Joy-Con swings and kicks, including invented Chambara swordplay; no real leagues or athletes." }
+    ],
+    "tags": { "genres": ["sports"], "platforms": ["pc", "console"], "era": "2020s", "indie": false },
+    "sources": [
+      { "url": "https://nba.2k.com/2k25/", "note": "NBA 2K25: ProPLAY takes authentic movements from actual NBA footage; NBA and WNBA teams" },
+      { "url": "https://www.nintendo.com/us/store/products/nintendo-switch-sports-switch/", "note": "Nintendo Switch Sports: Basketball, Soccer, Volleyball, Bowling, Tennis, Badminton and Chambara with motion controls" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.sport.realism.nba2k25-windjammers2",
+    "axis": "sport.realism",
+    "options": [
+      { "pole": "licensed", "game": "NBA 2K25", "year": 2024, "how": "Real NBA and WNBA rosters and cover athletes; authenticity is the pitch, with animation drawn from real NBA games." },
+      { "pole": "arcade", "game": "Windjammers 2", "year": 2022, "how": "An invented flying-disc sport: hurl discs at the rival's goal with slapshots, dropshots, jumps, smashes and a powerful EX Move." }
+    ],
+    "tags": { "genres": ["sports"], "platforms": ["pc", "console"], "era": "2020s", "indie": false },
+    "sources": [
+      { "url": "https://nba.2k.com/2k25/", "note": "NBA 2K25: NBA and WNBA teams, real cover athletes, ProPLAY from actual NBA footage" },
+      { "url": "https://www.nintendo.com/us/store/products/windjammers-2-switch/", "note": "Windjammers 2: throw flying discs at opponents; slapshot, dropshot, jump, smash and EX Move" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.sport.realism.mlbtheshow25-nintendoswitchsports",
+    "axis": "sport.realism",
+    "options": [
+      { "pole": "licensed", "game": "MLB The Show 25", "year": 2025, "how": "Officially licensed MLB players, a Road to the Show career, and historic Legends to build into a squad." },
+      { "pole": "arcade", "game": "Nintendo Switch Sports", "year": 2022, "how": "Pass a Joy-Con to a friend for quick 1v1 or 2v2 matches; you curve bowling balls and spin tennis shots with simple motions." }
+    ],
+    "tags": { "genres": ["sports"], "platforms": ["console"], "era": "2020s", "indie": false },
+    "sources": [
+      { "url": "https://www.playstation.com/en-us/games/mlb-the-show-25/", "note": "MLB The Show 25: Road To The Show, historic Legends, Franchise mode" },
+      { "url": "https://mlbtheshow.com/", "note": "MLB The Show: Officially Licensed Product of MLB Players, Inc." },
+      { "url": "https://www.nintendo.com/us/store/products/nintendo-switch-sports-switch/", "note": "Nintendo Switch Sports: curve your bowling ball, add spin to a tennis shot, pass a Joy-Con for 1v1 or 2v2" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.sport.realism.wwe2k24-mariostrikersbattleleague",
+    "axis": "sport.realism",
+    "options": [
+      { "pole": "licensed", "game": "WWE 2K24", "year": 2024, "how": "Real WWE Superstars, plus a Showcase mode that recreates the greatest matches from forty years of WrestleMania." },
+      { "pole": "arcade", "game": "Mario Strikers: Battle League", "year": 2022, "how": "Strike: 5-on-5 soccer with no rules, where you tackle rivals, use items and fire score-boosting Hyper Strikes." }
+    ],
+    "tags": { "genres": ["sports"], "platforms": ["pc", "console"], "era": "2020s", "indie": false },
+    "sources": [
+      { "url": "https://wwe.2k.com/2k24/", "note": "WWE 2K24: real WWE Superstars; 2K Showcase of the Immortals recreates WrestleMania matches" },
+      { "url": "https://www.nintendo.com/us/store/products/mario-strikers-battle-league-switch/", "note": "Mario Strikers: Battle League: 5-on-5 soccer-like sport with no rules, items and Hyper Strikes" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  }
+]

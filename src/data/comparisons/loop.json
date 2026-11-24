@@ -1,0 +1,1131 @@
+[
+  {
+    "id": "cmp.loop.cadence.hotlinemiami-frozensynapse",
+    "axis": "loop.cadence",
+    "options": [
+      {
+        "pole": "execution",
+        "game": "Hotline Miami",
+        "year": 2012,
+        "how": "One-hit deaths make reflexes and quick aim decide each room; restarts are instant."
+      },
+      {
+        "pole": "planning",
+        "game": "Frozen Synapse",
+        "year": 2011,
+        "how": "Both players plot squad moves and then watch the turn resolve at the same time."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "strategy",
+        "action"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Hotline_Miami",
+        "note": "Hotline Miami: One-hit deaths make reflexes and quick aim decide each room; restarts are instant"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Frozen_Synapse",
+        "note": "Frozen Synapse: Both players plot squad moves and then watch the turn resolve at the same time"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.cadence.clashroyale-hearthstone",
+    "axis": "loop.cadence",
+    "options": [
+      {
+        "pole": "execution",
+        "game": "Clash Royale",
+        "year": 2016,
+        "how": "Real-time duels where elixir regenerates and timing card drops against enemy pushes decides fights."
+      },
+      {
+        "pole": "planning",
+        "game": "Hearthstone",
+        "year": 2014,
+        "how": "Turn-based card play: each turn the player plans mana use and attack order before ending it."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "strategy"
+      ],
+      "platforms": [
+        "mobile",
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Clash_Royale",
+        "note": "Clash Royale: Real-time duels where elixir regenerates and timing card drops against enemy pushes"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Hearthstone",
+        "note": "Hearthstone: Turn-based card play: each turn the player plans mana use and attack order before ending"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.cadence.tetris-babaisyou",
+    "axis": "loop.cadence",
+    "options": [
+      {
+        "pole": "execution",
+        "game": "Tetris (Game Boy)",
+        "year": 1989,
+        "how": "Pieces fall under gravity and speed up as levels rise; placement must be decided in the moment."
+      },
+      {
+        "pole": "planning",
+        "game": "Baba Is You",
+        "year": 2019,
+        "how": "No timers: the player pushes word blocks to rewrite rules and can undo freely while working out a solution."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle"
+      ],
+      "platforms": [
+        "handheld",
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Tetris",
+        "note": "Tetris (Game Boy): Pieces fall under gravity and speed up as levels rise; placement must be decided in the"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Baba_Is_You",
+        "note": "Baba Is You: No timers: the player pushes word blocks to rewrite rules and can undo freely while"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.cadence.necrodancer-intothebreach",
+    "axis": "loop.cadence",
+    "options": [
+      {
+        "pole": "execution",
+        "game": "Crypt of the NecroDancer",
+        "year": 2015,
+        "how": "Every move must land on the beat of the music; missing the rhythm breaks the combo."
+      },
+      {
+        "pole": "planning",
+        "game": "Into the Breach",
+        "year": 2018,
+        "how": "Enemies telegraph their attacks a turn ahead, so each turn is a puzzle the player plans out."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rhythm",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Crypt_of_the_NecroDancer",
+        "note": "Crypt of the NecroDancer: Every move must land on the beat of the music; missing the rhythm breaks the combo"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Into_the_Breach",
+        "note": "Into the Breach: Enemies telegraph their attacks a turn ahead, so each turn is a puzzle the player plans"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.cadence.pes6-footballmanager",
+    "axis": "loop.cadence",
+    "options": [
+      {
+        "pole": "execution",
+        "game": "Pro Evolution Soccer 6",
+        "year": 2006,
+        "how": "The player directly controls passing, shooting and tackling in real time."
+      },
+      {
+        "pole": "planning",
+        "game": "Football Manager 2005",
+        "year": 2004,
+        "how": "The player sets tactics, training and transfers, then watches the match engine play."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "sports",
+        "simulation"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Pro_Evolution_Soccer_6",
+        "note": "Pro Evolution Soccer 6: The player directly controls passing, shooting and tackling in real time"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Football_Manager_2005",
+        "note": "Football Manager 2005: The player sets tactics, training and transfers, then watches the match engine play"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.cadence.supermeatboy-lemmings",
+    "axis": "loop.cadence",
+    "options": [
+      {
+        "pole": "execution",
+        "game": "Super Meat Boy",
+        "year": 2010,
+        "how": "Precise jumps and wall jumps against saws; success depends on input timing."
+      },
+      {
+        "pole": "planning",
+        "game": "Lemmings",
+        "year": 1991,
+        "how": "The player assigns skills like digger and blocker to walking lemmings to plan a route to the exit."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Super_Meat_Boy",
+        "note": "Super Meat Boy: Precise jumps and wall jumps against saws; success depends on input timing"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Lemmings_(video_game)",
+        "note": "Lemmings: The player assigns skills like digger and blocker to walking lemmings to plan a route to"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.goal.smb3-terraria",
+    "axis": "loop.goal",
+    "options": [
+      {
+        "pole": "explicit",
+        "game": "Super Mario Bros. 3",
+        "year": 1988,
+        "how": "Each level ends at a goal card and the map shows the next level to clear."
+      },
+      {
+        "pole": "self",
+        "game": "Terraria",
+        "year": 2011,
+        "how": "No required objective: players pick which bosses, biomes or builds to pursue."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "sandbox"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.mariowiki.com/Goal_(Super_Mario_Bros._3)",
+        "note": "Super Mario Bros. 3: Each level ends at a goal card and the map shows the next level to clear"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Terraria",
+        "note": "Terraria: No required objective: players pick which bosses, biomes or builds to pursue"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.goal.pilotwings-msfs2020",
+    "axis": "loop.goal",
+    "options": [
+      {
+        "pole": "explicit",
+        "game": "Pilotwings",
+        "year": 1990,
+        "how": "Licence lessons set targets such as rings to fly through and landing zones; instructors score each event in points to earn licences."
+      },
+      {
+        "pole": "self",
+        "game": "Microsoft Flight Simulator (2020)",
+        "year": 2020,
+        "how": "Free flight lets the player pick any aircraft, airport and weather and fly anywhere on Earth."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Pilotwings_(video_game)",
+        "note": "Pilotwings: Licence lessons set targets such as rings to fly through and landing zones; instructors"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Microsoft_Flight_Simulator_(2020_video_game)",
+        "note": "Microsoft Flight Simulator (2020): Free flight lets the player pick any aircraft, airport and weather and fly anywhere on"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.goal.starcraft-crusaderkings2",
+    "axis": "loop.goal",
+    "options": [
+      {
+        "pole": "explicit",
+        "game": "StarCraft",
+        "year": 1998,
+        "how": "Each campaign mission states its objectives, such as destroy a base or escort a hero."
+      },
+      {
+        "pole": "self",
+        "game": "Crusader Kings II",
+        "year": 2012,
+        "how": "No set win condition: players pursue their own dynastic ambitions across centuries."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/StarCraft_(video_game)",
+        "note": "StarCraft: Each campaign mission states its objectives, such as destroy a base or escort a hero"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Crusader_Kings_II",
+        "note": "Crusader Kings II: No set win condition: players pursue their own dynastic ambitions across centuries"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.goal.starfox-elite",
+    "axis": "loop.goal",
+    "options": [
+      {
+        "pole": "explicit",
+        "game": "Star Fox",
+        "year": 1993,
+        "how": "On-rails missions route the player through set levels to defeat each boss."
+      },
+      {
+        "pole": "self",
+        "game": "Elite",
+        "year": 1984,
+        "how": "Open space: the player chooses to trade, pirate, hunt or explore between star systems."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "simulation"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Star_Fox_(1993_video_game)",
+        "note": "Star Fox: On-rails missions route the player through set levels to defeat each boss"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Elite_(video_game)",
+        "note": "Elite: Open space: the player chooses to trade, pirate, hunt or explore between star systems"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.goal.rollercoastertycoon-citiesskylines",
+    "axis": "loop.goal",
+    "options": [
+      {
+        "pole": "explicit",
+        "game": "RollerCoaster Tycoon",
+        "year": 1999,
+        "how": "Each scenario sets a goal such as a guest count and park rating by a deadline."
+      },
+      {
+        "pole": "self",
+        "game": "Cities: Skylines",
+        "year": 2015,
+        "how": "No scenario goal by default; players decide what city to build as it unlocks."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/RollerCoaster_Tycoon",
+        "note": "RollerCoaster Tycoon: Each scenario sets a goal such as a guest count and park rating by a deadline"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Cities:_Skylines",
+        "note": "Cities: Skylines: No scenario goal by default; players decide what city to build as it unlocks"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.goal.pikmin-animalcrossing",
+    "axis": "loop.goal",
+    "options": [
+      {
+        "pole": "explicit",
+        "game": "Pikmin",
+        "year": 2001,
+        "how": "Olimar must recover his ship parts within 30 days, with each part a clear target."
+      },
+      {
+        "pole": "self",
+        "game": "Animal Crossing",
+        "year": 2001,
+        "how": "No end goal: players decide each day whether to fish, decorate, pay off loans or visit neighbors."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "simulation"
+      ],
+      "platforms": [
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Pikmin_(video_game)",
+        "note": "Pikmin: Olimar must recover his ship parts within 30 days, with each part a clear target"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Animal_Crossing_(video_game)",
+        "note": "Animal Crossing: No end goal: players decide each day whether to fish, decorate, pay off loans or visit"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.run.ultima4-rogue",
+    "axis": "loop.run",
+    "options": [
+      {
+        "pole": "campaign",
+        "game": "Ultima IV: Quest of the Avatar",
+        "year": 1985,
+        "how": "One long playthrough where virtue, party and items build toward becoming the Avatar."
+      },
+      {
+        "pole": "runs",
+        "game": "Rogue",
+        "year": 1980,
+        "how": "Each game generates a new dungeon; death is permanent and play starts over."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Ultima_IV:_Quest_of_the_Avatar",
+        "note": "Ultima IV: Quest of the Avatar: One long playthrough where virtue, party and items build toward becoming the Avatar"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Rogue_(video_game)",
+        "note": "Rogue: Each game generates a new dungeon; death is permanent and play starts over"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.run.pokemontcg-balatro",
+    "axis": "loop.run",
+    "options": [
+      {
+        "pole": "campaign",
+        "game": "Pokémon Trading Card Game",
+        "year": 1998,
+        "how": "One save collects cards and beats eight Club Masters on the way to the Grand Masters."
+      },
+      {
+        "pole": "runs",
+        "game": "Balatro",
+        "year": 2024,
+        "how": "Each run builds a fresh joker set across antes; losing ends the run and play restarts."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "rpg"
+      ],
+      "platforms": [
+        "handheld",
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Trading_Card_Game_(video_game)",
+        "note": "Pokémon Trading Card Game: One save collects cards and beats eight Club Masters on the way to the Grand Masters"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Balatro",
+        "note": "Balatro: Each run builds a fresh joker set across antes; losing ends the run and play restarts"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.run.supermarioworld-spelunky2",
+    "axis": "loop.run",
+    "options": [
+      {
+        "pole": "campaign",
+        "game": "Super Mario World",
+        "year": 1990,
+        "how": "Cleared levels and found exits are saved on the world map across a long adventure."
+      },
+      {
+        "pole": "runs",
+        "game": "Spelunky 2",
+        "year": 2020,
+        "how": "Procedural levels and permadeath: each death sends the player back to the first level, unless shortcut tunnels are unlocked."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Super_Mario_World",
+        "note": "Super Mario World: Cleared levels and found exits are saved on the world map across a long adventure"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Spelunky_2",
+        "note": "Spelunky 2: Procedural levels and permadeath: each death sends the player back to the first level"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.run.masseffect-ftl",
+    "axis": "loop.run",
+    "options": [
+      {
+        "pole": "campaign",
+        "game": "Mass Effect",
+        "year": 2007,
+        "how": "Choices made across one campaign carry into the sequels via save import."
+      },
+      {
+        "pole": "runs",
+        "game": "FTL: Faster Than Light",
+        "year": 2012,
+        "how": "Each run is a new route through sectors; losing the ship ends the run."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Mass_Effect_(video_game)",
+        "note": "Mass Effect: Choices made across one campaign carry into the sequels via save import"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/FTL:_Faster_Than_Light",
+        "note": "FTL: Faster Than Light: Each run is a new route through sectors; losing the ship ends the run"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.run.borderlands2-riskofrain2",
+    "axis": "loop.run",
+    "options": [
+      {
+        "pole": "campaign",
+        "game": "Borderlands 2",
+        "year": 2012,
+        "how": "Levels, skills and gear persist through one story campaign and replays."
+      },
+      {
+        "pole": "runs",
+        "game": "Risk of Rain 2",
+        "year": 2019,
+        "how": "Items stack within a run and are lost on death; only unlocks carry over."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Borderlands_2",
+        "note": "Borderlands 2: Levels, skills and gear persist through one story campaign and replays"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Risk_of_Rain_2",
+        "note": "Risk of Rain 2: Items stack within a run and are lost on death; only unlocks carry over"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.run.symphonyofthenight-deadcells",
+    "axis": "loop.run",
+    "options": [
+      {
+        "pole": "campaign",
+        "game": "Castlevania: Symphony of the Night",
+        "year": 1997,
+        "how": "One castle explored and mapped across a long save, with gear and levels kept."
+      },
+      {
+        "pole": "runs",
+        "game": "Dead Cells",
+        "year": 2018,
+        "how": "Biomes are rebuilt each run; death resets to the start, keeping only unlocks."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "action"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Castlevania:_Symphony_of_the_Night",
+        "note": "Castlevania: Symphony of the Night: One castle explored and mapped across a long save, with gear and levels kept"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Dead_Cells",
+        "note": "Dead Cells: Biomes are rebuilt each run; death resets to the start, keeping only unlocks"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.run.shovelknight-downwell",
+    "axis": "loop.run",
+    "options": [
+      {
+        "pole": "campaign",
+        "game": "Shovel Knight",
+        "year": 2014,
+        "how": "Stages on a world map, with checkpoints and saved upgrades throughout one adventure."
+      },
+      {
+        "pole": "runs",
+        "game": "Downwell",
+        "year": 2015,
+        "how": "Each run descends a freshly generated well; dying starts over from the top."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Shovel_Knight",
+        "note": "Shovel Knight: Stages on a world map, with checkpoints and saved upgrades throughout one adventure"
+      },
+      {
+        "url": "https://store.steampowered.com/app/360740/Downwell/",
+        "note": "Downwell: Each run descends a freshly generated well; dying starts over from the top"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.time.commandandconquer-xcom",
+    "axis": "loop.time",
+    "options": [
+      {
+        "pole": "realtime",
+        "game": "Command & Conquer",
+        "year": 1995,
+        "how": "Units and enemy production keep moving while the player issues orders."
+      },
+      {
+        "pole": "turns",
+        "game": "X-COM: UFO Defense",
+        "year": 1994,
+        "how": "Tactical battles use time units; aliens act only after the player ends the turn."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Command_%26_Conquer_(1995_video_game)",
+        "note": "Command & Conquer: Units and enemy production keep moving while the player issues orders"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/UFO:_Enemy_Unknown",
+        "note": "X-COM: UFO Defense: Tactical battles use time units; aliens act only after the player ends the turn"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.time.puzzlefighter-puzzlequest",
+    "axis": "loop.time",
+    "options": [
+      {
+        "pole": "realtime",
+        "game": "Super Puzzle Fighter II Turbo",
+        "year": 1996,
+        "how": "Both players drop gems simultaneously and send counter gems in real time."
+      },
+      {
+        "pole": "turns",
+        "game": "Puzzle Quest: Challenge of the Warlords",
+        "year": 2007,
+        "how": "Match-3 duels alternate turns between player and enemy on a shared board."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle",
+        "rpg"
+      ],
+      "platforms": [
+        "console",
+        "pc",
+        "handheld"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Super_Puzzle_Fighter_II_Turbo",
+        "note": "Super Puzzle Fighter II Turbo: Both players drop gems simultaneously and send counter gems in real time"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Puzzle_Quest:_Challenge_of_the_Warlords",
+        "note": "Puzzle Quest: Challenge of the Warlords: Match-3 duels alternate turns between player and enemy on a shared board"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.time.necrodancer-nethack",
+    "axis": "loop.time",
+    "options": [
+      {
+        "pole": "realtime",
+        "game": "Crypt of the NecroDancer",
+        "year": 2015,
+        "how": "Enemies move on every beat of the music whether or not the player acts."
+      },
+      {
+        "pole": "turns",
+        "game": "NetHack",
+        "year": 1987,
+        "how": "Nothing moves until the player takes an action; each move is one turn."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "rhythm"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Crypt_of_the_NecroDancer",
+        "note": "Crypt of the NecroDancer: Enemies move on every beat of the music whether or not the player acts"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/NetHack",
+        "note": "NetHack: Nothing moves until the player takes an action; each move is one turn"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.time.hotlinemiami-frozensynapse-superhot",
+    "axis": "loop.time",
+    "options": [
+      {
+        "pole": "realtime",
+        "game": "Hotline Miami",
+        "year": 2012,
+        "how": "Enemies keep patrolling and reacting in real time whether or not the player hesitates."
+      },
+      {
+        "pole": "turns",
+        "game": "Frozen Synapse",
+        "year": 2011,
+        "how": "Both sides plan, then a five-second turn resolves simultaneously."
+      },
+      {
+        "pole": "blend",
+        "game": "Superhot",
+        "year": 2016,
+        "how": "Time slows almost to a stop when the player stands still and speeds up when they move."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Hotline_Miami",
+        "note": "Hotline Miami: Enemies keep patrolling and reacting in real time whether or not the player hesitates"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Frozen_Synapse",
+        "note": "Frozen Synapse: Both sides plan, then a five-second turn resolves simultaneously"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Superhot",
+        "note": "Superhot: Time slows almost to a stop when the player stands still and speeds up when they move"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.time.secretofmana-pokemonredblue",
+    "axis": "loop.time",
+    "options": [
+      {
+        "pole": "realtime",
+        "game": "Secret of Mana",
+        "year": 1993,
+        "how": "Real-time combat with a weapon charge gauge; enemies attack while the player moves."
+      },
+      {
+        "pole": "turns",
+        "game": "Pokémon Red and Blue",
+        "year": 1996,
+        "how": "Battles wait for the player to choose a move each turn."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg"
+      ],
+      "platforms": [
+        "console",
+        "handheld"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Secret_of_Mana",
+        "note": "Secret of Mana: Real-time combat with a weapon charge gauge; enemies attack while the player moves"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Red,_Blue,_and_Yellow",
+        "note": "Pokémon Red and Blue: Battles wait for the player to choose a move each turn"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.loop.time.ftl-intothebreach",
+    "axis": "loop.time",
+    "options": [
+      {
+        "pole": "realtime",
+        "game": "FTL: Faster Than Light",
+        "year": 2012,
+        "how": "Ship combat runs in real time; the player can pause to give orders."
+      },
+      {
+        "pole": "turns",
+        "game": "Into the Breach",
+        "year": 2018,
+        "how": "Mechs and Vek alternate turns on a grid; nothing moves until the player ends the turn."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/FTL:_Faster_Than_Light",
+        "note": "FTL: Faster Than Light: Ship combat runs in real time; the player can pause to give orders"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Into_the_Breach",
+        "note": "Into the Breach: Mechs and Vek alternate turns on a grid; nothing moves until the player ends the turn"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  }
+]

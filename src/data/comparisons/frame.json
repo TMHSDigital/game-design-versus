@@ -1,0 +1,674 @@
+[
+  {
+    "id": "cmp.frame.session.cookieclicker-heartsofiron4",
+    "axis": "frame.session",
+    "options": [
+      { "pole": "short", "game": "Cookie Clicker", "year": 2013, "how": "Production keeps running offline once unlocked, so a visit is a quick check-in to spend cookies on buildings and upgrades." },
+      { "pole": "long", "game": "Hearts of Iron IV", "year": 2016, "how": "Campaigns can last dozens of hours; a 1936 start adds years of war preparation and prolongs an already lengthy game." }
+    ],
+    "tags": { "genres": ["idle", "strategy"], "platforms": ["web", "pc", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://cookieclicker.wiki.gg/wiki/Prestige", "note": "Cookie Clicker: offline production unlocked and boosted by prestige upgrades" },
+      { "url": "https://kotaku.com/hearts-of-iron-iv-the-kotaku-re-review-1847022998", "note": "Hearts of Iron IV: campaigns last dozens of hours; 1936 start prolongs them" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.session.quiplash3-footballmanager2024",
+    "axis": "frame.session",
+    "options": [
+      { "pole": "short", "game": "Quiplash 3", "year": 2020, "how": "A full game is three rounds of typed answers and votes, listed by Jackbox at about 15 minutes for 3 to 8 players." },
+      { "pole": "long", "game": "Football Manager 2024", "year": 2023, "how": "A season can take around 50 hours; pre-season tactics and training alone can fill five hours before the first match." }
+    ],
+    "tags": { "genres": ["party", "sports", "simulation"], "platforms": ["pc", "console", "mobile"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://www.jackboxgames.com/quiplash-three", "note": "Quiplash 3: listed duration 15 minutes, 3 to 8 players" },
+      { "url": "https://www.pcgamesn.com/football-manager-2024/review", "note": "Football Manager 2024: a season might take 50 hours; five hours of pre-season setup" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.session.clashroyale-heartsofiron4",
+    "axis": "frame.session",
+    "options": [
+      { "pole": "short", "game": "Clash Royale", "year": 2016, "how": "Real-time matches are capped at five minutes including a two-minute overtime, so a session is one or two battles on a phone." },
+      { "pole": "long", "game": "Hearts of Iron IV", "year": 2016, "how": "Start in 1939 with war already lined up, or in 1936 to build up yourself; either way a campaign is a multi-sitting commitment." }
+    ],
+    "tags": { "genres": ["strategy", "card"], "platforms": ["mobile", "pc"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://supercell.com/en/games/clashroyale/blog/release-notes/november-update", "note": "Clash Royale: games are 5 minutes long, overtime 2 minutes" },
+      { "url": "https://kotaku.com/hearts-of-iron-iv-the-kotaku-re-review-1847022998", "note": "Hearts of Iron IV: 1936 or 1939 starts; campaigns last dozens of hours" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.session.wordle-footballmanager2024",
+    "axis": "frame.session",
+    "options": [
+      { "pole": "short", "game": "Wordle", "year": 2021, "how": "One shared puzzle per day with six guesses; a session ends in minutes and the next one waits until midnight." },
+      { "pole": "long", "game": "Football Manager 2024", "year": 2023, "how": "Engaging with every system stretches a season to 50 hours, and reviewers expect to sink hundreds of hours a year into it." }
+    ],
+    "tags": { "genres": ["puzzle", "sports", "simulation"], "platforms": ["web", "pc", "console", "mobile"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://www.npr.org/2022/01/12/1071840091/wordle-word-game-tips", "note": "Wordle: one word per day, six tries, deliberate daily limit" },
+      { "url": "https://www.pcgamesn.com/football-manager-2024/review", "note": "Football Manager 2024: season might take 50 hours; 300+ hours a year" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.length.portal-pathofexile",
+    "axis": "frame.length",
+    "options": [
+      { "pole": "finite", "game": "Portal", "year": 2007, "how": "A run of test chambers lasting roughly two to four hours that closes with its final chambers and the credits song Still Alive." },
+      { "pole": "endless", "game": "Path of Exile", "year": 2013, "how": "New challenge leagues launch about every 13 weeks with a fresh economy; characters later move into the permanent leagues." }
+    ],
+    "tags": { "genres": ["puzzle", "action", "rpg"], "platforms": ["pc", "console"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://www.destructoid.com/destructoid-review-portal/", "note": "Portal: short campaign of test chambers" },
+      { "url": "https://www.poewiki.net/wiki/League", "note": "Path of Exile: challenge leagues every 13 to 16 weeks, fresh economy, transfer to permanent leagues" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.length.inside-animalcrossingnewhorizons",
+    "axis": "frame.length",
+    "options": [
+      { "pole": "finite", "game": "Inside", "year": 2016, "how": "A three to four hour side-scrolling journey to a fixed ending, with a hidden alternate ending for players who find every secret." },
+      { "pole": "endless", "game": "Animal Crossing: New Horizons", "year": 2020, "how": "Runs on the real clock and calendar; upgrades wait for real days to pass and there is no end game, only the island you shape." }
+    ],
+    "tags": { "genres": ["puzzle", "platformer", "simulation"], "platforms": ["pc", "console", "handheld"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://gamespot.com/reviews/inside-review/1900-6416458/", "note": "Inside: roughly three to four hour playthrough" },
+      { "url": "https://gameinformer.com/review/animal-crossing-new-horizons/a-wholesome-island-oasis-animal-crossing-new-horizons-review", "note": "Animal Crossing: New Horizons: real-time calendar, no end game" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.length.supermariobros-thesims",
+    "axis": "frame.length",
+    "options": [
+      { "pole": "finite", "game": "Super Mario Bros.", "year": 1985, "how": "Eight worlds of four levels end when Mario frees the princess in World 8, then offer a harder second quest." },
+      { "pole": "endless", "game": "The Sims", "year": 2000, "how": "No win condition or ending: players set their own goals for a household that can keep living indefinitely." }
+    ],
+    "tags": { "genres": ["platformer", "simulation"], "platforms": ["console", "pc"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Super_Mario_Bros.", "note": "Super Mario Bros.: eight worlds of four levels, princess rescued in World 8, new quest" },
+      { "url": "https://www.npr.org/2025/02/01/nx-s1-5247661/the-sims-gamings-ultimate-social-sandbox-turns-25", "note": "The Sims: open-ended sandbox without set goals or a way to win" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.length.whatremainsofedithfinch-candycrushsaga",
+    "axis": "frame.length",
+    "options": [
+      { "pole": "finite", "game": "What Remains of Edith Finch", "year": 2017, "how": "About two hours of family vignettes, paced to be finished in a single sitting like a film." },
+      { "pole": "endless", "game": "Candy Crush Saga", "year": 2012, "how": "Over 17,000 levels and counting, with new batches added every week, so the saga map never runs out." }
+    ],
+    "tags": { "genres": ["narrative", "puzzle"], "platforms": ["pc", "console", "mobile", "web"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.thexboxhub.com/remains-edith-finch-review/", "note": "What Remains of Edith Finch: short runtime compared to a film" },
+      { "url": "https://www.pocketgamer.com/candy-crush-saga/how-many-levels-are-there", "note": "Candy Crush Saga: about 17,000 levels, new levels each week" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.length.guitarhero-osu",
+    "axis": "frame.length",
+    "options": [
+      { "pole": "finite", "game": "Guitar Hero", "year": 2005, "how": "Career mode is a ladder of song tiers, each capped by an encore; clearing every tier completes the career." },
+      { "pole": "endless", "game": "osu!", "year": 2007, "how": "Every beatmap is community-made, so the song library grows constantly, with ranked maps feeding leaderboards." }
+    ],
+    "tags": { "genres": ["rhythm"], "platforms": ["console", "pc", "mobile"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://guitarhero.fandom.com/wiki/Guitar_Hero", "note": "Guitar Hero: career tiers with encores; finishing all tiers completes Career mode" },
+      { "url": "https://osu.ppy.sh/wiki/en/Beatmap", "note": "osu!: beatmaps are created and uploaded by the community, ranked for leaderboards" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.length.amnesiathedarkdescent-deadbydaylight",
+    "axis": "frame.length",
+    "options": [
+      { "pole": "finite", "game": "Amnesia: The Dark Descent", "year": 2010, "how": "A roughly eight-hour descent through a castle that ends in one of three endings decided in the final room." },
+      { "pole": "endless", "game": "Dead by Daylight", "year": 2016, "how": "A live service that keeps adding chapters with new killers and survivors, still on a yearly roadmap at its 10th anniversary." }
+    ],
+    "tags": { "genres": ["horror"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.gameskinny.com/reviews/amnesia-the-dark-descent-review-a-good-survival-horror-with-flaws/", "note": "Amnesia: The Dark Descent: length and three endings" },
+      { "url": "https://www.gamedeveloper.com/press-release/dead-by-daylight-delivers-an-unforgettable-10-th-anniversary-celebration", "note": "Dead by Daylight: 10th anniversary roadmap of new chapters" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.rating.splatoon-doom2016",
+    "axis": "frame.rating",
+    "options": [
+      { "pole": "all_ages", "game": "Splatoon", "year": 2015, "how": "Fights use paint guns and ink bombs in a cartoony city, so the only ESRB descriptor is Cartoon Violence (E10+)." },
+      { "pole": "mature", "game": "Doom (2016)", "year": 2016, "how": "Blood, gore and demonic horror are the selling point, and the store flags it for adult audiences." }
+    ],
+    "tags": { "genres": ["shooter"], "platforms": ["console", "pc"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://www.esrb.org/ratings/33883/splatoon/", "note": "Splatoon: E10+, Cartoon Violence, paint guns and ink bombs" },
+      { "url": "https://store.steampowered.com/app/379720/", "note": "Doom (2016): content described as blood and gore, violence, language, horror" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.rating.mariokart8deluxe-carmageddon",
+    "axis": "frame.rating",
+    "options": [
+      { "pole": "all_ages", "game": "Mario Kart 8 Deluxe", "year": 2017, "how": "Shells and spin-outs with no injury; rated E and PEGI 3, with Smart Steering and Auto-Accelerate for young drivers." },
+      { "pole": "mature", "game": "Carmageddon", "year": 1997, "how": "Scores points for running down pedestrians; UK and German releases had to swap them for green-blooded zombies or robots." }
+    ],
+    "tags": { "genres": ["racing"], "platforms": ["console", "handheld", "pc"], "era": "pre2000", "indie": true },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Mario_Kart_8_Deluxe", "note": "Mario Kart 8 Deluxe: ESRB E, PEGI 3, Smart Steering, Auto-Accelerate" },
+      { "url": "https://www.topgear.com/car-news/gaming/remembering-classic-games-carmageddon-1997", "note": "Carmageddon: censored releases replaced pedestrians with zombies or robots" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.rating.plantsvszombies-left4dead",
+    "axis": "frame.rating",
+    "options": [
+      { "pole": "all_ages", "game": "Plants vs. Zombies", "year": 2009, "how": "Zombies take whimsical hits from plants and their heads pop off cartoonishly, keeping it at E10+." },
+      { "pole": "mature", "game": "Left 4 Dead", "year": 2008, "how": "Heads and limbs are blown off and blood streaks the walls; rated M for blood and gore, intense violence and language." }
+    ],
+    "tags": { "genres": ["strategy", "shooter", "horror"], "platforms": ["pc", "console", "mobile"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://www.esrb.org/ratings/29273/plants-vs-zombies/", "note": "Plants vs. Zombies: E10+, cartoony zombie heads popping off" },
+      { "url": "https://www.esrb.org/ratings/25709/left-4-dead/", "note": "Left 4 Dead: M for blood and gore, intense violence, language" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.rating.smashultimate-mortalkombat11",
+    "axis": "frame.rating",
+    "options": [
+      { "pole": "all_ages", "game": "Super Smash Bros. Ultimate", "year": 2018, "how": "Mascot brawling for up to eight players on any stage, rated E10+ so families and tournament players share one game." },
+      { "pole": "mature", "game": "Mortal Kombat 11", "year": 2019, "how": "Mid-match Fatal Blows and gory Fatalities are showpieces, earning an M for blood and gore and intense violence." }
+    ],
+    "tags": { "genres": ["fighting"], "platforms": ["console", "handheld", "pc"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://www.ssbwiki.com/Super_Smash_Bros._Ultimate", "note": "Super Smash Bros. Ultimate: ESRB E10+, up to eight players on all stages" },
+      { "url": "https://www.esrb.org/ratings/37373", "note": "Mortal Kombat 11: M for blood and gore, intense violence, strong language" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.rating.luigismansion-amnesiathedarkdescent",
+    "axis": "frame.rating",
+    "options": [
+      { "pole": "all_ages", "game": "Luigi's Mansion", "year": 2001, "how": "Ghosts are stunned with a flashlight and vacuumed up, never killed, so a haunted house stays rated E." },
+      { "pole": "mature", "game": "Amnesia: The Dark Descent", "year": 2010, "how": "Leans on strong horror themes, gore such as corpses, violence and strong language, aimed squarely at adults." }
+    ],
+    "tags": { "genres": ["horror"], "platforms": ["console", "pc"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Luigi%27s_Mansion", "note": "Luigi's Mansion: ESRB E, flashlight and Poltergust 3000 capture ghosts" },
+      { "url": "https://store.steampowered.com/app/57300/", "note": "Amnesia: The Dark Descent: strong horror themes, gore, violence, strong language" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.rating.journey-thelastofuspart1",
+    "axis": "frame.rating",
+    "options": [
+      { "pole": "all_ages", "game": "Journey", "year": 2012, "how": "No combat: players glide over sand and ruins alone or with a fellow traveler, and the store tags it Family Friendly." },
+      { "pole": "mature", "game": "The Last of Us Part I", "year": 2022, "how": "Close-up stealth kills, dismemberment, themes of suicide and torture, and frequent strong language." }
+    ],
+    "tags": { "genres": ["narrative", "action", "horror"], "platforms": ["console", "pc"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/638230/Journey/", "note": "Journey: exploration, solo or with a fellow traveler, Family Friendly tag" },
+      { "url": "https://store.steampowered.com/app/1888930/", "note": "The Last of Us Part I: mature content description" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.realism.kerbalspaceprogram-nomanssky",
+    "axis": "frame.realism",
+    "options": [
+      { "pole": "grounded", "game": "Kerbal Space Program", "year": 2015, "how": "Craft fly on realistic aerodynamic and orbital physics, so a rocket's design and maneuvers decide whether it reaches orbit." },
+      { "pole": "arcade", "game": "No Man's Sky", "year": 2016, "how": "Ships fly from deep space to a planet's surface with no loading screens; engine upgrades simply let you jump farther." }
+    ],
+    "tags": { "genres": ["simulation", "sandbox", "survival"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/220200/", "note": "Kerbal Space Program: realistic aerodynamic and orbital physics" },
+      { "url": "https://store.steampowered.com/app/275850/", "note": "No Man's Sky: seamless space to surface flight, upgrades to jump farther" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.realism.eurotrucksimulator2-burnoutparadise",
+    "axis": "frame.realism",
+    "options": [
+      { "pole": "grounded", "game": "Euro Truck Simulator 2", "year": 2012, "how": "Haul cargo across real European road networks and 60-plus cities in licensed MAN, Volvo and Mercedes-Benz trucks." },
+      { "pole": "arcade", "game": "Burnout Paradise", "year": 2008, "how": "Crash anywhere at any time, wreck friends online and hunt jumps, stunts and shortcuts; destruction is the reward." }
+    ],
+    "tags": { "genres": ["simulation", "racing"], "platforms": ["pc", "console"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/227300/", "note": "Euro Truck Simulator 2: real road networks, 60+ cities, licensed trucks" },
+      { "url": "https://store.steampowered.com/app/1238080/", "note": "Burnout Paradise: crash anywhere, wreck friends, stunts and shortcuts" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.realism.flightsimulator2020-acecombat7",
+    "axis": "frame.realism",
+    "options": [
+      { "pole": "grounded", "game": "Microsoft Flight Simulator (2020)", "year": 2020, "how": "Live real-world weather, a whole-planet map and a physics model with over 1000 control surfaces per plane." },
+      { "pole": "arcade", "game": "Ace Combat 7: Skies Unknown", "year": 2019, "how": "A flight shooter tuned so anyone can enjoy blistering speed, 360-degree pursuits and strikes on land, sea and air targets." }
+    ],
+    "tags": { "genres": ["simulation", "action", "shooter"], "platforms": ["pc", "console"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/1250410/", "note": "Microsoft Flight Simulator: live weather, whole planet, 1000+ control surfaces" },
+      { "url": "https://store.steampowered.com/app/502500/", "note": "Ace Combat 7: flight shooter with accessible handling, Arcade tag" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.realism.arma3-splatoon",
+    "axis": "frame.realism",
+    "options": [
+      { "pole": "grounded", "game": "Arma 3", "year": 2013, "how": "A massive military sandbox sold on authentic, true combat gameplay across infantry and vehicle warfare." },
+      { "pole": "arcade", "game": "Splatoon", "year": 2015, "how": "Swaps bullets for paint guns and ink bombs in the cartoony city of Inkopolis, so every hit reads at a glance." }
+    ],
+    "tags": { "genres": ["shooter", "simulation"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://arma3.com/", "note": "Arma 3: massive military sandbox, true combat gameplay, authentic" },
+      { "url": "https://www.esrb.org/ratings/33883/splatoon/", "note": "Splatoon: paint guns and ink bombs in cartoony Inkopolis" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.realism.pgatour2k23-mariogolfsuperrush",
+    "axis": "frame.realism",
+    "options": [
+      { "pole": "grounded", "game": "PGA TOUR 2K23", "year": 2022, "how": "Licensed courses, real pros including Tiger Woods, and a choice of analog Swing Stick or 3-Click swing." },
+      { "pole": "arcade", "game": "Mario Golf: Super Rush", "year": 2021, "how": "Speed Golf has everyone sprint to their ball at once, and character Special Shots pierce straight through trees." }
+    ],
+    "tags": { "genres": ["sports"], "platforms": ["pc", "console"], "era": "2020s", "indie": false },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/1588010/", "note": "PGA TOUR 2K23: licensed courses, real pros, Swing Stick and 3-Click swing" },
+      { "url": "https://www.mariowiki.com/Mario_Golf:_Super_Rush", "note": "Mario Golf: Super Rush: Speed Golf, Special Shots pierce foliage" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.realism.eurotrucksimulator2-mariokartwii",
+    "axis": "frame.realism",
+    "options": [
+      { "pole": "grounded", "game": "Euro Truck Simulator 2", "year": 2012, "how": "Deliveries cover thousands of miles of real road networks and landmarks, so the drive itself is the content." },
+      { "pole": "arcade", "game": "Mario Kart Wii", "year": 2008, "how": "Trailing racers get stronger items such as Lightning, and tricks off ramps grant a speed boost on landing." }
+    ],
+    "tags": { "genres": ["simulation", "racing"], "platforms": ["pc", "console"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/227300/", "note": "Euro Truck Simulator 2: thousands of miles of real road networks" },
+      { "url": "https://www.mariowiki.com/Mario_Kart_Wii", "note": "Mario Kart Wii: lower places get stronger items, ramp tricks give boosts" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.input.beatsaber-osu",
+    "axis": "frame.input",
+    "options": [
+      { "pole": "motion", "game": "Beat Saber", "year": 2018, "how": "VR only with tracked controllers: players physically slash, duck and dodge through every beat." },
+      { "pole": "mkb", "game": "osu!", "year": 2007, "how": "Circles are aimed with a mouse or tablet pen and hit with mouse clicks or the Z and X keys." }
+    ],
+    "tags": { "genres": ["rhythm"], "platforms": ["vr", "pc", "mobile"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/620980/", "note": "Beat Saber: VR only, tracked controllers, slash, duck and dodge" },
+      { "url": "https://osu.ppy.sh/wiki/en/Game_mode/osu%21", "note": "osu!: mouse, Z and X keys, tablet or touchscreen input" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.input.fruitninja-halowars-amongus",
+    "axis": "frame.input",
+    "options": [
+      { "pole": "touch", "game": "Fruit Ninja", "year": 2010, "how": "Slice fruit tossed across a phone screen while avoiding bombs; the slice gesture is the whole control scheme." },
+      { "pole": "gamepad", "game": "Halo Wars", "year": 2009, "how": "An RTS rebuilt for the Xbox 360 controller, with a radial Circle Menu and base-centred economy replacing mouse micro." },
+      { "pole": "mixed", "game": "Among Us", "year": 2018, "how": "Cross-platform lobbies mix Android, iOS, PC and console players in the same 4 to 15 player game." }
+    ],
+    "tags": { "genres": ["action", "strategy", "party"], "platforms": ["mobile", "console", "pc", "vr"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://apps.apple.com/app/id362949845", "note": "Fruit Ninja: slice fruit, don't slice bombs, on iPhone" },
+      { "url": "https://www.halopedia.org/Halo_Wars", "note": "Halo Wars: console RTS control scheme, Circle Menu, centralized interface" },
+      { "url": "https://store.steampowered.com/app/945360/Among_Us/", "note": "Among Us: 4 to 15 players, cross-platform play across mobile, PC and console" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.input.mariokartwii-supermario64",
+    "axis": "frame.input",
+    "options": [
+      { "pole": "motion", "game": "Mario Kart Wii", "year": 2008, "how": "Steer by tilting the Wii Remote, usually in the bundled Wii Wheel, and flick it upward to trick off ramps." },
+      { "pole": "gamepad", "game": "Super Mario 64", "year": 1996, "how": "The analog stick sets speed, so Mario can tiptoe past enemies or creep along narrow ledges; C-buttons turn the camera." }
+    ],
+    "tags": { "genres": ["racing", "platformer"], "platforms": ["console"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Mario_Kart_Wii", "note": "Mario Kart Wii: tilt the remote to steer, Wii Wheel, shake for tricks" },
+      { "url": "https://www.mariowiki.com/Super_Mario_64", "note": "Super Mario 64: analog stick precision for tiptoeing, C-button camera" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.players.overcooked-towerfallascension",
+    "axis": "frame.players",
+    "options": [
+      { "pole": "local_coop", "game": "Overcooked", "year": 2016, "how": "Couch co-op for up to four chefs who must communicate and coordinate to prep, cook and serve orders." },
+      { "pole": "local_versus", "game": "TowerFall Ascension", "year": 2014, "how": "A four-player local archery brawler built around versus matches where players snatch arrows mid-flight." }
+    ],
+    "tags": { "genres": ["party", "action"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/448510/", "note": "Overcooked: couch co-op for one to four players" },
+      { "url": "https://store.steampowered.com/app/251470/", "note": "TowerFall Ascension: 4-player local versus archery" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.players.deeprockgalactic-clashroyale",
+    "axis": "frame.players",
+    "options": [
+      { "pole": "online_coop", "game": "Deep Rock Galactic", "year": 2020, "how": "A 1 to 4 player online co-op shooter where Scout, Gunner, Engineer and Driller split the work in destructible caves." },
+      { "pole": "online_competitive", "game": "Clash Royale", "year": 2016, "how": "Fast real-time battles against players worldwide; every match is a short head-to-head duel." }
+    ],
+    "tags": { "genres": ["shooter", "strategy", "card"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/548430/", "note": "Deep Rock Galactic: 1-4 player co-op FPS, four classes" },
+      { "url": "https://apps.apple.com/app/id1053012308", "note": "Clash Royale: real-time multiplayer battles against players worldwide" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.players.outerwilds-finalfantasyxiv",
+    "axis": "frame.players",
+    "options": [
+      { "pole": "solo", "game": "Outer Wilds", "year": 2019, "how": "Single-player only: one explorer unpicks a solar system trapped in an endless time loop." },
+      { "pole": "mmo", "game": "Final Fantasy XIV", "year": 2013, "how": "Players share server worlds grouped into data centers, busy enough that subscribers get priority login when congested." }
+    ],
+    "tags": { "genres": ["narrative", "puzzle", "rpg"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/753640/", "note": "Outer Wilds: single-player, endless time loop" },
+      { "url": "https://na.finalfantasyxiv.com/product/", "note": "Final Fantasy XIV: worlds, data centers, priority login during congestion" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.players.newsupermariobroswii-smashultimate",
+    "axis": "frame.players",
+    "options": [
+      { "pole": "local_coop", "game": "New Super Mario Bros. Wii", "year": 2009, "how": "Up to four players share one screen; a fallen player floats back in a bubble and teammates can carry each other." },
+      { "pole": "local_versus", "game": "Super Smash Bros. Ultimate", "year": 2018, "how": "Every stage supports up to eight players brawling at once on a single console." }
+    ],
+    "tags": { "genres": ["platformer", "fighting", "party"], "platforms": ["console", "handheld"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://www.mariowiki.com/New_Super_Mario_Bros._Wii", "note": "New Super Mario Bros. Wii: four-player shared screen, bubbles, carrying players" },
+      { "url": "https://www.ssbwiki.com/Super_Smash_Bros._Ultimate", "note": "Super Smash Bros. Ultimate: all stages playable with up to eight players" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.monetization.fortnite-genshinimpact-eldenring",
+    "axis": "frame.monetization",
+    "options": [
+      { "pole": "f2p_cosmetic", "game": "Fortnite", "year": 2017, "how": "Free to play; revenue comes from the cosmetic Item Shop and the battle pass." },
+      { "pole": "f2p_gacha", "game": "Genshin Impact", "year": 2020, "how": "Free to play; gacha banners with pity sell characters and weapons." },
+      { "pole": "premium_dlc", "game": "Elden Ring", "year": 2022, "how": "Premium purchase, later extended by the paid Shadow of the Erdtree expansion." }
+    ],
+    "tags": { "genres": ["shooter", "rpg", "action"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://www.fortnite.com/battle-pass", "note": "Fortnite: battle pass and cosmetic rewards" },
+      { "url": "https://genshin.hoyoverse.com/en/", "note": "Genshin Impact: official site" },
+      { "url": "https://www.bandainamcoent.com/games/elden-ring", "note": "Elden Ring: Shadow of the Erdtree paid DLC expansion" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.frame.monetization.oldschoolrunescape-pathofexile-mariokart8deluxe",
+    "axis": "frame.monetization",
+    "options": [
+      { "pole": "subscription", "game": "Old School RuneScape", "year": 2013, "how": "Free worlds exist, but paid membership unlocks over three times the map, nine more skills and many more quests." },
+      { "pole": "f2p_cosmetic", "game": "Path of Exile", "year": 2013, "how": "Completely free and never pay to win; the shop sells armour and weapon effects, pets and stash tabs." },
+      { "pole": "premium_dlc", "game": "Mario Kart 8 Deluxe", "year": 2017, "how": "Bought up front, then extended by the paid Booster Course Pass that added tracks across 2022 and 2023." }
+    ],
+    "tags": { "genres": ["rpg", "action", "racing"], "platforms": ["pc", "mobile", "console", "handheld"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://oldschool.runescape.wiki/w/Membership", "note": "Old School RuneScape: membership plans and members-only content" },
+      { "url": "https://www.pathofexile.com/game", "note": "Path of Exile: completely free, never pay to win" },
+      { "url": "https://www.pathofexile.com/shop", "note": "Path of Exile: shop categories of effects, pets, stash tabs" },
+      { "url": "https://www.mariowiki.com/Mario_Kart_8_Deluxe", "note": "Mario Kart 8 Deluxe: Booster Course Pass paid DLC" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.monetization.candycrushsaga-crossyroad-papersplease",
+    "axis": "frame.monetization",
+    "options": [
+      { "pole": "f2p_gacha", "game": "Candy Crush Saga", "year": 2012, "how": "Free, but sells extra moves, extra lives, boosters and gold bars to push past hard levels." },
+      { "pole": "ad_supported", "game": "Crossy Road", "year": 2014, "how": "Free with no paywalls or timers; video ads grossed over $1 million alongside optional cosmetic characters." },
+      { "pole": "premium", "game": "Papers, Please", "year": 2013, "how": "One up-front price with no DLC or in-app purchases." }
+    ],
+    "tags": { "genres": ["puzzle", "action", "simulation"], "platforms": ["mobile", "pc", "web", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://apps.apple.com/app/553834731", "note": "Candy Crush Saga: free, sells extra moves, lives, boosters, gold bars" },
+      { "url": "https://www.pocketgamer.biz/making-of-crossy-road/", "note": "Crossy Road: no paywalls, cosmetic characters, video ads grossed over $1 million" },
+      { "url": "https://store.steampowered.com/app/239030/", "note": "Papers, Please: paid up front, no DLC or in-app purchases" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.monetization.flappybird-hearthstone",
+    "axis": "frame.monetization",
+    "options": [
+      { "pole": "ad_supported", "game": "Flappy Bird", "year": 2013, "how": "Earned from in-app advertising, reportedly $50,000 a day in ad revenue at its peak." },
+      { "pole": "f2p_gacha", "game": "Hearthstone", "year": 2014, "how": "Free to play; random five-card packs sell for gold or real money, with a Legendary guaranteed within 40 packs." }
+    ],
+    "tags": { "genres": ["action", "card"], "platforms": ["mobile", "pc"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://kotaku.com/flappy-bird-is-making-50-000-a-day-off-ripped-art-1517498140", "note": "Flappy Bird: $50,000 a day in ad revenue" },
+      { "url": "https://hearthstone.wiki.gg/wiki/Card_pack", "note": "Hearthstone: random packs for gold or money, 40-pack Legendary pity" },
+      { "url": "https://hearthstone.wiki.gg/wiki/Hearthstone", "note": "Hearthstone: free-to-play digital collectible card game" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.team.balatro-amongus-reddeadredemption2",
+    "axis": "frame.team",
+    "options": [
+      { "pole": "solo", "game": "Balatro", "year": 2024, "how": "LocalThunk built it alone as a side project from late 2021, handling design, code and art himself." },
+      { "pole": "small", "game": "Among Us", "year": 2018, "how": "Innersloth shipped the 2018 mobile release with three people, bringing in an artist later." },
+      { "pole": "large", "game": "Red Dead Redemption 2", "year": 2018, "how": "About 1,600 staff worked directly on it across Rockstar's studios, and over 3,000 people touched it in all." }
+    ],
+    "tags": { "genres": ["card", "party", "action"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.pcgamer.com/i-dont-play-poker-at-all-says-solo-developer-who-made-the-poker-roguelike-i-cant-stop-playing/", "note": "Balatro: solo developer LocalThunk" },
+      { "url": "https://innersloth.com/press-kit-among-us", "note": "Among Us: made by three people, Amy joining later for art" },
+      { "url": "https://www.guinnessworldrecords.com/world-records/557449-largest-development-team-for-a-videogame", "note": "Red Dead Redemption 2: about 1,600 directly on development, roughly 2,000 in total" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.team.papersplease-bastion-grandtheftautov",
+    "axis": "frame.team",
+    "options": [
+      { "pole": "solo", "game": "Papers, Please", "year": 2013, "how": "Lucas Pope designed, coded and drew it alone, about nine months from first mockups to release." },
+      { "pole": "medium", "game": "Bastion", "year": 2011, "how": "Supergiant grew to a core team of seven, including the narrator, working largely from a house." },
+      { "pole": "large", "game": "Grand Theft Auto V", "year": 2013, "how": "Rockstar North's 360-person core team pulled in Rockstar studios worldwide, over 1,000 people in all." }
+    ],
+    "tags": { "genres": ["simulation", "puzzle", "action", "rpg"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://gamedeveloper.com/design/road-to-the-igf-lucas-pope-s-i-papers-please-i-", "note": "Papers, Please: solo developer, about nine months to release" },
+      { "url": "https://www.supergiantgames.com/blog/bastion-faq/", "note": "Bastion: core team of seven including the principal voice actor" },
+      { "url": "https://mcvuk.com/business-news/over-1000-people-made-gta-v/", "note": "Grand Theft Auto V: over 1,000 people across Rockstar studios" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.team.cavestory-ftl-deadcells",
+    "axis": "frame.team",
+    "options": [
+      { "pole": "solo", "game": "Cave Story", "year": 2004, "how": "Daisuke Amaya wrote everything himself over five spare-time years, about two years of actual work." },
+      { "pole": "small", "game": "FTL: Faster Than Light", "year": 2012, "how": "Two ex-2K Shanghai developers, one on art and design and one on code and design, funded by Kickstarter." },
+      { "pole": "medium", "game": "Dead Cells", "year": 2018, "how": "Built in house by Motion Twin, a worker cooperative of roughly eight to eleven people." }
+    ],
+    "tags": { "genres": ["platformer", "strategy", "action"], "platforms": ["pc", "console", "mobile"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://www.gamedeveloper.com/design/the-solitary-creativity-of-pixel", "note": "Cave Story: Amaya wrote everything himself; five years, about two of real work" },
+      { "url": "https://store.epicgames.com/news/a-decade-of-ftl-faster-than-light", "note": "FTL: two-person Subset Games, side project from 2K Shanghai" },
+      { "url": "https://motiontwin.com/faq", "note": "Dead Cells: Motion Twin cooperative team size" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.team.lethalcompany-untitledgoosegame",
+    "axis": "frame.team",
+    "options": [
+      { "pole": "solo", "game": "Lethal Company", "year": 2023, "how": "Zeekerss made and keeps updating it alone, and prefers to stay solo rather than gather a team." },
+      { "pole": "small", "game": "Untitled Goose Game", "year": 2019, "how": "House House's four members decide direction by consensus, with outside help on 3D art and sound." }
+    ],
+    "tags": { "genres": ["horror", "puzzle"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.gamesradar.com/games/horror/lethal-company-creator-has-thought-about-a-sequel-but-sees-a-lot-left-to-do-on-the-original-as-for-lethal-company-2-i-have-a-vision-for-what-that-ought-to-be-and-it-surpasses-my-own-ambition", "note": "Lethal Company: solo developer Zeekerss, prefers to work solo" },
+      { "url": "https://www.gamedeveloper.com/game-platforms/road-to-the-igf-house-house-s-i-untitled-goose-game-i-", "note": "Untitled Goose Game: four-person House House, consensus decisions" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.timeline.flappybird-crossyroad-fez",
+    "axis": "frame.timeline",
+    "options": [
+      { "pole": "jam", "game": "Flappy Bird", "year": 2013, "how": "Dong Nguyen built it in under three days, the length of a game jam, reusing a bird from a cancelled project." },
+      { "pole": "months", "game": "Crossy Road", "year": 2014, "how": "Hipster Whale aimed for six weeks and shipped in 12, keeping the bet small so a flop would cost little." },
+      { "pole": "long", "game": "Fez", "year": 2012, "how": "Five years at Polytron, with almost none of the first two years' work surviving into the final game." }
+    ],
+    "tags": { "genres": ["action", "puzzle", "platformer"], "platforms": ["mobile", "pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.gamedeveloper.com/design/lessons-learned-from-flappy-bird", "note": "Flappy Bird: created in less than three days" },
+      { "url": "https://gameanalytics.com/case-studies/hipster-whale/", "note": "Crossy Road: made in 12 weeks, set out to make it in six" },
+      { "url": "https://www.gamedeveloper.com/business/the-making-of-i-fez-i-the-breaking-of-phil-fish", "note": "Fez: five-year development at Polytron" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.timeline.wolfenstein3d-doom-owlboy",
+    "axis": "frame.timeline",
+    "options": [
+      { "pole": "months", "game": "Wolfenstein 3D", "year": 1992, "how": "Started mid-January 1992 on existing Catacomb 3D tech and shipped in May, a four to six month cycle." },
+      { "pole": "years", "game": "Doom", "year": 1993, "how": "Work began in late 1992 and the shareware episode shipped December 10, 1993, after slipping a Q3 target." },
+      { "pole": "long", "game": "Owlboy", "year": 2016, "how": "Began as a 2007 hobby project and shipped in 2016 after repeated reworks, nearly a decade in development." }
+    ],
+    "tags": { "genres": ["shooter", "platformer"], "platforms": ["pc", "console"], "era": "pre2000", "indie": true },
+    "sources": [
+      { "url": "https://www.pcgamer.com/games/fps/fps-legend-john-romero-says-wolfenstein-3d-was-the-first-game-id-software-took-its-time-with-a-luxurious-4-month-development-instead-of-just-2", "note": "Wolfenstein 3D: four-month development" },
+      { "url": "https://www.doomwiki.org/wiki/Development_of_Doom", "note": "Doom: late 1992 start, December 10, 1993 release" },
+      { "url": "https://gamedeveloper.com/production/-i-owlboy-i-dev-talks-about-the-journey-of-its-decade-long-development", "note": "Owlboy: decade-long development from 2007" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.timeline.supermeatboy-cuphead",
+    "axis": "frame.timeline",
+    "options": [
+      { "pole": "years", "game": "Super Meat Boy", "year": 2010, "how": "Team Meat took 18 months from first engine code to XBLA certification, stretched by content creep." },
+      { "pole": "long", "game": "Cuphead", "year": 2017, "how": "Conceived in 2010, delayed past a 2014 target, and shipped in 2017 after the founders quit jobs and remortgaged homes." }
+    ],
+    "tags": { "genres": ["platformer", "action"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://gamedeveloper.com/audio/postmortem-team-meat-s-i-super-meat-boy-i-", "note": "Super Meat Boy: 18 months of development" },
+      { "url": "https://www.gamesradar.com/we-quit-our-jobs-remortgaged-our-houses-how-relentless-passion-made-cuphead-a-reality", "note": "Cuphead: began 2010, founders quit jobs and remortgaged houses" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.engine.undertale-balatro-cassettebeasts",
+    "axis": "frame.engine",
+    "options": [
+      { "pole": "gamemaker", "game": "Undertale", "year": 2015, "how": "Made in GameMaker by one developer, growing out of a battle system prototype he programmed first." },
+      { "pole": "custom", "game": "Balatro", "year": 2024, "how": "Programmed in Lua on the LOVE framework rather than a full engine, with readable shipped source that modders build on." },
+      { "pole": "godot", "game": "Cassette Beasts", "year": 2023, "how": "Two-person Bytten Studio used Godot, patching engine code for frame rate and partnering out console ports." }
+    ],
+    "tags": { "genres": ["rpg", "card"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://pcgamer.com/the-making-of-undertale", "note": "Undertale: built in GameMaker" },
+      { "url": "https://gamefromscratch.com/?p=28668", "note": "Balatro: made with the Lua-based LOVE framework, not a mainstream engine" },
+      { "url": "https://godotengine.org/article/godot-showcase-cassette-beasts/", "note": "Cassette Beasts: Godot showcase interview" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.engine.oriandtheblindforest-octopathtraveler",
+    "axis": "frame.engine",
+    "options": [
+      { "pole": "unity", "game": "Ori and the Blind Forest", "year": 2015, "how": "Moon Studios chose Unity for its extensible editor and moved to Unity 5 for seamless level streaming at 60fps." },
+      { "pole": "unreal", "game": "Octopath Traveler", "year": 2018, "how": "Acquire leaned on Unreal Engine 4's 3D lighting and effects around 2D sprites, the basis of its HD-2D look." }
+    ],
+    "tags": { "genres": ["platformer", "action", "rpg"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.mcvuk.com/development-news/unity-focus-making-ori-and-the-blind-forest/", "note": "Ori and the Blind Forest: Unity, move to Unity 5 for streaming" },
+      { "url": "https://www.unrealengine.com/spotlights/octopath-traveler-s-hd-2d-art-style-and-story-make-for-a-jrpg-dream-come-true", "note": "Octopath Traveler: UE4 and HD-2D" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.engine.brotato-noita",
+    "axis": "frame.engine",
+    "options": [
+      { "pole": "godot", "game": "Brotato", "year": 2022, "how": "A small-team 2D arena roguelite built in Godot that juggles large counts of enemies, projectiles and pickups." },
+      { "pole": "custom", "game": "Noita", "year": 2019, "how": "Nolla wrote its Falling Everything engine in C++ to simulate every pixel, with Box2D rigid bodies on top." }
+    ],
+    "tags": { "genres": ["action"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://gamefromscratch.com/the-best-of-godot-games-in-2024/", "note": "Brotato: listed among acclaimed Godot games" },
+      { "url": "https://gdcvault.com/play/1025695/Exploring-the-Tech-and-Design", "note": "Noita: GDC talk on its custom falling sand engine" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.engine.citiesskylines-satisfactory-terraria",
+    "axis": "frame.engine",
+    "options": [
+      { "pole": "unity", "game": "Cities: Skylines", "year": 2015, "how": "Colossal Order built it in Unity, switching to Unity 5 late in the beta and keeping it for the whole project." },
+      { "pole": "unreal", "game": "Satisfactory", "year": 2019, "how": "Built in Unreal and moved to Unreal Engine 5 in Update 8, gaining Lumen lighting and World Partition streaming." },
+      { "pole": "custom", "game": "Terraria", "year": 2011, "how": "Re-Logic wrote it in C# on Microsoft's XNA framework instead of licensing a commercial engine." }
+    ],
+    "tags": { "genres": ["simulation", "sandbox", "survival"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://unity3d.com/case-study/cities-skylines", "note": "Cities: Skylines: Unity case study, switch to Unity 5 near the end of beta" },
+      { "url": "https://shacknews.com/article/137796/satisfactory-update-8-unreal-engine-5", "note": "Satisfactory: Update 8 moves the game to Unreal Engine 5" },
+      { "url": "https://www.yahoo.com/entertainment/terraria-turns-10-indie-developer-160045069.html", "note": "Terraria: coded in Microsoft XNA" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.dimension.supermarioworld-newsupermariobros-supermario64",
+    "axis": "frame.dimension",
+    "options": [
+      { "pole": "d2", "game": "Super Mario World", "year": 1990, "how": "A 2D sprite platformer on a flat plane where each level ends at the Giant Gate." },
+      { "pole": "d25", "game": "New Super Mario Bros.", "year": 2006, "how": "Keeps side-scrolling 2D play but renders characters and elements as 3D models: a 2.5D Mario." },
+      { "pole": "d3", "game": "Super Mario 64", "year": 1996, "how": "Free 3D movement through open courses, with a Lakitu-operated camera the player can rotate and zoom." }
+    ],
+    "tags": { "genres": ["platformer"], "platforms": ["console", "handheld"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Super_Mario_World", "note": "Super Mario World: 2D platformer, goal is the Giant Gate" },
+      { "url": "https://www.mariowiki.com/New_Super_Mario_Bros.", "note": "New Super Mario Bros.: side-scrolling 2.5D, first 2D Mario with 3D models" },
+      { "url": "https://www.mariowiki.com/Super_Mario_64", "note": "Super Mario 64: 3D platformer, Lakitu camera" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.frame.dimension.cavestory-octopathtraveler-outerwilds",
+    "axis": "frame.dimension",
+    "options": [
+      { "pole": "d2", "game": "Cave Story", "year": 2004, "how": "Flat 2D sprite levels on a single plane, small enough for one person to draw and build alone." },
+      { "pole": "d25", "game": "Octopath Traveler", "year": 2018, "how": "HD-2D: retro pixel sprites placed in polygonal 3D environments with modern lighting and depth effects." },
+      { "pole": "d3", "game": "Outer Wilds", "year": 2019, "how": "A fully 3D solar system whose planets are packed with hidden locations to reach and explore." }
+    ],
+    "tags": { "genres": ["platformer", "rpg", "narrative", "puzzle"], "platforms": ["pc", "console"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://www.gamedeveloper.com/design/the-solitary-creativity-of-pixel", "note": "Cave Story: 2D game made by one developer" },
+      { "url": "https://www.unrealengine.com/spotlights/octopath-traveler-s-hd-2d-art-style-and-story-make-for-a-jrpg-dream-come-true", "note": "Octopath Traveler: 3D environments combined with 2D pixels" },
+      { "url": "https://store.steampowered.com/app/753640/", "note": "Outer Wilds: explore a solar system of planets" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  }
+]

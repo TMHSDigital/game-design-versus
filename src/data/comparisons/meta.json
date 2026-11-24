@@ -1,0 +1,271 @@
+[
+  {
+    "id": "cmp.live.model.fortnite-eldenring",
+    "axis": "live.model",
+    "options": [
+      { "pole": "live", "game": "Fortnite", "year": 2017, "how": "Seasons of about three months each bring a new Battle Pass, map changes and themed content, with mid-season updates in between." },
+      { "pole": "finished", "game": "Elden Ring", "year": 2022, "how": "Shipped as a complete game; the major later addition was one large paid expansion, Shadow of the Erdtree." }
+    ],
+    "tags": { "genres": ["shooter", "rpg", "action"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://www.playstation.com/en-gb/games/fortnite/latest-news-and-updates/", "note": "Fortnite: seasonal Battle Pass and updates" },
+      { "url": "https://www.pcgamer.com/games/rpg/elden-ring-shadow-of-the-erdtree-review", "note": "Elden Ring: Shadow of the Erdtree expansion" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.live.model.witcher3-warframe",
+    "axis": "live.model",
+    "options": [
+      { "pole": "finished", "game": "The Witcher 3: Wild Hunt", "year": 2015, "how": "A complete story at launch, followed by two story expansions, Hearts of Stone and Blood and Wine, then no new content." },
+      { "pole": "live", "game": "Warframe", "year": 2013, "how": "Free to play with a steady stream of patches, new frames and story updates, so the game keeps changing years after launch." }
+    ],
+    "tags": { "genres": ["rpg", "action", "shooter"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://www.thewitcher.com/us/en/witcher3", "note": "The Witcher 3: Hearts of Stone and Blood and Wine expansions" },
+      { "url": "https://www.warframe.com/game/about", "note": "Warframe: free to play with ongoing patch notes and new content" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.live.model.inscryption-marvelsnap",
+    "axis": "live.model",
+    "options": [
+      { "pole": "finished", "game": "Inscryption", "year": 2021, "how": "A single-player card game with a fixed story and an end; you buy it once and the content you get is the content there is." },
+      { "pole": "live", "game": "Marvel Snap", "year": 2022, "how": "Monthly themed seasons, new cards and frequent balance patches keep the card pool and meta moving." }
+    ],
+    "tags": { "genres": ["card", "horror", "puzzle"], "platforms": ["pc", "console", "mobile"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/1092790/Inscryption/", "note": "Inscryption: single-player, Daniel Mullins Games, 2021" },
+      { "url": "https://www.marvelsnap.com/", "note": "Marvel Snap: new seasons, balance updates and patch notes" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.live.model.grimdawn-pathofexile",
+    "axis": "live.model",
+    "options": [
+      { "pole": "finished", "game": "Grim Dawn", "year": 2016, "how": "Bought once, then grown through three paid expansions (Ashes of Malmouth, Forgotten Gods, Fangs of Asterkarn) and free updates." },
+      { "pole": "live", "game": "Path of Exile", "year": 2013, "how": "Free to play; frequent challenge leagues run as separate game worlds with their own ladders, economies and rule changes." }
+    ],
+    "tags": { "genres": ["rpg", "action"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.grimdawn.com/", "note": "Grim Dawn: expansions Ashes of Malmouth, Forgotten Gods and Fangs of Asterkarn" },
+      { "url": "https://store.steampowered.com/app/219990/Grim_Dawn/", "note": "Grim Dawn: one-time purchase on Steam" },
+      { "url": "https://www.pathofexile.com/game", "note": "Path of Exile: free to play; race leagues run frequently as separate worlds with their own ladders and economies" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.live.model.burnout3-forzahorizon5",
+    "axis": "live.model",
+    "options": [
+      { "pole": "finished", "game": "Burnout 3: Takedown", "year": 2004, "how": "Shipped complete on disc with its full event list and cars; no seasons or content drops." },
+      { "pole": "live", "game": "Forza Horizon 5", "year": 2021, "how": "Over 40 content updates added cars, races and features, with a rotating Festival Playlist of seasonal events." }
+    ],
+    "tags": { "genres": ["racing"], "platforms": ["console", "pc"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://www.gamespot.com/reviews/burnout-3-takedown-review/1900-6106325/", "note": "Burnout 3: Takedown: complete boxed release" },
+      { "url": "https://forza.net/forzahorizon5", "note": "Forza Horizon 5: over 40 content updates, Festival Playlist" }
+    ],
+    "verification": { "status": "unverified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.live.model.supermario64-everquest",
+    "axis": "live.model",
+    "options": [
+      { "pole": "finished", "game": "Super Mario 64", "year": 1996, "how": "A cartridge with 120 Power Stars and nothing more to download; the design had to be complete on day one." },
+      { "pole": "live", "game": "EverQuest", "year": 1999, "how": "A subscription world that has kept adding expansions for decades, dozens so far, with new zones and level caps." }
+    ],
+    "tags": { "genres": ["platformer", "rpg"], "platforms": ["console", "pc"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Super_Mario_64", "note": "Super Mario 64: 120 Power Stars" },
+      { "url": "https://www.everquest.com/expansions", "note": "EverQuest: dozens of expansions" }
+    ],
+    "verification": { "status": "unverified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mod.support.skyrim-valorant-roblox",
+    "axis": "mod.support",
+    "options": [
+      { "pole": "mods", "game": "The Elder Scrolls V: Skyrim", "year": 2011, "how": "The official Creation Kit edits the same plugin files the game uses; mods can add quests, items and scripts and share via Workshop." },
+      { "pole": "closed", "game": "Valorant", "year": 2020, "how": "No mod support; the Vanguard anti-cheat runs at kernel level from boot to block third-party software." },
+      { "pole": "mods", "game": "Roblox", "year": 2006, "how": "The game is a platform: players build experiences in Roblox Studio and publish them for others, with creator payouts." }
+    ],
+    "tags": { "genres": ["rpg", "shooter", "sandbox"], "platforms": ["pc", "console", "mobile", "vr"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://en.uesp.net/wiki/Skyrim_Mod:Creation_Kit", "note": "Skyrim: Creation Kit and plugins" },
+      { "url": "https://playvalorant.com/en-us/news/dev/valorant-anti-cheat-what-why-and-how", "note": "Valorant: Vanguard anti-cheat" },
+      { "url": "https://create.roblox.com/docs/platform", "note": "Roblox: Studio and user-created experiences" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.mod.support.osu-theatrhythmfinalbarline",
+    "axis": "mod.support",
+    "options": [
+      { "pole": "mods", "game": "osu!", "year": 2007, "how": "Community mappers make and submit the beatmaps; a ranking procedure (or loved status) decides which get leaderboards." },
+      { "pole": "closed", "game": "Theatrhythm Final Bar Line", "year": 2023, "how": "A curated list of 385 Final Fantasy tracks charted by the developer; new songs arrive only as paid DLC packs, with no chart editor." }
+    ],
+    "tags": { "genres": ["rhythm"], "platforms": ["pc", "console"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://osu.ppy.sh/wiki/en/Beatmap", "note": "osu!: mappers submit beatmaps; ranking procedure or loved status grants leaderboards" },
+      { "url": "https://www.nintendo.com/us/store/products/theatrhythm-final-bar-line-switch/", "note": "Theatrhythm Final Bar Line: 385 selected tracks, songs added through DLC packs" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mod.support.warcraft3-lol",
+    "axis": "mod.support",
+    "options": [
+      { "pole": "mods", "game": "Warcraft III: Reign of Chaos", "year": 2002, "how": "The bundled World Editor can change almost every aspect of the game, so players built custom maps and campaigns." },
+      { "pole": "closed", "game": "League of Legends", "year": 2009, "how": "Riot staff design every champion and map; custom games only set lobby options such as team size and bots, not new content." }
+    ],
+    "tags": { "genres": ["strategy"], "platforms": ["pc"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://warcraft.wiki.gg/wiki/World_Editor", "note": "Warcraft III: World Editor manipulates almost every aspect of the game for custom maps and campaigns" },
+      { "url": "https://wiki.leagueoflegends.com/en-us/League_of_Legends", "note": "League of Legends: Riot staff create champions; custom games are private lobbies with set properties" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mod.support.doom-hearthstone",
+    "axis": "mod.support",
+    "options": [
+      { "pole": "mods", "game": "Doom", "year": 1993, "how": "Levels and assets live in WAD files; players load PWADs on top of the base game, so fan maps spread freely." },
+      { "pole": "closed", "game": "Hearthstone", "year": 2014, "how": "Blizzard designs every card and set; collections live on its servers, so players cannot add content." }
+    ],
+    "tags": { "genres": ["shooter", "card"], "platforms": ["pc", "console", "mobile"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://doomwiki.org/wiki/WAD", "note": "Doom: IWAD and PWAD files" },
+      { "url": "https://hearthstone.wiki.gg/wiki/Card_set", "note": "Hearthstone: Blizzard-released card sets" }
+    ],
+    "verification": { "status": "unverified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mod.support.littlebigplanet-raymanlegends",
+    "axis": "mod.support",
+    "options": [
+      { "pole": "mods", "game": "LittleBigPlanet", "year": 2008, "how": "Create mode ships the same tools the levels were built with; players publish levels online for others to play." },
+      { "pole": "closed", "game": "Rayman Legends", "year": 2013, "how": "Every level is hand-built by the developer, with daily and weekly online challenges instead of user content." }
+    ],
+    "tags": { "genres": ["platformer"], "platforms": ["console", "pc", "handheld"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://littlebigplanet.fandom.com/wiki/LittleBigPlanet", "note": "LittleBigPlanet: create and share levels" },
+      { "url": "https://store.steampowered.com/app/242550/Rayman_Legends/", "note": "Rayman Legends: developer-built levels and challenges" }
+    ],
+    "verification": { "status": "unverified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mod.support.halflife-warzone",
+    "axis": "mod.support",
+    "options": [
+      { "pole": "mods", "game": "Half-Life", "year": 1998, "how": "Valve released an SDK; total conversions like Counter-Strike and Team Fortress Classic began as Half-Life mods." },
+      { "pole": "closed", "game": "Call of Duty: Warzone", "year": 2020, "how": "No mod tools; servers and content are run by the publisher and anti-cheat bans altered clients." }
+    ],
+    "tags": { "genres": ["shooter"], "platforms": ["pc", "console"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://developer.valvesoftware.com/wiki/Half-Life", "note": "Half-Life: SDK and mods" },
+      { "url": "https://www.callofduty.com/warzone", "note": "Call of Duty: Warzone: publisher-run service" }
+    ],
+    "verification": { "status": "unverified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.replay.source.noita-undertale",
+    "axis": "replay.source",
+    "options": [
+      { "pole": "systems", "game": "Noita", "year": 2020, "how": "Every pixel is simulated in a world that is different every run, with permadeath, so replays differ in how fire, liquid and spells collide." },
+      { "pole": "content", "game": "Undertale", "year": 2015, "how": "Any monster can be spared or killed; those choices lead to different authored scenes, boss friendships and endings on later runs." }
+    ],
+    "tags": { "genres": ["action", "rpg", "narrative"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://noita.wiki.gg/wiki/Noita_Wiki", "note": "Noita: a unique world every time you play, permanent death, every pixel simulated" },
+      { "url": "https://www.gog.com/en/game/undertale", "note": "Undertale: you don't have to kill anyone, each enemy can be defeated nonviolently, multiple endings" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.replay.source.dwarffortress-detroit",
+    "axis": "replay.source",
+    "options": [
+      { "pole": "systems", "game": "Dwarf Fortress", "year": 2006, "how": "Each new world is generated with its own history and legends, then simulated dwarves, creatures and populations produce unwritten stories." },
+      { "pole": "content", "game": "Detroit: Become Human", "year": 2018, "how": "Thousands of choices branch an authored story into dozens of endings; replays reveal scenes and outcomes you missed." }
+    ],
+    "tags": { "genres": ["simulation", "strategy", "narrative"], "platforms": ["pc", "console"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://www.bay12games.com/dwarves/", "note": "Dwarf Fortress: world generation, Legends mode history and procedural creatures (developer notes)" },
+      { "url": "https://store.steampowered.com/app/1222140/Detroit_Become_Human/", "note": "Detroit: Become Human: thousands of choices and dozens of possible endings, no playthrough the same" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.replay.source.nethack-chronotrigger",
+    "axis": "replay.source",
+    "options": [
+      { "pole": "systems", "game": "NetHack", "year": 1987, "how": "Random dungeons and permanent death; replay comes from item, monster and terrain interactions, not new content." },
+      { "pole": "content", "game": "Chrono Trigger", "year": 1995, "how": "New Game+ and over a dozen endings reward replays with authored scenes based on when you face the final boss." }
+    ],
+    "tags": { "genres": ["rpg"], "platforms": ["pc", "console", "mobile", "handheld"], "era": "pre2000", "indie": true },
+    "sources": [
+      { "url": "https://nethackwiki.com/wiki/NetHack", "note": "NetHack: 1987 release, permanent death" },
+      { "url": "https://store.steampowered.com/app/613830/CHRONO_TRIGGER/", "note": "Chrono Trigger: multiple endings" }
+    ],
+    "verification": { "status": "unverified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.replay.source.ck2-baldursgate3",
+    "axis": "replay.source",
+    "options": [
+      { "pole": "systems", "game": "Crusader Kings II", "year": 2012, "how": "You play a dynasty through successive heirs; traits, claims and plots between AI characters create each campaign's story." },
+      { "pole": "content", "game": "Baldur's Gate 3", "year": 2023, "how": "Origin characters, classes and branching quest choices unlock different authored scenes, companions and endings." }
+    ],
+    "tags": { "genres": ["strategy", "rpg"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://ck2.paradoxwikis.com/Crusader_Kings_II_Wiki", "note": "Crusader Kings II: dynasty play through heirs" },
+      { "url": "https://baldursgate3.game/", "note": "Baldur's Gate 3: origins and branching choices" }
+    ],
+    "verification": { "status": "unverified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.replay.source.tetris-beatsaber",
+    "axis": "replay.source",
+    "options": [
+      { "pole": "systems", "game": "Tetris (Game Boy)", "year": 1989, "how": "A-Type is an endless marathon: the same seven pieces and one rule set produce a different board every game." },
+      { "pole": "content", "game": "Beat Saber", "year": 2019, "how": "Replay grows with the song library: each music pack adds authored tracks and charts to master." }
+    ],
+    "tags": { "genres": ["puzzle", "rhythm"], "platforms": ["handheld", "vr", "pc", "console"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://tetris.wiki/Tetris_(Game_Boy)", "note": "Tetris (Game Boy): A-Type endless marathon" },
+      { "url": "https://beatsaber.com/", "note": "Beat Saber: music packs" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mod.support.trackmania-mariokart8deluxe",
+    "axis": "mod.support",
+    "options": [
+      { "pole": "mods", "game": "Trackmania", "year": 2020, "how": "Simple and advanced track editors with 3000+ blocks; the best player-made tracks rotate into weekly and Arcade channel play." },
+      { "pole": "closed", "game": "Mario Kart 8 Deluxe", "year": 2017, "how": "Every course is built by Nintendo; new tracks arrived only as paid Booster Course Pass waves, with no course editor." }
+    ],
+    "tags": { "genres": ["racing"], "platforms": ["pc", "console"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://www.trackmania.com/", "note": "Trackmania: simple and advanced track editors, best player-created tracks featured weekly and in the Arcade channel" },
+      { "url": "https://www.nintendo.com/us/store/products/mario-kart-8-deluxe-switch/", "note": "Mario Kart 8 Deluxe: Booster Course Pass DLC waves 1 to 4, no course editor listed" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.replay.source.balatro-baldursgate3",
+    "axis": "replay.source",
+    "options": [
+      { "pole": "systems", "game": "Balatro", "year": 2024, "how": "Random shop Jokers from a pool of 150 stack scoring effects with each other and your deck, so every run builds a different engine." },
+      { "pole": "content", "game": "Baldur's Gate 3", "year": 2023, "how": "Seven origin characters each bring a written backstory, dedicated dialogue and a personal quest, so replays unlock new authored story." }
+    ],
+    "tags": { "genres": ["card", "rpg"], "platforms": ["pc", "console", "mobile"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://balatrowiki.org/w/Jokers", "note": "Balatro: 150 Jokers, random shop generation and synergy with other Jokers and deck composition" },
+      { "url": "https://bg3.wiki/wiki/Origin_characters", "note": "Baldur's Gate 3: seven origins with predefined backstory, unique interactions and a personal quest" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  }
+]

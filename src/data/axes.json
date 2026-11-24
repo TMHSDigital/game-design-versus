@@ -1,0 +1,4995 @@
+{
+  "version": 1,
+  "modules": [
+    {
+      "id": "frame",
+      "label": "Frame"
+    },
+    {
+      "id": "experience",
+      "label": "Experience"
+    },
+    {
+      "id": "genre",
+      "label": "Genre"
+    },
+    {
+      "id": "camera_controls",
+      "label": "Camera and controls"
+    },
+    {
+      "id": "loop",
+      "label": "Core loop"
+    },
+    {
+      "id": "combat",
+      "label": "Combat",
+      "gates": [
+        "combat.presence",
+        "stealth.presence"
+      ]
+    },
+    {
+      "id": "movement",
+      "label": "Movement",
+      "appliesWhen": {
+        "flag": "has_avatar"
+      },
+      "gates": [
+        "move.vehicles"
+      ]
+    },
+    {
+      "id": "progression",
+      "label": "Progression",
+      "gates": [
+        "prog.presence"
+      ]
+    },
+    {
+      "id": "economy",
+      "label": "Economy",
+      "gates": [
+        "econ.presence"
+      ]
+    },
+    {
+      "id": "crafting_building_survival",
+      "label": "Crafting, building and survival",
+      "gates": [
+        "craft.presence",
+        "build.presence",
+        "surv.presence"
+      ]
+    },
+    {
+      "id": "management",
+      "label": "Management",
+      "gates": [
+        "mgmt.presence"
+      ]
+    },
+    {
+      "id": "world",
+      "label": "World"
+    },
+    {
+      "id": "narrative",
+      "label": "Narrative",
+      "gates": [
+        "narr.presence"
+      ]
+    },
+    {
+      "id": "failure_difficulty",
+      "label": "Failure and difficulty"
+    },
+    {
+      "id": "multiplayer",
+      "label": "Multiplayer",
+      "appliesWhen": {
+        "flag": "is_multiplayer"
+      }
+    },
+    {
+      "id": "presentation",
+      "label": "Presentation"
+    },
+    {
+      "id": "meta",
+      "label": "Meta"
+    },
+    {
+      "id": "strategy",
+      "label": "Strategy",
+      "appliesWhen": {
+        "flag": "is_strategy"
+      }
+    },
+    {
+      "id": "puzzle",
+      "label": "Puzzle",
+      "appliesWhen": {
+        "flag": "is_puzzle"
+      }
+    },
+    {
+      "id": "racing",
+      "label": "Racing",
+      "appliesWhen": {
+        "flag": "is_racing"
+      }
+    },
+    {
+      "id": "fighting",
+      "label": "Fighting",
+      "appliesWhen": {
+        "flag": "is_fighting"
+      }
+    },
+    {
+      "id": "sports",
+      "label": "Sports",
+      "appliesWhen": {
+        "flag": "is_sports"
+      }
+    },
+    {
+      "id": "horror",
+      "label": "Horror",
+      "appliesWhen": {
+        "flag": "is_horror"
+      }
+    },
+    {
+      "id": "card",
+      "label": "Card",
+      "appliesWhen": {
+        "flag": "is_card"
+      }
+    },
+    {
+      "id": "idle",
+      "label": "Idle",
+      "appliesWhen": {
+        "flag": "is_idle"
+      }
+    },
+    {
+      "id": "party",
+      "label": "Party",
+      "appliesWhen": {
+        "flag": "is_party"
+      }
+    },
+    {
+      "id": "rhythm",
+      "label": "Rhythm",
+      "appliesWhen": {
+        "flag": "is_rhythm"
+      }
+    }
+  ],
+  "axes": [
+    {
+      "id": "frame.platform",
+      "module": "frame",
+      "label": "Target platforms",
+      "kind": "multi",
+      "poles": [
+        {
+          "id": "pc",
+          "label": "PC",
+          "summary": "Windows, macOS or Linux desktop, usually via Steam or similar stores"
+        },
+        {
+          "id": "console",
+          "label": "Console",
+          "summary": "PlayStation, Xbox or Nintendo home consoles"
+        },
+        {
+          "id": "handheld",
+          "label": "Handheld",
+          "summary": "Switch handheld mode, Steam Deck and similar portable PCs"
+        },
+        {
+          "id": "mobile",
+          "label": "Mobile",
+          "summary": "iOS and Android phones and tablets"
+        },
+        {
+          "id": "vr",
+          "label": "VR",
+          "summary": "Standalone or PC VR headsets"
+        },
+        {
+          "id": "web",
+          "label": "Web",
+          "summary": "Runs in a browser with no install"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "is_vr",
+          "when": {
+            "axis": "frame.platform",
+            "in": [
+              "vr"
+            ]
+          }
+        }
+      ],
+      "importance": 3,
+      "tier": 0,
+      "questionTemplate": "Which platforms are you shipping on?",
+      "header": "Platforms"
+    },
+    {
+      "id": "frame.input",
+      "module": "frame",
+      "label": "Primary input",
+      "kind": "categorical",
+      "poles": [
+        {
+          "id": "mkb",
+          "label": "Mouse and keyboard",
+          "summary": "Precise pointer plus many keys"
+        },
+        {
+          "id": "gamepad",
+          "label": "Gamepad",
+          "summary": "Two sticks, triggers and face buttons"
+        },
+        {
+          "id": "touch",
+          "label": "Touch",
+          "summary": "Taps, swipes and gestures on a screen"
+        },
+        {
+          "id": "motion",
+          "label": "Motion or VR",
+          "summary": "Tracked hands, controllers or body motion"
+        },
+        {
+          "id": "mixed",
+          "label": "Mixed",
+          "summary": "Designed to play equally well on several input types"
+        }
+      ],
+      "importance": 2,
+      "tier": 0,
+      "questionTemplate": "Primary input: which fits your game?",
+      "header": "Input"
+    },
+    {
+      "id": "frame.players",
+      "module": "frame",
+      "label": "Player count",
+      "kind": "categorical",
+      "poles": [
+        {
+          "id": "solo",
+          "label": "Solo",
+          "summary": "Single-player only"
+        },
+        {
+          "id": "local_coop",
+          "label": "Local co-op",
+          "summary": "Couch co-op on one machine"
+        },
+        {
+          "id": "local_versus",
+          "label": "Local versus",
+          "summary": "Couch competition on one machine"
+        },
+        {
+          "id": "online_coop",
+          "label": "Online co-op (small)",
+          "summary": "A few friends cooperate online"
+        },
+        {
+          "id": "online_competitive",
+          "label": "Online competitive",
+          "summary": "Players compete online in matches"
+        },
+        {
+          "id": "mmo",
+          "label": "Massively multiplayer",
+          "summary": "Hundreds or thousands share a world"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "is_multiplayer",
+          "when": {
+            "axis": "frame.players",
+            "in": [
+              "local_coop",
+              "local_versus",
+              "online_coop",
+              "online_competitive",
+              "mmo"
+            ]
+          }
+        },
+        {
+          "flag": "is_online",
+          "when": {
+            "axis": "frame.players",
+            "in": [
+              "online_coop",
+              "online_competitive",
+              "mmo"
+            ]
+          }
+        },
+        {
+          "flag": "is_competitive",
+          "when": {
+            "axis": "frame.players",
+            "in": [
+              "local_versus",
+              "online_competitive"
+            ]
+          }
+        }
+      ],
+      "importance": 3,
+      "tier": 0,
+      "questionTemplate": "Who plays together?",
+      "header": "Players"
+    },
+    {
+      "id": "frame.session",
+      "module": "frame",
+      "label": "Session length",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "short",
+          "label": "Short sessions",
+          "summary": "A satisfying session fits in under 20 minutes"
+        },
+        {
+          "id": "long",
+          "label": "Long sessions",
+          "summary": "Play is built around sittings of two hours or more"
+        }
+      ],
+      "importance": 2,
+      "tier": 0,
+      "questionTemplate": "Session length: {a} or {b}?",
+      "header": "Session"
+    },
+    {
+      "id": "frame.length",
+      "module": "frame",
+      "label": "Product length",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "finite",
+          "label": "Finite experience",
+          "summary": "A designed start and end, then credits"
+        },
+        {
+          "id": "endless",
+          "label": "Endless or live",
+          "summary": "Play continues indefinitely with no hard end"
+        }
+      ],
+      "importance": 2,
+      "tier": 0,
+      "questionTemplate": "Product length: {a} or {b}?",
+      "header": "Length"
+    },
+    {
+      "id": "frame.monetization",
+      "module": "frame",
+      "label": "Business model",
+      "kind": "categorical",
+      "poles": [
+        {
+          "id": "premium",
+          "label": "Premium",
+          "summary": "One up-front price"
+        },
+        {
+          "id": "premium_dlc",
+          "label": "Premium plus DLC",
+          "summary": "Up-front price plus paid expansions"
+        },
+        {
+          "id": "f2p_cosmetic",
+          "label": "F2P cosmetic",
+          "summary": "Free, revenue from cosmetics and passes"
+        },
+        {
+          "id": "f2p_gacha",
+          "label": "F2P gacha or progression",
+          "summary": "Free, revenue from randomized or power purchases"
+        },
+        {
+          "id": "subscription",
+          "label": "Subscription",
+          "summary": "Recurring fee for access"
+        },
+        {
+          "id": "ad_supported",
+          "label": "Ad-supported",
+          "summary": "Free, revenue from advertising"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "is_f2p",
+          "when": {
+            "axis": "frame.monetization",
+            "in": [
+              "f2p_cosmetic",
+              "f2p_gacha",
+              "ad_supported"
+            ]
+          }
+        }
+      ],
+      "importance": 3,
+      "tier": 0,
+      "questionTemplate": "Business model: which fits your game?",
+      "header": "Business"
+    },
+    {
+      "id": "frame.team",
+      "module": "frame",
+      "label": "Team size",
+      "kind": "categorical",
+      "poles": [
+        {
+          "id": "solo",
+          "label": "Solo",
+          "summary": "One developer"
+        },
+        {
+          "id": "small",
+          "label": "2 to 5",
+          "summary": "A small indie team"
+        },
+        {
+          "id": "medium",
+          "label": "6 to 20",
+          "summary": "A mid-size studio team"
+        },
+        {
+          "id": "large",
+          "label": "20 or more",
+          "summary": "A large production team"
+        }
+      ],
+      "importance": 3,
+      "tier": 0,
+      "questionTemplate": "Team size: which fits your game?",
+      "header": "Team"
+    },
+    {
+      "id": "frame.timeline",
+      "module": "frame",
+      "label": "Timeline",
+      "kind": "categorical",
+      "poles": [
+        {
+          "id": "jam",
+          "label": "Jam (under 1 month)",
+          "summary": "A game jam or prototype"
+        },
+        {
+          "id": "months",
+          "label": "3 to 6 months",
+          "summary": "A short commercial project"
+        },
+        {
+          "id": "years",
+          "label": "1 to 2 years",
+          "summary": "A typical indie production"
+        },
+        {
+          "id": "long",
+          "label": "3 years or more",
+          "summary": "A long production"
+        }
+      ],
+      "importance": 3,
+      "tier": 0,
+      "questionTemplate": "Timeline: which fits your game?",
+      "header": "Timeline"
+    },
+    {
+      "id": "frame.engine",
+      "module": "frame",
+      "label": "Engine",
+      "kind": "categorical",
+      "poles": [
+        {
+          "id": "unity",
+          "label": "Unity",
+          "summary": "Unity engine"
+        },
+        {
+          "id": "unreal",
+          "label": "Unreal",
+          "summary": "Unreal Engine"
+        },
+        {
+          "id": "godot",
+          "label": "Godot",
+          "summary": "Godot engine"
+        },
+        {
+          "id": "gamemaker",
+          "label": "GameMaker",
+          "summary": "GameMaker"
+        },
+        {
+          "id": "custom",
+          "label": "Custom",
+          "summary": "A custom or in-house engine or framework"
+        },
+        {
+          "id": "undecided",
+          "label": "Undecided",
+          "summary": "No engine chosen yet",
+          "noExemplar": true
+        }
+      ],
+      "importance": 1,
+      "tier": 0,
+      "questionTemplate": "Engine: which fits your game?",
+      "header": "Engine"
+    },
+    {
+      "id": "frame.rating",
+      "module": "frame",
+      "label": "Audience rating",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "all_ages",
+          "label": "All ages",
+          "summary": "Suitable for everyone"
+        },
+        {
+          "id": "mature",
+          "label": "Mature",
+          "summary": "Aimed at adults; violence or themes earn a mature rating"
+        }
+      ],
+      "importance": 2,
+      "tier": 0,
+      "questionTemplate": "Audience rating: {a} or {b}?",
+      "header": "Rating"
+    },
+    {
+      "id": "frame.dimension",
+      "module": "frame",
+      "label": "Dimensionality",
+      "kind": "categorical",
+      "poles": [
+        {
+          "id": "d2",
+          "label": "2D",
+          "summary": "Flat sprites or vector art on a 2D plane"
+        },
+        {
+          "id": "d25",
+          "label": "2.5D",
+          "summary": "3D rendering on a mostly 2D play plane, or 2D art in 3D space"
+        },
+        {
+          "id": "d3",
+          "label": "3D",
+          "summary": "Full 3D space and movement"
+        }
+      ],
+      "importance": 3,
+      "tier": 0,
+      "questionTemplate": "Dimensionality: which fits your game?",
+      "header": "Dimension"
+    },
+    {
+      "id": "frame.realism",
+      "module": "frame",
+      "label": "Realism",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "grounded",
+          "label": "Grounded simulation",
+          "summary": "Rules mimic the real world, even when that is less convenient"
+        },
+        {
+          "id": "arcade",
+          "label": "Stylized arcade",
+          "summary": "Rules bend reality for readability and fun"
+        }
+      ],
+      "importance": 3,
+      "tier": 0,
+      "questionTemplate": "Realism: {a} or {b}?",
+      "header": "Realism"
+    },
+    {
+      "id": "exp.aesthetics",
+      "module": "experience",
+      "label": "MDA aesthetics",
+      "kind": "rank",
+      "poles": [
+        {
+          "id": "sensation",
+          "label": "Sensation",
+          "summary": "Game as sense-pleasure"
+        },
+        {
+          "id": "fantasy",
+          "label": "Fantasy",
+          "summary": "Game as make-believe"
+        },
+        {
+          "id": "narrative",
+          "label": "Narrative",
+          "summary": "Game as drama"
+        },
+        {
+          "id": "challenge",
+          "label": "Challenge",
+          "summary": "Game as obstacle course"
+        },
+        {
+          "id": "fellowship",
+          "label": "Fellowship",
+          "summary": "Game as social framework"
+        },
+        {
+          "id": "discovery",
+          "label": "Discovery",
+          "summary": "Game as uncharted territory"
+        },
+        {
+          "id": "expression",
+          "label": "Expression",
+          "summary": "Game as self-discovery and creation"
+        },
+        {
+          "id": "submission",
+          "label": "Submission",
+          "summary": "Game as pastime"
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Which kinds of fun matter most? Pick the strongest.",
+      "header": "Aesthetics",
+      "keep": 3
+    },
+    {
+      "id": "exp.motivation",
+      "module": "experience",
+      "label": "Player motivations",
+      "kind": "rank",
+      "poles": [
+        {
+          "id": "destruction",
+          "label": "Destruction",
+          "summary": "Guns, explosives, chaos and mayhem"
+        },
+        {
+          "id": "excitement",
+          "label": "Excitement",
+          "summary": "Fast-paced action, surprises and thrills"
+        },
+        {
+          "id": "competition",
+          "label": "Competition",
+          "summary": "Duels, matches and high rankings"
+        },
+        {
+          "id": "community",
+          "label": "Community",
+          "summary": "Being on a team, chatting and interacting"
+        },
+        {
+          "id": "challenge",
+          "label": "Challenge",
+          "summary": "Practice and high difficulty"
+        },
+        {
+          "id": "strategy",
+          "label": "Strategy",
+          "summary": "Thinking ahead and making decisions"
+        },
+        {
+          "id": "completion",
+          "label": "Completion",
+          "summary": "Get all collectibles and finish every mission"
+        },
+        {
+          "id": "power",
+          "label": "Power",
+          "summary": "Powerful characters and equipment"
+        },
+        {
+          "id": "fantasy",
+          "label": "Fantasy",
+          "summary": "Being someone else, somewhere else"
+        },
+        {
+          "id": "story",
+          "label": "Story",
+          "summary": "Elaborate plots and interesting characters"
+        },
+        {
+          "id": "design",
+          "label": "Design",
+          "summary": "Expression and customization"
+        },
+        {
+          "id": "discovery",
+          "label": "Discovery",
+          "summary": "Explore, tinker and experiment"
+        }
+      ],
+      "importance": 2,
+      "tier": 1,
+      "questionTemplate": "Which player motivations should the game serve most?",
+      "header": "Motivation",
+      "keep": 4
+    },
+    {
+      "id": "exp.tone",
+      "module": "experience",
+      "label": "Tone",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "light",
+          "label": "Lighthearted",
+          "summary": "Warm, funny or whimsical"
+        },
+        {
+          "id": "grim",
+          "label": "Grim",
+          "summary": "Dark, heavy or bleak"
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Tone: {a} or {b}?",
+      "header": "Tone"
+    },
+    {
+      "id": "exp.pace",
+      "module": "experience",
+      "label": "Pace",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "relaxed",
+          "label": "Relaxed",
+          "summary": "Low pressure; the player sets the rhythm"
+        },
+        {
+          "id": "intense",
+          "label": "Intense",
+          "summary": "Constant pressure and fast decisions"
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Pace: {a} or {b}?",
+      "header": "Pace"
+    },
+    {
+      "id": "exp.challenge",
+      "module": "experience",
+      "label": "Challenge",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "accessible",
+          "label": "Accessible",
+          "summary": "Most players can finish it"
+        },
+        {
+          "id": "punishing",
+          "label": "Punishing",
+          "summary": "Mastery is demanded; failure is frequent"
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Challenge: {a} or {b}?",
+      "header": "Challenge"
+    },
+    {
+      "id": "exp.agency",
+      "module": "experience",
+      "label": "Agency",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "authored",
+          "label": "Authored experience",
+          "summary": "The designer sets the path and the beats"
+        },
+        {
+          "id": "sandbox",
+          "label": "Player-authored sandbox",
+          "summary": "Players set their own goals and stories"
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Agency: {a} or {b}?",
+      "header": "Agency"
+    },
+    {
+      "id": "exp.fantasy",
+      "module": "experience",
+      "label": "Player fantasy",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "power",
+          "label": "Power fantasy",
+          "summary": "The player becomes formidable"
+        },
+        {
+          "id": "vulnerable",
+          "label": "Vulnerability",
+          "summary": "The player is fragile and must cope"
+        }
+      ],
+      "importance": 2,
+      "tier": 1,
+      "questionTemplate": "Player fantasy: {a} or {b}?",
+      "header": "Fantasy"
+    },
+    {
+      "id": "genre.family",
+      "module": "genre",
+      "label": "Genre family",
+      "kind": "multi",
+      "poles": [
+        {
+          "id": "action",
+          "label": "Action",
+          "summary": "Reflex-driven play"
+        },
+        {
+          "id": "rpg",
+          "label": "RPG",
+          "summary": "Character growth and role-play"
+        },
+        {
+          "id": "strategy",
+          "label": "Strategy",
+          "summary": "Planning and resource decisions"
+        },
+        {
+          "id": "simulation",
+          "label": "Simulation or management",
+          "summary": "Systems that model a business, city or process"
+        },
+        {
+          "id": "survival",
+          "label": "Survival or crafting",
+          "summary": "Gather, craft and stay alive"
+        },
+        {
+          "id": "puzzle",
+          "label": "Puzzle",
+          "summary": "Logic and problem solving"
+        },
+        {
+          "id": "platformer",
+          "label": "Platformer",
+          "summary": "Jumping and traversal challenges"
+        },
+        {
+          "id": "fighting",
+          "label": "Fighting",
+          "summary": "One-on-one or small-group fighting games"
+        },
+        {
+          "id": "racing",
+          "label": "Racing or vehicles",
+          "summary": "Driving, flying or piloting"
+        },
+        {
+          "id": "sports",
+          "label": "Sports",
+          "summary": "Real or invented sports"
+        },
+        {
+          "id": "horror",
+          "label": "Horror",
+          "summary": "Fear and dread"
+        },
+        {
+          "id": "narrative",
+          "label": "Narrative or adventure",
+          "summary": "Story-first play"
+        },
+        {
+          "id": "shooter",
+          "label": "Shooter",
+          "summary": "Gunplay at the core"
+        },
+        {
+          "id": "sandbox",
+          "label": "Sandbox",
+          "summary": "Open-ended creation and play"
+        },
+        {
+          "id": "card",
+          "label": "Card or board",
+          "summary": "Cards, tiles or board-game rules"
+        },
+        {
+          "id": "rhythm",
+          "label": "Rhythm",
+          "summary": "Play to the beat"
+        },
+        {
+          "id": "idle",
+          "label": "Idle or incremental",
+          "summary": "Numbers grow, often while away"
+        },
+        {
+          "id": "party",
+          "label": "Party or social",
+          "summary": "Group play in the same room or call"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "is_strategy",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "strategy"
+            ]
+          }
+        },
+        {
+          "flag": "is_puzzle",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "puzzle"
+            ]
+          }
+        },
+        {
+          "flag": "is_racing",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "racing"
+            ]
+          }
+        },
+        {
+          "flag": "is_fighting",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "fighting"
+            ]
+          }
+        },
+        {
+          "flag": "is_sports",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "sports"
+            ]
+          }
+        },
+        {
+          "flag": "is_horror",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "horror"
+            ]
+          }
+        },
+        {
+          "flag": "is_card",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "card"
+            ]
+          }
+        },
+        {
+          "flag": "is_rhythm",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "rhythm"
+            ]
+          }
+        },
+        {
+          "flag": "is_idle",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "idle"
+            ]
+          }
+        },
+        {
+          "flag": "is_party",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "party"
+            ]
+          }
+        },
+        {
+          "flag": "has_combat",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "action",
+              "fighting",
+              "shooter"
+            ]
+          }
+        },
+        {
+          "flag": "has_ranged",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "shooter"
+            ]
+          }
+        },
+        {
+          "flag": "has_melee",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "fighting"
+            ]
+          }
+        },
+        {
+          "flag": "has_progression",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "rpg"
+            ]
+          }
+        },
+        {
+          "flag": "has_management",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "simulation"
+            ]
+          }
+        },
+        {
+          "flag": "has_crafting",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "survival"
+            ]
+          }
+        },
+        {
+          "flag": "has_survival_needs",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "survival"
+            ]
+          }
+        },
+        {
+          "flag": "has_vehicles",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "racing"
+            ]
+          }
+        },
+        {
+          "flag": "has_narrative",
+          "when": {
+            "axis": "genre.family",
+            "in": [
+              "narrative"
+            ]
+          }
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Which genre families does your game belong to? Pick all that apply.",
+      "header": "Genre"
+    },
+    {
+      "id": "genre.form",
+      "module": "genre",
+      "label": "Genre form",
+      "kind": "multi",
+      "poles": [
+        {
+          "id": "roguelike",
+          "label": "Roguelike",
+          "summary": "Permadeath runs with no carry-over"
+        },
+        {
+          "id": "roguelite",
+          "label": "Roguelite",
+          "summary": "Runs with persistent unlocks"
+        },
+        {
+          "id": "soulslike",
+          "label": "Soulslike",
+          "summary": "Punishing melee, corpse runs, bonfires"
+        },
+        {
+          "id": "metroidvania",
+          "label": "Metroidvania",
+          "summary": "Ability-gated interconnected map"
+        },
+        {
+          "id": "immersive_sim",
+          "label": "Immersive sim",
+          "summary": "Systemic levels with many solutions"
+        },
+        {
+          "id": "open_world",
+          "label": "Open world",
+          "summary": "A large freely explorable world"
+        },
+        {
+          "id": "extraction",
+          "label": "Extraction",
+          "summary": "Enter, loot, get out or lose it"
+        },
+        {
+          "id": "battle_royale",
+          "label": "Battle royale",
+          "summary": "Last player or team standing in a shrinking zone"
+        },
+        {
+          "id": "moba",
+          "label": "MOBA",
+          "summary": "Two teams of heroes push lanes"
+        },
+        {
+          "id": "mmo",
+          "label": "MMO",
+          "summary": "Persistent online world"
+        },
+        {
+          "id": "x4",
+          "label": "4X",
+          "summary": "Explore, expand, exploit, exterminate"
+        },
+        {
+          "id": "grand_strategy",
+          "label": "Grand strategy",
+          "summary": "Nation-scale simulation over long spans"
+        },
+        {
+          "id": "rts",
+          "label": "RTS",
+          "summary": "Real-time base building and armies"
+        },
+        {
+          "id": "tactics",
+          "label": "Tactics",
+          "summary": "Squad-level positional battles"
+        },
+        {
+          "id": "colony_sim",
+          "label": "Colony sim",
+          "summary": "Indirectly guide simulated colonists"
+        },
+        {
+          "id": "city_builder",
+          "label": "City builder",
+          "summary": "Plan and grow a settlement"
+        },
+        {
+          "id": "tycoon",
+          "label": "Tycoon",
+          "summary": "Run a business for profit"
+        },
+        {
+          "id": "deckbuilder",
+          "label": "Deckbuilder",
+          "summary": "Build a deck as you play"
+        },
+        {
+          "id": "cozy",
+          "label": "Cozy or life sim",
+          "summary": "Low-stress daily life loops"
+        },
+        {
+          "id": "visual_novel",
+          "label": "Visual novel",
+          "summary": "Text and art driven story"
+        },
+        {
+          "id": "walking_sim",
+          "label": "Walking sim",
+          "summary": "Exploration-led narrative with little failure"
+        },
+        {
+          "id": "auto_battler",
+          "label": "Auto-battler",
+          "summary": "Build a team, watch it fight"
+        },
+        {
+          "id": "survivors_like",
+          "label": "Survivors-like",
+          "summary": "Auto-attacks against hordes"
+        },
+        {
+          "id": "tower_defense",
+          "label": "Tower defense",
+          "summary": "Place defenses against waves"
+        },
+        {
+          "id": "sandbox_builder",
+          "label": "Sandbox builder",
+          "summary": "Build anything in an open world"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "is_strategy",
+          "when": {
+            "axis": "genre.form",
+            "in": [
+              "x4",
+              "grand_strategy",
+              "rts",
+              "tactics"
+            ]
+          }
+        },
+        {
+          "flag": "is_run_based",
+          "when": {
+            "axis": "genre.form",
+            "in": [
+              "roguelike",
+              "roguelite"
+            ]
+          }
+        },
+        {
+          "flag": "is_card",
+          "when": {
+            "axis": "genre.form",
+            "in": [
+              "deckbuilder"
+            ]
+          }
+        },
+        {
+          "flag": "has_management",
+          "when": {
+            "axis": "genre.form",
+            "in": [
+              "colony_sim",
+              "city_builder",
+              "tycoon"
+            ]
+          }
+        },
+        {
+          "flag": "is_multiplayer",
+          "when": {
+            "axis": "genre.form",
+            "in": [
+              "battle_royale",
+              "moba",
+              "mmo"
+            ]
+          }
+        },
+        {
+          "flag": "is_online",
+          "when": {
+            "axis": "genre.form",
+            "in": [
+              "battle_royale",
+              "moba",
+              "mmo",
+              "extraction"
+            ]
+          }
+        },
+        {
+          "flag": "has_building",
+          "when": {
+            "axis": "genre.form",
+            "in": [
+              "sandbox_builder",
+              "city_builder",
+              "colony_sim"
+            ]
+          }
+        },
+        {
+          "flag": "is_strategy",
+          "when": {
+            "axis": "genre.form",
+            "in": [
+              "tower_defense",
+              "auto_battler"
+            ]
+          }
+        }
+      ],
+      "importance": 2,
+      "tier": 1,
+      "questionTemplate": "Which established forms is it closest to? Pick all that apply.",
+      "header": "Form"
+    },
+    {
+      "id": "cam.view",
+      "module": "camera_controls",
+      "label": "Camera view",
+      "kind": "categorical",
+      "poles": [
+        {
+          "id": "first_person",
+          "label": "First-person",
+          "summary": "Seen through the character's eyes"
+        },
+        {
+          "id": "third_shoulder",
+          "label": "Over-shoulder third person",
+          "summary": "Camera behind and beside the character"
+        },
+        {
+          "id": "fixed_cinematic",
+          "label": "Fixed cinematic",
+          "summary": "Authored camera angles per room or shot"
+        },
+        {
+          "id": "top_down",
+          "label": "Isometric or top-down",
+          "summary": "Looking down on the play space"
+        },
+        {
+          "id": "side",
+          "label": "Side view",
+          "summary": "A 2D side-on plane"
+        },
+        {
+          "id": "strategy",
+          "label": "Free strategy camera",
+          "summary": "A pannable, zoomable overview"
+        },
+        {
+          "id": "vr",
+          "label": "VR",
+          "summary": "Head-tracked first person in a headset"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "is_vr",
+          "when": {
+            "axis": "cam.view",
+            "in": [
+              "vr"
+            ]
+          }
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Camera view: which fits your game?",
+      "header": "Camera"
+    },
+    {
+      "id": "cam.control",
+      "module": "camera_controls",
+      "label": "Camera control",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "player",
+          "label": "Player-controlled",
+          "summary": "The player aims and moves the camera"
+        },
+        {
+          "id": "directed",
+          "label": "Directed by game",
+          "summary": "The game frames each moment"
+        }
+      ],
+      "importance": 1,
+      "tier": 1,
+      "questionTemplate": "Camera control: {a} or {b}?",
+      "header": "Cam control"
+    },
+    {
+      "id": "ctl.embodiment",
+      "module": "camera_controls",
+      "label": "Embodiment",
+      "kind": "gate",
+      "poles": [
+        {
+          "id": "avatar",
+          "label": "Direct avatar",
+          "summary": "You control one body in the world"
+        },
+        {
+          "id": "command",
+          "label": "Indirect command",
+          "summary": "You give orders, place things or manage from above"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "has_avatar",
+          "when": {
+            "not": {
+              "axis": "ctl.embodiment",
+              "lean": "B"
+            }
+          }
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Embodiment: {a} or {b}?",
+      "header": "Embodiment"
+    },
+    {
+      "id": "ctl.complexity",
+      "module": "camera_controls",
+      "label": "Control complexity",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "few",
+          "label": "Few inputs",
+          "summary": "A handful of verbs, easy to pick up"
+        },
+        {
+          "id": "many",
+          "label": "Many inputs",
+          "summary": "Deep control schemes with many actions"
+        }
+      ],
+      "importance": 2,
+      "tier": 1,
+      "questionTemplate": "Control complexity: {a} or {b}?",
+      "header": "Controls"
+    },
+    {
+      "id": "ctl.physicality",
+      "module": "camera_controls",
+      "label": "Input physicality",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "physics",
+          "label": "Physics-driven input",
+          "summary": "Input pushes bodies or objects through simulation"
+        },
+        {
+          "id": "abstract",
+          "label": "Abstracted input",
+          "summary": "Input triggers clean, predictable actions"
+        }
+      ],
+      "importance": 2,
+      "tier": 1,
+      "questionTemplate": "Input physicality: {a} or {b}?",
+      "header": "Input feel"
+    },
+    {
+      "id": "loop.verb",
+      "module": "loop",
+      "label": "Core verbs",
+      "kind": "multi",
+      "poles": [
+        {
+          "id": "fight",
+          "label": "Fight",
+          "summary": "Defeat opponents"
+        },
+        {
+          "id": "explore",
+          "label": "Explore",
+          "summary": "Uncover places and secrets"
+        },
+        {
+          "id": "build",
+          "label": "Build",
+          "summary": "Construct structures or machines"
+        },
+        {
+          "id": "manage",
+          "label": "Manage",
+          "summary": "Run people, money or systems"
+        },
+        {
+          "id": "solve",
+          "label": "Solve",
+          "summary": "Work out puzzles"
+        },
+        {
+          "id": "race",
+          "label": "Race",
+          "summary": "Go fast against the clock or rivals"
+        },
+        {
+          "id": "talk",
+          "label": "Talk",
+          "summary": "Converse and persuade"
+        },
+        {
+          "id": "collect",
+          "label": "Collect",
+          "summary": "Gather and complete sets"
+        },
+        {
+          "id": "create",
+          "label": "Create",
+          "summary": "Make art, music or levels"
+        },
+        {
+          "id": "trade",
+          "label": "Trade",
+          "summary": "Buy, sell and barter"
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "What does the player mostly do, minute to minute? Pick all that apply.",
+      "header": "Core verbs"
+    },
+    {
+      "id": "loop.cadence",
+      "module": "loop",
+      "label": "Decision cadence",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "execution",
+          "label": "Moment-to-moment execution",
+          "summary": "Skill in the moment decides outcomes"
+        },
+        {
+          "id": "planning",
+          "label": "Deliberate planning",
+          "summary": "Thinking ahead decides outcomes"
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Decision cadence: {a} or {b}?",
+      "header": "Cadence"
+    },
+    {
+      "id": "loop.goal",
+      "module": "loop",
+      "label": "Goal source",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "explicit",
+          "label": "Explicit objectives",
+          "summary": "The game tells you what to do next"
+        },
+        {
+          "id": "self",
+          "label": "Self-directed goals",
+          "summary": "You decide what to pursue"
+        }
+      ],
+      "importance": 2,
+      "tier": 1,
+      "questionTemplate": "Goal source: {a} or {b}?",
+      "header": "Goals"
+    },
+    {
+      "id": "loop.run",
+      "module": "loop",
+      "label": "Run structure",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "campaign",
+          "label": "Persistent campaign",
+          "summary": "Progress accumulates in one long playthrough"
+        },
+        {
+          "id": "runs",
+          "label": "Run-based",
+          "summary": "Play resets into discrete runs"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "is_run_based",
+          "when": {
+            "axis": "loop.run",
+            "lean": "B"
+          }
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Run structure: {a} or {b}?",
+      "header": "Runs"
+    },
+    {
+      "id": "loop.time",
+      "module": "loop",
+      "label": "Time model",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "realtime",
+          "label": "Real-time",
+          "summary": "The world keeps moving while you think"
+        },
+        {
+          "id": "turns",
+          "label": "Turn-based",
+          "summary": "The world waits for your move"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "is_realtime",
+          "when": {
+            "not": {
+              "axis": "loop.time",
+              "lean": "B"
+            }
+          }
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Time model: {a} or {b}?",
+      "header": "Time"
+    },
+    {
+      "id": "combat.presence",
+      "module": "combat",
+      "label": "Combat presence",
+      "kind": "gate",
+      "poles": [
+        {
+          "id": "none",
+          "label": "No combat",
+          "summary": "Conflict is resolved without fighting"
+        },
+        {
+          "id": "core",
+          "label": "Combat is core",
+          "summary": "Fighting is a central activity"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "has_combat",
+          "when": {
+            "not": {
+              "axis": "combat.presence",
+              "lean": "A"
+            }
+          }
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Combat presence: {a} or {b}?",
+      "header": "Combat"
+    },
+    {
+      "id": "combat.centrality",
+      "module": "combat",
+      "label": "Combat centrality",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "occasional",
+          "label": "Occasional",
+          "summary": "Fights punctuate other activities"
+        },
+        {
+          "id": "pillar",
+          "label": "Core pillar",
+          "summary": "Most play time is fighting"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_combat"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Combat centrality: {a} or {b}?",
+      "header": "Centrality"
+    },
+    {
+      "id": "combat.time_model",
+      "module": "combat",
+      "label": "Combat time model",
+      "kind": "categorical",
+      "poles": [
+        {
+          "id": "realtime",
+          "label": "Real-time",
+          "summary": "Fights run continuously"
+        },
+        {
+          "id": "rtwp",
+          "label": "Real-time with pause",
+          "summary": "Continuous fights you can pause to issue orders"
+        },
+        {
+          "id": "atb",
+          "label": "ATB hybrid",
+          "summary": "Gauges fill in real time, then you pick actions"
+        },
+        {
+          "id": "wego",
+          "label": "Simultaneous turns (WEGO)",
+          "summary": "Both sides plan, then turns resolve together"
+        },
+        {
+          "id": "alternating",
+          "label": "Alternating turns",
+          "summary": "Sides take turns in sequence"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_combat"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Combat time model: which fits your game?",
+      "header": "Fight time"
+    },
+    {
+      "id": "combat.sim",
+      "module": "combat",
+      "label": "Combat simulation",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "physics",
+          "label": "Physics-simulated",
+          "summary": "Weapons and bodies are physical; momentum and contact decide damage"
+        },
+        {
+          "id": "animated",
+          "label": "Animation and stat driven",
+          "summary": "Attacks play authored animations; stats decide damage"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_combat"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Combat simulation: {a} or {b}?",
+      "header": "Combat sim"
+    },
+    {
+      "id": "combat.range",
+      "module": "combat",
+      "label": "Combat range",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "melee",
+          "label": "Melee-focused",
+          "summary": "Up close with blades, fists or blunt weapons"
+        },
+        {
+          "id": "ranged",
+          "label": "Ranged-focused",
+          "summary": "Guns, bows or spells at a distance"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_combat"
+      },
+      "sets": [
+        {
+          "flag": "has_melee",
+          "when": {
+            "not": {
+              "axis": "combat.range",
+              "lean": "B"
+            }
+          }
+        },
+        {
+          "flag": "has_ranged",
+          "when": {
+            "not": {
+              "axis": "combat.range",
+              "lean": "A"
+            }
+          }
+        }
+      ],
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Combat range: {a} or {b}?",
+      "header": "Range"
+    },
+    {
+      "id": "combat.targeting",
+      "module": "combat",
+      "label": "Targeting",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "lockon",
+          "label": "Lock-on",
+          "summary": "Attacks track a selected target"
+        },
+        {
+          "id": "free",
+          "label": "Free aim or free swing",
+          "summary": "Your aim or swing direction decides what you hit"
+        }
+      ],
+      "appliesWhen": {
+        "all": [
+          {
+            "flag": "has_combat"
+          },
+          {
+            "flag": "has_avatar"
+          }
+        ]
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Targeting: {a} or {b}?",
+      "header": "Targeting"
+    },
+    {
+      "id": "combat.input",
+      "module": "combat",
+      "label": "Attack input",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "directional",
+          "label": "Directional or stance input",
+          "summary": "Attack and guard directions are chosen by input"
+        },
+        {
+          "id": "combo",
+          "label": "Button and combo input",
+          "summary": "Buttons map to attacks; strings form combos"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_combat"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Attack input: {a} or {b}?",
+      "header": "Attack input"
+    },
+    {
+      "id": "combat.resource",
+      "module": "combat",
+      "label": "Combat resource",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "stamina",
+          "label": "Stamina-gated restraint",
+          "summary": "A shared resource limits how often you act"
+        },
+        {
+          "id": "aggression",
+          "label": "Resource-loop aggression",
+          "summary": "Attacking refills what you need"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_combat"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Combat resource: {a} or {b}?",
+      "header": "Resource"
+    },
+    {
+      "id": "combat.defense",
+      "module": "combat",
+      "label": "Primary defense",
+      "kind": "categorical",
+      "poles": [
+        {
+          "id": "parry",
+          "label": "Parry or deflect",
+          "summary": "Timed blocks turn defense into offense"
+        },
+        {
+          "id": "dodge",
+          "label": "Dodge with i-frames",
+          "summary": "Evasive moves grant brief invulnerability"
+        },
+        {
+          "id": "block",
+          "label": "Block or shield",
+          "summary": "Hold a guard to absorb damage"
+        },
+        {
+          "id": "cover",
+          "label": "Cover",
+          "summary": "Positioning behind objects prevents damage"
+        },
+        {
+          "id": "none",
+          "label": "No active defense",
+          "summary": "Avoid damage by movement or killing first"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_combat"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Primary defense: which fits your game?",
+      "header": "Defense"
+    },
+    {
+      "id": "combat.commitment",
+      "module": "combat",
+      "label": "Animation commitment",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "committed",
+          "label": "Committed animations",
+          "summary": "Once you swing, you are locked in"
+        },
+        {
+          "id": "cancel",
+          "label": "Cancelable fluid combos",
+          "summary": "Moves cancel into each other freely"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_combat"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Animation commitment: {a} or {b}?",
+      "header": "Commitment"
+    },
+    {
+      "id": "combat.ttk",
+      "module": "combat",
+      "label": "Time to kill",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "short",
+          "label": "Lethal short TTK",
+          "summary": "A few hits decide a fight"
+        },
+        {
+          "id": "long",
+          "label": "Long TTK",
+          "summary": "Fights are extended exchanges"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_combat"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Time to kill: {a} or {b}?",
+      "header": "TTK"
+    },
+    {
+      "id": "combat.numbers",
+      "module": "combat",
+      "label": "Number display",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "hidden",
+          "label": "Hidden math",
+          "summary": "Damage is read from animations and reactions"
+        },
+        {
+          "id": "visible",
+          "label": "Visible numbers and crits",
+          "summary": "Damage numbers and crits pop on screen"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_combat"
+      },
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Number display: {a} or {b}?",
+      "header": "Numbers"
+    },
+    {
+      "id": "combat.crowd",
+      "module": "combat",
+      "label": "Enemy count",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "duels",
+          "label": "Duels",
+          "summary": "One or a few opponents at a time"
+        },
+        {
+          "id": "hordes",
+          "label": "Hordes",
+          "summary": "Large numbers of enemies at once"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_combat"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Enemy count: {a} or {b}?",
+      "header": "Crowd"
+    },
+    {
+      "id": "combat.ai",
+      "module": "combat",
+      "label": "Enemy AI",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "patterned",
+          "label": "Patterned enemies",
+          "summary": "Enemies follow readable fixed patterns"
+        },
+        {
+          "id": "systemic",
+          "label": "Systemic planning AI",
+          "summary": "Enemies plan, coordinate and adapt"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_combat"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Enemy AI: {a} or {b}?",
+      "header": "Enemy AI"
+    },
+    {
+      "id": "combat.party",
+      "module": "combat",
+      "label": "Units controlled",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "single",
+          "label": "Single character",
+          "summary": "You fight as one character"
+        },
+        {
+          "id": "party",
+          "label": "Party or squad control",
+          "summary": "You direct several units"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_combat"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Units controlled: {a} or {b}?",
+      "header": "Party"
+    },
+    {
+      "id": "combat.info",
+      "module": "combat",
+      "label": "Combat information",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "perfect",
+          "label": "Perfect information",
+          "summary": "Outcomes are shown before you commit"
+        },
+        {
+          "id": "hidden",
+          "label": "Hidden rolls or fog",
+          "summary": "Chance and unknowns shape outcomes"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_combat"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Combat information: {a} or {b}?",
+      "header": "Combat info"
+    },
+    {
+      "id": "combat.gore",
+      "module": "combat",
+      "label": "Violence depiction",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "stylized",
+          "label": "Stylized",
+          "summary": "Hits are abstracted or bloodless"
+        },
+        {
+          "id": "visceral",
+          "label": "Visceral",
+          "summary": "Wounds and gore are shown in detail"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_combat"
+      },
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Violence depiction: {a} or {b}?",
+      "header": "Gore"
+    },
+    {
+      "id": "ranged.ballistics",
+      "module": "combat",
+      "label": "Ballistics",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "hitscan",
+          "label": "Hitscan",
+          "summary": "Shots land instantly where you aim"
+        },
+        {
+          "id": "simulated",
+          "label": "Simulated ballistics",
+          "summary": "Bullets travel, drop and penetrate"
+        }
+      ],
+      "appliesWhen": {
+        "all": [
+          {
+            "flag": "has_combat"
+          },
+          {
+            "flag": "has_ranged"
+          }
+        ]
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Ballistics: {a} or {b}?",
+      "header": "Ballistics"
+    },
+    {
+      "id": "ranged.assist",
+      "module": "combat",
+      "label": "Aim assist",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "assist",
+          "label": "Heavy aim assist",
+          "summary": "The game helps you land shots"
+        },
+        {
+          "id": "raw",
+          "label": "Raw aim",
+          "summary": "Every shot depends on your own aim"
+        }
+      ],
+      "appliesWhen": {
+        "all": [
+          {
+            "flag": "has_combat"
+          },
+          {
+            "flag": "has_ranged"
+          }
+        ]
+      },
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Aim assist: {a} or {b}?",
+      "header": "Aim assist"
+    },
+    {
+      "id": "stealth.presence",
+      "module": "combat",
+      "label": "Stealth",
+      "kind": "gate",
+      "poles": [
+        {
+          "id": "none",
+          "label": "No stealth",
+          "summary": "Being seen has no special meaning"
+        },
+        {
+          "id": "core",
+          "label": "Stealth is core",
+          "summary": "Avoiding detection is a main way to play"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "has_stealth",
+          "when": {
+            "not": {
+              "axis": "stealth.presence",
+              "lean": "A"
+            }
+          }
+        }
+      ],
+      "importance": 2,
+      "tier": 1,
+      "questionTemplate": "Stealth: {a} or {b}?",
+      "header": "Stealth"
+    },
+    {
+      "id": "stealth.model",
+      "module": "combat",
+      "label": "Stealth model",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "light_sound",
+          "label": "Light and sound stealth",
+          "summary": "Shadows, noise and sight lines decide detection"
+        },
+        {
+          "id": "social",
+          "label": "Social or disguise stealth",
+          "summary": "Blending in and disguises decide detection"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_stealth"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Stealth model: {a} or {b}?",
+      "header": "Stealth type"
+    },
+    {
+      "id": "stealth.failure",
+      "module": "combat",
+      "label": "Detection outcome",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "restart",
+          "label": "Restart on detection",
+          "summary": "Being caught fails the attempt"
+        },
+        {
+          "id": "escalate",
+          "label": "Escalate into combat",
+          "summary": "Being caught starts a fight or chase"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_stealth"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Detection outcome: {a} or {b}?",
+      "header": "Detected"
+    },
+    {
+      "id": "move.feel",
+      "module": "movement",
+      "label": "Movement feel",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "weighty",
+          "label": "Weighty and grounded",
+          "summary": "Inertia and footing matter"
+        },
+        {
+          "id": "acrobatic",
+          "label": "Acrobatic momentum",
+          "summary": "Fast, floaty, chainable movement"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_avatar"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Movement feel: {a} or {b}?",
+      "header": "Move feel"
+    },
+    {
+      "id": "move.precision",
+      "module": "movement",
+      "label": "Movement precision",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "forgiving",
+          "label": "Forgiving",
+          "summary": "Generous jumps and assisted landings"
+        },
+        {
+          "id": "precise",
+          "label": "Precision platforming",
+          "summary": "Pixel-tight timing is the challenge"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_avatar"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Movement precision: {a} or {b}?",
+      "header": "Precision"
+    },
+    {
+      "id": "move.tools",
+      "module": "movement",
+      "label": "Traversal tools",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "on_foot",
+          "label": "On foot only",
+          "summary": "Walk, run and jump"
+        },
+        {
+          "id": "tools",
+          "label": "Traversal tools",
+          "summary": "Grapples, gliders, wall-runs and more"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_avatar"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Traversal tools: {a} or {b}?",
+      "header": "Traversal"
+    },
+    {
+      "id": "move.climb",
+      "module": "movement",
+      "label": "Climbing",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "authored",
+          "label": "Authored paths",
+          "summary": "Only marked ledges and routes"
+        },
+        {
+          "id": "anything",
+          "label": "Climb anything",
+          "summary": "Most surfaces are climbable"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_avatar"
+      },
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Climbing: {a} or {b}?",
+      "header": "Climbing"
+    },
+    {
+      "id": "move.vehicles",
+      "module": "movement",
+      "label": "Vehicles",
+      "kind": "gate",
+      "poles": [
+        {
+          "id": "none",
+          "label": "No vehicles",
+          "summary": "Characters travel on foot"
+        },
+        {
+          "id": "matter",
+          "label": "Vehicles or mounts matter",
+          "summary": "Driving, riding or piloting is significant"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "has_vehicles",
+          "when": {
+            "not": {
+              "axis": "move.vehicles",
+              "lean": "A"
+            }
+          }
+        }
+      ],
+      "importance": 2,
+      "tier": 1,
+      "questionTemplate": "Vehicles: {a} or {b}?",
+      "header": "Vehicles"
+    },
+    {
+      "id": "veh.handling",
+      "module": "movement",
+      "label": "Vehicle handling",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "sim",
+          "label": "Simulation",
+          "summary": "Weight transfer, tire grip and tuning"
+        },
+        {
+          "id": "arcade",
+          "label": "Arcade",
+          "summary": "Drift-friendly, forgiving handling"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_vehicles"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Vehicle handling: {a} or {b}?",
+      "header": "Handling"
+    },
+    {
+      "id": "veh.damage",
+      "module": "movement",
+      "label": "Vehicle damage",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "cosmetic",
+          "label": "Cosmetic",
+          "summary": "Damage is visual or absent"
+        },
+        {
+          "id": "softbody",
+          "label": "Soft-body",
+          "summary": "Bodies deform and parts fail physically"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_vehicles"
+      },
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Vehicle damage: {a} or {b}?",
+      "header": "Veh damage"
+    },
+    {
+      "id": "prog.presence",
+      "module": "progression",
+      "label": "Character progression",
+      "kind": "gate",
+      "poles": [
+        {
+          "id": "none",
+          "label": "No progression",
+          "summary": "Power stays the same; only player skill grows"
+        },
+        {
+          "id": "core",
+          "label": "Progression matters",
+          "summary": "Characters or accounts grow stronger or wider"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "has_progression",
+          "when": {
+            "not": {
+              "axis": "prog.presence",
+              "lean": "A"
+            }
+          }
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Character progression: {a} or {b}?",
+      "header": "Progression"
+    },
+    {
+      "id": "prog.source",
+      "module": "progression",
+      "label": "Progression source",
+      "kind": "categorical",
+      "poles": [
+        {
+          "id": "xp",
+          "label": "XP levels",
+          "summary": "Experience points raise levels"
+        },
+        {
+          "id": "use",
+          "label": "Skill-by-use",
+          "summary": "Skills improve as you use them"
+        },
+        {
+          "id": "gear",
+          "label": "Gear-driven",
+          "summary": "Power comes from equipment"
+        },
+        {
+          "id": "unlocks",
+          "label": "Unlock tree",
+          "summary": "Spend points or currency on a tree of unlocks"
+        },
+        {
+          "id": "knowledge",
+          "label": "Knowledge-only",
+          "summary": "Only what the player learns carries forward"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_progression"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Progression source: which fits your game?",
+      "header": "Grow by"
+    },
+    {
+      "id": "prog.direction",
+      "module": "progression",
+      "label": "Progression direction",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "vertical",
+          "label": "Vertical power",
+          "summary": "Numbers go up; old content gets easier"
+        },
+        {
+          "id": "horizontal",
+          "label": "Horizontal options",
+          "summary": "More options rather than more power"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_progression"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Progression direction: {a} or {b}?",
+      "header": "Direction"
+    },
+    {
+      "id": "prog.meta",
+      "module": "progression",
+      "label": "Meta progression",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "none",
+          "label": "No meta progression",
+          "summary": "Each run starts equal"
+        },
+        {
+          "id": "meta",
+          "label": "Persistent meta upgrades",
+          "summary": "Runs feed permanent upgrades"
+        }
+      ],
+      "appliesWhen": {
+        "all": [
+          {
+            "flag": "has_progression"
+          },
+          {
+            "flag": "is_run_based"
+          }
+        ]
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Meta progression: {a} or {b}?",
+      "header": "Meta"
+    },
+    {
+      "id": "prog.build",
+      "module": "progression",
+      "label": "Build freedom",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "fixed",
+          "label": "Fixed class or kit",
+          "summary": "Roles are predefined"
+        },
+        {
+          "id": "freeform",
+          "label": "Classless freeform",
+          "summary": "Mix abilities freely"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_progression"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Build freedom: {a} or {b}?",
+      "header": "Builds"
+    },
+    {
+      "id": "prog.gating",
+      "module": "progression",
+      "label": "Content gating",
+      "kind": "categorical",
+      "poles": [
+        {
+          "id": "ability",
+          "label": "Ability gates",
+          "summary": "New abilities open new areas"
+        },
+        {
+          "id": "knowledge",
+          "label": "Knowledge gates",
+          "summary": "Understanding opens the way"
+        },
+        {
+          "id": "level",
+          "label": "Level gates",
+          "summary": "Areas wait until you are strong enough"
+        },
+        {
+          "id": "story",
+          "label": "Story gates",
+          "summary": "The plot opens areas"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_progression"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Content gating: which fits your game?",
+      "header": "Gating"
+    },
+    {
+      "id": "prog.scaling",
+      "module": "progression",
+      "label": "World scaling",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "fixed",
+          "label": "Fixed-difficulty regions",
+          "summary": "Areas keep their difficulty"
+        },
+        {
+          "id": "scaled",
+          "label": "World scales to player",
+          "summary": "Enemies and loot track your level"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_progression"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "World scaling: {a} or {b}?",
+      "header": "Scaling"
+    },
+    {
+      "id": "prog.respec",
+      "module": "progression",
+      "label": "Respec",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "permanent",
+          "label": "Permanent choices",
+          "summary": "Build decisions stick"
+        },
+        {
+          "id": "free",
+          "label": "Free respec",
+          "summary": "Rebuild at will"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_progression"
+      },
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Respec: {a} or {b}?",
+      "header": "Respec"
+    },
+    {
+      "id": "prog.cap",
+      "module": "progression",
+      "label": "Progression cap",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "cap",
+          "label": "Hard cap",
+          "summary": "Growth stops at a maximum"
+        },
+        {
+          "id": "endless",
+          "label": "Endless prestige",
+          "summary": "Growth or prestige continues forever"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_progression"
+      },
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Progression cap: {a} or {b}?",
+      "header": "Cap"
+    },
+    {
+      "id": "econ.presence",
+      "module": "economy",
+      "label": "Economy",
+      "kind": "gate",
+      "poles": [
+        {
+          "id": "none",
+          "label": "No economy",
+          "summary": "No currency or trade loop"
+        },
+        {
+          "id": "core",
+          "label": "Economy matters",
+          "summary": "Earning and spending shapes play"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "has_economy",
+          "when": {
+            "not": {
+              "axis": "econ.presence",
+              "lean": "A"
+            }
+          }
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Economy: {a} or {b}?",
+      "header": "Economy"
+    },
+    {
+      "id": "econ.scale",
+      "module": "economy",
+      "label": "Economic scale",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "personal",
+          "label": "Hands-on personal business",
+          "summary": "You run individual shops, staff and stock"
+        },
+        {
+          "id": "abstract",
+          "label": "Abstract empire yields",
+          "summary": "Economy is aggregate yields per turn or tick"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_economy"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Economic scale: {a} or {b}?",
+      "header": "Econ scale"
+    },
+    {
+      "id": "econ.currency",
+      "module": "economy",
+      "label": "Currencies",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "single",
+          "label": "Single currency",
+          "summary": "One money to track"
+        },
+        {
+          "id": "many",
+          "label": "Many currencies",
+          "summary": "Several currencies with separate uses"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_economy"
+      },
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Currencies: {a} or {b}?",
+      "header": "Currency"
+    },
+    {
+      "id": "econ.openness",
+      "module": "economy",
+      "label": "Market openness",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "closed",
+          "label": "Closed authored economy",
+          "summary": "Designers set every price and drop"
+        },
+        {
+          "id": "player",
+          "label": "Player-driven market",
+          "summary": "Players set prices and supply"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_economy"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Market openness: {a} or {b}?",
+      "header": "Market"
+    },
+    {
+      "id": "econ.prices",
+      "module": "economy",
+      "label": "Pricing",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "fixed",
+          "label": "Fixed prices",
+          "summary": "Prices are authored constants"
+        },
+        {
+          "id": "dynamic",
+          "label": "Dynamic supply and demand",
+          "summary": "Prices move with supply and demand"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_economy"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Pricing: {a} or {b}?",
+      "header": "Prices"
+    },
+    {
+      "id": "econ.scarcity",
+      "module": "economy",
+      "label": "Scarcity",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "scarce",
+          "label": "Scarce",
+          "summary": "Every resource counts"
+        },
+        {
+          "id": "abundant",
+          "label": "Abundant loot",
+          "summary": "Loot showers; choose what to keep"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_economy"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Scarcity: {a} or {b}?",
+      "header": "Scarcity"
+    },
+    {
+      "id": "econ.sinks",
+      "module": "economy",
+      "label": "Currency sinks",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "weak",
+          "label": "Weak sinks",
+          "summary": "Money accumulates"
+        },
+        {
+          "id": "strong",
+          "label": "Strong sinks",
+          "summary": "Costs constantly drain money"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_economy"
+      },
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Currency sinks: {a} or {b}?",
+      "header": "Sinks"
+    },
+    {
+      "id": "econ.production",
+      "module": "economy",
+      "label": "Production",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "manual",
+          "label": "Manual gathering",
+          "summary": "You gather and craft by hand"
+        },
+        {
+          "id": "automated",
+          "label": "Automated production chains",
+          "summary": "Machines or workers produce for you"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_economy"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Production: {a} or {b}?",
+      "header": "Production"
+    },
+    {
+      "id": "econ.trade",
+      "module": "economy",
+      "label": "Trading",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "none",
+          "label": "No trading",
+          "summary": "Selling is incidental"
+        },
+        {
+          "id": "core",
+          "label": "Trading is core",
+          "summary": "Buying low and selling high is a main loop"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_economy"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Trading: {a} or {b}?",
+      "header": "Trade"
+    },
+    {
+      "id": "econ.logistics",
+      "module": "economy",
+      "label": "Logistics",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "global",
+          "label": "Resources are global",
+          "summary": "Stock is available everywhere at once"
+        },
+        {
+          "id": "physical",
+          "label": "Physical logistics",
+          "summary": "Goods must be moved and stored"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_economy"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Logistics: {a} or {b}?",
+      "header": "Logistics"
+    },
+    {
+      "id": "econ.monetized",
+      "module": "economy",
+      "label": "Real-money link",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "none",
+          "label": "No real-money link",
+          "summary": "In-game currency cannot be bought"
+        },
+        {
+          "id": "real",
+          "label": "Real-money currency",
+          "summary": "Premium currency is sold for money"
+        }
+      ],
+      "appliesWhen": {
+        "all": [
+          {
+            "flag": "has_economy"
+          },
+          {
+            "flag": "is_f2p"
+          }
+        ]
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Real-money link: {a} or {b}?",
+      "header": "Real money"
+    },
+    {
+      "id": "craft.presence",
+      "module": "crafting_building_survival",
+      "label": "Crafting",
+      "kind": "gate",
+      "poles": [
+        {
+          "id": "none",
+          "label": "No crafting",
+          "summary": "Items come from loot or shops"
+        },
+        {
+          "id": "core",
+          "label": "Crafting matters",
+          "summary": "Players make their own items"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "has_crafting",
+          "when": {
+            "not": {
+              "axis": "craft.presence",
+              "lean": "A"
+            }
+          }
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Crafting: {a} or {b}?",
+      "header": "Crafting"
+    },
+    {
+      "id": "craft.discovery",
+      "module": "crafting_building_survival",
+      "label": "Recipe discovery",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "known",
+          "label": "Recipes known",
+          "summary": "Recipes are listed up front"
+        },
+        {
+          "id": "discovered",
+          "label": "Recipes discovered",
+          "summary": "Recipes are found or unlocked"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_crafting"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Recipe discovery: {a} or {b}?",
+      "header": "Recipes"
+    },
+    {
+      "id": "craft.depth",
+      "module": "crafting_building_survival",
+      "label": "Crafting depth",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "shallow",
+          "label": "Shallow",
+          "summary": "Few steps from raw to finished"
+        },
+        {
+          "id": "deep",
+          "label": "Deep chains",
+          "summary": "Many intermediate components"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_crafting"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Crafting depth: {a} or {b}?",
+      "header": "Craft depth"
+    },
+    {
+      "id": "craft.quality",
+      "module": "crafting_building_survival",
+      "label": "Crafted quality",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "fixed",
+          "label": "Fixed outputs",
+          "summary": "A recipe always makes the same item"
+        },
+        {
+          "id": "tiers",
+          "label": "Quality tiers",
+          "summary": "Outputs vary in quality"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_crafting"
+      },
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Crafted quality: {a} or {b}?",
+      "header": "Quality"
+    },
+    {
+      "id": "build.presence",
+      "module": "crafting_building_survival",
+      "label": "Building",
+      "kind": "gate",
+      "poles": [
+        {
+          "id": "none",
+          "label": "No building",
+          "summary": "The world is not player-built"
+        },
+        {
+          "id": "core",
+          "label": "Building matters",
+          "summary": "Players construct structures"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "has_building",
+          "when": {
+            "not": {
+              "axis": "build.presence",
+              "lean": "A"
+            }
+          }
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Building: {a} or {b}?",
+      "header": "Building"
+    },
+    {
+      "id": "build.placement",
+      "module": "crafting_building_survival",
+      "label": "Placement",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "free",
+          "label": "Free placement",
+          "summary": "Place pieces anywhere"
+        },
+        {
+          "id": "grid",
+          "label": "Grid or snap",
+          "summary": "Pieces snap to a grid"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_building"
+      },
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Placement: {a} or {b}?",
+      "header": "Placement"
+    },
+    {
+      "id": "build.integrity",
+      "module": "crafting_building_survival",
+      "label": "Structural integrity",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "none",
+          "label": "None",
+          "summary": "Anything stays up"
+        },
+        {
+          "id": "structural",
+          "label": "Structural",
+          "summary": "Builds need support or they collapse"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_building"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Structural integrity: {a} or {b}?",
+      "header": "Integrity"
+    },
+    {
+      "id": "build.purpose",
+      "module": "crafting_building_survival",
+      "label": "Build purpose",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "cosmetic",
+          "label": "Cosmetic",
+          "summary": "Building is decoration and expression"
+        },
+        {
+          "id": "functional",
+          "label": "Functional or defensive",
+          "summary": "Builds protect, produce or enable"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_building"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Build purpose: {a} or {b}?",
+      "header": "Build use"
+    },
+    {
+      "id": "build.scale",
+      "module": "crafting_building_survival",
+      "label": "Build scale",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "rooms",
+          "label": "Rooms",
+          "summary": "Homes and interiors"
+        },
+        {
+          "id": "cities",
+          "label": "Cities",
+          "summary": "Whole settlements and regions"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_building"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Build scale: {a} or {b}?",
+      "header": "Build scale"
+    },
+    {
+      "id": "surv.presence",
+      "module": "crafting_building_survival",
+      "label": "Survival needs",
+      "kind": "gate",
+      "poles": [
+        {
+          "id": "none",
+          "label": "No survival needs",
+          "summary": "No hunger, thirst or exposure"
+        },
+        {
+          "id": "core",
+          "label": "Survival needs matter",
+          "summary": "Staying fed, warm and healthy is play"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "has_survival_needs",
+          "when": {
+            "not": {
+              "axis": "surv.presence",
+              "lean": "A"
+            }
+          }
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Survival needs: {a} or {b}?",
+      "header": "Survival"
+    },
+    {
+      "id": "surv.needs",
+      "module": "crafting_building_survival",
+      "label": "Needs strictness",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "buff",
+          "label": "Buff-only food",
+          "summary": "Eating gives bonuses but nothing kills you"
+        },
+        {
+          "id": "strict",
+          "label": "Strict needs",
+          "summary": "Neglecting needs leads to death"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_survival_needs"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Needs strictness: {a} or {b}?",
+      "header": "Needs"
+    },
+    {
+      "id": "surv.pressure",
+      "module": "crafting_building_survival",
+      "label": "Survival pressure",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "relaxed",
+          "label": "Relaxed",
+          "summary": "Needs are easy to meet"
+        },
+        {
+          "id": "lethal",
+          "label": "Lethal",
+          "summary": "The environment is actively deadly"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_survival_needs"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Survival pressure: {a} or {b}?",
+      "header": "Pressure"
+    },
+    {
+      "id": "mgmt.presence",
+      "module": "management",
+      "label": "Management layer",
+      "kind": "gate",
+      "poles": [
+        {
+          "id": "none",
+          "label": "No management",
+          "summary": "No people or facilities to run"
+        },
+        {
+          "id": "core",
+          "label": "Management matters",
+          "summary": "You run people, facilities or a settlement"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "has_management",
+          "when": {
+            "not": {
+              "axis": "mgmt.presence",
+              "lean": "A"
+            }
+          }
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Management layer: {a} or {b}?",
+      "header": "Management"
+    },
+    {
+      "id": "mgmt.control",
+      "module": "management",
+      "label": "Management control",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "direct",
+          "label": "Direct control",
+          "summary": "You perform or order each task yourself"
+        },
+        {
+          "id": "indirect",
+          "label": "Indirect priorities",
+          "summary": "You set priorities and agents act"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_management"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Management control: {a} or {b}?",
+      "header": "Control"
+    },
+    {
+      "id": "mgmt.agents",
+      "module": "management",
+      "label": "Agents",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "abstract",
+          "label": "Abstract numbers",
+          "summary": "Population is a number"
+        },
+        {
+          "id": "individuals",
+          "label": "Simulated individuals",
+          "summary": "Each person has needs and traits"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_management"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Agents: {a} or {b}?",
+      "header": "Agents"
+    },
+    {
+      "id": "mgmt.threat",
+      "module": "management",
+      "label": "External threat",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "peaceful",
+          "label": "Peaceful sandbox",
+          "summary": "No enemies; the challenge is the system"
+        },
+        {
+          "id": "threats",
+          "label": "External threats",
+          "summary": "Raids, disasters or rivals push back"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_management"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "External threat: {a} or {b}?",
+      "header": "Threats"
+    },
+    {
+      "id": "mgmt.goal",
+      "module": "management",
+      "label": "Management goal",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "open",
+          "label": "Open sandbox",
+          "summary": "Grow as you like"
+        },
+        {
+          "id": "scenario",
+          "label": "Scenario objectives",
+          "summary": "Win conditions and deadlines"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_management"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Management goal: {a} or {b}?",
+      "header": "Mgmt goal"
+    },
+    {
+      "id": "world.structure",
+      "module": "world",
+      "label": "World structure",
+      "kind": "categorical",
+      "poles": [
+        {
+          "id": "linear",
+          "label": "Linear",
+          "summary": "A sequence of levels or chapters"
+        },
+        {
+          "id": "hub",
+          "label": "Hub",
+          "summary": "A central hub with missions or levels"
+        },
+        {
+          "id": "metroidvania",
+          "label": "Interconnected",
+          "summary": "One interlocking map with shortcuts"
+        },
+        {
+          "id": "open_world",
+          "label": "Open world",
+          "summary": "Go nearly anywhere in any order"
+        },
+        {
+          "id": "level_select",
+          "label": "Level select",
+          "summary": "Pick discrete stages from a menu or map"
+        },
+        {
+          "id": "arena",
+          "label": "Single arena",
+          "summary": "One map or board, replayed"
+        }
+      ],
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "World structure: which fits your game?",
+      "header": "Structure"
+    },
+    {
+      "id": "world.authoring",
+      "module": "world",
+      "label": "World authoring",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "handcrafted",
+          "label": "Handcrafted",
+          "summary": "Every space is authored"
+        },
+        {
+          "id": "procedural",
+          "label": "Procedural",
+          "summary": "Spaces are generated"
+        }
+      ],
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "World authoring: {a} or {b}?",
+      "header": "Authoring"
+    },
+    {
+      "id": "world.size",
+      "module": "world",
+      "label": "World size",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "compact",
+          "label": "Compact and dense",
+          "summary": "Small spaces packed with content"
+        },
+        {
+          "id": "vast",
+          "label": "Vast",
+          "summary": "Huge spaces to cross"
+        }
+      ],
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "World size: {a} or {b}?",
+      "header": "World size"
+    },
+    {
+      "id": "world.persistence",
+      "module": "world",
+      "label": "World persistence",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "resets",
+          "label": "Resets",
+          "summary": "The world returns to its start state"
+        },
+        {
+          "id": "persistent",
+          "label": "Persistent changes",
+          "summary": "What you change stays changed"
+        }
+      ],
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "World persistence: {a} or {b}?",
+      "header": "Persistence"
+    },
+    {
+      "id": "world.destruction",
+      "module": "world",
+      "label": "Destruction",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "static",
+          "label": "Static",
+          "summary": "The environment cannot be broken"
+        },
+        {
+          "id": "destructible",
+          "label": "Fully destructible",
+          "summary": "Most of the world can be destroyed"
+        }
+      ],
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Destruction: {a} or {b}?",
+      "header": "Destruction"
+    },
+    {
+      "id": "world.time",
+      "module": "world",
+      "label": "World time",
+      "kind": "categorical",
+      "poles": [
+        {
+          "id": "static",
+          "label": "Static",
+          "summary": "Time does not pass"
+        },
+        {
+          "id": "day_night",
+          "label": "Day and night",
+          "summary": "A day-night cycle"
+        },
+        {
+          "id": "calendar",
+          "label": "Seasons or calendar",
+          "summary": "Days, seasons and dates"
+        },
+        {
+          "id": "realtime",
+          "label": "Real-time clock",
+          "summary": "Synced to the real-world clock"
+        },
+        {
+          "id": "loop",
+          "label": "Time loop",
+          "summary": "A repeating span of time"
+        }
+      ],
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "World time: which fits your game?",
+      "header": "World time"
+    },
+    {
+      "id": "world.setting",
+      "module": "world",
+      "label": "Setting",
+      "kind": "categorical",
+      "poles": [
+        {
+          "id": "fantasy",
+          "label": "Fantasy",
+          "summary": "Magic and myth"
+        },
+        {
+          "id": "scifi",
+          "label": "Sci-fi",
+          "summary": "Future technology and space"
+        },
+        {
+          "id": "historical",
+          "label": "Historical",
+          "summary": "A real past era"
+        },
+        {
+          "id": "modern",
+          "label": "Modern",
+          "summary": "Present day"
+        },
+        {
+          "id": "post_apoc",
+          "label": "Post-apocalyptic",
+          "summary": "After a collapse"
+        },
+        {
+          "id": "horror",
+          "label": "Horror",
+          "summary": "Dread and the uncanny"
+        },
+        {
+          "id": "abstract",
+          "label": "Abstract",
+          "summary": "No literal setting"
+        },
+        {
+          "id": "mythological",
+          "label": "Mythological",
+          "summary": "Gods and legends of a real culture"
+        }
+      ],
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Setting: which fits your game?",
+      "header": "Setting"
+    },
+    {
+      "id": "narr.presence",
+      "module": "narrative",
+      "label": "Narrative",
+      "kind": "gate",
+      "poles": [
+        {
+          "id": "none",
+          "label": "No story",
+          "summary": "Story is absent or minimal"
+        },
+        {
+          "id": "core",
+          "label": "Story matters",
+          "summary": "Narrative is a reason to play"
+        }
+      ],
+      "sets": [
+        {
+          "flag": "has_narrative",
+          "when": {
+            "not": {
+              "axis": "narr.presence",
+              "lean": "A"
+            }
+          }
+        }
+      ],
+      "importance": 3,
+      "tier": 1,
+      "questionTemplate": "Narrative: {a} or {b}?",
+      "header": "Story"
+    },
+    {
+      "id": "narr.source",
+      "module": "narrative",
+      "label": "Story source",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "authored",
+          "label": "Authored",
+          "summary": "Writers script the story"
+        },
+        {
+          "id": "emergent",
+          "label": "Emergent",
+          "summary": "Systems generate the story"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_narrative"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Story source: {a} or {b}?",
+      "header": "Story from"
+    },
+    {
+      "id": "narr.branching",
+      "module": "narrative",
+      "label": "Branching",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "linear",
+          "label": "Linear",
+          "summary": "One story path"
+        },
+        {
+          "id": "branching",
+          "label": "Branching consequences",
+          "summary": "Choices change what happens"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_narrative"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Branching: {a} or {b}?",
+      "header": "Branching"
+    },
+    {
+      "id": "narr.delivery",
+      "module": "narrative",
+      "label": "Story delivery",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "cinematic",
+          "label": "Cinematic and dialogue",
+          "summary": "Cutscenes and conversations carry the story"
+        },
+        {
+          "id": "environmental",
+          "label": "Environmental and item lore",
+          "summary": "The world and items tell the story"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_narrative"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Story delivery: {a} or {b}?",
+      "header": "Delivery"
+    },
+    {
+      "id": "narr.protagonist",
+      "module": "narrative",
+      "label": "Protagonist",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "defined",
+          "label": "Defined character",
+          "summary": "You play a written character"
+        },
+        {
+          "id": "blank",
+          "label": "Blank slate",
+          "summary": "You play yourself or a custom character"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_narrative"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Protagonist: {a} or {b}?",
+      "header": "Protagonist"
+    },
+    {
+      "id": "narr.dialogue",
+      "module": "narrative",
+      "label": "Dialogue system",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "none",
+          "label": "No dialogue system",
+          "summary": "Characters speak but you do not choose"
+        },
+        {
+          "id": "deep",
+          "label": "Deep dialogue with checks",
+          "summary": "Dialogue trees with skill or stat checks"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_narrative"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Dialogue system: {a} or {b}?",
+      "header": "Dialogue"
+    },
+    {
+      "id": "narr.endings",
+      "module": "narrative",
+      "label": "Endings",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "single",
+          "label": "Single ending",
+          "summary": "One conclusion"
+        },
+        {
+          "id": "multiple",
+          "label": "Multiple endings",
+          "summary": "Different conclusions by play"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "has_narrative"
+      },
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Endings: {a} or {b}?",
+      "header": "Endings"
+    },
+    {
+      "id": "fail.penalty",
+      "module": "failure_difficulty",
+      "label": "Failure penalty",
+      "kind": "categorical",
+      "poles": [
+        {
+          "id": "none",
+          "label": "None (instant retry)",
+          "summary": "Failure costs seconds"
+        },
+        {
+          "id": "recent",
+          "label": "Lose recent progress",
+          "summary": "Back to a checkpoint"
+        },
+        {
+          "id": "drop_recover",
+          "label": "Drop and recover",
+          "summary": "Drop resources where you died and fetch them"
+        },
+        {
+          "id": "gear",
+          "label": "Lose gear",
+          "summary": "Equipment is lost"
+        },
+        {
+          "id": "permadeath",
+          "label": "Permadeath",
+          "summary": "The character or run ends for good"
+        }
+      ],
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Failure penalty: which fits your game?",
+      "header": "On failure"
+    },
+    {
+      "id": "fail.save",
+      "module": "failure_difficulty",
+      "label": "Saving",
+      "kind": "categorical",
+      "poles": [
+        {
+          "id": "free",
+          "label": "Free save",
+          "summary": "Save anywhere, any time"
+        },
+        {
+          "id": "checkpoints",
+          "label": "Checkpoints",
+          "summary": "Automatic checkpoints"
+        },
+        {
+          "id": "limited",
+          "label": "Limited saves",
+          "summary": "Save points or consumable saves"
+        },
+        {
+          "id": "ironman",
+          "label": "Ironman",
+          "summary": "One autosave you cannot reload"
+        }
+      ],
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Saving: which fits your game?",
+      "header": "Saving"
+    },
+    {
+      "id": "diff.options",
+      "module": "failure_difficulty",
+      "label": "Difficulty options",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "one",
+          "label": "One tuned difficulty",
+          "summary": "Everyone plays the same game"
+        },
+        {
+          "id": "many",
+          "label": "Many settings and assists",
+          "summary": "Players tune the challenge"
+        }
+      ],
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Difficulty options: {a} or {b}?",
+      "header": "Difficulty"
+    },
+    {
+      "id": "diff.dynamic",
+      "module": "failure_difficulty",
+      "label": "Dynamic difficulty",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "static",
+          "label": "Static",
+          "summary": "Difficulty does not adapt"
+        },
+        {
+          "id": "dynamic",
+          "label": "Dynamic difficulty",
+          "summary": "The game adjusts to how you play"
+        }
+      ],
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Dynamic difficulty: {a} or {b}?",
+      "header": "Adaptive"
+    },
+    {
+      "id": "mp.mode",
+      "module": "multiplayer",
+      "label": "Multiplayer mode",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "coop",
+          "label": "Cooperative",
+          "summary": "Players work together"
+        },
+        {
+          "id": "competitive",
+          "label": "Competitive",
+          "summary": "Players work against each other"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_multiplayer"
+      },
+      "sets": [
+        {
+          "flag": "is_competitive",
+          "when": {
+            "not": {
+              "axis": "mp.mode",
+              "lean": "A"
+            }
+          }
+        }
+      ],
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Multiplayer mode: {a} or {b}?",
+      "header": "MP mode"
+    },
+    {
+      "id": "mp.size",
+      "module": "multiplayer",
+      "label": "Match size",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "two",
+          "label": "2 players",
+          "summary": "Built for a pair"
+        },
+        {
+          "id": "hundred",
+          "label": "100 or more",
+          "summary": "Built for crowds"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_multiplayer"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Match size: {a} or {b}?",
+      "header": "MP size"
+    },
+    {
+      "id": "mp.structure",
+      "module": "multiplayer",
+      "label": "Multiplayer structure",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "sessions",
+          "label": "Session matches",
+          "summary": "Discrete matches that end"
+        },
+        {
+          "id": "persistent",
+          "label": "Persistent shared world",
+          "summary": "One ongoing world"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_multiplayer"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Multiplayer structure: {a} or {b}?",
+      "header": "MP world"
+    },
+    {
+      "id": "mp.matching",
+      "module": "multiplayer",
+      "label": "Matching",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "friends",
+          "label": "Friends and lobbies",
+          "summary": "Play with people you invite"
+        },
+        {
+          "id": "ranked",
+          "label": "Ranked matchmaking",
+          "summary": "The game finds opponents by skill"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_multiplayer"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Matching: {a} or {b}?",
+      "header": "Matching"
+    },
+    {
+      "id": "mp.loss",
+      "module": "multiplayer",
+      "label": "Loss on death",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "nothing",
+          "label": "Nothing lost",
+          "summary": "Death costs only the match"
+        },
+        {
+          "id": "loot",
+          "label": "Loot lost on death",
+          "summary": "What you carried is lost"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_multiplayer"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Loss on death: {a} or {b}?",
+      "header": "MP loss"
+    },
+    {
+      "id": "mp.async",
+      "module": "multiplayer",
+      "label": "Asynchronous play",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "none",
+          "label": "None",
+          "summary": "Only live interaction"
+        },
+        {
+          "id": "async",
+          "label": "Asynchronous influence",
+          "summary": "Players affect each other across time"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_multiplayer"
+      },
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Asynchronous play: {a} or {b}?",
+      "header": "Async"
+    },
+    {
+      "id": "mp.symmetry",
+      "module": "multiplayer",
+      "label": "Role symmetry",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "symmetric",
+          "label": "Symmetric",
+          "summary": "Sides have the same tools"
+        },
+        {
+          "id": "asymmetric",
+          "label": "Asymmetric roles",
+          "summary": "Sides play differently"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_multiplayer"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Role symmetry: {a} or {b}?",
+      "header": "Symmetry"
+    },
+    {
+      "id": "mp.comm",
+      "module": "multiplayer",
+      "label": "Communication",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "voice",
+          "label": "Voice-reliant",
+          "summary": "Coordination needs voice chat"
+        },
+        {
+          "id": "ping",
+          "label": "Ping and contextual comms",
+          "summary": "Pings and quick signals carry intent"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_multiplayer"
+      },
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Communication: {a} or {b}?",
+      "header": "Comms"
+    },
+    {
+      "id": "mp.hosting",
+      "module": "multiplayer",
+      "label": "Hosting",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "player",
+          "label": "Player-hosted",
+          "summary": "A player or self-run server hosts"
+        },
+        {
+          "id": "dedicated",
+          "label": "Dedicated servers",
+          "summary": "The developer runs the servers"
+        }
+      ],
+      "appliesWhen": {
+        "all": [
+          {
+            "flag": "is_multiplayer"
+          },
+          {
+            "flag": "is_online"
+          }
+        ]
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Hosting: {a} or {b}?",
+      "header": "Hosting"
+    },
+    {
+      "id": "art.style",
+      "module": "presentation",
+      "label": "Art style",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "realistic",
+          "label": "Realistic",
+          "summary": "Aims for photographic plausibility"
+        },
+        {
+          "id": "stylized",
+          "label": "Stylized",
+          "summary": "A deliberate non-realistic look"
+        }
+      ],
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Art style: {a} or {b}?",
+      "header": "Art style"
+    },
+    {
+      "id": "art.fidelity",
+      "module": "presentation",
+      "label": "Fidelity",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "low",
+          "label": "Pixel or low-poly",
+          "summary": "Simple, economical assets"
+        },
+        {
+          "id": "high",
+          "label": "High fidelity",
+          "summary": "Detailed, expensive assets"
+        }
+      ],
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Fidelity: {a} or {b}?",
+      "header": "Fidelity"
+    },
+    {
+      "id": "art.palette",
+      "module": "presentation",
+      "label": "Palette",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "muted",
+          "label": "Muted",
+          "summary": "Desaturated, restrained color"
+        },
+        {
+          "id": "saturated",
+          "label": "Saturated",
+          "summary": "Bold, vivid color"
+        }
+      ],
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Palette: {a} or {b}?",
+      "header": "Palette"
+    },
+    {
+      "id": "ui.diegesis",
+      "module": "presentation",
+      "label": "UI diegesis",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "diegetic",
+          "label": "Diegetic UI",
+          "summary": "Information lives in the world"
+        },
+        {
+          "id": "hud",
+          "label": "Traditional HUD",
+          "summary": "Overlays, bars and menus"
+        }
+      ],
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "UI diegesis: {a} or {b}?",
+      "header": "UI"
+    },
+    {
+      "id": "ui.transparency",
+      "module": "presentation",
+      "label": "System transparency",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "hidden",
+          "label": "Hidden systems",
+          "summary": "Players infer the rules"
+        },
+        {
+          "id": "spreadsheet",
+          "label": "Spreadsheet transparency",
+          "summary": "Every number is exposed"
+        }
+      ],
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "System transparency: {a} or {b}?",
+      "header": "Transparency"
+    },
+    {
+      "id": "audio.music",
+      "module": "presentation",
+      "label": "Music",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "ambient",
+          "label": "Sparse ambient",
+          "summary": "Mostly atmosphere and silence"
+        },
+        {
+          "id": "adaptive",
+          "label": "Adaptive score",
+          "summary": "Music reacts to play"
+        }
+      ],
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Music: {a} or {b}?",
+      "header": "Music"
+    },
+    {
+      "id": "audio.sync",
+      "module": "presentation",
+      "label": "Music sync",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "independent",
+          "label": "Independent",
+          "summary": "Play ignores the beat"
+        },
+        {
+          "id": "synced",
+          "label": "Gameplay synced to music",
+          "summary": "Actions land on the beat"
+        }
+      ],
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Music sync: {a} or {b}?",
+      "header": "Music sync"
+    },
+    {
+      "id": "live.model",
+      "module": "meta",
+      "label": "Live model",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "finished",
+          "label": "Finished product",
+          "summary": "Ship complete; maybe expansions"
+        },
+        {
+          "id": "live",
+          "label": "Live service",
+          "summary": "Seasons and ongoing updates"
+        }
+      ],
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Live model: {a} or {b}?",
+      "header": "Live model"
+    },
+    {
+      "id": "mod.support",
+      "module": "meta",
+      "label": "Mod support",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "closed",
+          "label": "Closed",
+          "summary": "No modding"
+        },
+        {
+          "id": "mods",
+          "label": "Mods or UGC",
+          "summary": "Players build and share content"
+        }
+      ],
+      "importance": 1,
+      "tier": 2,
+      "questionTemplate": "Mod support: {a} or {b}?",
+      "header": "Mods"
+    },
+    {
+      "id": "replay.source",
+      "module": "meta",
+      "label": "Replay source",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "content",
+          "label": "Content-driven",
+          "summary": "Replay comes from more authored content"
+        },
+        {
+          "id": "systems",
+          "label": "Systems-driven",
+          "summary": "Replay comes from systems colliding"
+        }
+      ],
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Replay source: {a} or {b}?",
+      "header": "Replay"
+    },
+    {
+      "id": "strat.scale",
+      "module": "strategy",
+      "label": "Strategic scale",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "tactical",
+          "label": "Tactical squad",
+          "summary": "A handful of units on one battlefield"
+        },
+        {
+          "id": "grand",
+          "label": "Grand empire",
+          "summary": "Nations or galaxies over centuries"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_strategy"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Strategic scale: {a} or {b}?",
+      "header": "Strat scale"
+    },
+    {
+      "id": "strat.micro",
+      "module": "strategy",
+      "label": "Micro intensity",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "macro",
+          "label": "Macro-focused",
+          "summary": "Economy and big decisions"
+        },
+        {
+          "id": "micro",
+          "label": "Micro-intensive",
+          "summary": "Precise unit control matters"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_strategy"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Micro intensity: {a} or {b}?",
+      "header": "Micro"
+    },
+    {
+      "id": "strat.asymmetry",
+      "module": "strategy",
+      "label": "Faction design",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "mirrored",
+          "label": "Mirrored factions",
+          "summary": "Sides share a ruleset"
+        },
+        {
+          "id": "asymmetric",
+          "label": "Asymmetric",
+          "summary": "Factions play very differently"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_strategy"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Faction design: {a} or {b}?",
+      "header": "Factions"
+    },
+    {
+      "id": "strat.victory",
+      "module": "strategy",
+      "label": "Victory types",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "conquest",
+          "label": "Conquest only",
+          "summary": "Win by defeating rivals"
+        },
+        {
+          "id": "multiple",
+          "label": "Multiple victory types",
+          "summary": "Science, culture, diplomacy and more"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_strategy"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Victory types: {a} or {b}?",
+      "header": "Victory"
+    },
+    {
+      "id": "strat.diplomacy",
+      "module": "strategy",
+      "label": "Diplomacy",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "none",
+          "label": "None",
+          "summary": "Everyone is an enemy"
+        },
+        {
+          "id": "deep",
+          "label": "Deep",
+          "summary": "Treaties, alliances and intrigue"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_strategy"
+      },
+      "importance": 2,
+      "tier": 2,
+      "questionTemplate": "Diplomacy: {a} or {b}?",
+      "header": "Diplomacy"
+    },
+    {
+      "id": "puzzle.teaching",
+      "module": "puzzle",
+      "label": "Puzzle teaching",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "explicit",
+          "label": "Explicit tutorials",
+          "summary": "Rules are explained"
+        },
+        {
+          "id": "wordless",
+          "label": "Wordless discovery",
+          "summary": "Rules are discovered through play"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_puzzle"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Puzzle teaching: {a} or {b}?",
+      "header": "Teaching"
+    },
+    {
+      "id": "puzzle.solutions",
+      "module": "puzzle",
+      "label": "Solution space",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "single",
+          "label": "Single solution",
+          "summary": "One intended answer"
+        },
+        {
+          "id": "open",
+          "label": "Open-ended systemic",
+          "summary": "Many valid solutions"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_puzzle"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Solution space: {a} or {b}?",
+      "header": "Solutions"
+    },
+    {
+      "id": "race.catchup",
+      "module": "racing",
+      "label": "Catch-up",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "skill",
+          "label": "Pure skill",
+          "summary": "The best driver wins"
+        },
+        {
+          "id": "items",
+          "label": "Catch-up items",
+          "summary": "Trailing players get help"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_racing"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Catch-up: {a} or {b}?",
+      "header": "Catch-up"
+    },
+    {
+      "id": "fight.input",
+      "module": "fighting",
+      "label": "Fighting input",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "motion",
+          "label": "Motion inputs",
+          "summary": "Quarter-circles and charge inputs"
+        },
+        {
+          "id": "simplified",
+          "label": "Simplified inputs",
+          "summary": "One-button specials"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_fighting"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Fighting input: {a} or {b}?",
+      "header": "Fight input"
+    },
+    {
+      "id": "fight.win",
+      "module": "fighting",
+      "label": "Win condition",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "health",
+          "label": "Health bars",
+          "summary": "Deplete the opponent's health"
+        },
+        {
+          "id": "ringout",
+          "label": "Ring-outs",
+          "summary": "Knock the opponent off the stage"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_fighting"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Win condition: {a} or {b}?",
+      "header": "Fight win"
+    },
+    {
+      "id": "sport.realism",
+      "module": "sports",
+      "label": "Sports realism",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "licensed",
+          "label": "Licensed simulation",
+          "summary": "Real leagues and players"
+        },
+        {
+          "id": "arcade",
+          "label": "Arcade physics",
+          "summary": "Invented or exaggerated sport"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_sports"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Sports realism: {a} or {b}?",
+      "header": "Sport sim"
+    },
+    {
+      "id": "horror.agency",
+      "module": "horror",
+      "label": "Horror agency",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "hide",
+          "label": "No combat, hide",
+          "summary": "Run and hide to survive"
+        },
+        {
+          "id": "scarce_combat",
+          "label": "Combat with scarcity",
+          "summary": "Fight back with little ammo"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_horror"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Horror agency: {a} or {b}?",
+      "header": "Fight back"
+    },
+    {
+      "id": "horror.threat",
+      "module": "horror",
+      "label": "Threat model",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "scripted",
+          "label": "Scripted scares",
+          "summary": "Authored scares and patterns"
+        },
+        {
+          "id": "systemic",
+          "label": "Systemic stalker",
+          "summary": "An AI hunts you dynamically"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_horror"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Threat model: {a} or {b}?",
+      "header": "Threat"
+    },
+    {
+      "id": "card.acquisition",
+      "module": "card",
+      "label": "Card acquisition",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "run",
+          "label": "Build during run",
+          "summary": "Draft cards as you play a run"
+        },
+        {
+          "id": "collect",
+          "label": "Collect outside matches",
+          "summary": "Own a collection, build decks before play"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_card"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Card acquisition: {a} or {b}?",
+      "header": "Card source"
+    },
+    {
+      "id": "card.scoring",
+      "module": "card",
+      "label": "Card resolution",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "combat",
+          "label": "Tactical combat",
+          "summary": "Cards fight enemies"
+        },
+        {
+          "id": "combo",
+          "label": "Combo scoring",
+          "summary": "Cards multiply a score"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_card"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Card resolution: {a} or {b}?",
+      "header": "Card win"
+    },
+    {
+      "id": "idle.offline",
+      "module": "idle",
+      "label": "Offline gains",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "active",
+          "label": "Active only",
+          "summary": "Progress only while playing"
+        },
+        {
+          "id": "offline",
+          "label": "Offline gains",
+          "summary": "Progress accrues while away"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_idle"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Offline gains: {a} or {b}?",
+      "header": "Offline"
+    },
+    {
+      "id": "idle.prestige",
+      "module": "idle",
+      "label": "Prestige",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "none",
+          "label": "None",
+          "summary": "One long climb"
+        },
+        {
+          "id": "prestige",
+          "label": "Prestige resets",
+          "summary": "Reset for permanent multipliers"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_idle"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Prestige: {a} or {b}?",
+      "header": "Prestige"
+    },
+    {
+      "id": "party.input",
+      "module": "party",
+      "label": "Party input",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "controllers",
+          "label": "Controllers",
+          "summary": "Everyone holds a controller"
+        },
+        {
+          "id": "phones",
+          "label": "Phones or second screen",
+          "summary": "Players join from their phones"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_party"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Party input: {a} or {b}?",
+      "header": "Party input"
+    },
+    {
+      "id": "party.mode",
+      "module": "party",
+      "label": "Party mode",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "competitive",
+          "label": "Competitive",
+          "summary": "Players vie to win"
+        },
+        {
+          "id": "coop",
+          "label": "Chaotic co-op",
+          "summary": "Players scramble together"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_party"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Party mode: {a} or {b}?",
+      "header": "Party mode"
+    },
+    {
+      "id": "rhythm.core",
+      "module": "rhythm",
+      "label": "Rhythm core",
+      "kind": "bipolar",
+      "poles": [
+        {
+          "id": "pure",
+          "label": "Pure rhythm",
+          "summary": "Hit notes to music"
+        },
+        {
+          "id": "hybrid",
+          "label": "Rhythm-modified genre",
+          "summary": "Another genre played to the beat"
+        }
+      ],
+      "appliesWhen": {
+        "flag": "is_rhythm"
+      },
+      "importance": 3,
+      "tier": 2,
+      "questionTemplate": "Rhythm core: {a} or {b}?",
+      "header": "Rhythm"
+    }
+  ]
+}

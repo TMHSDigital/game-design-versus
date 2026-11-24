@@ -1,0 +1,173 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`brief > matches the snapshot for a fixed scripted session 1`] = `
+{
+  "clarity": {
+    "overall": 0.49,
+    "questionCount": 1,
+    "stopRecommended": false,
+  },
+  "comparables": {
+    "headline": "Half Sword meets Gang Beasts",
+    "titles": [
+      {
+        "borrow": [
+          "combat simulation: Physics swings",
+        ],
+        "game": "Half Sword",
+        "score": 1506,
+      },
+      {
+        "borrow": [
+          "its overall physics brawler structure",
+        ],
+        "game": "Gang Beasts",
+        "score": 0,
+      },
+      {
+        "borrow": [
+          "its overall physics brawler structure",
+        ],
+        "game": "Exanima",
+        "score": 0,
+      },
+    ],
+  },
+  "coreLoop": {
+    "longTerm": "Weeks: mastery and variety keep the player returning.",
+    "moment": "Seconds: the player plays with rising and falling pressure, mixing quick execution with short planning beats; combat is physics-simulated.",
+    "session": "Minutes: a session of about an hour is the unit of play.",
+  },
+  "decisionLog": [
+    {
+      "answer": "["action","fighting"] (confidence 0.9)",
+      "at": "2026-11-23T00:00:00.000Z",
+      "axis": "genre.family",
+      "kind": "set",
+      "note": undefined,
+    },
+    {
+      "answer": ""small" (confidence 1)",
+      "at": "2026-11-23T00:00:00.000Z",
+      "axis": "frame.team",
+      "kind": "set",
+      "note": undefined,
+    },
+    {
+      "answer": ""years" (confidence 1)",
+      "at": "2026-11-23T00:00:00.000Z",
+      "axis": "frame.timeline",
+      "kind": "set",
+      "note": undefined,
+    },
+    {
+      "answer": ""core" (confidence 1)",
+      "at": "2026-11-23T00:00:00.000Z",
+      "axis": "combat.presence",
+      "kind": "set",
+      "note": undefined,
+    },
+    {
+      "answer": "Half Sword",
+      "at": "2026-11-23T00:00:00.000Z",
+      "axis": "combat.sim",
+      "kind": "answer",
+      "note": undefined,
+    },
+    {
+      "answer": "2 (confidence 0.9)",
+      "at": "2026-11-23T00:00:00.000Z",
+      "axis": "exp.tone",
+      "kind": "set",
+      "note": undefined,
+    },
+  ],
+  "elevator": "Snapshot Brawler is an action and fighting game. Think Half Sword meets Gang Beasts. Original pitch: Physics sword duels. Its pillars: Combat simulation: Physics-simulated; Tone: Grim.",
+  "experience": {
+    "aesthetics": [],
+    "challenge": "Undecided",
+    "motivations": [],
+    "pace": "Undecided",
+    "tone": "Grim",
+  },
+  "frame": {
+    "Audience rating": "Mature",
+    "Business model": "Undecided",
+    "Dimensionality": "Undecided",
+    "Engine": "Undecided",
+    "Player count": "Undecided",
+    "Primary input": "Undecided",
+    "Product length": "Undecided",
+    "Realism": "Grounded simulation",
+    "Session length": "Undecided",
+    "Target platforms": "Undecided",
+    "Team size": "2 to 5",
+    "Timeline": "1 to 2 years",
+  },
+  "genre": {
+    "archetypes": [
+      "Physics brawler",
+      "Soulslike action RPG",
+      "Military simulation",
+    ],
+    "families": [
+      "Action",
+      "Fighting",
+    ],
+    "forms": [],
+    "tags": [
+      "Action",
+      "Fighting",
+    ],
+  },
+  "nonGoals": [
+    "No puzzle module",
+    "No racing module",
+    "No sports module",
+    "No horror module",
+    "No idle module",
+    "No party module",
+    "No rhythm module",
+    "Not lighthearted (tone)",
+    "Not animation and stat driven (combat simulation)",
+  ],
+  "openQuestions": true,
+  "pillars": [
+    {
+      "description": "Like Half Sword (Physics swings), not Skyrim.",
+      "title": "Combat simulation: Physics-simulated",
+    },
+    {
+      "description": "Committed position on tone.",
+      "title": "Tone: Grim",
+    },
+  ],
+  "pitch": "The player plays in order to reach their goals, with physics-simulated combat simulation.",
+  "risks": [
+    {
+      "message": "Scope: 16 active modules for a team of 2 to 5 on a timeline of 1 to 2 years. Cut to the pillars (Combat simulation, Tone) for the MVP.",
+      "severity": "warn",
+    },
+  ],
+  "scope": {
+    "activeModules": 16,
+    "mvp": "All active systems at minimal depth plus one region or mode of content.",
+    "team": "2 to 5",
+    "timeline": "1 to 2 years",
+    "verticalSlice": "A 30 to 60 minute slice at shipping quality that shows every pillar.",
+    "warning": "Scope: 16 active modules for a team of 2 to 5 on a timeline of 1 to 2 years. Cut to the pillars (Combat simulation, Tone) for the MVP.",
+  },
+  "systems": [
+    "camera_controls",
+    "loop",
+    "combat",
+    "failure_difficulty",
+    "presentation",
+    "meta",
+  ],
+  "title": "Snapshot Brawler",
+  "usps": [
+    "Combat simulation: Physics-simulated",
+  ],
+}
+`;

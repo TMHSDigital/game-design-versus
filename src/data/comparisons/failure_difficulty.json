@@ -1,0 +1,977 @@
+[
+  {
+    "id": "cmp.diff.options.sekiro-celeste",
+    "axis": "diff.options",
+    "options": [
+      {
+        "pole": "one",
+        "game": "Sekiro: Shadows Die Twice",
+        "year": 2019,
+        "how": "One difficulty for everyone with no selector at launch; the director argued separate modes would fragment the shared challenge."
+      },
+      {
+        "pole": "many",
+        "game": "Celeste",
+        "year": 2018,
+        "how": "Assist Mode toggles game speed down to 50%, infinite stamina, extra or infinite air dashes, dash assist and invincibility."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "platformer"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gamespot.com/articles/e3-2018-from-software-explains-why-dark-souls-bloo/1100-6459827/",
+        "note": "Sekiro: FromSoftware on why there are no difficulty options"
+      },
+      {
+        "url": "https://www.gamedeveloper.com/design/check-out-i-celeste-s-i-remarkably-granular-assist-options",
+        "note": "Celeste: granular Assist Mode options"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.diff.dynamic.re4-hades-celeste",
+    "axis": "diff.dynamic",
+    "options": [
+      {
+        "pole": "dynamic",
+        "game": "Resident Evil 4 (2005)",
+        "year": 2005,
+        "how": "A hidden rank shifts enemy aggression and damage as you take hits or die; the Professional setting locks it high so it never eases."
+      },
+      {
+        "pole": "blend",
+        "game": "Hades",
+        "year": 2020,
+        "how": "Opt-in God Mode starts at 20% damage resistance and adds 2% after each death up to 80%: adaptive, but visible and player-chosen."
+      },
+      {
+        "pole": "static",
+        "game": "Celeste",
+        "year": 2018,
+        "how": "The game never adjusts itself; Assist Mode changes only when the player toggles a setting, so the tuned challenge holds."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "horror",
+        "action",
+        "shooter",
+        "platformer",
+        "rpg"
+      ],
+      "platforms": [
+        "console",
+        "pc",
+        "handheld"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.engadget.com/2015-06-03-resident-evil-4-difficulty.html",
+        "note": "Resident Evil 4 (2005): hidden dynamic difficulty"
+      },
+      {
+        "url": "https://www.inverse.com/gaming/hades-god-mode-interview",
+        "note": "Hades: God Mode 20% resistance, +2% per death, cap 80%"
+      },
+      {
+        "url": "https://www.gamedeveloper.com/design/check-out-i-celeste-s-i-remarkably-granular-assist-options",
+        "note": "Celeste: Assist options set manually by the player"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.fail.penalty.darksouls-celeste-xcom2",
+    "axis": "fail.penalty",
+    "options": [
+      {
+        "pole": "drop_recover",
+        "game": "Dark Souls",
+        "year": 2011,
+        "how": "Death leaves your souls and humanity at a bloodstain; touch it to recover them, but die again first and they are gone for good."
+      },
+      {
+        "pole": "none",
+        "game": "Celeste",
+        "year": 2018,
+        "how": "Death returns Madeline to the start of the screen instantly with infinite lives; the only cost is a few seconds."
+      },
+      {
+        "pole": "permadeath",
+        "game": "XCOM 2",
+        "year": 2016,
+        "how": "On Ironman, one save is overwritten through every mission, so a soldier killed in combat is gone for good with no reload."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg",
+        "platformer",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://darksouls.fandom.com/wiki/Bloodstain",
+        "note": "Dark Souls: bloodstain recovery and loss on second death"
+      },
+      {
+        "url": "https://www.vice.com/en/article/d3w887/celeste-difficulty-assist-mode",
+        "note": "Celeste: instant warp to the start of the screen on death"
+      },
+      {
+        "url": "https://xcom.com/news/xcom-2-s-bleak-future-impossible-iron-man-is-canon/amp",
+        "note": "XCOM 2: Ironman single save, no do-overs"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.fail.penalty.terraria-ftl",
+    "axis": "fail.penalty",
+    "options": [
+      {
+        "pole": "drop_recover",
+        "game": "Terraria",
+        "year": 2011,
+        "how": "On Classic characters death drops half of each carried coin stack at a tombstone near the death spot; walk back to pick it up."
+      },
+      {
+        "pole": "permadeath",
+        "game": "FTL: Faster Than Light",
+        "year": 2012,
+        "how": "Losing the ship ends the run and deletes the save; there is no reload, so every jump and fight is final."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "sandbox",
+        "survival",
+        "action",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://terraria.wiki.gg/wiki/Death",
+        "note": "Terraria: Classic drops coins at a tombstone, Mediumcore drops items, Hardcore deletes"
+      },
+      {
+        "url": "https://store.steampowered.com/app/212680/FTL_Faster_Than_Light/",
+        "note": "FTL: permadeath, no second chances"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.fail.save.residentevil-godofwar2018",
+    "axis": "fail.save",
+    "options": [
+      {
+        "pole": "limited",
+        "game": "Resident Evil (1996)",
+        "year": 1996,
+        "how": "Saving needs a typewriter and consumes one Ink Ribbon; ribbons are finite, so each save is a resource you choose to spend."
+      },
+      {
+        "pole": "checkpoints",
+        "game": "God of War (2018)",
+        "year": 2018,
+        "how": "Autosaves trigger often after key moments and areas, so a death rarely costs more than a few minutes of play."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "horror",
+        "action"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://residentevil.fandom.com/wiki/Ink_Ribbon_(special_item)",
+        "note": "Resident Evil: Ink Ribbons consumed by typewriter saves"
+      },
+      {
+        "url": "https://gamerant.com/god-of-war-how-save-game/",
+        "note": "God of War (2018): frequent autosave"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.fail.save.alienisolation-dontstarve",
+    "axis": "fail.save",
+    "options": [
+      {
+        "pole": "limited",
+        "game": "Alien: Isolation",
+        "year": 2014,
+        "how": "Progress saves only at emergency phone stations, with no checkpoints; saving takes seconds and the alien can still find you mid-save."
+      },
+      {
+        "pole": "ironman",
+        "game": "Don't Starve",
+        "year": 2013,
+        "how": "The game autosaves about once a day with no manual slots; in Survival, dying without a resurrection item deletes the save."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "horror",
+        "survival"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gamedeveloper.com/design/game-design-deep-dive-the-save-system-of-i-alien-isolation-i-",
+        "note": "Alien: Isolation: manual save stations, no soft saves"
+      },
+      {
+        "url": "https://dontstarve.wiki.gg/wiki/Saving",
+        "note": "Don't Starve: random-interval autosave, save deleted on death"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.fail.save.halflife-uncharted2-supermarioworld",
+    "axis": "fail.save",
+    "options": [
+      {
+        "pole": "free",
+        "game": "Half-Life",
+        "year": 1998,
+        "how": "Quicksave and quickload sit on single keys and work almost anywhere, so any fight can be retried from seconds earlier."
+      },
+      {
+        "pole": "checkpoints",
+        "game": "Uncharted 2: Among Thieves",
+        "year": 2009,
+        "how": "Automatic checkpoints land every few encounters and set pieces; there are no manual saves to manage, and death reloads the last one."
+      },
+      {
+        "pole": "limited",
+        "game": "Super Mario World",
+        "year": 1990,
+        "how": "The game offers a save only after clearing a castle, fortress, ghost house or switch palace, so quitting mid-world loses the levels between."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "action",
+        "platformer"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/70/HalfLife/",
+        "note": "Half-Life: PC shooter with quicksave"
+      },
+      {
+        "url": "https://www.playstation.com/en-us/games/uncharted-legacy-of-thieves-collection/",
+        "note": "Uncharted 2: Among Thieves: checkpoint-based progress"
+      },
+      {
+        "url": "https://www.mariowiki.com/Super_Mario_World",
+        "note": "Super Mario World: saving after Game Over continues from the last save"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.diff.options.supermarioodyssey-returnal",
+    "axis": "diff.options",
+    "options": [
+      {
+        "pole": "many",
+        "game": "Super Mario Odyssey",
+        "year": 2017,
+        "how": "Assist Mode doubles health to six, shows guide arrows, and returns Mario to safe ground in a bubble after a fall instead of killing him."
+      },
+      {
+        "pole": "one",
+        "game": "Returnal",
+        "year": 2021,
+        "how": "Housemarque deliberately left out difficulty settings; only aim assist strength can be raised, so everyone faces the same tuned loop."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "shooter",
+        "action"
+      ],
+      "platforms": [
+        "console",
+        "handheld",
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.mariowiki.com/Assist_Mode",
+        "note": "Super Mario Odyssey: Assist Mode gives six health, guide arrows and bubble rescue after falls"
+      },
+      {
+        "url": "https://www.videogameschronicle.com/news/returnal-director-says-housemarque-could-always-do-more-to-make-games-more-accesible",
+        "note": "Returnal: director on the deliberate choice of no difficulty settings"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.diff.options.beatsaber-rhythmheaven",
+    "axis": "diff.options",
+    "options": [
+      {
+        "pole": "many",
+        "game": "Beat Saber",
+        "year": 2019,
+        "how": "Five difficulty levels per song plus 15 gameplay modifiers, such as faster song speed or no fail, let each player set the challenge."
+      },
+      {
+        "pole": "one",
+        "game": "Rhythm Heaven",
+        "year": 2006,
+        "how": "Each rhythm game has one fixed tempo and timing window; there is no difficulty select, only optional medals and perfect runs."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rhythm"
+      ],
+      "platforms": [
+        "vr",
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/620980/",
+        "note": "Beat Saber: 5 difficulty levels and 15 gameplay modifiers"
+      },
+      {
+        "url": "https://www.nintendo.com/",
+        "note": "Rhythm Heaven: Nintendo rhythm series with no difficulty settings"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.diff.options.mariokart8deluxe-returnal",
+    "axis": "diff.options",
+    "options": [
+      {
+        "pole": "many",
+        "game": "Mario Kart 8 Deluxe",
+        "year": 2017,
+        "how": "Each player toggles Smart Steering and Auto-Accelerate, and races run from 50cc to 200cc, so mixed-skill groups tune their own challenge."
+      },
+      {
+        "pole": "one",
+        "game": "Returnal",
+        "year": 2021,
+        "how": "No difficulty select by design; the studio bakes challenge into the run structure, and aim assist is the only lever players get."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "racing",
+        "party",
+        "shooter",
+        "action"
+      ],
+      "platforms": [
+        "console",
+        "handheld",
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.mariowiki.com/Mario_Kart_8_Deluxe",
+        "note": "Mario Kart 8 Deluxe: Smart Steering and Auto-Accelerate per player; 50, 100, 150, Mirror and 200cc classes"
+      },
+      {
+        "url": "https://www.videogameschronicle.com/news/returnal-director-says-housemarque-could-always-do-more-to-make-games-more-accesible",
+        "note": "Returnal: no difficulty settings, a deliberate decision by Housemarque"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.diff.dynamic.left4dead-halocombatevolved",
+    "axis": "diff.dynamic",
+    "options": [
+      {
+        "pole": "dynamic",
+        "game": "Left 4 Dead",
+        "year": 2008,
+        "how": "The AI Director tailors the frequency and ferocity of zombie attacks to how the team is doing, so pacing shifts every run."
+      },
+      {
+        "pole": "static",
+        "game": "Halo: Combat Evolved",
+        "year": 2001,
+        "how": "Difficulty is one of four presets, Easy to Legendary, scaling enemy damage, health and shields; it holds steady while you play."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "horror",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/500/",
+        "note": "Left 4 Dead: the Director tailors attacks to your performance"
+      },
+      {
+        "url": "https://www.halopedia.org/Difficulty",
+        "note": "Halo: Combat Evolved: preset difficulty levels with enemy multipliers"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.diff.dynamic.crashbandicoot-quake",
+    "axis": "diff.dynamic",
+    "options": [
+      {
+        "pole": "dynamic",
+        "game": "Crash Bandicoot",
+        "year": 1996,
+        "how": "After repeated deaths the game quietly adds an Aku Aku mask, slows hazards like the boulder, or turns a crate into a checkpoint."
+      },
+      {
+        "pole": "static",
+        "game": "Quake",
+        "year": 1996,
+        "how": "Four fixed skill levels from Easy to Nightmare are set before play and change only on a level restart; nothing adapts to performance."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "shooter",
+        "action"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://all-things-andy-gavin.com/2011/02/07/making-crash-bandicoot-part-6/",
+        "note": "Crash Bandicoot: Jason Rubin on Dynamic Difficulty Adjustment (Aku Aku, slower boulder, crate continue points)"
+      },
+      {
+        "url": "https://quakewiki.org/wiki/skill",
+        "note": "Quake: skill levels 0 Easy to 3 Nightmare; changes take effect on level restart"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.diff.dynamic.nbajam-rocketleague",
+    "axis": "diff.dynamic",
+    "options": [
+      {
+        "pole": "dynamic",
+        "game": "NBA Jam",
+        "year": 1993,
+        "how": "Catch-up logic quietly helps the trailing team, making late comebacks likely so blowouts stay rare and games stay close."
+      },
+      {
+        "pole": "static",
+        "game": "Rocket League",
+        "year": 2015,
+        "how": "Both teams always share identical car stats and physics with no comeback help; matchmaking alone sets the level of challenge."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "sports"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://nba-jam.fandom.com/wiki/NBA_Jam",
+        "note": "NBA Jam: comeback logic for the trailing team"
+      },
+      {
+        "url": "https://www.epicgames.com/help/en-US/c-182/c-7261959845275/a202300000018007",
+        "note": "Rocket League: all cars have the same stats"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.diff.dynamic.maxpayne-doom",
+    "axis": "diff.dynamic",
+    "options": [
+      {
+        "pole": "dynamic",
+        "game": "Max Payne",
+        "year": 2001,
+        "how": "Adaptive difficulty tunes enemy toughness and aim assist up or down behind the scenes according to how well you are doing."
+      },
+      {
+        "pole": "static",
+        "game": "Doom",
+        "year": 1993,
+        "how": "The skill level chosen at the start fixes enemy damage and ammo for the run; the game never reacts to how you play."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/12140/Max_Payne/",
+        "note": "Max Payne: action shooter with adaptive difficulty"
+      },
+      {
+        "url": "https://doomwiki.org/wiki/Skill_level",
+        "note": "Doom: fixed skill levels"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.fail.penalty.supermariobros-darkestdungeon",
+    "axis": "fail.penalty",
+    "options": [
+      {
+        "pole": "recent",
+        "game": "Super Mario Bros.",
+        "year": 1985,
+        "how": "A death costs a life and restarts the level, or the midway point if reached; Game Over sends you back to the start of the world."
+      },
+      {
+        "pole": "permadeath",
+        "game": "Darkest Dungeon",
+        "year": 2016,
+        "how": "Heroes who die stay dead, and constant autosaving makes the loss final; you hire and level a replacement from the coach."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "rpg",
+        "strategy",
+        "horror"
+      ],
+      "platforms": [
+        "console",
+        "pc",
+        "handheld",
+        "mobile"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.mariowiki.com/Super_Mario_Bros.",
+        "note": "Super Mario Bros.: lives, checkpoints and continuing from the start of the world"
+      },
+      {
+        "url": "https://darkestdungeon.wiki.gg/wiki/Darkest_Dungeon",
+        "note": "Darkest Dungeon: dead heroes stay dead, progress autosaves constantly"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.fail.penalty.shovelknight-rust-hotlinemiami",
+    "axis": "fail.penalty",
+    "options": [
+      {
+        "pole": "drop_recover",
+        "game": "Shovel Knight",
+        "year": 2014,
+        "how": "Dying drops part of your gold as floating money bags at the spot; reach them on the next try to win it back, or lose it."
+      },
+      {
+        "pole": "gear",
+        "game": "Rust",
+        "year": 2018,
+        "how": "Death leaves your whole inventory in a bag anyone can loot; you respawn with only a rock and a torch."
+      },
+      {
+        "pole": "none",
+        "game": "Hotline Miami",
+        "year": 2012,
+        "how": "One hit kills you, and a key press restarts the floor instantly; the only cost is replaying a few seconds."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "platformer",
+        "survival",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://shovelknight.fandom.com/wiki/Shovel_Knight:_Shovel_of_Hope",
+        "note": "Shovel Knight: gold dropped on death and recovered"
+      },
+      {
+        "url": "https://rust.facepunch.com/",
+        "note": "Rust: survival game where death drops your inventory"
+      },
+      {
+        "url": "https://store.steampowered.com/app/219150/",
+        "note": "Hotline Miami: instant restart after death"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.diff.options.grappledog-bloodborne",
+    "axis": "diff.options",
+    "options": [
+      {
+        "pole": "many",
+        "game": "Grapple Dog",
+        "year": 2022,
+        "how": "Many built-in accessibility options let players ease the platforming, while optional collectibles and Time Trials raise it for experts."
+      },
+      {
+        "pole": "one",
+        "game": "Bloodborne",
+        "year": 2015,
+        "how": "No difficulty select: FromSoftware gives every player the same tuned challenge so everyone shares one experience to discuss."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1345860/",
+        "note": "Grapple Dog: play your way with optional collectibles, a Time Trial mode, or the many in-built accessibility options"
+      },
+      {
+        "url": "https://www.gamespot.com/articles/e3-2018-from-software-explains-why-dark-souls-bloo/1100-6459827/",
+        "note": "Bloodborne: FromSoftware explains why Dark Souls, Bloodborne and Sekiro have no difficulty options"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.diff.dynamic.mariokart8deluxe-quake",
+    "axis": "diff.dynamic",
+    "options": [
+      {
+        "pole": "dynamic",
+        "game": "Mario Kart 8 Deluxe",
+        "year": 2017,
+        "how": "Item boxes deal items by distance and placement, so trailing racers get stronger tools to catch up and races stay close."
+      },
+      {
+        "pole": "static",
+        "game": "Quake",
+        "year": 1996,
+        "how": "The chosen skill level fixes the challenge for the run; enemies never ease off or ramp up based on how well you are doing."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "racing",
+        "party",
+        "shooter"
+      ],
+      "platforms": [
+        "console",
+        "handheld",
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.mariowiki.com/Mario_Kart_8_Deluxe",
+        "note": "Mario Kart 8 Deluxe: items are based on both distance and placement"
+      },
+      {
+        "url": "https://quakewiki.org/wiki/skill",
+        "note": "Quake: fixed skill settings Easy, Normal, Hard, Nightmare"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.fail.save.fallout4-darkestdungeon",
+    "axis": "fail.save",
+    "options": [
+      {
+        "pole": "free",
+        "game": "Fallout 4",
+        "year": 2015,
+        "how": "On normal difficulties manual saves, quicksaves and autosaves are all available, so any risky choice can be undone in seconds."
+      },
+      {
+        "pole": "ironman",
+        "game": "Darkest Dungeon",
+        "year": 2016,
+        "how": "Progress autosaves constantly, so every action is permanent; a hero who dies stays dead with no reload to undo it."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "shooter",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://fallout.wiki/wiki/Survival_mode",
+        "note": "Fallout 4: on normal difficulty manual, quicksaving and autosaves are available (Survival restricts saving to beds)"
+      },
+      {
+        "url": "https://darkestdungeon.wiki.gg/wiki/Darkest_Dungeon",
+        "note": "Darkest Dungeon: progress autosaves constantly, so actions are permanent; dead heroes stay dead"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.fail.penalty.oldschoolrunescape-kirbyforgottenland",
+    "axis": "fail.penalty",
+    "options": [
+      {
+        "pole": "gear",
+        "game": "Old School RuneScape",
+        "year": 2013,
+        "how": "Die to a player in the Wilderness and all but your 3 most valuable items drop for the killer (none if skulled), so gear is risked."
+      },
+      {
+        "pole": "recent",
+        "game": "Kirby and the Forgotten Land",
+        "year": 2022,
+        "how": "There are no lives; a defeat costs 100 Star Coins and restarts the current segment of the stage."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "platformer"
+      ],
+      "platforms": [
+        "pc",
+        "mobile",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://oldschool.runescape.wiki/w/Items_Kept_on_Death",
+        "note": "Old School RuneScape: keep 3 most valuable items (0 when skulled); in the Wilderness non-protected items drop for the killer"
+      },
+      {
+        "url": "https://wikirby.com/wiki/Kirby_and_the_Forgotten_Land",
+        "note": "Kirby and the Forgotten Land: no extra life system; defeat loses 100 Star Coins and restarts the segment"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  }
+]

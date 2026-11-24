@@ -1,0 +1,1719 @@
+[
+  {
+    "id": "cmp.craft.discovery.subnautica-minecraft",
+    "axis": "craft.discovery",
+    "options": [
+      {
+        "pole": "discovered",
+        "game": "Subnautica",
+        "year": 2018,
+        "how": "Scanning wreck fragments unlocks blueprints; you cannot craft an item until you find and scan it."
+      },
+      {
+        "pole": "known",
+        "game": "Minecraft",
+        "year": 2011,
+        "how": "Items are crafted on a grid, and the recipe book lists what you can make from what you have."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "survival",
+        "sandbox",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile",
+        "vr"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/264710/Subnautica/",
+        "note": "Subnautica: underwater survival with scanned blueprints"
+      },
+      {
+        "url": "https://minecraft.wiki/w/Recipe_book",
+        "note": "Minecraft: crafting grid and recipe book"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.craft.discovery.dontstarve-monsterhunterworld",
+    "axis": "craft.discovery",
+    "options": [
+      {
+        "pole": "discovered",
+        "game": "Don't Starve",
+        "year": 2013,
+        "how": "Most recipes must first be prototyped while standing near a Science Machine or Alchemy Engine; once unlocked they can be crafted anywhere."
+      },
+      {
+        "pole": "known",
+        "game": "Monster Hunter: World",
+        "year": 2018,
+        "how": "The Smithy shows each weapon's forging and upgrade tree, so you can see every next step and what it branches into."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "survival",
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://dontstarve.wiki.gg/wiki/Prototype",
+        "note": "Don't Starve: prototype near a Science Machine or Alchemy Engine, then craft anywhere"
+      },
+      {
+        "url": "https://monsterhunterworld.wiki.fextralife.com/Smithy",
+        "note": "Monster Hunter: World: Smithy forging tree for weapons and armor"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.craft.discovery.abioticfactor-fallout4",
+    "axis": "craft.discovery",
+    "options": [
+      {
+        "pole": "discovered",
+        "game": "Abiotic Factor",
+        "year": 2024,
+        "how": "Recipes are learned through interactions in the facility, and some must also be researched with a minigame before you can craft them."
+      },
+      {
+        "pole": "known",
+        "game": "Fallout 4",
+        "year": 2015,
+        "how": "Most craftable items are known by default; perks such as Science! and Armorer gate what you can build, not recipe hunting."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "survival",
+        "rpg",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://abioticfactor.wiki.gg/wiki/Crafting",
+        "note": "Abiotic Factor: recipes learned via interactions, some need a research minigame"
+      },
+      {
+        "url": "https://fallout.wiki/wiki/Fallout_4_crafting",
+        "note": "Fallout 4: majority of craftable items known by default, perks required"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.craft.discovery.grounded-palworld",
+    "axis": "craft.discovery",
+    "options": [
+      {
+        "pole": "discovered",
+        "game": "Grounded",
+        "year": 2020,
+        "how": "Analyzing gathered items at the Resource Analyzer unlocks recipes, and each analysis builds Brainpower that unlocks more."
+      },
+      {
+        "pole": "known",
+        "game": "Palworld",
+        "year": 2024,
+        "how": "A Technology list shows blueprints by tier; you spend Technology Points from levels and boss kills to unlock the ones you want."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "survival",
+        "action",
+        "sandbox"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://grounded.wiki.gg/wiki/Resource_Analyzer",
+        "note": "Grounded: analyzing items unlocks recipes and Brainpower"
+      },
+      {
+        "url": "https://palworld.wiki.gg/wiki/Technology",
+        "note": "Palworld: blueprints unlocked per tier with Technology Points"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.craft.depth.satisfactory-dontstarve",
+    "axis": "craft.depth",
+    "options": [
+      {
+        "pole": "deep",
+        "game": "Satisfactory",
+        "year": 2019,
+        "how": "Ore becomes ingots, then plates and screws, then reinforced plates and beyond; each step feeds the next."
+      },
+      {
+        "pole": "shallow",
+        "game": "Don't Starve",
+        "year": 2013,
+        "how": "Most tools take two or three raw items: an axe is one twig and one flint."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "survival",
+        "simulation",
+        "sandbox"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://satisfactory.wiki.gg/wiki/Reinforced_Iron_Plate",
+        "note": "Satisfactory: Reinforced Iron Plate from Iron Plates and Screws in an Assembler"
+      },
+      {
+        "url": "https://dontstarve.wiki.gg/wiki/Axe",
+        "note": "Don't Starve: Axe is 1 twig and 1 flint"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.craft.depth.palworld-monsterhunterwilds",
+    "axis": "craft.depth",
+    "options": [
+      {
+        "pole": "deep",
+        "game": "Palworld",
+        "year": 2024,
+        "how": "A Computer needs Circuit Boards, Bio Batteries, Carbon Fiber and Plasteel, and Circuit Boards in turn need crafted Polymer."
+      },
+      {
+        "pole": "shallow",
+        "game": "Monster Hunter Wilds",
+        "year": 2025,
+        "how": "Weapons are forged at the Smithy straight from zenny plus ore or monster materials, with no intermediate parts."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "survival",
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://palworld.wiki.gg/wiki/Circuit_Board",
+        "note": "Palworld: Circuit Board from Pure Quartz and Polymer, used in Computer"
+      },
+      {
+        "url": "https://monsterhunterwilds.wiki.fextralife.com/Great+Swords",
+        "note": "Monster Hunter Wilds: weapons crafted from zenny and materials such as Iron Ore"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.craft.depth.satisfactory-animalcrossingnewhorizons",
+    "axis": "craft.depth",
+    "options": [
+      {
+        "pole": "deep",
+        "game": "Satisfactory",
+        "year": 2019,
+        "how": "Late parts like the Heavy Modular Frame need Modular Frames, Steel Pipes, Encased Industrial Beams and Screws, all crafted components."
+      },
+      {
+        "pole": "shallow",
+        "game": "Animal Crossing: New Horizons",
+        "year": 2020,
+        "how": "Most DIY recipes take raw wood, stone or iron nuggets straight to the finished item at a workbench; only some need a crafted part."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "sandbox"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://satisfactory.wiki.gg/wiki/Heavy_Modular_Frame",
+        "note": "Satisfactory: Heavy Modular Frame recipe of intermediate components"
+      },
+      {
+        "url": "https://nookipedia.com/wiki/DIY_recipes",
+        "note": "Animal Crossing: New Horizons: DIY recipes mostly use raw materials"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.craft.depth.newworld-oldschoolrunescape",
+    "axis": "craft.depth",
+    "options": [
+      {
+        "pole": "deep",
+        "game": "New World",
+        "year": 2021,
+        "how": "Orichalcum Ingots need Starmetal Ingots, which need Steel Ingots, which need Iron Ingots, each step adding flux and charcoal."
+      },
+      {
+        "pole": "shallow",
+        "game": "Old School RuneScape",
+        "year": 2013,
+        "how": "Ore and coal are smelted into a bar at a furnace, then hammered into the item at an anvil; higher tiers need no lower bars."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://newworld.wiki.fextralife.com/Smelting",
+        "note": "New World: Iron, Steel, Starmetal and Orichalcum ingot chain"
+      },
+      {
+        "url": "https://oldschool.runescape.wiki/w/Smithing",
+        "note": "Old School RuneScape: ore smelted into bars, bars smithed into items"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.craft.quality.newworld-grounded",
+    "axis": "craft.quality",
+    "options": [
+      {
+        "pole": "tiers",
+        "game": "New World",
+        "year": 2021,
+        "how": "Crafted gear lands in a Gear Score range set by material and skill, with a chance of extra perks or an empty gem socket."
+      },
+      {
+        "pole": "fixed",
+        "game": "Grounded",
+        "year": 2020,
+        "how": "Recipes list fixed ingredient amounts, such as 3 Grass Planks, 4 Sprigs and 2 Sap, and always produce the same item."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "survival",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2020s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://newworld.wiki.fextralife.com/Crafting",
+        "note": "New World: Gear Score range by skill and material, chance of perks"
+      },
+      {
+        "url": "https://grounded.wiki.gg/wiki/Workbench",
+        "note": "Grounded: recipe with fixed ingredient amounts"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.craft.quality.finalfantasyxiv-monsterhunterrise",
+    "axis": "craft.quality",
+    "options": [
+      {
+        "pole": "tiers",
+        "game": "Final Fantasy XIV",
+        "year": 2013,
+        "how": "Crafting actions raise a Quality bar; the higher it ends, the likelier the item comes out High Quality, and HQ inputs start it higher."
+      },
+      {
+        "pole": "fixed",
+        "game": "Monster Hunter Rise",
+        "year": 2021,
+        "how": "Each weapon has fixed attack, affinity and rarity; forging it from zenny and monster parts always gives the same stats."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Crafting",
+        "note": "Final Fantasy XIV: Quality sets the chance of a High Quality result"
+      },
+      {
+        "url": "https://monsterhunterrise.wiki.fextralife.com/Great+Swords",
+        "note": "Monster Hunter Rise: weapon table with fixed stats and crafting costs"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.craft.quality.kingdomcomedeliverance2-monsterhunterworld",
+    "axis": "craft.quality",
+    "options": [
+      {
+        "pole": "tiers",
+        "game": "Kingdom Come: Deliverance II",
+        "year": 2025,
+        "how": "Forged weapons are rated on your smithing performance and come in quality tiers; potions get better with precise brewing."
+      },
+      {
+        "pole": "fixed",
+        "game": "Monster Hunter: World",
+        "year": 2018,
+        "how": "Every weapon in the forging tree has listed attack, affinity and rarity; forging it always yields exactly those stats."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://kingdomcomedeliverance2.wiki.fextralife.com/Blacksmithing",
+        "note": "Kingdom Come: Deliverance II: performance rating and weapon quality tiers"
+      },
+      {
+        "url": "https://kingdomcomedeliverance2.wiki.fextralife.com/Alchemy",
+        "note": "Kingdom Come: Deliverance II: following the recipe evenly gives masterful potions"
+      },
+      {
+        "url": "https://monsterhunterworld.wiki.fextralife.com/Great+Swords",
+        "note": "Monster Hunter: World: weapon table with fixed attack, affinity and rarity"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.craft.quality.dwarffortress-monsterhunterwilds",
+    "axis": "craft.quality",
+    "options": [
+      {
+        "pole": "tiers",
+        "game": "Dwarf Fortress",
+        "year": 2006,
+        "how": "Crafted items get quality grades from fine up to masterwork, set mainly by the crafter's skill and the materials used."
+      },
+      {
+        "pole": "fixed",
+        "game": "Monster Hunter Wilds",
+        "year": 2025,
+        "how": "Each weapon has fixed attack, affinity and rarity values; crafting it from zenny and materials always gives the same weapon."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy",
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://dwarffortresswiki.org/index.php/Item_quality",
+        "note": "Dwarf Fortress: quality grades set by creator skill and materials"
+      },
+      {
+        "url": "https://monsterhunterwilds.wiki.fextralife.com/Great+Swords",
+        "note": "Monster Hunter Wilds: weapon table with fixed stats and crafting costs"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.build.placement.manorlords-oxygennotincluded",
+    "axis": "build.placement",
+    "options": [
+      {
+        "pole": "free",
+        "game": "Manor Lords",
+        "year": 2024,
+        "how": "Buildings can be placed anywhere at any angle, and homes fill burgage plots drawn around your roads and the terrain."
+      },
+      {
+        "pole": "grid",
+        "game": "Oxygen Not Included",
+        "year": 2019,
+        "how": "Buildings snap to tile cells with fixed footprints, such as the 2x2 Manual Generator, inside a grid of 1x1 tiles."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/manor_lords",
+        "note": "Manor Lords: full freedom of placement and rotation, burgage plots"
+      },
+      {
+        "url": "https://oxygennotincluded.wiki.gg/wiki/Manual_Generator",
+        "note": "Oxygen Not Included: Manual Generator is 2x2 tiles"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.build.placement.foundation-oxygennotincluded",
+    "axis": "build.placement",
+    "options": [
+      {
+        "pole": "free",
+        "game": "Foundation",
+        "year": 2025,
+        "how": "Gridless: you paint zones and assemble modular buildings from parts, with almost no construction constraints."
+      },
+      {
+        "pole": "grid",
+        "game": "Oxygen Not Included",
+        "year": 2019,
+        "how": "Everything sits on a tile grid: 1x1 tiles form walls, floors and ceilings, and machines take fixed footprints like 2x2."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/foundation",
+        "note": "Foundation: gridless medieval city builder with modular buildings"
+      },
+      {
+        "url": "https://oxygennotincluded.wiki.gg/wiki/Tile",
+        "note": "Oxygen Not Included: 1x1 tiles are the basic building block"
+      },
+      {
+        "url": "https://oxygennotincluded.wiki.gg/wiki/Manual_Generator",
+        "note": "Oxygen Not Included: Manual Generator is 2x2 tiles"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.build.placement.tinyglade-townscaper",
+    "axis": "build.placement",
+    "options": [
+      {
+        "pole": "free",
+        "game": "Tiny Glade",
+        "year": 2024,
+        "how": "Gridless: you drag walls and paths freely and the game generates stonework to fit."
+      },
+      {
+        "pole": "grid",
+        "game": "Townscaper",
+        "year": 2020,
+        "how": "You click cells on an irregular grid and each fills with a block that adapts to its neighbors."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "sandbox",
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/2198150/Tiny_Glade/",
+        "note": "Tiny Glade: gridless free-form building with no goals"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1291340/Townscaper/",
+        "note": "Townscaper: irregular grid, no goal"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.build.placement.manorlords-timberborn",
+    "axis": "build.placement",
+    "options": [
+      {
+        "pole": "free",
+        "game": "Manor Lords",
+        "year": 2024,
+        "how": "Gridless: buildings go anywhere at any rotation, and burgage plots subdivide to fit your roads and the land."
+      },
+      {
+        "pole": "grid",
+        "game": "Timberborn",
+        "year": 2021,
+        "how": "The world is built of 1x1 voxel blocks; terrain blocks and constructions are placed block by block and stacked in layers."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "simulation"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/manor_lords",
+        "note": "Manor Lords: gridless city building with free placement and rotation"
+      },
+      {
+        "url": "https://timberborn.wiki.gg/wiki/Terrain_Block",
+        "note": "Timberborn: 1x1 cubic voxel blocks, stacking and overhang rules"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.build.integrity.valheim-fallout4",
+    "axis": "build.integrity",
+    "options": [
+      {
+        "pole": "structural",
+        "game": "Valheim",
+        "year": 2021,
+        "how": "Each piece shows its support by color, blue to red; build too far from the ground and pieces break."
+      },
+      {
+        "pole": "none",
+        "game": "Fallout 4",
+        "year": 2015,
+        "how": "Settlement pieces snap together without structural load; floors and walls hold wherever they snap."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "survival",
+        "action",
+        "rpg",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/892970/Valheim/",
+        "note": "Valheim: structural integrity building and rewarding food"
+      },
+      {
+        "url": "https://store.steampowered.com/app/377160/Fallout_4/",
+        "note": "Fallout 4: settlement building"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.build.integrity.7daystodie-terraria",
+    "axis": "build.integrity",
+    "options": [
+      {
+        "pole": "structural",
+        "game": "7 Days to Die",
+        "year": 2013,
+        "how": "Blocks carry load and need support; unsupported blocks fall, so damage can collapse a base."
+      },
+      {
+        "pole": "none",
+        "game": "Terraria",
+        "year": 2011,
+        "how": "Most blocks ignore gravity, so you can build floating platforms and houses anywhere."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "survival",
+        "horror",
+        "sandbox",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://7daystodie.wiki.gg/wiki/Structural_Integrity",
+        "note": "7 Days to Die: unsupported blocks fall"
+      },
+      {
+        "url": "https://terraria.wiki.gg/wiki/Blocks",
+        "note": "Terraria: most blocks are not affected by gravity"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.build.integrity.dwarffortress-fallout76",
+    "axis": "build.integrity",
+    "options": [
+      {
+        "pole": "structural",
+        "game": "Dwarf Fortress",
+        "year": 2006,
+        "how": "Constructions or ground detached from all support cave in, crashing down and destroying buildings underneath."
+      },
+      {
+        "pole": "none",
+        "game": "Fallout 76",
+        "year": 2018,
+        "how": "Pieces need no load support; only the C.A.M.P. budget and no-build zones limit where and how much you build."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy",
+        "survival",
+        "rpg",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://dwarffortresswiki.org/index.php/Cave-in",
+        "note": "Dwarf Fortress: unsupported constructions and terrain cave in"
+      },
+      {
+        "url": "https://fallout.wiki/wiki/C.A.M.P.",
+        "note": "Fallout 76: C.A.M.P. limited by budget and placement rules, structures can float on stairs"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.build.integrity.timberborn-fallout76",
+    "axis": "build.integrity",
+    "options": [
+      {
+        "pole": "structural",
+        "game": "Timberborn",
+        "year": 2021,
+        "how": "Terrain blocks can reach at most three blocks sideways or overhang three blocks past a fully supported block."
+      },
+      {
+        "pole": "none",
+        "game": "Fallout 76",
+        "year": 2018,
+        "how": "C.A.M.P. building is capped by a budget and placement rules, with no structural load; builds can even float above terrain on stairs."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "simulation",
+        "survival",
+        "rpg",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://timberborn.wiki.gg/wiki/Terrain_Block",
+        "note": "Timberborn: side placement and overhang limited to three blocks"
+      },
+      {
+        "url": "https://fallout.wiki/wiki/C.A.M.P.",
+        "note": "Fallout 76: C.A.M.P. limited by budget and placement rules, structures can float on stairs"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.build.purpose.animalcrossingnewhorizons-theyarebillions",
+    "axis": "build.purpose",
+    "options": [
+      {
+        "pole": "cosmetic",
+        "game": "Animal Crossing: New Horizons",
+        "year": 2020,
+        "how": "Furniture, flowers and trees raise the island star rating for development and scenery; nothing you place defends you."
+      },
+      {
+        "pole": "functional",
+        "game": "They Are Billions",
+        "year": 2019,
+        "how": "Walls, gates and towers keep swarms of thousands of infected out of the colony."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://nookipedia.com/wiki/Island_evaluation",
+        "note": "Animal Crossing: New Horizons: star rating from development and scenery"
+      },
+      {
+        "url": "https://www.gog.com/en/game/they_are_billions",
+        "note": "They Are Billions: build walls, gates and towers against the infected"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.build.purpose.townscaper-stronghold",
+    "axis": "build.purpose",
+    "options": [
+      {
+        "pole": "cosmetic",
+        "game": "Townscaper",
+        "year": 2020,
+        "how": "No goal and no resources: you plop colored blocks on an irregular grid purely for how the town looks."
+      },
+      {
+        "pole": "functional",
+        "game": "Stronghold",
+        "year": 2001,
+        "how": "You design a castle with gates and killing zones; its layout decides whether you hold off enemy attacks and sieges."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "sandbox",
+        "strategy",
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/townscaper",
+        "note": "Townscaper: no goal, colored blocks on an irregular grid"
+      },
+      {
+        "url": "https://fireflyworlds.com/games/stronghold/",
+        "note": "Stronghold: build a castle with killing zones and hold off attacks"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.build.purpose.tinyglade-kingdomtwocrowns",
+    "axis": "build.purpose",
+    "options": [
+      {
+        "pole": "cosmetic",
+        "game": "Tiny Glade",
+        "year": 2024,
+        "how": "Castles and cottages are pure expression; nothing attacks and no building has a stat."
+      },
+      {
+        "pole": "functional",
+        "game": "Kingdom Two Crowns",
+        "year": 2018,
+        "how": "Walls and towers you pay for stand between your town and the Greed attacking each night."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "sandbox",
+        "strategy",
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/2198150/Tiny_Glade/",
+        "note": "Tiny Glade: gridless free-form building with no goals"
+      },
+      {
+        "url": "https://store.steampowered.com/app/701160/Kingdom_Two_Crowns/",
+        "note": "Kingdom Two Crowns: Greed attack at night; walls and towers defend"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.build.purpose.palia-7daystodie",
+    "axis": "build.purpose",
+    "options": [
+      {
+        "pole": "cosmetic",
+        "game": "Palia",
+        "year": 2023,
+        "how": "Decor customizes your Housing Plot, up to 3,500 pieces, and has no gameplay effect beyond how your home looks."
+      },
+      {
+        "pole": "functional",
+        "game": "7 Days to Die",
+        "year": 2013,
+        "how": "Every 7th night a Blood Moon horde breaks down obstacles to reach you, so bases must be built to withstand it."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "survival",
+        "horror"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://palia.wiki.gg/wiki/Furniture",
+        "note": "Palia: decor customizes the Housing Plot, no gameplay effects"
+      },
+      {
+        "url": "https://7daystodie.wiki.gg/wiki/Blood_Moon_Horde",
+        "note": "7 Days to Die: horde every 7th day breaks obstacles to reach the player"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.build.purpose.finalfantasyxiv-dragonquestbuilders2",
+    "axis": "build.purpose",
+    "options": [
+      {
+        "pole": "cosmetic",
+        "game": "Final Fantasy XIV",
+        "year": 2013,
+        "how": "Player housing lets you furnish and decorate a house or apartment as a social showcase."
+      },
+      {
+        "pole": "functional",
+        "game": "Dragon Quest Builders 2",
+        "year": 2018,
+        "how": "Enclosed rooms that match a room recipe, like a kitchen or bedroom, gain functions residents use."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "sandbox"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://ffxiv.consolegameswiki.com/wiki/Crafting",
+        "note": "Final Fantasy XIV: quality raises the chance of an HQ item"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1072420/DRAGON_QUEST_BUILDERS_2/",
+        "note": "Dragon Quest Builders 2: block building RPG"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.build.scale.houseflipper-citiesskylines",
+    "axis": "build.scale",
+    "options": [
+      {
+        "pole": "rooms",
+        "game": "House Flipper",
+        "year": 2018,
+        "how": "You repair and remodel one house at a time: walls, floors, paint and furniture inside each room."
+      },
+      {
+        "pole": "cities",
+        "game": "Cities: Skylines",
+        "year": 2015,
+        "how": "You lay out a whole city of districts, road networks, utilities and services."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/613100/House_Flipper/",
+        "note": "House Flipper: buy, repair and remodel houses"
+      },
+      {
+        "url": "https://store.steampowered.com/app/255710/Cities_Skylines/",
+        "note": "Cities: Skylines: city builder about zoning, services and traffic"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.build.scale.themehospital-caesar3",
+    "axis": "build.scale",
+    "options": [
+      {
+        "pole": "rooms",
+        "game": "Theme Hospital",
+        "year": 1997,
+        "how": "You fit out rooms inside one hospital building, sizing each and placing desks, beds and machines."
+      },
+      {
+        "pole": "cities",
+        "game": "Caesar III",
+        "year": 1998,
+        "how": "You plan an entire Roman city: housing blocks, roads, aqueducts, farms, temples and walls."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/theme_hospital",
+        "note": "Theme Hospital: design and manage a hospital from an empty building"
+      },
+      {
+        "url": "https://www.gog.com/en/game/caesar_3",
+        "note": "Caesar III: a governor career of city missions pleasing the emperor"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.build.scale.palia-islanders",
+    "axis": "build.scale",
+    "options": [
+      {
+        "pole": "rooms",
+        "game": "Palia",
+        "year": 2023,
+        "how": "Building centers on your own home plot: rooms, walls and furniture for one house."
+      },
+      {
+        "pole": "cities",
+        "game": "Islanders",
+        "year": 2019,
+        "how": "You place whole towns of buildings across a procedurally generated island."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy",
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/2707930/Palia/",
+        "note": "Palia: home plot with building blocks and decor"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1046030/ISLANDERS/",
+        "note": "Islanders: relaxing builder, placing buildings rewarded with points"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.build.scale.prisonarchitect-anno1800",
+    "axis": "build.scale",
+    "options": [
+      {
+        "pole": "rooms",
+        "game": "Prison Architect",
+        "year": 2015,
+        "how": "You build and run one maximum security prison, laying out holding cells, canteen, infirmary and guard room yourself."
+      },
+      {
+        "pole": "cities",
+        "game": "Anno 1800",
+        "year": 2019,
+        "how": "You create huge metropolises, settle a new continent and link them with numerous production chains."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/prison_architect",
+        "note": "Prison Architect: build and manage one maximum security prison"
+      },
+      {
+        "url": "https://www.ubisoft.com/en-us/game/anno/1800",
+        "note": "Anno 1800: huge metropolises, a new continent and production chains"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.surv.needs.thelongdark-valheim",
+    "axis": "surv.needs",
+    "options": [
+      {
+        "pole": "strict",
+        "game": "The Long Dark",
+        "year": 2017,
+        "how": "Calories, thirst, fatigue and warmth all drain; let them empty and you die, permanently in Survival mode."
+      },
+      {
+        "pole": "buff",
+        "game": "Valheim",
+        "year": 2021,
+        "how": "No starvation: up to three foods at once temporarily raise max health and stamina."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "survival",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/305620/The_Long_Dark/",
+        "note": "The Long Dark: calories, thirst, fatigue, cold, wolves; permadeath in Survival"
+      },
+      {
+        "url": "https://store.steampowered.com/app/892970/Valheim/",
+        "note": "Valheim: structural integrity building and rewarding food"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.surv.needs.abioticfactor-terraria",
+    "axis": "surv.needs",
+    "options": [
+      {
+        "pole": "strict",
+        "game": "Abiotic Factor",
+        "year": 2024,
+        "how": "When hunger or thirst runs low a countdown appears; let it run out and you instantly perish."
+      },
+      {
+        "pole": "buff",
+        "game": "Terraria",
+        "year": 2011,
+        "how": "Food grants Well Fed or stronger tiers for defense, damage and speed; hunger only matters in special seeds like The Constant."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "survival",
+        "sandbox",
+        "action",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://abioticfactor.wiki.gg/wiki/Hunger",
+        "note": "Abiotic Factor: hunger or thirst countdown ends in instant death"
+      },
+      {
+        "url": "https://terraria.wiki.gg/wiki/Well_Fed",
+        "note": "Terraria: Well Fed buffs, hunger only in special seeds"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.surv.needs.medievaldynasty-enshrouded",
+    "axis": "surv.needs",
+    "options": [
+      {
+        "pole": "strict",
+        "game": "Medieval Dynasty",
+        "year": 2021,
+        "how": "You track food, water, health and stamina, and must keep yourself and your villagers from starving or dying of thirst."
+      },
+      {
+        "pole": "buff",
+        "game": "Enshrouded",
+        "year": 2024,
+        "how": "Up to three food slots give timed bonuses to health, stamina or damage by food type; skipping meals only forgoes the bonus."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "survival",
+        "simulation",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/medieval_dynasty",
+        "note": "Medieval Dynasty: monitor food, water, health, do not starve or die of thirst"
+      },
+      {
+        "url": "https://enshrouded.wiki.gg/wiki/Food",
+        "note": "Enshrouded: three food slots with timed buffs"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.surv.needs.dontstarvetogether-monsterhunterrise",
+    "axis": "surv.needs",
+    "options": [
+      {
+        "pole": "strict",
+        "game": "Don't Starve Together",
+        "year": 2016,
+        "how": "When Hunger hits zero, Health drains at 1.25 per second until you eat something or die."
+      },
+      {
+        "pole": "buff",
+        "game": "Monster Hunter Rise",
+        "year": 2021,
+        "how": "Eating Bunny Dango at the Tea Shop boosts max Health and Stamina and can trigger dango skills for the quest."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "survival",
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://dontstarve.wiki.gg/wiki/Hunger",
+        "note": "Don't Starve Together: starvation drains Health until you eat or die"
+      },
+      {
+        "url": "https://monsterhunterrise.wiki.fextralife.com/Tea_Shop",
+        "note": "Monster Hunter Rise: Bunny Dango boost max Health and Stamina, dango skills"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.surv.pressure.nomanssky-thelongdark",
+    "axis": "surv.pressure",
+    "options": [
+      {
+        "pole": "relaxed",
+        "game": "No Man's Sky",
+        "year": 2016,
+        "how": "Relaxed mode keeps the full game with far less survival upkeep, and life support or hazard drain can be slowed or switched off."
+      },
+      {
+        "pole": "lethal",
+        "game": "The Long Dark",
+        "year": 2017,
+        "how": "Hunger, thirst, fatigue and cold drain you while wolves and bears hunt you; in Survival, death deletes your save."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "survival",
+        "sandbox"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "vr"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.nomanssky.com/2022/10/waypoint-update/",
+        "note": "No Man's Sky: Relaxed mode and adjustable life support and hazard drain"
+      },
+      {
+        "url": "https://store.steampowered.com/app/305620/The_Long_Dark/",
+        "note": "The Long Dark: hunger, thirst, fatigue, cold, wildlife, save deleted on death"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.surv.pressure.planetcrafter-kenshi",
+    "axis": "surv.pressure",
+    "options": [
+      {
+        "pole": "relaxed",
+        "game": "The Planet Crafter",
+        "year": 2024,
+        "how": "Thirst, oxygen and temperature need upkeep, but there are no enemies and a chill difficulty keeps survival light."
+      },
+      {
+        "pole": "lethal",
+        "game": "Kenshi",
+        "year": 2018,
+        "how": "Slavers, cannibals, wild beasts and famine threaten you everywhere, and wounded squad mates must be carried home alive."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "survival",
+        "rpg",
+        "sandbox"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/the_planet_crafter",
+        "note": "The Planet Crafter: thirst, oxygen, temperature; chill to hardcore; no violence"
+      },
+      {
+        "url": "https://www.gog.com/en/game/kenshi",
+        "note": "Kenshi: slavers, cannibals, wild beasts and famine"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.surv.pressure.enshrouded-projectzomboid",
+    "axis": "surv.pressure",
+    "options": [
+      {
+        "pole": "relaxed",
+        "game": "Enshrouded",
+        "year": 2024,
+        "how": "Food slots only add timed bonuses, with no penalty listed for an empty stomach, so upkeep never threatens you."
+      },
+      {
+        "pole": "lethal",
+        "game": "Project Zomboid",
+        "year": 2013,
+        "how": "Hunger, thirst, illness and depression pile on in a zombie-infested sandbox built around one question: how will you die?"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "survival",
+        "horror",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://enshrouded.wiki.gg/wiki/Food",
+        "note": "Enshrouded: food gives timed buffs only"
+      },
+      {
+        "url": "https://www.gog.com/en/game/project_zomboid",
+        "note": "Project Zomboid: hunger, thirst and illness, how will you die"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.surv.pressure.nomanssky-dontstarvetogether",
+    "axis": "surv.pressure",
+    "options": [
+      {
+        "pole": "relaxed",
+        "game": "No Man's Sky",
+        "year": 2016,
+        "how": "Survival upkeep is a setting: Relaxed lightens it, and life support or hazard protection drain can be slowed or turned off."
+      },
+      {
+        "pole": "lethal",
+        "game": "Don't Starve Together",
+        "year": 2016,
+        "how": "Starvation and winter freezing each drain 1.25 Health per second until you eat, warm up or die."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "survival",
+        "sandbox"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "vr"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.nomanssky.com/2022/10/waypoint-update/",
+        "note": "No Man's Sky: Relaxed mode, adjustable life support and hazard drain"
+      },
+      {
+        "url": "https://dontstarve.wiki.gg/wiki/Freezing",
+        "note": "Don't Starve Together: freezing deals 1.25 damage per second"
+      },
+      {
+        "url": "https://dontstarve.wiki.gg/wiki/Hunger",
+        "note": "Don't Starve Together: starvation drains Health until you eat or die"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  }
+]

@@ -1,0 +1,226 @@
+[
+  {
+    "id": "cmp.horror.agency.amnesia-re2",
+    "axis": "horror.agency",
+    "options": [
+      { "pole": "hide", "game": "Amnesia: The Dark Descent", "year": 2010, "how": "No weapons at all: you hide in darkness, break line of sight and flee, while staying in the dark or watching monsters drains sanity." },
+      { "pole": "scarce_combat", "game": "Resident Evil 2 (2019)", "year": 2019, "how": "Guns and knives with scarce ammo and healing; Mr. X stalks the police station and can only be slowed, so you pick which fights to take." }
+    ],
+    "tags": { "genres": ["horror", "action", "survival"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/57300/", "note": "Amnesia: The Dark Descent: hunted, you must explore and escape" },
+      { "url": "https://store.steampowered.com/app/883710/", "note": "Resident Evil 2 (2019): survival horror with combat and resource management" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.horror.agency.clocktower-evilwithin",
+    "axis": "horror.agency",
+    "options": [
+      { "pole": "hide", "game": "Clock Tower", "year": 1995, "how": "Jennifer cannot fight: she searches the manor for items and secret routes that let her evade Scissorman, an unstoppable killer." },
+      { "pole": "scarce_combat", "game": "The Evil Within", "year": 2014, "how": "Guns and melee are available, but limited resources mean stealth and avoidance stretch every bullet you carry." }
+    ],
+    "tags": { "genres": ["horror", "action"], "platforms": ["pc", "console"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/2794770/", "note": "Clock Tower: find ways to evade Scissorman, an unstoppable shears-wielding killer" },
+      { "url": "https://store.steampowered.com/app/268050/", "note": "The Evil Within: with limited resources at your disposal, you fight for survival" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.horror.agency.outlast-signalis",
+    "axis": "horror.agency",
+    "options": [
+      { "pole": "hide", "game": "Outlast", "year": 2013, "how": "You are no fighter: the only answers to the asylum's inmates are running away and hiding until they pass." },
+      { "pole": "scarce_combat", "game": "Signalis", "year": 2022, "how": "Classic survival horror gunplay, but scarce ammo and healing make every fight a resource decision you may choose to dodge." }
+    ],
+    "tags": { "genres": ["horror", "survival"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/238320/", "note": "Outlast: you are no fighter, your only chance is to run or hide" },
+      { "url": "https://store.steampowered.com/app/1262350/", "note": "Signalis: carefully manage scarce resources" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.horror.agency.soma-bunker",
+    "axis": "horror.agency",
+    "options": [
+      { "pole": "hide", "game": "SOMA", "year": 2015, "how": "No weapons, gadgets or tools to fight back: each mechanised monster becomes a game of hide and seek as you slip past unseen." },
+      { "pole": "scarce_combat", "game": "Amnesia: The Bunker", "year": 2023, "how": "A revolver starts with one bullet and supplies must be scavenged and crafted, so each shot is weighed against the noise it makes." }
+    ],
+    "tags": { "genres": ["horror", "survival"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.pcgamer.com/soma-review/", "note": "SOMA: no weapons, you cannot fight back, all you can do is run and hide" },
+      { "url": "https://store.steampowered.com/app/1944430/", "note": "Amnesia: The Bunker: one bullet in the revolver and scarce supplies to scavenge and craft" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.horror.agency.amnesiarebirth-alienisolation",
+    "axis": "horror.agency",
+    "options": [
+      { "pole": "hide", "game": "Amnesia: Rebirth", "year": 2020, "how": "Tasi has no weapons: she avoids darkness, crouches and hides from monsters while managing her own fear." },
+      { "pole": "scarce_combat", "game": "Alien: Isolation", "year": 2014, "how": "Underpowered and underprepared: scavenge and craft items to evade, distract or face enemies head on, never with enough to feel safe." }
+    ],
+    "tags": { "genres": ["horror", "survival"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/999220/", "note": "Amnesia: Rebirth: avoid darkness, hide from monsters and solve puzzles" },
+      { "url": "https://store.steampowered.com/app/214490/", "note": "Alien: Isolation: scavenge resources and craft items to evade, distract or face enemies" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.horror.agency.littlenightmares-darkwood",
+    "axis": "horror.agency",
+    "options": [
+      { "pole": "hide", "game": "Little Nightmares", "year": 2017, "how": "Six never fights the distorted adults: you sneak past them, throw objects to send them elsewhere, and escape." },
+      { "pole": "scarce_combat", "game": "Darkwood", "year": 2017, "how": "Find and craft weapons from scavenged resources, then barricade your hideout and fight through each night." }
+    ],
+    "tags": { "genres": ["horror", "survival", "platformer"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.pcgamer.com/little-nightmares-review/", "note": "Little Nightmares: heavy stealth element, evading the creatures and sneaking past" },
+      { "url": "https://store.steampowered.com/app/274520/", "note": "Darkwood: scavenge vital resources, build defenses, find and craft weapons" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.horror.agency.visage-evilwithin",
+    "axis": "horror.agency",
+    "options": [
+      { "pole": "hide", "game": "Visage", "year": 2020, "how": "You are defenseless: no weapon helps against the entities, so you stay in the light to keep your sanity and avoid them." },
+      { "pole": "scarce_combat", "game": "The Evil Within", "year": 2014, "how": "You can shoot back, but scarce ammo and supplies turn every encounter into a choice between fighting, sneaking or running." }
+    ],
+    "tags": { "genres": ["horror", "action"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/594330/", "note": "Visage: you are defenseless, no weapons; stay in the light to avoid going insane" },
+      { "url": "https://store.steampowered.com/app/268050/", "note": "The Evil Within: limited resources, fight for survival" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.horror.agency.outlast-darkwood",
+    "axis": "horror.agency",
+    "options": [
+      { "pole": "hide", "game": "Outlast", "year": 2013, "how": "With no way to attack, encounters are solved by breaking line of sight, running and hiding until the pursuer gives up." },
+      { "pole": "scarce_combat", "game": "Darkwood", "year": 2017, "how": "Melee and firearms exist, but materials are scarce, so defending at night competes with scavenging and crafting by day." }
+    ],
+    "tags": { "genres": ["horror", "survival"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/238320/", "note": "Outlast: you are no fighter, run or hide" },
+      { "url": "https://store.steampowered.com/app/274520/", "note": "Darkwood: scavenge by day, defend by night, weapons to find and craft" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.horror.threat.alienisolation-fnaf",
+    "axis": "horror.threat",
+    "options": [
+      { "pole": "systemic", "game": "Alien: Isolation", "year": 2014, "how": "One Alien hunts by its senses while a director AI keeps it near you using a menace gauge, so encounters are never staged." },
+      { "pole": "scripted", "game": "Five Nights at Freddy's", "year": 2014, "how": "Animatronics follow patterns you learn; you watch security cameras and ration limited power for doors and lights." }
+    ],
+    "tags": { "genres": ["horror", "survival"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.gamedeveloper.com/design/the-perfect-organism-the-ai-of-alien-isolation", "note": "Alien: Isolation: director AI manages a menace gauge to steer the Alien" },
+      { "url": "https://store.steampowered.com/app/319510/", "note": "Five Nights at Freddy's: watch security cameras, very limited electricity per night" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.horror.threat.layersoffear-helloneighbor",
+    "axis": "horror.threat",
+    "options": [
+      { "pole": "scripted", "game": "Layers of Fear", "year": 2016, "how": "Authored scares: the house reshapes itself when you look away, a guided walk through hand-built transformations." },
+      { "pole": "systemic", "game": "Hello Neighbor", "year": 2017, "how": "The Neighbor's AI learns from your routes, adding bear traps and cameras where you keep entering and cutting off escapes." }
+    ],
+    "tags": { "genres": ["horror", "narrative", "puzzle"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/391720/", "note": "Layers of Fear: the environment reshapes itself when you look away" },
+      { "url": "https://store.steampowered.com/app/521890/", "note": "Hello Neighbor: advanced AI that learns from your every move" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.horror.threat.untildawn-left4dead",
+    "axis": "horror.threat",
+    "options": [
+      { "pole": "scripted", "game": "Until Dawn", "year": 2015, "how": "A cinematic slasher whose scares are staged set pieces; your decisions decide who survives, not how a monster behaves." },
+      { "pole": "systemic", "game": "Left 4 Dead", "year": 2008, "how": "The AI Director tailors the frequency and ferocity of infected attacks to your team's performance, so runs never repeat." }
+    ],
+    "tags": { "genres": ["horror", "narrative", "shooter"], "platforms": ["pc", "console"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/2172010/", "note": "Until Dawn: slasher horror where every decision can mean life or death" },
+      { "url": "https://store.steampowered.com/app/500/", "note": "Left 4 Dead: the AI Director tailors frequency and ferocity of attacks to performance" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.horror.threat.exit8-scpcb",
+    "axis": "horror.threat",
+    "options": [
+      { "pole": "scripted", "game": "The Exit 8", "year": 2023, "how": "A looping corridor of hand-made anomalies: spot one and turn back, see none and keep walking. Every scare is authored." },
+      { "pole": "systemic", "game": "SCP: Containment Breach", "year": 2012, "how": "Escaped entities roam the facility; SCP-173 moves only while unwatched, and a blink meter forces you to look away." }
+    ],
+    "tags": { "genres": ["horror", "puzzle"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/2653790/", "note": "The Exit 8: observe anomalies in an endless passageway and turn back if you find one" },
+      { "url": "https://store.steampowered.com/app/2178380/", "note": "SCP: Containment Breach: SCP-173 is frozen while looked at, plus a blinking mechanic" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.horror.threat.mouthwashing-bunker",
+    "axis": "horror.threat",
+    "options": [
+      { "pole": "scripted", "game": "Mouthwashing", "year": 2024, "how": "A linear first-person story of a doomed freighter crew; dread is authored scene by scene instead of coming from a hunting monster." },
+      { "pole": "systemic", "game": "Amnesia: The Bunker", "year": 2023, "how": "An ever-present hunter reacts to your every move and sound, with randomized behavior and item placement so no run repeats." }
+    ],
+    "tags": { "genres": ["horror", "narrative", "survival"], "platforms": ["pc", "console"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/2475490/", "note": "Mouthwashing: first-person narrative horror following a dying freighter crew" },
+      { "url": "https://store.steampowered.com/app/1944430/", "note": "Amnesia: The Bunker: ever-present threat reacting to every move and sound, randomization" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.horror.threat.fnaf-granny",
+    "axis": "horror.threat",
+    "options": [
+      { "pole": "scripted", "game": "Five Nights at Freddy's", "year": 2014, "how": "Threats arrive by learnable patterns you read on cameras; survival is rationing power, not evading a free-roaming hunter." },
+      { "pole": "systemic", "game": "Granny", "year": 2017, "how": "Granny hears everything: dropped items and creaking floors send her running to the sound, so your own noise drives the hunt." }
+    ],
+    "tags": { "genres": ["horror", "puzzle"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/319510/", "note": "Five Nights at Freddy's: watch the cameras, limited power for doors and lights" },
+      { "url": "https://store.steampowered.com/app/962400/", "note": "Granny: she hears everything and runs to the sound" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.horror.threat.untildawn-granny",
+    "axis": "horror.threat",
+    "options": [
+      { "pole": "scripted", "game": "Until Dawn", "year": 2015, "how": "Scares are staged with movie-like cinematography; you shape outcomes through choices, not by outwitting an enemy AI." },
+      { "pole": "systemic", "game": "Granny", "year": 2017, "how": "Granny roams the house and comes to any noise; you hide in wardrobes and coffins, but she may see where you hide." }
+    ],
+    "tags": { "genres": ["horror", "narrative"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/2172010/", "note": "Until Dawn: movie-like cinematography, choices decide who survives" },
+      { "url": "https://store.steampowered.com/app/962400/", "note": "Granny: hide in wardrobes and coffins, but she may see you hiding" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.horror.threat.layersoffear-scpcb",
+    "axis": "horror.threat",
+    "options": [
+      { "pole": "scripted", "game": "Layers of Fear", "year": 2016, "how": "Rooms warp to mirror the painter's crumbling sanity; fear comes from authored transformations along a set path." },
+      { "pole": "systemic", "game": "SCP: Containment Breach", "year": 2012, "how": "Entities roam a large site independently of your route; you track them yourself and must keep eyes on SCP-173 to stay alive." }
+    ],
+    "tags": { "genres": ["horror", "narrative"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/391720/", "note": "Layers of Fear: the world warps to reflect the painter's crumbling sanity" },
+      { "url": "https://store.steampowered.com/app/2178380/", "note": "SCP: Containment Breach: escaped entities roaming; SCP-173 frozen while watched" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  }
+]

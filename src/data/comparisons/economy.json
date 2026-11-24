@@ -1,0 +1,2833 @@
+[
+  {
+    "id": "cmp.econ.scale.bigambitions-civ6",
+    "axis": "econ.scale",
+    "options": [
+      {
+        "pole": "personal",
+        "game": "Big Ambitions",
+        "year": 2023,
+        "how": "Rent storefronts, stock them, hire and schedule staff, import through the harbor into warehouses; HQ managers later automate logistics."
+      },
+      {
+        "pole": "abstract",
+        "game": "Civilization VI",
+        "year": 2016,
+        "how": "Cities earn gold per turn from tile yields, districts and trade routes; you spend one empire treasury and never run a single shop."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://pcgamer.com/im-completely-hooked-on-this-open-world-business-sandbox-sim-and-im-not-alone",
+        "note": "Big Ambitions: hands-on open world business sim"
+      },
+      {
+        "url": "https://civilization.fandom.com/wiki/Gold_(Civ6)",
+        "note": "Civilization VI: gold per turn from yields, districts and trade routes"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.econ.scale.recettear-stellaris",
+    "axis": "econ.scale",
+    "options": [
+      {
+        "pole": "personal",
+        "game": "Recettear: An Item Shop's Tale",
+        "year": 2007,
+        "how": "Buy stock in the town markets, set a price for each item on display and haggle with each customer at the counter."
+      },
+      {
+        "pole": "abstract",
+        "game": "Stellaris",
+        "year": 2016,
+        "how": "Pop jobs on planets yield energy credits and minerals each month into one empire-wide stockpile; there are no individual shops."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "simulation",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://recettear.fandom.com/wiki/Pricing_Strategies",
+        "note": "Recettear: per-customer pricing and haggling"
+      },
+      {
+        "url": "https://store.steampowered.com/app/70400/",
+        "note": "Recettear: decide how much to sell things for, play the town markets"
+      },
+      {
+        "url": "https://stellaris.paradoxwikis.com/Economy",
+        "note": "Stellaris: energy credits and minerals as empire-wide resources"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.scale.supermarketsim-adcap",
+    "axis": "econ.scale",
+    "options": [
+      {
+        "pole": "personal",
+        "game": "Supermarket Simulator",
+        "year": 2024,
+        "how": "Order stock on the store computer, unpack it onto shelves, set each product's price, scan items at checkout, then hire staff."
+      },
+      {
+        "pole": "abstract",
+        "game": "AdVenture Capitalist",
+        "year": 2014,
+        "how": "Buy businesses that pay out on timers; hired managers keep them earning while you are away, so money is one growing number."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "idle"
+      ],
+      "platforms": [
+        "pc",
+        "mobile",
+        "web"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/2670630/",
+        "note": "Supermarket Simulator: stock shelves, set prices, take payments, hire staff"
+      },
+      {
+        "url": "https://store.steampowered.com/app/346900/",
+        "note": "AdVenture Capitalist: hire a manager to keep earning while you are gone"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.scale.potioncraft-cookieclicker",
+    "axis": "econ.scale",
+    "options": [
+      {
+        "pole": "personal",
+        "game": "Potion Craft: Alchemist Simulator",
+        "year": 2021,
+        "how": "Grind ingredients and steer each brew in the cauldron by hand, then serve customers one at a time at your shop counter."
+      },
+      {
+        "pole": "abstract",
+        "game": "Cookie Clicker",
+        "year": 2013,
+        "how": "Buildings bake cookies per second on their own; each purchase raises that building's cost by 15%, so the economy is one rate."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "idle"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile",
+        "web"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1210320/",
+        "note": "Potion Craft: physically interact with tools to brew, customers visit your store"
+      },
+      {
+        "url": "https://cookieclicker.wiki.gg/wiki/Buildings",
+        "note": "Cookie Clicker: buildings passively generate cookies, cost +15% each"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.scale.moonlighter-eu4",
+    "axis": "econ.scale",
+    "options": [
+      {
+        "pole": "personal",
+        "game": "Moonlighter",
+        "year": 2018,
+        "how": "Put dungeon loot on display tables, set each price yourself and manage gold reserves; recruit an assistant and upgrade the shop."
+      },
+      {
+        "pole": "abstract",
+        "game": "Europa Universalis IV",
+        "year": 2013,
+        "how": "Monthly ducat income sums province tax, production and trade; you balance a national budget, not individual merchants."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg",
+        "simulation",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/606150/",
+        "note": "Moonlighter: put items on sale, set their price, manage gold reserves"
+      },
+      {
+        "url": "https://cdn.cloudflare.steamstatic.com/steam/apps/236850/manuals/EuropaUniversalisIV_Manual_English.pdf",
+        "note": "Europa Universalis IV: official manual, monthly income from tax, production and trade"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.scale.themehospital-simcity",
+    "axis": "econ.scale",
+    "options": [
+      {
+        "pole": "personal",
+        "game": "Theme Hospital",
+        "year": 1997,
+        "how": "Build each room, hire individual doctors, nurses and handymen at negotiated salaries, and adjust what each treatment charges."
+      },
+      {
+        "pole": "abstract",
+        "game": "SimCity",
+        "year": 1989,
+        "how": "Zone land and set a tax rate; the yearly budget funds police, fire and transit as aggregate lines, with no individual firms."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://strategywiki.org/wiki/Theme_Hospital",
+        "note": "Theme Hospital: rooms, staff hiring and charges"
+      },
+      {
+        "url": "https://strategywiki.org/wiki/SimCity",
+        "note": "SimCity: tax rate and yearly budget"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.currency.hollowknight-genshin",
+    "axis": "econ.currency",
+    "options": [
+      {
+        "pole": "single",
+        "game": "Hollow Knight",
+        "year": 2017,
+        "how": "Geo is the only money: spent at vendors, dropped on death and recovered by defeating your Shade."
+      },
+      {
+        "pole": "many",
+        "game": "Genshin Impact",
+        "year": 2020,
+        "how": "Mora, Primogems, Genesis Crystals, Stardust and Starglitter each buy different things, including premium wishes."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "platformer",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://hollowknight.wiki/wiki/Geo",
+        "note": "Hollow Knight: Geo, lost on death and recovered from the Shade"
+      },
+      {
+        "url": "https://genshin-impact.fandom.com/wiki/Currency",
+        "note": "Genshin Impact: list of currencies including premium"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.econ.currency.balatro-hearthstone",
+    "axis": "econ.currency",
+    "options": [
+      {
+        "pole": "single",
+        "game": "Balatro",
+        "year": 2024,
+        "how": "One pool of dollars: earned by beating blinds plus $1 interest per $5 held (capped), all spent in the shop between rounds."
+      },
+      {
+        "pole": "many",
+        "game": "Hearthstone",
+        "year": 2014,
+        "how": "Gold from the rewards track buys packs and Arena runs, while Arcane Dust from disenchanting crafts specific cards."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://balatrowiki.org/w/Money",
+        "note": "Balatro: money from blinds, interest, spent in the Shop"
+      },
+      {
+        "url": "https://hearthstone.wiki.gg/wiki/Gold",
+        "note": "Hearthstone: gold earned on the rewards track, spent on packs and Arena"
+      },
+      {
+        "url": "https://hearthstone.wiki.gg/wiki/Arcane_Dust",
+        "note": "Hearthstone: Arcane Dust from disenchanting, spent crafting"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.currency.moonlighter-acnh",
+    "axis": "econ.currency",
+    "options": [
+      {
+        "pole": "single",
+        "game": "Moonlighter",
+        "year": 2018,
+        "how": "Gold earned at your shop is the one currency; you manage the reserve and spend it on assistants and shop upgrades."
+      },
+      {
+        "pole": "many",
+        "game": "Animal Crossing: New Horizons",
+        "year": 2020,
+        "how": "Bells buy most goods, while Nook Miles from activities unlock tickets, recipes, tool rings and pocket upgrades at the Nook Stop."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg",
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/606150/",
+        "note": "Moonlighter: manage gold reserves, recruit assistants, upgrade the shop"
+      },
+      {
+        "url": "https://nookipedia.com/wiki/Nook_Miles",
+        "note": "Animal Crossing: New Horizons: Nook Miles spent at the Nook Stop, separate from Bells"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.currency.shovelknight-warframe",
+    "axis": "econ.currency",
+    "options": [
+      {
+        "pole": "single",
+        "game": "Shovel Knight",
+        "year": 2014,
+        "how": "Gold dug from the level is the only currency, amassed to buy armor and weapon upgrades."
+      },
+      {
+        "pole": "many",
+        "game": "Warframe",
+        "year": 2013,
+        "how": "Credits for general costs, Platinum on the market, Endo for mods, Ducats for Baro Ki'Teer, plus Standing with syndicates."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "platformer",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/250760/",
+        "note": "Shovel Knight: amass riches to upgrade armor and weapons"
+      },
+      {
+        "url": "https://wiki.warframe.com/w/Currency",
+        "note": "Warframe: credits, platinum, ducats, standing and resource currencies"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.currency.alttp-clashofclans",
+    "axis": "econ.currency",
+    "options": [
+      {
+        "pole": "single",
+        "game": "The Legend of Zelda: A Link to the Past",
+        "year": 1991,
+        "how": "Rupees are the one currency, found in grass, pots and chests and spent at shops and minigames."
+      },
+      {
+        "pole": "many",
+        "game": "Clash of Clans",
+        "year": 2012,
+        "how": "Gold, Elixir and Dark Elixir pay for different buildings and troops, while premium Gems speed up timers."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg",
+        "strategy"
+      ],
+      "platforms": [
+        "console",
+        "handheld",
+        "mobile"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://zeldawiki.wiki/wiki/Rupee",
+        "note": "The Legend of Zelda: A Link to the Past: Rupees as currency"
+      },
+      {
+        "url": "https://clashofclans.fandom.com/wiki/Resources",
+        "note": "Clash of Clans: gold, elixir, dark elixir and gems"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.currency.diablo-pathofexile",
+    "axis": "econ.currency",
+    "options": [
+      {
+        "pole": "single",
+        "game": "Diablo",
+        "year": 1996,
+        "how": "Gold is the only currency: it drops from monsters, takes inventory space and buys gear and repairs from Tristram's townsfolk."
+      },
+      {
+        "pole": "many",
+        "game": "Path of Exile",
+        "year": 2013,
+        "how": "No gold: dozens of currency orbs, each a crafting consumable, serve as barter currency with vendors and players."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://diablo.fandom.com/wiki/Gold",
+        "note": "Diablo: gold as the single currency"
+      },
+      {
+        "url": "https://www.poewiki.net/wiki/Currency",
+        "note": "Path of Exile: currency items used for crafting and trade"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.openness.eveonline-diablo3",
+    "axis": "econ.openness",
+    "options": [
+      {
+        "pole": "player",
+        "game": "EVE Online",
+        "year": 2003,
+        "how": "Regional markets run on player buy and sell orders; most ships are player-built and destroyed for good when lost."
+      },
+      {
+        "pole": "closed",
+        "game": "Diablo III",
+        "year": 2012,
+        "how": "Since the gold and real-money auction houses shut on 18 March 2014, gear comes from drops and crafting, not player markets."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg",
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://wiki.eveuniversity.org/Market",
+        "note": "EVE Online: regional markets of player buy and sell orders"
+      },
+      {
+        "url": "https://diablo.fandom.com/wiki/Auction_House",
+        "note": "Diablo III: auction houses closed 18 March 2014"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.econ.openness.albion-seaofthieves",
+    "axis": "econ.openness",
+    "options": [
+      {
+        "pole": "player",
+        "game": "Albion Online",
+        "year": 2017,
+        "how": "Nearly every item is crafted by players and traded at local marketplaces in each city, so supply and prices are player-made."
+      },
+      {
+        "pole": "closed",
+        "game": "Sea of Thieves",
+        "year": 2018,
+        "how": "Treasure is handed to NPC Trading Companies for gold, doubloons and reputation; there is no player-to-player market."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/761890/",
+        "note": "Albion Online: nearly every item crafted by players, local marketplaces"
+      },
+      {
+        "url": "https://seaofthieves.wiki.gg/wiki/Trading_Companies",
+        "note": "Sea of Thieves: treasure exchanged with Trading Companies for gold and reputation"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.openness.osrs-grimdawn",
+    "axis": "econ.openness",
+    "options": [
+      {
+        "pole": "player",
+        "game": "Old School RuneScape",
+        "year": 2013,
+        "how": "Players post Grand Exchange buy and sell offers at prices they choose; each offer starts from a guide price updated from trade history."
+      },
+      {
+        "pole": "closed",
+        "game": "Grim Dawn",
+        "year": 2016,
+        "how": "Gear comes from tiered loot drops, recipe crafting from salvaged components and faction vendors whose stock and discounts the designers set."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://oldschool.runescape.wiki/w/Grand_Exchange",
+        "note": "Old School RuneScape: Grand Exchange offers at prices players choose"
+      },
+      {
+        "url": "https://store.steampowered.com/app/219990/",
+        "note": "Grim Dawn: loot tiers, recipe crafting and faction vendor discounts"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.openness.ultimaonline-mhworld",
+    "axis": "econ.openness",
+    "options": [
+      {
+        "pole": "player",
+        "game": "Ultima Online",
+        "year": 1997,
+        "how": "Players place vendors in their own houses and set the price of every item they stock, so shops are player-run."
+      },
+      {
+        "pole": "closed",
+        "game": "Monster Hunter: World",
+        "year": 2018,
+        "how": "No player trading: gear is forged at the Smithy from carved materials at designer-set costs."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://uo.com/wiki/ultima-online-wiki/gameplay/npc-commercial-transactions/player-vendors/",
+        "note": "Ultima Online: player vendors in houses"
+      },
+      {
+        "url": "https://monsterhunter.fandom.com/wiki/Smithy",
+        "note": "Monster Hunter: World: forging gear from materials"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.openness.csgo-valorant",
+    "axis": "econ.openness",
+    "options": [
+      {
+        "pole": "player",
+        "game": "Counter-Strike: Global Offensive",
+        "year": 2012,
+        "how": "Weapon skins drop or come from cases and trade on the Steam Community Market at prices players set."
+      },
+      {
+        "pole": "closed",
+        "game": "Valorant",
+        "year": 2020,
+        "how": "Skins are bought only from Riot's in-game store at fixed prices and cannot be traded or resold."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://counterstrike.fandom.com/wiki/Skins",
+        "note": "Counter-Strike: Global Offensive: skins traded on the Steam Community Market"
+      },
+      {
+        "url": "https://valorant.fandom.com/wiki/Store",
+        "note": "Valorant: skins sold in the Riot store, no trading"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.openness.mtgo-mtgarena",
+    "axis": "econ.openness",
+    "options": [
+      {
+        "pole": "player",
+        "game": "Magic: The Gathering Online",
+        "year": 2002,
+        "how": "Digital cards are tradeable between players, so collections are built through player trades and marketplaces."
+      },
+      {
+        "pole": "closed",
+        "game": "Magic: The Gathering Arena",
+        "year": 2018,
+        "how": "Cards cannot be traded; wildcards from packs are redeemed for specific cards of the same rarity."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card"
+      ],
+      "platforms": [
+        "pc",
+        "mobile"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.mtgo.com/",
+        "note": "Magic: The Gathering Online: official site, card trading"
+      },
+      {
+        "url": "https://magic.wizards.com/en/mtgarena",
+        "note": "Magic: The Gathering Arena: official site, wildcard collection"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.prices.x4-skyrim",
+    "axis": "econ.prices",
+    "options": [
+      {
+        "pole": "dynamic",
+        "game": "X4: Foundations",
+        "year": 2018,
+        "how": "NPC factions trade, build stations and wage war on their own, and ware prices drift with each station's stock."
+      },
+      {
+        "pole": "fixed",
+        "game": "The Elder Scrolls V: Skyrim",
+        "year": 2011,
+        "how": "Items have fixed base values; Speech skill and perks shift buy and sell rates, and each merchant has limited gold."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/392160/",
+        "note": "X4: Foundations: factions trade, build and wage war independently"
+      },
+      {
+        "url": "https://en.uesp.net/wiki/Skyrim:Speech",
+        "note": "Skyrim: Speech skill modifies prices"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.econ.prices.offworld-terraria",
+    "axis": "econ.prices",
+    "options": [
+      {
+        "pole": "dynamic",
+        "game": "Offworld Trading Company",
+        "year": 2016,
+        "how": "A constantly changing shared market prices every resource as rivals produce, buy and sell; market moves replace weapons."
+      },
+      {
+        "pole": "fixed",
+        "game": "Terraria",
+        "year": 2011,
+        "how": "Every item has a set value; NPCs sell at it and buy back at one fifth, nudged only by NPC happiness and discount items."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "action",
+        "sandbox",
+        "survival"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/271240/",
+        "note": "Offworld Trading Company: constantly changing market economy"
+      },
+      {
+        "url": "https://terraria.wiki.gg/wiki/Value",
+        "note": "Terraria: items sell for 1/5 of value, happiness modifies prices"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.prices.acnh-dredge",
+    "axis": "econ.prices",
+    "options": [
+      {
+        "pole": "dynamic",
+        "game": "Animal Crossing: New Horizons",
+        "year": 2020,
+        "how": "Nook's Cranny turnip prices change every morning and afternoon, following one of four weekly patterns, from steady decline to a 600% spike."
+      },
+      {
+        "pole": "fixed",
+        "game": "Dredge",
+        "year": 2023,
+        "how": "Each fish species has a set base value per slot at the fishmonger; only trophy size and freshness change what a catch is worth."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "horror"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://nookipedia.com/wiki/Stalk_Market",
+        "note": "Animal Crossing: New Horizons: twice-daily turnip prices and weekly patterns"
+      },
+      {
+        "url": "https://dredge.wiki.gg/wiki/Fish",
+        "note": "Dredge: fixed base value per fish, modified by size and condition"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.prices.aoe2-warcraft3",
+    "axis": "econ.prices",
+    "options": [
+      {
+        "pole": "dynamic",
+        "game": "Age of Empires II",
+        "year": 1999,
+        "how": "The Market trades wood, food and stone for gold, each 100-unit trade moves that price, and prices are shared by all players."
+      },
+      {
+        "pole": "fixed",
+        "game": "Warcraft III",
+        "year": 2002,
+        "how": "Shops sell items and mercenaries at fixed gold prices; economic levers are mining, lumber and upkeep, not prices."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://ageofempires.fandom.com/wiki/Market_(Age_of_Empires_II)",
+        "note": "Age of Empires II: market prices change with each trade"
+      },
+      {
+        "url": "https://wowpedia.fandom.com/wiki/Warcraft_III_items",
+        "note": "Warcraft III: shop items at fixed gold costs"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.prices.patrician3-dredge",
+    "axis": "econ.prices",
+    "options": [
+      {
+        "pole": "dynamic",
+        "game": "Patrician III",
+        "year": 2003,
+        "how": "Hanseatic towns pay high prices for goods they lack, as in winter shortages, and little for surplus, so you buy where stock is high and sell where needed."
+      },
+      {
+        "pole": "fixed",
+        "game": "Dredge",
+        "year": 2023,
+        "how": "The fishmonger pays a fixed base price per species and slot; size and freshness are the only modifiers, so where and when you sell does not matter."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy",
+        "horror"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/patrician_3",
+        "note": "Patrician III: trading empire, buying surplus and selling what towns need, winter shortage prices"
+      },
+      {
+        "url": "https://dredge.wiki.gg/wiki/Fish",
+        "note": "Dredge: fixed base value per fish, modified by size and condition"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.prices.bannerlord-pokemonrb",
+    "axis": "econ.prices",
+    "options": [
+      {
+        "pole": "dynamic",
+        "game": "Mount & Blade II: Bannerlord",
+        "year": 2020,
+        "how": "Each town's prices follow local supply and demand, so caravans profit by hauling goods from surplus towns to scarce ones."
+      },
+      {
+        "pole": "fixed",
+        "game": "Pokemon Red and Blue",
+        "year": 1996,
+        "how": "Poke Marts charge the same fixed price for each item everywhere, and items sell back for half."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/261550/",
+        "note": "Mount & Blade II: Bannerlord: trade and fiefdom economy"
+      },
+      {
+        "url": "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9_Mart",
+        "note": "Pokemon Red and Blue: fixed Poke Mart prices, items sell for half"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.scarcity.re2-borderlands3",
+    "axis": "econ.scarcity",
+    "options": [
+      {
+        "pole": "scarce",
+        "game": "Resident Evil 2 (2019)",
+        "year": 2019,
+        "how": "Ammo and healing are scarce and inventory slots are few, so every shot and pickup is weighed."
+      },
+      {
+        "pole": "abundant",
+        "game": "Borderlands 3",
+        "year": 2019,
+        "how": "Enemies and chests shower guns in rarity tiers; the choice is what to keep, sell or leave on the floor."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "horror",
+        "shooter",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://residentevil.fandom.com/wiki/Resident_Evil_2_(2019_video_game)",
+        "note": "Resident Evil 2 (2019): scarce ammo and limited inventory"
+      },
+      {
+        "url": "https://borderlands.fandom.com/wiki/Rarity",
+        "note": "Borderlands 3: loot rarity tiers"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.econ.scarcity.thiswarofmine-torchlight2",
+    "axis": "econ.scarcity",
+    "options": [
+      {
+        "pole": "scarce",
+        "game": "This War of Mine",
+        "year": 2014,
+        "how": "Night scavenging runs bring back little food or medicine for civilians short on both, so each trip decides who eats."
+      },
+      {
+        "pole": "abundant",
+        "game": "Torchlight II",
+        "year": 2012,
+        "how": "Randomized loot fills every level; your pet ferries surplus to town to sell so you can keep fighting."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg",
+        "survival"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/282070/",
+        "note": "This War of Mine: scavenge for items while lacking food and medicine"
+      },
+      {
+        "url": "https://store.steampowered.com/app/200710/",
+        "note": "Torchlight II: levels filled with loot, pet sells loot in town"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.scarcity.darkestdungeon-grimdawn",
+    "axis": "econ.scarcity",
+    "options": [
+      {
+        "pole": "scarce",
+        "game": "Darkest Dungeon",
+        "year": 2016,
+        "how": "Food, torches and shovels are bought before each expedition in capped stacks, and unused supplies refund at a steep loss."
+      },
+      {
+        "pole": "abundant",
+        "game": "Grim Dawn",
+        "year": 2016,
+        "how": "Loot drops in common, magical, rare, epic and legendary classes; sorting the haul is a core activity."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "strategy",
+        "action",
+        "horror"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://darkestdungeon.wiki.gg/wiki/Provisions",
+        "note": "Darkest Dungeon: provisions bought before each dungeon, stack caps, reduced refunds"
+      },
+      {
+        "url": "https://store.steampowered.com/app/219990/",
+        "note": "Grim Dawn: common to legendary classes of loot"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.scarcity.pathologic2-titanquest",
+    "axis": "econ.scarcity",
+    "options": [
+      {
+        "pole": "scarce",
+        "game": "Pathologic 2",
+        "year": 2019,
+        "how": "Hunger, thirst and exhaustion drain constantly while resources run short, so you loot, barter, steal or beg for each day's needs."
+      },
+      {
+        "pole": "abundant",
+        "game": "Titan Quest",
+        "year": 2006,
+        "how": "Slain enemies drop the weapons they carried, and loot rolls from a pool of over 1,000 unique and legendary items."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "horror",
+        "survival",
+        "rpg",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/pathologic_2",
+        "note": "Pathologic 2: hunger, thirst, exhaustion and scarce resources; loot, barter, steal"
+      },
+      {
+        "url": "https://www.gog.com/en/game/titan_quest_anniversary_edition",
+        "note": "Titan Quest: enemies drop their weapons; over 1,000 unique and legendary items"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.scarcity.systemshock2-titanquest",
+    "axis": "econ.scarcity",
+    "options": [
+      {
+        "pole": "scarce",
+        "game": "System Shock 2",
+        "year": 1999,
+        "how": "Ammo is scarce and nanites, the currency, are limited, so every replicator purchase and fight is rationed."
+      },
+      {
+        "pole": "abundant",
+        "game": "Titan Quest",
+        "year": 2006,
+        "how": "Monsters and chests drop gear in rarity tiers constantly; you sell or discard most of it."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg",
+        "horror",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://shodan.fandom.com/wiki/Nanites",
+        "note": "System Shock 2: nanites currency and scarce supplies"
+      },
+      {
+        "url": "https://titanquest.fandom.com/wiki/Items",
+        "note": "Titan Quest: item rarity tiers"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.scarcity.metro2033-nioh",
+    "axis": "econ.scarcity",
+    "options": [
+      {
+        "pole": "scarce",
+        "game": "Metro 2033",
+        "year": 2010,
+        "how": "Military-grade rounds are both the currency and the strongest ammo, so firing them spends your savings."
+      },
+      {
+        "pole": "abundant",
+        "game": "Nioh",
+        "year": 2017,
+        "how": "Enemies drop a steady stream of weapons and armor in rarity tiers; surplus is offered at shrines or sold."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "horror",
+        "shooter",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://metro.fandom.com/wiki/Military-grade_ammunition",
+        "note": "Metro 2033: military-grade ammunition as currency"
+      },
+      {
+        "url": "https://nioh.fandom.com/wiki/Offering",
+        "note": "Nioh: offering surplus gear at shrines"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.sinks.pathofexile-diablo2",
+    "axis": "econ.sinks",
+    "options": [
+      {
+        "pole": "strong",
+        "game": "Path of Exile",
+        "year": 2013,
+        "how": "Currency orbs are both money and crafting consumables, so every craft destroys currency and drains the supply."
+      },
+      {
+        "pole": "weak",
+        "game": "Diablo II",
+        "year": 2000,
+        "how": "Gold has few uses beyond repairs and gambling, so it piles up and players barter with runes and rings instead."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.poewiki.net/wiki/Currency",
+        "note": "Path of Exile: currency items consumed in crafting and used to trade"
+      },
+      {
+        "url": "https://diablo.fandom.com/wiki/Gold_(Diablo_II)",
+        "note": "Diablo II: gold uses and limits"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    },
+    "note": "Path of Exile option from the seed list; Diablo II counterpart added and not yet verified"
+  },
+  {
+    "id": "cmp.econ.sinks.wow-supermarioodyssey",
+    "axis": "econ.sinks",
+    "options": [
+      {
+        "pole": "strong",
+        "game": "World of Warcraft",
+        "year": 2004,
+        "how": "Repair bills, training and respec fees, travel costs and huge vendor mounts and bank tabs keep pulling gold out of circulation."
+      },
+      {
+        "pole": "weak",
+        "game": "Super Mario Odyssey",
+        "year": 2017,
+        "how": "Coins lie everywhere and only buy outfits, Power Moons and Life-Up Hearts at Crazy Cap; dying costs just 10 coins."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "platformer"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://warcraft.wiki.gg/wiki/Gold_sink",
+        "note": "World of Warcraft: repairs, training, respecs, travel and vendor gold sinks"
+      },
+      {
+        "url": "https://www.mariowiki.com/Coin",
+        "note": "Super Mario Odyssey: coins buy outfits, moons and hearts; 10 lost on death"
+      }
+    ],
+    "note": "World of Warcraft option from the seed list",
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.sinks.battlebrothers-luigismansion3",
+    "axis": "econ.sinks",
+    "options": [
+      {
+        "pole": "strong",
+        "game": "Battle Brothers",
+        "year": 2017,
+        "how": "Salaries must be paid on time and rations are always limited, so contract income has to keep outrunning the company's daily upkeep."
+      },
+      {
+        "pole": "weak",
+        "game": "Luigi's Mansion 3",
+        "year": 2019,
+        "how": "Cash and gold bars pile up while E. Gadd sells only a few 1,000 G items; the rebuilt hotel's look reflects how much you end with."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "rpg",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/battle_brothers",
+        "note": "Battle Brothers: salaries paid on time, rations always limited"
+      },
+      {
+        "url": "https://www.mariowiki.com/Luigi%27s_Mansion_3",
+        "note": "Luigi's Mansion 3: money buys 1,000 G items; ending hotel depends on money"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.sinks.thesims-spelunky",
+    "axis": "econ.sinks",
+    "options": [
+      {
+        "pole": "strong",
+        "game": "The Sims",
+        "year": 2000,
+        "how": "Bills arrive every few days based on what the household owns; leave them unpaid and the repo man takes furniture."
+      },
+      {
+        "pole": "weak",
+        "game": "Spelunky",
+        "year": 2008,
+        "how": "Gold collected in a run is also your score; shops are optional, so unspent gold simply accumulates."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "platformer",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://sims.fandom.com/wiki/Bills",
+        "note": "The Sims: bills and repossession"
+      },
+      {
+        "url": "https://spelunky.fandom.com/wiki/Money",
+        "note": "Spelunky: money as score and shop currency"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.production.factorio-subnautica",
+    "axis": "econ.production",
+    "options": [
+      {
+        "pole": "automated",
+        "game": "Factorio",
+        "year": 2016,
+        "how": "Drills, assemblers and inserters linked by belts run production chains; you plan ratios so each line feeds the next."
+      },
+      {
+        "pole": "manual",
+        "game": "Subnautica",
+        "year": 2018,
+        "how": "Collect each resource from the ocean by hand and craft diving gear, habitat modules and subs from what you carry."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy",
+        "survival"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://wiki.factorio.com/Belt_transport_system",
+        "note": "Factorio: belts transport items placed by inserters"
+      },
+      {
+        "url": "https://store.steampowered.com/app/264710/",
+        "note": "Subnautica: collect resources and craft gear, habitats and submersibles"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.econ.production.anno1800-dontstarve",
+    "axis": "econ.production",
+    "options": [
+      {
+        "pole": "automated",
+        "game": "Anno 1800",
+        "year": 2019,
+        "how": "Production chains of farms and factories deliver the goods each population tier needs before residents advance."
+      },
+      {
+        "pole": "manual",
+        "game": "Don't Starve",
+        "year": 2013,
+        "how": "Pick twigs from saplings, chop logs and mine rocks yourself, then craft tools and structures from what you gathered."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy",
+        "survival"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/916440/",
+        "note": "Anno 1800: complex production chains and population needs"
+      },
+      {
+        "url": "https://dontstarve.wiki.gg/wiki/Twigs",
+        "note": "Don't Starve: saplings picked by hand for twigs"
+      },
+      {
+        "url": "https://store.steampowered.com/app/219740/",
+        "note": "Don't Starve: gather resources to craft items and structures"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.econ.production.satisfactory-raft",
+    "axis": "econ.production",
+    "options": [
+      {
+        "pole": "automated",
+        "game": "Satisfactory",
+        "year": 2019,
+        "how": "Factories run unattended; the AWESOME Sink turns surplus items into points that print FICSIT Coupons."
+      },
+      {
+        "pole": "manual",
+        "game": "Raft",
+        "year": 2018,
+        "how": "Throw a hook to catch floating debris by hand, then turn planks, plastic and leaves into tools and raft parts."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "survival",
+        "sandbox"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://satisfactory.wiki.gg/wiki/AWESOME_Sink",
+        "note": "Satisfactory: AWESOME Sink converts items to points for FICSIT Coupons"
+      },
+      {
+        "url": "https://store.steampowered.com/app/648800/",
+        "note": "Raft: catch floating debris with your hook"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.econ.production.mindustry-terraria",
+    "axis": "econ.production",
+    "options": [
+      {
+        "pole": "automated",
+        "game": "Mindustry",
+        "year": 2019,
+        "how": "Conveyor belts carry mined ore through supply chains that feed turrets and factories while you defend the core."
+      },
+      {
+        "pole": "manual",
+        "game": "Terraria",
+        "year": 2011,
+        "how": "Swing a pickaxe to mine every block and ore yourself, then craft gear at crafting stations."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "action",
+        "sandbox",
+        "platformer"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1127400/",
+        "note": "Mindustry: supply chains of conveyor belts feeding turrets"
+      },
+      {
+        "url": "https://terraria.wiki.gg/wiki/Pickaxes",
+        "note": "Terraria: pickaxes mine blocks by hand"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.production.settlers-runescape",
+    "axis": "econ.production",
+    "options": [
+      {
+        "pole": "automated",
+        "game": "The Settlers",
+        "year": 1993,
+        "how": "Settlers staff woodcutters, sawmills and smelters, so goods flow through the chain without you handling them."
+      },
+      {
+        "pole": "manual",
+        "game": "RuneScape",
+        "year": 2001,
+        "how": "Woodcutting, fishing and mining are gathering skills done one click at a time; you chop each tree yourself."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "simulation",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "mobile"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://settlers.fandom.com/wiki/The_Settlers",
+        "note": "The Settlers: automated production chains"
+      },
+      {
+        "url": "https://runescape.wiki/w/Woodcutting",
+        "note": "RuneScape: Woodcutting is a gathering skill, click a tree to chop"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.trade.elitedangerous-stardew",
+    "axis": "econ.trade",
+    "options": [
+      {
+        "pole": "core",
+        "game": "Elite Dangerous",
+        "year": 2014,
+        "how": "Haul commodities between stations, buying where supply is high and selling where demand pays more."
+      },
+      {
+        "pole": "none",
+        "game": "Stardew Valley",
+        "year": 2016,
+        "how": "Drop goods in the shipping bin and they sell overnight at fixed prices; there is no buy-low, sell-high loop."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/359320/",
+        "note": "Elite Dangerous: fully realised economy for trade"
+      },
+      {
+        "url": "https://stardewvalleywiki.com/Shipping",
+        "note": "Stardew Valley: shipping bin sells overnight"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.econ.trade.portroyale4-torchlight2",
+    "axis": "econ.trade",
+    "options": [
+      {
+        "pole": "core",
+        "game": "Port Royale 4",
+        "year": 2020,
+        "how": "Set up trade routes among 60 Caribbean cities, buying goods where they are cheap to supply other towns' growing needs."
+      },
+      {
+        "pole": "none",
+        "game": "Torchlight II",
+        "year": 2012,
+        "how": "Loot is sold to vendors almost as an afterthought, and your pet can make the run to town for you; no resale loop exists."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "simulation",
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1024650/",
+        "note": "Port Royale 4: trade routes across the Caribbean, 60 cities"
+      },
+      {
+        "url": "https://store.steampowered.com/app/200710/",
+        "note": "Torchlight II: pet runs to town to sell your loot"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.trade.recettear-shovelknight",
+    "axis": "econ.trade",
+    "options": [
+      {
+        "pole": "core",
+        "game": "Recettear: An Item Shop's Tale",
+        "year": 2007,
+        "how": "Buy stock cheaply in town markets and resell it in your own shop at a markup, setting the price for every sale."
+      },
+      {
+        "pole": "none",
+        "game": "Shovel Knight",
+        "year": 2014,
+        "how": "Gold dug from levels is spent on armor and weapon upgrades; there is nothing to buy low and sell high."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "simulation",
+        "platformer",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/70400/",
+        "note": "Recettear: playing the markets in town, deciding sale prices"
+      },
+      {
+        "url": "https://store.steampowered.com/app/250760/",
+        "note": "Shovel Knight: amass riches to upgrade armor and weapons"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.trade.elite1984-everspace",
+    "axis": "econ.trade",
+    "options": [
+      {
+        "pole": "core",
+        "game": "Elite",
+        "year": 1984,
+        "how": "Buy commodities in one system and sell them in another, where agricultural and industrial economies price goods differently."
+      },
+      {
+        "pole": "none",
+        "game": "Everspace",
+        "year": 2017,
+        "how": "Loot wrecks and craft equipment between runs; there is no commodity trading loop."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "simulation",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://elite.fandom.com/wiki/Trading",
+        "note": "Elite: commodity trading between systems"
+      },
+      {
+        "url": "https://store.steampowered.com/app/396750/",
+        "note": "Everspace: shoot, craft and loot"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.trade.privateer-ftl",
+    "axis": "econ.trade",
+    "options": [
+      {
+        "pole": "core",
+        "game": "Wing Commander: Privateer",
+        "year": 1993,
+        "how": "Load cargo at one base and sell it at another, choosing between trading, bounty hunting and piracy for income."
+      },
+      {
+        "pole": "none",
+        "game": "FTL: Faster Than Light",
+        "year": 2012,
+        "how": "Scrap from fights buys upgrades and fuel at stores; selling spare gear is a sideline, not a loop."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "simulation",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "mobile"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://wcnews.com/wcpedia/Privateer",
+        "note": "Wing Commander: Privateer: cargo trading between bases"
+      },
+      {
+        "url": "https://ftl.fandom.com/wiki/Scrap",
+        "note": "FTL: scrap earned and spent at stores"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.trade.offworld-starcraft",
+    "axis": "econ.trade",
+    "options": [
+      {
+        "pole": "core",
+        "game": "Offworld Trading Company",
+        "year": 2016,
+        "how": "Everything you produce can be sold on the shared market, and buying up rivals' supply is a main lever."
+      },
+      {
+        "pole": "none",
+        "game": "StarCraft",
+        "year": 1998,
+        "how": "Workers harvest minerals and gas straight into your bank; there is no market or trading at all."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/271240/",
+        "note": "Offworld Trading Company: market forces as weapons, goods to build and sell"
+      },
+      {
+        "url": "https://starcraft.fandom.com/wiki/Resource",
+        "note": "StarCraft: minerals and vespene gas"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.logistics.transportfever2-adcap",
+    "axis": "econ.logistics",
+    "options": [
+      {
+        "pole": "physical",
+        "game": "Transport Fever 2",
+        "year": 2019,
+        "how": "Every good must be delivered: you build rail, road, water and air lines to carry raw materials to factories and finished goods to cities."
+      },
+      {
+        "pole": "global",
+        "game": "AdVenture Capitalist",
+        "year": 2014,
+        "how": "Each business pays its profits straight into one cash balance that buys upgrades and more businesses at once; nothing is shipped or stored."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "idle"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile",
+        "web"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/transport_fever_2",
+        "note": "Transport Fever 2: deliver raw materials and goods through economic chains"
+      },
+      {
+        "url": "https://hyperhippo.com/games/adventure-capitalist/",
+        "note": "AdVenture Capitalist: businesses earn profits that buy upgrades and more businesses"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.logistics.workersresources-stellaris",
+    "axis": "econ.logistics",
+    "options": [
+      {
+        "pole": "physical",
+        "game": "Workers & Resources: Soviet Republic",
+        "year": 2019,
+        "how": "Goods move by truck, train, ship, pipe and conveyor between storage and factories; long distances need vehicles."
+      },
+      {
+        "pole": "global",
+        "game": "Stellaris",
+        "year": 2016,
+        "how": "Every planet's output joins one empire-wide stockpile, spendable anywhere the instant it is produced."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/784150/",
+        "note": "Workers & Resources: vehicles essential for moving resources long distances"
+      },
+      {
+        "url": "https://stellaris.paradoxwikis.com/Economy",
+        "note": "Stellaris: empire-wide resource stockpile"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.logistics.settlers-aoe2",
+    "axis": "econ.logistics",
+    "options": [
+      {
+        "pole": "physical",
+        "game": "The Settlers",
+        "year": 1993,
+        "how": "Carriers walk every good flag to flag along roads you build; a jammed road starves the next building."
+      },
+      {
+        "pole": "global",
+        "game": "Age of Empires II",
+        "year": 1999,
+        "how": "Villagers carry loads to a drop site, but once delivered resources join one pool any building can spend."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "simulation"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://settlers.fandom.com/wiki/Carrier",
+        "note": "The Settlers: carriers on road segments"
+      },
+      {
+        "url": "https://ageofempires.fandom.com/wiki/Resources",
+        "note": "Age of Empires II: resources dropped off into a shared stockpile"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.logistics.railroadtycoon-warcraft2",
+    "axis": "econ.logistics",
+    "options": [
+      {
+        "pole": "physical",
+        "game": "Railroad Tycoon",
+        "year": 1990,
+        "how": "Trains carry cargo and passengers between stations you connect; revenue depends on route, distance and demand."
+      },
+      {
+        "pole": "global",
+        "game": "Warcraft II: Tides of Darkness",
+        "year": 1995,
+        "how": "Peons bring gold and lumber to a town hall, where it pools and pays for anything anywhere on the map."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://railroad-tycoon.fandom.com/wiki/Railroad_Tycoon",
+        "note": "Railroad Tycoon: trains hauling cargo between stations"
+      },
+      {
+        "url": "https://wowpedia.fandom.com/wiki/Warcraft_II:_Tides_of_Darkness",
+        "note": "Warcraft II: gold and lumber returned to the town hall"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.logistics.manorlords-cookieclicker",
+    "axis": "econ.logistics",
+    "options": [
+      {
+        "pole": "physical",
+        "game": "Manor Lords",
+        "year": 2024,
+        "how": "Materials must be transported and processed through production chains, and resources scattered across the map push you to found specialized settlements."
+      },
+      {
+        "pole": "global",
+        "game": "Cookie Clicker",
+        "year": 2013,
+        "how": "Every building, from Cursors and Grandmas to Portals, adds cookies straight into one bank that pays for anything at once."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "simulation",
+        "idle"
+      ],
+      "platforms": [
+        "pc",
+        "web",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/manor_lords",
+        "note": "Manor Lords: materials transported and processed through production chains"
+      },
+      {
+        "url": "https://cookieclicker.wiki.gg/wiki/Cookie_Clicker",
+        "note": "Cookie Clicker: buildings produce cookies automatically into one total"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.logistics.deathstranding-mgsv",
+    "axis": "econ.logistics",
+    "options": [
+      {
+        "pole": "physical",
+        "game": "Death Stranding",
+        "year": 2019,
+        "how": "Every delivery is carried on your back or in a vehicle; weight and balance shape the route and what you can bring."
+      },
+      {
+        "pole": "global",
+        "game": "Metal Gear Solid V: The Phantom Pain",
+        "year": 2015,
+        "how": "Fulton balloons send materials and recruits to Mother Base, where they become instantly usable resources."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "narrative"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://deathstranding.fandom.com/wiki/Cargo",
+        "note": "Death Stranding: cargo weight and balance"
+      },
+      {
+        "url": "https://metalgear.fandom.com/wiki/Mother_Base",
+        "note": "Metal Gear Solid V: Fulton extraction to Mother Base"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.monetized.warframe-dota2",
+    "axis": "econ.monetized",
+    "options": [
+      {
+        "pole": "real",
+        "game": "Warframe",
+        "year": 2013,
+        "how": "Platinum is sold for real money and can be traded to other players for tradable items such as Prime parts and mods."
+      },
+      {
+        "pole": "none",
+        "game": "Dota 2",
+        "year": 2013,
+        "how": "All heroes are free and the core content is open to everyone; spending real money only buys cosmetics and add-ons."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "shooter",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://wiki.warframe.com/w/Platinum",
+        "note": "Warframe: Platinum bought with real money and tradable between players"
+      },
+      {
+        "url": "https://store.steampowered.com/app/570/",
+        "note": "Dota 2: all heroes free, cosmetics only"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.monetized.diabloimmortal-pathofexile",
+    "axis": "econ.monetized",
+    "options": [
+      {
+        "pole": "real",
+        "game": "Diablo Immortal",
+        "year": 2022,
+        "how": "Eternal Orbs are bought with real money and turn into Legendary Crests that boost rift rewards."
+      },
+      {
+        "pole": "none",
+        "game": "Path of Exile",
+        "year": 2013,
+        "how": "The store sells cosmetics and stash tabs; currency orbs come only from play and trading."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://diablo.fandom.com/wiki/Eternal_Orb",
+        "note": "Diablo Immortal: Eternal Orbs as premium currency"
+      },
+      {
+        "url": "https://www.pathofexile.com/shop",
+        "note": "Path of Exile: official shop sells cosmetics and stash tabs"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.openness.newworld-mhrise",
+    "axis": "econ.openness",
+    "options": [
+      {
+        "pole": "player",
+        "game": "New World",
+        "year": 2021,
+        "how": "Players post buy and sell orders on each settlement's Trading Post; the settlement sets listing fees and purchase taxes."
+      },
+      {
+        "pole": "closed",
+        "game": "Monster Hunter Rise",
+        "year": 2021,
+        "how": "Weapons and armor are forged by turning monster materials in to the Smithy; surplus materials only trade to the Buddy Smithy for Scraps."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2020s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://newworld.wiki.fextralife.com/Trading+Post",
+        "note": "New World: player buy and sell orders, settlement fees and taxes"
+      },
+      {
+        "url": "https://monsterhunterrise.wiki.fextralife.com/Smithy",
+        "note": "Monster Hunter Rise: Smithy forges gear from turned-in monster materials"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.sinks.darkestdungeon-papermariottyd",
+    "axis": "econ.sinks",
+    "options": [
+      {
+        "pole": "strong",
+        "game": "Darkest Dungeon",
+        "year": 2016,
+        "how": "Gold drains into Abbey and Tavern stress relief, provisions, blacksmith upgrades, skill training and Sanitarium quirk removal."
+      },
+      {
+        "pole": "weak",
+        "game": "Paper Mario: The Thousand-Year Door",
+        "year": 2004,
+        "how": "Coins from battles and blocks buy items and badges at shops and cap at 999, with no upkeep or recurring costs."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "strategy",
+        "horror"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "mobile"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://darkestdungeon.wiki.gg/wiki/Gold",
+        "note": "Darkest Dungeon: gold spent on stress relief, provisions, upgrades, skills, Sanitarium"
+      },
+      {
+        "url": "https://www.mariowiki.com/Coin",
+        "note": "Paper Mario: The Thousand-Year Door: coins buy items and badges, 999 cap"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.trade.patrician3-vampiresurvivors",
+    "axis": "econ.trade",
+    "options": [
+      {
+        "pole": "core",
+        "game": "Patrician III",
+        "year": 2003,
+        "how": "Run convoys between Hanseatic ports, buying goods where they are in surplus and selling where towns need them, to grow a trading empire."
+      },
+      {
+        "pole": "none",
+        "game": "Vampire Survivors",
+        "year": 2022,
+        "how": "Gold gathered during runs only buys permanent power-ups between runs; there is nothing to sell and no market."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/patrician_3",
+        "note": "Patrician III: massive trading operations across Hanseatic ports"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1794680/",
+        "note": "Vampire Survivors: gather gold in each run to buy upgrades"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.monetized.osrs-melvoridle",
+    "axis": "econ.monetized",
+    "options": [
+      {
+        "pole": "real",
+        "game": "Old School RuneScape",
+        "year": 2013,
+        "how": "Bonds are bought from Jagex with real money, sold to other players for coins on the Grand Exchange or redeemed for membership."
+      },
+      {
+        "pole": "none",
+        "game": "Melvor Idle",
+        "year": 2021,
+        "how": "Sold once with paid expansions and no microtransactions, so GP and items can only be earned by playing."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "idle"
+      ],
+      "platforms": [
+        "pc",
+        "mobile",
+        "web"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://oldschool.runescape.wiki/w/Old_school_bond",
+        "note": "Old School RuneScape: bonds bought with real money, tradeable for coins"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1267910/",
+        "note": "Melvor Idle: does not contain microtransactions"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.monetized.brawlhalla-smashultimate",
+    "axis": "econ.monetized",
+    "options": [
+      {
+        "pole": "real",
+        "game": "Brawlhalla",
+        "year": 2017,
+        "how": "Mammoth Coins come only from real-money purchases and buy Legends and cosmetics; free Gold from matches and missions buys less."
+      },
+      {
+        "pole": "none",
+        "game": "Super Smash Bros. Ultimate",
+        "year": 2018,
+        "how": "Gold is earned in solo modes, matches and challenges and spent in the shop or on Classic Mode continues."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "fighting"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://brawlhalla.wiki.gg/wiki/Mammoth_Coins",
+        "note": "Brawlhalla: Mammoth Coins only from real money; Gold has no real-money option"
+      },
+      {
+        "url": "https://www.ssbwiki.com/Gold_(collectible)",
+        "note": "Super Smash Bros. Ultimate: gold from solo modes and challenges, spent in the shop"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.monetized.hearthstone-melvoridle",
+    "axis": "econ.monetized",
+    "options": [
+      {
+        "pole": "real",
+        "game": "Hearthstone",
+        "year": 2014,
+        "how": "Runestones come only from paid Runestone Bundles and can buy any product in the shop, down to single Battlegrounds hero skins."
+      },
+      {
+        "pole": "none",
+        "game": "Melvor Idle",
+        "year": 2021,
+        "how": "A one-time purchase with expansions and no microtransactions; every currency comes from training skills and play."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "idle"
+      ],
+      "platforms": [
+        "pc",
+        "mobile",
+        "web"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://hearthstone.wiki.gg/wiki/Runestones",
+        "note": "Hearthstone: Runestones only from paid bundles"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1267910/",
+        "note": "Melvor Idle: does not contain microtransactions"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.logistics.manorlords-theyarebillions",
+    "axis": "econ.logistics",
+    "options": [
+      {
+        "pole": "physical",
+        "game": "Manor Lords",
+        "year": 2024,
+        "how": "Goods move between production buildings and specialized settlements spread over a map of scattered resources, so distance shapes supply."
+      },
+      {
+        "pole": "global",
+        "game": "They Are Billions",
+        "year": 2019,
+        "how": "Resource buildings collect from the surrounding land straight into the colony's shared stock, so no one hauls or stores goods."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/manor_lords",
+        "note": "Manor Lords: materials transported between production chains, resources spread across the map"
+      },
+      {
+        "url": "https://www.gog.com/en/game/they_are_billions",
+        "note": "They Are Billions: collect resources from the environment using building structures"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.econ.sinks.bigambitions-vampiresurvivors",
+    "axis": "econ.sinks",
+    "options": [
+      {
+        "pole": "strong",
+        "game": "Big Ambitions",
+        "year": 2023,
+        "how": "Opening a business means taking a loan, renting a building and hiring staff, so rent, repayments and wages keep draining cash."
+      },
+      {
+        "pole": "weak",
+        "game": "Vampire Survivors",
+        "year": 2022,
+        "how": "Gold buys permanent power-ups, but refunding them is free, so spent gold is never truly lost and reallocating costs nothing."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.bigambitionsgame.com/",
+        "note": "Big Ambitions: take out a loan, rent a building, hire staff"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1794680/",
+        "note": "Vampire Survivors: gold buys upgrades; refunding power-ups is free"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  }
+]

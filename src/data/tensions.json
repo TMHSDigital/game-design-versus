@@ -1,0 +1,775 @@
+[
+  {
+    "id": "physics_melee_online_pvp",
+    "when": {
+      "all": [
+        {
+          "axis": "combat.sim",
+          "lean": "A"
+        },
+        {
+          "flag": "has_melee"
+        },
+        {
+          "flag": "is_online"
+        },
+        {
+          "flag": "is_competitive"
+        }
+      ]
+    },
+    "severity": "risk",
+    "message": "Physics-simulated melee in online PvP is hard to network: ragdoll and contact results diverge between clients.",
+    "probe": "Would you accept server-authoritative physics with input delay, or keep PvP local or co-op only?"
+  },
+  {
+    "id": "solo_team_mmo",
+    "when": {
+      "all": [
+        {
+          "axis": "frame.team",
+          "in": [
+            "solo",
+            "small"
+          ]
+        },
+        {
+          "any": [
+            {
+              "axis": "frame.players",
+              "in": [
+                "mmo"
+              ]
+            },
+            {
+              "axis": "genre.form",
+              "in": [
+                "mmo"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "severity": "risk",
+    "message": "An MMO needs servers, live ops and content volume far beyond a solo or very small team.",
+    "probe": "Could this be a small-session online game or a single-player game with MMO flavor instead?"
+  },
+  {
+    "id": "permadeath_long_campaign",
+    "when": {
+      "all": [
+        {
+          "axis": "fail.penalty",
+          "in": [
+            "permadeath"
+          ]
+        },
+        {
+          "axis": "loop.run",
+          "lean": "A"
+        },
+        {
+          "axis": "frame.length",
+          "lean": "A"
+        },
+        {
+          "axis": "frame.session",
+          "lean": "B"
+        }
+      ]
+    },
+    "severity": "warn",
+    "message": "Permadeath on a long authored campaign makes players replay hours of fixed content after one mistake.",
+    "probe": "Should death end a run, or should a long campaign use a softer penalty?"
+  },
+  {
+    "id": "procedural_deep_branching",
+    "when": {
+      "all": [
+        {
+          "axis": "world.authoring",
+          "lean": "B"
+        },
+        {
+          "axis": "narr.branching",
+          "lean": "B"
+        },
+        {
+          "axis": "narr.source",
+          "lean": "A"
+        }
+      ]
+    },
+    "severity": "warn",
+    "message": "Deep authored branching on a procedural world is expensive: every branch must work in spaces you did not hand-place.",
+    "probe": "Is the story allowed to be emergent, or should story locations be handcrafted inside the procedural world?"
+  },
+  {
+    "id": "f2p_finished_product",
+    "when": {
+      "all": [
+        {
+          "flag": "is_f2p"
+        },
+        {
+          "axis": "live.model",
+          "lean": "A"
+        }
+      ]
+    },
+    "severity": "warn",
+    "message": "Free-to-play revenue depends on ongoing content and offers; a finished product gives players little reason to keep spending.",
+    "probe": "Is this premium after all, or are you planning seasons and a content pipeline?"
+  },
+  {
+    "id": "mobile_long_deep_sim",
+    "when": {
+      "all": [
+        {
+          "axis": "frame.platform",
+          "in": [
+            "mobile"
+          ]
+        },
+        {
+          "axis": "frame.session",
+          "lean": "B"
+        },
+        {
+          "any": [
+            {
+              "axis": "ctl.complexity",
+              "lean": "B"
+            },
+            {
+              "axis": "ui.transparency",
+              "lean": "B"
+            }
+          ]
+        }
+      ]
+    },
+    "severity": "warn",
+    "message": "Long sessions with deep simulation fit poorly on mobile, where play happens in short bursts on small screens.",
+    "probe": "Should sessions be chunked into short goals that save and resume instantly?"
+  },
+  {
+    "id": "hundred_players_small_team",
+    "when": {
+      "all": [
+        {
+          "axis": "mp.size",
+          "lean": "B"
+        },
+        {
+          "axis": "frame.team",
+          "in": [
+            "solo",
+            "small"
+          ]
+        }
+      ]
+    },
+    "severity": "risk",
+    "message": "Matches of 100 or more players demand netcode, servers, anti-cheat and a large player base to fill lobbies.",
+    "probe": "Would a smaller lobby, or bots that fill matches, protect launch?"
+  },
+  {
+    "id": "strict_needs_cozy",
+    "when": {
+      "all": [
+        {
+          "axis": "surv.needs",
+          "lean": "B"
+        },
+        {
+          "axis": "exp.tone",
+          "lean": "A"
+        },
+        {
+          "axis": "exp.pace",
+          "lean": "A"
+        }
+      ]
+    },
+    "severity": "warn",
+    "message": "Strict survival needs fight a cozy, relaxed tone: starvation timers create anxiety.",
+    "probe": "Should food give bonuses instead of threatening death?"
+  },
+  {
+    "id": "vr_fast_locomotion",
+    "when": {
+      "all": [
+        {
+          "flag": "is_vr"
+        },
+        {
+          "any": [
+            {
+              "axis": "move.feel",
+              "lean": "B"
+            },
+            {
+              "axis": "move.tools",
+              "lean": "B"
+            },
+            {
+              "axis": "exp.pace",
+              "lean": "B"
+            }
+          ]
+        }
+      ]
+    },
+    "severity": "risk",
+    "message": "Fast artificial locomotion in VR causes motion sickness for many players.",
+    "probe": "Will you offer teleport, snap turning and vignette comfort options, or design around room-scale movement?"
+  },
+  {
+    "id": "jam_open_world",
+    "when": {
+      "all": [
+        {
+          "axis": "frame.timeline",
+          "in": [
+            "jam"
+          ]
+        },
+        {
+          "any": [
+            {
+              "axis": "world.structure",
+              "in": [
+                "open_world"
+              ]
+            },
+            {
+              "axis": "world.size",
+              "lean": "B"
+            }
+          ]
+        }
+      ]
+    },
+    "severity": "risk",
+    "message": "An open world cannot be built and filled in a game jam.",
+    "probe": "Can the jam version be one small, dense area that proves the core loop?"
+  },
+  {
+    "id": "nemesis_patent",
+    "when": {
+      "all": [
+        {
+          "axis": "combat.ai",
+          "lean": "B"
+        },
+        {
+          "axis": "narr.source",
+          "lean": "B"
+        },
+        {
+          "flag": "has_combat"
+        }
+      ]
+    },
+    "severity": "risk",
+    "message": "Systemic enemies that remember and rank against the player resemble the Nemesis system, which Warner Bros. patented (US 10,926,179, granted 23 February 2021).",
+    "probe": "How will your adaptive enemies differ from the patented Nemesis design? Consider legal review before cloning it literally."
+  },
+  {
+    "id": "player_market_offline",
+    "when": {
+      "all": [
+        {
+          "axis": "econ.openness",
+          "lean": "B"
+        },
+        {
+          "not": {
+            "flag": "is_online"
+          }
+        }
+      ]
+    },
+    "severity": "risk",
+    "message": "A player-driven market needs online players to trade with.",
+    "probe": "Is this an online game, or should the market be simulated by NPC traders?"
+  },
+  {
+    "id": "solo_long_timeline_vast",
+    "when": {
+      "all": [
+        {
+          "axis": "frame.team",
+          "in": [
+            "solo"
+          ]
+        },
+        {
+          "axis": "world.size",
+          "lean": "B"
+        },
+        {
+          "axis": "world.authoring",
+          "lean": "A"
+        }
+      ]
+    },
+    "severity": "warn",
+    "message": "A vast handcrafted world is a huge content load for one developer.",
+    "probe": "Could procedural generation or a smaller, denser world carry the same fantasy?"
+  },
+  {
+    "id": "short_timeline_mmo",
+    "when": {
+      "all": [
+        {
+          "axis": "frame.timeline",
+          "in": [
+            "jam",
+            "months"
+          ]
+        },
+        {
+          "flag": "is_online"
+        },
+        {
+          "axis": "mp.structure",
+          "lean": "B"
+        }
+      ]
+    },
+    "severity": "risk",
+    "message": "A persistent online world cannot be built, secured and operated in a few months.",
+    "probe": "Could launch use session-based matches and add persistence later?"
+  },
+  {
+    "id": "punishing_accessible_audience",
+    "when": {
+      "all": [
+        {
+          "axis": "exp.challenge",
+          "lean": "B"
+        },
+        {
+          "axis": "frame.rating",
+          "lean": "A"
+        },
+        {
+          "axis": "diff.options",
+          "lean": "A"
+        }
+      ]
+    },
+    "severity": "info",
+    "message": "A punishing single difficulty with an all-ages audience will lose younger or casual players.",
+    "probe": "Would an assist mode keep the intended challenge while widening the audience?"
+  },
+  {
+    "id": "competitive_pay_to_win",
+    "when": {
+      "all": [
+        {
+          "flag": "is_competitive"
+        },
+        {
+          "axis": "frame.monetization",
+          "in": [
+            "f2p_gacha"
+          ]
+        }
+      ]
+    },
+    "severity": "risk",
+    "message": "Selling power in a competitive game reads as pay-to-win and erodes trust.",
+    "probe": "Can monetization stay cosmetic in competitive modes?"
+  },
+  {
+    "id": "ironman_long_session_mobile",
+    "when": {
+      "all": [
+        {
+          "axis": "fail.save",
+          "in": [
+            "ironman"
+          ]
+        },
+        {
+          "axis": "frame.platform",
+          "in": [
+            "mobile"
+          ]
+        }
+      ]
+    },
+    "severity": "info",
+    "message": "Ironman saves on mobile need instant suspend and resume, because the OS kills apps at any time.",
+    "probe": "Will the game autosave on every state change?"
+  },
+  {
+    "id": "hitscan_simulated_mismatch",
+    "when": {
+      "all": [
+        {
+          "axis": "ranged.ballistics",
+          "lean": "B"
+        },
+        {
+          "axis": "ranged.assist",
+          "lean": "A"
+        }
+      ]
+    },
+    "severity": "info",
+    "message": "Simulated ballistics plus heavy aim assist blurs the skill expression that ballistics is meant to create.",
+    "probe": "Is the goal accessibility or marksmanship?"
+  },
+  {
+    "id": "destructible_world_multiplayer",
+    "when": {
+      "all": [
+        {
+          "axis": "world.destruction",
+          "lean": "B"
+        },
+        {
+          "flag": "is_online"
+        }
+      ]
+    },
+    "severity": "warn",
+    "message": "Full destruction in online play means syncing large amounts of world state.",
+    "probe": "Can destruction be limited to authored pieces or deterministic chunks?"
+  },
+  {
+    "id": "soft_body_large_mp",
+    "when": {
+      "all": [
+        {
+          "axis": "veh.damage",
+          "lean": "B"
+        },
+        {
+          "flag": "is_online"
+        },
+        {
+          "axis": "mp.size",
+          "lean": "B"
+        }
+      ]
+    },
+    "severity": "warn",
+    "message": "Soft-body vehicle damage is CPU heavy; many networked vehicles at once will strain clients and servers.",
+    "probe": "Will soft-body run only locally, with simplified damage shared online?"
+  },
+  {
+    "id": "emergent_story_linear_world",
+    "when": {
+      "all": [
+        {
+          "axis": "narr.source",
+          "lean": "B"
+        },
+        {
+          "axis": "world.structure",
+          "in": [
+            "linear"
+          ]
+        }
+      ]
+    },
+    "severity": "info",
+    "message": "Emergent stories need room for systems to collide; a linear world limits that space.",
+    "probe": "Would a hub or sandbox structure give systems room to create stories?"
+  },
+  {
+    "id": "wordless_teaching_mass_market",
+    "when": {
+      "all": [
+        {
+          "axis": "puzzle.teaching",
+          "lean": "B"
+        },
+        {
+          "axis": "frame.platform",
+          "in": [
+            "mobile"
+          ]
+        }
+      ]
+    },
+    "severity": "info",
+    "message": "Wordless teaching on mobile risks early churn; players there leave quickly when lost.",
+    "probe": "Will you add an optional hint system?"
+  },
+  {
+    "id": "loot_loss_casual",
+    "when": {
+      "all": [
+        {
+          "axis": "mp.loss",
+          "lean": "B"
+        },
+        {
+          "axis": "exp.challenge",
+          "lean": "A"
+        }
+      ]
+    },
+    "severity": "warn",
+    "message": "Losing loot on death is a punishing hook that clashes with an accessible target audience.",
+    "probe": "Should insurance, safe slots or a practice mode soften the loss?"
+  },
+  {
+    "id": "realtime_clock_short_sessions",
+    "when": {
+      "all": [
+        {
+          "axis": "world.time",
+          "in": [
+            "realtime"
+          ]
+        },
+        {
+          "axis": "frame.session",
+          "lean": "B"
+        }
+      ]
+    },
+    "severity": "info",
+    "message": "A real-time clock rewards daily check-ins more than long sittings.",
+    "probe": "Is the intended habit daily visits or long sessions?"
+  },
+  {
+    "id": "visible_numbers_hidden_systems",
+    "when": {
+      "all": [
+        {
+          "axis": "combat.numbers",
+          "lean": "B"
+        },
+        {
+          "axis": "ui.transparency",
+          "lean": "A"
+        }
+      ]
+    },
+    "severity": "info",
+    "message": "Visible damage numbers with otherwise hidden systems sends mixed signals about how much math players should engage with.",
+    "probe": "Which systems should players be able to calculate?"
+  },
+  {
+    "id": "deep_dialogue_blank_slate_voiced",
+    "when": {
+      "all": [
+        {
+          "axis": "narr.dialogue",
+          "lean": "B"
+        },
+        {
+          "axis": "narr.protagonist",
+          "lean": "B"
+        },
+        {
+          "axis": "frame.team",
+          "in": [
+            "solo",
+            "small"
+          ]
+        }
+      ]
+    },
+    "severity": "info",
+    "message": "Deep branching dialogue multiplies writing and voice costs quickly for a small team.",
+    "probe": "Will the protagonist be unvoiced, or will branches reconverge often?"
+  },
+  {
+    "id": "rhythm_without_sync",
+    "when": {
+      "all": [
+        {
+          "flag": "is_rhythm"
+        },
+        {
+          "axis": "audio.sync",
+          "lean": "A"
+        }
+      ]
+    },
+    "severity": "warn",
+    "message": "A rhythm game with gameplay independent of the music contradicts its genre promise.",
+    "probe": "Should core actions land on the beat?"
+  },
+  {
+    "id": "horror_power_fantasy",
+    "when": {
+      "all": [
+        {
+          "flag": "is_horror"
+        },
+        {
+          "axis": "exp.fantasy",
+          "lean": "A"
+        }
+      ]
+    },
+    "severity": "warn",
+    "message": "A power fantasy drains horror of tension; fear needs vulnerability.",
+    "probe": "Where in the game does the player feel powerless?"
+  },
+  {
+    "id": "idle_intense_pace",
+    "when": {
+      "all": [
+        {
+          "flag": "is_idle"
+        },
+        {
+          "axis": "exp.pace",
+          "lean": "B"
+        }
+      ]
+    },
+    "severity": "warn",
+    "message": "Idle games are built on low attention; intense pace works against offline progress.",
+    "probe": "Is the active layer optional, or is this really an incremental action game?"
+  },
+  {
+    "id": "party_online_voice",
+    "when": {
+      "all": [
+        {
+          "flag": "is_party"
+        },
+        {
+          "axis": "party.input",
+          "lean": "B"
+        },
+        {
+          "axis": "frame.players",
+          "in": [
+            "online_competitive",
+            "online_coop"
+          ]
+        }
+      ]
+    },
+    "severity": "info",
+    "message": "Phone-as-controller party games usually rely on a shared screen; online play needs streaming or voice.",
+    "probe": "Is the target a shared room or remote play over streaming?"
+  },
+  {
+    "id": "permadeath_mp_gear_and_f2p",
+    "when": {
+      "all": [
+        {
+          "axis": "mp.loss",
+          "lean": "B"
+        },
+        {
+          "flag": "is_f2p"
+        },
+        {
+          "axis": "frame.monetization",
+          "in": [
+            "f2p_gacha"
+          ]
+        }
+      ]
+    },
+    "severity": "warn",
+    "message": "Selling gear that can be lost on death invites accusations of predatory design.",
+    "probe": "Should purchasable items be cosmetic or protected from loss?"
+  },
+  {
+    "id": "large_scope_short_timeline",
+    "when": {
+      "all": [
+        {
+          "axis": "frame.timeline",
+          "in": [
+            "jam",
+            "months"
+          ]
+        },
+        {
+          "any": [
+            {
+              "axis": "world.size",
+              "lean": "B"
+            },
+            {
+              "axis": "narr.branching",
+              "lean": "B"
+            },
+            {
+              "axis": "genre.form",
+              "in": [
+                "mmo",
+                "open_world"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "severity": "risk",
+    "message": "This scope does not fit the timeline.",
+    "probe": "Which single pillar must ship, and what can be cut to a later update?"
+  },
+  {
+    "id": "mature_all_ages_gore",
+    "when": {
+      "all": [
+        {
+          "axis": "frame.rating",
+          "lean": "A"
+        },
+        {
+          "axis": "combat.gore",
+          "lean": "B"
+        }
+      ]
+    },
+    "severity": "warn",
+    "message": "Visceral gore will not get an all-ages rating.",
+    "probe": "Is the audience all ages, or should violence be stylized?"
+  },
+  {
+    "id": "turn_based_execution",
+    "when": {
+      "all": [
+        {
+          "axis": "loop.time",
+          "lean": "B"
+        },
+        {
+          "axis": "loop.cadence",
+          "lean": "A"
+        }
+      ]
+    },
+    "severity": "info",
+    "message": "Turn-based time with execution-first cadence is unusual: turns remove the time pressure that tests execution.",
+    "probe": "Is there a timing element inside turns, like timed hits?"
+  },
+  {
+    "id": "procedural_precision_platforming",
+    "when": {
+      "all": [
+        {
+          "axis": "world.authoring",
+          "lean": "B"
+        },
+        {
+          "axis": "move.precision",
+          "lean": "B"
+        }
+      ]
+    },
+    "severity": "info",
+    "message": "Procedural levels and precision platforming conflict: tight jumps need hand-tuned geometry.",
+    "probe": "Will generation assemble handmade rooms rather than raw terrain?"
+  }
+]

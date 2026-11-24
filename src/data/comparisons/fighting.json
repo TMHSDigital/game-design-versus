@@ -1,0 +1,232 @@
+[
+  {
+    "id": "cmp.fight.input.streetfighter6-smashultimate",
+    "axis": "fight.input",
+    "options": [
+      { "pole": "motion", "game": "Street Fighter 6", "year": 2023, "how": "The Classic control type keeps motion inputs such as quarter-circles for specials; Modern and Dynamic types exist as assisted alternatives." },
+      { "pole": "simplified", "game": "Super Smash Bros. Ultimate", "year": 2018, "how": "Every special move is the special button plus a direction (neutral, side, up or down), with no motion inputs required." }
+    ],
+    "tags": { "genres": ["fighting"], "platforms": ["pc", "console", "handheld"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/1364780/", "note": "Street Fighter 6: three control types, Classic, Modern and Dynamic" },
+      { "url": "https://www.ssbwiki.com/Special_move", "note": "Super Smash Bros. Ultimate: special moves are performed by pressing the special button, B by default" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.fight.input.streetfighter2-supersmashbros",
+    "axis": "fight.input",
+    "options": [
+      { "pole": "motion", "game": "Street Fighter II: The World Warrior", "year": 1991, "how": "Specials need joystick motions, such as down, down-forward, forward plus punch for the Hadoken, so execution itself is a skill gate." },
+      { "pole": "simplified", "game": "Super Smash Bros.", "year": 1999, "how": "Each fighter's specials come from the B button plus a direction, so every character shares one simple input scheme." }
+    ],
+    "tags": { "genres": ["fighting"], "platforms": ["console"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://www.ssbwiki.com/Command_input", "note": "Street Fighter II: Street Fighter style command inputs, Hadoken as down, down-forward, forward plus attack" },
+      { "url": "https://www.ssbwiki.com/Street_Fighter_(universe)", "note": "Street Fighter II: 1991 landmark release of the Street Fighter series" },
+      { "url": "https://www.ssbwiki.com/Special_move", "note": "Super Smash Bros.: special moves are the special button plus a direction" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.fight.input.kof98-melee",
+    "axis": "fight.input",
+    "options": [
+      { "pole": "motion", "game": "The King of Fighters '98", "year": 1998, "how": "Specials and supers use motion commands, such as Kyo's quarter-circle forward plus A (236A) rekka starter, that anchor every combo." },
+      { "pole": "simplified", "game": "Super Smash Bros. Melee", "year": 2001, "how": "Specials are B plus a direction, so a new player can perform every move in a character's kit from the first match." }
+    ],
+    "tags": { "genres": ["fighting"], "platforms": ["console", "pc"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://dreamcancel.com/wiki/The_King_of_Fighters_%2798_UMFE/Kyo_Kusanagi", "note": "The King of Fighters '98: Kyo's special moves listed with motion inputs such as 236A (Ultimate Match Final Edition page)" },
+      { "url": "https://www.ssbwiki.com/Special_move", "note": "Super Smash Bros. Melee: special moves use the special button plus a direction" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.fight.input.guiltygearstrive-rivalsofaether",
+    "axis": "fight.input",
+    "options": [
+      { "pole": "motion", "game": "Guilty Gear -Strive-", "year": 2021, "how": "Special moves need more elaborate command inputs, such as rotating the stick a quarter circle before a button press." },
+      { "pole": "simplified", "game": "Rivals of Aether", "year": 2017, "how": "Neutral, Side, Up and Down Specials come from one special button plus a direction; no motion inputs anywhere in a moveset." }
+    ],
+    "tags": { "genres": ["fighting"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.dustloop.com/w/GGST/Controls", "note": "Guilty Gear -Strive-: special moves require more elaborate command inputs, e.g. a quarter circle" },
+      { "url": "https://store.steampowered.com/app/383980/", "note": "Rivals of Aether: moves such as Neutral Special, Up Special and Down Special" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.fight.input.dragonballfighterz-granbluefantasyversusrising",
+    "axis": "fight.input",
+    "options": [
+      { "pole": "motion", "game": "Dragon Ball FighterZ", "year": 2018, "how": "Specials are motion commands like 236 and 214 on the light, medium or heavy button, as in Goku's 236H reversal." },
+      { "pole": "simplified", "game": "Granblue Fantasy Versus: Rising", "year": 2023, "how": "Simple inputs perform skills with a single button press, so newcomers need not memorize complicated controls." }
+    ],
+    "tags": { "genres": ["fighting"], "platforms": ["pc", "console"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://www.dustloop.com/w/DBFZ/Goku_(Super_Saiyan)", "note": "Dragon Ball FighterZ: Goku's specials listed as 236M, 236H and 214L motion inputs" },
+      { "url": "https://store.steampowered.com/app/2157560/", "note": "Granblue Fantasy Versus: Rising: simple inputs perform skills with the press of a single button" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.fight.input.blazbluecentralfiction-fantasystrike",
+    "axis": "fight.input",
+    "options": [
+      { "pole": "motion", "game": "BlazBlue: Central Fiction", "year": 2016, "how": "Specials and Distortion Drives use motions such as 623C and 632146D, so each character's kit is a list of commands to learn." },
+      { "pole": "simplified", "game": "Fantasy Strike", "year": 2019, "how": "All moves are a single button press with no motion inputs, designed to play on keyboard or any controller." }
+    ],
+    "tags": { "genres": ["fighting"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.dustloop.com/w/BBCF/Ragna_the_Bloodedge", "note": "BlazBlue: Central Fiction: Ragna's reversals listed as 623C and 632146D" },
+      { "url": "https://store.steampowered.com/app/390560/", "note": "Fantasy Strike: all moves are just a single button press; simple controls" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.fight.input.guiltygearxxaccentcoreplusr-divekick",
+    "axis": "fight.input",
+    "options": [
+      { "pole": "motion", "game": "Guilty Gear XX Accent Core Plus R", "year": 2012, "how": "Specials like Sol's Gun Flame (236P) and Volcanic Viper (623S) need quarter-circle and dragon-punch motions." },
+      { "pole": "simplified", "game": "Divekick", "year": 2013, "how": "Only two buttons, Dive and Kick, and no directional inputs; fighting is reduced to spacing and timing." }
+    ],
+    "tags": { "genres": ["fighting"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.dustloop.com/w/GGACR/Sol_Badguy", "note": "Guilty Gear XX Accent Core Plus R: Gun Flame 236P, Volcanic Viper 623S or 623H" },
+      { "url": "https://store.steampowered.com/app/244730/", "note": "Divekick: the first two-button fighting game, just two buttons with no d-pad" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.fight.input.persona4arenaultimax-granbluefantasyversusrising",
+    "axis": "fight.input",
+    "options": [
+      { "pole": "motion", "game": "Persona 4 Arena Ultimax", "year": 2013, "how": "Specials and supers use motions such as 236C+D and 214214D, with an auto combo on one button as a beginner aid." },
+      { "pole": "simplified", "game": "Granblue Fantasy Versus: Rising", "year": 2023, "how": "Skills can be fired with a single button press instead of a motion, so the decision, not the execution, is the test." }
+    ],
+    "tags": { "genres": ["fighting"], "platforms": ["pc", "console"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://www.dustloop.com/w/P4U2R/Yu_Narukami", "note": "Persona 4 Arena Ultimax: Yu's moves listed as 214B, 236C+D, 214214D, plus an Auto Combo" },
+      { "url": "https://store.steampowered.com/app/2157560/", "note": "Granblue Fantasy Versus: Rising: simple inputs perform skills with a single button press" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.fight.win.smashultimate-tekken7",
+    "axis": "fight.win",
+    "options": [
+      { "pole": "ringout", "game": "Super Smash Bros. Ultimate", "year": 2018, "how": "Damage is a percentage that raises knockback; a stock is lost when a fighter is launched past the stage's blast lines." },
+      { "pole": "health", "game": "Tekken 7", "year": 2015, "how": "Rounds are won by emptying the opponent's health bar; at low health a player enters Rage, a glowing comeback state." }
+    ],
+    "tags": { "genres": ["fighting"], "platforms": ["console", "handheld", "pc"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://www.ssbwiki.com/KO", "note": "Super Smash Bros. Ultimate: a KO occurs when a player is launched beyond the stage's blast lines" },
+      { "url": "https://www.ssbwiki.com/Damage", "note": "Super Smash Bros. Ultimate: damage percentage measures vulnerability to knockback" },
+      { "url": "https://wavu.wiki/t/Rage", "note": "Tekken 7: Rage activates when the player's health reaches 41 points or lower, health bar glows red" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.fight.win.melee-guiltygearxxaccentcoreplusr",
+    "axis": "fight.win",
+    "options": [
+      { "pole": "ringout", "game": "Super Smash Bros. Melee", "year": 2001, "how": "Percent damage raises knockback; a KO happens when a fighter is launched past the blast lines, not when a bar empties." },
+      { "pole": "health", "game": "Guilty Gear XX Accent Core Plus R", "year": 2012, "how": "Rounds end when a life bar empties; each character's Guts rating cuts incoming damage further as their health falls." }
+    ],
+    "tags": { "genres": ["fighting"], "platforms": ["console", "pc"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://www.ssbwiki.com/KO", "note": "Super Smash Bros. Melee: a KO occurs when launched beyond the blast lines" },
+      { "url": "https://www.dustloop.com/w/GGACR/Sol_Badguy", "note": "Guilty Gear XX Accent Core Plus R: character stats include Damage Received Modifier and Guts" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.fight.win.supersmashbros-kof98",
+    "axis": "fight.win",
+    "options": [
+      { "pole": "ringout", "game": "Super Smash Bros.", "year": 1999, "how": "Stocks are lost by being launched off screen past the blast zones; damage percent only sets how far the next hit sends you." },
+      { "pole": "health", "game": "The King of Fighters '98", "year": 1998, "how": "Teams of three fight on health bars; in Extra mode a red low-health window unlocks free supers for a comeback." }
+    ],
+    "tags": { "genres": ["fighting"], "platforms": ["console", "pc"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://www.ssbwiki.com/Super_Smash_Bros.", "note": "Super Smash Bros.: stages with blast zones; percent and knockback" },
+      { "url": "https://www.ssbwiki.com/Stock", "note": "Super Smash Bros.: stocks are the series' lives" },
+      { "url": "https://dreamcancel.com/wiki/The_King_of_Fighters_%2798_UMFE/Kyo_Kusanagi", "note": "The King of Fighters '98: Extra gauge red health window for free supers, growing from first to third character" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.fight.win.rivalsofaether-dragonballfighterz",
+    "axis": "fight.win",
+    "options": [
+      { "pole": "ringout", "game": "Rivals of Aether", "year": 2017, "how": "Hits build damage and launch power; a strong attack sends a weakened opponent off the stage for the killing blow." },
+      { "pole": "health", "game": "Dragon Ball FighterZ", "year": 2018, "how": "Every character has 10,000 health; tagged-out fighters recover blue health, and the team loses when all three are down." }
+    ],
+    "tags": { "genres": ["fighting"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/383980/", "note": "Rivals of Aether: platform fighter where strong attacks launch enemies for the killing blow" },
+      { "url": "https://www.dustloop.com/w/DBFZ/Damage", "note": "Dragon Ball FighterZ: every character has 10,000 health; recoverable blue health when tagged out" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.fight.win.brawl-blazbluecentralfiction",
+    "axis": "fight.win",
+    "options": [
+      { "pole": "ringout", "game": "Super Smash Bros. Brawl", "year": 2008, "how": "A stock ends when a fighter is knocked past the blast lines, so a high-percent fighter can lose it to one strong hit." },
+      { "pole": "health", "game": "BlazBlue: Central Fiction", "year": 2016, "how": "Rounds end when health empties; values vary by character, and Ragna's Drive steals life to offset his below average health." }
+    ],
+    "tags": { "genres": ["fighting"], "platforms": ["console", "pc"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://www.ssbwiki.com/KO", "note": "Super Smash Bros. Brawl: KO when launched beyond the blast lines" },
+      { "url": "https://www.dustloop.com/w/BBCF/Damage", "note": "BlazBlue: Central Fiction: health bars, health varies by character" },
+      { "url": "https://www.dustloop.com/w/BBCF/Ragna_the_Bloodedge", "note": "BlazBlue: Central Fiction: Ragna's Drive heals him to make up for below average health" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.fight.win.smash4-guiltygearstrive",
+    "axis": "fight.win",
+    "options": [
+      { "pole": "ringout", "game": "Super Smash Bros. for Wii U", "year": 2014, "how": "Stock matches are decided by launching rivals past the blast lines; the percent counter shows how far the next hit will send them." },
+      { "pole": "health", "game": "Guilty Gear -Strive-", "year": 2021, "how": "Win by emptying the health bar; defense and guts ratings scale damage down as health passes certain thresholds." }
+    ],
+    "tags": { "genres": ["fighting"], "platforms": ["console", "pc"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://www.ssbwiki.com/KO", "note": "Super Smash Bros. for Wii U: KO when launched beyond the blast lines" },
+      { "url": "https://www.ssbwiki.com/Super_Smash_Bros._4", "note": "Super Smash Bros. for Wii U: 2014 release" },
+      { "url": "https://www.dustloop.com/w/GGST/Damage", "note": "Guilty Gear -Strive-: defense and guts ratings scale damage as health passes thresholds" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.fight.win.brawl-tekken7",
+    "axis": "fight.win",
+    "options": [
+      { "pole": "ringout", "game": "Super Smash Bros. Brawl", "year": 2008, "how": "Stage hazards and some attacks can cause instant KOs, and otherwise a stock is lost by leaving the stage past the blast lines." },
+      { "pole": "health", "game": "Tekken 7", "year": 2015, "how": "Rounds go to whoever drains the other health bar; at low health Rage adds 10% damage and unlocks Rage Arts, a late comeback threat." }
+    ],
+    "tags": { "genres": ["fighting"], "platforms": ["console", "pc"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://www.ssbwiki.com/KO", "note": "Super Smash Bros. Brawl: hazards and some attacks can cause instant KOs; normal KOs cross the blast lines" },
+      { "url": "https://wavu.wiki/t/Rage", "note": "Tekken 7: at 41 health or lower Rage enables Rage Arts and Rage Drives and increases damage by 10%" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.fight.win.smash4-persona4arenaultimax",
+    "axis": "fight.win",
+    "options": [
+      { "pole": "ringout", "game": "Super Smash Bros. for Wii U", "year": 2014, "how": "Optional Stamina battles aside, the default rule set KOs fighters only when they cross a blast line, so stage edges are the goal." },
+      { "pole": "health", "game": "Persona 4 Arena Ultimax", "year": 2013, "how": "Each character has a fixed health value, such as Yu's 9,500, and a round ends when it is emptied." }
+    ],
+    "tags": { "genres": ["fighting"], "platforms": ["console", "pc"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://www.ssbwiki.com/Stamina_Mode", "note": "Super Smash Bros. for Wii U: Stamina replaces damage percentage with an HP gauge; losing all HP is a KO without crossing a blast line" },
+      { "url": "https://www.ssbwiki.com/KO", "note": "Super Smash Bros. for Wii U: KO by being launched beyond the blast lines" },
+      { "url": "https://www.dustloop.com/w/P4U2R/Yu_Narukami", "note": "Persona 4 Arena Ultimax: Yu Narukami health 9,500" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  }
+]

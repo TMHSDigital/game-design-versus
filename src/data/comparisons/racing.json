@@ -1,0 +1,150 @@
+[
+  {
+    "id": "cmp.race.catchup.supermariokart-assettocorsa",
+    "axis": "race.catchup",
+    "options": [
+      { "pole": "items", "game": "Super Mario Kart", "year": 1992, "how": "Item pickups depend on race position: karts farther behind draw stronger items such as the Star and Lightning, which keeps the pack close." },
+      { "pole": "skill", "game": "Assetto Corsa", "year": 2014, "how": "A realistic physics model of real cars with nothing handed to a trailing driver; only faster, cleaner laps close a gap." }
+    ],
+    "tags": { "genres": ["racing", "simulation"], "platforms": ["console", "pc"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Super_Mario_Kart", "note": "Super Mario Kart: the item obtained depends on the player's position; players farther behind get stronger items" },
+      { "url": "https://store.steampowered.com/app/244210/", "note": "Assetto Corsa: racing simulator with an advanced physics engine for a very realistic driving experience" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.race.catchup.mariokart64-iracing",
+    "axis": "race.catchup",
+    "options": [
+      { "pole": "items", "game": "Mario Kart 64", "year": 1996, "how": "Racers in low positions are likely to get the Super Star, Thunder Bolt and Spiny Shell, while first place mostly gets Bananas and Green Shells." },
+      { "pole": "skill", "game": "iRacing", "year": 2008, "how": "No power-ups: a license and rating system matches drivers of similar skill, so close racing comes from matchmaking, not handouts." }
+    ],
+    "tags": { "genres": ["racing", "simulation"], "platforms": ["console", "pc"], "era": "pre2000", "indie": true },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Mario_Kart_64", "note": "Mario Kart 64: lower positions likely receive Super Star, Thunder Bolt and Spiny Shell; first place gets Bananas and Green Shells" },
+      { "url": "https://www.iracing.com/", "note": "iRacing: license system matches drivers with similar skill levels; licenses and ratings" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.race.catchup.mariokartsupercircuit-trackmanianationsforever",
+    "axis": "race.catchup",
+    "options": [
+      { "pole": "items", "game": "Mario Kart: Super Circuit", "year": 2001, "how": "Item Boxes on the course hand out items weighted toward trailing racers, giving the back of the field tools to attack the leaders." },
+      { "pole": "skill", "game": "TrackMania Nations Forever", "year": 2008, "how": "Everyone drives the same Stadium car on the same tracks for the best time; no pickups exist, so the result reflects driving alone." }
+    ],
+    "tags": { "genres": ["racing"], "platforms": ["handheld", "pc"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Mario_Kart:_Super_Circuit", "note": "Mario Kart: Super Circuit: players drive through Item Boxes to get items that aid them" },
+      { "url": "https://www.mariowiki.com/Item_Box", "note": "Mario Kart: Super Circuit: Item Boxes hand out items by position, more powerful items to lower ranked players" },
+      { "url": "https://store.steampowered.com/app/11020/", "note": "TrackMania Nations Forever: Stadium environment, solo tracks and online competition on shared tracks" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.race.catchup.doubledash-dirtrally2",
+    "axis": "race.catchup",
+    "options": [
+      { "pole": "items", "game": "Mario Kart: Double Dash!!", "year": 2003, "how": "Item Boxes weight drops by position, and each character pair also has an exclusive Special Item to throw at the leaders." },
+      { "pole": "skill", "game": "DiRT Rally 2.0", "year": 2019, "how": "Rally stages run against the clock, where the smallest mistake can end your stage; nothing helps a driver who falls behind." }
+    ],
+    "tags": { "genres": ["racing", "simulation"], "platforms": ["console", "pc"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Mario_Kart:_Double_Dash!!", "note": "Mario Kart: Double Dash!!: Special Items exclusive to a pair of characters" },
+      { "url": "https://www.mariowiki.com/Item_Box", "note": "Mario Kart: Double Dash!!: Item Boxes hand out items by racers' positions" },
+      { "url": "https://store.steampowered.com/app/690790/", "note": "DiRT Rally 2.0: the smallest mistake could end your stage; time trial and career" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.race.catchup.mariokartds-artofrally",
+    "axis": "race.catchup",
+    "options": [
+      { "pole": "items", "game": "Mario Kart DS", "year": 2005, "how": "Item Boxes favor trailing racers with stronger items, and DS added Bullet Bill and Blooper to the pool the back of the pack draws from." },
+      { "pole": "skill", "game": "art of rally", "year": 2020, "how": "Stage times and daily and weekly leaderboard challenges decide standing; no items or handouts, a clean run is the only way up." }
+    ],
+    "tags": { "genres": ["racing"], "platforms": ["handheld", "pc", "console"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Mario_Kart_DS", "note": "Mario Kart DS: introduces Bullet Bill and Blooper items" },
+      { "url": "https://www.mariowiki.com/Item_Box", "note": "Mario Kart DS: the lower the position, the more powerful the items received" },
+      { "url": "https://store.steampowered.com/app/550320/", "note": "art of rally: career across 91 stages and leaderboards with daily and weekly challenges" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.race.catchup.mariokartwii-forzamotorsport",
+    "axis": "race.catchup",
+    "options": [
+      { "pole": "items", "game": "Mario Kart Wii", "year": 2008, "how": "Item odds scale with position, and Wii added the Mega Mushroom, POW Block and Thunder Cloud to what trailing racers can draw." },
+      { "pole": "skill", "game": "Forza Motorsport", "year": 2023, "how": "Real cars on real circuits across solo tours and online events; finishing order comes from honed driving skill, not pickups." }
+    ],
+    "tags": { "genres": ["racing", "simulation"], "platforms": ["console", "pc"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Mario_Kart_Wii", "note": "Mario Kart Wii: new Mega Mushroom and POW Block items, Thunder Cloud returns" },
+      { "url": "https://www.mariowiki.com/Item_Box", "note": "Mario Kart Wii: Item Boxes hand out items by position" },
+      { "url": "https://store.steampowered.com/app/2440510/", "note": "Forza Motorsport: race the latest cars and tracks and hone your skills in solo tours and online events" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.race.catchup.mariokart8deluxe-trackmania",
+    "axis": "race.catchup",
+    "options": [
+      { "pole": "items", "game": "Mario Kart 8 Deluxe", "year": 2017, "how": "Item Boxes weight by position, and the Spiny Shell homes in on whoever is in first place, a direct brake on a runaway leader." },
+      { "pole": "skill", "game": "Trackmania", "year": 2020, "how": "Drivers chase medals and global and regional leaderboards on shared tracks; no items, the time on the board is pure execution." }
+    ],
+    "tags": { "genres": ["racing"], "platforms": ["console", "handheld", "pc"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Spiny_Shell_(Mario_Kart)", "note": "Mario Kart 8 Deluxe: the Spiny Shell targets the player in first place" },
+      { "url": "https://www.mariowiki.com/Item_Box", "note": "Mario Kart 8 Deluxe: more effective items go to lower ranked players" },
+      { "url": "https://store.steampowered.com/app/2225070/", "note": "Trackmania: global and regional leaderboards, medals earned through driving talent" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.race.catchup.mariokarttour-distance",
+    "axis": "race.catchup",
+    "options": [
+      { "pole": "items", "game": "Mario Kart Tour", "year": 2019, "how": "Keeps position-weighted Item Boxes on mobile, and three matching items trigger a Frenzy that lets a racer use that item repeatedly." },
+      { "pole": "skill", "game": "Distance", "year": 2018, "how": "Survive to the end in the quickest time and race ghosts for leaderboards; car abilities are fixed for everyone, never a catch-up gift." }
+    ],
+    "tags": { "genres": ["racing"], "platforms": ["mobile", "pc"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Item_Frenzy", "note": "Mario Kart Tour: collecting three of the same item starts a Frenzy" },
+      { "url": "https://www.mariowiki.com/Item_Box", "note": "Mario Kart Tour: Item Boxes hand out items depending on racers' positions" },
+      { "url": "https://store.steampowered.com/app/233610/", "note": "Distance: survive to the end in the quickest time; race ghosts on leaderboards and earn medals" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.race.catchup.mariokartworld-f124",
+    "axis": "race.catchup",
+    "options": [
+      { "pole": "items", "game": "Mario Kart World", "year": 2025, "how": "Item Boxes hand stronger items to racers further back, and the Spiny Shell homes in on whoever leads the 24-racer pack." },
+      { "pole": "skill", "game": "F1 24", "year": 2024, "how": "Real-world teams, drivers and every Grand Prix of a season; no pickups exist, so position comes from driving and strategy." }
+    ],
+    "tags": { "genres": ["racing"], "platforms": ["console", "pc"], "era": "2020s", "indie": false },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Item_Box", "note": "Mario Kart World: Item Boxes hand out items by position, more effective items to lower-ranked players; World section" },
+      { "url": "https://www.mariowiki.com/Spiny_Shell_(Mario_Kart)", "note": "Mario Kart World: Spiny Shell returns, targeting the lead driver" },
+      { "url": "https://www.ea.com/games/f1/f1-24", "note": "F1 24: career against real-world teams and drivers across all the Grand Prix in a season" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.race.catchup.mariokartworld-granturismo7",
+    "axis": "race.catchup",
+    "options": [
+      { "pole": "items", "game": "Mario Kart World", "year": 2025, "how": "24-racer races where item odds scale with your position, so trailing drivers draw the most powerful tools." },
+      { "pole": "skill", "game": "Gran Turismo 7", "year": 2022, "how": "The Real Driving Simulator: 420+ real cars bought, tuned and raced; results hinge on car setup and driving, not pickups." }
+    ],
+    "tags": { "genres": ["racing", "simulation"], "platforms": ["console"], "era": "2020s", "indie": false },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Item_Box", "note": "Mario Kart World: item received depends on position, lower positions get more powerful items" },
+      { "url": "https://www.nintendo.com/us/store/products/mario-kart-world-switch-2/", "note": "Mario Kart World: races of up to 24 drivers with items" },
+      { "url": "https://www.playstation.com/en-us/games/gran-turismo-7/", "note": "Gran Turismo 7: the Real Driving Simulator, 420+ cars to buy, tune and race" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  }
+]

@@ -1,0 +1,226 @@
+[
+  {
+    "id": "cmp.rhythm.core.parappa-necrodancer",
+    "axis": "rhythm.core",
+    "options": [
+      { "pole": "pure", "game": "PaRappa the Rapper", "year": 1996, "how": "A pure rhythm game: repeat each rap master's lines with button presses timed to the music; timing is the whole game." },
+      { "pole": "hybrid", "game": "Crypt of the NecroDancer", "year": 2015, "how": "A roguelike dungeon crawl where you move and attack only on the beat while enemies follow their own rhythmic patterns." }
+    ],
+    "tags": { "genres": ["rhythm", "rpg"], "platforms": ["console", "pc", "mobile"], "era": "pre2000", "indie": true },
+    "sources": [
+      { "url": "https://www.playstation.com/en-us/games/parappa-the-rapper-remastered/", "note": "PaRappa the Rapper: the original rhythm game, learning from rap masters" },
+      { "url": "https://store.steampowered.com/app/247080/", "note": "Crypt of the NecroDancer: roguelike rhythm game, move on the beat" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.rhythm.core.rhythmdoctor-hifirush",
+    "axis": "rhythm.core",
+    "options": [
+      { "pole": "pure", "game": "Rhythm Doctor", "year": 2021, "how": "One button: press the spacebar on the 7th beat to defibrillate patients; levels test polyrhythms and irregular meters." },
+      { "pole": "hybrid", "game": "Hi-Fi Rush", "year": 2023, "how": "A character action game whose characters, world and combat sync to the music; you fight to the beat of the track." }
+    ],
+    "tags": { "genres": ["rhythm", "action"], "platforms": ["pc", "console"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/774181/", "note": "Rhythm Doctor: slam the spacebar on the 7th beat, polyrhythms and irregular meters" },
+      { "url": "https://store.steampowered.com/app/1817230/", "note": "Hi-Fi Rush: action game where characters, world and combat sync to the music" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.rhythm.core.beatsaber-bpm",
+    "axis": "rhythm.core",
+    "options": [
+      { "pole": "pure", "game": "Beat Saber", "year": 2018, "how": "Slash incoming notes with VR sabers matching color and direction; every level is handcrafted to its song." },
+      { "pole": "hybrid", "game": "BPM: Bullets Per Minute", "year": 2020, "how": "A roguelike FPS where all your actions and enemy attacks are tied to the beat of the music." }
+    ],
+    "tags": { "genres": ["rhythm", "shooter"], "platforms": ["vr", "pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/620980/", "note": "Beat Saber: match the color and direction of incoming notes, levels handcrafted to the music" },
+      { "url": "https://store.steampowered.com/app/1286350/", "note": "BPM: Bullets Per Minute: all actions of player and enemies tied to the beat" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.rhythm.core.musedash-metalhellsinger",
+    "axis": "rhythm.core",
+    "options": [
+      { "pole": "pure", "game": "Muse Dash", "year": 2018, "how": "Tap in time with notes as your runner dashes through a parkour-style stage; the chart is the level." },
+      { "pole": "hybrid", "game": "Metal: Hellsinger", "year": 2022, "how": "A rhythm FPS: shooting on the beat matters, and the more in sync you are, the more intense the soundtrack gets." }
+    ],
+    "tags": { "genres": ["rhythm", "shooter"], "platforms": ["mobile", "pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/774171/", "note": "Muse Dash: parkour rhythm game, hitting to music" },
+      { "url": "https://store.steampowered.com/app/1061910/", "note": "Metal: Hellsinger: rhythm FPS, shoot on the beat to intensify the music" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.rhythm.core.osu-cadenceofhyrule",
+    "axis": "rhythm.core",
+    "options": [
+      { "pole": "pure", "game": "osu!", "year": 2007, "how": "Click hit circles exactly when the shrinking approach circle meets their border; maps are charted to songs." },
+      { "pole": "hybrid", "game": "Cadence of Hyrule", "year": 2019, "how": "A Zelda adventure where every beat is a chance to move, attack or defend; enemies follow rhythmic patterns." }
+    ],
+    "tags": { "genres": ["rhythm", "action"], "platforms": ["pc", "console"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://osu.ppy.sh/wiki/en/Game_mode/osu%21", "note": "osu!: official wiki, tap hit circles when the approach circle reaches their border" },
+      { "url": "https://www.nintendo.com/us/store/products/cadence-of-hyrule-crypt-of-the-necrodancer-featuring-the-legend-of-zelda-switch/", "note": "Cadence of Hyrule: every beat is a chance to move, attack and defend" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.rhythm.core.taiko-patapon",
+    "axis": "rhythm.core",
+    "options": [
+      { "pole": "pure", "game": "Taiko no Tatsujin: Rhythm Festival", "year": 2022, "how": "Drum along to songs from start to finish, hitting scrolling notes in time across four difficulty modes." },
+      { "pole": "hybrid", "game": "Patapon", "year": 2007, "how": "Command an army by drumming rhythmic sequences on four drums; each beat pattern is an order to your Patapon squad." }
+    ],
+    "tags": { "genres": ["rhythm", "strategy"], "platforms": ["console", "pc", "handheld"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/2288630/", "note": "Taiko no Tatsujin: Rhythm Festival: drum along to songs, 4 difficulty modes" },
+      { "url": "https://store.steampowered.com/app/2383200/", "note": "Patapon: use the rhythm of 4 drums to command Patapons" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.rhythm.core.spinrhythmxd-lumines",
+    "axis": "rhythm.core",
+    "options": [
+      { "pole": "pure", "game": "Spin Rhythm XD", "year": 2019, "how": "Spin, flick and tap a turntable-like track to match colors and beats on hand-made charts." },
+      { "pole": "hybrid", "game": "Lumines", "year": 2004, "how": "A falling-block puzzle where a BPM-synced bar sweeps completed squares away each measure, so tempo sets the pace." }
+    ],
+    "tags": { "genres": ["rhythm", "puzzle"], "platforms": ["pc", "console", "handheld"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/1058830/", "note": "Spin Rhythm XD: spin, flick and tap to match colours and beats" },
+      { "url": "https://store.steampowered.com/app/851670/", "note": "Lumines Remastered: BPM bar sweeps combos clean after each measure" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.rhythm.core.thumper-pistolwhip",
+    "axis": "rhythm.core",
+    "options": [
+      { "pole": "pure", "game": "Thumper", "year": 2016, "how": "Rhythm violence: steer down a track and hit or turn through obstacles in time with the music, with simple controls." },
+      { "pole": "hybrid", "game": "Pistol Whip", "year": 2019, "how": "A VR on-rails shooter: blast, duck and dodge through scenes while your gunfire builds rhythms with the beat." }
+    ],
+    "tags": { "genres": ["rhythm", "shooter", "action"], "platforms": ["pc", "console", "vr"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/356400/", "note": "Thumper: rhythm violence, classic rhythm-action at high speed" },
+      { "url": "https://store.steampowered.com/app/1079800/", "note": "Pistol Whip: physical action-rhythm FPS, build rhythms in a ballet of bullets" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.rhythm.core.riftofthenecrodancer-soundfall",
+    "axis": "rhythm.core",
+    "options": [
+      { "pole": "pure", "game": "Rift of the NecroDancer", "year": 2025, "how": "A three-lane note highway where every note is a monster with its own pattern, such as bats that shift lanes when hit and tough foes needing several hits." },
+      { "pole": "hybrid", "game": "Soundfall", "year": 2022, "how": "A co-op looter-shooter dungeon crawler: the closer you time attacks and moves to the soundtrack, the more powerful they become." }
+    ],
+    "tags": { "genres": ["rhythm", "action", "shooter"], "platforms": ["pc", "console"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://www.nintendo.com/us/store/products/rift-of-the-necrodancer-switch/", "note": "Rift of the NecroDancer: musical combat on lanes, bats shift lanes when attacked, tougher foes take multiple hits" },
+      { "url": "https://www.nintendo.com/us/store/products/soundfall-switch/", "note": "Soundfall: music-based dungeon crawler looter-shooter, the closer you time actions to the rhythm the more powerful you become" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.rhythm.core.melatonin-godofrock",
+    "axis": "rhythm.core",
+    "options": [
+      { "pole": "pure", "game": "Melatonin", "year": 2022, "how": "20+ hand-drawn dream levels, each introducing a new way to follow the rhythm, with no intimidating overlays: you read the beat from the scene." },
+      { "pole": "hybrid", "game": "God of Rock", "year": 2023, "how": "1v1 fighting matches: hitting notes on the beat lands normal moves and builds meter, spent on EX and special moves that complicate the rival's track." }
+    ],
+    "tags": { "genres": ["rhythm", "fighting"], "platforms": ["pc", "console"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://www.nintendo.com/us/store/products/melatonin-switch/", "note": "Melatonin: rhythm game, 20+ levels each introducing a new way to follow the rhythm, no intimidating overlays" },
+      { "url": "https://www.nintendo.com/us/store/products/god-of-rock-switch/", "note": "God of Rock: rhythm-based gameplay with fighting mechanics, hit notes to build meter, spend it on EX and special moves" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.rhythm.core.unbeatable-hifirush",
+    "axis": "rhythm.core",
+    "options": [
+      { "pole": "pure", "game": "Unbeatable", "year": 2025, "how": "Rhythm play uses only two buttons, one for up and one for down; a story adventure and an arcade mode with modifiers sit around the songs." },
+      { "pole": "hybrid", "game": "Hi-Fi Rush", "year": 2023, "how": "A character action brawler: Beat Hits, combos, team-up attacks and specials gain power when synced to the music as you fight hordes." }
+    ],
+    "tags": { "genres": ["rhythm", "action", "narrative"], "platforms": ["pc", "console"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://www.playstation.com/en-us/games/unbeatable/", "note": "Unbeatable: during rhythm gameplay you only need two buttons, up and down; full arcade mode with modifiers" },
+      { "url": "https://www.playstation.com/en-us/games/hi-fi-rush/", "note": "Hi-Fi Rush: Beat Hits, combos and team-up attacks executed by syncing with the music; defeat hordes keeping time with the beat" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.rhythm.core.projectdivamegamix-luminesarise",
+    "axis": "rhythm.core",
+    "options": [
+      { "pole": "pure", "game": "Hatsune Miku: Project DIVA Mega Mix", "year": 2020, "how": "Press buttons in time across 100+ songs in Arcade Mode, or switch to motion-controlled Mix Mode; the song chart is the whole challenge." },
+      { "pole": "hybrid", "game": "Lumines Arise", "year": 2025, "how": "A falling-block puzzle: build single-color squares from 2x2 blocks, and a Timeline sweeping to the beat clears them for points." }
+    ],
+    "tags": { "genres": ["rhythm", "puzzle"], "platforms": ["console", "pc"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://www.nintendo.com/us/store/products/hatsune-miku-project-diva-mega-mix-switch/", "note": "Hatsune Miku: Project DIVA Mega Mix: button-based Arcade Mode or motion-based Mix Mode over 100+ songs" },
+      { "url": "https://www.playstation.com/en-us/games/lumines-arise/", "note": "Lumines Arise: manipulate 2x2 blocks to form squares; a Timeline clears squares to the beat of the music" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.rhythm.core.theatrhythmfinalbarline-everhood",
+    "axis": "rhythm.core",
+    "options": [
+      { "pole": "pure", "game": "Theatrhythm Final Bar Line", "year": 2023, "how": "Push buttons in time to match triggers crossing the screen on three stage types, across 385 Final Fantasy music tracks." },
+      { "pole": "hybrid", "game": "Everhood", "year": 2021, "how": "An adventure RPG of roaming and odd encounters where every fight is a music-based battle played out to the track." }
+    ],
+    "tags": { "genres": ["rhythm", "rpg"], "platforms": ["console", "pc"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://www.nintendo.com/us/store/products/theatrhythm-final-bar-line-switch/", "note": "Theatrhythm Final Bar Line: push buttons in time with the music to match triggers on 3 stage types, 385 tracks" },
+      { "url": "https://www.nintendo.com/us/store/products/everhood-switch/", "note": "Everhood: unconventional adventure RPG with music based battles" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.rhythm.core.trombonechamp-metalhellsinger",
+    "axis": "rhythm.core",
+    "options": [
+      { "pole": "pure", "game": "Trombone Champ", "year": 2022, "how": "Honk, blow and toot a trombone through 60+ songs; the only layer beyond playing songs is collecting 50 Tromboner Cards." },
+      { "pole": "hybrid", "game": "Metal: Hellsinger", "year": 2022, "how": "A demon-slaying FPS where shooting on the beat boosts your output, and staying in sync makes the metal soundtrack and destruction escalate." }
+    ],
+    "tags": { "genres": ["rhythm", "shooter"], "platforms": ["pc", "console", "vr"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://trombonechamp.com/", "note": "Trombone Champ: honk, blow and toot your way through over 60 songs; collect 50 Tromboner Cards" },
+      { "url": "https://www.playstation.com/en-us/games/metal-hellsinger/", "note": "Metal: Hellsinger: rhythm and FPS blend, shooting on the beat enhances play, more in sync means more intense music and destruction" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.rhythm.core.rhythmsprout-bpm",
+    "axis": "rhythm.core",
+    "options": [
+      { "pole": "pure", "game": "Rhythm Sprout", "year": 2023, "how": "Handcrafted rhythm-action levels with beatmaps built for original songs: you step and fight to the beat, with a story told between tracks." },
+      { "pole": "hybrid", "game": "BPM: Bullets Per Minute", "year": 2020, "how": "A retro-style FPS where you shoot, jump, dodge and reload on the beat, and every enemy action is tied to the music." }
+    ],
+    "tags": { "genres": ["rhythm", "shooter", "action"], "platforms": ["pc", "console"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://www.nintendo.com/us/store/products/rhythm-sprout-switch/", "note": "Rhythm Sprout: handcrafted rhythm action, step to the rhythm and fight to the beat, story mode between levels" },
+      { "url": "https://www.nintendo.com/us/store/products/bpm-bullets-per-minute-switch/", "note": "BPM: Bullets Per Minute: Rhythm-FPS where all your actions and enemies' actions are tied to the beat, reloading included" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.rhythm.core.kingdomheartsmelodyofmemory-nostraightroads",
+    "axis": "rhythm.core",
+    "options": [
+      { "pole": "pure", "game": "Kingdom Hearts Melody of Memory", "year": 2020, "how": "Rhythm-action over 140+ Kingdom Hearts and Disney songs: every input is timed to the chosen track." },
+      { "pole": "hybrid", "game": "No Straight Roads", "year": 2020, "how": "A third-person action adventure: you explore Vinyl City and fight musical megastar bosses in rhythm-infused combat with music-based weapons." }
+    ],
+    "tags": { "genres": ["rhythm", "action"], "platforms": ["console", "pc"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://www.nintendo.com/us/store/products/kingdom-hearts-melody-of-memory-switch/", "note": "Kingdom Hearts Melody of Memory: rhythm-action gameplay over 140+ Kingdom Hearts and Disney songs" },
+      { "url": "https://www.nintendo.com/us/store/products/no-straight-roads-switch/", "note": "No Straight Roads: action adventure with rhythm-infused third-person combat against musical megastars" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  }
+]

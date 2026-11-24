@@ -1,0 +1,2194 @@
+[
+  {
+    "id": "cmp.art.style.tlou2-cuphead",
+    "axis": "art.style",
+    "options": [
+      {
+        "pole": "realistic",
+        "game": "The Last of Us Part II",
+        "year": 2020,
+        "how": "Performance-captured actors, photoreal faces, real-world materials and lighting so violence and grief read as believable."
+      },
+      {
+        "pole": "stylized",
+        "game": "Cuphead",
+        "year": 2017,
+        "how": "Hand-drawn, hand-inked 1930s rubber hose cartoon frames over watercolor backgrounds, with film grain and old-reel filters."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "shooter",
+        "platformer"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://blog.playstation.com/?p=334953",
+        "note": "The Last of Us Part II: PS Blog: motion capture of real actors plus facial animation system aiming for most realistic in-game character rendering"
+      },
+      {
+        "url": "https://store.steampowered.com/app/268910/Cuphead/",
+        "note": "Cuphead: Steam: inspired by 1930s cartoons, traditional hand drawn cel animation, watercolor backgrounds; released Sep 29 2017"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.style.gt7-mariokart8",
+    "axis": "art.style",
+    "options": [
+      {
+        "pole": "realistic",
+        "game": "Gran Turismo 7",
+        "year": 2022,
+        "how": "Scanned, licensed real cars and real-world circuits rendered for photoreal accuracy, with a photo mode built around real camera settings."
+      },
+      {
+        "pole": "stylized",
+        "game": "Mario Kart 8",
+        "year": 2014,
+        "how": "Cartoon Nintendo characters, toy-like karts and fantasy tracks that flip into anti-gravity, so readability beats realism."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "racing"
+      ],
+      "platforms": [
+        "console",
+        "handheld"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.playstation.com/en-us/games/gran-turismo-7/",
+        "note": "Gran Turismo 7: PlayStation page: cars recreated in unparalleled detail, real-life locations, Scapes for realistic photos; released Mar 4 2022"
+      },
+      {
+        "url": "https://www.mariowiki.com/Mario_Kart_8",
+        "note": "Mario Kart 8: Super Mario Wiki: released May 2014; anti-gravity segments introduced, driving on walls and ceilings"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.style.eafc24-mariotennisaces",
+    "axis": "art.style",
+    "options": [
+      {
+        "pole": "realistic",
+        "game": "EA Sports FC 24",
+        "year": 2023,
+        "how": "Realistic licensed player likenesses and real stadiums, presented like a TV broadcast of real matches."
+      },
+      {
+        "pole": "stylized",
+        "game": "Mario Tennis Aces",
+        "year": 2018,
+        "how": "Mushroom Kingdom characters, exaggerated trick shots and glowing zone-shot effects on fantasy courts."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "sports"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/2195250/",
+        "note": "EA Sports FC 24: Steam tags Realistic, Simulation, 3D"
+      },
+      {
+        "url": "https://www.mariowiki.com/Mario_Tennis_Aces",
+        "note": "Mario Tennis Aces: Super Mario Wiki: released June 2018; Zone Shots, Trick Shots, energy gauge, Zone Speed confirmed"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.style.silenthill2-okami",
+    "axis": "art.style",
+    "options": [
+      {
+        "pole": "realistic",
+        "game": "Silent Hill 2",
+        "year": 2001,
+        "how": "Grounded small-town streets, realistic human faces and lighting, with fog and grain making the plausible feel wrong."
+      },
+      {
+        "pole": "stylized",
+        "game": "Okami",
+        "year": 2006,
+        "how": "Sumi-e ink wash look with brush outlines and paper texture; the Celestial Brush lets players paint on the screen itself."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "horror",
+        "action"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.konami.com/games/silenthill/",
+        "note": "Silent Hill 2: official page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/587620/OKAMI_HD/",
+        "note": "Okami: Steam: renowned Sumi-e ink art style; copyright 2006 for original. Celestial Brush not stated on this page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.style.mortalkombat-streetfighter2",
+    "axis": "art.style",
+    "options": [
+      {
+        "pole": "realistic",
+        "game": "Mortal Kombat",
+        "year": 1992,
+        "how": "Fighters are digitized video of real actors, giving photographic sprites that made the gore controversial."
+      },
+      {
+        "pole": "stylized",
+        "game": "Street Fighter II",
+        "year": 1991,
+        "how": "Hand-drawn, anime-influenced sprite fighters with exaggerated proportions and expressive animation."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "fighting"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/mortal_kombat_123",
+        "note": "Mortal Kombat: official page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/586200/",
+        "note": "Street Fighter II: collection page: key animation sprites, Pixel Graphics and Anime tags"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.style.myst-monumentvalley",
+    "axis": "art.style",
+    "options": [
+      {
+        "pole": "realistic",
+        "game": "Myst",
+        "year": 1993,
+        "how": "Pre-rendered 3D stills aiming for photographic plausibility, so the island feels like a real place to examine."
+      },
+      {
+        "pole": "stylized",
+        "game": "Monument Valley",
+        "year": 2014,
+        "how": "Flat pastel isometric architecture inspired by Escher, where impossible geometry is the visual identity."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "mobile",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/myst_masterpiece_edition",
+        "note": "Myst: official page"
+      },
+      {
+        "url": "https://www.monumentvalleygame.com/",
+        "note": "Monument Valley: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.style.flightsim2020-jetsetradio",
+    "axis": "art.style",
+    "options": [
+      {
+        "pole": "realistic",
+        "game": "Microsoft Flight Simulator",
+        "year": 2020,
+        "how": "Recreates the real planet with live traffic and real-time weather, so the world you fly over matches reality."
+      },
+      {
+        "pole": "stylized",
+        "game": "Jet Set Radio",
+        "year": 2000,
+        "how": "Cel-shaded characters with thick outlines and graffiti-tag art direction over a stylized Tokyo."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "sports",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1250410/",
+        "note": "Microsoft Flight Simulator: Realistic tag; live traffic and real-time weather"
+      },
+      {
+        "url": "https://store.steampowered.com/app/205950/Jet_Set_Radio/",
+        "note": "Jet Set Radio: Steam: mark turf with graffiti across Tokyo-to, references original Dreamcast release; cel-shading not stated on page"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.fidelity.downwell-uncharted4",
+    "axis": "art.fidelity",
+    "options": [
+      {
+        "pole": "low",
+        "game": "Downwell",
+        "year": 2015,
+        "how": "Tiny pixel sprites in a three-color palette (palettes unlock), so every frame reads instantly on a phone screen."
+      },
+      {
+        "pole": "high",
+        "game": "Uncharted 4: A Thief's End",
+        "year": 2016,
+        "how": "Dense photoreal environments, performance capture and detailed character models built by a large AAA team."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "action",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "mobile",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/360740/Downwell/",
+        "note": "Downwell: Steam: released Oct 15 2015, Pixel Graphics/Retro tags. Three-color and unlockable palette detail not stated on page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1659420/UNCHARTED_Legacy_of_Thieves_Collection/",
+        "note": "Uncharted 4: A Thief's End: Steam: Uncharted 4 has the largest and most detailed environments in the franchise; PlayStation page lists 05/10/2016 release. Perf capture not stated"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.fidelity.vampiresurvivors-diablo4",
+    "axis": "art.fidelity",
+    "options": [
+      {
+        "pole": "low",
+        "game": "Vampire Survivors",
+        "year": 2021,
+        "how": "Simple pixel sprites reused in huge numbers, keeping hundreds of enemies and projectiles cheap to draw."
+      },
+      {
+        "pole": "high",
+        "game": "Diablo IV",
+        "year": 2023,
+        "how": "Detailed 3D gothic environments, high-poly monsters and pre-rendered cinematics from a large AAA team."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1794680/Vampire_Survivors/",
+        "note": "Vampire Survivors: Steam: hundreds of monsters, Pixel Graphics tag; Early Access Dec 17 2021, full Oct 2022"
+      },
+      {
+        "url": "https://diablo4.blizzard.com/en-us/",
+        "note": "Diablo IV: Official site: dark fantasy action-RPG, Sanctuary regions with incredible graphics. Cinematics and 2023 date not stated on page"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.fidelity.dusk-doometernal",
+    "axis": "art.fidelity",
+    "options": [
+      {
+        "pole": "low",
+        "game": "Dusk",
+        "year": 2018,
+        "how": "Deliberately low-poly 1990s-style models with crunchy textures and a pixelation option."
+      },
+      {
+        "pole": "high",
+        "game": "Doom Eternal",
+        "year": 2020,
+        "how": "High-detail id Tech 7 demons and arenas with detailed gore and destructible demon armor rendering."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/519860/DUSK/",
+        "note": "Dusk: Steam: retro FPS inspired by 90s legends, pixelated gore; released Dec 10 2018. Low-poly not explicitly stated"
+      },
+      {
+        "url": "https://store.steampowered.com/app/782330/",
+        "note": "Doom Eternal: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.fidelity.papersplease-detroit",
+    "axis": "art.fidelity",
+    "options": [
+      {
+        "pole": "low",
+        "game": "Papers, Please",
+        "year": 2013,
+        "how": "Chunky low-resolution pixel art for faces and documents, made by a solo developer."
+      },
+      {
+        "pole": "high",
+        "game": "Detroit: Become Human",
+        "year": 2018,
+        "how": "Performance-captured actors with high-detail faces and environments to sell subtle android emotion."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "narrative",
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/239030/Papers_Please/",
+        "note": "Papers, Please: Steam: pixel-art content, document checking, developed by Lucas Pope; released Aug 8 2013"
+      },
+      {
+        "url": "https://www.quanticdream.com/en/detroit-become-human",
+        "note": "Detroit: Become Human: Quantic Dream: cast of named actors (Jesse Williams, Clancy Brown, Valorie Curry etc), 2018 copyright; perf capture not stated"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.fidelity.rivalsofaether-tekken8",
+    "axis": "art.fidelity",
+    "options": [
+      {
+        "pole": "low",
+        "game": "Rivals of Aether",
+        "year": 2017,
+        "how": "Pixel art fighters and stages with limited palettes, animated frame by frame."
+      },
+      {
+        "pole": "high",
+        "game": "Tekken 8",
+        "year": 2024,
+        "how": "Unreal Engine 5 fighters with high-fidelity skin, hair and muscle detail, lifelike animation and heavy dynamic effects."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "fighting"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/383980/Rivals_of_Aether/",
+        "note": "Rivals of Aether: Steam: Pixel Graphics/Retro tags, released Mar 28 2017. Limited palettes not stated on page"
+      },
+      {
+        "url": "https://tekken.com/",
+        "note": "Tekken 8: Official site: Powered by Unreal Engine 5, high-fidelity skin, hair and muscles; Steam lists Jan 25 2024. Stage destruction not stated"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.fidelity.artofrally-forzahorizon5",
+    "axis": "art.fidelity",
+    "options": [
+      {
+        "pole": "low",
+        "game": "Art of Rally",
+        "year": 2020,
+        "how": "Simple stylized cars and stages viewed from a top-down camera, with clean flat-colored low-detail geometry."
+      },
+      {
+        "pole": "high",
+        "game": "Forza Horizon 5",
+        "year": 2021,
+        "how": "Detailed licensed car models across a large, varied Mexico with dense jungles, weekly seasons and dynamic dust and tropical storms."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "racing"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/550320/art_of_rally/",
+        "note": "Art of Rally: Steam: stylized experience, colorful stylized environments in top-down view; released Sep 23 2020"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1551360/Forza_Horizon_5/",
+        "note": "Forza Horizon 5: Steam: open world Mexico with jungles and deserts, weekly seasons, dust and tropical storms; released Nov 8 2021. Photogrammetry not stated"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.palette.limbo-beatsaber",
+    "axis": "art.palette",
+    "options": [
+      {
+        "pole": "muted",
+        "game": "Limbo",
+        "year": 2010,
+        "how": "Black and white silhouettes in grey fog with film grain; almost no color at all."
+      },
+      {
+        "pole": "saturated",
+        "game": "Beat Saber",
+        "year": 2018,
+        "how": "Neon red and blue sabers and blocks against dark stages, with bright light shows."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "puzzle",
+        "rhythm"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "vr"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/48000/",
+        "note": "Limbo: Steam tags Dark, Minimalist, Atmospheric"
+      },
+      {
+        "url": "https://store.steampowered.com/app/620980/",
+        "note": "Beat Saber: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.palette.darkestdungeon-peggle",
+    "axis": "art.palette",
+    "options": [
+      {
+        "pole": "muted",
+        "game": "Darkest Dungeon",
+        "year": 2016,
+        "how": "Gothic ink-heavy art with dark, desaturated tones and heavy shadow."
+      },
+      {
+        "pole": "saturated",
+        "game": "Peggle",
+        "year": 2007,
+        "how": "Bright saturated pegs, rainbows and fireworks celebrating every big shot."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "strategy",
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/262060/Darkest_Dungeon/",
+        "note": "Darkest Dungeon: Steam: striking hand-drawn gothic crowquill art style, ever-encroaching dark; released Jan 19 2016"
+      },
+      {
+        "url": "https://store.steampowered.com/app/3480/",
+        "note": "Peggle: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.palette.obradinn-tetriseffect",
+    "axis": "art.palette",
+    "options": [
+      {
+        "pole": "muted",
+        "game": "Return of the Obra Dinn",
+        "year": 2018,
+        "how": "Dithered 1-bit style black-and-white graphics with minimal color, evoking early monochrome computer games."
+      },
+      {
+        "pole": "saturated",
+        "game": "Tetris Effect",
+        "year": 2018,
+        "how": "Vivid particle effects and color that shift with music in each stage."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "vr"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/653530/Return_of_the_Obra_Dinn/",
+        "note": "Return of the Obra Dinn: Steam: An Insurance Adventure with Minimal Color, Kotaku quote on stippled black-and-white graphics; released Oct 18 2018. Early Mac not stated"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1003590/Tetris_Effect_Connected/",
+        "note": "Tetris Effect: Steam (Connected edition): each stage has its own music, graphical style and background that evolve as you play; original 2018 year not on page"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.palette.inside-katamaridamacy",
+    "axis": "art.palette",
+    "options": [
+      {
+        "pole": "muted",
+        "game": "Inside",
+        "year": 2016,
+        "how": "Dark, near-monochrome greys and blacks; color is rationed so the world stays bleak."
+      },
+      {
+        "pole": "saturated",
+        "game": "Katamari Damacy",
+        "year": 2004,
+        "how": "Bright toy-like primary colors on simple low-poly objects and candy-colored worlds."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle",
+        "platformer"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/304430/",
+        "note": "Inside: Steam tags Dark, Minimalist, Atmospheric"
+      },
+      {
+        "url": "https://store.steampowered.com/app/848350/",
+        "note": "Katamari Damacy: REROLL remaster page, Colorful tag"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.palette.amnesia-firewatch",
+    "axis": "art.palette",
+    "options": [
+      {
+        "pole": "muted",
+        "game": "Amnesia: The Dark Descent",
+        "year": 2010,
+        "how": "Dark, desaturated castle interiors lit by a dim lantern, so darkness itself is the dominant color."
+      },
+      {
+        "pole": "saturated",
+        "game": "Firewatch",
+        "year": 2016,
+        "how": "Bold painterly orange, pink and teal forest skies that shift with the time of day."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "horror",
+        "narrative"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/57300/",
+        "note": "Amnesia: The Dark Descent: official page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/383870/",
+        "note": "Firewatch: Steam tag Colorful"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.palette.adarkroom-adventurecapitalist",
+    "axis": "art.palette",
+    "options": [
+      {
+        "pole": "muted",
+        "game": "A Dark Room",
+        "year": 2013,
+        "how": "A minimalist text adventure: plain text and buttons on a bare page, with almost no color or art."
+      },
+      {
+        "pole": "saturated",
+        "game": "AdVenture Capitalist",
+        "year": 2014,
+        "how": "Bright cartoon businesses and colorful buttons in a retro-futurist style."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "idle"
+      ],
+      "platforms": [
+        "web",
+        "mobile",
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://adarkroom.doublespeakgames.com/",
+        "note": "A Dark Room: official site: a minimalist text adventure"
+      },
+      {
+        "url": "https://store.steampowered.com/app/346900/",
+        "note": "AdVenture Capitalist: Steam tags Colorful, 2D"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ui.diegesis.deadspace-worldofwarcraft",
+    "axis": "ui.diegesis",
+    "options": [
+      {
+        "pole": "diegetic",
+        "game": "Dead Space",
+        "year": 2008,
+        "how": "Health is a meter on the RIG suit spine and ammo shows on the gun; menus are holograms projected in the world."
+      },
+      {
+        "pole": "hud",
+        "game": "World of Warcraft",
+        "year": 2004,
+        "how": "Dense overlay HUD of action bars, unit frames and minimap, extended further by player-made addons."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "horror",
+        "shooter",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/dead_space",
+        "note": "Dead Space: release Oct 24 2008; page review notes health indicator and UI are part of the game world"
+      },
+      {
+        "url": "https://warcraft.wiki.gg/wiki/AddOn",
+        "note": "World of Warcraft: addons augment or replace default UI incl. action bars and unit frames; year not on page"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.ui.diegesis.metro2033-borderlands",
+    "axis": "ui.diegesis",
+    "options": [
+      {
+        "pole": "diegetic",
+        "game": "Metro 2033",
+        "year": 2010,
+        "how": "A wristwatch shows gas mask timer and a light that signals stealth; the mask visor cracks as it takes damage."
+      },
+      {
+        "pole": "hud",
+        "game": "Borderlands",
+        "year": 2009,
+        "how": "Shield and health bars, XP bar and floating damage numbers overlaid on the screen."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "rpg",
+        "horror"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/43110/",
+        "note": "Metro 2033: official page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/8980/",
+        "note": "Borderlands: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ui.diegesis.farcry2-cod4",
+    "axis": "ui.diegesis",
+    "options": [
+      {
+        "pole": "diegetic",
+        "game": "Far Cry 2",
+        "year": 2008,
+        "how": "The player holds up a physical map and GPS in hand to navigate; the game keeps running while you look."
+      },
+      {
+        "pole": "hud",
+        "game": "Call of Duty 4: Modern Warfare",
+        "year": 2007,
+        "how": "Minimap, compass, ammo counter and hit markers all overlay the screen."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/19900/",
+        "note": "Far Cry 2: official page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/7940/",
+        "note": "Call of Duty 4: Modern Warfare: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ui.diegesis.alienisolation-left4dead",
+    "axis": "ui.diegesis",
+    "options": [
+      {
+        "pole": "diegetic",
+        "game": "Alien: Isolation",
+        "year": 2014,
+        "how": "The motion tracker is a handheld device the player raises; saving uses in-world emergency phones."
+      },
+      {
+        "pole": "hud",
+        "game": "Left 4 Dead",
+        "year": 2008,
+        "how": "Team health bars on screen and colored outlines of teammates and items through walls."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "horror",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/214490/",
+        "note": "Alien: Isolation: official page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/500/",
+        "note": "Left 4 Dead: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ui.diegesis.firewatch-witcher3",
+    "axis": "ui.diegesis",
+    "options": [
+      {
+        "pole": "diegetic",
+        "game": "Firewatch",
+        "year": 2016,
+        "how": "No HUD: Henry raises a paper map and compass in his hands to navigate, and the game keeps running while he looks."
+      },
+      {
+        "pole": "hud",
+        "game": "The Witcher 3: Wild Hunt",
+        "year": 2015,
+        "how": "Minimap with quest markers, health and stamina bars, and buff icons overlay the view."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "narrative",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/383870/",
+        "note": "Firewatch: official page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/292030/",
+        "note": "The Witcher 3: Wild Hunt: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ui.diegesis.halflifealyx-doometernal",
+    "axis": "ui.diegesis",
+    "options": [
+      {
+        "pole": "diegetic",
+        "game": "Half-Life: Alyx",
+        "year": 2020,
+        "how": "Healing is a physical act in the world: you inject health syringes or use wall-mounted health stations that jab needles into your hand."
+      },
+      {
+        "pole": "hud",
+        "game": "Doom Eternal",
+        "year": 2020,
+        "how": "A full HUD of health, armor and ammo counts plus equipment icons, with over 20 options to customize it."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter"
+      ],
+      "platforms": [
+        "vr",
+        "pc",
+        "console"
+      ],
+      "era": "2020s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.pcgamer.com/half-life-alyx-review/",
+        "note": "Half-Life: Alyx: health syringes and wall-mounted health stations that inject into the back of your fingers"
+      },
+      {
+        "url": "https://slayersclub.bethesda.net/en-AU/article/doom-eternal-custom-huds",
+        "note": "Doom Eternal: customizable HUD with over 20 options"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ui.diegesis.journey-quake",
+    "axis": "ui.diegesis",
+    "options": [
+      {
+        "pole": "diegetic",
+        "game": "Journey",
+        "year": 2012,
+        "how": "No HUD: the glowing glyphs on your scarf show how much flight energy you have left."
+      },
+      {
+        "pole": "hud",
+        "game": "Quake",
+        "year": 1996,
+        "how": "A status bar at the bottom shows health, armor, ammo and weapons."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "narrative",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/638230/",
+        "note": "Journey: official page"
+      },
+      {
+        "url": "https://quakewiki.org/wiki/Quake",
+        "note": "Quake: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ui.transparency.pokemonredblue-pathofexile",
+    "axis": "ui.transparency",
+    "options": [
+      {
+        "pole": "hidden",
+        "game": "Pokemon Red and Blue",
+        "year": 1996,
+        "how": "Hidden DVs and stat experience shape stats but are never shown in game; players had to infer them."
+      },
+      {
+        "pole": "spreadsheet",
+        "game": "Path of Exile",
+        "year": 2013,
+        "how": "A full character sheet lists every resistance, damage and defense number, with exact item affix values."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg"
+      ],
+      "platforms": [
+        "handheld",
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.smogon.com/ingame/guides/rby_gsc_stats",
+        "note": "Pokemon Red and Blue: DVs are not visible to the player; Gen 1 terms are DVs and stat experience, not IVs/EVs"
+      },
+      {
+        "url": "https://store.steampowered.com/app/238960/",
+        "note": "Path of Exile: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ui.transparency.animalcrossingnh-eu4",
+    "axis": "ui.transparency",
+    "options": [
+      {
+        "pole": "hidden",
+        "game": "Animal Crossing: New Horizons",
+        "year": 2020,
+        "how": "Villager friendship is a hidden point value; players read it only through gifts and dialogue."
+      },
+      {
+        "pole": "spreadsheet",
+        "game": "Europa Universalis IV",
+        "year": 2013,
+        "how": "Nested tooltips break down every modifier behind a value, with ledgers comparing nations."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy"
+      ],
+      "platforms": [
+        "handheld",
+        "console",
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://nookipedia.com/wiki/Friendship",
+        "note": "Animal Crossing: New Horizons: friendship is hidden 0-255 value inferred from gifts, dialogue, photos and Katrina"
+      },
+      {
+        "url": "https://store.steampowered.com/app/236850/",
+        "note": "Europa Universalis IV: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ui.transparency.bindingofisaac-riskofrain2",
+    "axis": "ui.transparency",
+    "options": [
+      {
+        "pole": "hidden",
+        "game": "The Binding of Isaac: Rebirth",
+        "year": 2014,
+        "how": "Items show only a name and short cryptic tagline on pickup, so players learn effects by experiment or wiki."
+      },
+      {
+        "pole": "spreadsheet",
+        "game": "Risk of Rain 2",
+        "year": 2020,
+        "how": "The logbook and item descriptions give exact percentages and stacking values for each item."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://bindingofisaacrebirth.wiki.gg/wiki/Items",
+        "note": "The Binding of Isaac: Rebirth: items carry a name and short tagline (e.g. D6 'Reroll your destiny') separate from full effect"
+      },
+      {
+        "url": "https://riskofrain2.wiki.gg/wiki/Soldier%27s_Syringe",
+        "note": "Risk of Rain 2: descriptions give exact values e.g. +15% attack speed (+15% per stack); early access was 2019, 1.0 in 2020"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ui.transparency.mariokart8-gt7",
+    "axis": "ui.transparency",
+    "options": [
+      {
+        "pole": "hidden",
+        "game": "Mario Kart 8",
+        "year": 2014,
+        "how": "Kart combos show five stat bars, while values like mini-turbo and water, air and anti-gravity speed stay hidden."
+      },
+      {
+        "pole": "spreadsheet",
+        "game": "Gran Turismo 7",
+        "year": 2022,
+        "how": "Exact horsepower, weight and performance points, with numeric tuning sliders for parts."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "racing"
+      ],
+      "platforms": [
+        "console",
+        "handheld"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.mariowiki.com/Mario_Kart_8",
+        "note": "Mario Kart 8: five stat bars shown; mini-turbo and terrain speeds/handling are hidden stats; invincibility not confirmed"
+      },
+      {
+        "url": "https://www.playstation.com/en-us/games/gran-turismo-7/",
+        "note": "Gran Turismo 7: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ui.transparency.smashmelee-riskofrain2",
+    "axis": "ui.transparency",
+    "options": [
+      {
+        "pole": "hidden",
+        "game": "Super Smash Bros. Melee",
+        "year": 2001,
+        "how": "No in-game move data; techniques like wavedashing, a physics engine exploit, were discovered by players after release."
+      },
+      {
+        "pole": "spreadsheet",
+        "game": "Risk of Rain 2",
+        "year": 2020,
+        "how": "Item descriptions give exact values and stacking, such as Soldier's Syringe: +15% attack speed, +15% per extra stack."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "fighting",
+        "action",
+        "shooter"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.ssbwiki.com/Wavedash",
+        "note": "Super Smash Bros. Melee: wavedash is a physics engine exploit first found by players in 2002"
+      },
+      {
+        "url": "https://riskofrain2.wiki.gg/wiki/Soldier%27s_Syringe",
+        "note": "Risk of Rain 2: Increases attack speed by 15% (+15% per stack)"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ui.transparency.bloodborne-diablo4",
+    "axis": "ui.transparency",
+    "options": [
+      {
+        "pole": "hidden",
+        "game": "Bloodborne",
+        "year": 2015,
+        "how": "Rising Insight silently changes the world, adding messengers, enemies and sights at thresholds that players had to map out themselves."
+      },
+      {
+        "pole": "spreadsheet",
+        "game": "Diablo IV",
+        "year": 2023,
+        "how": "Items roll affixes with exact numeric bonuses (damage, crit chance, resistances) listed on each tooltip."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg",
+        "horror"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://bloodborne.wiki.fextralife.com/Insight",
+        "note": "Bloodborne: Insight unlocks and world changes at thresholds"
+      },
+      {
+        "url": "https://diablo4.wiki.fextralife.com/Affixes",
+        "note": "Diablo IV: affixes add stats such as increased damage, critical hit chance and resistances"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ui.transparency.animalcrossingnh-darkestdungeon",
+    "axis": "ui.transparency",
+    "options": [
+      {
+        "pole": "hidden",
+        "game": "Animal Crossing: New Horizons",
+        "year": 2020,
+        "how": "Villager friendship is a point value the game never shows; players gauge it through Katrina's fortune readings and villager dialogue."
+      },
+      {
+        "pole": "spreadsheet",
+        "game": "Darkest Dungeon",
+        "year": 2016,
+        "how": "Each hero's stress is a visible gauge from 0 to 200: at 100 they turn afflicted or virtuous, at 200 they suffer a heart attack."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "rpg",
+        "strategy",
+        "horror"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://nookipedia.com/wiki/Friendship",
+        "note": "Animal Crossing: New Horizons: friendship points; level read via Katrina and villager dialogue"
+      },
+      {
+        "url": "https://darkestdungeon.wiki.gg/wiki/Stress",
+        "note": "Darkest Dungeon: stress bar from 0 to 200, affliction check at 100, heart attack at 200"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.audio.music.limbo-doom2016",
+    "axis": "audio.music",
+    "options": [
+      {
+        "pole": "ambient",
+        "game": "Limbo",
+        "year": 2010,
+        "how": "Almost no music; ambient drones and sound effects carry the mood."
+      },
+      {
+        "pole": "adaptive",
+        "game": "Doom (2016)",
+        "year": 2016,
+        "how": "Mick Gordon metal score that ramps up when combat starts and calms when arenas are cleared."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "puzzle",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/48000/",
+        "note": "Limbo: official page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/379720/",
+        "note": "Doom (2016): official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.audio.music.monkeyisland2-thief",
+    "axis": "audio.music",
+    "options": [
+      {
+        "pole": "adaptive",
+        "game": "Monkey Island 2: LeChuck's Revenge",
+        "year": 1991,
+        "how": "The iMUSE system transitions music seamlessly between locations and characters."
+      },
+      {
+        "pole": "ambient",
+        "game": "Thief: The Dark Project",
+        "year": 1998,
+        "how": "Ambient soundscapes instead of a score, so the player can listen for guards and footsteps."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "narrative",
+        "action"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/32460/",
+        "note": "Monkey Island 2: LeChuck's Revenge: official page"
+      },
+      {
+        "url": "https://www.gog.com/en/game/thief_gold",
+        "note": "Thief: The Dark Project: 1998 Looking Glass; players rely on hearing guards, footsteps and noise; ambient score not detailed"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.audio.music.metalhellsinger-inside",
+    "axis": "audio.music",
+    "options": [
+      {
+        "pole": "adaptive",
+        "game": "Metal: Hellsinger",
+        "year": 2022,
+        "how": "The metal score intensifies as you stay in sync and build fury, so the music grows with how well you play."
+      },
+      {
+        "pole": "ambient",
+        "game": "Inside",
+        "year": 2016,
+        "how": "An ambient soundtrack and sound design carry the mood instead of melodic themes."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "rhythm",
+        "puzzle",
+        "platformer"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1061910/",
+        "note": "Metal: Hellsinger: the more in sync you are, the more intense the music becomes"
+      },
+      {
+        "url": "https://store.steampowered.com/app/304430/",
+        "note": "Inside: acclaimed for its ambient soundtrack and moody atmosphere"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.audio.music.reddeadredemption-thelongdark",
+    "axis": "audio.music",
+    "options": [
+      {
+        "pole": "adaptive",
+        "game": "Red Dead Redemption",
+        "year": 2010,
+        "how": "Music is built from stems in a shared key and tempo, layered in and out as riding and gunfights happen."
+      },
+      {
+        "pole": "ambient",
+        "game": "The Long Dark",
+        "year": 2014,
+        "how": "Mostly wind, wildlife and silence, with music used sparingly."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "survival"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/2668510/",
+        "note": "Red Dead Redemption: official page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/305620/",
+        "note": "The Long Dark: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.audio.music.apeout-thief",
+    "axis": "audio.music",
+    "options": [
+      {
+        "pole": "adaptive",
+        "game": "Ape Out",
+        "year": 2019,
+        "how": "A dynamic soundtrack of jazz drums and cymbals is driven by the action, punctuating each smash and kill."
+      },
+      {
+        "pole": "ambient",
+        "game": "Thief: The Dark Project",
+        "year": 1998,
+        "how": "Sound is information: guards react to noise and players lean on doors to listen, so the soundscape stays sparse."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/ape_out",
+        "note": "Ape Out: dynamic soundtrack of drums, cymbals and decapitations drives the action"
+      },
+      {
+        "url": "https://www.gog.com/en/game/thief_gold",
+        "note": "Thief: The Dark Project: sound travels, guards notice loud noises, players lean on doors to listen"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.audio.music.alienisolation-darkwood",
+    "axis": "audio.music",
+    "options": [
+      {
+        "pole": "adaptive",
+        "game": "Alien: Isolation",
+        "year": 2014,
+        "how": "Music reacts to the alien's proximity and the player's situation, swelling when threat nears."
+      },
+      {
+        "pole": "ambient",
+        "game": "Darkwood",
+        "year": 2017,
+        "how": "Ambient soundscape of creaks, wind and distant noises instead of a melodic score."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "horror",
+        "survival"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/214490/",
+        "note": "Alien: Isolation: official page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/274520/",
+        "note": "Darkwood: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.audio.music.journey-thewitness",
+    "axis": "audio.music",
+    "options": [
+      {
+        "pole": "adaptive",
+        "game": "Journey",
+        "year": 2012,
+        "how": "The score follows the player's movement and progress, swelling at key moments."
+      },
+      {
+        "pole": "ambient",
+        "game": "The Witness",
+        "year": 2016,
+        "how": "No music at all; only environmental sounds accompany the puzzles."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "narrative",
+        "puzzle"
+      ],
+      "platforms": [
+        "console",
+        "pc",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/638230/",
+        "note": "Journey: official page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/210970/",
+        "note": "The Witness: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.audio.sync.necrodancer-beatsaber-hellblade",
+    "axis": "audio.sync",
+    "options": [
+      {
+        "pole": "synced",
+        "game": "Crypt of the NecroDancer",
+        "year": 2015,
+        "how": "Every move and attack must land on the beat of the song; missing the beat costs your multiplier."
+      },
+      {
+        "pole": "synced",
+        "game": "Beat Saber",
+        "year": 2018,
+        "how": "Blocks fly at the player in time with the music and are sliced on the beat in VR."
+      },
+      {
+        "pole": "independent",
+        "game": "Hellblade: Senua's Sacrifice",
+        "year": 2017,
+        "how": "Binaural voices and sound build the experience, but combat and puzzles are not timed to music."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rhythm",
+        "action",
+        "horror"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "vr"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/247080/",
+        "note": "Crypt of the NecroDancer: Steam: released Apr 23 2015; 'Move on the beat to navigate an ever changing dungeon' (multiplier loss not stated on page)"
+      },
+      {
+        "url": "https://store.steampowered.com/app/620980/",
+        "note": "Beat Saber: Steam: VR rhythm game, slash blocks to the beat; page lists full release May 2019 (Early Access began May 2018)"
+      },
+      {
+        "url": "https://www.pcgamer.com/hellblade-senuas-sacrifice-review/",
+        "note": "Hellblade: Senua's Sacrifice: review: voices swirl around the player in 3D binaural audio"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.audio.sync.rez-ikaruga",
+    "axis": "audio.sync",
+    "options": [
+      {
+        "pole": "synced",
+        "game": "Rez",
+        "year": 2001,
+        "how": "Lock-on shots fire quantized to the beat and each hit adds a sound to the music."
+      },
+      {
+        "pole": "independent",
+        "game": "Ikaruga",
+        "year": 2001,
+        "how": "Polarity switching and chaining follow enemy patterns, not the soundtrack."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rhythm",
+        "shooter"
+      ],
+      "platforms": [
+        "console",
+        "pc",
+        "vr"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/636450/",
+        "note": "Rez: Rez Infinite Steam page: original 2001 SEGA; shooting yields colors and sounds that sync to the beat (lock-on quantization not stated)"
+      },
+      {
+        "url": "https://store.steampowered.com/app/253750/Ikaruga/",
+        "note": "Ikaruga: Steam: switch black/white polarity, absorb same-color bullets, chain bonus for 3 same-polarity kills; 2001 arcade year not on page"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.audio.sync.hifirush-dmc5",
+    "axis": "audio.sync",
+    "options": [
+      {
+        "pole": "synced",
+        "game": "Hi-Fi Rush",
+        "year": 2023,
+        "how": "The world and enemies move to the beat; hitting on the beat deals more damage."
+      },
+      {
+        "pole": "independent",
+        "game": "Devil May Cry 5",
+        "year": 2019,
+        "how": "Combos are graded by style rank; music intensifies with rank but timing ignores the beat."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rhythm"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://hifirush.com/",
+        "note": "Hi-Fi Rush: the whole world moves to the beat, from Chai to the environment and enemy attacks"
+      },
+      {
+        "url": "https://store.steampowered.com/app/601150/",
+        "note": "Devil May Cry 5: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    },
+    "note": "Hi-Fi Rush confirmed on the official site; Devil May Cry 5 side still unconfirmed (no reachable source in the gap-fill round)."
+  },
+  {
+    "id": "cmp.audio.sync.metalhellsinger-doom2016",
+    "axis": "audio.sync",
+    "options": [
+      {
+        "pole": "synced",
+        "game": "Metal: Hellsinger",
+        "year": 2022,
+        "how": "Shooting on the beat is rewarded: the more in sync you stay, the more intense the music gets and the more destruction you cause."
+      },
+      {
+        "pole": "independent",
+        "game": "Doom (2016)",
+        "year": 2016,
+        "how": "Fast, fluid movement and weapons that fire at their own rates; nothing in combat is timed or scored against the soundtrack."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "rhythm"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/metal_hellsinger",
+        "note": "Metal: Hellsinger: rhythm FPS where shooting on the beat intensifies the music and destruction"
+      },
+      {
+        "url": "https://www.gog.com/en/game/doom_2016",
+        "note": "Doom (2016): fast, fluid movement and intense first-person combat with no cover"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.audio.sync.audiosurf-forzahorizon5",
+    "axis": "audio.sync",
+    "options": [
+      {
+        "pole": "synced",
+        "game": "Audiosurf",
+        "year": 2008,
+        "how": "Any song from your library generates a track whose blocks and slopes follow the music."
+      },
+      {
+        "pole": "independent",
+        "game": "Forza Horizon 5",
+        "year": 2021,
+        "how": "Licensed radio stations play while you drive; the music never shapes the track, timing or scoring."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "racing",
+        "rhythm"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/12900/",
+        "note": "Audiosurf: Steam: released Feb 15 2008; 'shape, speed and mood of each ride is determined by the song you choose', own MP3/OGG etc."
+      },
+      {
+        "url": "https://store.steampowered.com/app/1551360/",
+        "note": "Forza Horizon 5: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.audio.sync.patapon-pikmin",
+    "axis": "audio.sync",
+    "options": [
+      {
+        "pole": "synced",
+        "game": "Patapon",
+        "year": 2007,
+        "how": "Units obey drum commands entered on the beat; keeping rhythm builds fever."
+      },
+      {
+        "pole": "independent",
+        "game": "Pikmin",
+        "year": 2001,
+        "how": "Commands are given freely in real time with no relation to the music."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rhythm",
+        "strategy"
+      ],
+      "platforms": [
+        "handheld",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/2383200/PATAPON_12_REPLAY/",
+        "note": "Patapon: Steam (1+2 Replay): original released 2007; Pata/Pon/Don/Chaka drum commands (fever detail not described)"
+      },
+      {
+        "url": "https://www.nintendo.com/us/store/products/pikmin-1-switch/",
+        "note": "Pikmin: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.audio.music.tetriseffect-darkwood",
+    "axis": "audio.music",
+    "options": [
+      {
+        "pole": "adaptive",
+        "game": "Tetris Effect",
+        "year": 2018,
+        "how": "Music, backgrounds and sounds pulse and shift in sync with how you play each stage."
+      },
+      {
+        "pole": "ambient",
+        "game": "Darkwood",
+        "year": 2017,
+        "how": "Fear comes from ambient sound, footsteps and noises in the dark rather than a driving score."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle",
+        "horror",
+        "survival"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "vr"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.tetriseffect.game/",
+        "note": "Tetris Effect: music, backgrounds and sounds pulse in perfect sync with how you are playing"
+      },
+      {
+        "url": "https://www.gog.com/en/game/darkwood",
+        "note": "Darkwood: noted for sound design; frightens through ambient sound and footsteps"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.art.palette.obradinn-apeout",
+    "axis": "art.palette",
+    "options": [
+      {
+        "pole": "muted",
+        "game": "Return of the Obra Dinn",
+        "year": 2018,
+        "how": "Rendered with minimal color: a two-tone look that recalls early monochrome computer screens."
+      },
+      {
+        "pole": "saturated",
+        "game": "Ape Out",
+        "year": 2019,
+        "how": "Colorfully stylized art built from bold, flat colors rather than realistic shading."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle",
+        "narrative",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/return_of_the_obra_dinn",
+        "note": "Return of the Obra Dinn: an insurance adventure with minimal color"
+      },
+      {
+        "url": "https://www.gog.com/en/game/ape_out",
+        "note": "Ape Out: a wildly intense and colorfully stylized smash-em-up"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  }
+]

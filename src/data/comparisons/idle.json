@@ -1,0 +1,314 @@
+[
+  {
+    "id": "cmp.idle.offline.clickerheroes-candybox",
+    "axis": "idle.offline",
+    "options": [
+      { "pole": "offline", "game": "Clicker Heroes", "year": 2014, "how": "Hired heroes keep fighting while you are away, so gold piles up between sessions." },
+      { "pole": "active", "game": "Candy Box!", "year": 2013, "how": "Candies accrue on a per-second page timer only while the game is open; closing it simply pauses everything." }
+    ],
+    "tags": { "genres": ["idle", "rpg"], "platforms": ["pc", "mobile", "web"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/363970/", "note": "Clicker Heroes: your heroes never quit, even when you do, so gold piles up while you sleep" },
+      { "url": "https://candybox2.github.io/candybox/", "note": "Candy Box!: official hosted game; production runs on in-page setInterval timers with no offline catch-up" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.offline.realmgrinder-adarkroom",
+    "axis": "idle.offline",
+    "options": [
+      { "pole": "offline", "game": "Realm Grinder", "year": 2015, "how": "The kingdom keeps earning wealth while you are not online, so short check-ins collect long stretches of income." },
+      { "pole": "active", "game": "A Dark Room", "year": 2013, "how": "Villager income and population grow on in-game timers that tick only while the game is running." }
+    ],
+    "tags": { "genres": ["idle", "narrative", "rpg"], "platforms": ["pc", "mobile", "web"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/610080/", "note": "Realm Grinder: grow a realm that earns wealth even while you're not online" },
+      { "url": "https://github.com/doublespeakgames/adarkroom", "note": "A Dark Room: official source; income is collected by a one-second in-game timer, no offline calculation" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.offline.idleslayer-adarkroom",
+    "axis": "idle.offline",
+    "options": [
+      { "pole": "offline", "game": "Idle Slayer", "year": 2020, "how": "Combines active runs with offline progression, so returning players find banked progress." },
+      { "pole": "active", "game": "A Dark Room", "year": 2013, "how": "Stores and the village only advance while the page runs; stepping away pauses the world." }
+    ],
+    "tags": { "genres": ["idle", "action", "narrative"], "platforms": ["pc", "mobile", "web"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/1353300/", "note": "Idle Slayer: deep idle RPG with active and offline progression" },
+      { "url": "https://github.com/doublespeakgames/adarkroom", "note": "A Dark Room: official source; timers drive income only while the game runs" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.offline.cookieclicker-paperclips",
+    "axis": "idle.offline",
+    "options": [
+      { "pole": "offline", "game": "Cookie Clicker", "year": 2013, "how": "Offline baking is earned: the Twin Gates heavenly upgrade keeps baking at 5% CpS while closed, more with later upgrades." },
+      { "pole": "active", "game": "Universal Paperclips", "year": 2017, "how": "Clips, funds and projects advance on in-page ticks; closing the tab pauses the factory with no catch-up." }
+    ],
+    "tags": { "genres": ["idle", "narrative"], "platforms": ["pc", "mobile", "web"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://cookieclicker.wiki.gg/wiki/Prestige", "note": "Cookie Clicker: Twin Gates of Transcendence keeps making cookies while closed at 5% CpS" },
+      { "url": "https://www.decisionproblem.com/paperclips/main.js", "note": "Universal Paperclips: official game code runs on setInterval ticks with no offline progress calculation" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.offline.thelonging-paperclips",
+    "axis": "idle.offline",
+    "options": [
+      { "pole": "offline", "game": "The Longing", "year": 2020, "how": "A 400-day real-time countdown keeps running even after you exit the game; you can simply come back later." },
+      { "pole": "active", "game": "Universal Paperclips", "year": 2017, "how": "Growth happens only while the page is open, so attention during play drives every phase." }
+    ],
+    "tags": { "genres": ["idle", "narrative"], "platforms": ["pc", "mobile", "web"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/893850/", "note": "The Longing: the game counts down the 400 days even when you stop playing and exit" },
+      { "url": "https://www.decisionproblem.com/paperclips/main.js", "note": "Universal Paperclips: official game code, tick-based loop without offline catch-up" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.prestige.cookieclicker-paperclips",
+    "axis": "idle.prestige",
+    "options": [
+      { "pole": "prestige", "game": "Cookie Clicker", "year": 2013, "how": "Ascending resets the bakery for prestige levels (+1% CpS each) and heavenly chips spent on permanent upgrades." },
+      { "pole": "none", "game": "Universal Paperclips", "year": 2017, "how": "One climb through narrative phases, from clip business to Earth to space, with no resets along the way." }
+    ],
+    "tags": { "genres": ["idle", "narrative"], "platforms": ["pc", "mobile", "web"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://cookieclicker.wiki.gg/wiki/Prestige", "note": "Cookie Clicker: ascension grants prestige levels and heavenly chips, +1% CpS per level" },
+      { "url": "https://www.decisionproblem.com/paperclips/index2.html", "note": "Universal Paperclips: official game page" }
+    ],
+    "note": "Universal Paperclips offers an optional new-universe restart with a small bonus only after the ending; the main game has no prestige loop.",
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.idle.prestige.melvoridle-antimatterdimensions",
+    "axis": "idle.prestige",
+    "options": [
+      { "pole": "none", "game": "Melvor Idle", "year": 2021, "how": "No prestige by design: 20+ skills level up in one continuous save that never resets." },
+      { "pole": "prestige", "game": "Antimatter Dimensions", "year": 2016, "how": "Reaching Infinity resets production for Infinity Points spent on permanent upgrades, with further prestige layers beyond." }
+    ],
+    "tags": { "genres": ["idle", "rpg"], "platforms": ["pc", "mobile", "web"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://wiki.melvoridle.com/w/FAQ", "note": "Melvor Idle: no prestige system, the developer is not in favour of them" },
+      { "url": "https://store.steampowered.com/app/1399720/", "note": "Antimatter Dimensions: multiple layers of prestige, reach Infinity for Infinity points" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.prestige.candybox-clickerheroes",
+    "axis": "idle.prestige",
+    "options": [
+      { "pole": "none", "game": "Candy Box!", "year": 2013, "how": "One continuous adventure: candies, gear and unlocked areas carry forward and are never traded in for a reset." },
+      { "pole": "prestige", "game": "Clicker Heroes", "year": 2014, "how": "Ascension resets all progress for Hero Souls that buy Ancients with permanent power." }
+    ],
+    "tags": { "genres": ["idle", "rpg"], "platforms": ["pc", "mobile", "web"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://candybox2.github.io/candybox/", "note": "Candy Box!: official hosted game; the code has no prestige or reset loop" },
+      { "url": "https://store.steampowered.com/app/363970/", "note": "Clicker Heroes: Ascension, the big reset that trades all progress for Hero Souls and permanent power" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.prestige.thelonging-egginc",
+    "axis": "idle.prestige",
+    "options": [
+      { "pole": "none", "game": "The Longing", "year": 2020, "how": "A single 400-day wait for the king to wake; the save is one unrepeated stretch, not a reset loop." },
+      { "pole": "prestige", "game": "Egg, Inc.", "year": 2016, "how": "Repeated prestiges restart the farm for lasting boosts, with a nested prestige system layered on top." }
+    ],
+    "tags": { "genres": ["idle", "simulation", "narrative"], "platforms": ["pc", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/893850/", "note": "The Longing: the king sleeps 400 days; come back after 400 days to see how it ends" },
+      { "url": "https://apps.apple.com/us/app/egg-inc/id993492744", "note": "Egg, Inc.: balance strategies through many prestiges, nested prestige system" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.prestige.melvoridle-realmgrinder",
+    "axis": "idle.prestige",
+    "options": [
+      { "pole": "none", "game": "Melvor Idle", "year": 2021, "how": "Progress is permanent: skill levels and the bank only ever grow, so long-term goals are caps, not resets." },
+      { "pole": "prestige", "game": "Realm Grinder", "year": 2015, "how": "Reincarnations reset the realm to unlock new factions and systems over months of content." }
+    ],
+    "tags": { "genres": ["idle", "rpg", "strategy"], "platforms": ["pc", "mobile", "web"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://wiki.melvoridle.com/w/FAQ", "note": "Melvor Idle: no prestige system planned" },
+      { "url": "https://store.steampowered.com/app/610080/", "note": "Realm Grinder: unlock new factions, research, reincarnations" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.offline.bongocat-revolutionidle",
+    "axis": "idle.offline",
+    "options": [
+      { "pole": "active", "game": "Bongo Cat", "year": 2025, "how": "Points come only from your own key presses and clicks while it runs on the taskbar; walk away and nothing is earned." },
+      { "pole": "offline", "game": "Revolution Idle", "year": 2025, "how": "Production keeps running while you are away, so offline progress is waiting on return alongside automation." }
+    ],
+    "tags": { "genres": ["idle"], "platforms": ["pc", "mobile"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/3419430/", "note": "Bongo Cat: every time you press a key, Bongo Cat punches your taskbar; type, click, play and work to collect points and hat drops" },
+      { "url": "https://store.steampowered.com/app/2763740/", "note": "Revolution Idle: idle incremental with offline progress, keep gaining while you're away; prestige layers and automation" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.offline.idlecolony-yourchronicle",
+    "axis": "idle.offline",
+    "options": [
+      { "pole": "active", "game": "Idle Colony", "year": 2024, "how": "No offline income by design: the developer pitches it as a short, intense run of active play with replayable builds." },
+      { "pole": "offline", "game": "Your Chronicle", "year": 2021, "how": "An offline bonus replays the progress made while the game was closed the next time you launch it." }
+    ],
+    "tags": { "genres": ["idle", "rpg", "strategy"], "platforms": ["pc", "mobile"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://steamcommunity.com/app/2843640/discussions/0/604142859631723610/", "note": "Idle Colony: developer reply, no offline income is the design intention; a short intense active experience" },
+      { "url": "https://store.steampowered.com/app/1546320/", "note": "Your Chronicle: offline bonus allows progress made when the game is closed to be reproduced at launch" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.offline.candybox2-tapninja",
+    "axis": "idle.offline",
+    "options": [
+      { "pole": "active", "game": "Candy Box 2", "year": 2013, "how": "Candies and quests tick on in-page timers only while the tab is open; there is no catch-up for time spent away." },
+      { "pole": "offline", "game": "Tap Ninja", "year": 2022, "how": "Your village keeps earning gold even while you are offline, so returning players spend a banked sum on upgrades." }
+    ],
+    "tags": { "genres": ["idle", "rpg", "action"], "platforms": ["web", "pc", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://candybox2.github.io/", "note": "Candy Box 2: official hosted game; candybox2.js runs on setInterval timers and only uses Date to label saves, so nothing accrues while closed" },
+      { "url": "https://store.steampowered.com/app/1891700/", "note": "Tap Ninja: build up your village to earn even more gold even while you are offline" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.offline.idlecolony-chillquarium",
+    "axis": "idle.offline",
+    "options": [
+      { "pole": "active", "game": "Idle Colony", "year": 2024, "how": "Progress needs the game open: the developer rejects offline income, framing it as a short, active colony build." },
+      { "pole": "offline", "game": "Chillquarium", "year": 2023, "how": "Fish grow in real time and ticket income keeps paying out as offline earnings while the game is closed." }
+    ],
+    "tags": { "genres": ["idle", "strategy", "simulation"], "platforms": ["pc"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://steamcommunity.com/app/2843640/discussions/0/604142859631723610/", "note": "Idle Colony: developer says no offline income is not the design intention; active gameplay" },
+      { "url": "https://store.steampowered.com/app/2276930/", "note": "Chillquarium: raise fish in real time, sell them or earn money through ticket sales" },
+      { "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756353737", "note": "Chillquarium 1.3.7 Hotfix B: fixed a bug where some users were not getting offline earnings" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.prestige.bongocat-nodebuster",
+    "axis": "idle.prestige",
+    "options": [
+      { "pole": "none", "game": "Bongo Cat", "year": 2025, "how": "Points from key presses roll hat and skin drops into a permanent inventory; nothing ever resets." },
+      { "pole": "prestige", "game": "Nodebuster", "year": 2024, "how": "Short runs bust nodes for resources spent on a big upgrade tree, with prestige levels (up to 25) layered on top." }
+    ],
+    "tags": { "genres": ["idle"], "platforms": ["pc"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/3419430/", "note": "Bongo Cat: every time you press a key, Bongo Cat punches your taskbar; type, click, play and work to collect points and hat drops" },
+      { "url": "https://store.steampowered.com/app/3107330/", "note": "Nodebuster: short incremental game, bust nodes to buy upgrades on the skill tree" },
+      { "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6909171012603850203", "note": "Nodebuster patch notes: fixed a bug where you could go past prestige 25" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.prestige.candybox2-incrementalepichero2",
+    "axis": "idle.prestige",
+    "options": [
+      { "pole": "none", "game": "Candy Box 2", "year": 2013, "how": "A single adventure save: candies buy gear, quests open new places, and the story ends without any reset layer." },
+      { "pole": "prestige", "game": "Incremental Epic Hero 2", "year": 2025, "how": "Rebirth heroes to restart stronger, and Ascension prestiges the whole world for even bigger boosts and new content." }
+    ],
+    "tags": { "genres": ["idle", "rpg"], "platforms": ["web", "pc"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://candybox2.github.io/", "note": "Candy Box 2: official hosted game; candybox2.js runs on setInterval timers and only uses Date to label saves, so nothing accrues while closed" },
+      { "url": "https://store.steampowered.com/app/1690710/", "note": "Incremental Epic Hero 2: rebirth your heroes for progression boosts; prestige the entire world through Ascension" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.prestige.chillquarium-unnamedspaceidle",
+    "axis": "idle.prestige",
+    "options": [
+      { "pole": "none", "game": "Chillquarium", "year": 2023, "how": "One growing aquarium: profits buy booster packs and decor as you move from a starter tank to a dream setup and fill a 156-fish collection." },
+      { "pole": "prestige", "game": "Unnamed Space Idle", "year": 2023, "how": "Waves of alien ships feed layered systems, and prestige unlocks new ships, weapons, defenses and utilities for the next climb." }
+    ],
+    "tags": { "genres": ["idle", "simulation"], "platforms": ["pc"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/2276930/", "note": "Chillquarium: progress from a simple starter tank to your dream setup; complete a collection of 156 fish" },
+      { "url": "https://store.steampowered.com/app/2471100/", "note": "Unnamed Space Idle: progression and prestige; prestige unlocks different ships, weapons, defenses and utilities" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.prestige.ropukasidleisland-gnorpapologue",
+    "axis": "idle.prestige",
+    "options": [
+      { "pole": "none", "game": "Ropuka's Idle Island", "year": 2025, "how": "A desktop sticker: the frog cuts grass you spend on tools, better grass and decorations until the island collection is complete." },
+      { "pole": "prestige", "game": "(the) Gnorp Apologue", "year": 2023, "how": "Gnorps strike the rock for shards to buy more gnorps and structures, and a prestige resets the build so the next one can push further." }
+    ],
+    "tags": { "genres": ["idle"], "platforms": ["pc"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/3416070/", "note": "Ropuka's Idle Island: grass is currency to upgrade tools, improve grass quality and decorate; complete the collection" },
+      { "url": "https://store.steampowered.com/app/1473350/", "note": "(the) Gnorp Apologue: hit the rock for shards, buy and upgrade gnorps and structures" },
+      { "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5759622039995281272", "note": "(the) Gnorp Apologue patch notes: UI now disappears during prestige" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.prestige.rustysretirement-leafblowerrevolution",
+    "axis": "idle.prestige",
+    "options": [
+      { "pole": "none", "game": "Rusty's Retirement", "year": 2024, "how": "A farm strip at the bottom of the screen: crops become biofuel money that buys more robots and land, in one continuous expansion." },
+      { "pole": "prestige", "game": "Leaf Blower Revolution", "year": 2020, "how": "Blow leaves to buy tools and Autoblowers, then prestige for coins that buy permanent upgrades across 40+ areas." }
+    ],
+    "tags": { "genres": ["idle", "simulation"], "platforms": ["pc"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/2666510/", "note": "Rusty's Retirement: idle-farming at the bottom of your screen; sell biofuel and reinvest in robots and expanding your farm" },
+      { "url": "https://store.steampowered.com/app/1468260/", "note": "Leaf Blower Revolution: buy Autoblowers, prestige, gain coins and purchase more upgrades" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.prestige.ropukasidleisland-farmeragainstpotatoesidle",
+    "axis": "idle.prestige",
+    "options": [
+      { "pole": "none", "game": "Ropuka's Idle Island", "year": 2025, "how": "Nothing resets: cut grass buys tool upgrades and island buildings and plants, and the goal is to own every item." },
+      { "pole": "prestige", "game": "Farmer Against Potatoes Idle", "year": 2024, "how": "Reincarnate for bigger permanent bonuses, switching between 6 classes with their own talent trees on each new life." }
+    ],
+    "tags": { "genres": ["idle", "rpg"], "platforms": ["pc"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/3416070/", "note": "Ropuka's Idle Island: unlock new buildings and plants, can you get every item and complete the collection" },
+      { "url": "https://store.steampowered.com/app/1535560/", "note": "Farmer Against Potatoes Idle: Reincarnate for bigger permanent bonuses; 6 classes with talent trees" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.prestige.rustysretirement-increlution",
+    "axis": "idle.prestige",
+    "options": [
+      { "pole": "none", "game": "Rusty's Retirement", "year": 2024, "how": "Plant, water and harvest with upgradable helper bots; the farm only ever grows, with no reset for a multiplier." },
+      { "pole": "prestige", "game": "Increlution", "year": 2021, "how": "Each life ends in death, which starts a new generation; Instinct levels earned in past lives make every new run stronger." }
+    ],
+    "tags": { "genres": ["idle", "simulation", "strategy"], "platforms": ["pc"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/2666510/", "note": "Rusty's Retirement: deploy robots to plant, water and harvest; customize and upgrade helper bots; expand your farm" },
+      { "url": "https://store.steampowered.com/app/1593350/", "note": "Increlution: death marks a new beginning; progress in previous lives increases your instincts" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.idle.prestige.tinypasture-tapninja",
+    "axis": "idle.prestige",
+    "options": [
+      { "pole": "none", "game": "Tiny Pasture", "year": 2025, "how": "Buy baby animals, raise them and collect their coins to expand the pasture and unlock species, in one long climb." },
+      { "pole": "prestige", "game": "Tap Ninja", "year": 2022, "how": "Ascend to trade your run for permanent Skill Upgrades, then rebuild village and gold faster on the next pass." }
+    ],
+    "tags": { "genres": ["idle", "simulation", "action"], "platforms": ["pc", "mobile"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/3167550/", "note": "Tiny Pasture: buy baby animals, grow them, collect coins to expand your pasture; unlock new species" },
+      { "url": "https://store.steampowered.com/app/1891700/", "note": "Tap Ninja: ascend and learn epic and permanent Skill Upgrades" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  }
+]
