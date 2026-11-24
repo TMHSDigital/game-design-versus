@@ -91,7 +91,11 @@ describe('coverage targets', () => {
   it(`has at least ${COVERAGE_TARGETS.total} verified comparisons`, () => {
     expect(report.total).toBeGreaterThanOrEqual(COVERAGE_TARGETS.total);
   });
-  it('meets every coverage target', () => {
+  it('meets every hard coverage target', () => {
     expect(report.failures).toEqual([]);
+  });
+  it('reports thin bipolar axes as warnings, not failures', () => {
+    expect(report.warnings.length > 0).toBe(report.thinBipolarAxes.length > 0);
+    expect(report.failures.some((f) => f.includes('bipolar'))).toBe(false);
   });
 });

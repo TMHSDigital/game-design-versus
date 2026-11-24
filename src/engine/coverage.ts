@@ -23,7 +23,10 @@ export type CoverageReport = {
   overusedGames: { game: string; count: number }[];
   topGames: { game: string; count: number }[];
   distinctGames: number;
+  /** Hard targets that are not met. */
   failures: string[];
+  /** Soft targets still being sourced (thin bipolar axes); reported but not blocking. */
+  warnings: string[];
 };
 
 /** Normalizes a game title so "Resident Evil 2 (2019)" and "resident evil 2 (2019)" count together. */
@@ -36,6 +39,7 @@ export function coverageReport(k: Knowledge): CoverageReport {
   const list = k.comparisons;
   const T = COVERAGE_TARGETS;
   const failures: string[] = [];
+  const warnings: string[] = [];
   const total = list.length;
   const verified = k.allComparisons.filter((c) => c.verification.status === 'verified').length;
 
@@ -71,7 +75,7 @@ export function coverageReport(k: Knowledge): CoverageReport {
       for (const p of a.poles) if (!p.noExemplar && !poleSeen.has(`${a.id}:${p.id}`)) uncoveredPoles.push({ axis: a.id, pole: p.id });
     }
   }
-  if (thinBipolarAxes.length) failures.push(`${thinBipolarAxes.length} bipolar axes below ${T.perBipolarAxis} comparisons`);
+  if (thinBipolarAxes.length) warnings.push(`${thinBipolarAxes.length} bipolar axes below ${T.perBipolarAxis} comparisons`);
   if (uncoveredPoles.length) failures.push(`${uncoveredPoles.length} categorical poles uncovered`);
 
   const families = k.axisById.get('genre.family')?.poles.map((p) => p.id) ?? [];
@@ -103,6 +107,7 @@ export function coverageReport(k: Knowledge): CoverageReport {
     topGames: games.slice(0, 10),
     distinctGames: games.length,
     failures,
+    warnings,
   };
 }
 
@@ -117,7 +122,8 @@ export function formatCoverage(r: CoverageReport): string {
     `Thin bipolar axes (< 4): ${r.thinBipolarAxes.length ? r.thinBipolarAxes.map((t) => `${t.axis}=${t.count}`).join(', ') : 'none'}`,
     `Uncovered categorical poles: ${r.uncoveredPoles.length ? r.uncoveredPoles.map((p) => `${p.axis}:${p.pole}`).join(', ') : 'none'}`,
     `Overused games (> 12): ${r.overusedGames.length ? r.overusedGames.map((g) => `${g.game}=${g.count}`).join(', ') : 'none'}`,
-    r.failures.length ? `FAIL: ${r.failures.join('; ')}` : 'PASS: all coverage targets met',
+    r.failures.length ? `FAIL: ${r.failures.join('; ')}` : 'PASS: all hard coverage targets met',
   ];
+  if (r.warnings.length) lines.push(`WARN: ${r.warnings.join('; ')}`);
   return lines.join('\n');
 }

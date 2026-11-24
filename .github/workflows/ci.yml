@@ -24,6 +24,8 @@ jobs:
       - run: npm run lint
       - run: npm run validate:data
       - run: npm run build
-      - run: npm test
       - name: Committed bundle is current
         run: git diff --exit-code plugins/game-design-versus/server/index.js
+      - run: npm test
+      - name: Coverage report (thin axes are warnings)
+        run: npm run coverage
