@@ -5,8 +5,9 @@ import { cpSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync, st
 import { join } from 'node:path';
 
 const out = '_site';
-rmSync(out, { recursive: true, force: true });
+// Empty the folder instead of deleting it, so a preview server running inside it keeps working on Windows.
 mkdirSync(out, { recursive: true });
+for (const entry of readdirSync(out)) rmSync(join(out, entry), { recursive: true, force: true });
 
 const readJson = (p) => JSON.parse(readFileSync(p, 'utf8'));
 const ontology = readJson('src/data/axes.json');

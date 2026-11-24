@@ -3,14 +3,189 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>game-design-versus</title>
+<title>game-design-versus: design your game by choosing between real games</title>
+<meta name="description" content="A this-or-that game design interview for Claude Code and other MCP clients. Each question puts real games head to head on one design axis; the answers become a GDD seed brief.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<main class="wrap">
-  <h1>game-design-versus</h1>
-  <p>A this-or-that game design interview: {{axes}} axes, {{comparisons}} verified comparisons. Site under construction.</p>
-  <p><a href="https://github.com/TMHSDigital/game-design-versus">Source on GitHub</a></p>
+<a class="skip" href="#main">Skip to content</a>
+<header class="wrap"><div class="mast">
+  <a class="brand" href="./">game-design-versus</a>
+  <nav aria-label="Sections">
+    <a href="#demo">Demo</a>
+    <a href="#install">Install</a>
+    <a href="#how">How it works</a>
+    <a href="#library">Library</a>
+    <a href="https://github.com/TMHSDigital/game-design-versus">GitHub</a>
+  </nav>
+</div></header>
+
+<main id="main">
+<section class="hero wrap">
+  <div class="hero-text">
+    <p class="kicker">MCP server and Claude Code plugin, v{{version}}</p>
+    <h1>Find the game you mean by choosing between games that exist.</h1>
+    <p class="lede">An interview where every question is two or three real games on one design axis. Your picks narrow {{axes}} axes down to a GDD seed brief: pitch, pillars, core loop, systems, scope and risks.</p>
+    <div class="cmd" id="hero-cmd">
+      <div class="cmd-head"><span>In Claude Code</span><button type="button" class="copy" data-copy="hero-cmd-text">Copy</button></div>
+      <pre id="hero-cmd-text">/plugin marketplace add TMHSDigital/game-design-versus
+/plugin install game-design-versus@tmhs-digital</pre>
+    </div>
+    <p class="after-cmd">Then <code>/game-design-versus:versus</code> followed by your pitch. Or <a href="#demo">try it here in your browser</a> first.</p>
+  </div>
+
+  <figure class="card" aria-label="Example question">
+    <div class="card-hd"><span>Combat simulation</span><span>combat module</span></div>
+    <p class="card-q">Combat simulation: Half Sword or The Elder Scrolls V: Skyrim?</p>
+    <ol class="opts">
+      <li class="opt a"><span class="k">a</span><div><b>Half Sword</b><span>Weapons are physical objects steered by the mouse on active-ragdoll bodies; momentum, edge contact and armor coverage decide damage.</span></div></li>
+      <li class="opt b"><span class="k">b</span><div><b>The Elder Scrolls V: Skyrim</b><span>Swings play animations, hits register on contact, damage comes from weapon stats, perks and skill.</span></div></li>
+      <li class="opt c"><span class="k">c</span><div><b>Blend of both</b></div></li>
+      <li class="opt d"><span class="k">d</span><div><b>Not in my game</b></div></li>
+    </ol>
+    <div class="bins" role="img" aria-label="Belief after answering a: physics strong 0.50, physics lean 0.30, blend 0.14, animated lean 0.04, animated strong 0.02">
+      <i style="--h:.50" class="on"></i><i style="--h:.30" class="on"></i><i style="--h:.14"></i><i style="--h:.04"></i><i style="--h:.02"></i>
+    </div>
+    <figcaption class="bins-cap"><span>physics</span><span>belief after answering a</span><span>animated</span></figcaption>
+  </figure>
+</section>
+
+<section class="wrap" aria-label="By the numbers"><div class="facts">
+  <div><b>{{axes}}</b><span>axes in {{modules}} modules</span></div>
+  <div><b>{{comparisons}}</b><span>verified comparisons</span></div>
+  <div><b>{{games}}</b><span>different games</span></div>
+  <div><b>{{archetypes}}</b><span>game archetypes</span></div>
+  <div><b>0</b><span>LLM calls in the server</span></div>
+</div></section>
+
+<section class="roles wrap" id="how">
+  <h2 class="sec">How it works</h2>
+  <div class="cols">
+    <div>
+      <h3>The agent interviews</h3>
+      <p>Claude Code, Cursor, Codex or Copilot words each question, renders it as a picker or a numbered list, takes free-text answers and asks about risks in its own voice.</p>
+    </div>
+    <div>
+      <h3>The server referees</h3>
+      <p>The ontology, the comparison library, the scoring and the choice of the next question live in a deterministic MCP server. It never calls a model and needs no API key.</p>
+    </div>
+    <div>
+      <h3>Modules drop away</h3>
+      <p>Answer "not in my game" to the economy and its axes are gone. Gate questions come first, so you never answer for systems your game does not have.</p>
+    </div>
+  </div>
+</section>
+
+<section class="demo-sec" id="demo" aria-labelledby="demo-title">
+  <div class="wrap">
+    <h2 class="sec" id="demo-title">Try it</h2>
+    <p class="sec-lede">The same engine and the same {{comparisons}} verified comparisons as the plugin, running in your browser. Nothing is sent anywhere. In Claude Code the agent words the questions and catches nuance; here you get them as the server sends them.</p>
+    <div id="demo-root" class="demo-root">
+      <noscript><p>The demo needs JavaScript. Everything else on this page works without it.</p></noscript>
+    </div>
+  </div>
+</section>
+
+<section class="install wrap" id="install">
+  <h2 class="sec">Install</h2>
+  <p class="sec-lede">Node 20 or newer. The server is a single file with no runtime dependencies, so every client below runs the same <code>server/index.js</code>.</p>
+
+  <details class="client" open>
+    <summary>Claude Code <span>plugin, recommended</span></summary>
+    <pre>/plugin marketplace add TMHSDigital/game-design-versus
+/plugin install game-design-versus@tmhs-digital</pre>
+    <p>Start an interview with <code>/game-design-versus:versus &lt;pitch&gt;</code> and regenerate a brief with <code>/game-design-versus:versus-brief &lt;session id&gt;</code>. From a clone: <code>claude --plugin-dir ./plugins/game-design-versus</code>.</p>
+  </details>
+
+  <details class="client">
+    <summary>Cursor <span>.cursor/mcp.json</span></summary>
+    <pre>{ "mcpServers": { "gdv": { "command": "node",
+  "args": ["C:/path/to/game-design-versus/plugins/game-design-versus/server/index.js"] } } }</pre>
+  </details>
+
+  <details class="client">
+    <summary>Codex <span>~/.codex/config.toml</span></summary>
+    <pre>[mcp_servers.gdv]
+command = "node"
+args = ['C:\path\to\game-design-versus\plugins\game-design-versus\server\index.js']</pre>
+  </details>
+
+  <details class="client">
+    <summary>VS Code with Copilot <span>.mcp.json</span></summary>
+    <pre>{ "mcpServers": { "gdv": { "type": "stdio", "command": "node",
+  "args": ["C:/path/to/game-design-versus/plugins/game-design-versus/server/index.js"] } } }</pre>
+  </details>
+
+  <details class="client">
+    <summary>Claude Desktop <span>claude_desktop_config.json</span></summary>
+    <pre>{ "mcpServers": { "gdv": { "command": "node",
+  "args": ["C:/path/to/game-design-versus/plugins/game-design-versus/server/index.js"] } } }</pre>
+  </details>
+
+  <p class="note">For clients other than Claude Code, clone the repo and point the config at <code>plugins/game-design-versus/server/index.js</code>. Any agent can follow the interview protocol in <a href="https://github.com/TMHSDigital/game-design-versus/blob/main/AGENTS.md">AGENTS.md</a>, including a numbered-list fallback when it has no picker.</p>
+</section>
+
+<section class="engine wrap">
+  <h2 class="sec">Under the hood</h2>
+  <dl class="spec">
+    <div><dt>Belief per axis</dt><dd>Each two-pole axis holds a probability over five bins, from strong A to strong B. Picking A multiplies in 0.50, 0.30, 0.14, 0.04, 0.02; a blend multiplies in 0.05, 0.20, 0.50, 0.20, 0.05.</dd></div>
+    <div><dt>Archetypes</dt><dd>A posterior over {{archetypes}} archetypes (soulslike action RPG, colony sim, roguelike deckbuilder and more) updates from the same answers and fills in every axis you have not been asked.</dd></div>
+    <div><dt>Gating</dt><dd>Gate axes set flags such as has_combat or is_multiplayer. A module whose flag is false is skipped whole. Gating is three-valued, so an axis behind an unanswered gate waits.</dd></div>
+    <div><dt>Next question</dt><dd>Importance times expected information gain on the axis, plus half the information gain on the archetypes, plus gate and familiarity bonuses. A per-session seed picks from the top three, so a session replays exactly.</dd></div>
+    <div><dt>When to stop</dt><dd>Clarity per axis is 1 minus normalized entropy. The server recommends stopping at overall clarity 0.80 with every frame and gate axis resolved, or after 60 questions.</dd></div>
+    <div><dt>Tensions</dt><dd>{{tensions}} rules fire as answers arrive, such as physics melee in online PvP or an MMO on a solo team, and come back with a probe question for the agent to ask.</dd></div>
+  </dl>
+</section>
+
+<section class="brief wrap">
+  <h2 class="sec">What you get at the end</h2>
+  <div class="brief-grid">
+    <div>
+      <p>A GDD seed brief in Markdown or JSON, written by the server from your answers alone. It states only what you decided or what the evidence strongly implies, and lists the rest as open questions.</p>
+      <ol class="toc">
+        <li>Frame</li><li>Experience targets</li><li>Genre</li><li>Design pillars</li><li>Core loop</li><li>Systems spec</li>
+        <li>Comparable titles</li><li>USPs and non-goals</li><li>Scope</li><li>Risks</li><li>Open questions</li><li>Decision log</li>
+      </ol>
+      <p><a href="https://github.com/TMHSDigital/game-design-versus/blob/main/examples/GDD.sample.md">Read a full sample brief</a> from a 45-question session.</p>
+    </div>
+    <div class="excerpt" aria-label="Excerpt from the sample brief">
+      <p class="ex-h">5. Core loop</p>
+      <ul>
+        <li>Seconds: the player fights under constant pressure, reading the situation and executing in the moment; combat is physics-simulated.</li>
+        <li>Minutes: a session of under 20 minutes is one or more runs that reset on failure, toward goals the player sets.</li>
+        <li>Weeks: mastery and variety keep the player returning.</li>
+      </ul>
+      <p class="ex-h">10. Risks</p>
+      <ul>
+        <li><b>warn</b>: Scope: 18 active modules for a team of 2 to 5 on a timeline of 1 to 2 years. Cut to the pillars (Camera view, Combat range, Failure penalty) for the MVP.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="library wrap" id="library">
+  <h2 class="sec">The library</h2>
+  <div class="cols">
+    <div>
+      <p>Every comparison is one axis, two or three games, and a short description of how each game handles that axis and nothing else. Each option cites a store page, official site, wiki or review.</p>
+    </div>
+    <div>
+      <p>{{written}} comparisons are written and {{comparisons}} are verified against their sources. Only verified ones are served. An axis without one falls back to a plain question about its two poles.</p>
+    </div>
+    <div>
+      <p>Some axes still have only two or three verified comparisons. Sourcing them is the most useful contribution: read the <a href="https://github.com/TMHSDigital/game-design-versus/blob/main/docs/library-brief.md">library brief</a> and run <code>npm run coverage</code>.</p>
+    </div>
+  </div>
+</section>
 </main>
+
+<footer class="wrap"><div class="foot">
+  <span>MIT license. Thomas Mathes / TMHSDigital.</span>
+  <span><a href="https://github.com/TMHSDigital/game-design-versus">GitHub</a> <a href="https://github.com/TMHSDigital/game-design-versus/blob/main/CHANGELOG.md">Changelog</a> <a href="https://github.com/TMHSDigital/game-design-versus/blob/main/AGENTS.md">AGENTS.md</a></span>
+</div></footer>
+<script type="module" src="app.js"></script>
 </body>
 </html>
