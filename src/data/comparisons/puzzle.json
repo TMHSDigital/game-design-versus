@@ -1,1 +1,633 @@
-[]
+[
+  {
+    "id": "cmp.puzzle.teaching.thewitness-portal2-babaisyou",
+    "axis": "puzzle.teaching",
+    "options": [
+      {
+        "pole": "wordless",
+        "game": "The Witness",
+        "year": 2016,
+        "how": "No text: simple panel sequences teach each line-puzzle rule before combining them."
+      },
+      {
+        "pole": "explicit",
+        "game": "Portal 2",
+        "year": 2011,
+        "how": "GLaDOS and Wheatley narrate test chambers, and early rooms introduce each tool step by step."
+      },
+      {
+        "pole": "wordless",
+        "game": "Baba Is You",
+        "year": 2019,
+        "how": "Rules are pushable word blocks; levels teach by letting players rearrange them, with no tutorial."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://pcgamer.com/the-witness-review",
+        "note": "The Witness: review: no exposition; panels wordlessly teach each rule"
+      },
+      {
+        "url": "https://store.steampowered.com/app/620/",
+        "note": "Portal 2: Steam: April 2011; GLaDOS guides the player through test chambers with new puzzle elements; Wheatley and step-by-step intro not stated"
+      },
+      {
+        "url": "https://store.steampowered.com/app/736260/",
+        "note": "Baba Is You: Steam: March 2019; rules are present as blocks you can interact with; no-tutorial point not stated"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.puzzle.teaching.spacechem-stephenssausageroll",
+    "axis": "puzzle.teaching",
+    "options": [
+      {
+        "pole": "explicit",
+        "game": "SpaceChem",
+        "year": 2011,
+        "how": "Early reactors come with written instructions that introduce each new command before later puzzles combine them."
+      },
+      {
+        "pole": "wordless",
+        "game": "Stephen's Sausage Roll",
+        "year": 2016,
+        "how": "No tutorial or text; the rules of rolling sausages are learned by trying."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/92800/",
+        "note": "SpaceChem: official page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/353540/",
+        "note": "Stephen's Sausage Roll: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.puzzle.teaching.humanresourcemachine-gorogoa",
+    "axis": "puzzle.teaching",
+    "options": [
+      {
+        "pole": "explicit",
+        "game": "Human Resource Machine",
+        "year": 2015,
+        "how": "The boss explains each new command and the task in text before each level."
+      },
+      {
+        "pole": "wordless",
+        "game": "Gorogoa",
+        "year": 2017,
+        "how": "No words; panel-combining rules are discovered by moving illustrated tiles."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "mobile",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/375820/",
+        "note": "Human Resource Machine: Steam: Oct 2015; in each level your boss gives you a job to automate; per-command explanation not stated"
+      },
+      {
+        "url": "https://store.steampowered.com/app/557600/",
+        "note": "Gorogoa: Steam: Dec 2017; illustrated panels arranged and combined to solve puzzles; wordlessness not stated"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.puzzle.teaching.monumentvalley-cuttherope",
+    "axis": "puzzle.teaching",
+    "options": [
+      {
+        "pole": "wordless",
+        "game": "Monument Valley",
+        "year": 2014,
+        "how": "Minimal words; rotating and sliding architecture is learned by touching it."
+      },
+      {
+        "pole": "explicit",
+        "game": "Cut the Rope",
+        "year": 2010,
+        "how": "Drawn hints and early levels show exactly how each new object works."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle"
+      ],
+      "platforms": [
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.monumentvalleygame.com/",
+        "note": "Monument Valley: official page"
+      },
+      {
+        "url": "https://www.cuttherope.net/",
+        "note": "Cut the Rope: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.puzzle.teaching.patricksparabox-worldofgoo",
+    "axis": "puzzle.teaching",
+    "options": [
+      {
+        "pole": "wordless",
+        "game": "Patrick's Parabox",
+        "year": 2022,
+        "how": "Over 350 hand-crafted puzzles each add one new idea, so the recursion rules are taught by level design rather than text."
+      },
+      {
+        "pole": "explicit",
+        "game": "World of Goo",
+        "year": 2008,
+        "how": "Signs left by the Sign Painter in levels introduce new goo types and drop hints."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.nintendo.com/us/store/products/patricks-parabox-switch/",
+        "note": "Patrick's Parabox: each puzzle contains a new idea; hand-crafted puzzles designed to guide you"
+      },
+      {
+        "url": "https://www.gog.com/en/game/world_of_goo",
+        "note": "World of Goo: The Sign Painter feature"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.puzzle.solutions.opusmagnum-snakebird",
+    "axis": "puzzle.solutions",
+    "options": [
+      {
+        "pole": "open",
+        "game": "Opus Magnum",
+        "year": 2017,
+        "how": "Any machine that produces the product counts; histograms compare cost, cycles and area."
+      },
+      {
+        "pole": "single",
+        "game": "Snakebird",
+        "year": 2015,
+        "how": "Tight levels with one intended route for the snakes to reach the exit."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/opus_magnum",
+        "note": "Opus Magnum: GOG: 2017; compete to build simplest, fastest, most compact solutions; review names cost, cycles and area"
+      },
+      {
+        "url": "https://store.steampowered.com/app/357300/",
+        "note": "Snakebird: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.puzzle.solutions.spacechem-stephenssausageroll",
+    "axis": "puzzle.solutions",
+    "options": [
+      {
+        "pole": "open",
+        "game": "SpaceChem",
+        "year": 2011,
+        "how": "Players design reactors any way that works, then compare cycles and symbols."
+      },
+      {
+        "pole": "single",
+        "game": "Stephen's Sausage Roll",
+        "year": 2016,
+        "how": "Each level has a precise answer with little room for alternatives."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/92800/",
+        "note": "SpaceChem: Steam: March 2011; construct factories and streamline designs to meet quotas; cycle/symbol stats not stated"
+      },
+      {
+        "url": "https://store.steampowered.com/app/353540/",
+        "note": "Stephen's Sausage Roll: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.puzzle.solutions.scribblenautsunlimited-talosprinciple",
+    "axis": "puzzle.solutions",
+    "options": [
+      {
+        "pole": "open",
+        "game": "Scribblenauts Unlimited",
+        "year": 2012,
+        "how": "Summon any object you can think of by typing it; any object that meets the goal solves the puzzle."
+      },
+      {
+        "pole": "single",
+        "game": "The Talos Principle",
+        "year": 2014,
+        "how": "Each sigil room is built around one intended combination of jammers, connectors and boxes."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "handheld",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/218680/",
+        "note": "Scribblenauts Unlimited: solve puzzles by summoning any object you can think of"
+      },
+      {
+        "url": "https://store.steampowered.com/app/257510/",
+        "note": "The Talos Principle: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.puzzle.solutions.polybridge-talosprinciple",
+    "axis": "puzzle.solutions",
+    "options": [
+      {
+        "pole": "open",
+        "game": "Poly Bridge",
+        "year": 2016,
+        "how": "Build any bridge within budget that survives the vehicles crossing."
+      },
+      {
+        "pole": "single",
+        "game": "The Talos Principle",
+        "year": 2014,
+        "how": "Rooms are designed around one intended solution to earn each sigil."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle",
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "mobile",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/367450/",
+        "note": "Poly Bridge: Steam: July 2016; physics bridge-building puzzles with restricted resources, cars to jumps; open solutions implied not stated"
+      },
+      {
+        "url": "https://store.steampowered.com/app/257510/",
+        "note": "The Talos Principle: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.puzzle.solutions.humanresourcemachine-gorogoa",
+    "axis": "puzzle.solutions",
+    "options": [
+      {
+        "pole": "open",
+        "game": "Human Resource Machine",
+        "year": 2015,
+        "how": "Any program that produces the right output passes; extra size and speed challenges reward optimizing."
+      },
+      {
+        "pole": "single",
+        "game": "Gorogoa",
+        "year": 2017,
+        "how": "Puzzles are solved by arranging and combining illustrated panels in the one way their images connect."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "mobile",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/human_resource_machine",
+        "note": "Human Resource Machine: optional optimization challenges for program size and execution speed"
+      },
+      {
+        "url": "https://www.gog.com/en/game/gorogoa",
+        "note": "Gorogoa: illustrated panels that players arrange and combine to solve puzzles"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.puzzle.solutions.opusmagnum-7thguest",
+    "axis": "puzzle.solutions",
+    "options": [
+      {
+        "pole": "open",
+        "game": "Opus Magnum",
+        "year": 2017,
+        "how": "Any machine that makes the product counts, and players compare cost, cycles and area against everyone else."
+      },
+      {
+        "pole": "single",
+        "game": "The 7th Guest",
+        "year": 1993,
+        "how": "Logic puzzles in a haunted house, each with a fixed answer."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/opus_magnum",
+        "note": "Opus Magnum: build the simplest, fastest or most compact solution; cost, cycles and area"
+      },
+      {
+        "url": "https://www.gog.com/en/game/the_7th_guest",
+        "note": "The 7th Guest: GOG: puzzles in a fully explorable haunted mansion; original early 1990s (1993 quote, 1994 award); fixed answers not explicit"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.puzzle.solutions.crayonphysics-cuttherope",
+    "axis": "puzzle.solutions",
+    "options": [
+      {
+        "pole": "open",
+        "game": "Crayon Physics Deluxe",
+        "year": 2009,
+        "how": "Drawings turn into real physics objects, so any shape you draw that pushes the ball to the star solves the level."
+      },
+      {
+        "pole": "single",
+        "game": "Cut the Rope",
+        "year": 2010,
+        "how": "Each level's ropes, bubbles and air cushions are placed by design; you solve it by working out how to use those fixed objects."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "mobile"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "http://www.crayonphysics.com/",
+        "note": "Crayon Physics Deluxe: drawings become physical objects; solve puzzles with creative use of physics"
+      },
+      {
+        "url": "https://www.cuttherope.net/",
+        "note": "Cut the Rope: cut the ropes and use the objects in each level (bubbles, air cushions, spikes) to shape the path"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.puzzle.teaching.shenzhenio-thewitness",
+    "axis": "puzzle.teaching",
+    "options": [
+      {
+        "pole": "explicit",
+        "game": "Shenzhen I/O",
+        "year": 2016,
+        "how": "An included manual of over 30 pages of datasheets and reference guides explains every component and instruction."
+      },
+      {
+        "pole": "wordless",
+        "game": "The Witness",
+        "year": 2016,
+        "how": "Beyond a few control prompts there is no text; sequences of panels teach each symbol's rule."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/shenzhen_io",
+        "note": "Shenzhen I/O: included manual with over 30 pages of datasheets, reference guides and diagrams"
+      },
+      {
+        "url": "https://www.pcgamer.com/the-witness-review/",
+        "note": "The Witness: beyond a couple of text prompts for controls there is no exposition; the game teaches through puzzles"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.puzzle.solutions.infinifactory-7thguest",
+    "axis": "puzzle.solutions",
+    "options": [
+      {
+        "pole": "open",
+        "game": "Infinifactory",
+        "year": 2015,
+        "how": "Build factories from blocks in any layout that assembles the product, then compare your solution on histograms."
+      },
+      {
+        "pole": "single",
+        "game": "The 7th Guest",
+        "year": 1993,
+        "how": "Each room holds a fixed logic puzzle, such as the bishops chess puzzle, with one answer to find."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle",
+        "horror"
+      ],
+      "platforms": [
+        "pc",
+        "mobile"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.zachtronics.com/infinifactory/",
+        "note": "Infinifactory: optimize your solutions and compare them on histograms"
+      },
+      {
+        "url": "https://www.gog.com/en/game/the_7th_guest",
+        "note": "The 7th Guest: Stauf's mansion of puzzles to solve, including the Bishops puzzle"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  }
+]

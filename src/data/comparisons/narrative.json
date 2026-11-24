@@ -1,1 +1,1355 @@
-[]
+[
+  {
+    "id": "cmp.narr.source.rimworld-uncharted4",
+    "axis": "narr.source",
+    "options": [
+      {
+        "pole": "emergent",
+        "game": "RimWorld",
+        "year": 2018,
+        "how": "An AI storyteller (Cassandra, Phoebe, Randy) deals raids, storms and visitors into your colony; the story is what the colonists live through."
+      },
+      {
+        "pole": "authored",
+        "game": "Uncharted 4: A Thief's End",
+        "year": 2016,
+        "how": "Writers script every beat of Nathan Drake's last adventure; cinematic cutscenes and set pieces play the same for every player."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy",
+        "action",
+        "narrative"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/294100/RimWorld/",
+        "note": "RimWorld: story generator driven by an AI storyteller"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1659420/UNCHARTED_Legacy_of_Thieves_Collection/",
+        "note": "Uncharted 4: cinematic storytelling and a personal story for Nathan Drake"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.narr.source.crusaderkings3-kentuckyroutezero",
+    "axis": "narr.source",
+    "options": [
+      {
+        "pole": "emergent",
+        "game": "Crusader Kings III",
+        "year": 2020,
+        "how": "Characters with traits, genetics and schemes drive thousands of dynamic events; your dynasty's saga comes from simulation, not a script."
+      },
+      {
+        "pole": "authored",
+        "game": "Kentucky Route Zero",
+        "year": 2013,
+        "how": "A written magical realist story in five acts; you choose how characters speak and feel, but the scenes and arc are authored."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "narrative"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1158310/Crusader_Kings_III/",
+        "note": "Crusader Kings III: dynasties, character traits and thousands of dynamic events"
+      },
+      {
+        "url": "https://store.steampowered.com/app/231200/Kentucky_Route_Zero_PC_Edition/",
+        "note": "Kentucky Route Zero: a magical realist adventure in five acts"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.source.kenshi-godofwar",
+    "axis": "narr.source",
+    "options": [
+      {
+        "pole": "emergent",
+        "game": "Kenshi",
+        "year": 2018,
+        "how": "No main plot and no chosen one; capture, slavery or a rise to power happen through unscripted systems in a sandbox world."
+      },
+      {
+        "pole": "authored",
+        "game": "God of War",
+        "year": 2018,
+        "how": "A scripted father and son journey of Kratos and Atreus, told through cinema-quality scenes and in-play conversation."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "sandbox",
+        "action",
+        "narrative"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/233860/Kenshi/",
+        "note": "Kenshi: sandbox rather than a linear story, you are not the chosen one, no scripted events"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1593500/God_of_War/",
+        "note": "God of War: Kratos and Atreus story with cinema-quality presentation"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.source.dwarffortress-wildermyth-finalfantasyx",
+    "axis": "narr.source",
+    "options": [
+      {
+        "pole": "emergent",
+        "game": "Dwarf Fortress",
+        "year": 2006,
+        "how": "World generation simulates the rise and fall of civilizations and figures; stories come from what the simulation does to your dwarves."
+      },
+      {
+        "pole": "blend",
+        "game": "Wildermyth",
+        "year": 2021,
+        "how": "Campaign chapters frame procedurally generated heroes and story events; heroes age, fall in love, feud and transform differently each run."
+      },
+      {
+        "pole": "authored",
+        "game": "Final Fantasy X",
+        "year": 2001,
+        "how": "A scripted pilgrimage with Tidus and Yuna to defeat Sin; writers fix every plot beat and cutscene, and play happens between them."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy",
+        "rpg",
+        "narrative"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/975370/Dwarf_Fortress/",
+        "note": "Dwarf Fortress: generated rise and fall of civilizations, personalities and cultures"
+      },
+      {
+        "url": "https://store.steampowered.com/app/763890/Wildermyth/",
+        "note": "Wildermyth: procedural generation gives new heroes and story events; heroes age and transform"
+      },
+      {
+        "url": "https://store.steampowered.com/app/359870/FINAL_FANTASY_XX2_HD_Remaster/",
+        "note": "Final Fantasy X: Tidus journeys with Yuna to save Spira from Sin"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.branching.witcher3-thelastofus",
+    "axis": "narr.branching",
+    "options": [
+      {
+        "pole": "branching",
+        "game": "The Witcher 3: Wild Hunt",
+        "year": 2015,
+        "how": "Quest choices have delayed consequences that surface hours later and combine into different epilogues and multiple endings."
+      },
+      {
+        "pole": "linear",
+        "game": "The Last of Us",
+        "year": 2013,
+        "how": "One fixed story of Joel and Ellie; the player controls how encounters play out, never what happens in the plot."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "action",
+        "horror",
+        "narrative"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/",
+        "note": "The Witcher 3: a story full of choices and consequences"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1888930/The_Last_of_Us_Part_I/",
+        "note": "The Last of Us: authored emotional storytelling"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.narr.branching.detroitbecomehuman-maxpayne",
+    "axis": "narr.branching",
+    "options": [
+      {
+        "pole": "branching",
+        "game": "Detroit: Become Human",
+        "year": 2018,
+        "how": "A charted branching narrative: decisions decide the fate of three leads, any of them can die and the story continues, toward dozens of endings."
+      },
+      {
+        "pole": "linear",
+        "game": "Max Payne",
+        "year": 2001,
+        "how": "A fixed noir revenge story told in chapters and comic panels; you choose how to shoot through each level, never the plot."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "narrative",
+        "shooter",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1222140/Detroit_Become_Human/",
+        "note": "Detroit: Become Human: branching narrative, characters can die, dozens of endings"
+      },
+      {
+        "url": "https://store.steampowered.com/app/12140/Max_Payne/",
+        "note": "Max Payne: cinematic action-shooter with a set story of a framed cop"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.branching.heavyrain-alanwake",
+    "axis": "narr.branching",
+    "options": [
+      {
+        "pole": "branching",
+        "game": "Heavy Rain",
+        "year": 2010,
+        "how": "Choices and failed actions can kill any of four leads; the hunt for the Origami Killer continues without them and the outcome shifts."
+      },
+      {
+        "pole": "linear",
+        "game": "Alan Wake",
+        "year": 2010,
+        "how": "Episodes play in a set order with scripted twists and cliffhangers; combat and exploration happen between fixed story beats."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "narrative",
+        "horror",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/960910/Heavy_Rain/",
+        "note": "Heavy Rain: every choice can have game-changing consequences"
+      },
+      {
+        "url": "https://store.steampowered.com/app/108710/Alan_Wake/",
+        "note": "Alan Wake: TV-series structure with cliffhangers and plot twists"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.branching.falloutnewvegas-finalfantasyx",
+    "axis": "narr.branching",
+    "options": [
+      {
+        "pole": "branching",
+        "game": "Fallout: New Vegas",
+        "year": 2010,
+        "how": "Side with NCR, Caesar's Legion, Mr. House or yourself; faction choices decide who holds the Mojave and which ending slides you get."
+      },
+      {
+        "pole": "linear",
+        "game": "Final Fantasy X",
+        "year": 2001,
+        "how": "Tidus and Yuna's journey across Spira follows one scripted route; side content never changes the plot's events."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/22380/Fallout_New_Vegas/",
+        "note": "Fallout: New Vegas: choose sides among warring factions to determine the outcome"
+      },
+      {
+        "url": "https://store.steampowered.com/app/359870/FINAL_FANTASY_XX2_HD_Remaster/",
+        "note": "Final Fantasy X: Tidus and Yuna's quest to save Spira from Sin"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.branching.80days-gris",
+    "axis": "narr.branching",
+    "options": [
+      {
+        "pole": "branching",
+        "game": "80 Days",
+        "year": 2014,
+        "how": "Pick your own route around a globe of 170 cities through thousands of text choices; every journey tells a different story."
+      },
+      {
+        "pole": "linear",
+        "game": "GRIS",
+        "year": 2018,
+        "how": "A nearly textless journey through grief that unfolds the same way for everyone; abilities open new areas, not new story paths."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "narrative",
+        "platformer",
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/381780/80_Days/",
+        "note": "80 Days: choose your own route, 170 cities, thousands of choices"
+      },
+      {
+        "url": "https://store.steampowered.com/app/683320/GRIS/",
+        "note": "GRIS: almost textless journey through sorrow"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.branching.planescapetorment-inside",
+    "axis": "narr.branching",
+    "options": [
+      {
+        "pole": "branching",
+        "game": "Planescape: Torment",
+        "year": 1999,
+        "how": "Conversation choices reshape the Nameless One: his alignment, class and abilities change with what you say and do in Sigil."
+      },
+      {
+        "pole": "linear",
+        "game": "Inside",
+        "year": 2016,
+        "how": "A boy moves through one unbroken path into a dark project; there are no choices, only the puzzles between you and the next scene."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "puzzle",
+        "platformer",
+        "narrative"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/466300/Planescape_Torment_Enhanced_Edition/",
+        "note": "Planescape: Torment: the Nameless One changes class, alignment and abilities based on choices"
+      },
+      {
+        "url": "https://store.steampowered.com/app/304430/INSIDE/",
+        "note": "Inside: a boy drawn into the center of a dark project"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.delivery.darksouls-masseffect",
+    "axis": "narr.delivery",
+    "options": [
+      {
+        "pole": "environmental",
+        "game": "Dark Souls",
+        "year": 2011,
+        "how": "Backstory hides in item and equipment descriptions, ruined architecture and sparse NPC lines; players piece the lore together."
+      },
+      {
+        "pole": "cinematic",
+        "game": "Mass Effect",
+        "year": 2007,
+        "how": "Voiced cinematic conversations with a dialogue wheel; Paragon and Renegade choices carry the plot and relationships."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://darksouls.wiki.fextralife.com/Lore",
+        "note": "Dark Souls: lore assembled from NPC dialogue hints and equipment descriptions"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1328670/Mass_Effect_Legendary_Edition/",
+        "note": "Mass Effect: cinematic saga with interactive storytelling and choices"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.narr.delivery.gonehome-heavyrain",
+    "axis": "narr.delivery",
+    "options": [
+      {
+        "pole": "environmental",
+        "game": "Gone Home",
+        "year": 2013,
+        "how": "No cutscenes or combat: you learn a family's story by picking up objects, notes and letters left around an empty house."
+      },
+      {
+        "pole": "cinematic",
+        "game": "Heavy Rain",
+        "year": 2010,
+        "how": "A film-like thriller of directed scenes, camera cuts and contextual prompts; the story is performed rather than found."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "narrative"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/232430/Gone_Home/",
+        "note": "Gone Home: discover the story by examining objects, notes and letters"
+      },
+      {
+        "url": "https://store.steampowered.com/app/960910/Heavy_Rain/",
+        "note": "Heavy Rain: psychological thriller with dramatic consequences"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.delivery.tunic-uncharted4",
+    "axis": "narr.delivery",
+    "options": [
+      {
+        "pole": "environmental",
+        "game": "Tunic",
+        "year": 2022,
+        "how": "You collect pages of an in-game instruction manual whose illustrations, maps and hints reveal the world's secrets and history."
+      },
+      {
+        "pole": "cinematic",
+        "game": "Uncharted 4: A Thief's End",
+        "year": 2016,
+        "how": "Performance-captured cutscenes and in-play banter carry the story; set pieces are staged like blockbuster film scenes."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/553420/TUNIC/",
+        "note": "Tunic: collect missing manual pages with hints and illustrations"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1659420/UNCHARTED_Legacy_of_Thieves_Collection/",
+        "note": "Uncharted 4: cinematic storytelling and blockbuster set pieces"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.delivery.inside-thewalkingdead",
+    "axis": "narr.delivery",
+    "options": [
+      {
+        "pole": "environmental",
+        "game": "Inside",
+        "year": 2016,
+        "how": "No cutscene exposition: the dark project the boy uncovers is told through the rooms, machines and crowds you pass."
+      },
+      {
+        "pole": "cinematic",
+        "game": "The Walking Dead",
+        "year": 2012,
+        "how": "Episodic, voiced scenes with timed dialogue choices; the story of Lee and Clementine is carried by conversation and cutscenes."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle",
+        "platformer",
+        "narrative"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/304430/INSIDE/",
+        "note": "Inside: unsettling atmosphere and setting tell the story"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1449690/The_Walking_Dead_The_Telltale_Definitive_Series/",
+        "note": "The Walking Dead: episodic story of Clementine with character performances"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.delivery.journey-godofwar",
+    "axis": "narr.delivery",
+    "options": [
+      {
+        "pole": "environmental",
+        "game": "Journey",
+        "year": 2012,
+        "how": "No words: ruins, murals and wordless visions reveal an ancient civilization's history as you cross the desert toward a mountain."
+      },
+      {
+        "pole": "cinematic",
+        "game": "God of War",
+        "year": 2018,
+        "how": "A seamless, cut-free camera follows Kratos and Atreus; story is told through scripted scenes and conversation during play."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "narrative",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/638230/Journey/",
+        "note": "Journey: explore an ancient, mysterious world to discover its secrets"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1593500/God_of_War/",
+        "note": "God of War: seamless theatrical vision, cinema quality experience"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.protagonist.witcher3-skyrim",
+    "axis": "narr.protagonist",
+    "options": [
+      {
+        "pole": "defined",
+        "game": "The Witcher 3: Wild Hunt",
+        "year": 2015,
+        "how": "You play Geralt of Rivia, a monster slayer with a fixed past, voice and relationships; choices steer him but he stays Geralt."
+      },
+      {
+        "pole": "blank",
+        "game": "The Elder Scrolls V: Skyrim",
+        "year": 2011,
+        "how": "Create the Dragonborn's race, look and build; the hero is silent and unnamed in the story, so players project their own role."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "vr"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/",
+        "note": "The Witcher 3: become monster slayer for hire Geralt of Rivia"
+      },
+      {
+        "url": "https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/",
+        "note": "Skyrim: open-ended RPG"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.narr.protagonist.hellblade-pillarsofeternity-masseffect",
+    "axis": "narr.protagonist",
+    "options": [
+      {
+        "pole": "defined",
+        "game": "Hellblade: Senua's Sacrifice",
+        "year": 2017,
+        "how": "You are Senua, a Celtic warrior with psychosis; her history, grief and psychosis are written, and the game is built around her mind."
+      },
+      {
+        "pole": "blank",
+        "game": "Pillars of Eternity",
+        "year": 2015,
+        "how": "Build your own hero from six races and eleven classes; the story reacts to your choices and reputation, not to a set personality."
+      },
+      {
+        "pole": "blend",
+        "game": "Mass Effect",
+        "year": 2007,
+        "how": "Customize Shepard's look, gender and skills, but Shepard is a voiced, named Alliance officer with a fixed role in the story."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg",
+        "narrative",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/414340/Hellblade_Senuas_Sacrifice/",
+        "note": "Hellblade: a broken Celtic warrior, made with people who experience psychosis"
+      },
+      {
+        "url": "https://store.steampowered.com/app/291650/Pillars_of_Eternity/",
+        "note": "Pillars of Eternity: six races, eleven classes, choices shape your destiny"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1328670/Mass_Effect_Legendary_Edition/",
+        "note": "Mass Effect: create and customize your own character"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.protagonist.lifeisstrange-kenshi",
+    "axis": "narr.protagonist",
+    "options": [
+      {
+        "pole": "defined",
+        "game": "Life is Strange",
+        "year": 2015,
+        "how": "You play Max Caulfield, a photography student with her own voice, friendships and inner monologue; choices bend her story, not her identity."
+      },
+      {
+        "pole": "blank",
+        "game": "Kenshi",
+        "year": 2018,
+        "how": "Custom design as many characters as you like; none is special, and who they become is decided only by what happens to them."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "narrative",
+        "rpg",
+        "sandbox"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/319630/Life_is_Strange__Episode_1/",
+        "note": "Life is Strange: Max Caulfield, a photography senior who can rewind time"
+      },
+      {
+        "url": "https://store.steampowered.com/app/233860/Kenshi/",
+        "note": "Kenshi: custom design characters, you are not the chosen one"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.protagonist.maxpayne-morrowind",
+    "axis": "narr.protagonist",
+    "options": [
+      {
+        "pole": "defined",
+        "game": "Max Payne",
+        "year": 2001,
+        "how": "Max is a written character, an undercover cop whose family was murdered; his narration frames every level."
+      },
+      {
+        "pole": "blank",
+        "game": "The Elder Scrolls III: Morrowind",
+        "year": 2002,
+        "how": "Create any kind of character from race, class and birthsign, then set off on your own; the hero's personality is left to the player."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/12140/Max_Payne/",
+        "note": "Max Payne: fugitive undercover cop uncovering the truth about his slain family"
+      },
+      {
+        "url": "https://store.steampowered.com/app/22320/The_Elder_Scrolls_III_Morrowind_Game_of_the_Year_Edition/",
+        "note": "Morrowind: create and play any kind of character imaginable"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.protagonist.alanwake-baldursgate3",
+    "axis": "narr.protagonist",
+    "options": [
+      {
+        "pole": "defined",
+        "game": "Alan Wake",
+        "year": 2010,
+        "how": "You are Alan Wake, a best-selling writer hunting for his missing wife; his manuscript pages and narration drive the plot."
+      },
+      {
+        "pole": "blank",
+        "game": "Baldur's Gate 3",
+        "year": 2023,
+        "how": "Create your own identity with race, class and background (or pick an Origin hero instead); companions react to the choices you make."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "horror",
+        "action",
+        "rpg",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/108710/Alan_Wake/",
+        "note": "Alan Wake: best-selling writer whose wife disappears"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1086940/Baldurs_Gate_3/",
+        "note": "Baldur's Gate 3: create your own identity or play an Origin hero"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.dialogue.discoelysium-firewatch-spiderman",
+    "axis": "narr.dialogue",
+    "options": [
+      {
+        "pole": "deep",
+        "game": "Disco Elysium",
+        "year": 2019,
+        "how": "24 skills speak as inner voices that interject in conversation and gate dialogue checks; most problems are solved by talking."
+      },
+      {
+        "pole": "blend",
+        "game": "Firewatch",
+        "year": 2016,
+        "how": "Pick what Henry says to Delilah over a handheld radio, or stay silent; choices shape the relationship but there are no stat checks."
+      },
+      {
+        "pole": "none",
+        "game": "Marvel's Spider-Man",
+        "year": 2018,
+        "how": "Peter Parker's story is told in voiced scenes and in-swing banter; you never pick lines, all dialogue plays as written."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "narrative",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/",
+        "note": "Disco Elysium: 24 skills and a revolutionary dialogue system"
+      },
+      {
+        "url": "https://store.steampowered.com/app/383870/Firewatch/",
+        "note": "Firewatch: Delilah reachable over a handheld radio, choices shape the relationship"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1817070/Marvels_SpiderMan_Remastered/",
+        "note": "Marvel's Spider-Man: original story of Peter Parker"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.narr.dialogue.falloutnewvegas-uncharted4",
+    "axis": "narr.dialogue",
+    "options": [
+      {
+        "pole": "deep",
+        "game": "Fallout: New Vegas",
+        "year": 2010,
+        "how": "Dialogue options check fixed Speech, Barter and other skill scores; failed checks still show in red, so builds open or close solutions."
+      },
+      {
+        "pole": "none",
+        "game": "Uncharted 4: A Thief's End",
+        "year": 2016,
+        "how": "Characters talk constantly in cutscenes and while climbing, but you never choose a line; dialogue is fully scripted."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "shooter",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://fallout.fandom.com/wiki/Fallout:_New_Vegas_skills",
+        "note": "Fallout: New Vegas: score-based skill checks in dialogue"
+      },
+      {
+        "url": "https://pcgamer.com/games/fallout/fallout-new-vegas-director-josh-sawyer-says-obsidian-has-karma-police-who-go-through-the-game-making-sure-every-skill-gets-enough-cool-stuff-to-do-were-not-gonna-leave-you-out-to-dry/",
+        "note": "Fallout: New Vegas: every skill given uses, including in dialogue"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1659420/UNCHARTED_Legacy_of_Thieves_Collection/",
+        "note": "Uncharted 4: cinematic single-player story"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.dialogue.baldursgate3-oxenfree-gonehome",
+    "axis": "narr.dialogue",
+    "options": [
+      {
+        "pole": "deep",
+        "game": "Baldur's Gate 3",
+        "year": 2023,
+        "how": "Persuasion, Deception, Intimidation and knowledge checks roll a d20 plus modifiers against a DC, with bonuses you can add before rolling."
+      },
+      {
+        "pole": "blend",
+        "game": "Oxenfree",
+        "year": 2016,
+        "how": "Speech bubbles pop up while you walk; pick one, interrupt or stay silent, and relationships shift, with no skill checks."
+      },
+      {
+        "pole": "none",
+        "game": "Gone Home",
+        "year": 2013,
+        "how": "Sam's voiced journal entries play as you find objects; there are no conversations to steer and no lines to choose."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "narrative"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://bg3.wiki/wiki/Skill_check",
+        "note": "Baldur's Gate 3: d20 skill checks in dialogue with bonuses"
+      },
+      {
+        "url": "https://store.steampowered.com/app/388880/Oxenfree/",
+        "note": "Oxenfree: conversation system that changes the story and relationships"
+      },
+      {
+        "url": "https://store.steampowered.com/app/232430/Gone_Home/",
+        "note": "Gone Home: story discovered by examining objects and notes"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.dialogue.pillarsofeternity-hellblade2",
+    "axis": "narr.dialogue",
+    "options": [
+      {
+        "pole": "deep",
+        "game": "Pillars of Eternity",
+        "year": 2015,
+        "how": "Skill checks such as Lore resolve scripted interactions, and faction and personality reputations change how characters respond to you."
+      },
+      {
+        "pole": "none",
+        "game": "Senua's Saga: Hellblade II",
+        "year": 2024,
+        "how": "Senua's psychosis is voiced as whispers that comment and argue in her ears; the player never picks a line of dialogue."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "action",
+        "narrative"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://cdn.akamai.steamstatic.com/steam/apps/291650/manuals/pe-game-manual.pdf",
+        "note": "Pillars of Eternity: official manual, Lore skill checks and the disposition system (faction and personality reputation)"
+      },
+      {
+        "url": "https://store.steampowered.com/app/2461850/Senuas_Saga_Hellblade_II/",
+        "note": "Senua's Saga: Hellblade II: experience the world through Senua's eyes and ears as a warrior with psychosis"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.endings.dishonored-halflife2",
+    "axis": "narr.endings",
+    "options": [
+      {
+        "pole": "multiple",
+        "game": "Dishonored",
+        "year": 2012,
+        "how": "Lethal play raises Chaos: more rats, weepers and guards appear, characters react, and the final mission and ending turn darker."
+      },
+      {
+        "pole": "single",
+        "game": "Half-Life 2",
+        "year": 2004,
+        "how": "One ending: the Citadel finale plays out the same for every player, regardless of how each chapter was fought."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/205100/Dishonored/",
+        "note": "Dishonored: the world reacts to how you play, outcomes change with your approach"
+      },
+      {
+        "url": "https://store.steampowered.com/app/220/HalfLife_2/",
+        "note": "Half-Life 2: single campaign continuing into the episodes"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.narr.endings.nierautomata-journey",
+    "axis": "narr.endings",
+    "options": [
+      {
+        "pole": "multiple",
+        "game": "NieR:Automata",
+        "year": 2017,
+        "how": "Five main endings, A to E, arrive over successive playthroughs; 20 minor endings fire mostly when you fail or abandon objectives."
+      },
+      {
+        "pole": "single",
+        "game": "Journey",
+        "year": 2012,
+        "how": "Every player heads for the same looming mountaintop; companions met on the way change the feel of the trip, not where it ends."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg",
+        "narrative"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://nierautomata.wiki.fextralife.com/Endings_Guide",
+        "note": "NieR:Automata: five primary endings A to E plus 20 minor endings from failed objectives"
+      },
+      {
+        "url": "https://thatgamecompany.com/journey/",
+        "note": "Journey: the looming mountaintop is your goal, with companions along the way"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.endings.lifeisstrange-portal2",
+    "axis": "narr.endings",
+    "options": [
+      {
+        "pole": "multiple",
+        "game": "Life is Strange",
+        "year": 2015,
+        "how": "Rewind time to change events; choices made across five episodes lead to multiple endings."
+      },
+      {
+        "pole": "single",
+        "game": "Portal 2",
+        "year": 2011,
+        "how": "A fixed chapter sequence builds to the same final confrontation for everyone; puzzles have set solutions and the plot does not branch."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "narrative",
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/319630/Life_is_Strange__Episode_1/",
+        "note": "Life is Strange: rewind time, multiple endings depending on the choices you make"
+      },
+      {
+        "url": "https://store.steampowered.com/app/620/Portal_2/",
+        "note": "Portal 2: single-player story campaign through Aperture test chambers"
+      },
+      {
+        "url": "https://combineoverwiki.net/wiki/Portal_2",
+        "note": "Portal 2: campaign structure and the game's final ending in Wheatley's facility"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.narr.endings.detroitbecomehuman-halflifealyx",
+    "axis": "narr.endings",
+    "options": [
+      {
+        "pole": "multiple",
+        "game": "Detroit: Become Human",
+        "year": 2018,
+        "how": "Thousands of choices feed dozens of possible endings; characters can die and the story continues, so each run concludes differently."
+      },
+      {
+        "pole": "single",
+        "game": "Half-Life: Alyx",
+        "year": 2020,
+        "how": "Every player opens the Vault and reaches the same G-Man finale that rewrites Eli's fate; no earlier choice changes how it ends."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "narrative",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "vr"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1222140/Detroit_Become_Human/",
+        "note": "Detroit: Become Human: thousands of choices and dozens of possible endings; the story continues if a character dies"
+      },
+      {
+        "url": "https://combineoverwiki.net/wiki/Half-Life:_Alyx_storyline",
+        "note": "Half-Life: Alyx: storyline ending at the Vault with the G-Man and Eli; no choice alters it"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  }
+]

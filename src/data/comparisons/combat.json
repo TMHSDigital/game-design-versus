@@ -1,1 +1,4030 @@
-[]
+[
+  {
+    "id": "cmp.ranged.ballistics.destiny2-tarkov",
+    "axis": "ranged.ballistics",
+    "options": [
+      {
+        "pole": "hitscan",
+        "game": "Destiny 2",
+        "year": 2017,
+        "how": "Primary weapons hit instantly with bullet magnetism bending shots toward targets; damage numbers pop on hit and abilities carry much of the damage."
+      },
+      {
+        "pole": "simulated",
+        "game": "Escape from Tarkov",
+        "year": 2017,
+        "how": "Each round's penetration is checked against armor class and durability, and hits damage individual limbs, so ammo choice decides fights."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "action",
+        "survival"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://d2.destinygamewiki.com/wiki/Aim_Assistance",
+        "note": "Destiny 2: aim assist cone and bullet magnetism (path correction of rounds)"
+      },
+      {
+        "url": "https://escapefromtarkov.fandom.com/wiki/Ballistics",
+        "note": "Escape from Tarkov: official wiki, penetration chance from armor class, durability and round penetration"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.ranged.ballistics.doom-sniperelite4",
+    "axis": "ranged.ballistics",
+    "options": [
+      {
+        "pole": "hitscan",
+        "game": "Doom",
+        "year": 1993,
+        "how": "Pistol, shotgun and chaingun resolve instantly along a line with random spread; no travel time or drop, so fights are about position and timing."
+      },
+      {
+        "pole": "simulated",
+        "game": "Sniper Elite 4",
+        "year": 2017,
+        "how": "Long shots must account for gravity, wind and heart rate on higher settings; an X-ray kill cam follows the bullet into the target."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.doomwiki.org/wiki/Shotgun",
+        "note": "Doom: shotgun is a hitscan weapon; chaingun fires paired hitscan shots"
+      },
+      {
+        "url": "https://store.steampowered.com/app/312660/",
+        "note": "Sniper Elite 4: sniper ballistics account for wind, gravity and heart rate; X-ray kill cam"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ranged.ballistics.valorant-squad",
+    "axis": "ranged.ballistics",
+    "options": [
+      {
+        "pole": "hitscan",
+        "game": "Valorant",
+        "year": 2020,
+        "how": "Guns hit instantly; skill lives in first-shot accuracy, recoil patterns and stopping before firing, since moving shots are inaccurate."
+      },
+      {
+        "pole": "simulated",
+        "game": "Squad",
+        "year": 2015,
+        "how": "Rounds use real muzzle velocities with exaggerated drop, so long shots need holdover, and bullets can pass through thin cover."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://playvalorant.com/en-us/news/dev/the-state-of-hit-registration/",
+        "note": "Valorant: Riot on how shots are resolved at the shot timestamp"
+      },
+      {
+        "url": "https://www.joinsquad.com/archive/infantry-combat-overhaul-10b70",
+        "note": "Squad: Infantry Combat Overhaul notes, bullet penetration through walls"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ranged.ballistics.mw2-arma3",
+    "axis": "ranged.ballistics",
+    "options": [
+      {
+        "pole": "hitscan",
+        "game": "Call of Duty: Modern Warfare 2 (2009)",
+        "year": 2009,
+        "how": "Bullets are hitscan: straight lines with infinite velocity, so shots land the instant you fire at any range"
+      },
+      {
+        "pole": "simulated",
+        "game": "Arma 3",
+        "year": 2013,
+        "how": "Ballistics are realistic across huge open maps, so long shots must account for bullet flight instead of instant hits"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://callofduty.fandom.com/wiki/Hitscan",
+        "note": "Call of Duty: Modern Warfare 2 (2009): bullet weapons are hitscan, straight lines at infinite velocity (except a scripted Barrett)"
+      },
+      {
+        "url": "https://store.steampowered.com/app/107410/",
+        "note": "Arma 3: massive open worlds where ballistics are realistic"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ranged.ballistics.teamfortress2-battlefield1",
+    "axis": "ranged.ballistics",
+    "options": [
+      {
+        "pole": "hitscan",
+        "game": "Team Fortress 2",
+        "year": 2007,
+        "how": "Bullet weapons are hitscan: damage lands instantly along the crosshair line, unlike rockets and arrows"
+      },
+      {
+        "pole": "simulated",
+        "game": "Battlefield 1",
+        "year": 2016,
+        "how": "Bullets are physics objects with drag, so rounds drop near the end of flight; Scout rifles fly faster and flatter"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://wiki.teamfortress.com/wiki/Hitscan",
+        "note": "Team Fortress 2: hitscan attacks instantly damage targets in their path, unlike projectiles"
+      },
+      {
+        "url": "https://battlefield.fandom.com/wiki/Bullet_drop",
+        "note": "Battlefield 1: projectile drag gives bullets pronounced drop; Scout weapons less drag and high velocity"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ranged.assist.haloce-pavlov",
+    "axis": "ranged.assist",
+    "options": [
+      {
+        "pole": "assist",
+        "game": "Halo: Combat Evolved",
+        "year": 2001,
+        "how": "Auto-aim (bullet magnetism) bends shots toward the target; the reticle turns red inside the range where it engages"
+      },
+      {
+        "pole": "raw",
+        "game": "Pavlov VR",
+        "year": 2017,
+        "how": "A VR shooter: you hold and point each gun with a tracked hand, so every shot depends on your own physical aim"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter"
+      ],
+      "platforms": [
+        "console",
+        "pc",
+        "vr"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.halopedia.org/Auto-aim",
+        "note": "Halo: Combat Evolved: auto-aim (bullet magnetism) changes shot trajectory toward targets; red reticle range"
+      },
+      {
+        "url": "https://store.steampowered.com/app/555160/",
+        "note": "Pavlov VR: multiplayer shooter in VR"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ranged.assist.doom-halflifealyx",
+    "axis": "ranged.assist",
+    "options": [
+      {
+        "pole": "assist",
+        "game": "Doom",
+        "year": 1993,
+        "how": "You can't look up or down, so vertical autoaim lifts or lowers shots onto enemies within range; you only aim left and right"
+      },
+      {
+        "pole": "raw",
+        "game": "Half-Life: Alyx",
+        "year": 2020,
+        "how": "A VR-only shooter: Alyx aims pistols and shotguns with your tracked hand, so accuracy is purely physical"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "vr"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://doom.fandom.com/wiki/Autoaim",
+        "note": "Doom: since you can't look up or down, vertical autoaim compensates within a certain distance"
+      },
+      {
+        "url": "https://half-life.fandom.com/wiki/Half-Life:_Alyx",
+        "note": "Half-Life: Alyx: VR game on SteamVR; pistol and other hand-held weapons"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ranged.assist.metroidprime-halflifealyx",
+    "axis": "ranged.assist",
+    "options": [
+      {
+        "pole": "assist",
+        "game": "Metroid Prime",
+        "year": 2002,
+        "how": "Holding L locks onto a target: Samus circles it while her shots stay on the locked enemy"
+      },
+      {
+        "pole": "raw",
+        "game": "Half-Life: Alyx",
+        "year": 2020,
+        "how": "Every weapon is raised and pointed by hand in VR; nothing steers shots toward Combine soldiers for you"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "action"
+      ],
+      "platforms": [
+        "console",
+        "pc",
+        "vr"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://metroid.fandom.com/wiki/Lock-on",
+        "note": "Metroid Prime: manual says hold L to lock onto targets and circle around the lock-on point"
+      },
+      {
+        "url": "https://half-life.fandom.com/wiki/Half-Life:_Alyx",
+        "note": "Half-Life: Alyx: VR game on SteamVR"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ranged.assist.gtav-csgo",
+    "axis": "ranged.assist",
+    "options": [
+      {
+        "pole": "assist",
+        "game": "Grand Theft Auto V",
+        "year": 2013,
+        "how": "Default targeting snaps the reticle onto nearby enemies when aiming; players can switch between assisted, partial and free aim."
+      },
+      {
+        "pole": "raw",
+        "game": "Counter-Strike: Global Offensive",
+        "year": 2012,
+        "how": "No assistance of any kind: crosshair placement, recoil control and stopping to shoot are entirely the player's job."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/271590/",
+        "note": "Grand Theft Auto V: store page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/730/",
+        "note": "Counter-Strike: Global Offensive: store page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ranged.assist.maxpayne3-devildaggers",
+    "axis": "ranged.assist",
+    "options": [
+      {
+        "pole": "assist",
+        "game": "Max Payne 3",
+        "year": 2012,
+        "how": "Players choose hard lock, soft lock or free aim; lock modes pull the reticle onto enemies while bullet time slows the action."
+      },
+      {
+        "pole": "raw",
+        "game": "Devil Daggers",
+        "year": 2016,
+        "how": "Daggers fly where the mouse points with no assist; homing daggers are an upgrade earned mid-run, not a helping hand."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/204100/",
+        "note": "Max Payne 3: store page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/422970/",
+        "note": "Devil Daggers: shot and rapid fire daggers, homing daggers earned later"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ranged.assist.pistolwhip-pavlov",
+    "axis": "ranged.assist",
+    "options": [
+      {
+        "pole": "assist",
+        "game": "Pistol Whip",
+        "year": 2019,
+        "how": "Aim assist helps hand-pointed shots connect so play stays on the beat; players can tune or disable it for a harder run."
+      },
+      {
+        "pole": "raw",
+        "game": "Pavlov VR",
+        "year": 2017,
+        "how": "Players raise physical guns and line up sights by hand, with manual magazine reloads and no aim assist."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "rhythm"
+      ],
+      "platforms": [
+        "vr",
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1079800/",
+        "note": "Pistol Whip: store page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/555160/",
+        "note": "Pavlov VR: realistic reloading and gun handling"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.stealth.model.hitman-splintercellct-markoftheninja",
+    "axis": "stealth.model",
+    "options": [
+      {
+        "pole": "social",
+        "game": "Hitman: World of Assassination",
+        "year": 2021,
+        "how": "Disguises open restricted areas of sandbox levels; enforcers can see through a given outfit, so blending in is the core skill."
+      },
+      {
+        "pole": "light_sound",
+        "game": "Tom Clancy's Splinter Cell: Chaos Theory",
+        "year": 2005,
+        "how": "A light meter shows how visible Sam is and a sound meter compares his noise to ambient sound; shooting out lights makes cover."
+      },
+      {
+        "pole": "light_sound",
+        "game": "Mark of the Ninja",
+        "year": 2012,
+        "how": "Noise is drawn as visible rings and enemy sight as cones on the 2D screen, so players read detection risk directly."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1659040/",
+        "note": "Hitman: World of Assassination: store page, freedom of approach in sandbox missions"
+      },
+      {
+        "url": "https://store.steampowered.com/app/13570/",
+        "note": "Tom Clancy's Splinter Cell: Chaos Theory: store page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/860950/",
+        "note": "Mark of the Ninja: Remastered store page"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    },
+    "note": "seed item: accuracy checked by the project owner"
+  },
+  {
+    "id": "cmp.stealth.model.thief-assassinscreed",
+    "axis": "stealth.model",
+    "options": [
+      {
+        "pole": "light_sound",
+        "game": "Thief: The Dark Project",
+        "year": 1998,
+        "how": "A light gem shows visibility; shadows hide Garrett and guards hear footsteps, so players pick quiet floors and douse torches."
+      },
+      {
+        "pole": "social",
+        "game": "Assassin's Creed",
+        "year": 2007,
+        "how": "Blending into crowds and monk groups hides Altair in plain sight; acting oddly in public, like running or climbing, draws attention."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/211600/",
+        "note": "Thief: The Dark Project (Thief Gold): shadows are your ally, enemies see and hear"
+      },
+      {
+        "url": "https://store.steampowered.com/app/15100/",
+        "note": "Assassin's Creed: blend in with crowds, crowds help or hinder"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.stealth.model.mgs3-hitmanbloodmoney",
+    "axis": "stealth.model",
+    "options": [
+      {
+        "pole": "light_sound",
+        "game": "Metal Gear Solid 3: Snake Eater",
+        "year": 2004,
+        "how": "A camouflage index rates how well uniform and face paint match the terrain; noise and sight lines alert guards."
+      },
+      {
+        "pole": "social",
+        "game": "Hitman: Blood Money",
+        "year": 2006,
+        "how": "Disguises let 47 walk past guards; odd conduct draws scrutiny and being seen raises notoriety, which bribing witnesses lowers."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://strategywiki.org/wiki/Metal_Gear_Solid_3:_Snake_Eater",
+        "note": "Metal Gear Solid 3: Snake Eater: camouflage index"
+      },
+      {
+        "url": "https://store.steampowered.com/app/6860/",
+        "note": "Hitman: Blood Money: notoriety reduced by bribing witnesses, guards probe odd conduct"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.stealth.model.dishonored-spyparty",
+    "axis": "stealth.model",
+    "options": [
+      {
+        "pole": "light_sound",
+        "game": "Dishonored",
+        "year": 2012,
+        "how": "Guards spot Corvo through sight lines and hear noise; leaning around corners, shadow and quiet movement keep him unseen."
+      },
+      {
+        "pole": "social",
+        "game": "SpyParty",
+        "year": 2018,
+        "how": "The spy blends in with party guests while doing missions; the sniper, with one bullet, watches for behavioral tells."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/205100/",
+        "note": "Dishonored: stay unseen by foes using shadow and sound"
+      },
+      {
+        "url": "https://store.steampowered.com/app/329070/",
+        "note": "SpyParty: spy blends in with partygoers, sniper looks for behavioral tells"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.stealth.model.alienisolation-assassinscreed2",
+    "axis": "stealth.model",
+    "options": [
+      {
+        "pole": "light_sound",
+        "game": "Alien: Isolation",
+        "year": 2014,
+        "how": "The alien hunts with its senses, so running or a beeping motion tracker draws it; players hide in lockers and under desks."
+      },
+      {
+        "pole": "social",
+        "game": "Assassin's Creed II",
+        "year": 2009,
+        "how": "Ezio blends into crowds and hired groups to approach targets; being seen doing illegal acts raises notoriety."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "horror",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/214490/",
+        "note": "Alien: Isolation: the Alien uses its senses to hunt you; evade, distract or confront"
+      },
+      {
+        "url": "https://store.steampowered.com/app/33230/",
+        "note": "Assassin's Creed II: blending in with crowds"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.stealth.model.tenchu-hitman2",
+    "axis": "stealth.model",
+    "options": [
+      {
+        "pole": "light_sound",
+        "game": "Tenchu: Stealth Assassins",
+        "year": 1998,
+        "how": "A ki meter shows how aware nearby enemies are, so the ninja approaches from rooftops and out of sight lines."
+      },
+      {
+        "pole": "social",
+        "game": "Hitman 2: Silent Assassin",
+        "year": 2002,
+        "how": "47 takes clothes from knocked-out characters to pass as staff or guards; a suspicion meter fills if he lingers near wary NPCs."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://strategywiki.org/wiki/Tenchu:_Stealth_Assassins",
+        "note": "Tenchu: Stealth Assassins: ki meter"
+      },
+      {
+        "url": "https://store.steampowered.com/app/6850/",
+        "note": "Hitman 2: Silent Assassin: balance stealth and aggression"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.stealth.failure.stealthbastard-payday2",
+    "axis": "stealth.failure",
+    "options": [
+      {
+        "pole": "restart",
+        "game": "Stealth Bastard Deluxe",
+        "year": 2012,
+        "how": "Being seen by a camera or security robot means instant death and a retry, so every room is a stealth puzzle with no fallback."
+      },
+      {
+        "pole": "escalate",
+        "game": "Payday 2",
+        "year": 2013,
+        "how": "A heist can start quiet, but once the alarm goes up it turns into a loud gunfight against police until the crew escapes."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "puzzle",
+        "shooter",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/209190/",
+        "note": "Stealth Bastard Deluxe: being seen means instant death"
+      },
+      {
+        "url": "https://store.steampowered.com/app/218620/",
+        "note": "Payday 2: slow and stealthy or running in guns blazing"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.stealth.failure.splintercell-lastofus",
+    "axis": "stealth.failure",
+    "options": [
+      {
+        "pole": "restart",
+        "game": "Tom Clancy's Splinter Cell",
+        "year": 2002,
+        "how": "In some missions being detected sounds the alarm and fails the mission outright, sending you back to a save"
+      },
+      {
+        "pole": "escalate",
+        "game": "The Last of Us",
+        "year": 2013,
+        "how": "You can sneak through homes and cities or engage in tense action; a blown approach becomes a fight for survival"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "horror"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://splintercell.fandom.com/wiki/Alarm",
+        "note": "Tom Clancy's Splinter Cell: in some missions the player must not be detected or the mission fails"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1888930/",
+        "note": "The Last of Us: stealthily sneak through homes and cities or engage in tense, captivating action"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.stealth.failure.splintercell-mgs",
+    "axis": "stealth.failure",
+    "options": [
+      {
+        "pole": "restart",
+        "game": "Tom Clancy's Splinter Cell",
+        "year": 2002,
+        "how": "Missions allow one, three or four alarms; hit the limit and the mission is over, and some fail on any detection"
+      },
+      {
+        "pole": "escalate",
+        "game": "Metal Gear Solid",
+        "year": 1998,
+        "how": "Detection triggers Alert mode: guards attack and call reinforcements; escape their sight and Evasion mode counts down to normal"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://splintercell.fandom.com/wiki/Alarm",
+        "note": "Tom Clancy's Splinter Cell: alarms limited to one, three or four per mission; max ends the mission"
+      },
+      {
+        "url": "https://metalgear.fandom.com/wiki/Alert",
+        "note": "Metal Gear Solid: Infiltration, Noise, Alert and Evasion modes"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.stealth.failure.acblackflag-batmanarkhamasylum",
+    "axis": "stealth.failure",
+    "options": [
+      {
+        "pole": "restart",
+        "game": "Assassin's Creed IV: Black Flag",
+        "year": 2013,
+        "how": "Eavesdrop and tail missions desynchronize and restart from a checkpoint if Edward is spotted or loses the target."
+      },
+      {
+        "pole": "escalate",
+        "game": "Batman: Arkham Asylum",
+        "year": 2009,
+        "how": "In predator rooms, a spotted Batman draws gunfire from armed thugs and must grapple away to vanish and strike again."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/242050/",
+        "note": "Assassin's Creed IV: Black Flag: store page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/35140/",
+        "note": "Batman: Arkham Asylum: Invisible Predator stealth"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.centrality.shenmue-yakuza0",
+    "axis": "combat.centrality",
+    "options": [
+      {
+        "pole": "occasional",
+        "game": "Shenmue",
+        "year": 1999,
+        "how": "Days go to exploring, searching for clues, examining objects and talking to NPCs; jujitsu battles and QTEs punctuate the investigation"
+      },
+      {
+        "pole": "pillar",
+        "game": "Yakuza 0",
+        "year": 2015,
+        "how": "Goons and thugs pick fights as you roam; you switch among three fighting styles instantly and swing bikes or signs for combos"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "narrative"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/758330/",
+        "note": "Shenmue: explore a 3D open world searching for clues, examining objects and talking to NPCs; battle enemies with Hazuki-style jujitsu; QTEs and mini-games"
+      },
+      {
+        "url": "https://store.steampowered.com/app/638970/",
+        "note": "Yakuza 0: beat up goons and thugs, switch among three fighting styles instantly, use bicycles, sign posts and car doors in combos"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.centrality.deathstranding-doom1993",
+    "axis": "combat.centrality",
+    "options": [
+      {
+        "pole": "occasional",
+        "game": "Death Stranding",
+        "year": 2019,
+        "how": "Most time is spent hiking cargo across terrain; you sneak past BTs and only sometimes raid terrorist camps to take stolen cargo back"
+      },
+      {
+        "pole": "pillar",
+        "game": "Doom (1993)",
+        "year": 1993,
+        "how": "Every level is a run through demon-filled maps; weapons, ammo and health pickups exist only to feed constant shooting"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "shooter"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.pcgamer.com/death-stranding-review/",
+        "note": "Death Stranding: majority of time spent plodding from place to place; sneak past BTs; may have to sneak into terrorist camps to recover cargo"
+      },
+      {
+        "url": "https://store.steampowered.com/app/2280/",
+        "note": "Doom (1993): you are the last defense against Hell; weapon carousel, intense battle against demons"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.centrality.subnautica-deadcells",
+    "axis": "combat.centrality",
+    "options": [
+      {
+        "pole": "occasional",
+        "game": "Subnautica",
+        "year": 2018,
+        "how": "Only a knife and stasis or propulsion tools; most fauna is avoided, survival and base building are the focus, not fighting"
+      },
+      {
+        "pole": "pillar",
+        "game": "Dead Cells",
+        "year": 2018,
+        "how": "Every biome is enemy gauntlets; weapons, skills and mutations are all combat options and runs end on combat death"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "survival",
+        "action",
+        "platformer"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/264710/Subnautica/",
+        "note": "Subnautica: Steam page stresses survival, base building, luring or fleeing predators over fighting; full release Jan 2018. Knife/stasis rifle not named there."
+      },
+      {
+        "url": "https://deadcells.wiki.gg/wiki/Mutations",
+        "note": "Dead Cells: wiki.gg confirms mutations are mostly combat passives (damage, parries, cooldowns); Steam confirms souls-lite combat, permadeath. EA 2017, full 2018."
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.centrality.nomanssky-ultrakill",
+    "axis": "combat.centrality",
+    "options": [
+      {
+        "pole": "occasional",
+        "game": "No Man's Sky",
+        "year": 2016,
+        "how": "Fighting pirates and hostile creatures is one option beside exploring, trading and surviving; you choose whether to be a fighter at all"
+      },
+      {
+        "pole": "pillar",
+        "game": "Ultrakill",
+        "year": 2020,
+        "how": "Style ranks every fight and doubles as a combo system: quick, varied kills raise it, so the whole game is built around killing well"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "sandbox",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/275850/",
+        "note": "No Man's Sky: explore, trade, fight and survive; will you be a fighter or a trader or explorer"
+      },
+      {
+        "url": "https://ultrakill.wiki.gg/wiki/Style",
+        "note": "Ultrakill: Style is a main mechanic, a ranking of performance and a combo system rewarding stylish play"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.sim.halfsword-skyrim",
+    "axis": "combat.sim",
+    "options": [
+      {
+        "pole": "physics",
+        "game": "Half Sword",
+        "year": 2026,
+        "how": "Weapons are physical objects steered by the mouse on active-ragdoll bodies; momentum, edge contact and armor coverage decide damage"
+      },
+      {
+        "pole": "animated",
+        "game": "The Elder Scrolls V: Skyrim",
+        "year": 2011,
+        "how": "Swings play animations, hits register on contact, damage comes from weapon stats, perks and skill"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/2397300/Half_Sword/",
+        "note": "Half Sword: Steam confirms physics-based combat, weapons wielded with the mouse, injuries tied to weapon and armor. Early Access began Jan 30 2026, not 2025."
+      },
+      {
+        "url": "https://en.uesp.net/wiki/Skyrim:Combat",
+        "note": "The Elder Scrolls V: Skyrim: weapon damage scales with skill level and perks such as Armsman"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.combat.sim.exanima-witcher3",
+    "axis": "combat.sim",
+    "options": [
+      {
+        "pole": "physics",
+        "game": "Exanima",
+        "year": 2015,
+        "how": "Combat is truly physics based: real momentum and force of bodies and weapons decide hits, not canned animations"
+      },
+      {
+        "pole": "animated",
+        "game": "The Witcher 3: Wild Hunt",
+        "year": 2015,
+        "how": "Swings are set attacks; damage comes from steel vs silver sword matchups, oils that multiply damage per enemy type, and Sign intensity"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/362490/",
+        "note": "Exanima: truly physics based combat system, not an animation feature; real momentum and force"
+      },
+      {
+        "url": "https://thewitcher3.wiki.fextralife.com/Combat",
+        "note": "The Witcher 3: steel and silver swords per enemy type, oils boost sword damage per enemy type, Sign damage scales with intensity"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.sim.bladeandsorcery-arkhamasylum",
+    "axis": "combat.sim",
+    "options": [
+      {
+        "pole": "physics",
+        "game": "Blade & Sorcery",
+        "year": 2018,
+        "how": "VR combat where objects have weight, collisions use fine hitboxes, creatures have full body physics and blades can penetrate soft materials"
+      },
+      {
+        "pole": "animated",
+        "game": "Batman: Arkham Asylum",
+        "year": 2009,
+        "how": "FreeFlow combat chains animated strikes into seamless combos against groups of henchmen; button presses trigger whole moves"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action"
+      ],
+      "platforms": [
+        "vr",
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/629730/",
+        "note": "Blade & Sorcery: physics driven combat, objects have weight, creatures have full body physics, blades penetrate soft materials"
+      },
+      {
+        "url": "https://store.steampowered.com/app/35140/",
+        "note": "Batman: Arkham Asylum: FreeFlow combat system chains unlimited combos seamlessly against large groups"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.sim.toribash-streetfighter2",
+    "axis": "combat.sim",
+    "options": [
+      {
+        "pole": "physics",
+        "game": "Toribash",
+        "year": 2006,
+        "how": "Turn-based physics fighting: you set each joint to contract, extend, hold or relax, then the simulation plays out the clash"
+      },
+      {
+        "pole": "animated",
+        "game": "Street Fighter II",
+        "year": 1991,
+        "how": "Each move is a fixed animation with hitboxes and frame data; damage is a per-move value, not computed from force"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "fighting"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/248570/Toribash/",
+        "note": "Toribash: Steam confirms turn-based fighting where each joint has 4 states (how listed only 3; hold added); released 2006."
+      },
+      {
+        "url": "https://store.steampowered.com/app/586200/Street_Fighter_30th_Anniversary_Collection/",
+        "note": "Street Fighter II: store page (release and platform reference)"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.sim.gangbeasts-smashmelee",
+    "axis": "combat.sim",
+    "options": [
+      {
+        "pole": "physics",
+        "game": "Gang Beasts",
+        "year": 2017,
+        "how": "Wobbly ragdoll brawlers grab, punch and throw each other with physics; knockouts come from impacts and falls"
+      },
+      {
+        "pole": "animated",
+        "game": "Super Smash Bros. Melee",
+        "year": 2001,
+        "how": "Attacks are authored animations with set damage percent; knockback scales with percent, launching fighters off stage"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "party",
+        "fighting"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/285900/Gang_Beasts/",
+        "note": "Gang Beasts: Steam confirms physics-tagged slapstick melee brawler, released Dec 2017; grab and throw specifics not described on the page."
+      },
+      {
+        "url": "https://www.ssbwiki.com/Knockback",
+        "note": "Super Smash Bros. Melee: SmashWiki confirms per-hitbox damage values and knockback rising with target percent; released Nov 2001."
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.range.goldenaxe-contra",
+    "axis": "combat.range",
+    "options": [
+      {
+        "pole": "melee",
+        "game": "Golden Axe",
+        "year": 1989,
+        "how": "Close-range sword and axe combos, dashing attacks and throws against walking enemies; magic is the only ranged option"
+      },
+      {
+        "pole": "ranged",
+        "game": "Contra",
+        "year": 1987,
+        "how": "Run and gun: you shoot in eight directions, collect spread and laser guns, and one hit from anything kills you"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "platformer"
+      ],
+      "platforms": [
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/34270/SEGA_Mega_Drive_and_Genesis_Classics/",
+        "note": "Golden Axe: store page (release and platform reference)"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1018020/Contra_Anniversary_Collection/",
+        "note": "Contra: store page (release and platform reference)"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.range.chivalry2-battlefield1",
+    "axis": "combat.range",
+    "options": [
+      {
+        "pole": "melee",
+        "game": "Chivalry 2",
+        "year": 2021,
+        "how": "A first-person slasher: clashing swords and deep melee combat on foot or horseback decide most fights, with archers as a side class"
+      },
+      {
+        "pole": "ranged",
+        "game": "Battlefield 1",
+        "year": 2016,
+        "how": "Kits are built around semi-auto rifles, scoped bolt-actions and support guns plus tanks and planes; melee got more focus but is secondary"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1824220/",
+        "note": "Chivalry 2: multiplayer first person slasher, clashing swords, deep melee combat with grounded or mounted opponents"
+      },
+      {
+        "url": "https://battlefield.fandom.com/wiki/Battlefield_1",
+        "note": "Battlefield 1: Medic semi-automatic rifles, Scout scoped single-action rifles, vehicles; melee has an increased focus"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.range.bayonetta-vanquish",
+    "axis": "combat.range",
+    "options": [
+      {
+        "pole": "melee",
+        "game": "Bayonetta",
+        "year": 2009,
+        "how": "Punch and kick combos end in Wicked Weaves; guns mostly extend combos, close-range strikes deal the damage"
+      },
+      {
+        "pole": "ranged",
+        "game": "Vanquish",
+        "year": 2010,
+        "how": "Cover shooter where rocket-sliding and slow-motion AR mode serve gunplay; melee is a costly emergency move"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "shooter"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/460790/Bayonetta/",
+        "note": "Bayonetta: fluid combat with combos and special attacks"
+      },
+      {
+        "url": "https://store.steampowered.com/app/460810/Vanquish/",
+        "note": "Vanquish: combat built on boosting, evading and Augmented Reaction mode"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.range.hyperlightdrifter-enterthegungeon",
+    "axis": "combat.range",
+    "options": [
+      {
+        "pole": "melee",
+        "game": "Hyper Light Drifter",
+        "year": 2016,
+        "how": "The sword is the main weapon; guns have few ammo slots that refill only when sword slashes land on enemies"
+      },
+      {
+        "pole": "ranged",
+        "game": "Enter the Gungeon",
+        "year": 2016,
+        "how": "A bullet hell dungeon crawler: you shoot, loot, dodge roll and flip tables through rooms of gun-wielding Gundead"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://hyperlightdrifter.fandom.com/wiki/Pistol",
+        "note": "Hyper Light Drifter: Pistol has 6 ammo slots; each sword slash on an enemy gives another pistol shot"
+      },
+      {
+        "url": "https://store.steampowered.com/app/311690/",
+        "note": "Enter the Gungeon: bullet hell dungeon crawler; shoot, loot, dodge roll and table-flip"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.range.zenoclash-quake",
+    "axis": "combat.range",
+    "options": [
+      {
+        "pole": "melee",
+        "game": "Zeno Clash",
+        "year": 2009,
+        "how": "First-person fistfighting is the core: combat is up close, with deflect and elude combos, knockback finishers and grab attacks"
+      },
+      {
+        "pole": "ranged",
+        "game": "Quake",
+        "year": 1996,
+        "how": "Shotguns, nailguns, grenade and rocket launchers do the work; the Axe deals meager damage and is a last-resort holdout"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "shooter"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/22200/",
+        "note": "Zeno Clash: first person, combat generally up close and brutal; deflect and elude combos, knockback finisher punches, grab attacks"
+      },
+      {
+        "url": "https://quakewiki.org/wiki/Axe",
+        "note": "Quake: the Axe is a melee weapon that deals meager damage, a last-resort holdout option"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.targeting.eldenring-bannerlord",
+    "axis": "combat.targeting",
+    "options": [
+      {
+        "pole": "lockon",
+        "game": "Elden Ring",
+        "year": 2022,
+        "how": "Lock-on to a single target: the camera and your attacks track the locked enemy"
+      },
+      {
+        "pole": "free",
+        "game": "Mount & Blade II: Bannerlord",
+        "year": 2020,
+        "how": "No lock-on: mouse-direction swings, damage scales with swing and mount speed"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2020s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://eldenring.wiki.fextralife.com/Controls",
+        "note": "Elden Ring: controls list Lock-On / Remove Target"
+      },
+      {
+        "url": "https://store.steampowered.com/app/261550/Mount__Blade_II_Bannerlord/",
+        "note": "Mount & Blade II: Bannerlord: Bannerlord: Steam confirms directional combat, EA Mar 2020; speed-scaled damage and no lock-on not stated. Partial."
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    },
+    "note": "seed item: accuracy checked by the project owner"
+  },
+  {
+    "id": "cmp.combat.targeting.liesofp-mordhau",
+    "axis": "combat.targeting",
+    "options": [
+      {
+        "pole": "lockon",
+        "game": "Lies of P",
+        "year": 2023,
+        "how": "Clicking R3 locks on, keeping camera and attacks on one enemy while you guard, dodge and parry"
+      },
+      {
+        "pole": "free",
+        "game": "Mordhau",
+        "year": 2019,
+        "how": "Free-form melee: no target lock, you steer every swing and stab yourself in first or third person"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://liesofp.wiki.fextralife.com/Controls",
+        "note": "Lies of P: R3 Lock On, L1 Guard, Circle Dash/Dodge"
+      },
+      {
+        "url": "https://store.steampowered.com/app/629760/",
+        "note": "Mordhau: free-form melee and ranged combat, complete control over your character and attacks"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.targeting.kingdomhearts-bladeandsorcery",
+    "axis": "combat.targeting",
+    "options": [
+      {
+        "pole": "lockon",
+        "game": "Kingdom Hearts",
+        "year": 2002,
+        "how": "Attacks go to the nearest target, and Lock-On fixes on one enemy with the camera following it until you switch targets"
+      },
+      {
+        "pole": "free",
+        "game": "Blade & Sorcery",
+        "year": 2018,
+        "how": "In VR you swing weapons with your own hands; a hit lands wherever the blade physically collides, with no targeting help"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "console",
+        "pc",
+        "vr"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.khwiki.com/Lock-on",
+        "note": "Kingdom Hearts: automatically attacks closest target; Lock-On permanently targets one enemy and the camera follows"
+      },
+      {
+        "url": "https://store.steampowered.com/app/629730/",
+        "note": "Blade & Sorcery: built for VR, collisions dictated by fine hitboxes, physics driven combat"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.targeting.lordsofthefallen-darkmessiah",
+    "axis": "combat.targeting",
+    "options": [
+      {
+        "pole": "lockon",
+        "game": "Lords of the Fallen (2014)",
+        "year": 2014,
+        "how": "A lock-target key holds the camera on one enemy and the scroll wheel switches targets while you trade light and heavy attacks"
+      },
+      {
+        "pole": "free",
+        "game": "Dark Messiah of Might and Magic",
+        "year": 2006,
+        "how": "First-person melee with full body awareness and physics: you aim every swing and kick at whatever is in front of you"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://lordsofthefallen.wiki.fextralife.com/Controls",
+        "note": "Lords of the Fallen (2014): Middle Mouse locking target key, scroll to switch locked target"
+      },
+      {
+        "url": "https://store.steampowered.com/app/2100/",
+        "note": "Dark Messiah of Might and Magic: complete first-person melee combat system, full body awareness, physics"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.input.kcd2-darksouls-forhonor",
+    "axis": "combat.input",
+    "options": [
+      {
+        "pole": "directional",
+        "game": "Kingdom Come: Deliverance II",
+        "year": 2025,
+        "how": "Four attack directions (three for polearms) plus a separate stab input; perfect blocks on the green shield cost no stamina and open ripostes"
+      },
+      {
+        "pole": "combo",
+        "game": "Dark Souls",
+        "year": 2011,
+        "how": "Light and heavy attacks, stamina-gated rolls and shield blocks"
+      },
+      {
+        "pole": "directional",
+        "game": "For Honor",
+        "year": 2017,
+        "how": "Three-direction guard stance read against the opponent indicator"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://kingdomcomedeliverance2.wiki.fextralife.com/Combat",
+        "note": "Kingdom Come: Deliverance II: wiki confirms four-direction attacks, stabs as a separate input (not combo-only), green-shield perfect blocks and ripostes."
+      },
+      {
+        "url": "https://darksouls.wiki.fextralife.com/Stamina",
+        "note": "Dark Souls: wiki says attacking, blocking, rolling and parrying all consume stamina."
+      },
+      {
+        "url": "https://store.steampowered.com/app/304390/",
+        "note": "For Honor: Steam describes the 3-directional Art of Battle system (attack, parry, block from 3 directions); released Feb 13, 2017."
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.combat.input.absolver-sifu",
+    "axis": "combat.input",
+    "options": [
+      {
+        "pole": "directional",
+        "game": "Absolver",
+        "year": 2017,
+        "how": "Four stances: each attack ends in a stance, and your Combat Deck sets which move chains from each stance"
+      },
+      {
+        "pole": "combo",
+        "game": "Sifu",
+        "year": 2022,
+        "how": "Light and heavy button strings, holds and pauses form kung fu combos, plus parry, dodge and takedowns"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "fighting"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/473690/",
+        "note": "Absolver: Steam confirms one of four tactical stances and arranging attacks in a Combat Deck to design attack flow; released Aug 29, 2017."
+      },
+      {
+        "url": "https://store.steampowered.com/app/2138710/",
+        "note": "Sifu: Steam confirms dodge, parry, strike and combos with Pak Mei kung fu techniques; Steam date is the 2023 PC port, original 2022."
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.input.ghostoftsushima-godofwar2018",
+    "axis": "combat.input",
+    "options": [
+      {
+        "pole": "directional",
+        "game": "Ghost of Tsushima",
+        "year": 2020,
+        "how": "Hold R2 to switch among four stances, each effective against one enemy type: swordsmen, shieldmen, spearmen or brutes"
+      },
+      {
+        "pole": "combo",
+        "game": "God of War (2018)",
+        "year": 2018,
+        "how": "Light and heavy axe attacks chain into combos, with runic attacks slotted onto the light and heavy buttons"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://ghostoftsushima.wiki.fextralife.com/Stances",
+        "note": "Ghost of Tsushima: hold R2 to switch stance; Stone vs swordsmen, Water vs shieldmen, Wind vs spearmen, Moon vs brutes"
+      },
+      {
+        "url": "https://godofwar.fandom.com/wiki/Leviathan_Axe",
+        "note": "God of War (2018): Light Attack and Heavy Attack strings, two Runic Attack slots (light and heavy)"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.resource.darksouls-doometernal",
+    "axis": "combat.resource",
+    "options": [
+      {
+        "pole": "stamina",
+        "game": "Dark Souls",
+        "year": 2011,
+        "how": "One stamina bar gates attacks, blocks and rolls"
+      },
+      {
+        "pole": "aggression",
+        "game": "DOOM Eternal",
+        "year": 2020,
+        "how": "No stamina: chainsaw for ammo, glory kills for health, flame belch for armor reward aggression"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://darksouls.wiki.fextralife.com/Stamina",
+        "note": "Dark Souls: wiki says attacking, blocking, rolling, running and parrying all draw from one stamina bar."
+      },
+      {
+        "url": "https://store.steampowered.com/app/782330/",
+        "note": "DOOM Eternal: Steam says glory kill for health, incinerate (flame belch) for armor, chainsaw for ammo; released Mar 19, 2020."
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.combat.resource.nioh-ultrakill",
+    "axis": "combat.resource",
+    "options": [
+      {
+        "pole": "stamina",
+        "game": "Nioh",
+        "year": 2017,
+        "how": "Ki (stamina) drains on attacks, dodges and blocks; empty Ki leaves you stunned, Ki Pulse recovers some with timing"
+      },
+      {
+        "pole": "aggression",
+        "game": "Ultrakill",
+        "year": 2020,
+        "how": "Health returns only from enemy blood sprayed on you, so healing means getting close and killing"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://nioh.wiki.fextralife.com/Ki",
+        "note": "Nioh: wiki says attacks and evasions consume Ki, empty Ki leaves you huffing and open, Ki Pulse rapidly recovers spent Ki after a combo."
+      },
+      {
+        "url": "https://store.steampowered.com/app/1229490/",
+        "note": "Ultrakill: Steam says soak yourself in enemies' blood to regain health; early access Sep 3, 2020."
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.resource.kingdomcome-metalgearrising",
+    "axis": "combat.resource",
+    "options": [
+      {
+        "pole": "stamina",
+        "game": "Kingdom Come: Deliverance",
+        "year": 2018,
+        "how": "Fighting drains stamina and at zero you can neither fight nor sprint until you catch your breath; health caps how much you have"
+      },
+      {
+        "pole": "aggression",
+        "game": "Metal Gear Rising: Revengeance",
+        "year": 2013,
+        "how": "Zandatsu: cut an enemy weak point in Blade Mode and grab its core to refill fuel cells and health instantly"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://kingdomcomedeliverance.wiki.fextralife.com/Stamina",
+        "note": "Kingdom Come: Deliverance: stamina depletes when you fight; at zero you can do neither; depends on Health"
+      },
+      {
+        "url": "https://metalgear.fandom.com/wiki/Zandatsu",
+        "note": "Metal Gear Rising: Revengeance: Zandatsu targets weak points in Blade Mode to grab cores and recharge fuel cells and health"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.resource.saltandsanctuary-doom2016",
+    "axis": "combat.resource",
+    "options": [
+      {
+        "pole": "stamina",
+        "game": "Salt and Sanctuary",
+        "year": 2016,
+        "how": "All attacks, spells and rolls cost stamina; acting with too little makes moves much slower, so you pace swings to the bar"
+      },
+      {
+        "pole": "aggression",
+        "game": "Doom (2016)",
+        "year": 2016,
+        "how": "Glory kills on staggered demons always drop health and chainsaw kills refill ammo, so low resources push you to attack"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg",
+        "shooter",
+        "platformer"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://saltandsanctuary.wiki.fextralife.com/Stamina",
+        "note": "Salt and Sanctuary: all attacks, magics and acrobatics require stamina; too little makes actions significantly slower"
+      },
+      {
+        "url": "https://doom.fandom.com/wiki/Glory_Kill",
+        "note": "Doom (2016): enemies killed through Glory Kills always drop health; Chainsaw kills recover ammo"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.defense.sekiro-bloodborne",
+    "axis": "combat.defense",
+    "options": [
+      {
+        "pole": "parry",
+        "game": "Sekiro: Shadows Die Twice",
+        "year": 2019,
+        "how": "Deflection fills enemy posture until a deathblow"
+      },
+      {
+        "pole": "dodge",
+        "game": "Bloodborne",
+        "year": 2015,
+        "how": "Minimal shields; the Regain system returns lost health if you hit back quickly"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://sekiroshadowsdietwice.wiki.fextralife.com/Posture",
+        "note": "Sekiro: Shadows Die Twice: wiki says deflects deal high posture damage and a full posture bar allows a Deathblow."
+      },
+      {
+        "url": "https://bloodborne.wiki.fextralife.com/Regain",
+        "note": "Bloodborne: wiki says attacking within about 5 seconds of being hit recovers lost health (Regain/Rally)."
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.combat.defense.vanquish-maxpayne-serioussam",
+    "axis": "combat.defense",
+    "options": [
+      {
+        "pole": "cover",
+        "game": "Vanquish",
+        "year": 2010,
+        "how": "Cover-based shooting with destructible cover: you slide-boost into and out of cover at speed, and score drops for time spent there"
+      },
+      {
+        "pole": "dodge",
+        "game": "Max Payne",
+        "year": 2001,
+        "how": "Shootdodge: Max dives through the air in bullet time to avoid enemy fire while shooting back"
+      },
+      {
+        "pole": "none",
+        "game": "Serious Sam: The First Encounter",
+        "year": 2001,
+        "how": "No block, cover or dodge move: large arenas fill with waves of enemies and you survive by moving and killing fast"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://vanquish.fandom.com/wiki/Vanquish",
+        "note": "Vanquish: cover system, cover is destructible, score penalized for time in cover, slide-boost into and out of cover"
+      },
+      {
+        "url": "https://maxpayne.fandom.com/wiki/Shootdodge",
+        "note": "Max Payne: Shootdodge dives through the air using Bullet Time to avoid enemy fire while returning fire"
+      },
+      {
+        "url": "https://serioussam.fandom.com/wiki/Serious_Sam:_The_First_Encounter",
+        "note": "Serious Sam: The First Encounter: large arenas with many enemies, wave structure"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.commitment.monsterhunterworld-dmc5",
+    "axis": "combat.commitment",
+    "options": [
+      {
+        "pole": "committed",
+        "game": "Monster Hunter: World",
+        "year": 2018,
+        "how": "Long committed attacks, hitzones and part breaks"
+      },
+      {
+        "pole": "cancel",
+        "game": "Devil May Cry 5",
+        "year": 2019,
+        "how": "Cancel-heavy combos, juggles, style rank rewards variety"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://monsterhunterworld.wiki.fextralife.com/Combat",
+        "note": "Monster Hunter: World: wiki confirms monster weak spots (orange hit numbers) and big attacks; part breaks not on that page."
+      },
+      {
+        "url": "https://store.steampowered.com/app/601150/Devil_May_Cry_5/",
+        "note": "Devil May Cry 5: store page (release and platform reference)"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    },
+    "note": "seed item: accuracy checked by the project owner"
+  },
+  {
+    "id": "cmp.combat.commitment.mortalshell-bayonetta",
+    "axis": "combat.commitment",
+    "options": [
+      {
+        "pole": "committed",
+        "game": "Mortal Shell",
+        "year": 2020,
+        "how": "Deliberate combat: you commit a sword swing only when an opening appears, and Harden (turning to stone) is the safety tool"
+      },
+      {
+        "pole": "cancel",
+        "game": "Bayonetta",
+        "year": 2009,
+        "how": "Dodge Offset: hold the attack button through a dodge and the combo continues afterward instead of resetting"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1110910/",
+        "note": "Mortal Shell: combat is strategic and deliberate, commit your sword only when an opportunity opens; harden in stone"
+      },
+      {
+        "url": "https://bayonetta.fandom.com/wiki/Dodge_Offset",
+        "note": "Bayonetta: Dodge Offset holds attack through a dodge and continues the combo"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.commitment.mortalshell-dmc3",
+    "axis": "combat.commitment",
+    "options": [
+      {
+        "pole": "committed",
+        "game": "Mortal Shell",
+        "year": 2020,
+        "how": "Slow, heavy attacks commit you; Harden (turning to stone mid-swing) is the main safety tool"
+      },
+      {
+        "pole": "cancel",
+        "game": "Devil May Cry 3: Dante's Awakening",
+        "year": 2005,
+        "how": "Jump cancels and mid-combo weapon swaps let skilled players chain moves; the style is picked at mission start or statues, not switched mid-fight"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1110910/",
+        "note": "Mortal Shell: Steam says entomb your shell in stone to block attacks or add weight to sword swings; original Aug 2020, Steam 2021."
+      },
+      {
+        "url": "https://store.steampowered.com/app/6550/",
+        "note": "Devil May Cry 3: Dante's Awakening: Dantes Awakening: Steam says you choose Dante's fighting style; on-the-fly style switching arrived in DMC4, so the claim looks wrong."
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.time_model.xcom2-frozensynapse-pillars",
+    "axis": "combat.time_model",
+    "options": [
+      {
+        "pole": "alternating",
+        "game": "XCOM 2",
+        "year": 2016,
+        "how": "Alternating turns, two actions per soldier"
+      },
+      {
+        "pole": "wego",
+        "game": "Frozen Synapse",
+        "year": 2011,
+        "how": "Simultaneous WEGO turns, both sides plan then execute"
+      },
+      {
+        "pole": "rtwp",
+        "game": "Pillars of Eternity",
+        "year": 2015,
+        "how": "Real-time with pause party combat"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/268500/XCOM_2/",
+        "note": "XCOM 2: Steam page tags turn-based tactics, release Feb 4 2016; two-actions-per-soldier detail not stated on page (PARTIAL)"
+      },
+      {
+        "url": "https://store.steampowered.com/app/98200/Frozen_Synapse/",
+        "note": "Frozen Synapse: Steam page says after planning and pressing Prime both sides' turns execute simultaneously; year not re-checked"
+      },
+      {
+        "url": "https://store.steampowered.com/app/291650/Pillars_of_Eternity/",
+        "note": "Pillars of Eternity: store page (release and platform reference)"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    },
+    "note": "seed item: accuracy checked by the project owner"
+  },
+  {
+    "id": "cmp.combat.time_model.baldursgate3-ff7remake",
+    "axis": "combat.time_model",
+    "options": [
+      {
+        "pole": "alternating",
+        "game": "Baldur's Gate 3",
+        "year": 2023,
+        "how": "Turn-based D&D 5e party combat with initiative and environmental interactions"
+      },
+      {
+        "pole": "atb",
+        "game": "Final Fantasy VII Remake",
+        "year": 2020,
+        "how": "Real-time action, ATB gauge spent on abilities and commands"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2020s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://bg3.wiki/wiki/Initiative",
+        "note": "Baldur's Gate 3: bg3.wiki says participants act in order from highest to lowest initiative (d4 + Dex); environmental part not checked"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1462040/FINAL_FANTASY_VII_REMAKE_INTERGRADE/",
+        "note": "Final Fantasy VII Remake: Steam page says combat mixes traditional command-based combat and real-time action; ATB not named on page (PARTIAL)"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.combat.time_model.diablo-ff4",
+    "axis": "combat.time_model",
+    "options": [
+      {
+        "pole": "realtime",
+        "game": "Diablo",
+        "year": 1996,
+        "how": "All actions happen in real time: monsters keep attacking while you click to strike, cast or drink potions"
+      },
+      {
+        "pole": "atb",
+        "game": "Final Fantasy IV",
+        "year": 1991,
+        "how": "Active Time Battle: time keeps moving during battle, so enemies act while you are still choosing commands"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://diablo.fandom.com/wiki/Diablo_I",
+        "note": "Diablo: an action RPG where all actions are done in real time"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1173800/",
+        "note": "Final Fantasy IV: first title with the Active Time Battle system, time moves even during battle"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.ttk.rainbowsixsiege-haloinfinite",
+    "axis": "combat.ttk",
+    "options": [
+      {
+        "pole": "short",
+        "game": "Tom Clancy's Rainbow Six Siege",
+        "year": 2015,
+        "how": "One headshot kills, destructible walls"
+      },
+      {
+        "pole": "long",
+        "game": "Halo Infinite",
+        "year": 2021,
+        "how": "Recharging shields, longer TTK"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/",
+        "note": "Tom Clancy's Rainbow Six Siege: store page (release and platform reference)"
+      },
+      {
+        "url": "https://www.halopedia.org/Energy_shielding",
+        "note": "Halo Infinite: Halopedia energy shielding page notes Infinite shows shield meter above health bar; Steam lists Nov 15 2021 (PARTIAL, TTK not sourced)"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    },
+    "note": "seed item: accuracy checked by the project owner"
+  },
+  {
+    "id": "cmp.combat.ttk.counterstrike-quake3",
+    "axis": "combat.ttk",
+    "options": [
+      {
+        "pole": "short",
+        "game": "Counter-Strike",
+        "year": 2000,
+        "how": "An AK-47 headshot kills even a helmeted player in one bullet, so a single mistake ends your round"
+      },
+      {
+        "pole": "long",
+        "game": "Quake III Arena",
+        "year": 1999,
+        "how": "Mega-Health and small health pickups push health past the 100 cap, so kills take sustained damage and item control matters"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://counterstrike.fandom.com/wiki/AK-47",
+        "note": "Counter-Strike: AK-47 can kill a helmeted player with one shot to the head"
+      },
+      {
+        "url": "https://quakewiki.org/wiki/Health",
+        "note": "Quake III Arena: Mega-Health and green health ignore the 100 HP cap"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.ttk.ghostrunner-streetfighter2",
+    "axis": "combat.ttk",
+    "options": [
+      {
+        "pole": "short",
+        "game": "Ghostrunner",
+        "year": 2020,
+        "how": "One-hit one-kill for both sides: a single katana slice kills an enemy and a single bullet kills you"
+      },
+      {
+        "pole": "long",
+        "game": "Street Fighter II",
+        "year": 1991,
+        "how": "Each fighter has a health bar that takes many hits to empty over a round; too many blows in a row stun the victim"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "fighting",
+        "platformer"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1139900/",
+        "note": "Ghostrunner: one-hit one-kill mechanics"
+      },
+      {
+        "url": "https://streetfighter.fandom.com/wiki/Street_Fighter_II:_The_World_Warrior",
+        "note": "Street Fighter II: health bars per fighter; stuns from too many blows"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.ttk.hotlinemiami-borderlands2",
+    "axis": "combat.ttk",
+    "options": [
+      {
+        "pole": "short",
+        "game": "Hotline Miami",
+        "year": 2012,
+        "how": "Every shot is instantly fatal for you and most enemies, so each move must be quick and rooms are cleared in seconds"
+      },
+      {
+        "pole": "long",
+        "game": "Borderlands 2",
+        "year": 2012,
+        "how": "Enemies have shields, armor and health that scale with level, so fights mean pouring damage through layered bars"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "shooter",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://hotlinemiami.fandom.com/wiki/Hotline_Miami",
+        "note": "Hotline Miami: the action is unrelenting and every shot is instantly fatal"
+      },
+      {
+        "url": "https://borderlands.fandom.com/wiki/Health",
+        "note": "Borderlands 2: health proportional to level, damage hits shields first, enemy health varies widely"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.ttk.hotlinemiami-finalfight",
+    "axis": "combat.ttk",
+    "options": [
+      {
+        "pole": "short",
+        "game": "Hotline Miami",
+        "year": 2012,
+        "how": "Every shot is deadly for you and for most enemies, so each move must be quick and decisive; levels are planned as fast lethal routes"
+      },
+      {
+        "pole": "long",
+        "game": "Final Fight",
+        "year": 1989,
+        "how": "Thugs take several punch combos or throws each, with visible health bars, and you have a large life bar"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/219150/Hotline_Miami/",
+        "note": "Hotline Miami: every shot is deadly, each move must be quick and decisive"
+      },
+      {
+        "url": "https://store.steampowered.com/app/885150/Capcom_Beat_Em_Up_Bundle/",
+        "note": "Final Fight: store page (release and platform reference)"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.numbers.farcry2-division",
+    "axis": "combat.numbers",
+    "options": [
+      {
+        "pole": "hidden",
+        "game": "Far Cry 2",
+        "year": 2008,
+        "how": "No damage numbers or enemy health bars; you read hits from reactions, and your own health is a short segmented bar"
+      },
+      {
+        "pole": "visible",
+        "game": "Tom Clancy's The Division",
+        "year": 2016,
+        "how": "Damage numbers pop off enemies, crits and headshots in distinct colors, armor and health bars over heads"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/19900/Far_Cry_2_Fortunes_Edition/",
+        "note": "Far Cry 2: store page (release and platform reference)"
+      },
+      {
+        "url": "https://store.steampowered.com/app/365590/Tom_Clancys_The_Division/",
+        "note": "Tom Clancy's The Division: store page (release and platform reference)"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.numbers.deadspace2023-borderlands2",
+    "axis": "combat.numbers",
+    "options": [
+      {
+        "pole": "hidden",
+        "game": "Dead Space (2023)",
+        "year": 2023,
+        "how": "Health is a segmented bar on the spine of the suit, not a HUD number; you read hits from that diegetic display"
+      },
+      {
+        "pole": "visible",
+        "game": "Borderlands 2",
+        "year": 2012,
+        "how": "Every hit shows the damage dealt, huge values abbreviate with a K, and critical hits on weak points add bonus damage"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "horror",
+        "shooter",
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://deadspace.fandom.com/wiki/Resource_Integration_Gear",
+        "note": "Dead Space (2023): RIG spine-mounted segmented health bar depletes as the user takes damage"
+      },
+      {
+        "url": "https://borderlands.fandom.com/wiki/Damage",
+        "note": "Borderlands 2: damage dealt is displayed, over 99,999 shown with a K; critical hits increase damage"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.numbers.deadspace2023-disgaea",
+    "axis": "combat.numbers",
+    "options": [
+      {
+        "pole": "hidden",
+        "game": "Dead Space (2023)",
+        "year": 2023,
+        "how": "Isaac's health and stasis show as glowing bars on his suit, not numbers, so you judge danger from the RIG display"
+      },
+      {
+        "pole": "visible",
+        "game": "Disgaea: Hour of Darkness",
+        "year": 2003,
+        "how": "Levels run to 9999 and reincarnation resets for more growth, so stats and damage climb into huge visible numbers"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "horror",
+        "shooter",
+        "strategy",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://deadspace.fandom.com/wiki/Dead_Space_(2023)",
+        "note": "Dead Space (2023): Stasis and Health Bars on the suit"
+      },
+      {
+        "url": "https://deadspace.fandom.com/wiki/Resource_Integration_Gear",
+        "note": "Dead Space (2023): RIG spine display shows health as a segmented bar"
+      },
+      {
+        "url": "https://disgaea.fandom.com/wiki/Level",
+        "note": "Disgaea: Hour of Darkness: level cap of 9999, reincarnation resets to level 1"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.crowd.vampiresurvivors-punchout",
+    "axis": "combat.crowd",
+    "options": [
+      {
+        "pole": "hordes",
+        "game": "Vampire Survivors",
+        "year": 2022,
+        "how": "Hundreds of enemies, weapons auto-fire, the player only moves"
+      },
+      {
+        "pole": "duels",
+        "game": "Mike Tyson's Punch-Out!!",
+        "year": 1987,
+        "how": "One opponent, pattern reading"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "sports",
+        "fighting"
+      ],
+      "platforms": [
+        "pc",
+        "mobile",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://vampire.survivors.wiki/w/Vampire_Survivors",
+        "note": "Vampire Survivors: official wiki.gg confirms waves of enemies, early access Dec 17 2021 and 1.0 Oct 20 2022; auto-fire not stated on page (PARTIAL)"
+      },
+      {
+        "url": "https://www.mariowiki.com/Punch-Out!!",
+        "note": "Mike Tyson's Punch-Out!!: store page (release and platform reference)"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    },
+    "note": "seed item: accuracy checked by the project owner"
+  },
+  {
+    "id": "cmp.combat.crowd.left4dead-furi",
+    "axis": "combat.crowd",
+    "options": [
+      {
+        "pole": "hordes",
+        "game": "Left 4 Dead",
+        "year": 2008,
+        "how": "Up to four survivors blast through swarming zombie hordes plus mutant special infected across five-map campaigns"
+      },
+      {
+        "pole": "duels",
+        "game": "Furi",
+        "year": 2016,
+        "how": "The game is a string of one-on-one boss duels mixing sword fighting and dual-stick shooting against each jailer"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "horror",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/500/",
+        "note": "Left 4 Dead: up to four players against swarming zombie hordes and terrifying mutant monsters"
+      },
+      {
+        "url": "https://www.thegamebakers.com/furi/",
+        "note": "Furi: official site quotes intense, one-on-one duels; Steam lists sword fighting and dual-stick shooting"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.crowd.deadrising-nidhogg",
+    "axis": "combat.crowd",
+    "options": [
+      {
+        "pole": "hordes",
+        "game": "Dead Rising",
+        "year": 2006,
+        "how": "Unprecedented zombie swarms fill a mall; stores supply makeshift weapons and vehicles for carving through crowds"
+      },
+      {
+        "pole": "duels",
+        "game": "Nidhogg",
+        "year": 2014,
+        "how": "A two-player fencing tug-of-war: each kill wins ground in a one-on-one duel toward your goal"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "horror",
+        "fighting"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/427190/",
+        "note": "Dead Rising: town overrun by zombies, unprecedented swarms, stores supply makeshift weapons"
+      },
+      {
+        "url": "https://store.steampowered.com/app/94400/",
+        "note": "Nidhogg: ultimate two-player fencing showdown, series of kills grants right-of-way"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.ai.fear-supermariobros",
+    "axis": "combat.ai",
+    "options": [
+      {
+        "pole": "systemic",
+        "game": "F.E.A.R.",
+        "year": 2005,
+        "how": "Enemies plan with goal-oriented action planning to flank and use cover"
+      },
+      {
+        "pole": "patterned",
+        "game": "Super Mario Bros.",
+        "year": 1985,
+        "how": "Enemies follow fixed patterns"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "platformer"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.gamedeveloper.com/design/building-the-ai-of-f-e-a-r-with-goal-oriented-action-planning",
+        "note": "F.E.A.R.: Game Developer article confirms enemy AI uses goal-oriented action planning; flanking/cover not named in that page (PARTIAL)"
+      },
+      {
+        "url": "https://www.mariowiki.com/Super_Mario_Bros.",
+        "note": "Super Mario Bros.: Super Mario Wiki says Goombas walk back and forth, red Koopas turn at ledges; released Sept 13 1985"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.combat.ai.shadowofmordor-megaman2",
+    "axis": "combat.ai",
+    "options": [
+      {
+        "pole": "systemic",
+        "game": "Middle-earth: Shadow of Mordor",
+        "year": 2014,
+        "how": "Nemesis system: orc captains remember you, get promoted when they kill you and gain strengths and fears"
+      },
+      {
+        "pole": "patterned",
+        "game": "Mega Man 2",
+        "year": 1988,
+        "how": "Robot Masters loop fixed attack patterns that you learn and exploit with the right weapon"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "platformer"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/241930/Middleearth_Shadow_of_Mordor/",
+        "note": "Middle-earth: Shadow of Mordor: store page (release and platform reference)"
+      },
+      {
+        "url": "https://store.steampowered.com/app/363440/Mega_Man_Legacy_Collection/",
+        "note": "Mega Man 2: store page (release and platform reference)"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    },
+    "note": "patented: do not clone literally"
+  },
+  {
+    "id": "cmp.combat.ai.alienisolation-cuphead",
+    "axis": "combat.ai",
+    "options": [
+      {
+        "pole": "systemic",
+        "game": "Alien: Isolation",
+        "year": 2014,
+        "how": "The alien runs a 100+ node behavior tree fed by sensors, while a director nudges it toward you; locked behaviors unlock over time"
+      },
+      {
+        "pole": "patterned",
+        "game": "Cuphead",
+        "year": 2017,
+        "how": "Bosses run authored phases with fixed movesets; you win by learning each phase and dodging its attacks"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "horror",
+        "action",
+        "platformer"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gamedeveloper.com/design/the-perfect-organism-the-ai-of-alien-isolation",
+        "note": "Alien: Isolation: director plus alien AI with sensors; behavior tree over 100 nodes; behaviors unlock gradually"
+      },
+      {
+        "url": "https://cuphead.fandom.com/wiki/The_Root_Pack",
+        "note": "Cuphead: The Root Pack boss has three phases, each with a set moveset"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.ai.mgsv-cryptofthenecrodancer",
+    "axis": "combat.ai",
+    "options": [
+      {
+        "pole": "systemic",
+        "game": "Metal Gear Solid V: The Phantom Pain",
+        "year": 2015,
+        "how": "Enemy bases adapt to your habits: frequent headshots bring helmets, night raids bring night vision"
+      },
+      {
+        "pole": "patterned",
+        "game": "Crypt of the NecroDancer",
+        "year": 2015,
+        "how": "Each monster type moves on the beat in a fixed, learnable pattern you read and exploit"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rhythm"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/287700/METAL_GEAR_SOLID_V_THE_PHANTOM_PAIN/",
+        "note": "Metal Gear Solid V: The Phantom Pain: store page, open-world tactical freedom"
+      },
+      {
+        "url": "https://store.steampowered.com/app/247080/Crypt_of_the_NecroDancer/",
+        "note": "Crypt of the NecroDancer: move on the beat, dancing monsters"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.ai.stalker-contra",
+    "axis": "combat.ai",
+    "options": [
+      {
+        "pole": "systemic",
+        "game": "S.T.A.L.K.E.R.: Shadow of Chernobyl",
+        "year": 2007,
+        "how": "Opponents and NPCs live their own lives across the Zone and react to changes, so stalkers and mutants clash and fights emerge from the simulation"
+      },
+      {
+        "pole": "patterned",
+        "game": "Contra",
+        "year": 1987,
+        "how": "Soldiers and turrets spawn at fixed points and fire on set timings, so runs can be memorized"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/4500/STALKER_Shadow_of_Chernobyl/",
+        "note": "S.T.A.L.K.E.R.: Shadow of Chernobyl: smart AI, NPCs live their own lives and react to changes"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1018020/Contra_Anniversary_Collection/",
+        "note": "Contra: store page (release and platform reference)"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.party.witcher3-dragonageorigins",
+    "axis": "combat.party",
+    "options": [
+      {
+        "pole": "single",
+        "game": "The Witcher 3: Wild Hunt",
+        "year": 2015,
+        "how": "You fight as Geralt alone: sword, Signs, bombs and crossbow are all your own tools, with full control of one blade"
+      },
+      {
+        "pole": "party",
+        "game": "Dragon Age: Origins",
+        "year": 2009,
+        "how": "You run a party whose members follow Tactics you set (condition and action slots), so they fight together without constant orders"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://thewitcher3.wiki.fextralife.com/Combat",
+        "note": "The Witcher 3: combat gives players full control of Geralt's blade; Signs, bombs, crossbow"
+      },
+      {
+        "url": "https://dragonage.fandom.com/wiki/Tactics_(Origins)",
+        "note": "Dragon Age: Origins: Tactics system automates party members so they work together without constant direction"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.party.dicedungeons-monstertrain",
+    "axis": "combat.party",
+    "options": [
+      {
+        "pole": "single",
+        "game": "Dicey Dungeons",
+        "year": 2019,
+        "how": "You are one walking die: each character rolls dice into their own equipment cards every turn, with no allies to position"
+      },
+      {
+        "pole": "party",
+        "game": "Monster Train",
+        "year": 2020,
+        "how": "You deploy minion units from your deck across three vertical floors of the train and defend the pyre with them"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "rpg",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/861540/",
+        "note": "Dicey Dungeons: become a giant walking dice; six characters, each with their own equipment and abilities"
+      },
+      {
+        "url": "https://monster-train.fandom.com/wiki/Monster_Train",
+        "note": "Monster Train: three vertical play fields to defend, deck of spells and minions, protect the pyre"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.party.fallout-jaggedalliance2",
+    "axis": "combat.party",
+    "options": [
+      {
+        "pole": "single",
+        "game": "Fallout",
+        "year": 1997,
+        "how": "You build one character with the SPECIAL system and talk, sneak or fight past enemies as that single wanderer"
+      },
+      {
+        "pole": "party",
+        "game": "Jagged Alliance 2",
+        "year": 1999,
+        "how": "You command several hired mercenaries in turn-based battles, each spending their own action points shaped by ten stats"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "strategy"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/38400/",
+        "note": "Fallout: SPECIAL character system puts you in control; talk, sneak or fight your way past mutants"
+      },
+      {
+        "url": "https://jaggedalliance.fandom.com/wiki/Jagged_Alliance_2",
+        "note": "Jagged Alliance 2: player controls several mercenaries; alternating turns; each character has limited action points"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.party.deusex-masseffect2",
+    "axis": "combat.party",
+    "options": [
+      {
+        "pole": "single",
+        "game": "Deus Ex",
+        "year": 2000,
+        "how": "JC Denton fights solo; skills, augmentations and weapon choices, not allies, shape every combat option"
+      },
+      {
+        "pole": "party",
+        "game": "Mass Effect 2",
+        "year": 2010,
+        "how": "Shepard takes two squadmates on every mission and issues them commands and power orders during fights"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/6910/",
+        "note": "Deus Ex: skills, augmentations, weapon and item selections and multiple solutions"
+      },
+      {
+        "url": "https://masseffect.fandom.com/wiki/Squad",
+        "note": "Mass Effect 2: squad of Shepard plus two NPC squadmates; Commanding Your Squad controls"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.info.intothebreach-xcom2",
+    "axis": "combat.info",
+    "options": [
+      {
+        "pole": "perfect",
+        "game": "Into the Breach",
+        "year": 2018,
+        "how": "Enemies telegraph exact attacks, no hit randomness"
+      },
+      {
+        "pole": "hidden",
+        "game": "XCOM 2",
+        "year": 2016,
+        "how": "Percentage hit chances"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/590380/Into_the_Breach/",
+        "note": "Into the Breach: store page (release and platform reference)"
+      },
+      {
+        "url": "https://store.steampowered.com/app/268500/XCOM_2/",
+        "note": "XCOM 2: turn-based tactical combat"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    },
+    "note": "seed item: accuracy checked by the project owner"
+  },
+  {
+    "id": "cmp.combat.info.tacticalbreachwizards-jaggedalliance2",
+    "axis": "combat.info",
+    "options": [
+      {
+        "pole": "perfect",
+        "game": "Tactical Breach Wizards",
+        "year": 2024,
+        "how": "A foresee phase shows how your planned actions play out, and any action can be reset until you end the turn"
+      },
+      {
+        "pole": "hidden",
+        "game": "Jagged Alliance 2",
+        "year": 1999,
+        "how": "Combat starts when a merc spots an enemy; success of each action depends on stats, and spotting an enemy gives only a chance to interrupt"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.pcgamer.com/games/strategy/tactical-breach-wizards-review/",
+        "note": "Tactical Breach Wizards: action phase, foresee phase shows how it pays off, actions can be reset until end turn"
+      },
+      {
+        "url": "https://jaggedalliance.fandom.com/wiki/Jagged_Alliance_2",
+        "note": "Jagged Alliance 2: turn-based when an enemy is spotted; mercs stand a chance of interrupting; action success dictated by statistics"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.info.hitmango-xcomufodefense",
+    "axis": "combat.info",
+    "options": [
+      {
+        "pole": "perfect",
+        "game": "Hitman GO",
+        "year": 2014,
+        "how": "47 and the guards are board-game counters on a visible grid; you solve each level as a turn-based puzzle within a move limit"
+      },
+      {
+        "pole": "hidden",
+        "game": "X-COM: UFO Defense",
+        "year": 1994,
+        "how": "Shots roll against a chance to hit, and soldiers see only 9 tiles at night while aliens see 20, so threats hide in the dark"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile",
+        "handheld"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://hitman.fandom.com/wiki/Hitman_GO",
+        "note": "Hitman GO: turn-based tactics, board-game style, grid levels, 47 and enemies as counters, finish within limited moves"
+      },
+      {
+        "url": "https://www.ufopaedia.org/index.php/Line_of_Sight",
+        "note": "X-COM: UFO Defense: soldiers see 20 tiles by day and 9 at night; aliens 20 at all times"
+      },
+      {
+        "url": "https://www.ufopaedia.org/index.php/Accuracy",
+        "note": "X-COM: UFO Defense: firing accuracy and base chance to hit"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.gore.smashmelee-mortalkombat2011",
+    "axis": "combat.gore",
+    "options": [
+      {
+        "pole": "stylized",
+        "game": "Super Smash Bros. Melee",
+        "year": 2001,
+        "how": "Hits raise a damage percentage that increases knockback; fighters are launched off the stage rather than wounded"
+      },
+      {
+        "pole": "visceral",
+        "game": "Mortal Kombat (2011)",
+        "year": 2011,
+        "how": "X-Ray moves zoom in to show bones and organs crushed and snapped, and Fatalities finish the beaten opponent"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "fighting",
+        "party"
+      ],
+      "platforms": [
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.ssbwiki.com/Knockback",
+        "note": "Super Smash Bros. Melee: as the damage meter goes up so does knockback; launch distance"
+      },
+      {
+        "url": "https://mortalkombat.fandom.com/wiki/X-Ray_Move",
+        "note": "Mortal Kombat (2011): X-Ray shows bones and organs crushed, smashed and snapped"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.gore.soldieroffortune-teamfortress2",
+    "axis": "combat.gore",
+    "options": [
+      {
+        "pole": "visceral",
+        "game": "Soldier of Fortune",
+        "year": 2000,
+        "how": "The GHOUL system lets shots dismember enemies, who then scream over the missing limbs"
+      },
+      {
+        "pole": "stylized",
+        "game": "Team Fortress 2",
+        "year": 2007,
+        "how": "Cartoon art; in Pyroland, gibs turn into toys and blood into balloons, streamers and confetti"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/soldier_of_fortune_platinum_edition",
+        "note": "Soldier of Fortune: GHOUL system allows you to dismember enemies; ESRB Animated Blood and Gore"
+      },
+      {
+        "url": "https://wiki.teamfortress.com/wiki/Pyroland",
+        "note": "Team Fortress 2: Pyroland gibs become toys, blood effects become balloons, streamers and confetti"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.gore.sniperelite4-hifirush",
+    "axis": "combat.gore",
+    "options": [
+      {
+        "pole": "visceral",
+        "game": "Sniper Elite 4",
+        "year": 2017,
+        "how": "X-ray kill cam replays kills in slow motion with bones cracking, now including melee attacks and explosive trap kills"
+      },
+      {
+        "pole": "stylized",
+        "game": "Hi-Fi Rush",
+        "year": 2023,
+        "how": "Characters, world and combat sync to the music in a colorful cartoon style; hits read as rhythm spectacle, not injury detail"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "rhythm",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/312660/Sniper_Elite_4/",
+        "note": "Sniper Elite 4: X-ray kill cam in bone-cracking detail"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1817230/HiFi_RUSH/",
+        "note": "Hi-Fi Rush: characters, world and combat sync to the music, stylized cartoony look"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.gore.killingfloor2-splatoon3",
+    "axis": "combat.gore",
+    "options": [
+      {
+        "pole": "visceral",
+        "game": "Killing Floor 2",
+        "year": 2016,
+        "how": "A persistent blood system keeps gore on the map while entrails and severed limbs fly from shot zeds"
+      },
+      {
+        "pole": "stylized",
+        "game": "Splatoon 3",
+        "year": 2022,
+        "how": "Weapons fire ink: you splat opponents in bright colors and they respawn, a fight rated only as cartoon violence"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "action",
+        "horror"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/232090/",
+        "note": "Killing Floor 2: persistent blood system; entrails, severed limbs and blood flying"
+      },
+      {
+        "url": "https://www.nintendo.com/us/store/products/splatoon-3-switch/",
+        "note": "Splatoon 3: ink, swim and splat with ink-filled weapons; rated Cartoon Violence"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.defense.furi-enterthegungeon",
+    "axis": "combat.defense",
+    "options": [
+      {
+        "pole": "parry",
+        "game": "Furi",
+        "year": 2016,
+        "how": "Timed parries block melee and bullets; a perfect parry restores health and opens a counter"
+      },
+      {
+        "pole": "dodge",
+        "game": "Enter the Gungeon",
+        "year": 2016,
+        "how": "The dodge roll carries you through bullet patterns; flipping tables adds temporary cover"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/423230/",
+        "note": "Furi: sword fighting and dual-stick shooting; parry details not on the store page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/311690/",
+        "note": "Enter the Gungeon: shoot, loot, dodge roll and table-flip"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.range.ghostrunner-neonwhite",
+    "axis": "combat.range",
+    "options": [
+      {
+        "pole": "melee",
+        "game": "Ghostrunner",
+        "year": 2020,
+        "how": "A monomolecular katana is your weapon: you close distance to slice enemies, dodging bullets on the way in"
+      },
+      {
+        "pole": "ranged",
+        "game": "Neon White",
+        "year": 2022,
+        "how": "Soul Cards are guns (pistol, rifle, machine gun, shotgun, uzi) with limited ammo; the katana card is the fallback"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "platformer",
+        "shooter",
+        "card"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1139900/",
+        "note": "Ghostrunner: slice enemies with a monomolecular katana, dodge bullets with superhuman reflexes"
+      },
+      {
+        "url": "https://neonwhite.fandom.com/wiki/Soul_Cards",
+        "note": "Neon White: Soul Cards serve as limited-use weapons: pistol, rifle, machine gun, uzi, shotgun; Katana card"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.input.forhonor-stellarblade",
+    "axis": "combat.input",
+    "options": [
+      {
+        "pole": "directional",
+        "game": "For Honor",
+        "year": 2017,
+        "how": "In Guard mode you hold a stance in one of three directions; reading where the enemy guards and strikes from decides blocks and hits"
+      },
+      {
+        "pole": "combo",
+        "game": "Stellar Blade",
+        "year": 2024,
+        "how": "Two basic attack buttons combine into Combo Attack skills; color-coded enemy tells call for parry, Blink, dodge or Repulse"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "fighting"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://forhonor.fandom.com/wiki/Art_of_Battle",
+        "note": "For Honor: triangular stance indicator, attacks come from a given direction, Guard mode needed to block"
+      },
+      {
+        "url": "https://stellarblade.wiki.fextralife.com/Combat",
+        "note": "Stellar Blade: basic attacks combine into Combo Attack skills; parry, Blink, Perfect Dodge and Repulse answer colored tells"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.defense.kcd2-hyperlightdrifter",
+    "axis": "combat.defense",
+    "options": [
+      {
+        "pole": "block",
+        "game": "Kingdom Come: Deliverance II",
+        "year": 2025,
+        "how": "Holding block absorbs hits at a stamina cost; pressing it when the green shield shows makes a free Perfect Block"
+      },
+      {
+        "pole": "dodge",
+        "game": "Hyper Light Drifter",
+        "year": 2016,
+        "how": "The dash is the core defense; upgrades add Chain Dash and Bullet Absorb, and there is no shield to hold"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://kingdomcomedeliverance2.wiki.fextralife.com/Combat",
+        "note": "Kingdom Come: Deliverance II: blocking depletes stamina; Perfect Block on the green shield costs no stamina"
+      },
+      {
+        "url": "https://hyperlightdrifter.fandom.com/wiki/Dash",
+        "note": "Hyper Light Drifter: Dash is a starting ability; Chain Dash and Bullet Absorb upgrades"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.ai.fear-cryptofthenecrodancer",
+    "axis": "combat.ai",
+    "options": [
+      {
+        "pole": "systemic",
+        "game": "F.E.A.R.",
+        "year": 2005,
+        "how": "Soldiers use goal-oriented action planning: each picks actions at runtime to satisfy goals instead of running scripted routines"
+      },
+      {
+        "pole": "patterned",
+        "game": "Crypt of the NecroDancer",
+        "year": 2015,
+        "how": "Every monster type has a fixed movement pattern on the beat, like bats moving every second beat, that you learn and exploit"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "horror",
+        "rhythm",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gamedeveloper.com/design/building-the-ai-of-f-e-a-r-with-goal-oriented-action-planning",
+        "note": "F.E.A.R.: enemy AI built with Goal Oriented Action Planning"
+      },
+      {
+        "url": "https://crypt-of-the-necrodancer.fandom.com/wiki/Monsters",
+        "note": "Crypt of the NecroDancer: monsters differ in movement patterns; bat moves every second beat"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.crowd.deeprockgalactic-nidhogg",
+    "axis": "combat.crowd",
+    "options": [
+      {
+        "pole": "hordes",
+        "game": "Deep Rock Galactic",
+        "year": 2020,
+        "how": "One to four dwarves mine procedural caves and fight for their lives against alien hordes swarming from the rock"
+      },
+      {
+        "pole": "duels",
+        "game": "Nidhogg",
+        "year": 2014,
+        "how": "Every fight is one fencer against one fencer, trading lunges and parries for right of way"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "action",
+        "fighting",
+        "party"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/548430/",
+        "note": "Deep Rock Galactic: 1-4 players, procedurally generated caves, fight for their lives against alien hordes"
+      },
+      {
+        "url": "https://store.steampowered.com/app/94400/",
+        "note": "Nidhogg: two-player fencing showdown with lunges and parries"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.combat.info.tacticalbreachwizards-darkestdungeon",
+    "axis": "combat.info",
+    "options": [
+      {
+        "pole": "perfect",
+        "game": "Tactical Breach Wizards",
+        "year": 2024,
+        "how": "Before ending a turn you watch a foresee phase play out your plan, and can reset any action, so outcomes are known in advance"
+      },
+      {
+        "pole": "hidden",
+        "game": "Darkest Dungeon",
+        "year": 2016,
+        "how": "Attacks roll accuracy minus dodge plus crit chance, with hidden internal bonuses (+5 ACC, +4 per consecutive miss) behind the shown odds"
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.pcgamer.com/games/strategy/tactical-breach-wizards-review/",
+        "note": "Tactical Breach Wizards: foresee phase shows how planned actions pay off; actions reset until end turn"
+      },
+      {
+        "url": "https://darkestdungeon.wiki.gg/wiki/Accuracy",
+        "note": "Darkest Dungeon: accuracy minus dodge is hit chance; hidden +5 ACC and +4 per consecutive miss; crit chance"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  }
+]

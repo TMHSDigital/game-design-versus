@@ -1,1 +1,1506 @@
-[]
+[
+  {
+    "id": "cmp.move.feel.reddead2-mirrorsedge",
+    "axis": "move.feel",
+    "options": [
+      {
+        "pole": "weighty",
+        "game": "Red Dead Redemption 2",
+        "year": 2018,
+        "how": "Arthur's movement runs through a realistic animation system, so starting, stopping and turning take visible time and every step feels heavy."
+      },
+      {
+        "pole": "acrobatic",
+        "game": "Mirror's Edge",
+        "year": 2008,
+        "how": "Faith keeps speed by chaining wall-runs, leaps and vaults across rooftops; breaking the flow costs momentum."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.pushsquare.com/news/2018/11/red_dead_redemption_2s_sluggish_controls_analysed",
+        "note": "Red Dead Redemption 2: heavy, animation-led controls described as a deliberate choice for a weighty, realistic world"
+      },
+      {
+        "url": "https://store.steampowered.com/app/17410/",
+        "note": "Mirror's Edge: string together wall-runs, leaps and vaults in fluid movement; the flow keeps you running"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.feel.princeofpersia-sonic",
+    "axis": "move.feel",
+    "options": [
+      {
+        "pole": "weighty",
+        "game": "Prince of Persia",
+        "year": 1989,
+        "how": "Rotoscoped animation makes each move deliberate: jumps need a run-up, the prince hangs from ledges by his fingers, and long falls hurt or kill."
+      },
+      {
+        "pole": "acrobatic",
+        "game": "Sonic the Hedgehog",
+        "year": 1991,
+        "how": "Speed builds on slopes and carries through loops, springs and rolls, so momentum rather than precise steps drives play."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://news.ubisoft.com/en-us/article/6yLrRf7b0U1MBYxmlxE225/",
+        "note": "Prince of Persia: rotoscoped, lifelike movement; every jump has tension and the prince has weight; falls really hurt"
+      },
+      {
+        "url": "https://info.sonicretro.org/Sonic_1",
+        "note": "Sonic the Hedgehog: engine built for speed and world physics; loops and slopes need built-up momentum"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.feel.tombraider1996-mario64",
+    "axis": "move.feel",
+    "options": [
+      {
+        "pole": "weighty",
+        "game": "Tomb Raider (1996)",
+        "year": 1996,
+        "how": "Levels sit on a block grid and Lara's standing and running jumps cover fixed distances, so players line up and plan each leap."
+      },
+      {
+        "pole": "acrobatic",
+        "game": "Super Mario 64",
+        "year": 1996,
+        "how": "Triple jumps, long jumps, backflips and wall kicks chain into fluid routes, with air control to correct mistakes."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://strategywiki.org/wiki/Tomb_Raider",
+        "note": "Tomb Raider (1996): grid-based movement and jumps"
+      },
+      {
+        "url": "https://www.mariowiki.com/Triple_Jump",
+        "note": "Super Mario 64: triple jump, long jump and wall kick"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.feel.deathstranding-doometernal",
+    "axis": "move.feel",
+    "options": [
+      {
+        "pole": "weighty",
+        "game": "Death Stranding",
+        "year": 2019,
+        "how": "Cargo weight and its placement shift Sam's balance; heavy loads make him lean and stumble on slopes, and the triggers steady him."
+      },
+      {
+        "pole": "acrobatic",
+        "game": "Doom Eternal",
+        "year": 2020,
+        "how": "Double jump, two-charge dashes and monkey bars keep the Slayer airborne and circling arenas, dodging by movement instead of cover."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://gamespot.com/articles/death-stranding-guide-tips-on-how-to-walk-in-the-w/1100-6471246/",
+        "note": "Death Stranding: guide to walking, balance, cargo weight and terrain"
+      },
+      {
+        "url": "https://www.gamespot.com/articles/why-doom-eternal-incorporates-puzzle-platforming/1100-6473287/",
+        "note": "Doom Eternal: dash, double jump, monkey bars and climbable walls used in arenas and traversal"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.feel.limbo-supermeatboy",
+    "axis": "move.feel",
+    "options": [
+      {
+        "pole": "weighty",
+        "game": "Limbo",
+        "year": 2010,
+        "how": "The boy walks and jumps with modest range while ropes, boxes and traps follow physics, so careful, grounded movement avoids death."
+      },
+      {
+        "pole": "acrobatic",
+        "game": "Super Meat Boy",
+        "year": 2010,
+        "how": "Meat Boy accelerates fast, wall-jumps and steers sharply mid-air, so levels are run at speed as one flowing sequence."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "puzzle",
+        "horror"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/48000/",
+        "note": "Limbo: physics puzzle platformer"
+      },
+      {
+        "url": "https://store.steampowered.com/app/40800/",
+        "note": "Super Meat Boy: twitch reflex platforming"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.feel.monsterhunterworld-warframe",
+    "axis": "move.feel",
+    "options": [
+      {
+        "pole": "weighty",
+        "game": "Monster Hunter: World",
+        "year": 2018,
+        "how": "Attacks lock the hunter into long, committed animations with no canceling into movement, so positioning before each swing decides the fight."
+      },
+      {
+        "pole": "acrobatic",
+        "game": "Warframe",
+        "year": 2013,
+        "how": "Bullet jumps, double jumps, wall dashes and aim glides chain together; a double jump keeps existing momentum and wall contact resets air moves."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://kotaku.com/monster-hunters-animations-make-you-a-better-player-1822776242",
+        "note": "Monster Hunter: World: committed attack animations give up the ability to move and force players to stick with decisions"
+      },
+      {
+        "url": "https://wiki.warframe.com/w/Maneuvers",
+        "note": "Warframe: bullet jump, double jump keeps momentum, wall dash and latch reset air moves, aim glide"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.precision.celeste-deathstranding",
+    "axis": "move.precision",
+    "options": [
+      {
+        "pole": "precise",
+        "game": "Celeste",
+        "year": 2018,
+        "how": "Jump, air-dash and climb with tight air control; each screen demands exact inputs and respawns are near instant."
+      },
+      {
+        "pole": "forgiving",
+        "game": "Death Stranding",
+        "year": 2019,
+        "how": "No precision jumps: the challenge is carrying cargo over rough terrain, keeping balance under weight and planning the route."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/504230/",
+        "note": "Celeste: jump, air-dash and climb, lightning-fast respawns"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1850570/",
+        "note": "Death Stranding Director's Cut: store page"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    },
+    "note": "seed item: accuracy checked by the project owner"
+  },
+  {
+    "id": "cmp.move.precision.kirbysdreamland-nplusplus",
+    "axis": "move.precision",
+    "options": [
+      {
+        "pole": "forgiving",
+        "game": "Kirby's Dream Land",
+        "year": 1992,
+        "how": "Kirby can inflate and hover indefinitely, so most gaps and pits are flown over rather than jumped with timing."
+      },
+      {
+        "pole": "precise",
+        "game": "N++",
+        "year": 2015,
+        "how": "Momentum-based runs and wall jumps through mine-filled rooms, where one touch of a hazard kills the ninja."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer"
+      ],
+      "platforms": [
+        "handheld",
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://wikirby.com/wiki/Kirby%27s_Dream_Land",
+        "note": "Kirby's Dream Land: Kirby can hover indefinitely"
+      },
+      {
+        "url": "https://store.steampowered.com/app/230270/",
+        "note": "N++: fast-paced, momentum-based platformer"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.precision.yoshisisland-supermeatboy",
+    "axis": "move.precision",
+    "options": [
+      {
+        "pole": "forgiving",
+        "game": "Super Mario World 2: Yoshi's Island",
+        "year": 1995,
+        "how": "The flutter jump keeps Yoshi airborne for a moment, so short jumps can be stretched and corrected across gaps."
+      },
+      {
+        "pole": "precise",
+        "game": "Super Meat Boy",
+        "year": 2010,
+        "how": "Twitch-reflex platforming through saws and spikes; Meat Boy dies often and levels demand exact jumps and wall jumps."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.mariowiki.com/Flutter_Jump",
+        "note": "Super Mario World 2: Yoshi's Island: flutter jump keeps Yoshi airborne to cross gaps"
+      },
+      {
+        "url": "https://store.steampowered.com/app/40800/",
+        "note": "Super Meat Boy: tough-as-nails, twitch reflex platformer"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.precision.ocarinaoftime-geometrydash",
+    "axis": "move.precision",
+    "options": [
+      {
+        "pole": "forgiving",
+        "game": "The Legend of Zelda: Ocarina of Time",
+        "year": 1998,
+        "how": "There is no jump button: Link leaps automatically when running off a ledge, so platforming is about direction, not timing."
+      },
+      {
+        "pole": "precise",
+        "game": "Geometry Dash",
+        "year": 2013,
+        "how": "A rhythm-based runner where a single input jumps, flies or flips; timing is synced to music and one mistake restarts the level."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "action",
+        "rhythm"
+      ],
+      "platforms": [
+        "console",
+        "mobile",
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://zeldawiki.wiki/wiki/The_Legend_of_Zelda:_Ocarina_of_Time",
+        "note": "The Legend of Zelda: Ocarina of Time: automatic jumping"
+      },
+      {
+        "url": "https://store.steampowered.com/app/322170/",
+        "note": "Geometry Dash: rhythm-based action platformer, jump, fly and flip"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.precision.assassinscreed-jumpking",
+    "axis": "move.precision",
+    "options": [
+      {
+        "pole": "forgiving",
+        "game": "Assassin's Creed",
+        "year": 2007,
+        "how": "Holding the free-run button makes Altair vault and grab handholds automatically; the game picks the next ledge for him."
+      },
+      {
+        "pole": "precise",
+        "game": "Jump King",
+        "year": 2019,
+        "how": "Hold to charge a jump and release; there is no air control, and a missed landing can drop the knight down large parts of the tower."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/15100/",
+        "note": "Assassin's Creed: scale buildings"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1061090/",
+        "note": "Jump King: hold to charge, release to jump, higher jumps mean harder falls"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.precision.uncharted2-vvvvvv",
+    "axis": "move.precision",
+    "options": [
+      {
+        "pole": "forgiving",
+        "game": "Uncharted 2: Among Thieves",
+        "year": 2009,
+        "how": "Drake snaps to marked handholds and ledges, so climbing jumps succeed if aimed in roughly the right direction."
+      },
+      {
+        "pole": "precise",
+        "game": "VVVVVV",
+        "year": 2010,
+        "how": "Instead of jumping the player flips gravity; spike-lined rooms demand exact flip timing, with instant respawn on death."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "action",
+        "shooter"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://strategywiki.org/wiki/Uncharted_2:_Among_Thieves",
+        "note": "Uncharted 2: Among Thieves: climbing and platforming"
+      },
+      {
+        "url": "https://store.steampowered.com/app/70300/",
+        "note": "VVVVVV: reversed gravity instead of jumping"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.tools.halocombatevolved-titanfall2",
+    "axis": "move.tools",
+    "options": [
+      {
+        "pole": "on_foot",
+        "game": "Halo: Combat Evolved",
+        "year": 2001,
+        "how": "Master Chief walks, crouches and jumps with no sprint (added only in Halo: Reach) and no traversal gear; fights turn on positioning, not mobility."
+      },
+      {
+        "pole": "tools",
+        "game": "Titanfall 2",
+        "year": 2016,
+        "how": "Pilots wall-run and double jump by default, and the Grapple tactical pulls them across gaps, so maps play as parkour routes."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.halopedia.org/Sprint",
+        "note": "Halo: Combat Evolved: sprint first appeared in Halo: Reach as an armor ability"
+      },
+      {
+        "url": "https://apexlegends.wiki.gg/wiki/Titanfall_2",
+        "note": "Titanfall 2: pilots have high mobility via wall-running and double jumping; Apex's Grappling Hook adapted from Titanfall 2's Grapple tactical"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.tools.maxpayne-justcause2",
+    "axis": "move.tools",
+    "options": [
+      {
+        "pole": "on_foot",
+        "game": "Max Payne",
+        "year": 2001,
+        "how": "Max moves on foot only; his signature move is a slow-motion dive, so movement serves gunfights rather than reaching new places."
+      },
+      {
+        "pole": "tools",
+        "game": "Just Cause 2",
+        "year": 2010,
+        "how": "A grappling hook and endless parachute combine: Rico tethers to vehicles and terrain, then glides across a huge island."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/12140/",
+        "note": "Max Payne: bullet time, slow-motion gunplay"
+      },
+      {
+        "url": "https://store.steampowered.com/app/8190/",
+        "note": "Just Cause 2: grapple and parachute combo"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.tools.lastofus-spiderman",
+    "axis": "move.tools",
+    "options": [
+      {
+        "pole": "on_foot",
+        "game": "The Last of Us",
+        "year": 2013,
+        "how": "Joel walks, runs, crouches and climbs set ledges; gaps need ladders or planks, keeping exploration grounded and slow."
+      },
+      {
+        "pole": "tools",
+        "game": "Marvel's Spider-Man",
+        "year": 2018,
+        "how": "Web-swinging, wall-running and web zips across Manhattan make traversal itself the main pleasure and a skill to master."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "horror"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1888930/",
+        "note": "The Last of Us: store page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1817070/",
+        "note": "Marvel's Spider-Man: web-swing through neighborhoods, fluid urban traversal"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.tools.supermariobros-grappledog",
+    "axis": "move.tools",
+    "options": [
+      {
+        "pole": "on_foot",
+        "game": "Super Mario Bros.",
+        "year": 1985,
+        "how": "Mario only walks, runs, jumps, swims and climbs vines; springs, lifts and pipes are fixed level props, not tools he carries."
+      },
+      {
+        "pole": "tools",
+        "game": "Grapple Dog",
+        "year": 2022,
+        "how": "Pablo's grappling hook latches onto anchor blocks to swing and zip across gaps; stages are built around chaining grapples."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.mariowiki.com/Super_Mario_Bros.",
+        "note": "Super Mario Bros.: controls are walk, run, jump, swim, crouch and climb beanstalks; jumping boards and lifts are level objects"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1345860/",
+        "note": "Grapple Dog: use the grappling hook to clear challenges; jumping, swinging and zipping"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.tools.gonehome-ashorthike",
+    "axis": "move.tools",
+    "options": [
+      {
+        "pole": "on_foot",
+        "game": "Gone Home",
+        "year": 2013,
+        "how": "Walking in first person through one house; the only verbs are walk, look and interact, keeping focus on objects and clues."
+      },
+      {
+        "pole": "tools",
+        "game": "A Short Hike",
+        "year": 2019,
+        "how": "Claire climbs, flies and glides, and golden feathers extend how long she can climb, so the island opens up vertically."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "narrative"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/232430/",
+        "note": "Gone Home: first-person exploration of a house"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1055540/",
+        "note": "A Short Hike: hike, climb and soar"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.tools.left4dead2-dyinglight",
+    "axis": "move.tools",
+    "options": [
+      {
+        "pole": "on_foot",
+        "game": "Left 4 Dead 2",
+        "year": 2009,
+        "how": "Survivors run, jump and crouch along authored paths, so pacing comes from the AI Director, not traversal choices."
+      },
+      {
+        "pole": "tools",
+        "game": "Dying Light",
+        "year": 2015,
+        "how": "Parkour lets players scale nearly any building, and a grappling hook unlocked later pulls them across rooftops away from zombies."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "horror",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/550/",
+        "note": "Left 4 Dead 2: store page, AI Director"
+      },
+      {
+        "url": "https://store.steampowered.com/app/239140/",
+        "note": "Dying Light: use parkour to scale every building"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.climb.uncharted4-peak",
+    "axis": "move.climb",
+    "options": [
+      {
+        "pole": "authored",
+        "game": "Uncharted 4: A Thief's End",
+        "year": 2016,
+        "how": "Climbable ledges are lighter-colored and signposted, grapple points are wrapped in rope, and a piton is needed for blank walls."
+      },
+      {
+        "pole": "anything",
+        "game": "Peak",
+        "year": 2025,
+        "how": "Scouts grab and climb the mountain's rock faces freely, limited by a stamina bar that injuries shrink; pitons and ropes let them rest."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "survival"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://blog.playstation.com/2022/10/18/naughty-dog-breaks-down-uncharted-4s-climbing-evolution-as-uncharted-legacy-of-thieves-collection-launches-on-pc-this-week/",
+        "note": "Uncharted 4: A Thief's End: Naughty Dog on the handhold and reach system, signposted ledges and pitons"
+      },
+      {
+        "url": "https://peak.wiki.gg/wiki/Stamina",
+        "note": "Peak: climbing uses stamina; regenerates while hanging on a piton; injuries limit stamina"
+      },
+      {
+        "url": "https://store.steampowered.com/app/3527290/",
+        "note": "Peak: co-op climbing; place ropes and climbing spikes; setbacks limit stamina for climbing"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.climb.tombraider2013-assassinscreed2",
+    "axis": "move.climb",
+    "options": [
+      {
+        "pole": "authored",
+        "game": "Tomb Raider (2013)",
+        "year": 2013,
+        "how": "Lara climbs only marked ledges and planks (faded white paint) and rough, craggy rock walls with her climbing axe; smooth walls are off-limits."
+      },
+      {
+        "pole": "anything",
+        "game": "Assassin's Creed II",
+        "year": 2009,
+        "how": "Ezio can scale almost every building or ledge in the cities, so rooftops form free-running routes the player picks."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://tombraiderwiki.org/index.php/Wall_Climbing",
+        "note": "Tomb Raider (2013): Lara can climb walls with a rough stony surface; climbable ledges marked"
+      },
+      {
+        "url": "https://www.gamespot.com/pc/action/assassinscreed2/review.html",
+        "note": "Assassin's Creed II: run across rooftops and climb the tallest towers"
+      },
+      {
+        "url": "https://news.ubisoft.com/en-us/article/3RoepTSzG2cgj4m1JUe7YY/",
+        "note": "Assassin's Creed II: Ezio scrambles up walls and finds free-running highways"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.climb.princeofpersiasot-spiderman",
+    "axis": "move.climb",
+    "options": [
+      {
+        "pole": "authored",
+        "game": "Prince of Persia: The Sands of Time",
+        "year": 2003,
+        "how": "Wall-runs, column climbs and ledge grabs happen only at authored spots, so each room is a traversal puzzle with an intended route."
+      },
+      {
+        "pole": "anything",
+        "game": "Marvel's Spider-Man",
+        "year": 2018,
+        "how": "Spider-Man sticks to and runs along any building surface, so every wall is a path and no route is gated by climbing."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "platformer"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/13600/",
+        "note": "Prince of Persia: The Sands of Time: gravity-defying acrobatics"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1817070/",
+        "note": "Marvel's Spider-Man: fluid urban traversal"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.climb.ghostoftsushima-sable",
+    "axis": "move.climb",
+    "options": [
+      {
+        "pole": "authored",
+        "game": "Ghost of Tsushima",
+        "year": 2020,
+        "how": "Jin climbs only designed ledges and holds, and his grappling hook fires only at marked anchor points, so vertical routes are set by designers."
+      },
+      {
+        "pole": "anything",
+        "game": "Sable",
+        "year": 2021,
+        "how": "Sable can climb almost any vertical surface on a fast-regenerating stamina meter, and her hover orb removes fall damage."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gamesradar.com/ghost-of-tsushima-grapple-hook/",
+        "note": "Ghost of Tsushima: the grappling hook only works at specifically marked spots"
+      },
+      {
+        "url": "https://www.gamesradar.com/sable-tips/",
+        "note": "Sable: climb almost any vertical surface with a stamina meter; no fall damage thanks to the hover orb"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.climb.jusant-peak",
+    "axis": "move.climb",
+    "options": [
+      {
+        "pole": "authored",
+        "game": "Jusant",
+        "year": 2023,
+        "how": "The climber moves ledge to ledge up a largely linear tower route, managing a stamina meter while the rope keeps her secured from fatal falls."
+      },
+      {
+        "pole": "anything",
+        "game": "Peak",
+        "year": 2025,
+        "how": "Scouts can grab and scale the mountain's walls anywhere, limited by stamina that injuries shrink; pitons and ropes let teammates rest."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "puzzle",
+        "survival"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/jusant",
+        "note": "Jusant: master climbing tools and watch the stamina meter; ledge-to-ledge climbing, automatically secured; linear progression"
+      },
+      {
+        "url": "https://peak.wiki.gg/wiki/Stamina",
+        "note": "Peak: climbing consumes stamina; regenerates while hanging on a piton; letting go and regrabbing the wall"
+      },
+      {
+        "url": "https://store.steampowered.com/app/3527290/",
+        "note": "Peak: co-op climbing; place ropes and climbing spikes; setbacks limit stamina for climbing"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.climb.shadowofthecolossus-infamous",
+    "axis": "move.climb",
+    "options": [
+      {
+        "pole": "authored",
+        "game": "Shadow of the Colossus",
+        "year": 2005,
+        "how": "Wander grips colossi only at fur patches and ledges, and a grip meter limits holding, so each giant is a set climbing puzzle."
+      },
+      {
+        "pole": "anything",
+        "game": "inFamous",
+        "year": 2009,
+        "how": "Cole can scale nearly any building in Empire City by grabbing pipes, ledges and signs, so rooftops are always reachable."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action"
+      ],
+      "platforms": [
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://strategywiki.org/wiki/Shadow_of_the_Colossus",
+        "note": "Shadow of the Colossus: grip and climbing colossi"
+      },
+      {
+        "url": "https://www.playstation.com/en-us/games/infamous/",
+        "note": "inFamous: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.veh.handling.granturismo7-mariokart8deluxe",
+    "axis": "veh.handling",
+    "options": [
+      {
+        "pole": "sim",
+        "game": "Gran Turismo 7",
+        "year": 2022,
+        "how": "Cars model weight transfer and tire grip, and players tune suspension, gearing and downforce for each track."
+      },
+      {
+        "pole": "arcade",
+        "game": "Mario Kart 8 Deluxe",
+        "year": 2017,
+        "how": "Drifts charge mini-turbo boosts, Smart Steering keeps beginners on track, and items depend on race position."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "racing",
+        "simulation",
+        "party"
+      ],
+      "platforms": [
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.gran-turismo.com/us/gt7/",
+        "note": "Gran Turismo 7: official site"
+      },
+      {
+        "url": "https://www.mariowiki.com/Mario_Kart_8_Deluxe",
+        "note": "Mario Kart 8 Deluxe: mini-turbos, Smart Steering, items by distance and placement"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    },
+    "note": "seed item: accuracy checked by the project owner"
+  },
+  {
+    "id": "cmp.veh.handling.assettocorsa-trackmania",
+    "axis": "veh.handling",
+    "options": [
+      {
+        "pole": "sim",
+        "game": "Assetto Corsa",
+        "year": 2014,
+        "how": "A physics engine with accurate car models on laser-scanned tracks makes braking points, weight transfer and grip the core skill."
+      },
+      {
+        "pole": "arcade",
+        "game": "Trackmania",
+        "year": 2020,
+        "how": "Cars drift on demand through loops, wall rides and jumps across asphalt, dirt, ice and plastic; mastering the arcade physics is the puzzle."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "racing",
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.assettocorsa.gg/",
+        "note": "Assetto Corsa: groundbreaking physics engine, highly accurate car models, laser-scanned tracks"
+      },
+      {
+        "url": "https://www.trackmania.com/",
+        "note": "Trackmania: control speed and drift precisely through jumps, loops, wallrides on asphalt, dirt, grass, wood, plastic and ice"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.veh.handling.iracing-mariokartworld",
+    "axis": "veh.handling",
+    "options": [
+      {
+        "pole": "sim",
+        "game": "iRacing",
+        "year": 2008,
+        "how": "Cars are replicated from laser scans and team data and tracks are laser-scanned to the millimeter, so lifelike physics punish every input."
+      },
+      {
+        "pole": "arcade",
+        "game": "Mario Kart World",
+        "year": 2025,
+        "how": "Charge jumps, rail grinding and wall riding all build mini-turbo boosts, so handling is about chaining tricks for speed, not managing grip."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "racing",
+        "simulation",
+        "party"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.iracing.com/",
+        "note": "iRacing: lifelike physics; cars replicated from laser scans and team data; tracks laser-scanned with millimeter precision"
+      },
+      {
+        "url": "https://www.mariowiki.com/Mario_Kart_World",
+        "note": "Mario Kart World: Charge Jump boosts, rail riding charges Mini-Turbos, wall riding"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.veh.handling.dirtrally-asphalt9",
+    "axis": "veh.handling",
+    "options": [
+      {
+        "pole": "sim",
+        "game": "DiRT Rally",
+        "year": 2015,
+        "how": "An uncompromising handling model on surfaces that change under the wheels; crashes cost stage time and repairs are rationed."
+      },
+      {
+        "pole": "arcade",
+        "game": "Asphalt 9: Legends",
+        "year": 2018,
+        "how": "Nitro boosts and drifting dominate, and TouchDrive steers automatically so players choose routes and when to boost."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "racing",
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/310560/",
+        "note": "DiRT Rally: uncompromising handling model, crashes harm stage time, repairs"
+      },
+      {
+        "url": "https://asphaltlegends.com/",
+        "note": "Asphalt 9: Legends (now Asphalt Legends): nitro boost, drifting, TouchDrive"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.veh.damage.forzahorizon5-beamngdrive",
+    "axis": "veh.damage",
+    "options": [
+      {
+        "pole": "cosmetic",
+        "game": "Forza Horizon 5",
+        "year": 2021,
+        "how": "Damage is mostly visual by default and a rewind button undoes crashes, keeping festival driving fast and forgiving."
+      },
+      {
+        "pole": "softbody",
+        "game": "BeamNG.drive",
+        "year": 2015,
+        "how": "A soft-body physics engine simulates every vehicle component in real time, so crashes bend frames and break parts."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "racing",
+        "simulation",
+        "sandbox"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1551360/",
+        "note": "Forza Horizon 5: store page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/284160/",
+        "note": "BeamNG.drive: soft-body physics engine simulating every component in real time"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    },
+    "note": "seed item: accuracy checked by the project owner"
+  },
+  {
+    "id": "cmp.veh.damage.forzahorizon5-wreckfest",
+    "axis": "veh.damage",
+    "options": [
+      {
+        "pole": "cosmetic",
+        "game": "Forza Horizon 5",
+        "year": 2021,
+        "how": "Damage defaults to cosmetic, so crashes dent the looks but never the performance; mechanical damage is an opt-in Simulation setting."
+      },
+      {
+        "pole": "softbody",
+        "game": "Wreckfest",
+        "year": 2018,
+        "how": "Metal bends in true-to-life physics as cars collide, and armor plating that protects the body adds weight that changes handling."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "racing"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://kotaku.com/forza-horizon-5-ps5-xbox-turn-off-car-damage-setting-1851778494",
+        "note": "Forza Horizon 5: damage settings, cosmetic versus simulation damage that affects the car mechanically"
+      },
+      {
+        "url": "https://www.gog.com/en/game/wreckfest",
+        "note": "Wreckfest: true-to-life physics, new ways for metal to bend; armor protects from damage but adds weight that impacts handling"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.veh.damage.rocketleague-rigsofrods",
+    "axis": "veh.damage",
+    "options": [
+      {
+        "pole": "cosmetic",
+        "game": "Rocket League",
+        "year": 2015,
+        "how": "Cars never deform or degrade; a demolished car simply respawns on its own side after a few seconds, so contact is a tactic, not a risk."
+      },
+      {
+        "pole": "softbody",
+        "game": "Rigs of Rods",
+        "how": "A free, open-source simulator where vehicles are soft-body structures that flex, bend and deform on impact.",
+        "year": 2005
+      }
+    ],
+    "tags": {
+      "genres": [
+        "sports",
+        "racing",
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.rocketleague.com/en/news/patch-notes-v2-43",
+        "note": "Rocket League: demolished state and respawn camera transition"
+      },
+      {
+        "url": "https://kotaku.com/well-timed-rocket-league-respawn-thwarts-goal-attempt-1824050553",
+        "note": "Rocket League: demolished cars respawn on their own side moments later"
+      },
+      {
+        "url": "https://www.rigsofrods.org/",
+        "note": "Rigs of Rods: soft-body physics simulate motion, destruction and deformation of vehicles"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.veh.damage.rocketleague-flatout2",
+    "axis": "veh.damage",
+    "options": [
+      {
+        "pole": "cosmetic",
+        "game": "Rocket League",
+        "year": 2015,
+        "how": "Cars never dent or degrade; a demolition just removes the car for a few seconds before it respawns on its own side of the pitch."
+      },
+      {
+        "pole": "softbody",
+        "game": "FlatOut 2",
+        "year": 2006,
+        "how": "Each car has dozens of deformable parts that bend and tear off, and drivers can be catapulted through the windscreen in big crashes."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "sports",
+        "racing"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://kotaku.com/well-timed-rocket-league-respawn-thwarts-goal-attempt-1824050553",
+        "note": "Rocket League: demolished cars respawn on their own side moments later"
+      },
+      {
+        "url": "https://www.gog.com/en/game/flatout_2",
+        "note": "FlatOut 2: 40 deformable pieces on every car; driver catapulted through the windscreen"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.move.precision.kirbyforgottenland-jumpking",
+    "axis": "move.precision",
+    "options": [
+      {
+        "pole": "forgiving",
+        "game": "Kirby and the Forgotten Land",
+        "year": 2022,
+        "how": "Kirby can hover for up to 5 seconds to rescue a bad jump, and a defeat only costs Star Coins and restarts the current segment."
+      },
+      {
+        "pole": "precise",
+        "game": "Jump King",
+        "year": 2019,
+        "how": "Hold to charge and release to leap with no air control; one misjudged jump can drop the knight down screens of hard-won progress."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://wikirby.com/wiki/Kirby_and_the_Forgotten_Land",
+        "note": "Kirby and the Forgotten Land: hover up to 5 seconds; defeat loses 100 Star Coins and restarts the segment"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1061090/",
+        "note": "Jump King: hold to charge and release to leap; once in the air there is no turning back; a mistake means a long fall"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  }
+]

@@ -1,1 +1,1737 @@
-[]
+[
+  {
+    "id": "cmp.prog.source.skyrim-diablo4-outerwilds",
+    "axis": "prog.source",
+    "options": [
+      {
+        "pole": "use",
+        "game": "The Elder Scrolls V: Skyrim",
+        "year": 2011,
+        "how": "Each skill rises as you use it; skill gains are the only source of character XP, and each level grants a perk point plus health, magicka or stamina."
+      },
+      {
+        "pole": "xp",
+        "game": "Diablo IV",
+        "year": 2023,
+        "how": "Kills and quests grant XP levels and skill points; past the level cap, Paragon points fill a board of stat nodes while gear affixes add power."
+      },
+      {
+        "pole": "knowledge",
+        "game": "Outer Wilds",
+        "year": 2019,
+        "how": "Nothing survives the 22-minute time loop except what you learned; the ship log tracks clues, and progress is knowing where to go and how."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "action",
+        "puzzle",
+        "narrative"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "vr"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.uesp.net/wiki/Skyrim:Leveling",
+        "note": "Skyrim: skill increases are the only source of character XP"
+      },
+      {
+        "url": "https://www.pcgamer.com/diablo-4-paragon-board",
+        "note": "Diablo IV: Paragon board unlocks after the level cap"
+      },
+      {
+        "url": "https://www.gamedeveloper.com/design/live-die-repeat-how-i-outer-wilds-i-piques-curiosity-in-an-ambivalent-solar-system",
+        "note": "Outer Wilds: knowledge is the only progression across the loop"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.prog.source.botw-division2",
+    "axis": "prog.source",
+    "options": [
+      {
+        "pole": "unlocks",
+        "game": "The Legend of Zelda: Breath of the Wild",
+        "year": 2017,
+        "how": "Four shrine Spirit Orbs buy a Heart Container or Stamina Vessel at a Goddess Statue; weapons break, so gear is never lasting power."
+      },
+      {
+        "pole": "gear",
+        "game": "Tom Clancy's The Division 2",
+        "year": 2019,
+        "how": "Power is gear score: each equipped item has a score and a rarity tier, and higher World Tiers drop higher-score gear with more talents."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "rpg",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.zeldadungeon.net/wiki/Spirit_Orb",
+        "note": "Breath of the Wild: four Spirit Orbs trade for a Heart Container or Stamina Vessel"
+      },
+      {
+        "url": "https://www.ubisoft.com/en-gb/game/the-division/news-updates/5WO5xpYZv3TSoZuv3d6IdW/developer-update-gear-score-in-title-update-3",
+        "note": "The Division 2: gear score from equipped items, capped by World Tier"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.prog.direction.guildwars2-destiny2",
+    "axis": "prog.direction",
+    "options": [
+      {
+        "pole": "horizontal",
+        "game": "Guild Wars 2",
+        "year": 2012,
+        "how": "The level cap stays at 80 with no new gear tiers; post-cap XP trains account-wide Masteries such as gliding and mounts, plus cosmetics."
+      },
+      {
+        "pole": "vertical",
+        "game": "Destiny 2",
+        "year": 2017,
+        "how": "A Power level averaged from equipped gear climbs each season; Powerful and Pinnacle drops push it past soft caps toward harder activities."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "shooter",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://wiki.guildwars2.com/wiki/Endgame",
+        "note": "Guild Wars 2: horizontal progression philosophy, Masteries and cosmetics"
+      },
+      {
+        "url": "https://www.gamespot.com/articles/destiny-2-power-grind-changes-significantly-in-sha/1100-6470149/",
+        "note": "Destiny 2: Power level, Powerful and Pinnacle gear caps"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.prog.direction.teamfortress2-diablo2",
+    "axis": "prog.direction",
+    "options": [
+      {
+        "pole": "horizontal",
+        "game": "Team Fortress 2",
+        "year": 2007,
+        "how": "Unlockable weapons are mostly sidegrades: each trades a strength for a weakness against the stock weapon, so items add options, not raw power."
+      },
+      {
+        "pole": "vertical",
+        "game": "Diablo II",
+        "year": 2000,
+        "how": "Each level up to 99 grants 5 stat points and 1 skill point; with better gear, earlier areas become trivial as the numbers keep climbing."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "rpg",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://wiki.teamfortress.com/wiki/Weapons",
+        "note": "Team Fortress 2: unlockable weapons with stated upsides and downsides versus stock"
+      },
+      {
+        "url": "https://classic.battle.net/diablo2exp/basics/levels.shtml",
+        "note": "Diablo II: stat and skill points per level, level 99 cap"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.direction.mariokart8-nfsunderground2",
+    "axis": "prog.direction",
+    "options": [
+      {
+        "pole": "horizontal",
+        "game": "Mario Kart 8",
+        "year": 2014,
+        "how": "Coins unlock kart bodies, tires and gliders whose stats trade off (speed against acceleration, weight against handling): new setups, not more power."
+      },
+      {
+        "pole": "vertical",
+        "game": "Need for Speed: Underground 2",
+        "year": 2004,
+        "how": "Race and outrun wins unlock staged engine, turbo and drivetrain packages; each stage raises the car's power, measured on the dyno."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "racing"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.mariowiki.com/Mario_Kart_8_in-game_statistics",
+        "note": "Mario Kart 8: part stats raise some values and lower others"
+      },
+      {
+        "url": "https://nfs.fandom.com/wiki/Need_for_Speed:_Underground_2/Performance_Tuning",
+        "note": "Need for Speed: Underground 2: staged performance parts and dyno"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.direction.marvelsnap-clashroyale",
+    "axis": "prog.direction",
+    "options": [
+      {
+        "pole": "horizontal",
+        "game": "Marvel Snap",
+        "year": 2022,
+        "how": "Upgrading a card is purely cosmetic; it raises Collection Level, which unlocks new cards, so progress widens deck options without stat gains."
+      },
+      {
+        "pole": "vertical",
+        "game": "Clash Royale",
+        "year": 2016,
+        "how": "Cards level up with copies and gold; a higher-level card has more hitpoints and damage than the same card at a lower level."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "strategy"
+      ],
+      "platforms": [
+        "mobile",
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://marvelsnap.com/?p=90082",
+        "note": "Marvel Snap: card upgrades raise Collection Level, no stat change"
+      },
+      {
+        "url": "https://clashroyale.fandom.com/wiki/Cards",
+        "note": "Clash Royale: higher-level cards have more hitpoints and damage"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.direction.megaman2-dragonquest",
+    "axis": "prog.direction",
+    "options": [
+      {
+        "pole": "horizontal",
+        "game": "Mega Man 2",
+        "year": 1988,
+        "how": "Beating each Robot Master grants its weapon with limited energy; Mega Man never levels up, so progress is a wider kit of situational tools."
+      },
+      {
+        "pole": "vertical",
+        "game": "Dragon Quest",
+        "year": 1986,
+        "how": "Monsters give XP; each level raises the hero's stats and teaches spells, and grinding levels is the main answer to stronger foes."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://megaman.fandom.com/wiki/Mega_Man_2",
+        "note": "Mega Man 2: Robot Master weapons with limited energy"
+      },
+      {
+        "url": "https://dragon-quest.org/wiki/Experience",
+        "note": "Dragon Quest: XP thresholds raise level and stats"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.direction.rocketleague-granturismo",
+    "axis": "prog.direction",
+    "options": [
+      {
+        "pole": "horizontal",
+        "game": "Rocket League",
+        "year": 2015,
+        "how": "Every car has the same stats on one of six hitbox shapes; unlocks are cosmetic, so progress adds style and choice, never speed."
+      },
+      {
+        "pole": "vertical",
+        "game": "Gran Turismo",
+        "year": 1997,
+        "how": "Prize money buys tuning parts that raise power and handling, and license tests open faster race series as the garage grows stronger."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "sports",
+        "racing"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.epicgames.com/help/en-US/c-182/c-7261959845275/a202300000018007",
+        "note": "Rocket League: all cars share stats, six hitbox types"
+      },
+      {
+        "url": "https://giantbomb.com/wiki/Games/Gran_Turismo",
+        "note": "Gran Turismo: licenses unlock races, tuning upgrades power and handling"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.meta.hades-spelunky2",
+    "axis": "prog.meta",
+    "options": [
+      {
+        "pole": "meta",
+        "game": "Hades",
+        "year": 2020,
+        "how": "Darkness gathered in runs buys permanent Mirror of Night talents such as Death Defiance; Chthonic Keys unlock more of them."
+      },
+      {
+        "pole": "none",
+        "game": "Spelunky 2",
+        "year": 2020,
+        "how": "Every run starts with the same 4 hearts, bombs and ropes; nothing boosts power, and progress is player skill plus Terra Tunnel shortcuts."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "platformer",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://hades.wiki.fextralife.com/Mirror+of+the+Night",
+        "note": "Hades: Mirror of Night permanent upgrades bought with Darkness"
+      },
+      {
+        "url": "https://www.pcgamer.com/how-to-unlock-spelunky-2-shortcuts-levels",
+        "note": "Spelunky 2: Terra Tunnel shortcuts as the persistent progress"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.prog.meta.deadcells-downwell",
+    "axis": "prog.meta",
+    "options": [
+      {
+        "pole": "meta",
+        "game": "Dead Cells",
+        "year": 2018,
+        "how": "Cells banked from kills are spent at the Collector on permanent unlocks: extra health flask charges, gold kept on death and new blueprints."
+      },
+      {
+        "pole": "none",
+        "game": "Downwell",
+        "year": 2015,
+        "how": "Each death restarts the well with no upgrades kept; the only unlocks are palettes and styles that change starting rules, not power."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "platformer"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://deadcells.wiki.gg/wiki/Cells",
+        "note": "Dead Cells: Cells spent at the Collector on permanent upgrades"
+      },
+      {
+        "url": "https://www.destructoid.com/review-downwell/",
+        "note": "Downwell: styles are the only permanent unlockables"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.meta.vampiresurvivors-balatro",
+    "axis": "prog.meta",
+    "options": [
+      {
+        "pole": "meta",
+        "game": "Vampire Survivors",
+        "year": 2022,
+        "how": "Gold kept after death buys PowerUps such as Might and Armor that apply to every character in later runs, and can be refunded."
+      },
+      {
+        "pole": "none",
+        "game": "Balatro",
+        "year": 2024,
+        "how": "Each run is a total reset with no passive upgrades; milestones unlock new jokers, decks and vouchers that add options, not power."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "card"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "mobile"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://vampire-survivors.fandom.com/wiki/PowerUp",
+        "note": "Vampire Survivors: permanent gold-bought PowerUps"
+      },
+      {
+        "url": "https://news.xbox.com/en-us/2024/02/20/balatro-xbox/",
+        "note": "Balatro: every run is a total reset, unlocks add new cards"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.meta.darkestdungeon-noita",
+    "axis": "prog.meta",
+    "options": [
+      {
+        "pole": "meta",
+        "game": "Darkest Dungeon",
+        "year": 2016,
+        "how": "Heirlooms from expeditions permanently upgrade hamlet buildings, so even a failed run makes later heroes cheaper to heal, train and equip."
+      },
+      {
+        "pole": "none",
+        "game": "Noita",
+        "year": 2020,
+        "how": "Perks, wands and items reset every run with no talent tree; only spell unlocks persist, which add spells to the pool rather than power."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "strategy",
+        "action",
+        "horror"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://darkestdungeon.wiki.gg/wiki/Heirlooms",
+        "note": "Darkest Dungeon: heirlooms upgrade hamlet buildings"
+      },
+      {
+        "url": "https://www.pcgamer.com/au/noita-review",
+        "note": "Noita: no meta progression or talent tree"
+      },
+      {
+        "url": "https://noita.wiki.gg/wiki/Unlockable_spells",
+        "note": "Noita: spells with unlock conditions"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.build.pathofexile-overwatch2",
+    "axis": "prog.build",
+    "options": [
+      {
+        "pole": "freeform",
+        "game": "Path of Exile",
+        "year": 2013,
+        "how": "All classes share one huge passive tree from different start points, and skill gems socket into any gear, so any class can use any skill."
+      },
+      {
+        "pole": "fixed",
+        "game": "Overwatch 2",
+        "year": 2022,
+        "how": "Each hero has a fixed kit of weapon, abilities and ultimate; you change role by switching heroes mid-match, not by building one."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "action",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://pathofexile.fandom.com/wiki/Passive_skill",
+        "note": "Path of Exile: all classes use the same tree, starting in different places"
+      },
+      {
+        "url": "https://overwatch.fandom.com/wiki/Roles",
+        "note": "Overwatch 2: heroes grouped into roles with set abilities"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.prog.build.grimdawn-deeprockgalactic",
+    "axis": "prog.build",
+    "options": [
+      {
+        "pole": "freeform",
+        "game": "Grim Dawn",
+        "year": 2016,
+        "how": "Combine any two class masteries into one character and mix their skills, then layer Devotion constellations and item-granted skills."
+      },
+      {
+        "pole": "fixed",
+        "game": "Deep Rock Galactic",
+        "year": 2020,
+        "how": "Four dwarf classes each own a fixed loadout, like the Scout's grappling hook or the Driller's drills; upgrades tune gear, not the role."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "action",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/219990/",
+        "note": "Grim Dawn: combine any of the classes, Devotion and item skills"
+      },
+      {
+        "url": "https://deeprockgalactic.wiki.gg/wiki/Classes",
+        "note": "Deep Rock Galactic: each dwarf has a unique loadout"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.scaling.oblivion-eldenring",
+    "axis": "prog.scaling",
+    "options": [
+      {
+        "pole": "scaled",
+        "game": "The Elder Scrolls IV: Oblivion",
+        "year": 2006,
+        "how": "Leveled lists pick creatures and container loot by your level, so bandits gain better armor as you level and early areas keep pace."
+      },
+      {
+        "pole": "fixed",
+        "game": "Elden Ring",
+        "year": 2022,
+        "how": "Enemy stats are set by location, not your level: Limgrave stays gentle and Caelid stays deadly, so you level up or go elsewhere."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.uesp.net/wiki/Oblivion:Leveled_Lists",
+        "note": "Oblivion: leveled lists for creatures and items keyed to player level"
+      },
+      {
+        "url": "https://gamerant.com/elden-ring-missed-areas-rewarding-level-item-scaling-hard-mode/",
+        "note": "Elden Ring: enemy difficulty fixed by area"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.prog.gating.metroiddread-outerwilds",
+    "axis": "prog.gating",
+    "options": [
+      {
+        "pole": "ability",
+        "game": "Metroid Dread",
+        "year": 2021,
+        "how": "Colored blocks and doors need a specific power: Morph Ball tunnels, Grapple Beam blocks, Power Bomb walls, so each new ability opens routes."
+      },
+      {
+        "pole": "knowledge",
+        "game": "Outer Wilds",
+        "year": 2019,
+        "how": "Every location is reachable from the start; what opens the way is learning a timing, a route or a rule from clues across loops."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action",
+        "platformer",
+        "puzzle"
+      ],
+      "platforms": [
+        "handheld",
+        "console",
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://gamerant.com/metroid-dread-how-to-guide-open-every-door-destroy-every-block/",
+        "note": "Metroid Dread: block and door types tied to specific abilities"
+      },
+      {
+        "url": "https://www.gamedeveloper.com/design/live-die-repeat-how-i-outer-wilds-i-piques-curiosity-in-an-ambivalent-solar-system",
+        "note": "Outer Wilds: knowledge as the only gate"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.prog.gating.finalfantasyxiv-thelastofus",
+    "axis": "prog.gating",
+    "options": [
+      {
+        "pole": "level",
+        "game": "Final Fantasy XIV",
+        "year": 2013,
+        "how": "Every dungeon and trial lists a required level, such as Sastasha at 15 or Qarn at 35, so content opens only once you are strong enough."
+      },
+      {
+        "pole": "story",
+        "game": "The Last of Us",
+        "year": 2013,
+        "how": "Chapters open areas in a fixed story order; once a section is cleared you usually cannot return, so the plot alone moves you on."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "action",
+        "horror",
+        "narrative"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://na.finalfantasyxiv.com/lodestone/playguide/db/duty/",
+        "note": "Final Fantasy XIV: official duty list with a required level for each dungeon and trial"
+      },
+      {
+        "url": "https://www.gamepressure.com/thelastofus/list-of-chapters/zdcb44",
+        "note": "The Last of Us: chapters played in a fixed order; sections cannot be returned to once passed"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.gating.symphonyofthenight-fez",
+    "axis": "prog.gating",
+    "options": [
+      {
+        "pole": "ability",
+        "game": "Castlevania: Symphony of the Night",
+        "year": 1997,
+        "how": "Relics such as Bat form, double jump and Mist form let Alucard reach ledges and pass grates, opening new parts of the castle."
+      },
+      {
+        "pole": "knowledge",
+        "game": "Fez",
+        "year": 2012,
+        "how": "Many secrets need no new item, only decoding the alphabet, number and tetromino codes the world slowly teaches you to read."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "action",
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "mobile"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://castlevania.fandom.com/wiki/Castlevania:_Symphony_of_the_Night",
+        "note": "Castlevania: Symphony of the Night: relics open new areas"
+      },
+      {
+        "url": "https://store.steampowered.com/app/224760/FEZ/",
+        "note": "Fez: secrets and codes hidden in the world"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.source.oldschoolrunescape-dragonquest",
+    "axis": "prog.source",
+    "options": [
+      {
+        "pole": "use",
+        "game": "Old School RuneScape",
+        "year": 2013,
+        "how": "Each skill is trained by repeating its own activity, like cutting trees for Woodcutting, and levels to 99 apart from the others."
+      },
+      {
+        "pole": "xp",
+        "game": "Dragon Quest",
+        "year": 1986,
+        "how": "One XP pool from defeated monsters raises a single character level, and each level lifts every stat at once along a set curve."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "mobile",
+        "console",
+        "handheld"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://oldschool.runescape.wiki/w/Skills",
+        "note": "Old School RuneScape: skills trained by repeating actions, cap 99"
+      },
+      {
+        "url": "https://dragon-quest.org/wiki/Experience",
+        "note": "Dragon Quest: XP from monsters raises level and stats"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.meta.cryptofthenecrodancer-downwell",
+    "axis": "prog.meta",
+    "options": [
+      {
+        "pole": "meta",
+        "game": "Crypt of the NecroDancer",
+        "year": 2015,
+        "how": "Diamonds gathered in runs unlock permanent upgrades and better equipment, so each attempt makes the next descent a little easier."
+      },
+      {
+        "pole": "none",
+        "game": "Downwell",
+        "year": 2015,
+        "how": "No upgrade survives death: you restart the well from the top, and the only permanent unlocks are palettes and starting styles."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rhythm",
+        "action",
+        "platformer"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/247080/Crypt_of_the_NecroDancer/",
+        "note": "Crypt of the NecroDancer: diamonds unlock permanent upgrades"
+      },
+      {
+        "url": "https://www.destructoid.com/review-downwell/",
+        "note": "Downwell: upgrades are per run, styles are the permanent unlocks"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.meta.returnal-noita",
+    "axis": "prog.meta",
+    "options": [
+      {
+        "pole": "meta",
+        "game": "Returnal",
+        "year": 2021,
+        "how": "Each death restarts the cycle, but alien tech such as traversal tools stays unlocked, opening routes and upgrades in later cycles."
+      },
+      {
+        "pole": "none",
+        "game": "Noita",
+        "year": 2020,
+        "how": "Every run starts with fresh wands and perks and no talent tree; only unlocked spells carry over, widening the pool, not your power."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1649240/",
+        "note": "Returnal: alien tech upgrades enhance abilities in future cycles"
+      },
+      {
+        "url": "https://www.pcgamer.com/au/noita-review",
+        "note": "Noita: no meta progression to speak of"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.build.fallout4-hearthstone",
+    "axis": "prog.build",
+    "options": [
+      {
+        "pole": "freeform",
+        "game": "Fallout 4",
+        "year": 2015,
+        "how": "No classes: each level grants a point for a SPECIAL rank or any perk whose SPECIAL requirement you meet, so builds mix freely."
+      },
+      {
+        "pole": "fixed",
+        "game": "Hearthstone",
+        "year": 2014,
+        "how": "Each deck belongs to one class whose class cards and Hero Power only it can use; neutral cards are shared, but the class kit is set."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "shooter",
+        "card"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://fallout.wiki/wiki/Fallout_4_perks",
+        "note": "Fallout 4: one perk point per level, perks gated only by SPECIAL"
+      },
+      {
+        "url": "https://hearthstone.wiki.gg/wiki/Class",
+        "note": "Hearthstone: class cards and Hero Powers tied to class, neutral cards for all"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.build.finalfantasyvii-finalfantasy",
+    "axis": "prog.build",
+    "options": [
+      {
+        "pole": "freeform",
+        "game": "Final Fantasy VII",
+        "year": 1997,
+        "how": "Materia slotted into weapons and armor grants spells, commands and summons, and any party member can equip any materia."
+      },
+      {
+        "pole": "fixed",
+        "game": "Final Fantasy",
+        "year": 1987,
+        "how": "You pick four classes such as Fighter or Black Mage at the start; each keeps its own spells and gear all game, upgrading once."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld",
+        "mobile"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://finalfantasy.fandom.com/wiki/Materia_(Final_Fantasy_VII)",
+        "note": "Final Fantasy VII: Materia customization"
+      },
+      {
+        "url": "https://finalfantasy.fandom.com/wiki/Final_Fantasy",
+        "note": "Final Fantasy: four classes chosen at the start, one class change"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.build.ultimaonline-everquest",
+    "axis": "prog.build",
+    "options": [
+      {
+        "pole": "freeform",
+        "game": "Ultima Online",
+        "year": 1997,
+        "how": "No classes or levels: any skill rises through use under a total skill cap, so a fighter can also be a tailor or a mage."
+      },
+      {
+        "pole": "fixed",
+        "game": "EverQuest",
+        "year": 1999,
+        "how": "The class picked at creation sets your spells and abilities for good: a Cleric heals, a Warrior tanks, and roles never change."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.uoguide.com/Skills",
+        "note": "Ultima Online: skill-based characters without classes"
+      },
+      {
+        "url": "https://www.everquest.com/",
+        "note": "EverQuest: class chosen at character creation"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.build.divinityoriginalsin2-darkestdungeon",
+    "axis": "prog.build",
+    "options": [
+      {
+        "pole": "freeform",
+        "game": "Divinity: Original Sin 2",
+        "year": 2017,
+        "how": "Classes are only starting presets with three skills; any character learns more from skill books and points in any combat ability."
+      },
+      {
+        "pole": "fixed",
+        "game": "Darkest Dungeon",
+        "year": 2016,
+        "how": "Every hero of a class shares the same stats and skill list, equips four of those skills and never changes class; many trinkets are class-locked."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://divinityoriginalsin2.wiki.fextralife.com/Classes",
+        "note": "Divinity: Original Sin 2: a class is a build preset with 3 starting skills; skills learned from books, skill points and equipment"
+      },
+      {
+        "url": "https://darkestdungeon.wiki.gg/wiki/Heroes_(Darkest_Dungeon)",
+        "note": "Darkest Dungeon: every hero of a class has the same base stats and skills; up to four combat skills equipped; class-specific trinkets"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.scaling.pathofexile-diablo4",
+    "axis": "prog.scaling",
+    "options": [
+      {
+        "pole": "fixed",
+        "game": "Path of Exile",
+        "year": 2013,
+        "how": "Every area has a fixed monster level; outleveled zones cut experience through a level-gap penalty, pushing players on to areas that match them."
+      },
+      {
+        "pole": "scaled",
+        "game": "Diablo IV",
+        "year": 2023,
+        "how": "At launch, open-world monsters scaled to each player's level above a zone's minimum floor, so regions could be tackled in any order."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "action"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.poewiki.net/wiki/Experience",
+        "note": "Path of Exile: experience penalty outside a safe range around the area's monster level"
+      },
+      {
+        "url": "https://www.pcgamesn.com/diablo-4/scaling",
+        "note": "Diablo IV: level scaling explained; monsters scale to the player with zone level floors"
+      },
+      {
+        "url": "https://www.pcgamer.com/games/rpg/diablo-5-will-take-a-somewhat-different-approach-to-diablo-4s-monster-level-scaling-so-your-character-feels-noticeably-stronger-as-you-progress/",
+        "note": "Diablo IV: monster level scaling described by Blizzard"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.scaling.falloutnewvegas-fallout3",
+    "axis": "prog.scaling",
+    "options": [
+      {
+        "pole": "fixed",
+        "game": "Fallout: New Vegas",
+        "year": 2010,
+        "how": "Scaling is compressed so most creatures keep set strength by region; deathclaws and cazadores in the north warn new players onto the southern road."
+      },
+      {
+        "pole": "scaled",
+        "game": "Fallout 3",
+        "year": 2008,
+        "how": "Encounter zones lock creature and loot levels to yours when first entered, so enemies and their gear grow alongside the player."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.pcgamer.com/games/rpg/josh-sawyer-says-fallout-new-vegas-has-deathclaws-in-cazador-as-a-warning-to-fallout-3-players-expecting-another-easy-ride-you-cant-just-slide-all-over-the-map-and-not-feel-the-heat",
+        "note": "Fallout: New Vegas: Josh Sawyer on deathclaws and cazadores as a warning; less scaling than Fallout 3"
+      },
+      {
+        "url": "https://www.gamesradar.com/games/fallout/fallout-new-vegass-harsher-level-scaling-is-designed-to-teach-players-that-this-is-not-actually-fallout-3-josh-sawyer-says-youre-going-to-get-your-ass-handed-to-you-if-youre-not-careful/",
+        "note": "Fallout 3: level scaling contrasted with New Vegas's compressed scaling range"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.scaling.pokemonredblue-finalfantasyviii",
+    "axis": "prog.scaling",
+    "options": [
+      {
+        "pole": "fixed",
+        "game": "Pokemon Red and Blue",
+        "year": 1996,
+        "how": "Wild Pokemon and trainers on each route have set levels, so grinding makes earlier routes trivial and later gyms beatable."
+      },
+      {
+        "pole": "scaled",
+        "game": "Final Fantasy VIII",
+        "year": 1999,
+        "how": "Most enemy levels track the party level, so grinding XP buys little; power comes from junctioning drawn magic to stats instead."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg"
+      ],
+      "platforms": [
+        "handheld",
+        "console",
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://serebii.net/pokearth/kanto/1st/route5.shtml",
+        "note": "Pokemon Red and Blue: each route lists fixed wild level ranges and fixed trainer levels"
+      },
+      {
+        "url": "https://jegged.com/Games/Final-Fantasy-VIII/Tips-and-Tricks/Character-Enemy-Leveling.html",
+        "note": "Final Fantasy VIII: enemy stats and abilities scale with the party's level, so grinding is counterproductive"
+      },
+      {
+        "url": "https://www.giantbomb.com/level-scaling/3015-608/concepts/",
+        "note": "Final Fantasy VIII: enemy level tied to the party's level"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.respec.baldursgate3-discoelysium",
+    "axis": "prog.respec",
+    "options": [
+      {
+        "pole": "free",
+        "game": "Baldur's Gate 3",
+        "year": 2023,
+        "how": "Withers resets a character to level 1 for 100 gold, rebuilding class, ability scores, spells and feats as often as you can pay."
+      },
+      {
+        "pole": "permanent",
+        "game": "Disco Elysium",
+        "year": 2019,
+        "how": "The four attributes set at creation fix every skill's floor and cap for the whole game, so the starting build shapes each check."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "narrative",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://bg3.wiki/wiki/Withers",
+        "note": "Baldur's Gate 3: Withers respecs for 100 gold, as often as desired; class, ability scores, spells and feats"
+      },
+      {
+        "url": "https://www.pcgamer.com/uk/level-up-by-arguing-with-yourself-in-scintillating-crpg-disco-elysium/",
+        "note": "Disco Elysium: attributes and skills system"
+      },
+      {
+        "url": "https://www.gamepressure.com/disco-elysium/character-development/z2e3e5",
+        "note": "Disco Elysium: starting attribute points set each skill's floor, and its cap is double that"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.respec.guildwars2-finalfantasyx",
+    "axis": "prog.respec",
+    "options": [
+      {
+        "pole": "free",
+        "game": "Guild Wars 2",
+        "year": 2012,
+        "how": "Out of combat you can swap specializations and traits at any time for free, so one character rebuilds for each encounter."
+      },
+      {
+        "pole": "permanent",
+        "game": "Final Fantasy X",
+        "year": 2001,
+        "how": "Activated Sphere Grid nodes stay activated with no refund, so each character's path across the grid is a lasting commitment."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://wiki.guildwars2.com/wiki/Trait",
+        "note": "Guild Wars 2: traits changed freely out of combat"
+      },
+      {
+        "url": "https://finalfantasy.fandom.com/wiki/Sphere_Grid",
+        "note": "Final Fantasy X: Sphere Grid activation"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.respec.finalfantasyxiv-outward",
+    "axis": "prog.respec",
+    "options": [
+      {
+        "pole": "free",
+        "game": "Final Fantasy XIV",
+        "year": 2013,
+        "how": "Equipping another class's weapon switches the character to that class and its skills, so one character can level every role."
+      },
+      {
+        "pole": "permanent",
+        "game": "Outward",
+        "year": 2019,
+        "how": "Each character gets only three breakthrough points for the whole playthrough, and top-tier passives need that tree's breakthrough."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "survival"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://na.finalfantasyxiv.com/a_realm_reborn/game/",
+        "note": "Final Fantasy XIV: Armoury System, change class by changing the weapon you hold"
+      },
+      {
+        "url": "https://gamerguides.com/outward/guide/character-development",
+        "note": "Outward: three breakthrough points per character, no way to gain more"
+      },
+      {
+        "url": "https://outward.wiki.gg/wiki/Passive",
+        "note": "Outward: tier 3 passives require the tree's breakthrough"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.respec.borderlands2-deusex",
+    "axis": "prog.respec",
+    "options": [
+      {
+        "pole": "free",
+        "game": "Borderlands 2",
+        "year": 2012,
+        "how": "Quick-Change stations reset every skill point for a small fee, so skill trees can be rebuilt whenever the build stops working."
+      },
+      {
+        "pole": "permanent",
+        "game": "Deus Ex",
+        "year": 2000,
+        "how": "Each canister offers a choice of two augmentations for one slot; installing one forfeits the other, and installed augs cannot be removed."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://primagames.com/eguides/borderlands-2-game-of-the-year-eguide/hyperions-most-wanted",
+        "note": "Borderlands 2: Quick-Change stations clear spent skill points for a small fee"
+      },
+      {
+        "url": "https://www.gamebanshee.com/deusex/augmentations.php",
+        "note": "Deus Ex: each canister holds two augmentations, only one can be installed; installations are permanent"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.cap.oldschoolrunescape-clickerheroes",
+    "axis": "prog.cap",
+    "options": [
+      {
+        "pole": "cap",
+        "game": "Old School RuneScape",
+        "year": 2013,
+        "how": "Skills stop at level 99; XP keeps counting to 200 million for rankings, but no further levels or power come from it."
+      },
+      {
+        "pole": "endless",
+        "game": "Clicker Heroes",
+        "year": 2015,
+        "how": "Ascension resets the run for Hero Souls that grant permanent power, and zones go on without end, so the climb never stops."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "idle"
+      ],
+      "platforms": [
+        "pc",
+        "mobile",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://oldschool.runescape.wiki/w/Skills",
+        "note": "Old School RuneScape: level 99 cap, 200m XP cap"
+      },
+      {
+        "url": "https://store.steampowered.com/app/363970/",
+        "note": "Clicker Heroes: ascension for Hero Souls, endless zones"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.cap.diablo2-disgaea",
+    "axis": "prog.cap",
+    "options": [
+      {
+        "pole": "cap",
+        "game": "Diablo II",
+        "year": 2000,
+        "how": "Character level stops at 99; a maxed hero grows only through better gear, with no further levels or points to chase."
+      },
+      {
+        "pole": "endless",
+        "game": "Disgaea: Hour of Darkness",
+        "year": 2003,
+        "how": "Characters level to 9999, then Transmigration restarts them at level 1 with stronger growth per level, a loop you can repeat."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://classic.battle.net/diablo2exp/basics/levels.shtml",
+        "note": "Diablo II: experience table ends at level 99"
+      },
+      {
+        "url": "https://store.steampowered.com/app/405900/",
+        "note": "Disgaea: max level 9999 and Transmigration"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.cap.guildwars2-cookieclicker",
+    "axis": "prog.cap",
+    "options": [
+      {
+        "pole": "cap",
+        "game": "Guild Wars 2",
+        "year": 2012,
+        "how": "Level 80 has stayed the cap since launch; past it, XP trains Masteries, and no expansion raised the level or the gear tier."
+      },
+      {
+        "pole": "endless",
+        "game": "Cookie Clicker",
+        "year": 2013,
+        "how": "Ascending resets the bakery for prestige levels worth +1% production each and heavenly chips for upgrades, again and again."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "idle"
+      ],
+      "platforms": [
+        "pc",
+        "web",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://wiki.guildwars2.com/wiki/Endgame",
+        "note": "Guild Wars 2: level 80 cap with horizontal progression"
+      },
+      {
+        "url": "https://cookieclicker.wiki.gg/wiki/Ascension",
+        "note": "Cookie Clicker: ascension, prestige and heavenly chips"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.cap.marioandluigibrothership-cookieclicker",
+    "axis": "prog.cap",
+    "options": [
+      {
+        "pole": "cap",
+        "game": "Mario & Luigi: Brothership",
+        "year": 2024,
+        "how": "Mario and Luigi level up through battles to a hard cap of 100, so growth ends and the late game tests the build you have."
+      },
+      {
+        "pole": "endless",
+        "game": "Cookie Clicker",
+        "year": 2013,
+        "how": "Ascending resets the bakery for prestige levels and heavenly chips that buy permanent upgrades, a loop meant to repeat again and again."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "idle"
+      ],
+      "platforms": [
+        "console",
+        "pc",
+        "web",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.mariowiki.com/Level_up",
+        "note": "Mario & Luigi: Brothership: maximum level 100"
+      },
+      {
+        "url": "https://cookieclicker.wiki.gg/wiki/Ascension",
+        "note": "Cookie Clicker: ascension resets the run for prestige and heavenly chips; achievements for 10, 100 and 1,000 ascensions"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.prog.respec.baldursgate3-starfield",
+    "axis": "prog.respec",
+    "options": [
+      {
+        "pole": "free",
+        "game": "Baldur's Gate 3",
+        "year": 2023,
+        "how": "Paying Withers 100 gold returns a character to level 1 to rebuild class, ability scores, spells and feats, as often as you like."
+      },
+      {
+        "pole": "permanent",
+        "game": "Starfield",
+        "year": 2023,
+        "how": "Spent skill points can never be refunded; with no level cap the answer to a bad pick is to level further, not to rebuild."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "strategy",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://bg3.wiki/wiki/Withers",
+        "note": "Baldur's Gate 3: Withers respecs for 100 gold, as often as desired"
+      },
+      {
+        "url": "https://gamespot.com/articles/how-to-respec-in-starfield-you-cant-reset-skill-points-and-heres-why-thats-okay/1100-6517403/",
+        "note": "Starfield: you cannot reset skill points"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  }
+]

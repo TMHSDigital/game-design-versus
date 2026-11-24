@@ -1,1 +1,269 @@
-[]
+[
+  {
+    "id": "cmp.party.input.jackbox-marioparty",
+    "axis": "party.input",
+    "options": [
+      { "pole": "phones", "game": "The Jackbox Party Pack", "year": 2014, "how": "Phones or tablets are the controllers: players join from their own devices, so 1 to 100 people can play with no extra pads." },
+      { "pole": "controllers", "game": "Mario Party", "year": 1998, "how": "Each of four players holds an N64 controller; minigames after every board turn test stick and button reflexes." }
+    ],
+    "tags": { "genres": ["party"], "platforms": ["pc", "console"], "era": "pre2000", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/331670/", "note": "The Jackbox Party Pack: phones or tablets are your controllers, 1 to 100 players" },
+      { "url": "https://www.mariowiki.com/Mario_Party", "note": "Mario Party: Nintendo 64 controller input, minigames after each turn test reflexes" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.party.input.useyourwords-warioware-smoothmoves",
+    "axis": "party.input",
+    "options": [
+      { "pole": "phones", "game": "Use Your Words", "year": 2017, "how": "Players type punchlines to prompts on their phones or tablets, used as controllers, then vote on the funniest." },
+      { "pole": "controllers", "game": "WarioWare: Smooth Moves", "year": 2006, "how": "Each microgame tells players to hold the Wii Remote in a different Form and act it out, passing the remote around." }
+    ],
+    "tags": { "genres": ["party"], "platforms": ["pc", "console"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/521350/", "note": "Use Your Words: players use their phones or tablets as controllers to answer prompts" },
+      { "url": "https://www.mariowiki.com/WarioWare:_Smooth_Moves", "note": "WarioWare: Smooth Moves: built around the Wii Remote and its Forms" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.party.input.nintendoland-pummelparty",
+    "axis": "party.input",
+    "options": [
+      { "pole": "phones", "game": "Nintendo Land", "year": 2012, "how": "One player uses the Wii U GamePad's private second screen to chase or hide from four Wii Remote players (Mario Chase)." },
+      { "pole": "controllers", "game": "Pummel Party", "year": 2018, "how": "1 to 8 players each use a controller on one shared screen for board turns and minigames, locally or online." }
+    ],
+    "tags": { "genres": ["party"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Nintendo_Land", "note": "Nintendo Land: GamePad player pursues or is pursued by the other players" },
+      { "url": "https://store.steampowered.com/app/880940/", "note": "Pummel Party: 1 to 8 players compete on the same screen, controller support" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.party.input.spaceteam-ultimatechickenhorse",
+    "axis": "party.input",
+    "options": [
+      { "pole": "phones", "game": "Spaceteam", "year": 2012, "how": "Every player runs the game on their own phone or tablet and shouts instructions across the room; there is no shared screen." },
+      { "pole": "controllers", "game": "Ultimate Chicken Horse", "year": 2016, "how": "Players on controllers place traps and race in one shared level on a single screen, locally or online." }
+    ],
+    "tags": { "genres": ["party", "platformer"], "platforms": ["mobile", "pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://spaceteam.ca/", "note": "Spaceteam: a cooperative shouting game for phones and tablets" },
+      { "url": "https://store.steampowered.com/app/386940/", "note": "Ultimate Chicken Horse: party platformer, local and online play, controller support" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.party.input.quiplash-mariopartysuperstars",
+    "axis": "party.input",
+    "options": [
+      { "pole": "phones", "game": "Quiplash", "year": 2015, "how": "Players write answers privately on their phones, then vote; an audience of thousands can join and vote from their devices." },
+      { "pole": "controllers", "game": "Mario Party Superstars", "year": 2021, "how": "Each player holds a Joy-Con or Pro Controller for board turns and 100 classic minigames on the TV." }
+    ],
+    "tags": { "genres": ["party"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/351510/", "note": "Quiplash: your phones or tablets are your controllers, plus an audience" },
+      { "url": "https://www.mariowiki.com/Mario_Party_Superstars", "note": "Mario Party Superstars: Joy-Con and Pro Controller input, 100 minigames" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.party.input.drawful2-duckgame",
+    "axis": "party.input",
+    "options": [
+      { "pole": "phones", "game": "Drawful 2", "year": 2016, "how": "Players sketch prompts on their phone touch screens, then type fake titles for each other's drawings." },
+      { "pole": "controllers", "game": "Duck Game", "year": 2014, "how": "2 to 8 players on controllers share one screen; one hit eliminates, so reflexes on a pad decide rounds." }
+    ],
+    "tags": { "genres": ["party", "action"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/442070/", "note": "Drawful 2: phones or tablets are your controllers, game of terrible drawings" },
+      { "url": "https://store.steampowered.com/app/312530/", "note": "Duck Game: 2 to 8 local players, one hit and you're roasted" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.party.input.amongus-stickfight",
+    "axis": "party.input",
+    "options": [
+      { "pole": "phones", "game": "Among Us", "year": 2018, "how": "Each player joins a local WiFi or online lobby from their own phone or PC and sees only their own view; no shared TV." },
+      { "pole": "controllers", "game": "Stick Fight: The Game", "year": 2017, "how": "2 to 4 players brawl on one screen with controllers in local play, or online; there is no single player mode." }
+    ],
+    "tags": { "genres": ["party", "action"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/945360/", "note": "Among Us: 4-15 players online or via local WiFi, cross-play with Android and iOS" },
+      { "url": "https://store.steampowered.com/app/674940/", "note": "Stick Fight: The Game: 2 to 4 players local or online, controller support" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.party.input.marioparty10-pummelparty",
+    "axis": "party.input",
+    "options": [
+      { "pole": "phones", "game": "Mario Party 10", "year": 2015, "how": "In Bowser Party one player controls Bowser on the Wii U GamePad's second screen against up to four Wii Remote players." },
+      { "pole": "controllers", "game": "Pummel Party", "year": 2018, "how": "Everyone uses a controller and watches the same screen; items and minigames are symmetric for all players." }
+    ],
+    "tags": { "genres": ["party"], "platforms": ["console", "pc"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Mario_Party_10", "note": "Mario Party 10: Bowser Party, one player controls Bowser using the GamePad" },
+      { "url": "https://store.steampowered.com/app/880940/", "note": "Pummel Party: local same-screen play, controller support" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.party.mode.amongus-overcooked2",
+    "axis": "party.mode",
+    "options": [
+      { "pole": "competitive", "game": "Among Us", "year": 2018, "how": "Crewmates do tasks while hidden Impostors kill; players discuss and vote to eject suspects, so sides win or lose." },
+      { "pole": "coop", "game": "Overcooked! 2", "year": 2018, "how": "Up to four chefs share one shifting kitchen, throwing ingredients and crossing teleporters to fill orders together." }
+    ],
+    "tags": { "genres": ["party"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/945360/", "note": "Among Us: Impostors among the Crew, social deduction" },
+      { "url": "https://store.steampowered.com/app/728880/", "note": "Overcooked! 2: chaotic co-op cooking, teleporters and moving platforms" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.party.mode.mariopartysuperstars-movingout",
+    "axis": "party.mode",
+    "options": [
+      { "pole": "competitive", "game": "Mario Party Superstars", "year": 2021, "how": "Players race to collect Stars and Coins on classic boards, winning extra Coins in minigames; one player wins." },
+      { "pole": "coop", "game": "Moving Out", "year": 2020, "how": "Couch co-op movers carry physics-driven furniture to the truck together on shared moving jobs." }
+    ],
+    "tags": { "genres": ["party"], "platforms": ["console", "pc"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Mario_Party_Superstars", "note": "Mario Party Superstars: boards and 100 minigames from past Mario Party games" },
+      { "url": "https://store.steampowered.com/app/996770/", "note": "Moving Out: physics-based moving simulator built for couch co-op" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.party.mode.superbombermanr-lovers",
+    "axis": "party.mode",
+    "options": [
+      { "pole": "competitive", "game": "Super Bomberman R", "year": 2017, "how": "Classic Battle Mode drops players into a maze arena to trap and bomb each other, locally or online." },
+      { "pole": "coop", "game": "Lovers in a Dangerous Spacetime", "year": 2015, "how": "1 to 4 players share one ship, running between turrets, lasers, shields and thrusters; survival needs teamwork." }
+    ],
+    "tags": { "genres": ["party", "action", "shooter"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/702700/", "note": "Super Bomberman R: classic Battle Mode, local and online" },
+      { "url": "https://store.steampowered.com/app/252110/", "note": "Lovers in a Dangerous Spacetime: co-op crew mans turrets, shields and thrusters" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.party.mode.duckgame-keeptalking",
+    "axis": "party.mode",
+    "options": [
+      { "pole": "competitive", "game": "Duck Game", "year": 2014, "how": "2 to 8 ducks blast each other with shotguns, net guns and saxophones; one hit and you are out of the round." },
+      { "pole": "coop", "game": "Keep Talking and Nobody Explodes", "year": 2015, "how": "One player sees the bomb, the Experts hold the manual; everyone must talk it out fast to defuse it together." }
+    ],
+    "tags": { "genres": ["party", "puzzle", "action"], "platforms": ["pc", "console", "vr", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/312530/", "note": "Duck Game: battle with shotguns and odd weapons, one hit and you're roasted" },
+      { "url": "https://store.steampowered.com/app/341800/", "note": "Keep Talking and Nobody Explodes: Experts with the manual guide the defuser" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.party.mode.fallguys-unrailed",
+    "axis": "party.mode",
+    "options": [
+      { "pole": "competitive", "game": "Fall Guys", "year": 2020, "how": "A battle royale of obstacle rounds: players dive and dodge, and rounds eliminate until one wins." },
+      { "pole": "coop", "game": "Unrailed!", "year": 2020, "how": "Teammates gather resources and craft track ahead of a moving train; let it derail and everyone loses." }
+    ],
+    "tags": { "genres": ["party", "platformer"], "platforms": ["pc", "console"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/1097150/", "note": "Fall Guys: party battle royale, dive and dodge your way to victory" },
+      { "url": "https://store.steampowered.com/app/1016920/", "note": "Unrailed!: co-op railroad construction, keep the train from derailing" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.party.mode.ultimatechickenhorse-plateup",
+    "axis": "party.mode",
+    "options": [
+      { "pole": "competitive", "game": "Ultimate Chicken Horse", "year": 2016, "how": "Players place traps in a level they all build, then race it; you score only if you finish and friends do not." },
+      { "pole": "coop", "game": "PlateUp!", "year": 2022, "how": "Up to four players build and run one restaurant, placing appliances, cooking and serving between shifts." }
+    ],
+    "tags": { "genres": ["party", "platformer", "simulation"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/386940/", "note": "Ultimate Chicken Horse: build the level, place traps, score if you make it and friends don't" },
+      { "url": "https://store.steampowered.com/app/1599600/", "note": "PlateUp!: up to four players build and run a restaurant together" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.party.mode.stickfight-humanfallflat",
+    "axis": "party.mode",
+    "options": [
+      { "pole": "competitive", "game": "Stick Fight: The Game", "year": 2017, "how": "2 to 4 stick figures brawl with physics-based combat across 100 interactive levels, local or online." },
+      { "pole": "coop", "game": "Human: Fall Flat", "year": 2016, "how": "Up to 8 wobbly physics characters solve physics puzzle levels together, online or in local co-op." }
+    ],
+    "tags": { "genres": ["party", "puzzle", "action"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/674940/", "note": "Stick Fight: The Game: physics-based fighting for 2 to 4 players" },
+      { "url": "https://store.steampowered.com/app/477160/", "note": "Human: Fall Flat: physics puzzle co-op with up to 8 players online" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.party.mode.marioparty-gauntlet",
+    "axis": "party.mode",
+    "options": [
+      { "pole": "competitive", "game": "Mario Party", "year": 1998, "how": "Players hinder each other in the race for Stars; minigames range from free-for-alls to 1-vs-3 for Coins." },
+      { "pole": "coop", "game": "Gauntlet Slayer Edition", "year": 2014, "how": "Four heroes fight endless monster hordes through dungeons together in classic 4-player co-op." }
+    ],
+    "tags": { "genres": ["party", "action"], "platforms": ["console", "pc"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Mario_Party", "note": "Mario Party: players hinder others in the quest for Stars, free-for-all and 1-vs-3 minigames" },
+      { "url": "https://store.steampowered.com/app/258970/", "note": "Gauntlet Slayer Edition: classic 4-player co-op dungeon brawler" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.party.input.jackboxpartypack10-supermariopartyjamboree",
+    "axis": "party.input",
+    "options": [
+      { "pole": "phones", "game": "The Jackbox Party Pack 10", "year": 2023, "how": "Players join at jackbox.tv on their phones with a room code and draw or type there, while the host screen runs the game." },
+      { "pole": "controllers", "game": "Super Mario Party Jamboree", "year": 2024, "how": "Everyone holds Joy-Con: board turns and minigames, including motion ones like Rhythm Kitchen, use the controller in hand." }
+    ],
+    "tags": { "genres": ["party"], "platforms": ["pc", "console", "mobile"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://www.jackboxgames.com/how-to-play", "note": "The Jackbox Party Pack 10: use phones as controllers, join at jackbox.tv with the room code" },
+      { "url": "https://www.jackboxgames.com/games/the-jackbox-party-pack-10", "note": "The Jackbox Party Pack 10: drawing battles in Tee K.O. 3, 3 to 8 players" },
+      { "url": "https://www.nintendo.com/us/store/products/super-mario-party-jamboree-switch/", "note": "Super Mario Party Jamboree: play using Joy-Con controllers, motion minigames like Rhythm Kitchen" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.party.input.everybody12switch-warioware-moveit",
+    "axis": "party.input",
+    "options": [
+      { "pole": "phones", "game": "Everybody 1-2-Switch!", "year": 2023, "how": "Team games for groups of 2 to 100: big crowds join on their own smart devices, while Joy-Con mode caps at 8 players." },
+      { "pole": "controllers", "game": "WarioWare: Move It!", "year": 2023, "how": "Each player grips a Joy-Con and shakes, punches and poses through 200+ microgames lasting seconds." }
+    ],
+    "tags": { "genres": ["party"], "platforms": ["console"], "era": "2020s", "indie": false },
+    "sources": [
+      { "url": "https://www.nintendo.com/us/store/products/everybody-1-2-switch-switch/", "note": "Everybody 1-2-Switch!: up to 100 players in smart device mode, up to 8 in Joy-Con mode" },
+      { "url": "https://www.nintendo.com/us/store/products/warioware-move-it-switch/", "note": "WarioWare: Move It!: shake, punch and dance with Joy-Con through 200+ microgames; Party Mode one Joy-Con each" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.party.mode.supermariopartyjamboree-picopark2",
+    "axis": "party.mode",
+    "options": [
+      { "pole": "competitive", "game": "Super Mario Party Jamboree", "year": 2024, "how": "Roll dice to race around the board for Stars; minigame wins earn coins to buy Stars, and the most Stars at the end wins." },
+      { "pole": "coop", "game": "Pico Park 2", "year": 2024, "how": "2 to 8 players clear 2D action puzzles that only open up when everyone works together." }
+    ],
+    "tags": { "genres": ["party", "puzzle", "platformer"], "platforms": ["console", "pc"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://www.nintendo.com/us/store/products/super-mario-party-jamboree-switch/", "note": "Super Mario Party Jamboree: roll dice to race for Stars, win minigames for coins, most Stars wins" },
+      { "url": "https://www.nintendo.com/us/store/products/pico-park-2-switch/", "note": "Pico Park 2: co-op action-puzzle for 2 to 8 players where working together is key" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  }
+]

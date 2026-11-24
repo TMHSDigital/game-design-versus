@@ -1,1 +1,754 @@
-[]
+[
+  {
+    "id": "cmp.card.acquisition.slaythespire-hearthstone",
+    "axis": "card.acquisition",
+    "options": [
+      {
+        "pole": "run",
+        "game": "Slay the Spire",
+        "year": 2019,
+        "how": "Starts each climb with a basic deck; cards picked after fights, relics and map pathing build the deck within that one run."
+      },
+      {
+        "pole": "collect",
+        "game": "Hearthstone",
+        "year": 2014,
+        "how": "Players own a persistent card collection and bring premade or self-built decks into matches."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/646570/",
+        "note": "Slay the Spire: dynamic deck building, add cards to your deck with each attempt"
+      },
+      {
+        "url": "https://hearthstone.blizzard.com/en-us/how-to-play",
+        "note": "Hearthstone: premade decks, optional card purchases, ranked ladder"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.card.acquisition.monstertrain-mtgo",
+    "axis": "card.acquisition",
+    "options": [
+      {
+        "pole": "run",
+        "game": "Monster Train",
+        "year": 2020,
+        "how": "Each run starts from a clan deck; route choices add units, spells and card upgrades between battles."
+      },
+      {
+        "pole": "collect",
+        "game": "Magic: The Gathering Online",
+        "year": 2002,
+        "how": "An account-wide collection persists; decks for events are built from the cards you own."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1102190/",
+        "note": "Monster Train: roguelike deck building, recruit units and upgrade cards by route"
+      },
+      {
+        "url": "https://www.mtgo.com/",
+        "note": "Magic: The Gathering Online: collect cards, build decks from your Magic Online collection"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.card.acquisition.inscryption-gwent",
+    "axis": "card.acquisition",
+    "options": [
+      {
+        "pole": "run",
+        "game": "Inscryption",
+        "year": 2021,
+        "how": "Acquires woodland creature cards during the run through drafts and card-altering events like surgery."
+      },
+      {
+        "pole": "collect",
+        "game": "Gwent: The Witcher Card Game",
+        "year": 2018,
+        "how": "A persistent collection of Witcher cards grows over time; players construct a deck before PvP duels."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "horror",
+        "puzzle",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1092790/",
+        "note": "Inscryption: acquire a deck of woodland creature cards by draft, surgery"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1284410/",
+        "note": "Gwent: collect heroes and cards, careful deck construction for PvP duels"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.card.acquisition.dreamquest-pokemontcg",
+    "axis": "card.acquisition",
+    "options": [
+      {
+        "pole": "run",
+        "game": "Dream Quest",
+        "year": 2014,
+        "how": "Your class's ability deck grows as you level up and loot across a randomly generated dungeon run."
+      },
+      {
+        "pole": "collect",
+        "game": "Pokemon Trading Card Game",
+        "year": 1998,
+        "how": "Earn and trade cards to grow a collection, then build ever more intricate decks from it to challenge opponents."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "rpg",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "mobile",
+        "handheld"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/557410/",
+        "note": "Dream Quest: abilities are a deck of cards that you develop as you progress through levels"
+      },
+      {
+        "url": "https://www.pokemon.com/us/pokemon-video-games/pokemon-trading-card-game/",
+        "note": "Pokemon Trading Card Game: trade cards you've earned, build more intricate decks"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.card.acquisition.wildfrost-marvelsnap",
+    "axis": "card.acquisition",
+    "options": [
+      {
+        "pole": "run",
+        "game": "Wildfrost",
+        "year": 2023,
+        "how": "Each journey starts with a chosen tribe; companions and items join the deck along the way."
+      },
+      {
+        "pole": "collect",
+        "game": "Marvel Snap",
+        "year": 2022,
+        "how": "Cards unlock into a persistent collection; you choose 12 of them for a deck before each match."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1811990/",
+        "note": "Wildfrost: build up a deck of card companions and items, begin each journey with a chosen tribe"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1997040/",
+        "note": "Marvel Snap: collectible card game, 12-card decks"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.card.acquisition.griftlands-masterduel",
+    "axis": "card.acquisition",
+    "options": [
+      {
+        "pole": "run",
+        "game": "Griftlands",
+        "year": 2021,
+        "how": "Battle and negotiation cards are collected during each campaign run, shaped by the jobs and friends you take on."
+      },
+      {
+        "pole": "collect",
+        "game": "Yu-Gi-Oh! Master Duel",
+        "year": 2022,
+        "how": "Duelists keep a card collection and build Yu-Gi-Oh! TCG decks before online Duels."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "rpg",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/601840/",
+        "note": "Griftlands: deck-building rogue-like, every decision matters including the cards you collect"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1449850/",
+        "note": "Yu-Gi-Oh! Master Duel: the Yu-Gi-Oh! TCG played digitally, trading card game deckbuilding"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.card.acquisition.cobaltcore-mtgarena",
+    "axis": "card.acquisition",
+    "options": [
+      {
+        "pole": "run",
+        "game": "Cobalt Core",
+        "year": 2023,
+        "how": "Your crew's orders are cards; the deck is assembled and grown within each roguelike run."
+      },
+      {
+        "pole": "collect",
+        "game": "Magic: The Gathering Arena",
+        "year": 2018,
+        "how": "Collect cards into an account-wide collection and build and refine decks from it before matches."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/2179850/",
+        "note": "Cobalt Core: sci-fi roguelike deckbuilder, give orders to your crew by playing cards"
+      },
+      {
+        "url": "https://store.steampowered.com/app/2141910/",
+        "note": "Magic: The Gathering Arena: collect, build and master your unique deck"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.card.acquisition.roguebook-eternal",
+    "axis": "card.acquisition",
+    "options": [
+      {
+        "pole": "run",
+        "game": "Roguebook",
+        "year": 2021,
+        "how": "Pick two heroes and build their deck during a roguelike run, chaining combos between them."
+      },
+      {
+        "pole": "collect",
+        "game": "Eternal Card Game",
+        "year": 2016,
+        "how": "Cards stay in your collection; Draft and Sealed modes let you keep the cards you pick or open."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1076200/",
+        "note": "Roguebook: roguelike deckbuilder, build a team of two heroes and unleash combos"
+      },
+      {
+        "url": "https://store.steampowered.com/app/531640/",
+        "note": "Eternal: Draft keeps what you draft, Sealed League cracks 14 packs, constructed decks"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.card.scoring.balatro-slaythespire",
+    "axis": "card.scoring",
+    "options": [
+      {
+        "pole": "combo",
+        "game": "Balatro",
+        "year": 2024,
+        "how": "Poker hands score chips times mult; Jokers add to or multiply mult to beat each blind's target score."
+      },
+      {
+        "pole": "combat",
+        "game": "Slay the Spire",
+        "year": 2019,
+        "how": "Cards deal damage, block and apply effects to defeat the enemies in each encounter."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://balatrowiki.org/w/Mult",
+        "note": "Balatro: Mult multiplies the chips of the played poker hand; Jokers add mult"
+      },
+      {
+        "url": "https://store.steampowered.com/app/646570/",
+        "note": "Slay the Spire: select cards that work together to dispatch foes"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.card.scoring.wingspan-eternal",
+    "axis": "card.scoring",
+    "options": [
+      {
+        "pole": "combo",
+        "game": "Wingspan",
+        "year": 2020,
+        "how": "Each bird extends a chain of powers in its habitat row, so later turns lay more eggs, draw more cards or gather more food."
+      },
+      {
+        "pole": "combat",
+        "game": "Eternal Card Game",
+        "year": 2016,
+        "how": "Units and fast-spells clash in tactical combat, with counterplay possible on the opponent's turn."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1054490/",
+        "note": "Wingspan: each bird extends a chain of powerful combinations in one of your habitats"
+      },
+      {
+        "url": "https://store.steampowered.com/app/531640/",
+        "note": "Eternal: strategic gameplay and counterplay with fast-spells and tactical combat"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.card.scoring.marvelsnap-cardcrawl",
+    "axis": "card.scoring",
+    "options": [
+      {
+        "pole": "combo",
+        "game": "Marvel Snap",
+        "year": 2022,
+        "how": "No combat: control two of three locations after six turns, with card abilities and location effects swinging each one."
+      },
+      {
+        "pole": "combat",
+        "game": "Card Crawl",
+        "year": 2015,
+        "how": "A solitaire deck of monsters is fought with swords, shields and potions until the deck is cleared."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1997040/",
+        "note": "Marvel Snap: battle across three locations, control two of them after six turns to win"
+      },
+      {
+        "url": "https://store.steampowered.com/app/745000/",
+        "note": "Card Crawl: fight through a deck of monsters with swords, shields and potions"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.card.scoring.dominion-dreamquest",
+    "axis": "card.scoring",
+    "options": [
+      {
+        "pole": "combo",
+        "game": "Dominion",
+        "year": 2008,
+        "how": "Buy cards to grow a deck engine; whoever holds the most Victory Points in their deck at game end wins."
+      },
+      {
+        "pole": "combat",
+        "game": "Dream Quest",
+        "year": 2014,
+        "how": "Combat is the card game: your deck of abilities is played against monsters on each dungeon floor."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "strategy",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "mobile"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1131620/",
+        "note": "Dominion: collect as many Victory Points as you can by building a powerful deck"
+      },
+      {
+        "url": "https://store.steampowered.com/app/557410/",
+        "note": "Dream Quest: combat is a card game, abilities are a deck of cards"
+      }
+    ],
+    "note": "Dominion is the 2008 board game, played here through its official digital adaptation.",
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.card.scoring.splendor-monstertrain",
+    "axis": "card.scoring",
+    "options": [
+      {
+        "pole": "combo",
+        "game": "Splendor",
+        "year": 2015,
+        "how": "Acquire mines, transport and artisans that turn raw gems into jewels, snowballing toward prestige and nobles."
+      },
+      {
+        "pole": "combat",
+        "game": "Monster Train",
+        "year": 2020,
+        "how": "Cards deploy units and spells across three vertical floors to stop invaders reaching the pyre."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/376680/",
+        "note": "Splendor: acquire mines, transportation and artisans, attract nobles and earn prestige"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1102190/",
+        "note": "Monster Train: three vertical play fields to defend the burning pyre"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.card.scoring.balatro-wildfrost",
+    "axis": "card.scoring",
+    "options": [
+      {
+        "pole": "combo",
+        "game": "Balatro",
+        "year": 2024,
+        "how": "Builds toward one huge scoring hand each round: Joker synergies stack chips and mult against the blind."
+      },
+      {
+        "pole": "combat",
+        "game": "Wildfrost",
+        "year": 2023,
+        "how": "Companion cards and items battle enemy cards on a board; you win by defeating them."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/2379780/",
+        "note": "Balatro: combine poker hands with Joker cards to earn enough chips to beat blinds"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1811990/",
+        "note": "Wildfrost: card companions and items battle to banish the frost"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.card.scoring.lostcities-cobaltcore",
+    "axis": "card.scoring",
+    "options": [
+      {
+        "pole": "combo",
+        "game": "Lost Cities",
+        "year": 2018,
+        "how": "Cards are laid into expeditions and wagers raise the stakes on them; the most successful expeditions after 3 rounds win."
+      },
+      {
+        "pole": "combat",
+        "game": "Cobalt Core",
+        "year": 2023,
+        "how": "Cards move the ship, raise shields and fire along a single axis to dodge and disable the enemy ship."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/520680/",
+        "note": "Lost Cities: plan expeditions, place wagers, most successful expeditions after 3 rounds wins"
+      },
+      {
+        "url": "https://store.steampowered.com/app/2179850/",
+        "note": "Cobalt Core: single-axis combat, raise shields, dodge, strike enemy weapons"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.card.scoring.wingspan-griftlands",
+    "axis": "card.scoring",
+    "options": [
+      {
+        "pole": "combo",
+        "game": "Wingspan",
+        "year": 2020,
+        "how": "Birds you play make you better at laying eggs, drawing cards or gathering food, so the engine compounds every turn."
+      },
+      {
+        "pole": "combat",
+        "game": "Griftlands",
+        "year": 2021,
+        "how": "Cards resolve both fights and negotiations against opponents, turn by turn."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "card",
+        "strategy",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1054490/",
+        "note": "Wingspan: each bird makes you better at laying eggs, drawing cards, or gathering food"
+      },
+      {
+        "url": "https://store.steampowered.com/app/601840/",
+        "note": "Griftlands: deck-building rogue-like where you fight and negotiate"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.card.acquisition.monstertrain2-pokemontcgpocket",
+    "axis": "card.acquisition",
+    "options": [
+      { "pole": "run", "game": "Monster Train 2", "year": 2025, "how": "A roguelike deckbuilder: each run you pick clans, then recruit units and upgrade cards on the way through Hell, Heaven and the Abyss." },
+      { "pole": "collect", "game": "Pokemon Trading Card Game Pocket", "year": 2024, "how": "Open two free booster packs a day to grow a lasting card collection, then build decks from the cards you own." }
+    ],
+    "tags": { "genres": ["card"], "platforms": ["pc", "console", "mobile"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://www.nintendo.com/us/store/products/monster-train-2-switch/", "note": "Monster Train 2: roguelike deckbuilder; choose clans, recruit units and upgrade cards during a run" },
+      { "url": "https://tcgpocket.pokemon.com/en-us/", "note": "Pokemon Trading Card Game Pocket: open two booster packs every day at no cost, collect digital cards, build your dream deck" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  }
+]

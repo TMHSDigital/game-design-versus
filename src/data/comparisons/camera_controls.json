@@ -1,1 +1,1208 @@
-[]
+[
+  {
+    "id": "cmp.cam.view.re1-re4-alyx",
+    "axis": "cam.view",
+    "options": [
+      {
+        "pole": "fixed_cinematic",
+        "game": "Resident Evil",
+        "year": 1996,
+        "how": "Pre-rendered rooms seen from fixed cinematic angles; tank controls stay relative to the character, not the camera."
+      },
+      {
+        "pole": "third_shoulder",
+        "game": "Resident Evil 4 (2005)",
+        "year": 2005,
+        "how": "An over-the-shoulder camera follows Leon; aiming zooms in further and he cannot move while aiming."
+      },
+      {
+        "pole": "vr",
+        "game": "Half-Life: Alyx",
+        "year": 2020,
+        "how": "VR-native: players reach out with tracked hands and use gravity gloves to pull objects toward them."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "horror",
+        "action",
+        "shooter"
+      ],
+      "platforms": [
+        "console",
+        "pc",
+        "vr"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Resident_Evil_(1996_video_game)",
+        "note": "Resident Evil: Pre-rendered rooms seen from fixed cinematic angles; tank controls stay relative to the"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Resident_Evil_4",
+        "note": "Resident Evil 4 (2005): An over-the-shoulder camera follows Leon; aiming zooms in further and he cannot move"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Half-Life:_Alyx",
+        "note": "Half-Life: Alyx: VR-native: players reach out with tracked hands and use gravity gloves to pull objects"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.cam.view.doom1993-diablo-supermetroid",
+    "axis": "cam.view",
+    "options": [
+      {
+        "pole": "first_person",
+        "game": "Doom",
+        "year": 1993,
+        "how": "The player sees through the marine's eyes; the view always stays level, with no looking up or down."
+      },
+      {
+        "pole": "top_down",
+        "game": "Diablo",
+        "year": 1996,
+        "how": "An isometric camera looks down on the hero; the player clicks the ground to move and enemies to attack."
+      },
+      {
+        "pole": "side",
+        "game": "Super Metroid",
+        "year": 1994,
+        "how": "A 2D side-scrolling view of Zebes; rooms connect left, right, up and down on one plane."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "rpg",
+        "action",
+        "platformer"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Doom_engine",
+        "note": "Doom: The player sees through the marine's eyes; the view always stays level, with no looking"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Diablo_(video_game)",
+        "note": "Diablo: An isometric camera looks down on the hero; the player clicks the ground to move and"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Super_Metroid",
+        "note": "Super Metroid: A 2D side-scrolling view of Zebes; rooms connect left, right, up and down on one plane"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.cam.view.companyofheroes-gearsofwar",
+    "axis": "cam.view",
+    "options": [
+      {
+        "pole": "strategy",
+        "game": "Company of Heroes",
+        "year": 2006,
+        "how": "A free RTS camera pans and zooms over the battlefield while the player commands squads."
+      },
+      {
+        "pole": "third_shoulder",
+        "game": "Gears of War",
+        "year": 2006,
+        "how": "An over-the-shoulder camera, borrowed from Resident Evil 4, follows the soldier as he fights from cover."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "shooter"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Company_of_Heroes_(video_game)",
+        "note": "Company of Heroes: A free RTS camera pans and zooms over the battlefield while the player commands squads"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Third-person_shooter",
+        "note": "Gears of War: An over-the-shoulder camera, borrowed from Resident Evil 4, follows the soldier as he"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.cam.view.grimfandango-firewatch-discoelysium",
+    "axis": "cam.view",
+    "options": [
+      {
+        "pole": "fixed_cinematic",
+        "game": "Grim Fandango",
+        "year": 1998,
+        "how": "Characters walk through pre-rendered backgrounds framed by fixed film-style camera angles."
+      },
+      {
+        "pole": "first_person",
+        "game": "Firewatch",
+        "year": 2016,
+        "how": "A first-person view through Henry's eyes, with his hands holding the map, compass and radio."
+      },
+      {
+        "pole": "top_down",
+        "game": "Disco Elysium",
+        "year": 2019,
+        "how": "An isometric view of painted Revachol; click to move and inspect."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "narrative",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Virtual_camera_system",
+        "note": "Grim Fandango: Characters walk through pre-rendered backgrounds framed by fixed film-style camera angles"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Firewatch",
+        "note": "Firewatch: A first-person view through Henry's eyes, with his hands holding the map, compass and"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Disco_Elysium",
+        "note": "Disco Elysium: An isometric view of painted Revachol; click to move and inspect"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.cam.view.amnesia-littlenightmares-saintssinners",
+    "axis": "cam.view",
+    "options": [
+      {
+        "pole": "first_person",
+        "game": "Amnesia: The Dark Descent",
+        "year": 2010,
+        "how": "First-person view; the player grabs doors and objects and drags them with the mouse."
+      },
+      {
+        "pole": "side",
+        "game": "Little Nightmares",
+        "year": 2017,
+        "how": "A 2.5D side-on view of the Maw, with some depth to move in and out of the screen."
+      },
+      {
+        "pole": "vr",
+        "game": "The Walking Dead: Saints & Sinners",
+        "year": 2020,
+        "how": "Built for VR: physics-based melee has the player wield weapons with tracked hands."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "horror",
+        "platformer",
+        "survival"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "vr"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Amnesia:_The_Dark_Descent",
+        "note": "Amnesia: The Dark Descent: First-person view; the player grabs doors and objects and drags them with the mouse"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Little_Nightmares",
+        "note": "Little Nightmares: A 2.5D side-on view of the Maw, with some depth to move in and out of the screen"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/The_Walking_Dead:_Saints_%26_Sinners",
+        "note": "The Walking Dead: Saints & Sinners: Built for VR: physics-based melee has the player wield weapons with tracked hands"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.cam.view.supremecommander-intothebreach",
+    "axis": "cam.view",
+    "options": [
+      {
+        "pole": "strategy",
+        "game": "Supreme Commander",
+        "year": 2007,
+        "how": "Strategic zoom runs from one unit up close out to a full-map view; the camera can also roam freely or track a unit."
+      },
+      {
+        "pole": "top_down",
+        "game": "Into the Breach",
+        "year": 2018,
+        "how": "Each fight fits on one fixed 8x8 grid seen from above; there is no camera to move."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Supreme_Commander_(video_game)",
+        "note": "Supreme Commander: Strategic zoom runs from one unit up close out to a full-map view; the camera can also"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Into_the_Breach",
+        "note": "Into the Breach: Each fight fits on one fixed 8x8 grid seen from above; there is no camera to move"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.cam.control.godofwar2005-godofwar2018",
+    "axis": "cam.control",
+    "options": [
+      {
+        "pole": "directed",
+        "game": "God of War",
+        "year": 2005,
+        "how": "The game moves a fixed, authored camera through each area; the player cannot rotate it."
+      },
+      {
+        "pole": "player",
+        "game": "God of War (2018)",
+        "year": 2018,
+        "how": "An over-the-shoulder camera the player steers, kept in one unbroken shot with no cuts."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/God_of_War_(2005_video_game)",
+        "note": "God of War: The game moves a fixed, authored camera through each area; the player cannot rotate it"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/God_of_War_(2018_video_game)",
+        "note": "God of War (2018): An over-the-shoulder camera the player steers, kept in one unbroken shot with no cuts"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.cam.control.mario64-crash",
+    "axis": "cam.control",
+    "options": [
+      {
+        "pole": "player",
+        "game": "Super Mario 64",
+        "year": 1996,
+        "how": "Lakitu films Mario; the C buttons rotate and zoom the camera around him."
+      },
+      {
+        "pole": "directed",
+        "game": "Crash Bandicoot",
+        "year": 1996,
+        "how": "The camera follows Crash along a set track into or out of the screen; the player cannot move it."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer"
+      ],
+      "platforms": [
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.mariowiki.com/Super_Mario_64",
+        "note": "Super Mario 64: Lakitu films Mario; the C buttons rotate and zoom the camera around him"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Virtual_camera_system",
+        "note": "Crash Bandicoot: The camera follows Crash along a set track into or out of the screen; the player cannot"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.cam.control.mariogalaxy-marioodyssey",
+    "axis": "cam.control",
+    "options": [
+      {
+        "pole": "directed",
+        "game": "Super Mario Galaxy",
+        "year": 2007,
+        "how": "The camera automatically frames each planetoid and gravity shift; player control is limited to small adjustments."
+      },
+      {
+        "pole": "player",
+        "game": "Super Mario Odyssey",
+        "year": 2017,
+        "how": "Full free camera on the right stick, with motion controls to look around in first-person view, used to scout kingdoms."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer"
+      ],
+      "platforms": [
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.mariowiki.com/Super_Mario_Galaxy",
+        "note": "Super Mario Galaxy: The camera automatically frames each planetoid and gravity shift; player control is"
+      },
+      {
+        "url": "https://www.mariowiki.com/Super_Mario_Odyssey",
+        "note": "Super Mario Odyssey: Full free camera on the right stick, with motion controls to look around in first-person"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.cam.control.deadspace-untildawn",
+    "axis": "cam.control",
+    "options": [
+      {
+        "pole": "player",
+        "game": "Dead Space",
+        "year": 2008,
+        "how": "A third-person camera behind Isaac that the player steers; the HUD is diegetic, so nothing covers the view."
+      },
+      {
+        "pole": "directed",
+        "game": "Until Dawn",
+        "year": 2015,
+        "how": "Fixed cinematic camera angles frame each scene like a horror film; the player only steers the character."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "horror",
+        "shooter",
+        "narrative"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Dead_Space_(2008_video_game)",
+        "note": "Dead Space: A third-person camera behind Isaac that the player steers; the HUD is diegetic, so"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Until_Dawn",
+        "note": "Until Dawn: Fixed cinematic camera angles frame each scene like a horror film; the player only steers"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.cam.control.mgs1-mgs3subsistence",
+    "axis": "cam.control",
+    "options": [
+      {
+        "pole": "directed",
+        "game": "Metal Gear Solid",
+        "year": 1998,
+        "how": "A mostly overhead camera follows Snake at set angles; standing still, the player can switch to a first-person look."
+      },
+      {
+        "pole": "player",
+        "game": "Metal Gear Solid 3: Subsistence",
+        "year": 2005,
+        "how": "Added a fully player-controlled 3D camera behind Snake to the original overhead view."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "action"
+      ],
+      "platforms": [
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Metal_Gear_Solid_(1998_video_game)",
+        "note": "Metal Gear Solid: A mostly overhead camera follows Snake at set angles; standing still, the player can"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Metal_Gear_Solid_3:_Snake_Eater",
+        "note": "Metal Gear Solid 3: Subsistence: Added a fully player-controlled 3D camera behind Snake to the original overhead view"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.cam.control.rocketleague-smashmelee",
+    "axis": "cam.control",
+    "options": [
+      {
+        "pole": "player",
+        "game": "Rocket League",
+        "year": 2015,
+        "how": "Each player controls their own camera and toggles Ball Cam to lock it on the ball."
+      },
+      {
+        "pole": "directed",
+        "game": "Super Smash Bros. Melee",
+        "year": 2001,
+        "how": "One shared camera automatically pans and zooms to keep every fighter on screen."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "sports",
+        "fighting",
+        "party"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Rocket_League",
+        "note": "Rocket League: Each player controls their own camera and toggles Ball Cam to lock it on the ball"
+      },
+      {
+        "url": "https://www.ssbwiki.com/Camera",
+        "note": "Super Smash Bros. Melee: One shared camera automatically pans and zooms to keep every fighter on screen"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ctl.complexity.canabalt-mirrorsedge",
+    "axis": "ctl.complexity",
+    "options": [
+      {
+        "pole": "few",
+        "game": "Canabalt",
+        "year": 2009,
+        "how": "One button: the runner sprints automatically and the player only decides when to jump."
+      },
+      {
+        "pole": "many",
+        "game": "Mirror's Edge",
+        "year": 2008,
+        "how": "The runner chains wallruns, pipe climbs, ledge walks and zip lines, plus melee attacks and disarms: a broad move set to master."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "action"
+      ],
+      "platforms": [
+        "web",
+        "mobile",
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Canabalt",
+        "note": "Canabalt: One button: the runner sprints automatically and the player only decides when to jump"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Mirror%27s_Edge",
+        "note": "Mirror's Edge: The runner chains wallruns, pipe climbs, ledge walks and zip lines, plus melee attacks"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ctl.complexity.smash64-streetfighter2",
+    "axis": "ctl.complexity",
+    "options": [
+      {
+        "pole": "few",
+        "game": "Super Smash Bros.",
+        "year": 1999,
+        "how": "Specials are a button plus a direction; there are no motion inputs to learn."
+      },
+      {
+        "pole": "many",
+        "game": "Street Fighter II",
+        "year": 1991,
+        "how": "Six attack buttons plus joystick motions combined with buttons for special moves."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "fighting"
+      ],
+      "platforms": [
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.ssbwiki.com/Special_move",
+        "note": "Super Smash Bros.: Specials are a button plus a direction; there are no motion inputs to learn"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Street_Fighter_II",
+        "note": "Street Fighter II: Six attack buttons plus joystick motions combined with buttons for special moves"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ctl.complexity.clashroyale-starcraft2",
+    "axis": "ctl.complexity",
+    "options": [
+      {
+        "pole": "few",
+        "game": "Clash Royale",
+        "year": 2016,
+        "how": "The player drags a card onto the arena; units then fight on their own."
+      },
+      {
+        "pole": "many",
+        "game": "StarCraft II: Wings of Liberty",
+        "year": 2010,
+        "how": "Control groups, hotkeys for every ability and building, and split micro reward high actions per minute."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "card"
+      ],
+      "platforms": [
+        "mobile",
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Clash_Royale",
+        "note": "Clash Royale: The player drags a card onto the arena; units then fight on their own"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/StarCraft_II:_Wings_of_Liberty",
+        "note": "StarCraft II: Wings of Liberty: Control groups, hotkeys for every ability and building, and split micro reward high"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ctl.complexity.geometrydash-beatmania",
+    "axis": "ctl.complexity",
+    "options": [
+      {
+        "pole": "few",
+        "game": "Geometry Dash",
+        "year": 2013,
+        "how": "One input: tap or hold to jump, fly or flip gravity as the level scrolls to the music."
+      },
+      {
+        "pole": "many",
+        "game": "beatmania IIDX",
+        "year": 1999,
+        "how": "Seven keys plus a turntable must be hit in time with dense note charts."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rhythm",
+        "platformer"
+      ],
+      "platforms": [
+        "mobile",
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Geometry_Dash",
+        "note": "Geometry Dash: One input: tap or hold to jump, fly or flip gravity as the level scrolls to the music"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Beatmania_IIDX",
+        "note": "beatmania IIDX: Seven keys plus a turntable must be hit in time with dense note charts"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ctl.complexity.doom1993-arma3",
+    "axis": "ctl.complexity",
+    "options": [
+      {
+        "pole": "few",
+        "game": "Doom",
+        "year": 1993,
+        "how": "Move, turn, fire, use and pick a weapon; the view stays level, so there is no vertical aiming."
+      },
+      {
+        "pole": "many",
+        "game": "Arma 3",
+        "year": 2013,
+        "how": "Dozens of bindings for stance, lean, weapon rest, fire modes, map and squad commands."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "shooter",
+        "simulation"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Doom_engine",
+        "note": "Doom: Move, turn, fire, use and pick a weapon; the view stays level, so there is no vertical"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Arma_3",
+        "note": "Arma 3: Dozens of bindings for stance, lean, weapon rest, fire modes, map and squad commands"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ctl.complexity.altosadventure-thps2",
+    "axis": "ctl.complexity",
+    "options": [
+      {
+        "pole": "few",
+        "game": "Alto's Adventure",
+        "year": 2015,
+        "how": "One-touch: tap to jump and hold to backflip; the snowboarder moves by itself."
+      },
+      {
+        "pole": "many",
+        "game": "Tony Hawk's Pro Skater 2",
+        "year": 2000,
+        "how": "Flip, grab and grind buttons combine with directions and manuals to link long trick strings."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "sports"
+      ],
+      "platforms": [
+        "mobile",
+        "console",
+        "pc"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Alto%27s_Adventure",
+        "note": "Alto's Adventure: One-touch: tap to jump and hold to backflip; the snowboarder moves by itself"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Tony_Hawk%27s_Pro_Skater_2",
+        "note": "Tony Hawk's Pro Skater 2: Flip, grab and grind buttons combine with directions and manuals to link long trick"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ctl.physicality.qwop-trackandfield",
+    "axis": "ctl.physicality",
+    "options": [
+      {
+        "pole": "physics",
+        "game": "QWOP",
+        "year": 2008,
+        "how": "Four keys drive a ragdoll's thighs and calves; the runner falls over unless the player coordinates them."
+      },
+      {
+        "pole": "abstract",
+        "game": "Track & Field",
+        "year": 1983,
+        "how": "Mash run buttons to build speed and press jump or throw at the right moment; the athlete always animates cleanly."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "sports"
+      ],
+      "platforms": [
+        "web",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/QWOP",
+        "note": "QWOP: Four keys drive a ragdoll's thighs and calves; the runner falls over unless the player"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Track_%26_Field_(video_game)",
+        "note": "Track & Field: Mash run buttons to build speed and press jump or throw at the right moment; the athlete"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ctl.physicality.gangbeasts-towerfall",
+    "axis": "ctl.physicality",
+    "options": [
+      {
+        "pole": "physics",
+        "game": "Gang Beasts",
+        "year": 2017,
+        "how": "Wobbly ragdoll brawlers punch, kick and toss each other off stage hazards through physics."
+      },
+      {
+        "pole": "abstract",
+        "game": "TowerFall Ascension",
+        "year": 2014,
+        "how": "Aim snaps to eight directions and arrows fire without charging, biased toward targets, so every shot resolves predictably."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "party",
+        "fighting"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Gang_Beasts",
+        "note": "Gang Beasts: Wobbly ragdoll brawlers punch, kick and toss each other off stage hazards through physics"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/TowerFall",
+        "note": "TowerFall Ascension: Aim snaps to eight directions and arrows fire without charging, biased toward targets, so"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ctl.physicality.humanfallflat-megaman2",
+    "axis": "ctl.physicality",
+    "options": [
+      {
+        "pole": "physics",
+        "game": "Human: Fall Flat",
+        "year": 2016,
+        "how": "Bob grabs objects and climbs ledges using both arms, steered through wobbly physics."
+      },
+      {
+        "pole": "abstract",
+        "game": "Mega Man 2",
+        "year": 1988,
+        "how": "Fixed jump arcs and instant direction changes, with no momentum to manage."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "platformer",
+        "puzzle"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Human:_Fall_Flat",
+        "note": "Human: Fall Flat: Bob grabs objects and climbs ledges using both arms, steered through wobbly physics"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Mega_Man_2",
+        "note": "Mega Man 2: Fixed jump arcs and instant direction changes, with no momentum to manage"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ctl.physicality.beamng-outrun",
+    "axis": "ctl.physicality",
+    "options": [
+      {
+        "pole": "physics",
+        "game": "BeamNG.drive",
+        "year": 2015,
+        "how": "Soft-body physics simulates every part of the car, so crashes and handling come from the simulation."
+      },
+      {
+        "pole": "abstract",
+        "game": "Out Run",
+        "year": 1986,
+        "how": "Wheel, pedals and a stick shift drive a sprite-scaled car; crashes never explode or wreck it, keeping the drive clean."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "racing",
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/BeamNG.drive",
+        "note": "BeamNG.drive: Soft-body physics simulates every part of the car, so crashes and handling come from the"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Out_Run",
+        "note": "Out Run: Wheel, pedals and a stick shift drive a sprite-scaled car; crashes never explode or wreck"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ctl.physicality.skate-thps2",
+    "axis": "ctl.physicality",
+    "options": [
+      {
+        "pole": "physics",
+        "game": "Skate",
+        "year": 2007,
+        "how": "Flick-it controls map tricks to analog stick gestures and the board responds to physics."
+      },
+      {
+        "pole": "abstract",
+        "game": "Tony Hawk's Pro Skater 2",
+        "year": 2000,
+        "how": "Dedicated flip, grab and grind buttons plus a d-pad direction trigger each trick; manuals need held directional balance."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "sports"
+      ],
+      "platforms": [
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Skate_(2007_video_game)",
+        "note": "Skate: Flick-it controls map tricks to analog stick gestures and the board responds to physics"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Tony_Hawk%27s_Pro_Skater_2",
+        "note": "Tony Hawk's Pro Skater 2: Dedicated flip, grab and grind buttons plus a d-pad direction trigger each trick; manuals"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ctl.physicality.surgeonsim-traumacenter",
+    "axis": "ctl.physicality",
+    "options": [
+      {
+        "pole": "physics",
+        "game": "Surgeon Simulator",
+        "year": 2013,
+        "how": "Mouse and keys control each finger of a clumsy physics hand, so tools slip and fall."
+      },
+      {
+        "pole": "abstract",
+        "game": "Trauma Center: Under the Knife",
+        "year": 2005,
+        "how": "Pick a tool and trace stylus gestures to cut, suture and drain; each action resolves cleanly."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "handheld"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Surgeon_Simulator",
+        "note": "Surgeon Simulator: Mouse and keys control each finger of a clumsy physics hand, so tools slip and fall"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Trauma_Center:_Under_the_Knife",
+        "note": "Trauma Center: Under the Knife: Pick a tool and trace stylus gestures to cut, suture and drain; each action resolves"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ctl.embodiment.diablo-majesty",
+    "axis": "ctl.embodiment",
+    "options": [
+      {
+        "pole": "avatar",
+        "game": "Diablo",
+        "year": 1996,
+        "how": "The player clicks to move and fight as one hero."
+      },
+      {
+        "pole": "command",
+        "game": "Majesty: The Fantasy Kingdom Sim",
+        "year": 2000,
+        "how": "The player builds the kingdom and posts reward flags; autonomous heroes decide whether to take them."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "rpg",
+        "strategy"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Diablo_(video_game)",
+        "note": "Diablo: The player clicks to move and fight as one hero"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Majesty:_The_Fantasy_Kingdom_Sim",
+        "note": "Majesty: The Fantasy Kingdom Sim: The player builds the kingdom and posts reward flags; autonomous heroes decide whether to"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.ctl.embodiment.animalcrossing-thesims",
+    "axis": "ctl.embodiment",
+    "options": [
+      {
+        "pole": "avatar",
+        "game": "Animal Crossing",
+        "year": 2001,
+        "how": "The player walks one villager around town to talk to neighbors and fish."
+      },
+      {
+        "pole": "command",
+        "game": "The Sims",
+        "year": 2000,
+        "how": "The player queues actions for a household of Sims, who also act on their own needs."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Animal_Crossing_(video_game)",
+        "note": "Animal Crossing: The player walks one villager around town to talk to neighbors and fish"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/The_Sims_(video_game)",
+        "note": "The Sims: The player queues actions for a household of Sims, who also act on their own needs"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  }
+]

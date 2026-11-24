@@ -1,1 +1,542 @@
-[]
+[
+  {
+    "id": "cmp.world.structure.botw-halflife2",
+    "axis": "world.structure",
+    "options": [
+      { "pole": "open_world", "game": "The Legend of Zelda: Breath of the Wild", "year": 2017, "how": "After the plateau tutorial you can go anywhere, tackle shrines and Divine Beasts in any order, or walk straight to Hyrule Castle and fight Ganon." },
+      { "pole": "linear", "game": "Half-Life 2", "year": 2004, "how": "Thirteen chapters played in a fixed order, each a continuous authored path from City 17 to the Citadel with no map or backtracking." }
+    ],
+    "tags": { "genres": ["action", "shooter"], "platforms": ["pc", "console", "handheld"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://zeldauniverse.net/games/breath-of-the-wild/", "note": "Breath of the Wild: open-air design, go anywhere and tackle challenges in any order" },
+      { "url": "https://www.thonky.com/zelda-breath-of-the-wild/hyrule-castle", "note": "Breath of the Wild: you can head almost directly to Calamity Ganon" },
+      { "url": "https://developer.valvesoftware.com/wiki/Half-Life_2", "note": "Half-Life 2: 13 chapters in sequence" },
+      { "url": "https://half-life.fandom.com/wiki/Half-Life_2_storyline", "note": "Half-Life 2: storyline chapter by chapter" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.world.structure.darksouls-masseffect2",
+    "axis": "world.structure",
+    "options": [
+      { "pole": "metroidvania", "game": "Dark Souls", "year": 2011, "how": "One continuous world around Firelink Shrine; elevators and unlocked doors loop areas back on each other, and there is no early fast travel." },
+      { "pole": "hub", "game": "Mass Effect 2", "year": 2010, "how": "The Normandy is the hub: talk to crew, then pick recruitment, loyalty and story missions from the galaxy map, each played as a separate level." }
+    ],
+    "tags": { "genres": ["action", "rpg", "shooter"], "platforms": ["pc", "console"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://darksouls.wiki.fextralife.com/Firelink_Shrine", "note": "Dark Souls: Firelink Shrine hub and elevator shortcuts" },
+      { "url": "https://darksouls.wiki.fextralife.com/Undead_Parish", "note": "Dark Souls: Undead Parish lift opens a permanent shortcut to Firelink" },
+      { "url": "https://masseffect.fandom.com/wiki/Normandy_SR-2", "note": "Mass Effect 2: Normandy SR-2 CIC galaxy map used to choose destinations" },
+      { "url": "https://www.gamebanshee.com/masseffect2/walkthrough/location-normandy.php", "note": "Mass Effect 2: Normandy as hub between missions" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.world.structure.smb3-supermetroid",
+    "axis": "world.structure",
+    "options": [
+      { "pole": "level_select", "game": "Super Mario Bros. 3", "year": 1988, "how": "Each of eight worlds is an overworld map of discrete levels, fortresses and bonus huts; you pick a path between nodes and replay nothing you skip." },
+      { "pole": "metroidvania", "game": "Super Metroid", "year": 1994, "how": "Zebes is one map of rooms joined by doors and elevators; new beams and items open earlier dead ends, so you loop back through old areas." }
+    ],
+    "tags": { "genres": ["platformer", "action"], "platforms": ["console"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Super_Mario_Bros._3", "note": "Super Mario Bros. 3: world map lets the player choose path and level" },
+      { "url": "https://www.gamedeveloper.com/design/the-invisible-hand-of-super-metroid", "note": "Super Metroid: interconnected map design and ability-gated routes" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.structure.mario64-ori-supermeatboy",
+    "axis": "world.structure",
+    "options": [
+      { "pole": "hub", "game": "Super Mario 64", "year": 1996, "how": "Peach's Castle is a 3D hub: jump into paintings to enter courses, pick a star mission, and open star-locked doors to reach more paintings." },
+      { "pole": "metroidvania", "game": "Ori and the Blind Forest", "year": 2015, "how": "Nibel is one seamless map without loading screens; abilities like Bash and Double Jump unlock routes in regions you already crossed." },
+      { "pole": "level_select", "game": "Super Meat Boy", "year": 2010, "how": "Chapters are grids of short levels picked from a map screen; clear enough of them to reach the chapter boss and unlock the next chapter." }
+    ],
+    "tags": { "genres": ["platformer"], "platforms": ["console", "pc", "handheld"], "era": "pre2000", "indie": true },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Mushroom_Castle_(Super_Mario_64)", "note": "Super Mario 64: castle hub with paintings leading to courses" },
+      { "url": "https://www.mariowiki.com/Super_Mario_64", "note": "Super Mario 64: mission select and star doors" },
+      { "url": "https://www.pcgamer.com/ori-and-the-blind-forest-review/", "note": "Ori and the Blind Forest: interconnected Metroidvania map gated by abilities" },
+      { "url": "https://store.steampowered.com/app/40800/Super_Meat_Boy/", "note": "Super Meat Boy: 300+ levels across chapters" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.structure.forzahorizon4-mariokart8-rocketleague",
+    "axis": "world.structure",
+    "options": [
+      { "pole": "open_world", "game": "Forza Horizon 4", "year": 2018, "how": "A condensed Britain you free-roam between events; races, stunts and barn finds are scattered on the map and you drive to them." },
+      { "pole": "level_select", "game": "Mario Kart 8 Deluxe", "year": 2017, "how": "48 separate tracks grouped into 12 four-race cups; you pick a cup or a track from a menu and each race loads on its own." },
+      { "pole": "arena", "game": "Rocket League", "year": 2015, "how": "Every ranked match is played in a standard arena with identical dimensions and boost pads; only the cosmetics of the stadium change." }
+    ],
+    "tags": { "genres": ["racing", "sports"], "platforms": ["pc", "console", "handheld"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.gamespot.com/reviews/forza-horizon-4-review/1900-6416994/", "note": "Forza Horizon 4: open world condensing Britain" },
+      { "url": "https://www.mariowiki.com/Mario_Kart_8_Deluxe", "note": "Mario Kart 8 Deluxe: 48 courses in 12 cups" },
+      { "url": "https://www.rocketleague.com/news/starbase-arc-wasteland-standard-arenas", "note": "Rocket League: online arenas standardized to the same dimensions" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.structure.deadspace-prey",
+    "axis": "world.structure",
+    "options": [
+      { "pole": "linear", "game": "Dead Space", "year": 2008, "how": "Numbered chapters each send Isaac to one deck of the Ishimura by tram; a locator line points to the next objective in a set order." },
+      { "pole": "metroidvania", "game": "Prey", "year": 2017, "how": "Talos I is one station of linked areas with shortcuts, alternate entries and a spacewalk exterior; side quests send you back through old sections." }
+    ],
+    "tags": { "genres": ["horror", "shooter", "action"], "platforms": ["pc", "console"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://www.gamespot.com/reviews/dead-space-review/1900-6199349/", "note": "Dead Space: chapter-based progression through the Ishimura" },
+      { "url": "https://deadspace.fandom.com/wiki/Bridge", "note": "Dead Space: decks reached by the tram system" },
+      { "url": "https://www.pcgamer.com/prey-review/", "note": "Prey: backtracking, shortcuts and alternate paths on Talos I" },
+      { "url": "https://www.gamespot.com/reviews/prey-review/1900-6416678/", "note": "Prey: exterior spacewalk reveals how areas connect" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.structure.monsterhunterworld-hitman",
+    "axis": "world.structure",
+    "options": [
+      { "pole": "hub", "game": "Monster Hunter: World", "year": 2018, "how": "Astera is the hub for eating, crafting and taking quests from boards; each hunt deploys you to a separate locale and returns you after." },
+      { "pole": "level_select", "game": "Hitman", "year": 2016, "how": "Missions are self-contained sandboxes (Paris, Sapienza, Marrakesh) picked from a menu and replayed with new starts, disguises and targets." }
+    ],
+    "tags": { "genres": ["action"], "platforms": ["pc", "console"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://monsterhunter.fandom.com/wiki/Astera", "note": "Monster Hunter: World: Astera as the base of operations" },
+      { "url": "https://monsterhunterworld.wiki.fextralife.com/The_Gathering_Hub", "note": "Monster Hunter: World: quest counters and departing on expeditions" },
+      { "url": "https://www.pcgamer.com/hitman-the-complete-first-season-review/", "note": "Hitman: self-contained sandbox missions built for replay" },
+      { "url": "https://hitman.fandom.com/wiki/HITMAN_(2016)", "note": "Hitman: mission locations list" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.authoring.hollowknight-minecraft-spelunky",
+    "axis": "world.authoring",
+    "options": [
+      { "pole": "handcrafted", "game": "Hollow Knight", "year": 2017, "how": "Hallownest is one fixed, hand-drawn map; every room, secret wall and shortcut sits where the designers put it, the same for every player." },
+      { "pole": "procedural", "game": "Minecraft", "year": 2011, "how": "Terrain, caves and biomes are generated from a seed as you explore, out to about 30 million blocks in each direction." },
+      { "pole": "blend", "game": "Spelunky", "year": 2008, "how": "Each run lays out levels at random so routes change every time, but from rooms built out of designer-made templates, keeping them playable." }
+    ],
+    "tags": { "genres": ["platformer", "action", "sandbox", "survival"], "platforms": ["pc", "console", "handheld", "mobile"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/367520/Hollow_Knight/", "note": "Hollow Knight: hand-crafted, vast interconnected world" },
+      { "url": "https://minecraft.wiki/w/World_generation", "note": "Minecraft: terrain procedurally generated from a seed" },
+      { "url": "https://minecraft.wiki/w/World_boundary", "note": "Minecraft: terrain generates to about 30 million blocks" },
+      { "url": "https://store.steampowered.com/app/239350/Spelunky/", "note": "Spelunky: randomized levels each time you play" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.world.authoring.diablo-baldursgate",
+    "axis": "world.authoring",
+    "options": [
+      { "pole": "procedural", "game": "Diablo", "year": 1996, "how": "The 16 dungeon levels under Tristram's cathedral are regenerated for each new game, so layouts, monsters and loot placement change." },
+      { "pole": "handcrafted", "game": "Baldur's Gate", "year": 1998, "how": "Every Sword Coast area is a fixed, hand-painted isometric map with placed NPCs, quests and encounters, identical on every playthrough." }
+    ],
+    "tags": { "genres": ["rpg", "action"], "platforms": ["pc", "console", "mobile"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://www.gog.com/en/game/diablo", "note": "Diablo: ever-changing labyrinth, procedural generation" },
+      { "url": "https://store.steampowered.com/app/228280/Baldurs_Gate_Enhanced_Edition/", "note": "Baldur's Gate: isometric Sword Coast adventure" }
+    ],
+    "verification": { "status": "unverified", "checkedAt": "2026-11-23", "by": "claude-code" },
+    "note": "Baldur's Gate handcrafted areas not confirmed by a cited source in this session"
+  },
+  {
+    "id": "cmp.world.authoring.terraria-oriwillofthewisps",
+    "axis": "world.authoring",
+    "options": [
+      { "pole": "procedural", "game": "Terraria", "year": 2011, "how": "Each new world is randomly generated: biomes, caverns, ore and dungeons are placed by the generator, so every save digs a different map." },
+      { "pole": "handcrafted", "game": "Ori and the Will of the Wisps", "year": 2020, "how": "Niwen is a fixed, hand-painted map where every platform, ability gate and secret is placed by designers for precise traversal." }
+    ],
+    "tags": { "genres": ["sandbox", "survival", "platformer", "action"], "platforms": ["pc", "console", "handheld", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/105600/Terraria/", "note": "Terraria: randomly generated worlds" },
+      { "url": "https://store.steampowered.com/app/1057090/Ori_and_the_Will_of_the_Wisps/", "note": "Ori and the Will of the Wisps: vast world in hand-painted artwork" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.authoring.deeprockgalactic-thewitness",
+    "axis": "world.authoring",
+    "options": [
+      { "pole": "procedural", "game": "Deep Rock Galactic", "year": 2018, "how": "Every mission drops the team into a procedurally generated cave system, so no two missions share a layout." },
+      { "pole": "handcrafted", "game": "The Witness", "year": 2016, "how": "One fixed island with 500+ puzzles; sightlines and landmarks are placed by hand because the environment itself hides puzzle answers." }
+    ],
+    "tags": { "genres": ["shooter", "action", "puzzle"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/548430/Deep_Rock_Galactic/", "note": "Deep Rock Galactic: procedurally generated caves, no two missions alike" },
+      { "url": "https://store.steampowered.com/app/210970/The_Witness/", "note": "The Witness: an island with over 500 puzzles to explore" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.authoring.daggerfall-outerwilds",
+    "axis": "world.authoring",
+    "options": [
+      { "pole": "procedural", "game": "The Elder Scrolls II: Daggerfall", "year": 1996, "how": "Thousands of towns and dungeons sit at fixed spots, but wilderness, many dungeon layouts and smaller details are generated by algorithm." },
+      { "pole": "handcrafted", "game": "Outer Wilds", "year": 2019, "how": "A handcrafted solar system: each planet is built by hand around clues and events that happen at set times, identical for every player." }
+    ],
+    "tags": { "genres": ["rpg", "narrative", "puzzle"], "platforms": ["pc", "console"], "era": "pre2000", "indie": true },
+    "sources": [
+      { "url": "https://en.uesp.net/wiki/Daggerfall:Places", "note": "Daggerfall: locations pre-generated, smaller details randomly generated" },
+      { "url": "https://en.uesp.net/wiki/Daggerfall:Dimensions_of_the_Iliac_Bay", "note": "Daggerfall: size of the generated Iliac Bay" },
+      { "url": "https://www.mobiusdigitalgames.com/outer-wilds.html", "note": "Outer Wilds: explore a handcrafted solar system" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.authoring.roguelegacy-deadcells-axiomverge",
+    "axis": "world.authoring",
+    "options": [
+      { "pole": "procedural", "game": "Rogue Legacy", "year": 2013, "how": "The castle is procedurally generated anew for every heir, so room order and layout change after each death." },
+      { "pole": "blend", "game": "Dead Cells", "year": 2018, "how": "The island's biome order and links are fixed by hand; each biome is filled at random from hand-designed room tiles." },
+      { "pole": "handcrafted", "game": "Axiom Verge", "year": 2015, "how": "A large, labyrinthine world laid out by hand, room by room, with secrets and glitch walls in the same place every game." }
+    ],
+    "tags": { "genres": ["platformer", "action"], "platforms": ["pc", "console", "handheld", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/241600/Rogue_Legacy/", "note": "Rogue Legacy: procedurally generated, new castles with every life" },
+      { "url": "https://www.gamedeveloper.com/design/building-the-level-design-of-a-procedurally-generated-metroidvania-a-hybrid-approach-", "note": "Dead Cells: fixed world layout plus hand-designed tiles assembled by algorithm" },
+      { "url": "https://store.steampowered.com/app/332200/Axiom_Verge/", "note": "Axiom Verge: a large, labyrinthine world" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.size.nomanssky-ashorthike",
+    "axis": "world.size",
+    "options": [
+      { "pole": "vast", "game": "No Man's Sky", "year": 2016, "how": "A procedurally generated universe of planets at galactic scale; you fly between systems and land anywhere on each world." },
+      { "pole": "compact", "game": "A Short Hike", "year": 2019, "how": "One small handcrafted island park, crossable in minutes, with trails, secrets and characters packed around a single summit." }
+    ],
+    "tags": { "genres": ["survival", "sandbox", "platformer"], "platforms": ["pc", "console", "handheld", "vr"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/275850/No_Mans_Sky/", "note": "No Man's Sky: infinite procedurally generated universe full of planets" },
+      { "url": "https://store.steampowered.com/app/1055540/A_Short_Hike/", "note": "A Short Hike: explore the island your way on the way to the summit" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.world.size.yakuza0-elitedangerous",
+    "axis": "world.size",
+    "options": [
+      { "pole": "compact", "game": "Yakuza 0", "year": 2015, "how": "Two dense city districts in Tokyo and Osaka crammed with discos, hostess clubs, SEGA arcades and 100 side stories." },
+      { "pole": "vast", "game": "Elite Dangerous", "year": 2014, "how": "A 1:1 scale Milky Way of about 400 billion star systems rendered at true galactic scale, crossed by hyperspace jumps." }
+    ],
+    "tags": { "genres": ["action", "simulation"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/638970/Yakuza_0/", "note": "Yakuza 0: neon-lit Tokyo and Osaka districts with tons of distractions and 100 stories" },
+      { "url": "https://store.steampowered.com/app/359320/Elite_Dangerous/", "note": "Elite Dangerous: 1:1 scale galaxy of 400 billion star systems" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.size.untitledgoosegame-msflightsimulator",
+    "axis": "world.size",
+    "options": [
+      { "pole": "compact", "game": "Untitled Goose Game", "year": 2019, "how": "One village of back gardens, high street shops and a green, each a small stage dense with people and props to prank." },
+      { "pole": "vast", "game": "Microsoft Flight Simulator", "year": 2020, "how": "The whole Earth from map data, with over 1.5 billion buildings; you can take off and fly anywhere on the planet." }
+    ],
+    "tags": { "genres": ["puzzle", "simulation"], "platforms": ["pc", "console", "handheld", "vr"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/837470/Untitled_Goose_Game/", "note": "Untitled Goose Game: from back gardens to high street shops to the village green" },
+      { "url": "https://store.steampowered.com/app/1250410/Microsoft_Flight_Simulator_40th_Anniversary_Edition/", "note": "Microsoft Flight Simulator: our planet with 1.5 billion buildings" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.size.supermarioodyssey-daggerfall",
+    "axis": "world.size",
+    "options": [
+      { "pole": "compact", "game": "Super Mario Odyssey", "year": 2017, "how": "Each kingdom is a small sandbox packed with Power Moons (93 in the Sand Kingdom), always more than you need to move on." },
+      { "pole": "vast", "game": "The Elder Scrolls II: Daggerfall", "year": 1996, "how": "The Iliac Bay is a generated landmass larger than England, holding thousands of towns and dungeons between long wilderness stretches." }
+    ],
+    "tags": { "genres": ["platformer", "rpg"], "platforms": ["console", "handheld", "pc"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Super_Mario_Odyssey", "note": "Super Mario Odyssey: kingdoms with 9 to 93 Power Moons each" },
+      { "url": "https://en.uesp.net/wiki/Daggerfall:Dimensions_of_the_Iliac_Bay", "note": "Daggerfall: landmass about 1.685 times the size of England" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.persistence.minecraft-fortnite",
+    "axis": "world.persistence",
+    "options": [
+      { "pole": "persistent", "game": "Minecraft", "year": 2011, "how": "Every block mined or placed is saved into the world file, so builds, tunnels and farms stay exactly as players left them." },
+      { "pole": "resets", "game": "Fortnite", "year": 2017, "how": "Every Battle Royale match starts on a fresh island; everything built or destroyed vanishes when the match ends." }
+    ],
+    "tags": { "genres": ["sandbox", "survival", "shooter"], "platforms": ["pc", "console", "handheld", "mobile"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://minecraft.wiki/w/World_generation", "note": "Minecraft: generated world that players reshape" },
+      { "url": "https://www.fortnite.com/", "note": "Fortnite: Battle Royale matches" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.world.persistence.majorasmask-dwarffortress",
+    "axis": "world.persistence",
+    "options": [
+      { "pole": "resets", "game": "The Legend of Zelda: Majora's Mask", "year": 2000, "how": "Playing the Song of Time returns Termina to dawn of the first day; NPC progress and most items reset, only masks, songs and key gear stay." },
+      { "pole": "persistent", "game": "Dwarf Fortress", "year": 2006, "how": "The generated world keeps its history: civilizations rise and fall, and later forts or adventurers explore what earlier play left behind." }
+    ],
+    "tags": { "genres": ["action", "simulation", "strategy"], "platforms": ["console", "handheld", "pc"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://zeldadungeon.net/wiki/Song_of_Time", "note": "Majora's Mask: Song of Time warps back to the start of the First Day" },
+      { "url": "https://store.steampowered.com/app/975370/Dwarf_Fortress/", "note": "Dwarf Fortress: generated rise and fall of civilizations in a simulated world" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.persistence.outerwilds-animalcrossing",
+    "axis": "world.persistence",
+    "options": [
+      { "pole": "resets", "game": "Outer Wilds", "year": 2019, "how": "The solar system is trapped in a time loop; each loop restores every planet to its start, and only the player's knowledge carries over." },
+      { "pole": "persistent", "game": "Animal Crossing: New Horizons", "year": 2020, "how": "Terraforming, paths, furniture and buildings stay on the island between sessions, so the island grows into the player's design." }
+    ],
+    "tags": { "genres": ["narrative", "puzzle", "simulation"], "platforms": ["pc", "console", "handheld"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.mobiusdigitalgames.com/outer-wilds.html", "note": "Outer Wilds: a solar system trapped in an endless time loop" },
+      { "url": "https://www.nintendo.com/us/store/products/animal-crossing-new-horizons-switch/", "note": "Animal Crossing: New Horizons: terraform to make dramatic changes to your island" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.persistence.roguelegacy-redfactionguerrilla",
+    "axis": "world.persistence",
+    "options": [
+      { "pole": "resets", "game": "Rogue Legacy", "year": 2013, "how": "When an heir dies, the castle is procedurally regenerated and the next heir starts the run in a new layout." },
+      { "pole": "persistent", "game": "Red Faction: Guerrilla", "year": 2009, "how": "Buildings you demolish stay destroyed across the open map, permanently changing routes, cover and the fight for each sector." }
+    ],
+    "tags": { "genres": ["platformer", "action", "shooter"], "platforms": ["pc", "console", "handheld", "mobile"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/241600/Rogue_Legacy/", "note": "Rogue Legacy: new castles with every life, your child succeeds you" },
+      { "url": "https://store.steampowered.com/app/667720/Red_Faction_Guerrilla_ReMarstered/", "note": "Red Faction: Guerrilla: permanently modify the game environment" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.destruction.teardown-thelastofuspart1",
+    "axis": "world.destruction",
+    "options": [
+      { "pole": "destructible", "game": "Teardown", "year": 2020, "how": "Every level is built from fully destructible voxels; you plan heists by smashing, blasting or driving through walls to make shortcuts." },
+      { "pole": "static", "game": "The Last of Us Part I", "year": 2022, "how": "Detailed but static environments; routes, cover and stealth paths are authored, and only set pieces like doors or glass change." }
+    ],
+    "tags": { "genres": ["sandbox", "puzzle", "action", "horror"], "platforms": ["pc", "console"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/1167630/Teardown/", "note": "Teardown: fully destructible voxel environments, anything can be broken" },
+      { "url": "https://store.steampowered.com/app/1888930/The_Last_of_Us_Part_I/", "note": "The Last of Us Part I: authored environments and story" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.world.time.majorasmask-animalcrossing",
+    "axis": "world.time",
+    "options": [
+      { "pole": "loop", "game": "The Legend of Zelda: Majora's Mask", "year": 2000, "how": "A 72-hour cycle (about 54 real minutes) with NPC schedules; the moon falls at the end unless you rewind to the first day." },
+      { "pole": "realtime", "game": "Animal Crossing: New Horizons", "year": 2020, "how": "Runs on the console's real clock and calendar: shops close at night, critters change by season and time, holidays fall on real dates." }
+    ],
+    "tags": { "genres": ["action", "simulation"], "platforms": ["console", "handheld"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://zeldadungeon.net/wiki/Song_of_Time", "note": "Majora's Mask: three-day cycle reset by the Song of Time" },
+      { "url": "https://www.zeldadungeon.net/wiki/Final_Day", "note": "Majora's Mask: moon crashes at the end of the third day" },
+      { "url": "https://www.nintendo.com/us/store/products/animal-crossing-new-horizons-switch/", "note": "Animal Crossing: New Horizons: critters depend on season and time of day" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.world.time.pokemongoldsilver-dyinglight",
+    "axis": "world.time",
+    "options": [
+      { "pole": "realtime", "game": "Pokemon Gold and Silver", "year": 1999, "how": "A cartridge clock tracks real time: morning, day and night change which wild Pokemon appear, and some NPCs show up on set weekdays." },
+      { "pole": "day_night", "game": "Dying Light", "year": 2015, "how": "An in-game day-night cycle flips the loop: scavenge by day, and at sundown fast Volatiles hunt you, turning hunter into hunted." }
+    ],
+    "tags": { "genres": ["rpg", "survival", "horror", "action"], "platforms": ["handheld", "pc", "console"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://bulbapedia.bulbagarden.net/wiki/Time", "note": "Pokemon Gold and Silver: real-time clock, morning/day/night periods affect encounters" },
+      { "url": "https://bulbapedia.bulbagarden.net/wiki/Today", "note": "Pokemon Gold and Silver: NPCs appear on certain days of the week" },
+      { "url": "https://store.steampowered.com/app/239140/Dying_Light/", "note": "Dying Light: shift from hunter to hunted at sundown" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.setting.ageofempires2-ageofmythology",
+    "axis": "world.setting",
+    "options": [
+      { "pole": "historical", "game": "Age of Empires II", "year": 1999, "how": "Civilizations and campaigns drawn from 1,000 years of real history; units, buildings and tech trees follow real cultures." },
+      { "pole": "mythological", "game": "Age of Mythology", "year": 2002, "how": "Greek, Norse and Egyptian pantheons: pick gods for god powers and recruit myth units like Cyclops, Trolls and Mummies." }
+    ],
+    "tags": { "genres": ["strategy"], "platforms": ["pc", "console"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/813780/Age_of_Empires_II_Definitive_Edition/", "note": "Age of Empires II: 1,000 years of human history, 45+ civilizations" },
+      { "url": "https://store.steampowered.com/app/1934680/Age_of_Mythology_Retold/", "note": "Age of Mythology: Greek, Norse, Egyptian pantheons, god powers and myth units" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.setting.thumper-phasmophobia-metro2033",
+    "axis": "world.setting",
+    "options": [
+      { "pole": "abstract", "game": "Thumper", "year": 2016, "how": "A space beetle on an endless track through a hellish void; no literal place, so art and threat are pure shape, light and beat." },
+      { "pole": "horror", "game": "Phasmophobia", "year": 2020, "how": "Haunted houses and buildings investigated with real ghost-hunting tools (EMF readers, spirit boxes) while the ghost stalks the team." },
+      { "pole": "post_apoc", "game": "Metro 2033", "year": 2010, "how": "Survivors live in Moscow's metro stations after an apocalypse left a poisonous surface, so gas masks and scarce ammo shape play." }
+    ],
+    "tags": { "genres": ["rhythm", "horror", "shooter"], "platforms": ["pc", "console", "vr", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/356400/Thumper/", "note": "Thumper: rhythm violence, a space beetle braving the hellish void" },
+      { "url": "https://store.steampowered.com/app/739630/Phasmophobia/", "note": "Phasmophobia: haunted locations and ghost-hunting equipment" },
+      { "url": "https://store.steampowered.com/app/286690/Metro_2033_Redux/", "note": "Metro 2033: survivors in the Moscow underground, poisonous surface wasteland" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.setting.gta5-ftl-baldursgate",
+    "axis": "world.setting",
+    "options": [
+      { "pole": "modern", "game": "Grand Theft Auto V", "year": 2013, "how": "Present-day Los Santos and Blaine County: cars, phones, stock market and satire of current life drive missions and systems." },
+      { "pole": "scifi", "game": "FTL: Faster Than Light", "year": 2012, "how": "Captain a spaceship across a generated galaxy; shields, FTL drives, oxygen and teleporting boarders are the core systems." },
+      { "pole": "fantasy", "game": "Baldur's Gate", "year": 1998, "how": "The Forgotten Realms' Sword Coast under AD&D 2nd Edition rules: spell memorization, magic items and monsters come from D&D." }
+    ],
+    "tags": { "genres": ["action", "strategy", "rpg"], "platforms": ["pc", "console", "mobile"], "era": "pre2000", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/271590/Grand_Theft_Auto_V_Legacy/", "note": "Grand Theft Auto V: the world of Los Santos and Blaine County" },
+      { "url": "https://store.steampowered.com/app/212680/FTL_Faster_Than_Light/", "note": "FTL: running a spaceship in a randomly generated galaxy" },
+      { "url": "https://store.steampowered.com/app/228280/Baldurs_Gate_Enhanced_Edition/", "note": "Baldur's Gate: Dungeons and Dragons, Sword Coast, 2nd Edition AD&D rules" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.setting.okami-assassinscreed2-rez",
+    "axis": "world.setting",
+    "options": [
+      { "pole": "mythological", "game": "Okami", "year": 2006, "how": "You play Amaterasu, the Japanese sun goddess as a white wolf, fighting the eight-headed Orochi in a Nippon drawn from Shinto myth." },
+      { "pole": "historical", "game": "Assassin's Creed II", "year": 2009, "how": "15th-century Florence and Venice rebuilt as playable cities, with real families and Leonardo da Vinci as an ally." },
+      { "pole": "abstract", "game": "Rez", "year": 2001, "how": "Wireframe shapes and colors pulse to a techno soundtrack; the setting is a synesthetic network, not a literal place." }
+    ],
+    "tags": { "genres": ["action", "rhythm", "shooter"], "platforms": ["console", "pc", "vr"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/587620/OKAMI_HD/", "note": "Okami: Amaterasu, the Japanese sun goddess, versus an eight-headed demon" },
+      { "url": "https://store.steampowered.com/app/33230/Assassins_Creed_2/", "note": "Assassin's Creed II: Florence, Venice and Leonardo da Vinci" },
+      { "url": "https://store.steampowered.com/app/636450/Rez_Infinite/", "note": "Rez: synesthesia, visuals synced to a techno soundtrack, playable in VR" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.destruction.rainbowsixsiege-csgo",
+    "axis": "world.destruction",
+    "options": [
+      { "pole": "destructible", "game": "Tom Clancy's Rainbow Six Siege", "year": 2015, "how": "Soft walls, floors and hatches can be shot or blown open to make new sightlines; defenders reinforce walls and attackers breach them." },
+      { "pole": "static", "game": "Counter-Strike: Global Offensive", "year": 2012, "how": "Maps never change during a match; walls, angles and grenade spots are fixed, so mastery is memorizing the same geometry." }
+    ],
+    "tags": { "genres": ["shooter"], "platforms": ["pc", "console"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/", "note": "Rainbow Six Siege: shatter walls to create new lines of sight, reinforce walls" },
+      { "url": "https://rainbowsix.fandom.com/wiki/Destruction", "note": "Rainbow Six Siege: destruction and reinforced walls" },
+      { "url": "https://pcgamer.com/smash-apart-this-counter-strike-mappers-destructible-inferno-remake", "note": "Counter-Strike: Global Offensive: standard maps are indestructible, a mod adds destruction" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.destruction.badcompany2-callofduty4",
+    "axis": "world.destruction",
+    "options": [
+      { "pole": "destructible", "game": "Battlefield: Bad Company 2", "year": 2010, "how": "Destruction 2.0: chip away cover, blow holes in walls and collapse whole buildings once enough damage is dealt." },
+      { "pole": "static", "game": "Call of Duty 4: Modern Warfare", "year": 2007, "how": "Compact multiplayer maps with fixed walls and cover; routes and sightlines stay the same so spawns and lanes can be tuned tightly." }
+    ],
+    "tags": { "genres": ["shooter"], "platforms": ["pc", "console"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://battlefield.fandom.com/wiki/Destruction", "note": "Battlefield: Bad Company 2: Destruction 2.0, buildings collapse after enough damage" },
+      { "url": "https://store.steampowered.com/app/7940/Call_of_Duty_4_Modern_Warfare_2007/", "note": "Call of Duty 4: Modern Warfare: multiplayer maps" }
+    ],
+    "verification": { "status": "unverified", "checkedAt": "2026-11-23", "by": "claude-code" },
+    "note": "Call of Duty 4 static maps not confirmed by a cited source in this session"
+  },
+  {
+    "id": "cmp.world.destruction.redfactionguerrilla-gearsofwar",
+    "axis": "world.destruction",
+    "options": [
+      { "pole": "destructible", "game": "Red Faction: Guerrilla", "year": 2009, "how": "Physics-based destruction of buildings: knock out a staircase to stop pursuers or drive through blown-out walls." },
+      { "pole": "static", "game": "Gears of War", "year": 2006, "how": "Fixed waist-high cover arranged by designers defines every fight; the arena layout is a known, stable puzzle of flanks and angles." }
+    ],
+    "tags": { "genres": ["shooter", "action"], "platforms": ["pc", "console"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/667720/Red_Faction_Guerrilla_ReMarstered/", "note": "Red Faction: Guerrilla: fully-dynamic physics-based destruction" },
+      { "url": "https://www.gamespot.com/games/gears-of-war/", "note": "Gears of War: cover-based shooter" }
+    ],
+    "verification": { "status": "unverified", "checkedAt": "2026-11-23", "by": "claude-code" },
+    "note": "Gears of War static cover not confirmed by a cited source in this session"
+  },
+  {
+    "id": "cmp.world.destruction.noita-hotlinemiami",
+    "axis": "world.destruction",
+    "options": [
+      { "pole": "destructible", "game": "Noita", "year": 2020, "how": "Every pixel is simulated: burn, explode or melt the terrain itself, so spells can dig new routes or bury you." },
+      { "pole": "static", "game": "Hotline Miami", "year": 2012, "how": "Each floor plan is fixed and walls stay put, so players choreograph a route through set rooms, doors and patrols where one shot kills." }
+    ],
+    "tags": { "genres": ["action", "shooter"], "platforms": ["pc", "console", "handheld"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/881100/Noita/", "note": "Noita: every pixel is simulated, burn, explode or melt anything" },
+      { "url": "https://store.steampowered.com/app/219150/Hotline_Miami/", "note": "Hotline Miami: choreograph your way through situations where every shot is deadly" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.time.deathloop-persona5-thewitness",
+    "axis": "world.time",
+    "options": [
+      { "pole": "loop", "game": "Deathloop", "year": 2021, "how": "Blackreef repeats one day split into morning, noon, afternoon and evening; targets move between districts by period, then it resets." },
+      { "pole": "calendar", "game": "Persona 5", "year": 2016, "how": "A school-year calendar split into daily time slots; each activity spends a slot, and Palaces must be cleared before dated deadlines." },
+      { "pole": "static", "game": "The Witness", "year": 2016, "how": "The island never moves through a day or season, so light, shadows and sightlines used by puzzles stay constant." }
+    ],
+    "tags": { "genres": ["shooter", "rpg", "puzzle"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/1252330/DEATHLOOP/", "note": "Deathloop: trapped in a timeloop on Blackreef, each loop a chance to change things" },
+      { "url": "https://www.supercheats.com/persona-5/walkthrough/game-structure", "note": "Persona 5: day periods and plot-driven deadlines across the school year" },
+      { "url": "https://store.steampowered.com/app/210970/The_Witness/", "note": "The Witness: island of puzzles" }
+    ],
+    "verification": { "status": "unverified", "checkedAt": "2026-11-23", "by": "claude-code" },
+    "note": "Persona 5 source is not on the allowed list and The Witness static time is unconfirmed"
+  },
+  {
+    "id": "cmp.world.time.harvestmoon-ocarinaoftime",
+    "axis": "world.time",
+    "options": [
+      { "pole": "calendar", "game": "Harvest Moon", "year": 1996, "how": "Four 30-day seasons decide which crops grow and which festivals happen; the farm is judged after a set number of years." },
+      { "pole": "day_night", "game": "The Legend of Zelda: Ocarina of Time", "year": 1998, "how": "Hyrule Field cycles from day to night; Stalchildren rise after dark, town gates close, and the Sun's Song skips ahead." }
+    ],
+    "tags": { "genres": ["simulation", "action"], "platforms": ["console"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://harvestmoon.fandom.com/wiki/Harvest_Moon_(SNES)", "note": "Harvest Moon: seasons and calendar" },
+      { "url": "https://zeldawiki.wiki/wiki/The_Legend_of_Zelda:_Ocarina_of_Time", "note": "Ocarina of Time: day and night cycle" }
+    ],
+    "verification": { "status": "unverified", "checkedAt": "2026-11-23", "by": "claude-code" },
+    "note": "Search budget ran out before these mechanics could be confirmed; check before marking verified"
+  },
+  {
+    "id": "cmp.world.destruction.thefinals-valorant",
+    "axis": "world.destruction",
+    "options": [
+      { "pole": "destructible", "game": "The Finals", "year": 2023, "how": "Floors sag and walls lean before they collapse, so teams open new routes through buildings and no two matches leave the same rubble." },
+      { "pole": "static", "game": "Valorant", "year": 2020, "how": "Hand-designed lane maps keep their walls and cover; only a few scripted doors and drop walls change, so sites and angles stay learnable." }
+    ],
+    "tags": { "genres": ["shooter"], "platforms": ["pc", "console"], "era": "2020s", "indie": false },
+    "sources": [
+      { "url": "https://www.reachthefinals.com/", "note": "The Finals: floors sag before they give way, walls lean before they fall, enhanced destruction in arenas" },
+      { "url": "https://playvalorant.com/en-us/maps/", "note": "Valorant: traditional three-lane maps with fixed sites; Ascent bomb doors and Summit drop walls are the scripted exceptions" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.world.time.fieldsofmistria-supermario64",
+    "axis": "world.time",
+    "options": [
+      { "pole": "calendar", "game": "Fields of Mistria", "year": 2024, "how": "Four seasons with dated festivals (Spring Festival on Spring 17) and weekday events like the Saturday market set the rhythm of farm life." },
+      { "pole": "static", "game": "Super Mario 64", "year": 1996, "how": "No clock: courses have no time limit or passing day, so each Power Star mission waits until you jump into its painting." }
+    ],
+    "tags": { "genres": ["simulation", "platformer"], "platforms": ["pc", "console"], "era": "pre2000", "indie": true },
+    "sources": [
+      { "url": "https://www.fieldsofmistria.com/", "note": "Fields of Mistria: changing seasons with new quests, festivals and villager outfits" },
+      { "url": "https://fieldsofmistria.wiki.gg/wiki/Calendar", "note": "Fields of Mistria: calendar of seasons, dated festivals and weekly events" },
+      { "url": "https://www.mariowiki.com/Super_Mario_64", "note": "Super Mario 64: no time limit within courses; Power Star missions reached through paintings" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  }
+]

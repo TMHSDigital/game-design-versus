@@ -1,1 +1,664 @@
-[]
+[
+  {
+    "id": "cmp.mp.mode.deeprockgalactic-dota2-lol",
+    "axis": "mp.mode",
+    "options": [
+      { "pole": "coop", "game": "Deep Rock Galactic", "year": 2020, "how": "1 to 4 players drop into a cave together; four classes (Scout, Gunner, Engineer, Driller) each cover a job the team needs to finish the mission." },
+      { "pole": "competitive", "game": "Dota 2", "year": 2013, "how": "Two teams of five fight over lanes; you can deny allied creeps below 50% health so the enemy loses the gold and experience." },
+      { "pole": "competitive", "game": "League of Legends", "year": 2009, "how": "Two teams of five; last hits on minions earn gold, but you cannot kill your own minions, so lane pressure comes only from attacking." }
+    ],
+    "tags": { "genres": ["action", "shooter", "strategy"], "platforms": ["pc", "console"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/548430/Deep_Rock_Galactic/", "note": "Deep Rock Galactic: 1 to 4 player co-op FPS with four classes" },
+      { "url": "https://liquipedia.net/dota2/Last_hit", "note": "Dota 2: allied units deniable below a health threshold, creeps at 50%" },
+      { "url": "https://wiki.leagueoflegends.com/en-us/Farming", "note": "League of Legends: farming by last hitting minions; no deny mechanic" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.mp.mode.left4dead-unrealtournament",
+    "axis": "mp.mode",
+    "options": [
+      { "pole": "coop", "game": "Left 4 Dead", "year": 2008, "how": "Four survivors must revive and cover each other against AI-spawned hordes; bots fill empty slots and players can join mid-campaign." },
+      { "pole": "competitive", "game": "Unreal Tournament", "year": 1999, "how": "Deathmatch scores kills and subtracts suicides; Capture the Flag pits two teams stealing each other's flag." }
+    ],
+    "tags": { "genres": ["shooter", "action", "horror"], "platforms": ["pc", "console"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://developer.valvesoftware.com/wiki/Left_4_Dead", "note": "Left 4 Dead: four survivors, bots fill slots, players join at any time" },
+      { "url": "https://unreal.fandom.com/wiki/Unreal_Tournament", "note": "Unreal Tournament: Deathmatch and Capture the Flag modes" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.mode.overcooked2-melee",
+    "axis": "mp.mode",
+    "options": [
+      { "pole": "coop", "game": "Overcooked! 2", "year": 2018, "how": "Up to four chefs share one kitchen and one order queue, locally or online; the score belongs to the whole team." },
+      { "pole": "competitive", "game": "Super Smash Bros. Melee", "year": 2001, "how": "Up to four players knock each other off the stage; damage percent raises launch distance and the last stock standing wins." }
+    ],
+    "tags": { "genres": ["party", "fighting"], "platforms": ["pc", "console"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/728880/Overcooked_2/", "note": "Overcooked! 2: online and local co-op for up to four" },
+      { "url": "https://www.mariowiki.com/Super_Smash_Bros._Melee", "note": "Super Smash Bros. Melee: four-player Stock and Time battles" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.mode.diablo2-starcraft",
+    "axis": "mp.mode",
+    "options": [
+      { "pole": "coop", "game": "Diablo II", "year": 2000, "how": "Up to 8 players per Battle.net game; a party shares experience, gold, quest progress and map locations." },
+      { "pole": "competitive", "game": "StarCraft", "year": 1998, "how": "Players race to destroy each other's bases on Battle.net, in unranked melee or ranked ladder games." }
+    ],
+    "tags": { "genres": ["rpg", "action", "strategy"], "platforms": ["pc"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://classic.battle.net/diablo2exp/basics/parties.shtml", "note": "Diablo II: parties share experience, gold, location and quest info" },
+      { "url": "https://starcraft.fandom.com/wiki/Battle.net", "note": "StarCraft: Battle.net melee and ladder play" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.mode.keeptalking-hearthstone",
+    "axis": "mp.mode",
+    "options": [
+      { "pole": "coop", "game": "Keep Talking and Nobody Explodes", "year": 2015, "how": "The defuser sees the bomb but not the manual; experts hold the manual but cannot see the bomb. Only talking defuses it." },
+      { "pole": "competitive", "game": "Hearthstone", "year": 2014, "how": "One-versus-one card duels; Ranked pairs you with opponents by rank and matchmaking rating." }
+    ],
+    "tags": { "genres": ["puzzle", "party", "card"], "platforms": ["pc", "console", "vr", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://keeptalkinggame.com/how-to-play-remotely/", "note": "Keep Talking and Nobody Explodes: defuser and experts split information" },
+      { "url": "https://hearthstone.wiki.gg/wiki/Matchmaking", "note": "Hearthstone: one-on-one matchmaking by MMR" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.mode.rockband-ddr",
+    "axis": "mp.mode",
+    "options": [
+      { "pole": "coop", "game": "Rock Band", "year": 2007, "how": "The band earns one shared score; a failed player can be saved by a bandmate's Overdrive, and if the band meter empties everyone fails." },
+      { "pole": "competitive", "game": "Dance Dance Revolution", "year": 1998, "how": "Versus mode puts two players side by side on one cabinet, each on their own pad, competing for the better score." }
+    ],
+    "tags": { "genres": ["rhythm", "party"], "platforms": ["console"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://rockband.fandom.com/wiki/Rock_Band", "note": "Rock Band: shared band score and saving failed bandmates with Overdrive" },
+      { "url": "https://dancedancerevolution.fandom.com/wiki/Dance_Dance_Revolution_(1998)", "note": "Dance Dance Revolution: two-player Versus mode" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.size.ittakestwo-pubg",
+    "axis": "mp.size",
+    "options": [
+      { "pole": "two", "game": "It Takes Two", "year": 2021, "how": "Exactly two players, co-op only; the Friend's Pass lets one owner invite a second player free, so every level is built for a pair." },
+      { "pole": "hundred", "game": "PUBG: Battlegrounds", "year": 2017, "how": "Up to 100 players parachute onto one map; a shrinking Blue Zone forces the crowd together until one player or squad is left." }
+    ],
+    "tags": { "genres": ["platformer", "shooter", "action"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://www.ea.com/games/it-takes-two/about/friends-pass", "note": "It Takes Two: Friend's Pass, one owner plus one guest" },
+      { "url": "https://pubg.com/en/game-info", "note": "PUBG: Battlegrounds: up to 100 players, shrinking Blue Zone" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.mp.size.streetfighter2-tetris99",
+    "axis": "mp.size",
+    "options": [
+      { "pole": "two", "game": "Street Fighter II: The World Warrior", "year": 1991, "how": "Strictly one on one; a second player can interrupt a CPU run with Here Comes a New Challenger and the winner keeps playing." },
+      { "pole": "hundred", "game": "Tetris 99", "year": 2019, "how": "99 players play Tetris at once; line clears send garbage to a target you pick or let the game choose, and knockouts boost attacks." }
+    ],
+    "tags": { "genres": ["fighting", "puzzle"], "platforms": ["console"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://streetfighter.fandom.com/wiki/Street_Fighter_II:_The_World_Warrior", "note": "Street Fighter II: one-on-one versus, challenger interrupts" },
+      { "url": "https://www.mariowiki.com/Tetris_99", "note": "Tetris 99: 99-player battle royale with targeted garbage" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.size.portal2-planetside2",
+    "axis": "mp.size",
+    "options": [
+      { "pole": "two", "game": "Portal 2", "year": 2011, "how": "A separate co-op campaign for two robots, Atlas and P-Body, each with a portal gun; chambers need four portals to solve." },
+      { "pole": "hundred", "game": "PlanetSide 2", "year": 2012, "how": "Thousands of players fight across persistent continents; a record battle logged 1,158 players in one fight." }
+    ],
+    "tags": { "genres": ["puzzle", "shooter"], "platforms": ["pc", "console"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://theportalwiki.com/wiki/Coop", "note": "Portal 2: two-player co-op campaign with Atlas and P-Body" },
+      { "url": "https://store.steampowered.com/app/218230/PlanetSide_2/", "note": "PlanetSide 2: battles of thousands of players" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.size.marvelsnap-warzone",
+    "axis": "mp.size",
+    "options": [
+      { "pole": "two", "game": "Marvel Snap", "year": 2022, "how": "One versus one over three locations and six simultaneous turns; either player can Snap to double the cube stakes." },
+      { "pole": "hundred", "game": "Call of Duty: Warzone", "year": 2020, "how": "Up to 150 players per match; your first death sends you to the Gulag for a 1v1 duel to earn a redeploy." }
+    ],
+    "tags": { "genres": ["card", "shooter"], "platforms": ["pc", "console", "mobile"], "era": "2020s", "indie": false },
+    "sources": [
+      { "url": "https://www.gamespot.com/reviews/marvel-snap-review-mccgu/1900-6417991/", "note": "Marvel Snap: 1v1, three locations, six turns, Snap doubles cubes" },
+      { "url": "https://www.pcgamer.com/cod-warzone-gulag-redeploy-respawn-revive", "note": "Call of Duty: Warzone: Gulag 1v1 redeploy" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.size.unraveltwo-foxhole",
+    "axis": "mp.size",
+    "options": [
+      { "pole": "two", "game": "Unravel Two", "year": 2018, "how": "Two Yarnys tied by one thread; puzzles need one to anchor or pulley while the other climbs. Local co-op only." },
+      { "pole": "hundred", "game": "Foxhole", "year": 2017, "how": "Thousands of players split into two factions on one war map; each shard holds up to 4,000 and logistics are all player-run." }
+    ],
+    "tags": { "genres": ["platformer", "puzzle", "strategy", "shooter"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.ea.com/games/unravel/unravel-two/gameplay", "note": "Unravel Two: two tethered Yarnys, thread bridges and pulleys" },
+      { "url": "https://foxhole.wiki.gg/wiki/War", "note": "Foxhole: persistent war between Colonials and Wardens" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.structure.eveonline-rocketleague",
+    "axis": "mp.structure",
+    "options": [
+      { "pole": "persistent", "game": "EVE Online", "year": 2003, "how": "One persistent universe on a single shard (Tranquility); every player shares the same economy, space and history." },
+      { "pole": "sessions", "game": "Rocket League", "year": 2015, "how": "Short matches with a five-minute clock; ranked playlists of up to 3v3 reset the field every match." }
+    ],
+    "tags": { "genres": ["simulation", "sports", "racing"], "platforms": ["pc", "console"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://www.pcgamer.com/eve-online-1/", "note": "EVE Online: Tranquility single-shard cluster" },
+      { "url": "https://www.epicgames.com/help/c-37599050/a12805879?lang=en-US", "note": "Rocket League: ranked matchmaking and playlists" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.mp.structure.ultimaonline-quake3",
+    "axis": "mp.structure",
+    "options": [
+      { "pole": "persistent", "game": "Ultima Online", "year": 1997, "how": "Each shard is a persistent world where player houses stay put, so one server's landscape differs from another's." },
+      { "pole": "sessions", "game": "Quake III Arena", "year": 1999, "how": "A match ends at the frag limit or time limit, then the next map starts clean with everyone at zero." }
+    ],
+    "tags": { "genres": ["rpg", "shooter"], "platforms": ["pc", "console"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://www.gamedeveloper.com/design/has-origin-created-the-first-true-online-game-world-", "note": "Ultima Online: persistent online world with player housing" },
+      { "url": "https://quake.fandom.com/wiki/Quake_III_Arena", "note": "Quake III Arena: frag and time limits end a match" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.structure.albiononline-clashroyale",
+    "axis": "mp.structure",
+    "options": [
+      { "pole": "persistent", "game": "Albion Online", "year": 2017, "how": "One shared world per region; zone colors set PvP risk, and territory, markets and gear persist between sessions." },
+      { "pole": "sessions", "game": "Clash Royale", "year": 2016, "how": "Brief 1v1 battles matched by trophy count; each one ends and only trophies and rewards carry forward." }
+    ],
+    "tags": { "genres": ["rpg", "strategy", "card"], "platforms": ["pc", "mobile"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://albiononline.com/en/home", "note": "Albion Online: one-world sandbox MMO with zone-based PvP" },
+      { "url": "https://support.clashroyale.com/hc/en-us/articles/49484914645915-Trophy-Road", "note": "Clash Royale: matches by similar trophy count" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.structure.neverwinternights-halo2",
+    "axis": "mp.structure",
+    "options": [
+      { "pole": "persistent", "game": "Neverwinter Nights", "year": 2002, "how": "Community-built persistent worlds run around the clock on player servers, with human DMs steering NPCs live." },
+      { "pole": "sessions", "game": "Halo 2", "year": 2004, "how": "Playlists drop parties into one-off matches; when the game ends the party returns to the lobby for the next." }
+    ],
+    "tags": { "genres": ["rpg", "shooter"], "platforms": ["pc", "console"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://www.pcgamer.com/how-devs-and-fans-are-coming-together-to-rebuild-neverwinter-nights", "note": "Neverwinter Nights: persistent worlds and community modules" },
+      { "url": "https://www.halopedia.org/Rank_(Halo_2)", "note": "Halo 2: matchmaking playlists and parties" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.structure.runescape-mariokart8deluxe",
+    "axis": "mp.structure",
+    "options": [
+      { "pole": "persistent", "game": "RuneScape", "year": 2001, "how": "Your character, skills and bank persist in a shared world; the Wilderness is a standing PvP zone you can walk into." },
+      { "pole": "sessions", "game": "Mario Kart 8 Deluxe", "year": 2017, "how": "Online races of up to 12 players; each Grand Prix or race ends and a new lobby forms." }
+    ],
+    "tags": { "genres": ["rpg", "racing", "party"], "platforms": ["pc", "mobile", "console"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://runescape.wiki/w/Items_kept_on_death", "note": "RuneScape: persistent characters and Wilderness PvP" },
+      { "url": "https://www.mariowiki.com/Mario_Kart_8_Deluxe", "note": "Mario Kart 8 Deluxe: online races of up to 12 players" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.matching.jackbox-starcraft2",
+    "axis": "mp.matching",
+    "options": [
+      { "pole": "friends", "game": "The Jackbox Party Pack", "year": 2014, "how": "The host screen shows a room code; friends join from any phone browser at jackbox.tv. No matchmaking with strangers." },
+      { "pole": "ranked", "game": "StarCraft II", "year": 2010, "how": "Ladder matchmaking by MMR places players in leagues from Bronze to Grandmaster." }
+    ],
+    "tags": { "genres": ["party", "strategy"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.jackboxgames.com/how-to-play", "note": "The Jackbox Party Pack: join with a room code at jackbox.tv" },
+      { "url": "https://liquipedia.net/starcraft2/Battle.net_Leagues", "note": "StarCraft II: ladder leagues Bronze to Grandmaster" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.matching.doom-halo2",
+    "axis": "mp.matching",
+    "options": [
+      { "pole": "friends", "game": "Doom", "year": 1993, "how": "Deathmatch over IPX for up to four or by modem or serial cable for two: you set it up with the people you knew." },
+      { "pole": "ranked", "game": "Halo 2", "year": 2004, "how": "Xbox Live playlists matched parties automatically and gave each player a 1 to 50 skill level per ranked playlist." }
+    ],
+    "tags": { "genres": ["shooter", "action"], "platforms": ["pc", "console"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://doomwiki.org/wiki/Multiplayer", "note": "Doom: IPX four-player and serial or modem two-player games" },
+      { "url": "https://www.halopedia.org/Rank_(Halo_2)", "note": "Halo 2: 1 to 50 skill level per ranked playlist" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.matching.lethalcompany-streetfighter6",
+    "axis": "mp.matching",
+    "options": [
+      { "pole": "friends", "game": "Lethal Company", "year": 2023, "how": "No matchmaking: one player hosts and invites a crew of up to four through Steam friends before landing." },
+      { "pole": "ranked", "game": "Street Fighter 6", "year": 2023, "how": "Ranked uses per-character League Points to pair similar players; at Master rank, Master Rate decides matches and standing." }
+    ],
+    "tags": { "genres": ["horror", "fighting"], "platforms": ["pc", "console"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/1966720/Lethal_Company/", "note": "Lethal Company: host-and-invite co-op for up to four" },
+      { "url": "https://wiki.supercombo.gg/w/Street_Fighter_6", "note": "Street Fighter 6: League Points and Master Rate ranked play" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.matching.amongus-clashroyale",
+    "axis": "mp.matching",
+    "options": [
+      { "pole": "friends", "game": "Among Us", "year": 2018, "how": "The host makes a private lobby for 4 to 15 and shares a code; social deduction works best among people who know each other." },
+      { "pole": "ranked", "game": "Clash Royale", "year": 2016, "how": "You are matched against opponents with a similar trophy count; card levels are ignored by matchmaking." }
+    ],
+    "tags": { "genres": ["party", "strategy", "card"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://among-us.fandom.com/wiki/Host", "note": "Among Us: private lobby with a code, 4 to 15 players" },
+      { "url": "https://support.clashroyale.com/hc/en-us/articles/49484914645915-Trophy-Road", "note": "Clash Royale: matchmaking by trophy count" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.matching.diablo2-lol",
+    "axis": "mp.matching",
+    "options": [
+      { "pole": "friends", "game": "Diablo II", "year": 2000, "how": "On Battle.net you create a named game, optionally with a password, and friends join it by name from the game list." },
+      { "pole": "ranked", "game": "League of Legends", "year": 2009, "how": "Ranked Solo/Duo uses placements and LP to move you through tiers; duo queuing is limited at the top tiers." }
+    ],
+    "tags": { "genres": ["rpg", "action", "strategy"], "platforms": ["pc"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://diablo2.diablowiki.net/B.net", "note": "Diablo II: Battle.net game creation with name and password" },
+      { "url": "https://support.riotgames.com/en-us/league-of-legends/gameplay/ranked-tiers-divisions-and-queues", "note": "League of Legends: ranked tiers, divisions and queues" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.matching.portal2-starcraft",
+    "axis": "mp.matching",
+    "options": [
+      { "pole": "friends", "game": "Portal 2", "year": 2011, "how": "Co-op is hosted by one player who invites a partner; the host plays Atlas, the guest P-Body, and the host's progress drives the hub." },
+      { "pole": "ranked", "game": "StarCraft", "year": 1998, "how": "Battle.net offered ranked ladder games next to unranked melee, so players could see how they stacked up." }
+    ],
+    "tags": { "genres": ["puzzle", "strategy"], "platforms": ["pc", "console"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://theportalwiki.com/wiki/Coop", "note": "Portal 2: host plays Atlas, guest plays P-Body" },
+      { "url": "https://starcraft.fandom.com/wiki/Battle.net", "note": "StarCraft: Battle.net ladder ranking" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.loss.apex-tarkov-hunt",
+    "axis": "mp.loss",
+    "options": [
+      { "pole": "nothing", "game": "Apex Legends", "year": 2019, "how": "Every match starts with the same basic kit and loot found on the map; nothing you pick up carries to the next match." },
+      { "pole": "loot", "game": "Escape from Tarkov", "year": 2017, "how": "Die in a raid and you lose everything you brought except melee, armband and secure container; insurance may return items." },
+      { "pole": "loot", "game": "Hunt: Showdown", "year": 2018, "how": "Past early Bloodline ranks a hired hunter who dies is gone for good with their gear; only Bloodline progress is safe." }
+    ],
+    "tags": { "genres": ["shooter", "survival", "horror"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://titanfall.fandom.com/wiki/Apex_Legends", "note": "Apex Legends: fixed starting kit, random loot each match" },
+      { "url": "https://escapefromtarkov.fandom.com/wiki/Gameplay_modes", "note": "Escape from Tarkov: items lost on death except secure container" },
+      { "url": "https://huntshowdown.fandom.com/wiki/Hunters", "note": "Hunt: Showdown: hunter and equipment lost on death" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.mp.loss.albiononline-guildwars",
+    "axis": "mp.loss",
+    "options": [
+      { "pole": "loot", "game": "Albion Online", "year": 2017, "how": "In red and black zones a killed player drops all equipped and carried gear for others to loot; yellow zones only knock down." },
+      { "pole": "nothing", "game": "Guild Wars", "year": 2005, "how": "Dying adds a stacking health and energy penalty up to 60% that clears in town; no items or experience are lost." }
+    ],
+    "tags": { "genres": ["rpg"], "platforms": ["pc", "mobile"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://albiononline.com/en/home", "note": "Albion Online: full-loot red and black zones" },
+      { "url": "https://wiki-en.guildwars.com/wiki/Death_Penalty", "note": "Guild Wars: death penalty capped at 60%, no item loss" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.loss.rust-tf2",
+    "axis": "mp.loss",
+    "options": [
+      { "pole": "loot", "game": "Rust", "year": 2013, "how": "Your corpse drops a backpack holding everything you carried; anyone can take it before it despawns." },
+      { "pole": "nothing", "game": "Team Fortress 2", "year": 2007, "how": "Dead players respawn in timed waves at their spawn room with their loadout; nothing is dropped or lost." }
+    ],
+    "tags": { "genres": ["survival", "shooter"], "platforms": ["pc", "console"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://rust.facepunch.com/news/devblog-166", "note": "Rust: corpses drop a backpack with all their items" },
+      { "url": "https://wiki.teamfortress.com/wiki/Respawn", "note": "Team Fortress 2: wave respawn system" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.loss.runescape-rocketleague",
+    "axis": "mp.loss",
+    "options": [
+      { "pole": "loot", "game": "RuneScape", "year": 2001, "how": "Die in the Wilderness and you keep only your most valuable items; a skulled player drops everything unprotected." },
+      { "pole": "nothing", "game": "Rocket League", "year": 2015, "how": "There is no inventory at stake in a match: you only win or lose the game and your rank." }
+    ],
+    "tags": { "genres": ["rpg", "sports"], "platforms": ["pc", "mobile", "console"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://runescape.wiki/w/Items_kept_on_death", "note": "RuneScape: items kept on death and skull rules" },
+      { "url": "https://www.epicgames.com/help/c-37599050/a12805879?lang=en-US", "note": "Rocket League: rank and matchmaking per playlist" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.loss.darkanddarker-mhworld",
+    "axis": "mp.loss",
+    "options": [
+      { "pole": "loot", "game": "Dark and Darker", "year": 2023, "how": "Gear taken into a dungeon is lost on death unless you reach an escape portal; other players can loot your body." },
+      { "pole": "nothing", "game": "Monster Hunter: World", "year": 2018, "how": "Fainting carts you back to camp; three faints fail the quest, but no gear or items are taken from you." }
+    ],
+    "tags": { "genres": ["rpg", "action"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/2016590/Dark_and_Darker/", "note": "Dark and Darker: extraction dungeon crawler" },
+      { "url": "https://store.steampowered.com/app/582010/Monster_Hunter_World/", "note": "Monster Hunter: World: co-op hunts" }
+    ],
+    "verification": { "status": "unverified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.async.darksouls-left4dead",
+    "axis": "mp.async",
+    "options": [
+      { "pole": "async", "game": "Dark Souls", "year": 2011, "how": "Other players' messages, bloodstains replaying their deaths, and passing phantoms appear in your world without a live session." },
+      { "pole": "none", "game": "Left 4 Dead", "year": 2008, "how": "All interaction is live: four players in one session, with bots filling empty slots. Nothing persists between groups." }
+    ],
+    "tags": { "genres": ["rpg", "action", "shooter", "horror"], "platforms": ["pc", "console"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://darksouls.wiki.fextralife.com/Online", "note": "Dark Souls: messages, bloodstains and phantoms" },
+      { "url": "https://developer.valvesoftware.com/wiki/Left_4_Dead", "note": "Left 4 Dead: live four-player sessions with bots" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.mp.async.deathstranding-journey",
+    "axis": "mp.async",
+    "options": [
+      { "pole": "async", "game": "Death Stranding", "year": 2019, "how": "Roads, bridges, signs and cargo other players built appear in your world once an area joins the network; you never meet them." },
+      { "pole": "none", "game": "Journey", "year": 2012, "how": "Another online player may join you live as a fellow traveler; nothing they do persists after they leave." }
+    ],
+    "tags": { "genres": ["narrative", "action"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.gamedeveloper.com/game-platforms/kojima-details-the-subtly-social-gameplay-of-i-death-stranding-i-", "note": "Death Stranding: other players' structures appear in your world" },
+      { "url": "https://store.steampowered.com/app/638230/Journey/", "note": "Journey: play in the company of a fellow traveler online" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.mp.async.supermariomaker2-tetris99",
+    "axis": "mp.async",
+    "options": [
+      { "pole": "async", "game": "Super Mario Maker 2", "year": 2019, "how": "Players upload courses to Course World; others play, like and leave comments on them long after they were made." },
+      { "pole": "none", "game": "Tetris 99", "year": 2019, "how": "Every attack is live: garbage goes to opponents in the same 99-player match, and nothing carries outside it." }
+    ],
+    "tags": { "genres": ["platformer", "puzzle"], "platforms": ["console"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Super_Mario_Maker_2", "note": "Super Mario Maker 2: Course World uploads and feedback" },
+      { "url": "https://www.mariowiki.com/Tetris_99", "note": "Tetris 99: live 99-player matches" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.async.clashofclans-hearthstone",
+    "axis": "mp.async",
+    "options": [
+      { "pole": "async", "game": "Clash of Clans", "year": 2012, "how": "You raid other players' villages while they are offline; their base layout and defenses fight back on their behalf." },
+      { "pole": "none", "game": "Hearthstone", "year": 2014, "how": "Both players are online and take turns live; there is no way to affect an opponent outside the match." }
+    ],
+    "tags": { "genres": ["strategy", "card"], "platforms": ["mobile", "pc"], "era": "2010s", "indie": false },
+    "sources": [
+      { "url": "https://supercell.com/en/games/clashofclans/", "note": "Clash of Clans: build a village and army, attack opponents" },
+      { "url": "https://hearthstone.wiki.gg/wiki/Matchmaking", "note": "Hearthstone: live one-on-one matches" }
+    ],
+    "verification": { "status": "unverified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.symmetry.deadbydaylight-cs2",
+    "axis": "mp.symmetry",
+    "options": [
+      { "pole": "asymmetric", "game": "Dead by Daylight", "year": 2016, "how": "One player is the Killer hunting the others; four Survivors try to escape before being hooked and sacrificed. Each side has its own rules." },
+      { "pole": "symmetric", "game": "Counter-Strike 2", "year": 2023, "how": "Two teams of five; after 12 rounds the sides swap, so both teams play attack and defense on the same map." }
+    ],
+    "tags": { "genres": ["horror", "shooter"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.epicgames.com/en/p/dead-by-daylight", "note": "Dead by Daylight: 4 vs 1, one killer and four survivors" },
+      { "url": "https://www.counter-strike.net/cs2", "note": "Counter-Strike 2: teams switch sides after the first half" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.mp.symmetry.nintendoland-quake3",
+    "axis": "mp.symmetry",
+    "options": [
+      { "pole": "asymmetric", "game": "Nintendo Land", "year": 2012, "how": "Luigi's Ghost Mansion: the GamePad player is an invisible ghost; up to four flashlight holders hunt it and revive fainted friends." },
+      { "pole": "symmetric", "game": "Quake III Arena", "year": 1999, "how": "Everyone spawns with the same tools and fights for the same map pickups; only aim and movement separate players." }
+    ],
+    "tags": { "genres": ["party", "shooter"], "platforms": ["console", "pc"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://www.mariowiki.com/Luigi%27s_Ghost_Mansion", "note": "Nintendo Land: invisible ghost versus flashlight trackers" },
+      { "url": "https://quake.fandom.com/wiki/Quake_III_Arena", "note": "Quake III Arena: deathmatch with shared weapon pickups" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.symmetry.amongus-rocketleague",
+    "axis": "mp.symmetry",
+    "options": [
+      { "pole": "asymmetric", "game": "Among Us", "year": 2018, "how": "Crewmates do tasks and vote; hidden Impostors kill, sabotage, fake tasks and travel through vents." },
+      { "pole": "symmetric", "game": "Rocket League", "year": 2015, "how": "Teams of up to three drive cars with the same boost, jump and flip; only the goal you defend differs." }
+    ],
+    "tags": { "genres": ["party", "sports"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.innersloth.com/games/among-us/", "note": "Among Us: Crewmate and Impostor roles" },
+      { "url": "https://www.epicgames.com/help/c-37599050/a12805879?lang=en-US", "note": "Rocket League: 3v3 maximum in ranked" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.symmetry.splintercellpt-hellletloose",
+    "axis": "mp.symmetry",
+    "options": [
+      { "pole": "asymmetric", "game": "Tom Clancy's Splinter Cell: Pandora Tomorrow", "year": 2004, "how": "Spies play in third person with stealth gadgets; mercenaries play in first person with guns and flashlights." },
+      { "pole": "symmetric", "game": "Hell Let Loose", "year": 2019, "how": "50 vs 50 where both armies pick from the same 14 roles across command, infantry, recon and armour." }
+    ],
+    "tags": { "genres": ["action", "shooter"], "platforms": ["pc", "console"], "era": "2000s", "indie": true },
+    "sources": [
+      { "url": "https://splintercell.fandom.com/wiki/Tom_Clancy%27s_Splinter_Cell:_Pandora_Tomorrow", "note": "Splinter Cell: Pandora Tomorrow: Spies versus Mercenaries" },
+      { "url": "https://store.steampowered.com/app/686810/Hell_Let_Loose/", "note": "Hell Let Loose: 50 vs 50, 14 roles" }
+    ],
+    "verification": { "status": "unverified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.comm.apex-phasmophobia",
+    "axis": "mp.comm",
+    "options": [
+      { "pole": "ping", "game": "Apex Legends", "year": 2019, "how": "One button marks where you aim; context turns it into enemy, item or location callouts with voice lines, so no mic is needed." },
+      { "pole": "voice", "game": "Phasmophobia", "year": 2020, "how": "Speech recognition lets the ghost, Spirit Box and Ouija Board hear what you say aloud; talking is play and a risk." }
+    ],
+    "tags": { "genres": ["shooter", "horror"], "platforms": ["pc", "console", "vr"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.pcgamer.com/apex-legends-ping-system-is-a-tiny-miracle-for-fps-teamwork-and-communication", "note": "Apex Legends: contextual ping system" },
+      { "url": "https://store.steampowered.com/app/739630/Phasmophobia/", "note": "Phasmophobia: voice recognition for ghost interaction" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.mp.comm.lethalcompany-deeprockgalactic",
+    "axis": "mp.comm",
+    "options": [
+      { "pole": "voice", "game": "Lethal Company", "year": 2023, "how": "Proximity voice only carries nearby; walkie-talkies reach the rest of the crew, so who can hear you matters." },
+      { "pole": "ping", "game": "Deep Rock Galactic", "year": 2020, "how": "The laser pointer marks enemies, ore and objects so every teammate sees the marker through walls." }
+    ],
+    "tags": { "genres": ["horror", "shooter"], "platforms": ["pc", "console"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/1966720/Lethal_Company/", "note": "Lethal Company: proximity voice and walkie-talkies" },
+      { "url": "https://deeprockgalactic.wiki.gg/wiki/Laser_Pointer", "note": "Deep Rock Galactic: marked targets visible through walls" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.comm.wewerehere-journey",
+    "axis": "mp.comm",
+    "options": [
+      { "pole": "voice", "game": "We Were Here", "year": 2017, "how": "Two players are split up in a castle; only walkie-talkie voice lets one describe what the other needs to solve." },
+      { "pole": "ping", "game": "Journey", "year": 2012, "how": "No text or voice chat: companions can only chirp a musical call, which also recharges each other's scarves." }
+    ],
+    "tags": { "genres": ["puzzle", "narrative"], "platforms": ["pc", "console", "mobile"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/677160/We_Were_Here/", "note": "We Were Here: separated players communicate by walkie-talkie" },
+      { "url": "https://store.steampowered.com/app/638230/Journey/", "note": "Journey: wordless online companion" }
+    ],
+    "verification": { "status": "unverified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.comm.hellletloose-riskofrain2",
+    "axis": "mp.comm",
+    "options": [
+      { "pole": "voice", "game": "Hell Let Loose", "year": 2019, "how": "Proximity, unit and command VoIP channels link squads, officers and the commander; the game says communication is essential." },
+      { "pole": "ping", "game": "Risk of Rain 2", "year": 2020, "how": "Pinging marks enemies and interactables for the squad and posts an item's name and cost to chat, so runs coordinate without voice." }
+    ],
+    "tags": { "genres": ["shooter", "action"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/686810/Hell_Let_Loose/", "note": "Hell Let Loose: in-game proximity, command and unit VoIP; communication is essential" },
+      { "url": "https://riskofrain2.wiki.gg/wiki/Early_Access_'Skills_2.0'_Content_Update", "note": "Risk of Rain 2: cost of purchasables added to their chat message when pinged; enemies and interactables can be pinged" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.comm.keeptalking-deeprockgalactic",
+    "axis": "mp.comm",
+    "options": [
+      { "pole": "voice", "game": "Keep Talking and Nobody Explodes", "year": 2015, "how": "The whole game is spoken description: the defuser explains the bomb aloud, experts read the manual and answer." },
+      { "pole": "ping", "game": "Deep Rock Galactic", "year": 2020, "how": "A laser pointer marks enemies and resources that every teammate sees through walls, so warnings land without anyone speaking." }
+    ],
+    "tags": { "genres": ["puzzle", "party", "shooter"], "platforms": ["pc", "console", "vr"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://keeptalkinggame.com/how-to-play-remotely/", "note": "Keep Talking and Nobody Explodes: the defuser sees the bomb, experts have the manual, so players must talk" },
+      { "url": "https://deeprockgalactic.wiki.gg/wiki/Laser_Pointer", "note": "Deep Rock Galactic: marked enemies and objects can be seen through walls by all players" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.hosting.valheim-destiny2",
+    "axis": "mp.hosting",
+    "options": [
+      { "pole": "player", "game": "Valheim", "year": 2021, "how": "A player hosts the world from the game or runs the free dedicated server; up to 10 Vikings share a world file the host owns." },
+      { "pole": "dedicated", "game": "Destiny 2", "year": 2017, "how": "Bungie runs mission and physics hosts in its data centers and matchmakes players into shared spaces (hybrid with peer links)." }
+    ],
+    "tags": { "genres": ["survival", "shooter", "rpg"], "platforms": ["pc", "console"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://www.pcgamer.com/valheim-multiplayer-dedicated-server", "note": "Valheim: local hosting or dedicated server, 10-player cap" },
+      { "url": "https://www.pcgamer.com/bungie-explains-the-lack-of-destiny-2-dedicated-servers-addresses-pc-cheating", "note": "Destiny 2: mission and physics hosts in Bungie data centers" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "seed" }
+  },
+  {
+    "id": "cmp.mp.hosting.neverwinternights-ultimaonline",
+    "axis": "mp.hosting",
+    "options": [
+      { "pole": "player", "game": "Neverwinter Nights", "year": 2002, "how": "Players run their own servers with modules built in the Aurora toolset, from four-friend campaigns to free persistent worlds." },
+      { "pole": "dedicated", "game": "Ultima Online", "year": 1997, "how": "The developer runs every shard; players pick a server and the world lives there whether they log in or not." }
+    ],
+    "tags": { "genres": ["rpg"], "platforms": ["pc"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://www.pcgamer.com/how-devs-and-fans-are-coming-together-to-rebuild-neverwinter-nights", "note": "Neverwinter Nights: community servers and persistent worlds" },
+      { "url": "https://www.gamedeveloper.com/design/has-origin-created-the-first-true-online-game-world-", "note": "Ultima Online: Origin-run online world" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.hosting.doom-planetside2",
+    "axis": "mp.hosting",
+    "options": [
+      { "pole": "player", "game": "Doom", "year": 1993, "how": "Peer-to-peer: the players' own PCs run the game in lockstep over IPX or a modem, with no server at all." },
+      { "pole": "dedicated", "game": "PlanetSide 2", "year": 2012, "how": "The developer's servers hold each continent's war for thousands of players at once; nobody can host it themselves." }
+    ],
+    "tags": { "genres": ["shooter"], "platforms": ["pc", "console"], "era": "pre2000", "indie": false },
+    "sources": [
+      { "url": "https://doomwiki.org/wiki/Doom_networking_component", "note": "Doom: peer-to-peer IPX and serial networking" },
+      { "url": "https://store.steampowered.com/app/218230/PlanetSide_2/", "note": "PlanetSide 2: massive battles on developer-run servers" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.hosting.terraria-foxhole",
+    "axis": "mp.hosting",
+    "options": [
+      { "pole": "player", "game": "Terraria", "year": 2011, "how": "Host and Play runs the world on your own device and ends when you leave; or run TerrariaServer.exe so it stays up." },
+      { "pole": "dedicated", "game": "Foxhole", "year": 2017, "how": "The developer runs the war shards, up to 4,000 players each; the war continues whether you are logged in or not." }
+    ],
+    "tags": { "genres": ["sandbox", "survival", "strategy"], "platforms": ["pc", "console", "mobile", "handheld"], "era": "2010s", "indie": true },
+    "sources": [
+      { "url": "https://terraria.wiki.gg/wiki/Multiplayer", "note": "Terraria: Host and Play or dedicated server software" },
+      { "url": "https://foxhole.wiki.gg/wiki/War", "note": "Foxhole: persistent war on developer shards" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.hosting.counterstrike16-rainbowsixsiege",
+    "axis": "mp.hosting",
+    "options": [
+      { "pole": "player", "game": "Counter-Strike 1.6", "year": 2003, "how": "Communities rent or run their own servers with custom maps, rules and admins; players browse and join them." },
+      { "pole": "dedicated", "game": "Tom Clancy's Rainbow Six Siege", "year": 2015, "how": "Ubisoft hosts every ranked and casual match on its own servers; players cannot run official servers." }
+    ],
+    "tags": { "genres": ["shooter"], "platforms": ["pc", "console"], "era": "2000s", "indie": false },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/10/CounterStrike/", "note": "Counter-Strike 1.6: community-run servers" },
+      { "url": "https://www.ubisoft.com/en-us/game/rainbow-six/siege", "note": "Rainbow Six Siege: Ubisoft-hosted matches" }
+    ],
+    "verification": { "status": "unverified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.async.deathstranding2-ittakestwo",
+    "axis": "mp.async",
+    "options": [
+      { "pole": "async", "game": "Death Stranding 2: On the Beach", "year": 2025, "how": "Roads and structures other players built appear in your world once areas connect; you like their bridges and donate to shared projects." },
+      { "pole": "none", "game": "It Takes Two", "year": 2021, "how": "Built purely for two players in live couch or online co-op; partners only affect each other while playing together." }
+    ],
+    "tags": { "genres": ["action", "platformer"], "platforms": ["console", "pc"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/", "note": "Death Stranding 2: Social Strand System for asynchronous connection; other players' roads and structures become usable" },
+      { "url": "https://store.steampowered.com/app/1426210/It_Takes_Two/", "note": "It Takes Two: built purely for two, couch or online co-op" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  },
+  {
+    "id": "cmp.mp.symmetry.texaschainsawmassacre-rematch",
+    "axis": "mp.symmetry",
+    "options": [
+      { "pole": "asymmetric", "game": "The Texas Chain Saw Massacre", "year": 2023, "how": "Victims rely on stealth to find tools and escape, while Family players track them down and stop them; each side has different goals." },
+      { "pole": "symmetric", "game": "Rematch", "year": 2025, "how": "Each player controls one footballer in teams of 3, 4 or 5; both sides have identical abilities, so skill and teamwork decide matches." }
+    ],
+    "tags": { "genres": ["horror", "sports"], "platforms": ["pc", "console"], "era": "2020s", "indie": true },
+    "sources": [
+      { "url": "https://store.steampowered.com/app/1433140/The_Texas_Chain_Saw_Massacre/", "note": "The Texas Chain Saw Massacre: victims use stealth to escape, Family players track them down" },
+      { "url": "https://store.steampowered.com/app/2138720/REMATCH/", "note": "Rematch: control one player in online football, teams of 3, 4 or 5" }
+    ],
+    "verification": { "status": "verified", "checkedAt": "2026-11-23", "by": "claude-code" }
+  }
+]

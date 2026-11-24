@@ -1,1 +1,1099 @@
-[]
+[
+  {
+    "id": "cmp.mgmt.threat.citiesskylines-frostpunk-rimworld",
+    "axis": "mgmt.threat",
+    "options": [
+      {
+        "pole": "peaceful",
+        "game": "Cities: Skylines",
+        "year": 2015,
+        "how": "No enemies or raids: the pushback comes from zoning demand, traffic jams and service coverage you must balance."
+      },
+      {
+        "pole": "threats",
+        "game": "Frostpunk",
+        "year": 2018,
+        "how": "Deadly cold and a coming storm; Hope and Discontent react to every law you sign in the Book of Laws."
+      },
+      {
+        "pole": "threats",
+        "game": "RimWorld",
+        "year": 2018,
+        "how": "Colony wealth feeds raid points, so getting richer draws bigger raids that test your defenses."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "simulation",
+        "survival"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/255710/Cities_Skylines/",
+        "note": "Cities: Skylines: city builder about zoning, services and traffic"
+      },
+      {
+        "url": "https://www.pcgamer.com/frostpunk-developers-on-hope-misery-and-the-ultimately-terrifying-book-of-laws",
+        "note": "Frostpunk: developers on Hope, misery and the Book of Laws"
+      },
+      {
+        "url": "https://rimworldwiki.com/wiki/Raid_points",
+        "note": "RimWorld: colony wealth feeds raid points"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.mgmt.threat.gamedevtycoon-dungeonkeeper",
+    "axis": "mgmt.threat",
+    "options": [
+      {
+        "pole": "peaceful",
+        "game": "Game Dev Tycoon",
+        "year": 2012,
+        "how": "No enemies: the pushback is market trends, review scores and cash flow as you choose topics and genres."
+      },
+      {
+        "pole": "threats",
+        "game": "Dungeon Keeper",
+        "year": 1997,
+        "how": "Heroes invade to loot your gold; your creatures and traps must repel them before they reach the Dungeon Heart."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/239820/Game_Dev_Tycoon/",
+        "note": "Game Dev Tycoon: run a game studio"
+      },
+      {
+        "url": "https://www.gog.com/en/game/dungeon_keeper",
+        "note": "Dungeon Keeper: heroes come for your gold; dig a dungeon with imps"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.threat.planetcoaster-theyarebillions",
+    "axis": "mgmt.threat",
+    "options": [
+      {
+        "pole": "peaceful",
+        "game": "Planet Coaster",
+        "year": 2016,
+        "how": "Nothing attacks the park: pressure comes from guest happiness, queues, finances and scenery."
+      },
+      {
+        "pole": "threats",
+        "game": "They Are Billions",
+        "year": 2019,
+        "how": "Infected hordes assault the colony; one breached wall can spread infection through every building."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/493340/Planet_Coaster/",
+        "note": "Planet Coaster: sandbox park builder, piece-by-piece construction"
+      },
+      {
+        "url": "https://store.steampowered.com/app/644930/They_Are_Billions/",
+        "note": "They Are Billions: infected hordes; build walls, gates and towers; survive a set period"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.threat.oxygennotincluded-kingdomtwocrowns",
+    "axis": "mgmt.threat",
+    "options": [
+      {
+        "pole": "peaceful",
+        "game": "Oxygen Not Included",
+        "year": 2019,
+        "how": "No raiders: the colony is threatened by its own systems, running out of oxygen, overheating or stressing out."
+      },
+      {
+        "pole": "threats",
+        "game": "Kingdom Two Crowns",
+        "year": 2018,
+        "how": "The Greed attack at night, stealing coins and your crown unless walls and archers hold the line."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "survival",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/457140/Oxygen_Not_Included/",
+        "note": "Oxygen Not Included: threats are oxygen, temperature and stress"
+      },
+      {
+        "url": "https://store.steampowered.com/app/701160/Kingdom_Two_Crowns/",
+        "note": "Kingdom Two Crowns: Greed attack at night; walls and towers defend"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.threat.islanders-northgard",
+    "axis": "mgmt.threat",
+    "options": [
+      {
+        "pole": "peaceful",
+        "game": "Islanders",
+        "year": 2019,
+        "how": "No enemies: the only opponent is space and adjacency, placing buildings for points to unlock the next island."
+      },
+      {
+        "pole": "threats",
+        "game": "Northgard",
+        "year": 2018,
+        "how": "Harsh winters drain food and wood while wild creatures and rival clans attack your territory."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "puzzle"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1046030/ISLANDERS/",
+        "note": "Islanders: relaxing builder, placing buildings rewarded with points"
+      },
+      {
+        "url": "https://store.steampowered.com/app/466560/Northgard/",
+        "note": "Northgard: survive harsh winters and ferocious foes"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.threat.planetzoo-jurassicworldevolution",
+    "axis": "mgmt.threat",
+    "options": [
+      {
+        "pole": "peaceful",
+        "game": "Planet Zoo",
+        "year": 2019,
+        "how": "No external threats: the challenge is animal welfare, habitat design and guest flow."
+      },
+      {
+        "pole": "threats",
+        "game": "Jurassic World Evolution",
+        "year": 2018,
+        "how": "Tropical storms damage fences and dinosaurs escape, so ranger and capture teams must respond."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/703080/Planet_Zoo/",
+        "note": "Planet Zoo: animal welfare, habitats and a sandbox mode"
+      },
+      {
+        "url": "https://store.steampowered.com/app/648350/Jurassic_World_Evolution/",
+        "note": "Jurassic World Evolution: tropical storms and dinosaur escapes"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.control.rimworld-stardewvalley",
+    "axis": "mgmt.control",
+    "options": [
+      {
+        "pole": "indirect",
+        "game": "RimWorld",
+        "year": 2018,
+        "how": "You set work priorities and zones; colonists pick their own tasks from those priorities as their needs allow."
+      },
+      {
+        "pole": "direct",
+        "game": "Stardew Valley",
+        "year": 2016,
+        "how": "You till, water, harvest, mine and craft with your own avatar; sprinklers and Junimo huts automate only a little."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://rimworldwiki.com/wiki/Work",
+        "note": "RimWorld: Work tab priorities drive what colonists do"
+      },
+      {
+        "url": "https://www.stardewvalley.net/",
+        "note": "Stardew Valley: raise animals, tend crops, craft items yourself"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.mgmt.control.majesty-supermarketsimulator",
+    "axis": "mgmt.control",
+    "options": [
+      {
+        "pole": "indirect",
+        "game": "Majesty: The Fantasy Kingdom Sim",
+        "year": 2000,
+        "how": "Heroes have a will of their own: you cannot order them, only offer gold to persuade them to carry out your wishes."
+      },
+      {
+        "pole": "direct",
+        "game": "Supermarket Simulator",
+        "year": 2024,
+        "how": "You unpack deliveries, place goods on shelves, fridges and freezers, and scan items and take payment at the checkout yourself."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "simulation"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/25990/",
+        "note": "Majesty: real-time strategy with indirect control, heroes have a will of their own and need gold to act"
+      },
+      {
+        "url": "https://store.steampowered.com/app/2670630/",
+        "note": "Supermarket Simulator: unpack goods, place them on shelves, scan items and take payments"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.control.dwarffortress-overcooked",
+    "axis": "mgmt.control",
+    "options": [
+      {
+        "pole": "indirect",
+        "game": "Dwarf Fortress",
+        "year": 2006,
+        "how": "You create jobs through designations, zones and work orders; idle dwarves with that labor enabled pick them up on their own."
+      },
+      {
+        "pole": "direct",
+        "game": "Overcooked!",
+        "year": 2016,
+        "how": "Each player is a chef who must prepare, cook and serve every order by hand; nothing in the kitchen happens unless a chef does it."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy",
+        "party"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.dwarffortresswiki.org/index.php/Labor",
+        "note": "Dwarf Fortress: jobs come from designations and work orders; idle dwarves with the labor enabled take them"
+      },
+      {
+        "url": "https://store.steampowered.com/app/975370/",
+        "note": "Dwarf Fortress: command dwarves with their own simulated personalities"
+      },
+      {
+        "url": "https://store.steampowered.com/app/448510/",
+        "note": "Overcooked!: you and fellow chefs must prepare, cook and serve up orders"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.control.themehospital-overcooked",
+    "axis": "mgmt.control",
+    "options": [
+      {
+        "pole": "indirect",
+        "game": "Theme Hospital",
+        "year": 1997,
+        "how": "You build rooms and hire staff; doctors, nurses and handymen walk to jobs and treat patients on their own."
+      },
+      {
+        "pole": "direct",
+        "game": "Overcooked!",
+        "year": 2016,
+        "how": "You run the kitchen with your own chef: chop, cook, plate and serve each order by hand, nothing happens unless you do it."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "party"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/theme_hospital",
+        "note": "Theme Hospital: design and manage a hospital from an empty building"
+      },
+      {
+        "url": "https://store.steampowered.com/app/448510/Overcooked/",
+        "note": "Overcooked!: co-op kitchen orders"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.control.prisonarchitect-cookservedelicious",
+    "axis": "mgmt.control",
+    "options": [
+      {
+        "pole": "indirect",
+        "game": "Prison Architect",
+        "year": 2015,
+        "how": "You lay blueprints and set regimes; hired workers build them and prisoners act on their own needs."
+      },
+      {
+        "pole": "direct",
+        "game": "Cook, Serve, Delicious!",
+        "year": 2012,
+        "how": "You prepare every order yourself, pressing a key per ingredient and step, then serve it before the customer leaves."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/233450/Prison_Architect/",
+        "note": "Prison Architect: build and manage a prison"
+      },
+      {
+        "url": "https://store.steampowered.com/app/247020/Cook_Serve_Delicious/",
+        "note": "Cook, Serve, Delicious!: typing-driven restaurant cooking"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.control.banished-moonlighter",
+    "axis": "mgmt.control",
+    "options": [
+      {
+        "pole": "indirect",
+        "game": "Banished",
+        "year": 2014,
+        "how": "You set how many townspeople fill each occupation; they then gather, farm and build on their own."
+      },
+      {
+        "pole": "direct",
+        "game": "Moonlighter",
+        "year": 2018,
+        "how": "You put each item on a shelf and set its price yourself, watching customer reactions to adjust."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy",
+        "action",
+        "rpg"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/242920/Banished/",
+        "note": "Banished: 20 occupations; townspeople are the main resource"
+      },
+      {
+        "url": "https://store.steampowered.com/app/606150/Moonlighter/",
+        "note": "Moonlighter: put items on sale and set their price carefully"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.agents.frostpunk2-oxygennotincluded",
+    "axis": "mgmt.agents",
+    "options": [
+      {
+        "pole": "abstract",
+        "game": "Frostpunk 2",
+        "year": 2024,
+        "how": "You govern large districts and weigh the interests of factions and population groups, treating citizens as blocs, not characters."
+      },
+      {
+        "pole": "individuals",
+        "game": "Oxygen Not Included",
+        "year": 2019,
+        "how": "Each duplicant has inborn traits that add or remove attributes; some negative traits bar skills such as digging."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "simulation",
+        "survival"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1601580/",
+        "note": "Frostpunk 2: maneuver across the interests of many groups, factions and large city districts"
+      },
+      {
+        "url": "https://oxygennotincluded.wiki.gg/wiki/Traits",
+        "note": "Oxygen Not Included: inborn traits give attribute bonuses or penalties and can block skills"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.agents.victoria3-crusaderkings3",
+    "axis": "mgmt.agents",
+    "options": [
+      {
+        "pole": "abstract",
+        "game": "Victoria 3",
+        "year": 2022,
+        "how": "Population is modeled as pop groups with shared economic needs and political desires; you employ labor in bulk, not person by person."
+      },
+      {
+        "pole": "individuals",
+        "game": "Crusader Kings III",
+        "year": 2020,
+        "how": "Every ruler and courtier is a character whose traits and lifestyle drive their schemes; genetics pass traits to children."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2020s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/529340/",
+        "note": "Victoria 3: detailed population groups with their own economic needs and political desires"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1158310/",
+        "note": "Crusader Kings III: traits and lifestyle choices determine each character's actions; genetics pass to children"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.agents.anno1800-twopointcampus",
+    "axis": "mgmt.agents",
+    "options": [
+      {
+        "pole": "abstract",
+        "game": "Anno 1800",
+        "year": 2019,
+        "how": "You meet the needs of your inhabitants through production chains, and factories draw on a workforce rather than on named workers."
+      },
+      {
+        "pole": "individuals",
+        "game": "Two Point Campus",
+        "year": 2022,
+        "how": "Each student has their own personality, wants and needs; clubs, friendships and pastoral care shape their happiness and grades."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.ubisoft.com/en-us/game/anno/1800",
+        "note": "Anno 1800: fulfil the needs of your inhabitants through production chains; workforce feature for factories"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1649080/",
+        "note": "Two Point Campus: explore students' individual personalities, wants and needs"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.agents.ixion-survivingmars",
+    "axis": "mgmt.agents",
+    "options": [
+      {
+        "pole": "abstract",
+        "game": "Ixion",
+        "year": 2022,
+        "how": "Population is a station total that new sectors house and employ, with crew trust in the corporation tracked as one shared value."
+      },
+      {
+        "pole": "individuals",
+        "game": "Surviving Mars",
+        "year": 2018,
+        "how": "Each colonist is a unique individual with strengths and flaws; a chief scientist can develop alcoholism and drag the colony down."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "simulation",
+        "survival"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1113120/",
+        "note": "Ixion: a population to manage; sectors house more population and support new jobs; maintain crew trust"
+      },
+      {
+        "url": "https://store.steampowered.com/app/464920/",
+        "note": "Surviving Mars: each colonist is a unique individual with problems and strengths, such as alcoholism"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.agents.europauniversalis4-crusaderkings2",
+    "axis": "mgmt.agents",
+    "options": [
+      {
+        "pole": "abstract",
+        "game": "Europa Universalis IV",
+        "year": 2013,
+        "how": "Provinces hold development numbers for tax, production and manpower; people are never simulated one by one."
+      },
+      {
+        "pole": "individuals",
+        "game": "Crusader Kings II",
+        "year": 2012,
+        "how": "Every ruler and courtier is a character with traits, a dynasty, opinions and ambitions that drive events."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/236850/Europa_Universalis_IV/",
+        "note": "Europa Universalis IV: province-based grand strategy"
+      },
+      {
+        "url": "https://store.steampowered.com/app/203770/Crusader_Kings_II/",
+        "note": "Crusader Kings II: characters and dynasties"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.goal.rollercoastertycoon-planetzoo",
+    "axis": "mgmt.goal",
+    "options": [
+      {
+        "pole": "scenario",
+        "game": "RollerCoaster Tycoon",
+        "year": 1999,
+        "how": "Each scenario sets a target, such as a guest count and park rating, to reach by a deadline."
+      },
+      {
+        "pole": "open",
+        "game": "Planet Zoo",
+        "year": 2019,
+        "how": "Sandbox mode drops career objectives, so you design and grow the zoo with no win condition."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/683900/RollerCoaster_Tycoon_Classic/",
+        "note": "RollerCoaster Tycoon: scenario-based park building"
+      },
+      {
+        "url": "https://store.steampowered.com/app/703080/Planet_Zoo/",
+        "note": "Planet Zoo: animal welfare, habitats and a sandbox mode"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.goal.caesar3-simcity2000",
+    "axis": "mgmt.goal",
+    "options": [
+      {
+        "pole": "scenario",
+        "game": "Caesar III",
+        "year": 1998,
+        "how": "Each mission sets target ratings for culture, prosperity, peace and favor that you must reach to be promoted."
+      },
+      {
+        "pole": "open",
+        "game": "SimCity 2000",
+        "year": 1993,
+        "how": "The main mode has no win condition: you grow the city as large or as strange as you like."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/caesar_3",
+        "note": "Caesar III: a governor career of city missions pleasing the emperor"
+      },
+      {
+        "url": "https://www.gog.com/en/game/simcity_2000_special_edition",
+        "note": "SimCity 2000: design any city you can imagine"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.goal.twopointhospital-timberborn",
+    "axis": "mgmt.goal",
+    "options": [
+      {
+        "pole": "scenario",
+        "game": "Two Point Hospital",
+        "year": 2018,
+        "how": "Each hospital has star ratings to earn; curing one town's patients leads on to a bigger, busier hospital with new challenges."
+      },
+      {
+        "pole": "open",
+        "game": "Timberborn",
+        "year": 2021,
+        "how": "A sandbox colony builder with no win screen: you see how long your beaver colony lasts through recurring droughts."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "simulation",
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/two_point_hospital",
+        "note": "Two Point Hospital: star goals at each hospital; finishing one leads to a bigger challenge"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1062090/",
+        "note": "Timberborn: sandbox city builder; see how long your colony can last through droughts"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.goal.dungeonkeeper-dwarffortress",
+    "axis": "mgmt.goal",
+    "options": [
+      {
+        "pole": "scenario",
+        "game": "Dungeon Keeper",
+        "year": 1997,
+        "how": "Campaign levels each end when you destroy the hero lord or rival keeper of that region."
+      },
+      {
+        "pole": "open",
+        "game": "Dwarf Fortress",
+        "year": 2006,
+        "how": "Fortress mode has no victory: you dig and grow until the fortress falls or you retire it."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "simulation"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/dungeon_keeper",
+        "note": "Dungeon Keeper: heroes come for your gold; dig a dungeon with imps"
+      },
+      {
+        "url": "https://store.steampowered.com/app/975370/Dwarf_Fortress/",
+        "note": "Dwarf Fortress: dwarves with simulated personalities in a generated world"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.goal.ixion-transportfever2",
+    "axis": "mgmt.goal",
+    "options": [
+      {
+        "pole": "scenario",
+        "game": "Ixion",
+        "year": 2022,
+        "how": "Story chapters drive the station toward a set destination; lose the crew's trust in the corporation and you face failure and mutiny."
+      },
+      {
+        "pole": "open",
+        "game": "Transport Fever 2",
+        "year": 2019,
+        "how": "Free play, with many configuration options, lets you grow a transport network across eras without set missions."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "simulation"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1113120/",
+        "note": "Ixion: chapters of story toward reaching a final destination; maintain crew trust or face mutiny"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1066780/",
+        "note": "Transport Fever 2: free play with countless configuration possibilities, separate from the campaigns"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.goal.frostpunk2-europauniversalis4",
+    "axis": "mgmt.goal",
+    "options": [
+      {
+        "pole": "scenario",
+        "game": "Frostpunk 2",
+        "year": 2024,
+        "how": "The main mode is a multi-chapter story campaign across your tenure as Steward; endless Utopia Builder is a separate mode."
+      },
+      {
+        "pole": "open",
+        "game": "Europa Universalis IV",
+        "year": 2013,
+        "how": "Pick any of hundreds of nations and any start date, then rewrite history with no fixed victory to chase."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "simulation",
+        "survival"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1601580/",
+        "note": "Frostpunk 2: multi-chapter story campaign; Utopia Builder sandbox with infinite play time"
+      },
+      {
+        "url": "https://store.steampowered.com/app/236850/",
+        "note": "Europa Universalis IV: start at any date with any of hundreds of nations and rewrite history"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.mgmt.goal.againstthestorm-citiesskylines2",
+    "axis": "mgmt.goal",
+    "options": [
+      {
+        "pole": "scenario",
+        "game": "Against the Storm",
+        "year": 2023,
+        "how": "Each settlement is won by building reputation before the Scorched Queen's impatience runs out, then you move on to the next."
+      },
+      {
+        "pole": "open",
+        "game": "Cities: Skylines II",
+        "year": 2023,
+        "how": "Every city starts as an empty map with no end goal: you plan it all out or wing it as the city grows."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "simulation"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "2020s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1336490/",
+        "note": "Against the Storm: manage reputation to secure each settlement while the Scorched Queen demands progress"
+      },
+      {
+        "url": "https://store.steampowered.com/app/949230/",
+        "note": "Cities: Skylines II: every city starts as an empty map; plan it all out or wing it"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  }
+]

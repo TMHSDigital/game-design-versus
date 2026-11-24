@@ -1,1 +1,1330 @@
-[]
+[
+  {
+    "id": "cmp.strat.scale.crusaderkings3-companyofheroes",
+    "axis": "strat.scale",
+    "options": [
+      {
+        "pole": "grand",
+        "game": "Crusader Kings III",
+        "year": 2020,
+        "how": "You play a dynasty across centuries, managing a realm, vassals and heirs on a map of medieval Europe and beyond."
+      },
+      {
+        "pole": "tactical",
+        "game": "Company of Heroes",
+        "year": 2006,
+        "how": "Command a few squads on one battlefield, using cover and capturing territory points."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1158310/",
+        "note": "Crusader Kings III: Steam: released Sep 1 2020; bloodline continues through heirs, vassals and titles, map from Nordic lands/Africa to China and Japan"
+      },
+      {
+        "url": "https://gamespot.com/reviews/company-of-heroes-review/1900-6157430/",
+        "note": "Company of Heroes: review: squads as units, fighting from cover"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.strat.scale.intothebreach-eu4",
+    "axis": "strat.scale",
+    "options": [
+      {
+        "pole": "tactical",
+        "game": "Into the Breach",
+        "year": 2018,
+        "how": "Three mechs on an 8x8 grid; every enemy attack is telegraphed for one turn."
+      },
+      {
+        "pole": "grand",
+        "game": "Europa Universalis IV",
+        "year": 2013,
+        "how": "Run a nation from 1444 to 1821 on a world map of provinces, trade and colonization."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/590380/",
+        "note": "Into the Breach: Steam: released Feb 27 2018; 'All enemy attacks are telegraphed'; 3 mechs and 8x8 grid not stated on page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/236850/",
+        "note": "Europa Universalis IV: Steam: released Aug 13 2013; four centuries from late Middle Ages to Napoleonic era, trade power in provinces, colonize New World"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.scale.advancewars-masteroforion2",
+    "axis": "strat.scale",
+    "options": [
+      {
+        "pole": "tactical",
+        "game": "Advance Wars",
+        "year": 2001,
+        "how": "Each mission is one battle on a single grid map, building units from captured factories, with no empire layer."
+      },
+      {
+        "pole": "grand",
+        "game": "Master of Orion II: Battle at Antares",
+        "year": 1996,
+        "how": "Colonize and govern a galaxy of star systems, research tech and wage interstellar war."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "handheld",
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.nintendo.com/us/store/products/advance-wars-1-plus-2-re-boot-camp-switch/",
+        "note": "Advance Wars: official page"
+      },
+      {
+        "url": "https://www.gog.com/en/game/master_of_orion_1_2",
+        "note": "Master of Orion II: Battle at Antares: GOG: 1996 release; colonize planets, 60 technology fields, take over alien star systems, tactical ship combat"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.scale.frozensynapse-heartsofiron4",
+    "axis": "strat.scale",
+    "options": [
+      {
+        "pole": "tactical",
+        "game": "Frozen Synapse",
+        "year": 2011,
+        "how": "Plan a few soldiers' moves simultaneously in a small procedural building, then watch the turn resolve."
+      },
+      {
+        "pole": "grand",
+        "game": "Hearts of Iron IV",
+        "year": 2016,
+        "how": "Control a nation's industry, divisions and fronts across WWII."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/98200/",
+        "note": "Frozen Synapse: Steam: released May 26 2011; plan squad actions, both sides' turns execute simultaneously; random generation plus hand-crafted levels"
+      },
+      {
+        "url": "https://store.steampowered.com/app/394360/",
+        "note": "Hearts of Iron IV: Steam: released Jun 6 2016; guide a nation through WWII, manage industry/factories, design division templates"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.scale.intothebreach-alphacentauri",
+    "axis": "strat.scale",
+    "options": [
+      {
+        "pole": "tactical",
+        "game": "Into the Breach",
+        "year": 2018,
+        "how": "Each battle is a small map with a few mechs, and every enemy attack is telegraphed a turn ahead."
+      },
+      {
+        "pole": "grand",
+        "game": "Sid Meier's Alpha Centauri",
+        "year": 1999,
+        "how": "Found and grow a faction across an alien planet with bases, research and diplomacy."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "mobile"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/590380/",
+        "note": "Into the Breach: mechs on small maps; all enemy attacks are telegraphed"
+      },
+      {
+        "url": "https://www.gog.com/en/game/sid_meiers_alpha_centauri",
+        "note": "Sid Meier's Alpha Centauri: GOG: original 1999; seven factions on planet Chiron, exhaustive tech tree, complex diplomacy, colonies"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.scale.mariorabbids-civilization4",
+    "axis": "strat.scale",
+    "options": [
+      {
+        "pole": "tactical",
+        "game": "Mario + Rabbids Kingdom Battle",
+        "year": 2017,
+        "how": "A three-hero team fights turn-based on small maps with cover and team moves."
+      },
+      {
+        "pole": "grand",
+        "game": "Civilization IV",
+        "year": 2005,
+        "how": "Guide a civilization from ancient times to the space age across a world map."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "console",
+        "pc"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.nintendo.com/us/store/products/mario-plus-rabbids-kingdom-battle-switch/",
+        "note": "Mario + Rabbids Kingdom Battle: official page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/3900/",
+        "note": "Civilization IV: Steam: released Oct 25 2005; turn-based 4X civilization building on a 3D world (ancient-to-space span not explicit on page)"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.scale.shadowtactics-victoria2",
+    "axis": "strat.scale",
+    "options": [
+      {
+        "pole": "tactical",
+        "game": "Shadow Tactics: Blades of the Shogun",
+        "year": 2016,
+        "how": "Five assassins with unique skills sneak through one map, watching guard view cones."
+      },
+      {
+        "pole": "grand",
+        "game": "Victoria II",
+        "year": 2010,
+        "how": "Manage a nation's population, economy and politics from 1836 into the 20th century."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/418240/",
+        "note": "Shadow Tactics: Blades of the Shogun: Steam: released Dec 6 2016; five specialists (Hayato, Mugen, Aiko, Yuki, Takuma) with unique skills (view cones not stated)"
+      },
+      {
+        "url": "https://store.steampowered.com/app/42960/",
+        "note": "Victoria II: Steam: released Aug 30 2010; pops, 50+ goods economy, dozens of government types; spans 1835 to the onset of WWII"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.micro.starcraft2-stellaris",
+    "axis": "strat.micro",
+    "options": [
+      {
+        "pole": "micro",
+        "game": "StarCraft II: Wings of Liberty",
+        "year": 2010,
+        "how": "Fast unit control (splitting, focus fire, kiting) decides fights alongside intense macro."
+      },
+      {
+        "pole": "macro",
+        "game": "Stellaris",
+        "year": 2016,
+        "how": "Real time with pause: fleets fight automatically, and the decisions are economy, research and empire."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://starcraft2.blizzard.com/en-us/",
+        "note": "StarCraft II: Wings of Liberty: official page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/281990/",
+        "note": "Stellaris: Steam: released May 9 2016; tagged Real-Time with Pause; empire building, research, customizable war fleets (auto-resolved fights not stated)"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "seed"
+    }
+  },
+  {
+    "id": "cmp.strat.micro.warcraft3-anno1800",
+    "axis": "strat.micro",
+    "options": [
+      {
+        "pole": "micro",
+        "game": "Warcraft III: Reign of Chaos",
+        "year": 2002,
+        "how": "Up to three heroes with growing special abilities, plus upkeep that punishes big armies, put the emphasis on micromanagement."
+      },
+      {
+        "pole": "macro",
+        "game": "Anno 1800",
+        "year": 2019,
+        "how": "Production chains, population needs and trade networks are the core decisions; fights are not where the game is won."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://warcraft.wiki.gg/wiki/Warcraft_III:_Reign_of_Chaos",
+        "note": "Warcraft III: heroes with special abilities; upkeep makes winning by numbers hard, emphasizing micromanagement"
+      },
+      {
+        "url": "https://store.steampowered.com/app/916440/",
+        "note": "Anno 1800: complex production chains, population needs and trading networks"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.micro.broodwar-supremecommander",
+    "axis": "strat.micro",
+    "options": [
+      {
+        "pole": "micro",
+        "game": "StarCraft: Brood War",
+        "year": 1998,
+        "how": "Small unit selection limits and fast units reward precise control like muta stacking."
+      },
+      {
+        "pole": "macro",
+        "game": "Supreme Commander",
+        "year": 2007,
+        "how": "Huge armies, strategic zoom and order queues shift focus to economy and production."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://starcraft.blizzard.com/en-us/",
+        "note": "StarCraft: Brood War: official page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/9350/",
+        "note": "Supreme Commander: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.micro.dawnofwar2-totalannihilation",
+    "axis": "strat.micro",
+    "options": [
+      {
+        "pole": "micro",
+        "game": "Warhammer 40,000: Dawn of War II",
+        "year": 2009,
+        "how": "No base building; a few squads with cover, retreat and abilities need constant attention."
+      },
+      {
+        "pole": "macro",
+        "game": "Total Annihilation",
+        "year": 1997,
+        "how": "Streaming metal and energy economy, queued orders and large armies favor production."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/15620/",
+        "note": "Warhammer 40,000: Dawn of War II: official page"
+      },
+      {
+        "url": "https://www.gog.com/en/game/total_annihilation_commander_pack",
+        "note": "Total Annihilation: Released Sep 30 1997; two resources metal and energy balanced as flow, factories queue unlimited complex build orders"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.micro.companyofheroes-majesty",
+    "axis": "strat.micro",
+    "options": [
+      {
+        "pole": "micro",
+        "game": "Company of Heroes",
+        "year": 2006,
+        "how": "Squads must be moved into cover and pulled back by hand; positioning each squad decides whether it survives a fight."
+      },
+      {
+        "pole": "macro",
+        "game": "Majesty: The Fantasy Kingdom Sim",
+        "year": 2000,
+        "how": "No direct unit control; you place bounties and buildings, and heroes act on their own."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://gamespot.com/reviews/company-of-heroes-review/1900-6157430/",
+        "note": "Company of Heroes: review: squads last much longer attacking from behind cover"
+      },
+      {
+        "url": "https://www.gog.com/en/game/majesty_gold_hd",
+        "note": "Majesty: The Fantasy Kingdom Sim: GOG reviews: no direct control of heroes; bounties and flags direct them; guild buildings. GOG date field shows 2001-03-23, original US release was 2000"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.asymmetry.broodwar-ageofempires2",
+    "axis": "strat.asymmetry",
+    "options": [
+      {
+        "pole": "asymmetric",
+        "game": "StarCraft: Brood War",
+        "year": 1998,
+        "how": "Terran, Zerg and Protoss have different units, building and economy rules."
+      },
+      {
+        "pole": "mirrored",
+        "game": "Age of Empires II",
+        "year": 1999,
+        "how": "Civilizations share one core tech tree and unit roster, differing in bonuses and a unique unit."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://starcraft.blizzard.com/en-us/",
+        "note": "StarCraft: Brood War: official page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/813780/",
+        "note": "Age of Empires II: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.asymmetry.advancewars-endlesslegend",
+    "axis": "strat.asymmetry",
+    "options": [
+      {
+        "pole": "mirrored",
+        "game": "Advance Wars",
+        "year": 2001,
+        "how": "All armies field the same land, air and naval units; each Commanding Officer only shifts unit strengths and adds a CO Power."
+      },
+      {
+        "pole": "asymmetric",
+        "game": "Endless Legend",
+        "year": 2014,
+        "how": "Factions break core rules: the Broken Lords cannot use Food at all and grow population and heal units by spending Dust."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "handheld",
+        "pc"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.nintendo.com/us/store/products/advance-wars-1-plus-2-re-boot-camp-switch/",
+        "note": "Advance Wars: land, air and naval units; Commanding Officers have their own strengths, weaknesses and CO Powers"
+      },
+      {
+        "url": "https://endlesslegend.wiki.gg/wiki/Broken_Lords",
+        "note": "Endless Legend: Broken Lords cannot use Food and grow population by spending Dust; Dust Care healing"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.asymmetry.naturalselection2-totalannihilation",
+    "axis": "strat.asymmetry",
+    "options": [
+      {
+        "pole": "asymmetric",
+        "game": "Natural Selection 2",
+        "year": 2012,
+        "how": "Marines and aliens play differently: each team has a Commander, but alien players evolve into lifeforms such as wall-running Skulks."
+      },
+      {
+        "pole": "mirrored",
+        "game": "Total Annihilation",
+        "year": 1997,
+        "how": "Arm and Core field near-equivalent unit sets that differ mostly in looks and small stat trade-offs."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "shooter"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/4920/",
+        "note": "Natural Selection 2: two unique sides, a Commander per team, aliens evolve into five lifeforms"
+      },
+      {
+        "url": "https://totalannihilation.fandom.com/wiki/Total_Annihilation",
+        "note": "Total Annihilation: Arm and Core are aesthetically different with a similar set of units"
+      },
+      {
+        "url": "https://store.steampowered.com/app/298030/",
+        "note": "Total Annihilation: Arm versus Core store page"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.asymmetry.root-warzone2100",
+    "axis": "strat.asymmetry",
+    "options": [
+      {
+        "pole": "asymmetric",
+        "game": "Root",
+        "year": 2020,
+        "how": "Each faction has its own rules: the Vagabond plays solo and scores by aiding or fighting other factions while managing a pack of items."
+      },
+      {
+        "pole": "mirrored",
+        "game": "Warzone 2100",
+        "year": 1999,
+        "how": "No faction differences: every player draws on the same 400-plus technology tree and builds units with the same design system."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "card"
+      ],
+      "platforms": [
+        "pc",
+        "mobile",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/965580/",
+        "note": "Root: asymmetrical woodland warfare; the Vagabond scores by improving relations or removing hostile warriors"
+      },
+      {
+        "url": "https://wz2100.net/",
+        "note": "Warzone 2100: over 400 technologies and a flexible unit design system"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.asymmetry.commandconquer-warzone2100",
+    "axis": "strat.asymmetry",
+    "options": [
+      {
+        "pole": "asymmetric",
+        "game": "Command & Conquer",
+        "year": 1995,
+        "how": "GDI relies on heavy armor and airstrikes, Nod on stealth, speed and cheap units."
+      },
+      {
+        "pole": "mirrored",
+        "game": "Warzone 2100",
+        "year": 1999,
+        "how": "All sides use the same research tree and design units from shared parts."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1213210/",
+        "note": "Command & Conquer: official page"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1241950/",
+        "note": "Warzone 2100: Released Apr 1999; 400+ technology research tree and vehicle design system"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.asymmetry.heroes3-wargroove",
+    "axis": "strat.asymmetry",
+    "options": [
+      {
+        "pole": "asymmetric",
+        "game": "Heroes of Might and Magic III",
+        "year": 1999,
+        "how": "Each town type has its own unique buildings and creature line, so every faction builds and fights differently."
+      },
+      {
+        "pole": "mirrored",
+        "game": "Wargroove",
+        "year": 2019,
+        "how": "Every faction's units match in cost and stats behind different sprites; commanders differ only by their Groove power."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://heroes.thelazy.net/index.php/Town",
+        "note": "Heroes of Might and Magic III: buildings unique to each town type; each town has its own creatures"
+      },
+      {
+        "url": "https://wargroovewiki.com/Faction",
+        "note": "Wargroove: faction units match in cost and stats with distinct sprites; commanders carry a unique Groove"
+      },
+      {
+        "url": "https://www.pcgamer.com/wargroove-review/",
+        "note": "Wargroove: each commander has a unique special ability, the groove"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.victory.civilization4-redalert",
+    "axis": "strat.victory",
+    "options": [
+      {
+        "pole": "multiple",
+        "game": "Civilization IV",
+        "year": 2005,
+        "how": "Win by conquest, domination, space race, culture, diplomatic vote or score."
+      },
+      {
+        "pole": "conquest",
+        "game": "Command & Conquer: Red Alert",
+        "year": 1996,
+        "how": "Skirmish is won by destroying the enemy base and forces."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://civilization.2k.com/civ-iv/",
+        "note": "Civilization IV: Official site: Conquest, Cultural, Diplomatic, Domination, Space Race victories, else points at 2050"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1213210/",
+        "note": "Command & Conquer: Red Alert: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.victory.endlessspace2-shogun2",
+    "axis": "strat.victory",
+    "options": [
+      {
+        "pole": "multiple",
+        "game": "Endless Space 2",
+        "year": 2017,
+        "how": "Six victory types (science, economy, conquest, wonder, score and supremacy) can be toggled at setup, each suiting different factions."
+      },
+      {
+        "pole": "conquest",
+        "game": "Total War: Shogun 2",
+        "year": 2011,
+        "how": "Campaign victory means capturing and holding Kyoto to become shogun and holding 25, 40 or 60 provinces by a deadline."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "2010s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.gamespot.com/reviews/endless-space-2-review/1900-6416687/",
+        "note": "Endless Space 2: several victory paths suited to different factions"
+      },
+      {
+        "url": "https://wiki.totalwar.com/w/Takeda_(TWS2_faction).html",
+        "note": "Total War: Shogun 2: become Shogun by capturing and holding Kyoto; capture and hold 25, 40 or 60 provinces"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.victory.northgard-warcraft3",
+    "axis": "strat.victory",
+    "options": [
+      {
+        "pole": "multiple",
+        "game": "Northgard",
+        "year": 2018,
+        "how": "Win by conquest, fame, lore (wisdom), trade or devotion to the gods, plus map-specific objectives."
+      },
+      {
+        "pole": "conquest",
+        "game": "Warcraft III: Reign of Chaos",
+        "year": 2002,
+        "how": "Melee games end when an opponent's buildings are destroyed."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/466560/",
+        "note": "Northgard: Steam lists conquest, fame, lore or trade victory plus devotion to the gods; names differ from claim"
+      },
+      {
+        "url": "https://warcraft3.blizzard.com/en-us/",
+        "note": "Warcraft III: Reign of Chaos: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.victory.galciv3-supremecommander",
+    "axis": "strat.victory",
+    "options": [
+      {
+        "pole": "multiple",
+        "game": "Galactic Civilizations III",
+        "year": 2015,
+        "how": "Victory by military conquest, cultural influence, technological ascension or political alliance."
+      },
+      {
+        "pole": "conquest",
+        "game": "Supreme Commander",
+        "year": 2007,
+        "how": "Skirmish is won by assassination of the enemy commander or annihilation."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "2000s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/226860/",
+        "note": "Galactic Civilizations III: Released May 2015; Steam lists military conquest, cultural domination, technological ascension and political alliance"
+      },
+      {
+        "url": "https://store.steampowered.com/app/9350/",
+        "note": "Supreme Commander: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.victory.ageofempires4-wargroove",
+    "axis": "strat.victory",
+    "options": [
+      {
+        "pole": "multiple",
+        "game": "Age of Empires IV",
+        "year": 2021,
+        "how": "Win by military conquest (destroy every enemy landmark) or by religion (hold all Sacred Sites for 10 minutes)."
+      },
+      {
+        "pole": "conquest",
+        "game": "Wargroove",
+        "year": 2019,
+        "how": "Win by defeating the enemy commander or capturing their stronghold."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console",
+        "handheld"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.pcgamer.com/age-of-empires-4-review/",
+        "note": "Age of Empires IV: conquest by destroying landmarks; religious victory by holding all Sacred Sites for 10 minutes"
+      },
+      {
+        "url": "https://www.pcgamer.com/wargroove-review/",
+        "note": "Wargroove: goal is to defeat the opposing commander or take their fortress"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.victory.alphacentauri-halowars",
+    "axis": "strat.victory",
+    "options": [
+      {
+        "pole": "multiple",
+        "game": "Sid Meier's Alpha Centauri",
+        "year": 1999,
+        "how": "Several victory conditions beyond conquest (diplomatic, economic, Transcendence) backed by faction diplomacy."
+      },
+      {
+        "pole": "conquest",
+        "game": "Halo Wars",
+        "year": 2009,
+        "how": "Skirmish is won by destroying the enemy bases and army; there is no other route to victory."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/sid_meiers_alpha_centauri",
+        "note": "Sid Meier's Alpha Centauri: store page notes multiple victory conditions and a diplomacy system"
+      },
+      {
+        "url": "https://store.steampowered.com/app/459220/",
+        "note": "Halo Wars: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.diplomacy.masteroforion2-theyarebillions",
+    "axis": "strat.diplomacy",
+    "options": [
+      {
+        "pole": "deep",
+        "game": "Master of Orion II: Battle at Antares",
+        "year": 1996,
+        "how": "Treaties, trade, alliances and a Galactic Council that votes for a leader."
+      },
+      {
+        "pole": "none",
+        "game": "They Are Billions",
+        "year": 2019,
+        "how": "Every other actor is the zombie horde; there is no one to negotiate with."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy",
+        "survival"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://www.gog.com/en/game/master_of_orion_1_2",
+        "note": "Master of Orion II: Battle at Antares: GOG: 1996, advanced diplomacy, tributes, comprehensive diplomacy system (Galactic Council not stated on page)"
+      },
+      {
+        "url": "https://store.steampowered.com/app/644930/",
+        "note": "They Are Billions: Full release Jun 18 2019 (early access 2017); enemies are swarms of infected, no diplomacy mentioned"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.diplomacy.shogun2-redalert",
+    "axis": "strat.diplomacy",
+    "options": [
+      {
+        "pole": "deep",
+        "game": "Total War: Shogun 2",
+        "year": 2011,
+        "how": "Clans are handled through war, economics and diplomacy: alliances and trade agreements are tools to reunite Japan."
+      },
+      {
+        "pole": "none",
+        "game": "Command & Conquer: Red Alert",
+        "year": 1996,
+        "how": "Allies and Soviets fight with no diplomacy layer."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "pre2000",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/201270/",
+        "note": "Total War: Shogun 2: use military engagements, economics and diplomacy to reunite Japan"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1213210/",
+        "note": "Command & Conquer: Red Alert: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.diplomacy.galciv3-commandconquer",
+    "axis": "strat.diplomacy",
+    "options": [
+      {
+        "pole": "deep",
+        "game": "Galactic Civilizations III",
+        "year": 2015,
+        "how": "Trade tech, resources and treaties with AI civilizations that track their opinion of you."
+      },
+      {
+        "pole": "none",
+        "game": "Command & Conquer",
+        "year": 1995,
+        "how": "GDI and Nod fight with no negotiation layer; every other side is an enemy."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "pre2000",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/226860/",
+        "note": "Galactic Civilizations III: Steam: negotiate trade and treaties with rival civilizations (tech trading and opinion tracking not stated)"
+      },
+      {
+        "url": "https://store.steampowered.com/app/1213210/",
+        "note": "Command & Conquer: official page"
+      }
+    ],
+    "verification": {
+      "status": "unverified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.diplomacy.oldworld-kingdomrush",
+    "axis": "strat.diplomacy",
+    "options": [
+      {
+        "pole": "deep",
+        "game": "Old World",
+        "year": 2021,
+        "how": "Diplomacy with nations and tribes, plus marriages and family opinions inside your court."
+      },
+      {
+        "pole": "none",
+        "game": "Kingdom Rush",
+        "year": 2011,
+        "how": "Waves of enemies attack your towers; there is no diplomacy at all."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "mobile"
+      ],
+      "era": "2010s",
+      "indie": true
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/597180/",
+        "note": "Old World: Steam (Steam release 2022, Epic 2021): ties with rival leaders and tribes, political marriages, four noble families whose opinion shifts"
+      },
+      {
+        "url": "https://store.steampowered.com/app/246420/",
+        "note": "Kingdom Rush: Steam: defend with towers and spells against hordes of enemies, no diplomacy mentioned; Steam date is 2014 PC port, 2011 original not stated on page"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.diplomacy.ageofwonders4-halowars",
+    "axis": "strat.diplomacy",
+    "options": [
+      {
+        "pole": "deep",
+        "game": "Age of Wonders 4",
+        "year": 2023,
+        "how": "Rival rulers can be courted with cunning alliances instead of conquered; diplomacy is a full path to glory."
+      },
+      {
+        "pole": "none",
+        "game": "Halo Wars",
+        "year": 2009,
+        "how": "UNSC battles the Covenant; there is no diplomatic layer."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc",
+        "console"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/1669000/",
+        "note": "Age of Wonders 4: glory through brutal domination or cunning alliances"
+      },
+      {
+        "url": "https://store.steampowered.com/app/459220/",
+        "note": "Halo Wars: Steam (Definitive Ed. 2017): RTS armies in the Covenant vs UNSC war, no diplomacy mentioned; 2009 original not stated on page"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  },
+  {
+    "id": "cmp.strat.diplomacy.endlesslegend-dawnofwar2",
+    "axis": "strat.diplomacy",
+    "options": [
+      {
+        "pole": "deep",
+        "game": "Endless Legend",
+        "year": 2014,
+        "how": "Marketplace trade, diplomacy with rival empires and assimilating minor factions sit alongside war."
+      },
+      {
+        "pole": "none",
+        "game": "Warhammer 40,000: Dawn of War II",
+        "year": 2009,
+        "how": "Battles are fought by a few upgradable squads against enemy forces; there is no diplomacy layer."
+      }
+    ],
+    "tags": {
+      "genres": [
+        "strategy"
+      ],
+      "platforms": [
+        "pc"
+      ],
+      "era": "2000s",
+      "indie": false
+    },
+    "sources": [
+      {
+        "url": "https://store.steampowered.com/app/289130/",
+        "note": "Endless Legend: trade and subtle diplomacy with other civilizations; assimilate minor factions"
+      },
+      {
+        "url": "https://store.steampowered.com/app/15620/",
+        "note": "Warhammer 40,000: Dawn of War II: lead and develop squads against the enemies of the Emperor"
+      }
+    ],
+    "verification": {
+      "status": "verified",
+      "checkedAt": "2026-11-23",
+      "by": "claude-code"
+    }
+  }
+]
