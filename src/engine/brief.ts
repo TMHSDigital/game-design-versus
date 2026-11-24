@@ -48,8 +48,8 @@ export function positionText(s: AxisState): string {
     const [pa, pb] = a.poles;
     const pct = s.leanPct ?? 50;
     if (s.status === 'flexible' && !s.evidenceCount) return 'Flexible (no strong preference)';
-    if (s.lean === 'A') return pct <= 15 ? `${pa?.label}` : `Leans ${pa?.label}`;
-    if (s.lean === 'B') return pct >= 85 ? `${pb?.label}` : `Leans ${pb?.label}`;
+    if (s.lean === 'A') return pct <= 25 ? `${pa?.label}` : `Leans ${pa?.label}`;
+    if (s.lean === 'B') return pct >= 75 ? `${pb?.label}` : `Leans ${pb?.label}`;
     return `Blend of ${pa?.label} and ${pb?.label}`;
   }
   if (s.status === 'flexible') return s.notes.length ? `Other: ${s.notes.join('; ')}` : 'Flexible (no strong preference)';
@@ -129,13 +129,13 @@ export function buildBrief(k: Knowledge, state: SessionState): Brief {
     const ref = referenceText(s);
     pillars.push({ title: `${s.axis.label}: ${positionText(s)}`, description: ref ? sentenceCase(ref) + '.' : (s.axis.poles.find((p) => p.id === s.selected?.[0])?.summary ?? `Committed position on ${s.axis.label.toLowerCase()}.`) });
   }
-  if (pillars.length < 3) for (const s of byImportance.filter((x) => !pillarModules.has(x.axis.module))) if (pillars.length < 3) { pillarModules.add(s.axis.module); pillars.push({ title: `${s.axis.label}: ${positionText(s)}`, description: referenceText(s) ?? '' }); }
+  if (pillars.length < 3) for (const s of byImportance.filter((x) => !pillarModules.has(x.axis.module) && x.axis.kind !== 'gate' && x.axis.tier !== 0 && x.axis.kind !== 'multi' && x.axis.kind !== 'rank')) if (pillars.length < 3) { pillarModules.add(s.axis.module); pillars.push({ title: `${s.axis.label}: ${positionText(s)}`, description: referenceText(s) ?? '' }); }
 
   // Pitch.
   const verbs = sel('loop.verb').map((v) => VERB3[v] ?? v).slice(0, 2);
   const commander = ax('ctl.embodiment')?.lean === 'B';
   const player = commander ? 'The player, as a commander,' : ax('narr.protagonist')?.lean === 'A' && ax('narr.presence')?.lean !== 'A' ? 'A defined hero' : 'The player';
-  const motive = (ax('exp.motivation')?.selected ?? [])[0];
+  const motive = ax('exp.motivation')?.status === 'decided' ? (ax('exp.motivation')?.selected ?? [])[0] : undefined;
   const goal = (motive && GOAL[motive]) || 'reach their goals';
   const twistAxis = byImportance.find((s) => s.ref?.chosen && isBinary(s.axis)) ?? byImportance.find((s) => isBinary(s.axis) && s.axis.kind !== 'gate');
   const twist = twistAxis ? `${positionText(twistAxis).replace(/^Leans /, '').toLowerCase()} ${twistAxis.axis.label.toLowerCase()}` : 'a distinctive twist';
@@ -148,7 +148,7 @@ export function buildBrief(k: Knowledge, state: SessionState): Brief {
   const elevator = [
     `${state.title ?? 'This game'} is ${article(kind)} ${kind}${setting ? ` in a ${setting.toLowerCase()} setting` : ''}.`,
     `Think ${headline}.`,
-    state.pitch ? `Original pitch: ${state.pitch}` : '',
+    state.pitch ? `Original pitch: ${state.pitch.trim().replace(/[.!?]?$/, '.')}` : '',
     pillars.length ? `Its pillars: ${pillars.slice(0, 3).map((p) => p.title).join('; ')}.` : '',
   ].filter(Boolean).join(' ');
 
@@ -198,7 +198,7 @@ export function buildBrief(k: Knowledge, state: SessionState): Brief {
   for (const m of sum.modules) if (m.status === 'skipped') nonGoals.push(`No ${k.moduleById.get(m.module)?.label.toLowerCase() ?? m.module} module`);
   for (const s of decided) {
     if (!isBinary(s.axis) || s.axis.kind === 'gate' || s.lean === 'center') continue;
-    if ((s.leanPct ?? 50) > 15 && (s.leanPct ?? 50) < 85) continue;
+    if ((s.leanPct ?? 50) > 25 && (s.leanPct ?? 50) < 75) continue;
     const other = s.lean === 'A' ? s.axis.poles[1] : s.axis.poles[0];
     if (other) nonGoals.push(`Not ${other.label.toLowerCase()} (${s.axis.label.toLowerCase()})`);
   }
@@ -255,18 +255,22 @@ function round(x: number): number {
 
 function coreLoop(state: SessionState, verbs: string[]): Brief['coreLoop'] {
   const ax = (id: string) => state.axes.get(id);
-  const lean = (id: string) => ax(id)?.lean;
-  const doing = verbs.length ? joinAnd(verbs) : 'acts';
+  // Decided axes, plus open axes the archetype inference is confident about (clarity >= 0.7).
+  const lean = (id: string) => {
+    const a = ax(id);
+    return a && (a.status === 'decided' || (a.status === 'open' && a.applicable === true && a.clarity >= 0.7)) ? a.lean : undefined;
+  };
+  const doing = verbs.length ? joinAnd(verbs) : 'plays';
   const pace = lean('exp.pace') === 'B' ? 'under constant pressure' : lean('exp.pace') === 'A' ? 'at their own pace' : 'with rising and falling pressure';
   const cadence = lean('loop.cadence') === 'A' ? 'reading the situation and executing in the moment' : lean('loop.cadence') === 'B' ? 'planning each move before committing' : 'mixing quick execution with short planning beats';
-  const moment = `Seconds: the player ${doing.replace(/s\b/g, '')} ${pace}, ${cadence}${ax('combat.sim')?.applicable === true ? `; combat is ${(ax('combat.sim')?.lean === 'A' ? 'physics-simulated' : ax('combat.sim')?.lean === 'B' ? 'animation and stat driven' : 'a hybrid of physics and animation')}` : ''}.`;
+  const moment = `Seconds: the player ${doing} ${pace}, ${cadence}${ax('combat.sim')?.applicable === true && lean('combat.sim') ? `; combat is ${(lean('combat.sim') === 'A' ? 'physics-simulated' : lean('combat.sim') === 'B' ? 'animation and stat driven' : 'a hybrid of physics and animation')}` : ''}.`;
   const runs = lean('loop.run') === 'B';
   const sessionLen = lean('frame.session') === 'A' ? 'under 20 minutes' : lean('frame.session') === 'B' ? 'two hours or more' : 'about an hour';
-  const session = `Minutes: a session of ${sessionLen} ${runs ? 'is one or more runs that reset on failure' : 'advances one persistent campaign'}${ax('loop.goal')?.lean === 'B' ? ', toward goals the player sets' : ', toward explicit objectives'}.`;
+  const session = `Minutes: a session of ${sessionLen} ${runs ? 'is one or more runs that reset on failure' : lean('loop.run') === 'A' ? 'advances one persistent campaign' : 'is the unit of play'}${lean('loop.goal') === 'B' ? ', toward goals the player sets' : lean('loop.goal') === 'A' ? ', toward explicit objectives' : ''}.`;
   const prog = ax('prog.presence');
   const longParts: string[] = [];
-  if (prog?.applicable !== false && prog?.lean !== 'A') longParts.push(lean('prog.direction') === 'B' ? 'new options unlock rather than raw power' : 'the player grows stronger');
-  if (runs && ax('prog.meta')?.lean === 'B') longParts.push('runs feed permanent meta upgrades');
+  if (state.flags.has_progression === true || (prog?.status === 'decided' && prog.lean !== 'A')) longParts.push(lean('prog.direction') === 'B' ? 'new options unlock rather than raw power' : 'the player grows stronger');
+  if (runs && lean('prog.meta') === 'B') longParts.push('runs feed permanent meta upgrades');
   if (lean('world.persistence') === 'B') longParts.push('the world keeps the changes the player makes');
   if (lean('live.model') === 'B') longParts.push('seasons and live updates add goals');
   if (lean('frame.length') === 'A') longParts.push('the experience builds to a designed ending');
@@ -282,12 +286,13 @@ const SCOPE: Record<string, { mvp: string; slice: string; budget: number }> = {
 };
 
 function scopeFor(state: SessionState, activeModules: number, team: string, timeline: string, pillars: string[]): Brief['scope'] {
-  const tl = state.axes.get('frame.timeline')?.selected?.[0] ?? 'years';
-  const tm = state.axes.get('frame.team')?.selected?.[0] ?? 'small';
+  const decidedPole = (id: string) => (state.axes.get(id)?.status === 'decided' ? state.axes.get(id)?.selected?.[0] : undefined);
+  const tl = decidedPole('frame.timeline') ?? 'years';
+  const tm = decidedPole('frame.team') ?? 'small';
   const s = SCOPE[tl] ?? (SCOPE.years as (typeof SCOPE)[string]);
   const teamFactor = { solo: 0.6, small: 1, medium: 1.6, large: 2.5 }[tm] ?? 1;
   const budget = Math.round(s.budget * teamFactor);
-  const warning = activeModules > budget + 4 ? `Scope: ${activeModules} active modules for a ${team.toLowerCase()} team on a ${timeline.toLowerCase()} timeline. Cut to the pillars (${pillars.slice(0, 3).map((p) => p.split(':')[0]).join(', ')}) for the MVP.` : undefined;
+  const warning = activeModules > budget + 4 ? `Scope: ${activeModules} active modules for a team of ${team.toLowerCase()} on a timeline of ${timeline.toLowerCase()}. Cut to the pillars (${pillars.slice(0, 3).map((p) => p.split(':')[0]).join(', ')}) for the MVP.` : undefined;
   return { team, timeline, mvp: s.mvp, verticalSlice: s.slice, activeModules, warning };
 }
 

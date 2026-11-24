@@ -1,8 +1,8 @@
 # Steel and Momentum
 
-> The player fights in order to beat everyone else, with melee-focused combat range.
+> The player fights in order to reach their goals, with melee-focused combat range.
 
-Steel and Momentum is an action and fighting game. Think Celeste meets Outer Wilds. Original pitch: A physics-driven medieval sword fighter where momentum, edge contact and armor decide every hit. Its pillars: Camera view: Over-shoulder third person; Combat range: Leans Melee-focused; Failure penalty: None (instant retry).
+Steel and Momentum is an action and fighting game. Think Celeste meets Outer Wilds. Original pitch: A physics-driven medieval sword fighter where momentum, edge contact and armor decide every hit. Its pillars: Camera view: Over-shoulder third person; Combat range: Melee-focused; Failure penalty: None (instant retry).
 
 Overall clarity 0.81 after 45 questions.
 
@@ -13,15 +13,15 @@ Overall clarity 0.81 after 45 questions.
 | Target platforms | PC |
 | Primary input | Flexible (no strong preference) |
 | Player count | Local versus |
-| Session length | Leans Short sessions |
+| Session length | Short sessions |
 | Product length | Flexible (no strong preference) |
 | Business model | Flexible (no strong preference) |
 | Team size | 2 to 5 |
 | Timeline | 1 to 2 years |
 | Engine | Flexible (no strong preference) |
-| Audience rating | Leans Mature |
+| Audience rating | Mature |
 | Dimensionality | 3D |
-| Realism | Leans Grounded simulation |
+| Realism | Grounded simulation |
 
 ## 2. Experience targets
 
@@ -29,7 +29,7 @@ Overall clarity 0.81 after 45 questions.
 - Player motivations: Undecided
 - Tone: Leans Grim
 - Pace: Intense
-- Challenge: Leans Punishing
+- Challenge: Punishing
 
 ## 3. Genre
 
@@ -41,14 +41,14 @@ Overall clarity 0.81 after 45 questions.
 ## 4. Design pillars
 
 1. **Camera view: Over-shoulder third person**. Like Resident Evil 4 (2005) (An over-the-shoulder camera follows Leon; aiming zooms in further and he cannot move while aiming.), not Resident Evil or Half-Life: Alyx.
-2. **Combat range: Leans Melee-focused**. Like Chivalry 2 (A first-person slasher: clashing swords and deep melee combat on foot or horseback decide most fights, with archers as a side class), not Battlefield 1.
+2. **Combat range: Melee-focused**. Like Chivalry 2 (A first-person slasher: clashing swords and deep melee combat on foot or horseback decide most fights, with archers as a side class), not Battlefield 1.
 3. **Failure penalty: None (instant retry)**. Like Celeste (Death returns Madeline to the start of the screen instantly with infinite lives; the only cost is a few seconds.), not Dark Souls or XCOM 2.
-4. **Run structure: Leans Run-based**. Like Risk of Rain 2 (Items stack within a run and are lost on death; only unlocks carry over.), not Borderlands 2.
+4. **Run structure: Run-based**. Like Risk of Rain 2 (Items stack within a run and are lost on death; only unlocks carry over.), not Borderlands 2.
 5. **World structure: Single arena**. One map or board, replayed
 
 ## 5. Core loop
 
-- Seconds: the player fight under constant pressure, reading the situation and executing in the moment; combat is physics-simulated.
+- Seconds: the player fights under constant pressure, reading the situation and executing in the moment; combat is physics-simulated.
 - Minutes: a session of under 20 minutes is one or more runs that reset on failure, toward goals the player sets.
 - Weeks: mastery and variety keep the player returning.
 
@@ -70,8 +70,8 @@ Overall clarity 0.81 after 45 questions.
 | Core verbs | Fight | decided |  |
 | Decision cadence | Moment-to-moment execution (lean 3) | inferred |  |
 | Goal source | Leans Self-directed goals (lean 74) | inferred |  |
-| Run structure | Leans Run-based (lean 81) | decided | like Risk of Rain 2 (Items stack within a run and are lost on death; only unlocks carry over.), not Borderlands 2 |
-| Time model | Leans Real-time (lean 20) | decided | like Command & Conquer (Units and enemy production keep moving while the player issues orders.), not X-COM: UFO Defense |
+| Run structure | Run-based (lean 81) | decided | like Risk of Rain 2 (Items stack within a run and are lost on death; only unlocks carry over.), not Borderlands 2 |
+| Time model | Real-time (lean 20) | decided | like Command & Conquer (Units and enemy production keep moving while the player issues orders.), not X-COM: UFO Defense |
 
 ### Combat (clarity 0.8)
 
@@ -79,8 +79,8 @@ Overall clarity 0.81 after 45 questions.
 | --- | --- | --- | --- |
 | Combat centrality | Core pillar (lean 97) | inferred |  |
 | Combat time model | Real-time | decided |  |
-| Combat simulation | Leans Physics-simulated (lean 20) | decided | like Blade & Sorcery (VR combat where objects have weight, collisions use fine hitboxes, creatures have full body physics and blades can penetrate soft materials), not Batman: Arkham Asylum |
-| Combat range | Leans Melee-focused (lean 20) | decided | like Chivalry 2 (A first-person slasher: clashing swords and deep melee combat on foot or horseback decide most fights, with archers as a side class), not Battlefield 1 |
+| Combat simulation | Physics-simulated (lean 20) | decided | like Blade & Sorcery (VR combat where objects have weight, collisions use fine hitboxes, creatures have full body physics and blades can penetrate soft materials), not Batman: Arkham Asylum |
+| Combat range | Melee-focused (lean 20) | decided | like Chivalry 2 (A first-person slasher: clashing swords and deep melee combat on foot or horseback decide most fights, with archers as a side class), not Battlefield 1 |
 | Targeting | Free aim or free swing (lean 97) | inferred |  |
 | Attack input | Directional or stance input (lean 3) | inferred |  |
 | Combat resource | Flexible (no strong preference) (lean 50) | flexible |  |
@@ -192,6 +192,9 @@ Overall clarity 0.81 after 45 questions.
 - No idle module
 - No party module
 - No rhythm module
+- Not long sessions (session length)
+- Not all ages (audience rating)
+- Not stylized arcade (realism)
 
 ## 9. Scope
 
@@ -204,7 +207,7 @@ Overall clarity 0.81 after 45 questions.
 ## 10. Risks
 
 - **risk**: Physics-simulated melee in online PvP is hard to network: ragdoll and contact results diverge between clients. Probe: Would you accept server-authoritative physics with input delay, or keep PvP local or co-op only?
-- **warn**: Scope: 18 active modules for a 2 to 5 team on a 1 to 2 years timeline. Cut to the pillars (Camera view, Combat range, Failure penalty) for the MVP.
+- **warn**: Scope: 18 active modules for a team of 2 to 5 on a timeline of 1 to 2 years. Cut to the pillars (Camera view, Combat range, Failure penalty) for the MVP.
 
 ## 11. Open questions
 

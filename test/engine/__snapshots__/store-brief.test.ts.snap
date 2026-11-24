@@ -35,8 +35,8 @@ exports[`brief > matches the snapshot for a fixed scripted session 1`] = `
   },
   "coreLoop": {
     "longTerm": "Weeks: mastery and variety keep the player returning.",
-    "moment": "Seconds: the player act under constant pressure, reading the situation and executing in the moment; combat is physics-simulated.",
-    "session": "Minutes: a session of under 20 minutes is one or more runs that reset on failure, toward goals the player sets.",
+    "moment": "Seconds: the player plays with rising and falling pressure, mixing quick execution with short planning beats; combat is physics-simulated.",
+    "session": "Minutes: a session of about an hour is the unit of play.",
   },
   "decisionLog": [
     {
@@ -82,7 +82,7 @@ exports[`brief > matches the snapshot for a fixed scripted session 1`] = `
       "note": undefined,
     },
   ],
-  "elevator": "Snapshot Brawler is an action and fighting game. Think Half Sword meets Gang Beasts. Original pitch: Physics sword duels Its pillars: Combat simulation: Leans Physics-simulated; Tone: Grim; Team size: 2 to 5.",
+  "elevator": "Snapshot Brawler is an action and fighting game. Think Half Sword meets Gang Beasts. Original pitch: Physics sword duels. Its pillars: Combat simulation: Physics-simulated; Tone: Grim.",
   "experience": {
     "aesthetics": [],
     "challenge": "Undecided",
@@ -129,26 +129,23 @@ exports[`brief > matches the snapshot for a fixed scripted session 1`] = `
     "No party module",
     "No rhythm module",
     "Not lighthearted (tone)",
+    "Not animation and stat driven (combat simulation)",
   ],
   "openQuestions": true,
   "pillars": [
     {
       "description": "Like Half Sword (Physics swings), not Skyrim.",
-      "title": "Combat simulation: Leans Physics-simulated",
+      "title": "Combat simulation: Physics-simulated",
     },
     {
       "description": "Committed position on tone.",
       "title": "Tone: Grim",
     },
-    {
-      "description": "",
-      "title": "Team size: 2 to 5",
-    },
   ],
-  "pitch": "The player plays in order to cause spectacular mayhem, with physics-simulated combat simulation.",
+  "pitch": "The player plays in order to reach their goals, with physics-simulated combat simulation.",
   "risks": [
     {
-      "message": "Scope: 16 active modules for a 2 to 5 team on a 1 to 2 years timeline. Cut to the pillars (Combat simulation, Tone, Team size) for the MVP.",
+      "message": "Scope: 16 active modules for a team of 2 to 5 on a timeline of 1 to 2 years. Cut to the pillars (Combat simulation, Tone) for the MVP.",
       "severity": "warn",
     },
   ],
@@ -158,7 +155,7 @@ exports[`brief > matches the snapshot for a fixed scripted session 1`] = `
     "team": "2 to 5",
     "timeline": "1 to 2 years",
     "verticalSlice": "A 30 to 60 minute slice at shipping quality that shows every pillar.",
-    "warning": "Scope: 16 active modules for a 2 to 5 team on a 1 to 2 years timeline. Cut to the pillars (Combat simulation, Tone, Team size) for the MVP.",
+    "warning": "Scope: 16 active modules for a team of 2 to 5 on a timeline of 1 to 2 years. Cut to the pillars (Combat simulation, Tone) for the MVP.",
   },
   "systems": [
     "camera_controls",
@@ -170,7 +167,7 @@ exports[`brief > matches the snapshot for a fixed scripted session 1`] = `
   ],
   "title": "Snapshot Brawler",
   "usps": [
-    "Combat simulation: Leans Physics-simulated",
+    "Combat simulation: Physics-simulated",
   ],
 }
 `;
