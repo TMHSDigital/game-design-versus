@@ -30,7 +30,8 @@ export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: str
       ...r.unlockedModules.map((m) => ({ kind: 'unlock' as const, text: `${m}: now in play` })),
       ...r.newTensions.map((t) => ({ kind: 'tension' as const, text: t.message, probe: t.probe })),
     ];
-    log = [...fresh, ...log].slice(0, 6);
+    const seen = new Set<string>();
+    log = [...fresh, ...log].filter((l) => !seen.has(l.text) && seen.add(l.text)).slice(0, 6);
     ask();
   };
 
@@ -128,6 +129,7 @@ export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: str
   const render = () => {
     const s = demo.summary();
     const pct = Math.min(1, s.clarity / STOP_AT);
+    const settled = s.settled.filter((x) => !x.endsWith(': Undecided'));
     const q = current;
     const main = q
       ? `<p class="q-meta"><span>${esc(q.moduleLabel)}</span><span>Question ${s.questionCount + 1}</span></p>
@@ -149,7 +151,7 @@ export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: str
           ${s.questionCount > 0 ? `
             <h4>Closest archetypes</h4>
             <ol class="arch">${s.archetypes.map((a) => `<li><span>${esc(a.label)}</span><span>${Math.round(a.p * 100)}%</span></li>`).join('')}</ol>` : ''}
-          ${s.settled.length ? `<h4>Settled</h4><ul class="settled">${s.settled.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
+          ${settled.length ? `<h4>Settled</h4><ul class="settled">${settled.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
         </aside>
       </div>`;
 
