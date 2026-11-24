@@ -51,7 +51,10 @@ for (const entry of readdirSync('site')) {
 if (readdirSync('site').includes('app.ts')) {
   await build({
     entryPoints: ['site/app.ts'],
-    outfile: join(out, 'app.js'),
+    outdir: out,
+    // The demo (engine plus library) is a separate chunk that loads on demand.
+    splitting: true,
+    chunkNames: 'chunks/[name]-[hash]',
     bundle: true,
     platform: 'browser',
     format: 'esm',

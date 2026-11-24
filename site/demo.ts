@@ -1,0 +1,176 @@
+/// <reference lib="dom" />
+// The playable interview. Loaded on demand by app.ts; bundles the real engine and the verified library.
+import { VersusDemo, demoKnowledge, type DemoQuestion, type DemoAnswerResult } from '../src/web/demo';
+import type { Choice } from '../src/engine/session';
+import { renderMarkdown } from './markdown';
+
+const STOP_AT = 0.8;
+
+const esc = (s: unknown): string =>
+  String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] as string);
+
+type Log = { kind: 'skip' | 'unlock' | 'tension'; text: string; probe?: string };
+
+export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: string }): void {
+  const k = demoKnowledge();
+  let demo = new VersusDemo(k, { title: opts.title || 'My game', pitch: opts.pitch || undefined });
+  let current: DemoQuestion | undefined;
+  let log: Log[] = [];
+
+  const ask = () => {
+    [current] = demo.next(1);
+    render();
+  };
+
+  const record = (choice: Choice, selected?: string[]) => {
+    if (!current) return;
+    const r: DemoAnswerResult = demo.answer(current.questionId, choice, selected);
+    const fresh: Log[] = [
+      ...r.skippedModules.map((m) => ({ kind: 'skip' as const, text: `${m}: skipped` })),
+      ...r.unlockedModules.map((m) => ({ kind: 'unlock' as const, text: `${m}: now in play` })),
+      ...r.newTensions.map((t) => ({ kind: 'tension' as const, text: t.message, probe: t.probe })),
+    ];
+    log = [...fresh, ...log].slice(0, 6);
+    ask();
+  };
+
+  const finish = () => {
+    const { markdown } = demo.brief();
+    const s = demo.summary();
+    root.innerHTML = `
+      <div class="brief-view">
+        <div class="brief-bar">
+          <span>Brief after ${s.questionCount} questions, clarity ${s.clarity.toFixed(2)}</span>
+          <span class="brief-actions">
+            <button type="button" class="btn" data-act="copy">Copy Markdown</button>
+            <button type="button" class="btn" data-act="download">Download .md</button>
+            <button type="button" class="btn" data-act="back">Keep answering</button>
+            <button type="button" class="btn ghost" data-act="restart">Start over</button>
+          </span>
+        </div>
+        <article class="md">${renderMarkdown(markdown)}</article>
+      </div>`;
+    root.querySelector('[data-act="copy"]')?.addEventListener('click', async (e) => {
+      const b = e.currentTarget as HTMLButtonElement;
+      try {
+        await navigator.clipboard.writeText(markdown);
+        b.textContent = 'Copied';
+      } catch {
+        b.textContent = 'Copy failed';
+      }
+    });
+    root.querySelector('[data-act="download"]')?.addEventListener('click', () => {
+      const url = URL.createObjectURL(new Blob([markdown], { type: 'text/markdown' }));
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${(opts.title || 'game').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'game'}-brief.md`;
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+    root.querySelector('[data-act="back"]')?.addEventListener('click', ask);
+    root.querySelector('[data-act="restart"]')?.addEventListener('click', () => {
+      demo = new VersusDemo(k, { title: opts.title || 'My game', pitch: opts.pitch || undefined });
+      log = [];
+      ask();
+    });
+    root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const optionCard = (q: DemoQuestion, i: number) => {
+    const o = q.options[i]!;
+    const tone = i === 0 ? 'a' : i === 1 ? 'b' : 'c';
+    const head = o.game ? esc(o.game) : esc(o.label);
+    const body = o.how && o.how !== o.label ? `<span class="how">${esc(o.how)}</span>` : '';
+    const pole = `${esc(o.poleLabel)}${o.game && o.year ? `<span class="year">${o.year}</span>` : ''}`;
+    return `<button type="button" class="side ${tone}" data-choice="${o.key}">
+      ${o.game ? `<span class="pole">${pole}</span>` : ''}<span class="game">${head}</span>${body}</button>`;
+  };
+
+  const questionHtml = (q: DemoQuestion) => {
+    if (q.multi) {
+      const limit = q.kind === 'rank' ? q.keep ?? 3 : undefined;
+      return `
+        <fieldset class="multi" ${limit ? `data-limit="${limit}"` : ''}>
+          <legend class="sr">${esc(q.prompt)}</legend>
+          ${q.options.map((o) => `
+            <label class="check"><input type="checkbox" value="${o.key}">
+              <span><b>${esc(o.game ?? o.label)}</b>${o.how ? `<span class="how">${esc(o.how)}</span>` : ''}</span></label>`).join('')}
+        </fieldset>
+        <div class="extras">
+          <button type="button" class="btn primary" data-multi="go">Continue</button>
+          <button type="button" class="btn" data-multi="none">None of these</button>
+          <button type="button" class="btn ghost" data-choice="skip">Skip</button>
+        </div>`;
+    }
+    const split = q.options.length === 2;
+    const bins = q.bins
+      ? `<div class="mini-bins" role="img" aria-label="Current belief from ${esc(q.options[0]?.poleLabel)} to ${esc(q.options[1]?.poleLabel)}: ${q.bins.map((b) => b.toFixed(2)).join(', ')}">
+          ${q.bins.map((b, i) => `<i class="${i < 2 ? 'a' : i > 2 ? 'b' : ''}" style="--h:${Math.max(b, 0.04)}"></i>`).join('')}
+         </div>
+         <p class="bins-cap"><span>${esc(q.options[0]?.poleLabel)}</span><span>current belief</span><span>${esc(q.options[1]?.poleLabel)}</span></p>`
+      : '';
+    const extras = q.binary
+      ? `<button type="button" class="btn" data-choice="blend">Blend of both</button>
+         <button type="button" class="btn" data-choice="na">Not in my game</button>`
+      : `<button type="button" class="btn" data-choice="neither">None of these</button>`;
+    return `
+      <div class="${split ? 'versus' : 'versus three'}">
+        ${q.options.map((_, i) => optionCard(q, i)).join('')}
+        ${split ? '<span class="vs" aria-hidden="true">VS</span>' : ''}
+      </div>
+      ${bins}
+      <div class="extras">${extras}
+        <button type="button" class="btn ghost" data-choice="no_pref">No preference</button>
+        <button type="button" class="btn ghost" data-choice="skip">Skip</button>
+      </div>`;
+  };
+
+  const render = () => {
+    const s = demo.summary();
+    const pct = Math.min(1, s.clarity / STOP_AT);
+    const q = current;
+    const main = q
+      ? `<p class="q-meta"><span>${esc(q.moduleLabel)}</span><span>Question ${s.questionCount + 1}</span></p>
+         <h3 class="q-prompt">${esc(q.prompt)}</h3>
+         ${questionHtml(q)}`
+      : `<p class="q-meta"><span>Done</span></p><h3 class="q-prompt">No questions left to ask.</h3>`;
+    root.innerHTML = `
+      <div class="play">
+        <div class="stage" aria-live="polite">${main}</div>
+        <aside class="panel" aria-label="Session">
+          <div class="clar">
+            <div class="clar-row"><span>Clarity</span><b>${s.clarity.toFixed(2)}</b></div>
+            <div class="track" role="progressbar" aria-valuemin="0" aria-valuemax="0.8" aria-valuenow="${s.clarity}" aria-label="Clarity toward 0.80"><span style="width:${(pct * 100).toFixed(1)}%"></span></div>
+            <p class="small">${s.stopRecommended ? 'Clear enough to write the brief.' : `The server suggests stopping at ${STOP_AT.toFixed(2)}.`}</p>
+          </div>
+          <button type="button" class="btn ${s.stopRecommended ? 'primary' : ''} wide" data-act="finish" ${s.questionCount === 0 ? 'disabled' : ''}>Write the brief</button>
+          <button type="button" class="btn ghost wide" data-act="undo" ${s.questionCount === 0 ? 'disabled' : ''}>Undo last answer</button>
+          ${log.length ? `<ul class="log">${log.map((l) => `<li class="${l.kind}">${esc(l.text)}${l.probe ? `<span class="probe">${esc(l.probe)}</span>` : ''}</li>`).join('')}</ul>` : ''}
+          ${s.questionCount > 0 ? `
+            <h4>Closest archetypes</h4>
+            <ol class="arch">${s.archetypes.map((a) => `<li><span>${esc(a.label)}</span><span>${Math.round(a.p * 100)}%</span></li>`).join('')}</ol>` : ''}
+          ${s.settled.length ? `<h4>Settled</h4><ul class="settled">${s.settled.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
+        </aside>
+      </div>`;
+
+    root.querySelectorAll<HTMLButtonElement>('[data-choice]').forEach((b) => b.addEventListener('click', () => record(b.dataset.choice as Choice)));
+    root.querySelector('[data-act="finish"]')?.addEventListener('click', finish);
+    root.querySelector('[data-act="undo"]')?.addEventListener('click', () => {
+      if (demo.undo()) ask();
+    });
+    const set = root.querySelector<HTMLFieldSetElement>('fieldset.multi');
+    if (set) {
+      const limit = Number(set.dataset.limit) || Infinity;
+      const boxes = [...set.querySelectorAll<HTMLInputElement>('input[type=checkbox]')];
+      boxes.forEach((x) => x.addEventListener('change', () => {
+        const n = boxes.filter((y) => y.checked).length;
+        boxes.forEach((y) => (y.disabled = !y.checked && n >= limit));
+      }));
+      root.querySelector('[data-multi="go"]')?.addEventListener('click', () => record('neither', boxes.filter((x) => x.checked).map((x) => x.value)));
+      root.querySelector('[data-multi="none"]')?.addEventListener('click', () => record('neither', []));
+    }
+    root.querySelector<HTMLElement>('.stage button, .stage input')?.focus({ preventScroll: true });
+  };
+
+  ask();
+}
