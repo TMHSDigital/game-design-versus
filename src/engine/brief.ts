@@ -313,5 +313,5 @@ export function renderBriefMarkdown(b: Brief): string {
   L.push('## 10. Risks', '', ...(b.risks.length ? b.risks.map((r) => `- **${r.severity}**: ${r.message}${r.probe ? ` Probe: ${r.probe}` : ''}`) : ['- None detected']), '');
   L.push('## 11. Open questions', '', ...(b.openQuestions.length ? b.openQuestions.map((q) => `- (${q.importance}) ${q.label}: ${q.question} (clarity ${q.clarity})`) : ['- None below 0.6 clarity']), '');
   L.push('## 12. Decision log', '', '| When | Kind | Axis | Answer |', '| --- | --- | --- | --- |', ...b.decisionLog.map((d) => `| ${d.at} | ${d.kind} | ${d.axis ?? ''} | ${d.answer}${d.note ? ` (${d.note})` : ''} |`), '');
-  return L.join('\n').replace(/—/g, ',');
+  return L.join('\n').replace(new RegExp('\\u2014', 'g'), ',');
 }

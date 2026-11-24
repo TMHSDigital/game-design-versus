@@ -80,7 +80,7 @@ describe('data files', () => {
   });
 
   it('flags forbidden characters', () => {
-    expect(findForbiddenChars({ a: 'ok', b: ['x — y'] }, 'f')).toHaveLength(1);
+    expect(findForbiddenChars({ a: 'ok', b: [`x ${String.fromCharCode(0x2014)} y`] }, 'f')).toHaveLength(1);
     expect(findForbiddenChars({ a: 'rocket \u{1F680}' }, 'f')).toHaveLength(1);
     expect(findForbiddenChars({ a: 'plain - hyphen' }, 'f')).toHaveLength(0);
   });

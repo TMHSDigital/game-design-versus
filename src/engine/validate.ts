@@ -1,7 +1,7 @@
 import type { Knowledge, RawData } from './data';
 import { BLEND_POLE, isBinary, type Axis, type Expr } from './ontology';
 
-const FORBIDDEN = /[—\p{Extended_Pictographic}]/u;
+const FORBIDDEN = new RegExp('[\\u2014\\p{Extended_Pictographic}]', 'u');
 
 /** Walks any JSON value and reports strings containing an em dash or emoji. */
 export function findForbiddenChars(value: unknown, path: string): string[] {

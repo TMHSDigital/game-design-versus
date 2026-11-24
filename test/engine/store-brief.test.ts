@@ -74,7 +74,7 @@ describe('brief', () => {
     for (const h of ['Frame', 'Experience targets', 'Genre', 'Design pillars', 'Core loop', 'Systems spec', 'Comparable titles', 'USPs and non-goals', 'Scope', 'Risks', 'Open questions', 'Decision log']) {
       expect(md).toContain(h);
     }
-    expect(md).not.toMatch(/—/);
+    expect(md.includes(String.fromCharCode(0x2014))).toBe(false);
     expect(JSON.parse(JSON.stringify(b))).toEqual(b);
   });
 
