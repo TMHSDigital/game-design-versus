@@ -13,7 +13,9 @@
 - 48 archetypes and 35 tension rules.
 - Engine: event-sourced sessions with undo, three-valued gating, bin posteriors, archetype posterior, EIG question
   selection with seeded top-3 picks, Elo comparable titles and the GDD seed brief.
-- Calibration (see README "Engine notes"): decaying uniform prior share, decided-axis clarity floor, rule-based
+- Calibration (see README "Calibration notes"): decaying uniform prior share, decided-axis clarity floor, rule-based
   archetype profile completion.
 - Comparison library authored by parallel agents with per-option sources; unverified items are hidden by default.
 - Claude Code plugin with `versus` and `versus-brief` skills and the `tmhs-digital` marketplace.
+- Website at https://tmhsdigital.github.io/game-design-versus/ with a playable in-browser interview that runs the
+  same engine and verified library (`src/web/demo.ts`), deployed by `.github/workflows/pages.yml`.
