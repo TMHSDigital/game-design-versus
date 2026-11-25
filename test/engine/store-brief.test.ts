@@ -154,3 +154,19 @@ describe('custom axes in the brief', () => {
     expect(customRow('a')).toBe('Loose');
   });
 });
+
+describe('brief tables', () => {
+  it('keeps a note with a pipe and a line break inside one cell', () => {
+    const s = svc.startSession(k, { title: 'Pipes', seed: 41 });
+    const q = svc.next(k, s.sessionId, 1).questions[0]!;
+    svc.answer(k, s.sessionId, [{ questionId: q.questionId, choice: 'neither', note: 'mostly A | some B\nsecond line' }]);
+    const md = svc.brief(k, s.sessionId, 'markdown').markdown;
+    const rows = md.split('\n').filter((l) => l.includes('mostly A'));
+    expect(rows.length).toBeGreaterThan(0);
+    for (const row of rows) {
+      expect(row).toContain('mostly A \\| some B second line');
+      expect(row.split(/(?<!\\)\|/).length).toBe(6);
+    }
+    expect(md).not.toMatch(/^second line/m);
+  });
+});

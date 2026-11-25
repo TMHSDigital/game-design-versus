@@ -305,11 +305,16 @@ function scopeFor(state: SessionState, activeModules: number, team: string, time
   return { team, timeline, mvp: s.mvp, verticalSlice: s.slice, activeModules, warning };
 }
 
+/** Makes free text safe inside a markdown table cell: escapes pipes and folds line breaks. */
+function cell(v: string): string {
+  return v.replace(/\r?\n/g, ' ').replace(/\|/g, '\\|');
+}
+
 export function renderBriefMarkdown(b: Brief): string {
   const L: string[] = [];
   L.push(`# ${b.title}`, '', `> ${b.pitch}`, '', b.elevator, '');
   L.push(`Overall clarity ${b.clarity.overall} after ${b.clarity.questionCount} questions.`, '');
-  L.push('## 1. Frame', '', '| Aspect | Decision |', '| --- | --- |', ...Object.entries(b.frame).map(([k, v]) => `| ${k} | ${v || 'Undecided'} |`), '');
+  L.push('## 1. Frame', '', '| Aspect | Decision |', '| --- | --- |', ...Object.entries(b.frame).map(([k, v]) => `| ${cell(k)} | ${cell(v || 'Undecided')} |`), '');
   L.push('## 2. Experience targets', '');
   L.push(`- MDA aesthetics: ${b.experience.aesthetics.join(', ') || 'Undecided'}`);
   L.push(`- Player motivations: ${b.experience.motivations.join(', ') || 'Undecided'}`);
@@ -322,7 +327,7 @@ export function renderBriefMarkdown(b: Brief): string {
   L.push('## 6. Systems spec', '');
   for (const m of b.systems) {
     L.push(`### ${m.label} (clarity ${m.clarity})`, '', '| Axis | Position | Status | Reference |', '| --- | --- | --- | --- |');
-    for (const i of m.items) L.push(`| ${i.label} | ${i.position}${i.lean !== undefined ? ` (lean ${i.lean})` : ''} | ${i.status} | ${(i.reference ?? '') + (i.notes ? ` Notes: ${i.notes.join('; ')}` : '')} |`);
+    for (const i of m.items) L.push(`| ${cell(i.label)} | ${cell(i.position)}${i.lean !== undefined ? ` (lean ${i.lean})` : ''} | ${i.status} | ${cell((i.reference ?? '') + (i.notes ? ` Notes: ${i.notes.join('; ')}` : ''))} |`);
     L.push('');
   }
   L.push('## 7. Comparable titles', '', `**${b.comparables.headline}**`, '');
@@ -331,6 +336,6 @@ export function renderBriefMarkdown(b: Brief): string {
   L.push('## 9. Scope', '', `- Team: ${b.scope.team}`, `- Timeline: ${b.scope.timeline}`, `- Active modules: ${b.scope.activeModules}`, `- MVP: ${b.scope.mvp}`, `- Vertical slice: ${b.scope.verticalSlice}`, '');
   L.push('## 10. Risks', '', ...(b.risks.length ? b.risks.map((r) => `- **${r.severity}**: ${r.message}${r.probe ? ` Probe: ${r.probe}` : ''}`) : ['- None detected']), '');
   L.push('## 11. Open questions', '', ...(b.openQuestions.length ? b.openQuestions.map((q) => `- (${q.importance}) ${q.label}: ${q.question} (clarity ${q.clarity})`) : ['- None below 0.6 clarity']), '');
-  L.push('## 12. Decision log', '', '| When | Kind | Axis | Answer |', '| --- | --- | --- | --- |', ...b.decisionLog.map((d) => `| ${d.at} | ${d.kind} | ${d.axis ?? ''} | ${d.answer}${d.note ? ` (${d.note})` : ''} |`), '');
+  L.push('## 12. Decision log', '', '| When | Kind | Axis | Answer |', '| --- | --- | --- | --- |', ...b.decisionLog.map((d) => `| ${d.at} | ${d.kind} | ${cell(d.axis ?? '')} | ${cell(`${d.answer}${d.note ? ` (${d.note})` : ''}`)} |`), '');
   return L.join('\n').replace(new RegExp('\\u2014', 'g'), ',');
 }

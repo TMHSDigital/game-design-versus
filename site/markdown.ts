@@ -9,7 +9,8 @@ const inline = (s: string): string =>
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/`([^`]+)`/g, '<code>$1</code>');
 
-const cells = (row: string): string[] => row.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+const cells = (row: string): string[] =>
+  row.trim().replace(/^\|/, '').replace(/(?<!\\)\|$/, '').split(/(?<!\\)\|/).map((c) => c.trim().replace(/\\\|/g, '|'));
 
 export function renderMarkdown(md: string): string {
   const lines = md.replace(/\r\n/g, '\n').split('\n');

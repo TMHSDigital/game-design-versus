@@ -31,4 +31,9 @@ describe('site markdown renderer', () => {
     expect(html).not.toContain('<b>Evil');
     for (const h of ['Frame', 'Design pillars', 'Core loop', 'Decision log']) expect(html).toContain(h);
   });
+
+  it('keeps an escaped pipe inside its table cell', () => {
+    const html = renderMarkdown('| A | B |\n| --- | --- |\n| x \\| y | z |');
+    expect(html).toContain('<tr><td>x | y</td><td>z</td></tr>');
+  });
 });
