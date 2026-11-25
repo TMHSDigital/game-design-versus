@@ -110,6 +110,9 @@ export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: str
          </div>
          <p class="bins-cap"><span>${esc(q.options[0]?.poleLabel)}</span><span>current belief</span><span>${esc(q.options[1]?.poleLabel)}</span></p>`
       : '';
+    const unsure = q.comparison
+      ? `<button type="button" class="btn" data-choice="unsure">Don't know these games</button>`
+      : '';
     const extras = q.binary
       ? `<button type="button" class="btn" data-choice="blend">Blend of both</button>
          <button type="button" class="btn" data-choice="na">Not in my game</button>`
@@ -120,7 +123,7 @@ export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: str
         ${split ? '<span class="vs" aria-hidden="true">VS</span>' : ''}
       </div>
       ${bins}
-      <div class="extras">${extras}
+      <div class="extras">${extras}${unsure}
         <button type="button" class="btn ghost" data-choice="no_pref">No preference</button>
         <button type="button" class="btn ghost" data-choice="skip">Skip</button>
       </div>`;

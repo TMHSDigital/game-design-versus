@@ -75375,7 +75375,13 @@ var ENGINE = {
    */
   multiSelectMargin: 0.01,
   /** A skipped axis is not offered again for this many answers. */
-  skipCooldown: 5
+  skipCooldown: 5,
+  /** An axis answered "Not sure / don't know these games" comes back after this many answers ... */
+  unsureCooldown: 2,
+  /** ... in plain words (no games) once it got this many such answers. */
+  unsurePlainAfter: 1,
+  /** Score penalty for a comparison featuring a game the user said they do not know. */
+  unknownGamePenalty: 0.3
 };
 function isDeterministic() {
   return process.env.GDV_DETERMINISTIC === "1";
@@ -75714,7 +75720,7 @@ function evaluateTensions(k2, ctx) {
 }
 
 // src/engine/session.ts
-var CHOICES = ["a", "b", "c", "d", "blend", "neither", "no_pref", "na", "skip"];
+var CHOICES = ["a", "b", "c", "d", "blend", "neither", "no_pref", "na", "skip", "unsure"];
 function effectiveEvents(events) {
   const stack = [];
   for (const e of events) {
@@ -75737,6 +75743,7 @@ function newRaw() {
     pagesSeen: 0,
     seen: /* @__PURE__ */ new Set(),
     excluded: /* @__PURE__ */ new Set(),
+    unsureCount: 0,
     evidenceCount: 0
   };
 }
@@ -75778,6 +75785,7 @@ function foldSession(k2, events) {
   const log = [];
   const history = [];
   const used = /* @__PURE__ */ new Set();
+  const unknownGames = [];
   let questionCount = 0;
   const cons = start.constraints ?? {};
   const constraintSets = [];
@@ -75841,6 +75849,13 @@ function foldSession(k2, events) {
     log.push({ at: e.at, kind: e.type, axis: q.axis, question: q.questionId, answer: describeChoice(q, e.choice, e.lean, e.selected), note: e.note });
     if (e.choice === "skip") {
       r.lastSkip = questionCount;
+      continue;
+    }
+    if (e.choice === "unsure") {
+      r.unsureCount++;
+      r.lastUnsure = questionCount;
+      for (const g of gamesOf(q)) if (!unknownGames.includes(g)) unknownGames.push(g);
+      if (e.note) r.notes.push(e.note);
       continue;
     }
     if (e.choice === "na") {
@@ -75922,6 +75937,8 @@ function foldSession(k2, events) {
       excludedPoles: [...r.excluded],
       ranked: Object.entries(r.rankPoints).sort((x, y) => y[1] - x[1]).map(([p]) => p),
       lastSkip: r.lastSkip,
+      unsureCount: r.unsureCount,
+      lastUnsure: r.lastUnsure,
       evidenceCount: r.evidenceCount
     };
     if (isBinary(a)) {
@@ -75978,6 +75995,7 @@ function foldSession(k2, events) {
     log,
     history,
     usedComparisons: used,
+    unknownGames,
     questionCount,
     tensions: evaluateTensions(k2, ctx)
   };
@@ -75993,7 +76011,7 @@ function applyEvidence(r, a, ev, all) {
   void a;
 }
 function applyBinaryChoice(q, poleAId, choice, lean, note, target, push, elo) {
-  if (choice === "skip") return;
+  if (choice === "skip" || choice === "unsure") return;
   if (choice === "na") {
     target.status = "na";
     return;
@@ -76045,7 +76063,7 @@ function describeChoice(q, choice, lean, selected) {
     return `selected: ${labels.join(", ")}`;
   }
   const opt = optionFor(q, choice);
-  const base = opt ? opt.label : choice;
+  const base = opt ? opt.label : choice === "unsure" ? "not sure" : choice;
   return lean !== void 0 ? `${base} (lean ${lean})` : base;
 }
 function clarityOf(s) {
@@ -76233,6 +76251,14 @@ function repetition(state, module, games) {
   if (last2.length === 2 && last2.every((h) => h.module === module)) pen += ENGINE.sameModulePenalty;
   return pen;
 }
+function unknownPenalty(state, games) {
+  if (!state.unknownGames.length) return 0;
+  const unknown2 = new Set(state.unknownGames.map(gameKey));
+  return games.some((g) => unknown2.has(gameKey(g))) ? ENGINE.unknownGamePenalty : 0;
+}
+function wantsPlain(s) {
+  return s.unsureCount >= ENGINE.unsurePlainAfter;
+}
 function poleOptions(a, poles) {
   return poles.map((id, i) => {
     const p = a.poles.find((x) => x.id === id);
@@ -76257,11 +76283,11 @@ function candidates(k2, state) {
       const eig = eigBinary(s.dist ?? []);
       const ea = eigArchetype(k2, post, binaryOutcomes(a.id));
       const base = imp * eig + ENGINE.archetypeEigWeight * ea + bonus;
-      const comps = (k2.comparisonsByAxis.get(a.id) ?? []).filter((c) => !state.usedComparisons.has(c.id));
+      const comps = wantsPlain(s) ? [] : (k2.comparisonsByAxis.get(a.id) ?? []).filter((c) => !state.usedComparisons.has(c.id));
       if (comps.length) {
         for (const c of comps) {
           const games = c.options.map((o) => o.game);
-          out.push({ axis: s, comparison: c, options: comparisonOptions(c), format: "comparison", priority, score: base + familiarity(state, c) - repetition(state, a.module, games) });
+          out.push({ axis: s, comparison: c, options: comparisonOptions(c), format: "comparison", priority, score: base + familiarity(state, c) - repetition(state, a.module, games) - unknownPenalty(state, games) });
         }
       } else {
         out.push({ axis: s, options: poleOptions(a, a.poles.map((p) => p.id)), format: "poles", priority, score: base - repetition(state, a.module, []) });
@@ -76271,12 +76297,13 @@ function candidates(k2, state) {
     if (a.kind === "categorical") {
       const dist = s.poleDist ?? {};
       const remaining = a.poles.filter((p) => !s.excludedPoles.includes(p.id) && !p.noExemplar);
-      const comps = (k2.comparisonsByAxis.get(a.id) ?? []).filter(
+      const comps = wantsPlain(s) ? [] : (k2.comparisonsByAxis.get(a.id) ?? []).filter(
         (c) => !state.usedComparisons.has(c.id) && c.options.every((o) => !s.excludedPoles.includes(o.pole))
       );
       for (const c of comps) {
         const shown3 = c.options.map((o) => o.pole);
-        const score2 = imp * eigCategorical(dist, shown3) + ENGINE.archetypeEigWeight * eigArchetype(k2, post, catOutcomes(a, shown3)) + bonus + familiarity(state, c) - repetition(state, a.module, c.options.map((o) => o.game));
+        const games = c.options.map((o) => o.game);
+        const score2 = imp * eigCategorical(dist, shown3) + ENGINE.archetypeEigWeight * eigArchetype(k2, post, catOutcomes(a, shown3)) + bonus + familiarity(state, c) - repetition(state, a.module, games) - unknownPenalty(state, games);
         out.push({ axis: s, comparison: c, options: comparisonOptions(c), format: "comparison", priority, score: score2 });
       }
       const ordered = [...a.poles.filter((p) => !s.excludedPoles.includes(p.id))].sort((x, y) => (dist[y.id] ?? 0) - (dist[x.id] ?? 0));
@@ -76304,6 +76331,7 @@ function isAskable(state, s) {
   if (s.status !== "open") return false;
   if (s.applicable === false) return false;
   if (s.lastSkip !== void 0 && state.questionCount - s.lastSkip < ENGINE.skipCooldown) return false;
+  if (s.lastUnsure !== void 0 && state.questionCount - s.lastUnsure < ENGINE.unsureCooldown) return false;
   return true;
 }
 function isPriority(state, s) {
@@ -76341,6 +76369,7 @@ function nextQuestions(k2, state, opts = {}) {
 var BLEND_LABEL = "Blend of both";
 var NA_LABEL = "Not in my game";
 var NONE_LABEL = "None of these";
+var UNSURE_LABEL = "Not sure / don't know these games";
 function render(c, questionId) {
   const a = c.axis.axis;
   const multi = a.kind === "multi" || a.kind === "rank";
@@ -76379,25 +76408,28 @@ function renderQuestion(q, a, score = 0) {
     }
     return opt;
   });
-  const room = () => options.length < 4;
+  const extras = [];
+  const games = !q.multi && q.options.some((o) => o.game);
+  if (games) extras.push({ label: UNSURE_LABEL, description: "Skip these games for now; the topic comes back later in plain words", choice: "unsure" });
   if (binary) {
-    if (room() && !q.options.some((o) => o.pole === BLEND_POLE)) {
-      options.push({ label: BLEND_LABEL, description: "Somewhere in between, or a mix of both approaches" });
-      answerMap[BLEND_LABEL] = "blend";
-    }
-    if (room()) {
-      options.push({ label: NA_LABEL, description: "This axis does not apply to my game" });
-      answerMap[NA_LABEL] = "na";
-    }
-  } else if (!q.multi && room()) {
-    options.push({ label: NONE_LABEL, description: "None of these fit; show other options" });
-    answerMap[NONE_LABEL] = "neither";
+    const blend = q.options.some((o) => o.pole === BLEND_POLE) ? [] : [{ label: BLEND_LABEL, description: "Somewhere in between, or a mix of both approaches", choice: "blend" }];
+    const na = { label: NA_LABEL, description: "This axis does not apply to my game", choice: "na" };
+    extras.push(...games ? [na, ...blend] : [...blend, na]);
+  } else if (!q.multi) {
+    extras.push({ label: NONE_LABEL, description: "None of these fit; show other options", choice: "neither" });
+  }
+  const moreOptions = [];
+  for (const x of extras) {
+    answerMap[x.label] = x.choice;
+    if (options.length < 4) options.push({ label: x.label, description: x.description });
+    else moreOptions.push({ label: x.label, description: x.description });
   }
   answerMap["Other"] = "neither";
   return {
     ...q,
     prompt,
     score,
+    ...moreOptions.length ? { moreOptions } : {},
     answerMap,
     askUserQuestion: { question: prompt, header: a.header, multiSelect: q.multi, options }
   };
@@ -77029,6 +77061,7 @@ var QuestionOut = external_exports.looseObject({
   comparisonId: external_exports.string().optional(),
   prompt: external_exports.string(),
   askUserQuestion: external_exports.looseObject({ question: external_exports.string(), header: external_exports.string().max(12), multiSelect: external_exports.boolean(), options: external_exports.array(askOption).min(2).max(4) }),
+  moreOptions: external_exports.array(askOption).optional(),
   answerMap: external_exports.record(external_exports.string(), external_exports.string())
 });
 var Summary = external_exports.looseObject({
@@ -77096,7 +77129,7 @@ function registerTools(server, k2) {
     "versus_next",
     {
       title: "Next questions",
-      description: "Get up to 4 next questions, each from a different module. Render each askUserQuestion object verbatim with AskUserQuestion, then map the chosen label through answerMap and call versus_answer.",
+      description: "Get up to 4 next questions, each from a different module. Render each askUserQuestion object verbatim with AskUserQuestion, then map the chosen label through answerMap and call versus_answer. moreOptions lists answers that did not fit the 4-option limit (for example Blend of both); they still map through answerMap when the user types them.",
       inputSchema: external_exports.object({ sessionId, count: external_exports.number().int().min(1).max(4).optional().describe("How many questions, 1 to 4") }),
       outputSchema: external_exports.looseObject({ questions: external_exports.array(QuestionOut), summary: Summary }),
       annotations: { readOnlyHint: false }
@@ -77104,7 +77137,7 @@ function registerTools(server, k2) {
     guard((a) => {
       const r = next(k2, a.sessionId, a.count ?? 1);
       const text = r.questions.length ? r.questions.map((q, i) => `${i + 1}. [${q.questionId}] ${q.prompt}
-${q.askUserQuestion.options.map((o) => `   - ${o.label}: ${o.description}`).join("\n")}`).join("\n") : "No questions left. Call versus_brief.";
+${[...q.askUserQuestion.options, ...q.moreOptions ?? []].map((o) => `   - ${o.label}: ${o.description}`).join("\n")}`).join("\n") : "No questions left. Call versus_brief.";
       return ok(text, r);
     })
   );
@@ -77112,7 +77145,7 @@ ${q.askUserQuestion.options.map((o) => `   - ${o.label}: ${o.description}`).join
     "versus_answer",
     {
       title: "Record answers",
-      description: "Record answers to questions from versus_next or versus_ask. choice a/b/c/d picks an option; blend, neither (with note for Other text), no_pref, na (not in my game) or skip. lean 0-100 refines a binary answer (0 = first pole). For multiSelect questions pass selected option keys.",
+      description: "Record answers to questions from versus_next or versus_ask. choice a/b/c/d picks an option; blend, neither (with note for Other text), no_pref, na (not in my game), unsure (the user does not know the games or cannot judge yet; the topic returns later in plain words) or skip. lean 0-100 refines a binary answer (0 = first pole). For multiSelect questions pass selected option keys.",
       inputSchema: external_exports.object({
         sessionId,
         answers: external_exports.array(
@@ -77338,8 +77371,8 @@ function registerResources(server, k2) {
 // src/prompts.ts
 var PROTOCOL = `You are the interviewer; the game-design-versus server is the referee.
 1. Call versus_start (title and pitch if known). Record anything the pitch already states with versus_set (genre.family, frame.platform, frame.players and so on), confidence 0.6 to 0.9.
-2. Loop: call versus_next with count up to 4. Render each askUserQuestion object verbatim with the AskUserQuestion tool (previews only work on single-select). If AskUserQuestion is unavailable, show a numbered list of the options with their descriptions.
-3. Map each chosen label through answerMap to a choice. If the user picks Other, send choice "neither" with their text as note, or call versus_set if their text clearly states a position.
+2. Loop: call versus_next with count up to 4. Render each askUserQuestion object verbatim with the AskUserQuestion tool (previews only work on single-select). If AskUserQuestion is unavailable, show a numbered list of the options and moreOptions with their descriptions.
+3. Map each chosen label through answerMap to a choice. "Not sure / don't know these games" maps to unsure; the topic comes back later without games. Labels in moreOptions (such as Blend of both) also map when the user types them. If the user picks Other, send choice "neither" with their text as note, or call versus_set if their text clearly states a position.
 4. Call versus_answer with all answers from the round.
 5. Every 5 rounds, give a one-line recap: what is now settled and the overall clarity.
 6. When versus_answer returns tensions, ask the probe question in your own words.

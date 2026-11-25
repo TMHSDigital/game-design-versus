@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import { knowledge } from '../../src/engine/data';
 import { claritySummary, foldSession, type SessionEvent, type Question } from '../../src/engine/session';
-import { candidates, eigBinary, nextQuestions } from '../../src/engine/selection';
+import { candidates, eigBinary, nextQuestions, render } from '../../src/engine/selection';
+import { ENGINE } from '../../src/engine/config';
+import { isBinary } from '../../src/engine/ontology';
 
 const k = knowledge();
 const at = '2026-11-23T00:00:00.000Z';
@@ -180,6 +182,63 @@ describe('selection', () => {
       for (const o of q.askUserQuestion.options) expect(q.answerMap[o.label]).toBeDefined();
       if (q.askUserQuestion.multiSelect) expect(q.askUserQuestion.options.every((o) => !o.preview)).toBe(true);
     }
+  });
+
+  describe('"Not sure / don\'t know these games"', () => {
+    const s0 = foldSession(k, [start]);
+    const binaryPair = () => {
+      const c = candidates(k, s0).find((x) => x.format === 'comparison' && isBinary(x.axis.axis) && x.options.length === 2);
+      if (!c) throw new Error('no two-game binary comparison candidate');
+      return render(c, 's1:q1');
+    };
+
+    it('is offered on game questions; Blend moves to moreOptions on a two-game binary question', () => {
+      const q = binaryPair();
+      expect(q.askUserQuestion.options.map((o) => q.answerMap[o.label])).toEqual(['a', 'b', 'unsure', 'na']);
+      expect(q.moreOptions?.map((o) => q.answerMap[o.label])).toEqual(['blend']);
+      for (const qq of nextQuestions(k, s0, { count: 4, deterministic: true })) {
+        const games = !qq.multi && qq.options.some((o) => o.game);
+        expect(Object.values(qq.answerMap).includes('unsure')).toBe(games);
+      }
+    });
+
+    it('keeps Blend and Not in my game on plain-word binary questions', () => {
+      const c = candidates(k, s0).find((x) => x.format === 'poles' && isBinary(x.axis.axis));
+      if (!c) throw new Error('no plain-word binary candidate');
+      const q = render(c, 's1:q1');
+      expect(q.askUserQuestion.options.slice(2).map((o) => q.answerMap[o.label])).toEqual(['blend', 'na']);
+      expect(q.moreOptions).toBeUndefined();
+    });
+
+    it('records no evidence, remembers the games, and re-asks the axis later in plain words', () => {
+      const q = binaryPair();
+      const s1 = foldSession(k, [start, answer(q, 'unsure')]);
+      const st = s1.axes.get(q.axis)!;
+      expect(st.status).toBe('open');
+      expect(st.evidenceCount).toBe(0);
+      expect(st.unsureCount).toBe(1);
+      expect(s1.unknownGames).toEqual(q.options.map((o) => o.game));
+      expect(s1.log.at(-1)?.answer).toBe('not sure');
+      // Cooling down right after the answer ...
+      expect(candidates(k, s1).some((c) => c.axis.axis.id === q.axis)).toBe(false);
+      // ... and back without games once a couple of other answers went by.
+      let events: SessionEvent[] = [start, answer(q, 'unsure')];
+      for (let i = 0; i < ENGINE.unsureCooldown; i++) {
+        const other = nextQuestions(k, foldSession(k, events), { deterministic: true, issued: i + 1, exclude: new Set([q.axis]) })[0]!;
+        events = [...events, answer(other, 'skip')];
+      }
+      const back = candidates(k, foldSession(k, events)).filter((c) => c.axis.axis.id === q.axis);
+      expect(back.length).toBeGreaterThan(0);
+      expect(back.every((c) => c.format === 'poles' && c.options.every((o) => !o.game))).toBe(true);
+    });
+
+    it('scores comparisons with games the user does not know lower', () => {
+      const c = candidates(k, s0).find((x) => x.format === 'comparison')!;
+      const game = c.options[0]!.game!;
+      const after = candidates(k, { ...s0, unknownGames: [game] }).find((x) => x.comparison?.id === c.comparison?.id)!;
+      expect(c.score - after.score).toBeCloseTo(ENGINE.unknownGamePenalty, 9);
+    });
+
   });
 
   it('never asks combat axes after combat is ruled out', () => {

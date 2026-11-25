@@ -11,7 +11,7 @@ import { axisClarity, weightedClarity } from './clarity';
 import { eloUpdate, type EloTable } from './affinity';
 import { evaluateTensions } from './tensions';
 
-export const CHOICES = ['a', 'b', 'c', 'd', 'blend', 'neither', 'no_pref', 'na', 'skip'] as const;
+export const CHOICES = ['a', 'b', 'c', 'd', 'blend', 'neither', 'no_pref', 'na', 'skip', 'unsure'] as const;
 export type Choice = (typeof CHOICES)[number];
 export type OptionKey = 'a' | 'b' | 'c' | 'd';
 
@@ -61,6 +61,9 @@ export type AxisState = {
   excludedPoles: string[];
   ranked: string[];
   lastSkip?: number;
+  /** How often the user answered "Not sure / don't know these games" on this axis, and when last. */
+  unsureCount: number;
+  lastUnsure?: number;
   evidenceCount: number;
 };
 
@@ -92,6 +95,8 @@ export type SessionState = {
   log: LogEntry[];
   history: { axis: string; module: string; games: string[] }[];
   usedComparisons: Set<string>;
+  /** Games shown in questions the user answered "Not sure / don't know these games". */
+  unknownGames: string[];
   questionCount: number;
   tensions: Tension[];
 };
@@ -122,13 +127,15 @@ type Raw = {
   seen: Set<string>;
   excluded: Set<string>;
   lastSkip?: number;
+  unsureCount: number;
+  lastUnsure?: number;
   evidenceCount: number;
 };
 
 function newRaw(): Raw {
   return {
     binLiks: [], evidenceOnly: [], catLiks: [], multiObs: [], rankPoints: {}, status: 'open', importanceMult: 1,
-    notes: [], pagesSeen: 0, seen: new Set(), excluded: new Set(), evidenceCount: 0,
+    notes: [], pagesSeen: 0, seen: new Set(), excluded: new Set(), unsureCount: 0, evidenceCount: 0,
   };
 }
 
@@ -173,6 +180,7 @@ export function foldSession(k: Knowledge, events: SessionEvent[]): SessionState 
   const log: LogEntry[] = [];
   const history: SessionState['history'] = [];
   const used = new Set<string>();
+  const unknownGames: string[] = [];
   let questionCount = 0;
 
   // Constraints from versus_start become stated facts.
@@ -239,6 +247,14 @@ export function foldSession(k: Knowledge, events: SessionEvent[]): SessionState 
     log.push({ at: e.at, kind: e.type, axis: q.axis, question: q.questionId, answer: describeChoice(q, e.choice, e.lean, e.selected), note: e.note });
     if (e.choice === 'skip') {
       r.lastSkip = questionCount;
+      continue;
+    }
+    if (e.choice === 'unsure') {
+      // No evidence about the design: the user does not know the games or cannot judge yet.
+      r.unsureCount++;
+      r.lastUnsure = questionCount;
+      for (const g of gamesOf(q)) if (!unknownGames.includes(g)) unknownGames.push(g);
+      if (e.note) r.notes.push(e.note);
       continue;
     }
     if (e.choice === 'na') {
@@ -316,7 +332,7 @@ export function foldSession(k: Knowledge, events: SessionEvent[]): SessionState 
       axis: a, status: r.status, applicable: undefined, clarity: 0, importanceMult: r.importanceMult, notes: r.notes,
       source: r.source, ref: r.ref, pagesSeen: r.pagesSeen, seenPoles: [...r.seen], excludedPoles: [...r.excluded],
       ranked: Object.entries(r.rankPoints).sort((x, y) => y[1] - x[1]).map(([p]) => p), lastSkip: r.lastSkip,
-      evidenceCount: r.evidenceCount,
+      unsureCount: r.unsureCount, lastUnsure: r.lastUnsure, evidenceCount: r.evidenceCount,
     };
     if (isBinary(a)) {
       st.dist = binPosterior(binPrior(k, a.id, archetypePost), r.binLiks);
@@ -364,7 +380,7 @@ export function foldSession(k: Knowledge, events: SessionEvent[]): SessionState 
   return {
     id: start.sessionId, seed: start.seed, title: start.title, pitch: start.pitch, knownGames: start.knownGames ?? [],
     constraints: cons, createdAt: start.at, effective: eff, axes, custom: customOut, archetypePost, flags, elo, log,
-    history, usedComparisons: used, questionCount, tensions: evaluateTensions(k, ctx),
+    history, usedComparisons: used, unknownGames, questionCount, tensions: evaluateTensions(k, ctx),
   };
 }
 
@@ -383,7 +399,7 @@ function applyBinaryChoice(
   q: Question, poleAId: string, choice: Choice, lean: number | undefined, note: string | undefined,
   target: { status: AxisStatus; notes: string[]; ref?: AxisState['ref'] }, push: (lik: number[]) => void, elo: EloTable,
 ): void {
-  if (choice === 'skip') return;
+  if (choice === 'skip' || choice === 'unsure') return;
   if (choice === 'na') {
     target.status = 'na';
     return;
@@ -439,7 +455,7 @@ function describeChoice(q: Question, choice: Choice, lean?: number, selected?: s
     return `selected: ${labels.join(', ')}`;
   }
   const opt = optionFor(q, choice);
-  const base = opt ? opt.label : choice;
+  const base = opt ? opt.label : choice === 'unsure' ? 'not sure' : choice;
   return lean !== undefined ? `${base} (lean ${lean})` : base;
 }
 

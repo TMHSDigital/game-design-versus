@@ -152,11 +152,18 @@
         ],
         "prompt": "Team size: which fits your game? (page 1 of 2)",
         "score": 2.5573541926695906,
+        "moreOptions": [
+          {
+            "label": "None of these",
+            "description": "None of these fit; show other options"
+          }
+        ],
         "answerMap": {
           "Solo": "a",
           "2 to 5": "b",
           "6 to 20": "c",
           "20 or more": "d",
+          "None of these": "neither",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -224,11 +231,18 @@
         ],
         "prompt": "Timeline: which fits your game? (page 1 of 2)",
         "score": 2.5573541926695906,
+        "moreOptions": [
+          {
+            "label": "None of these",
+            "description": "None of these fit; show other options"
+          }
+        ],
         "answerMap": {
           "Jam (under 1 month)": "a",
           "3 to 6 months": "b",
           "1 to 2 years": "c",
           "3 years or more": "d",
+          "None of these": "neither",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -345,11 +359,18 @@
         ],
         "prompt": "Embodiment: Animal Crossing or The Sims?",
         "score": 1.9516488146745004,
+        "moreOptions": [
+          {
+            "label": "Blend of both",
+            "description": "Somewhere in between, or a mix of both approaches"
+          }
+        ],
         "answerMap": {
           "Animal Crossing": "a",
           "The Sims": "b",
-          "Blend of both": "blend",
+          "Not sure / don't know these games": "unsure",
           "Not in my game": "na",
+          "Blend of both": "blend",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -368,8 +389,8 @@
               "preview": "**The Sims** (2000)\n\nEmbodiment: Indirect command\n\nThe player queues actions for a household of Sims, who also act on their own needs."
             },
             {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             },
             {
               "label": "Not in my game",
@@ -418,10 +439,17 @@
         ],
         "prompt": "Dimensionality: which game handles this most like yours?",
         "score": 2.2289078636577484,
+        "moreOptions": [
+          {
+            "label": "None of these",
+            "description": "None of these fit; show other options"
+          }
+        ],
         "answerMap": {
           "Cave Story": "a",
           "Octopath Traveler": "b",
           "Outer Wilds": "c",
+          "Not sure / don't know these games": "unsure",
           "None of these": "neither",
           "Other": "neither"
         },
@@ -446,8 +474,8 @@
               "preview": "**Outer Wilds** (2019)\n\nDimensionality: 3D\n\nA fully 3D solar system whose planets are packed with hidden locations to reach and explore."
             },
             {
-              "label": "None of these",
-              "description": "None of these fit; show other options"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             }
           ]
         }
@@ -550,10 +578,17 @@
         ],
         "prompt": "Business model: which game handles this most like yours?",
         "score": 1.9065475528502809,
+        "moreOptions": [
+          {
+            "label": "None of these",
+            "description": "None of these fit; show other options"
+          }
+        ],
         "answerMap": {
           "Candy Crush Saga": "a",
           "Crossy Road": "b",
           "Papers, Please": "c",
+          "Not sure / don't know these games": "unsure",
           "None of these": "neither",
           "Other": "neither"
         },
@@ -578,8 +613,8 @@
               "preview": "**Papers, Please** (2013)\n\nBusiness model: Premium\n\nOne up-front price with no DLC or in-app purchases."
             },
             {
-              "label": "None of these",
-              "description": "None of these fit; show other options"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             }
           ]
         }
@@ -616,11 +651,18 @@
         ],
         "prompt": "Realism: Arma 3 or Splatoon?",
         "score": 1.3967149712443745,
+        "moreOptions": [
+          {
+            "label": "Blend of both",
+            "description": "Somewhere in between, or a mix of both approaches"
+          }
+        ],
         "answerMap": {
           "Arma 3": "a",
           "Splatoon": "b",
-          "Blend of both": "blend",
+          "Not sure / don't know these games": "unsure",
           "Not in my game": "na",
+          "Blend of both": "blend",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -639,8 +681,8 @@
               "preview": "**Splatoon** (2015)\n\nRealism: Stylized arcade\n\nSwaps bullets for paint guns and ink bombs in the cartoony city of Inkopolis, so every hit reads at a glance."
             },
             {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             },
             {
               "label": "Not in my game",
@@ -689,10 +731,17 @@
         ],
         "prompt": "Primary input: which game handles this most like yours?",
         "score": 1.0959018118113488,
+        "moreOptions": [
+          {
+            "label": "None of these",
+            "description": "None of these fit; show other options"
+          }
+        ],
         "answerMap": {
           "Fruit Ninja": "a",
           "Halo Wars": "b",
           "Among Us": "c",
+          "Not sure / don't know these games": "unsure",
           "None of these": "neither",
           "Other": "neither"
         },
@@ -717,8 +766,8 @@
               "preview": "**Among Us** (2018)\n\nPrimary input: Mixed\n\nCross-platform lobbies mix Android, iOS, PC and console players in the same 4 to 15 player game."
             },
             {
-              "label": "None of these",
-              "description": "None of these fit; show other options"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             }
           ]
         }
@@ -763,10 +812,17 @@
         ],
         "prompt": "Camera view: which game handles this most like yours?",
         "score": 1.6396697885926899,
+        "moreOptions": [
+          {
+            "label": "None of these",
+            "description": "None of these fit; show other options"
+          }
+        ],
         "answerMap": {
           "Resident Evil": "a",
           "Resident Evil 4 (2005)": "b",
           "Half-Life: Alyx": "c",
+          "Not sure / don't know these games": "unsure",
           "None of these": "neither",
           "Other": "neither"
         },
@@ -791,8 +847,8 @@
               "preview": "**Half-Life: Alyx** (2020)\n\nCamera view: VR\n\nVR-native: players reach out with tracked hands and use gravity gloves to pull objects toward them."
             },
             {
-              "label": "None of these",
-              "description": "None of these fit; show other options"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             }
           ]
         }
@@ -829,11 +885,18 @@
         ],
         "prompt": "Product length: Amnesia: The Dark Descent or Dead by Daylight?",
         "score": 0.8814571635353925,
+        "moreOptions": [
+          {
+            "label": "Blend of both",
+            "description": "Somewhere in between, or a mix of both approaches"
+          }
+        ],
         "answerMap": {
           "Amnesia: The Dark Descent": "a",
           "Dead by Daylight": "b",
-          "Blend of both": "blend",
+          "Not sure / don't know these games": "unsure",
           "Not in my game": "na",
+          "Blend of both": "blend",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -852,8 +915,8 @@
               "preview": "**Dead by Daylight** (2016)\n\nProduct length: Endless or live\n\nA live service that keeps adding chapters with new killers and survivors, still on a yearly roadmap at its 10th anniversary."
             },
             {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             },
             {
               "label": "Not in my game",
@@ -1126,11 +1189,18 @@
         ],
         "prompt": "Combat range: Chivalry 2 or Battlefield 1?",
         "score": 0.6182732037931737,
+        "moreOptions": [
+          {
+            "label": "Blend of both",
+            "description": "Somewhere in between, or a mix of both approaches"
+          }
+        ],
         "answerMap": {
           "Chivalry 2": "a",
           "Battlefield 1": "b",
-          "Blend of both": "blend",
+          "Not sure / don't know these games": "unsure",
           "Not in my game": "na",
+          "Blend of both": "blend",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -1149,8 +1219,8 @@
               "preview": "**Battlefield 1** (2016)\n\nCombat range: Ranged-focused\n\nKits are built around semi-auto rifles, scoped bolt-actions and support guns plus tanks and planes; melee got more focus but is secondary"
             },
             {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             },
             {
               "label": "Not in my game",
@@ -1257,10 +1327,17 @@
         ],
         "prompt": "Engine: which game handles this most like yours?",
         "score": 0.5989829008976598,
+        "moreOptions": [
+          {
+            "label": "None of these",
+            "description": "None of these fit; show other options"
+          }
+        ],
         "answerMap": {
           "Cities: Skylines": "a",
           "Satisfactory": "b",
           "Terraria": "c",
+          "Not sure / don't know these games": "unsure",
           "None of these": "neither",
           "Other": "neither"
         },
@@ -1285,8 +1362,8 @@
               "preview": "**Terraria** (2011)\n\nEngine: Custom\n\nRe-Logic wrote it in C# on Microsoft's XNA framework instead of licensing a commercial engine."
             },
             {
-              "label": "None of these",
-              "description": "None of these fit; show other options"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             }
           ]
         }
@@ -1381,11 +1458,18 @@
         ],
         "prompt": "Time model: Command & Conquer or X-COM: UFO Defense?",
         "score": 0.2540785598477546,
+        "moreOptions": [
+          {
+            "label": "Blend of both",
+            "description": "Somewhere in between, or a mix of both approaches"
+          }
+        ],
         "answerMap": {
           "Command & Conquer": "a",
           "X-COM: UFO Defense": "b",
-          "Blend of both": "blend",
+          "Not sure / don't know these games": "unsure",
           "Not in my game": "na",
+          "Blend of both": "blend",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -1404,8 +1488,8 @@
               "preview": "**X-COM: UFO Defense** (1994)\n\nTime model: Turn-based\n\nTactical battles use time units; aliens act only after the player ends the turn."
             },
             {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             },
             {
               "label": "Not in my game",
@@ -1446,11 +1530,18 @@
         ],
         "prompt": "Audience rating: Journey or The Last of Us Part I?",
         "score": 0.20501493939861523,
+        "moreOptions": [
+          {
+            "label": "Blend of both",
+            "description": "Somewhere in between, or a mix of both approaches"
+          }
+        ],
         "answerMap": {
           "Journey": "a",
           "The Last of Us Part I": "b",
-          "Blend of both": "blend",
+          "Not sure / don't know these games": "unsure",
           "Not in my game": "na",
+          "Blend of both": "blend",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -1469,8 +1560,8 @@
               "preview": "**The Last of Us Part I** (2022)\n\nAudience rating: Mature\n\nClose-up stealth kills, dismemberment, themes of suicide and torture, and frequent strong language."
             },
             {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             },
             {
               "label": "Not in my game",
@@ -1569,11 +1660,18 @@
         ],
         "prompt": "Session length: Clash Royale or Hearts of Iron IV?",
         "score": 0.20147929988056493,
+        "moreOptions": [
+          {
+            "label": "Blend of both",
+            "description": "Somewhere in between, or a mix of both approaches"
+          }
+        ],
         "answerMap": {
           "Clash Royale": "a",
           "Hearts of Iron IV": "b",
-          "Blend of both": "blend",
+          "Not sure / don't know these games": "unsure",
           "Not in my game": "na",
+          "Blend of both": "blend",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -1592,8 +1690,8 @@
               "preview": "**Hearts of Iron IV** (2016)\n\nSession length: Long sessions\n\nStart in 1939 with war already lined up, or in 1936 to build up yourself; either way a campaign is a multi-sitting commitment."
             },
             {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             },
             {
               "label": "Not in my game",
@@ -1634,11 +1732,18 @@
         ],
         "prompt": "Run structure: Borderlands 2 or Risk of Rain 2?",
         "score": 0.37644829259420154,
+        "moreOptions": [
+          {
+            "label": "Blend of both",
+            "description": "Somewhere in between, or a mix of both approaches"
+          }
+        ],
         "answerMap": {
           "Borderlands 2": "a",
           "Risk of Rain 2": "b",
-          "Blend of both": "blend",
+          "Not sure / don't know these games": "unsure",
           "Not in my game": "na",
+          "Blend of both": "blend",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -1657,8 +1762,8 @@
               "preview": "**Risk of Rain 2** (2019)\n\nRun structure: Run-based\n\nItems stack within a run and are lost on death; only unlocks carry over."
             },
             {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             },
             {
               "label": "Not in my game",
@@ -1707,10 +1812,17 @@
         ],
         "prompt": "Failure penalty: which game handles this most like yours?",
         "score": 1.6066735100185043,
+        "moreOptions": [
+          {
+            "label": "None of these",
+            "description": "None of these fit; show other options"
+          }
+        ],
         "answerMap": {
           "Dark Souls": "a",
           "Celeste": "b",
           "XCOM 2": "c",
+          "Not sure / don't know these games": "unsure",
           "None of these": "neither",
           "Other": "neither"
         },
@@ -1735,8 +1847,8 @@
               "preview": "**XCOM 2** (2016)\n\nFailure penalty: Permadeath\n\nOn Ironman, one save is overwritten through every mission, so a soldier killed in combat is gone for good with no reload."
             },
             {
-              "label": "None of these",
-              "description": "None of these fit; show other options"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             }
           ]
         }
@@ -1782,11 +1894,18 @@
         ],
         "prompt": "Saving: which fits your game? (page 1 of 2)",
         "score": 1.7015942315185701,
+        "moreOptions": [
+          {
+            "label": "None of these",
+            "description": "None of these fit; show other options"
+          }
+        ],
         "answerMap": {
           "Checkpoints": "a",
           "Free save": "b",
           "Limited saves": "c",
           "Ironman": "d",
+          "None of these": "neither",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -1853,10 +1972,17 @@
         ],
         "prompt": "Primary defense: which game handles this most like yours?",
         "score": 1.2638751194112898,
+        "moreOptions": [
+          {
+            "label": "None of these",
+            "description": "None of these fit; show other options"
+          }
+        ],
         "answerMap": {
           "Vanquish": "a",
           "Max Payne": "b",
           "Serious Sam: The First Encounter": "c",
+          "Not sure / don't know these games": "unsure",
           "None of these": "neither",
           "Other": "neither"
         },
@@ -1881,8 +2007,8 @@
               "preview": "**Serious Sam: The First Encounter** (2001)\n\nPrimary defense: No active defense\n\nNo block, cover or dodge move: large arenas fill with waves of enemies and you survive by moving and killing fast"
             },
             {
-              "label": "None of these",
-              "description": "None of these fit; show other options"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             }
           ]
         }
@@ -1919,11 +2045,18 @@
         ],
         "prompt": "Multiplayer structure: EVE Online or Rocket League?",
         "score": 1.251948350314501,
+        "moreOptions": [
+          {
+            "label": "Blend of both",
+            "description": "Somewhere in between, or a mix of both approaches"
+          }
+        ],
         "answerMap": {
           "EVE Online": "a",
           "Rocket League": "b",
-          "Blend of both": "blend",
+          "Not sure / don't know these games": "unsure",
           "Not in my game": "na",
+          "Blend of both": "blend",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -1942,8 +2075,8 @@
               "preview": "**Rocket League** (2015)\n\nMultiplayer structure: Session matches\n\nShort matches with a five-minute clock; ranked playlists of up to 3v3 reset the field every match."
             },
             {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             },
             {
               "label": "Not in my game",
@@ -2050,11 +2183,18 @@
         ],
         "prompt": "Win condition: Super Smash Bros. Brawl or BlazBlue: Central Fiction?",
         "score": 1.2519138283816904,
+        "moreOptions": [
+          {
+            "label": "Blend of both",
+            "description": "Somewhere in between, or a mix of both approaches"
+          }
+        ],
         "answerMap": {
           "Super Smash Bros. Brawl": "a",
           "BlazBlue: Central Fiction": "b",
-          "Blend of both": "blend",
+          "Not sure / don't know these games": "unsure",
           "Not in my game": "na",
+          "Blend of both": "blend",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -2073,8 +2213,8 @@
               "preview": "**BlazBlue: Central Fiction** (2016)\n\nWin condition: Health bars\n\nRounds end when health empties; values vary by character, and Ragna's Drive steals life to offset his below average health."
             },
             {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             },
             {
               "label": "Not in my game",
@@ -2189,10 +2329,22 @@
         ],
         "prompt": "Multiplayer mode: Deep Rock Galactic, Dota 2 or League of Legends?",
         "score": 1.2519311876061248,
+        "moreOptions": [
+          {
+            "label": "Not in my game",
+            "description": "This axis does not apply to my game"
+          },
+          {
+            "label": "Blend of both",
+            "description": "Somewhere in between, or a mix of both approaches"
+          }
+        ],
         "answerMap": {
           "Deep Rock Galactic": "a",
           "Dota 2": "b",
           "League of Legends": "c",
+          "Not sure / don't know these games": "unsure",
+          "Not in my game": "na",
           "Blend of both": "blend",
           "Other": "neither"
         },
@@ -2217,8 +2369,8 @@
               "preview": "**League of Legends** (2009)\n\nMultiplayer mode: Competitive\n\nTwo teams of five; last hits on minions earn gold, but you cannot kill your own minions, so lane pressure comes only from attacking."
             },
             {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             }
           ]
         }
@@ -2255,11 +2407,18 @@
         ],
         "prompt": "Match size: It Takes Two or PUBG: Battlegrounds?",
         "score": 1.251898956187628,
+        "moreOptions": [
+          {
+            "label": "Blend of both",
+            "description": "Somewhere in between, or a mix of both approaches"
+          }
+        ],
         "answerMap": {
           "It Takes Two": "a",
           "PUBG: Battlegrounds": "b",
-          "Blend of both": "blend",
+          "Not sure / don't know these games": "unsure",
           "Not in my game": "na",
+          "Blend of both": "blend",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -2278,8 +2437,8 @@
               "preview": "**PUBG: Battlegrounds** (2017)\n\nMatch size: 100 or more\n\nUp to 100 players parachute onto one map; a shrinking Blue Zone forces the crowd together until one player or squad is left."
             },
             {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             },
             {
               "label": "Not in my game",
@@ -2328,10 +2487,17 @@
         ],
         "prompt": "Setting: which game handles this most like yours?",
         "score": 0.8516661492738656,
+        "moreOptions": [
+          {
+            "label": "None of these",
+            "description": "None of these fit; show other options"
+          }
+        ],
         "answerMap": {
           "Grand Theft Auto V": "a",
           "FTL: Faster Than Light": "b",
           "Baldur's Gate": "c",
+          "Not sure / don't know these games": "unsure",
           "None of these": "neither",
           "Other": "neither"
         },
@@ -2356,8 +2522,8 @@
               "preview": "**Baldur's Gate** (1998)\n\nSetting: Fantasy\n\nThe Forgotten Realms' Sword Coast under AD&D 2nd Edition rules: spell memorization, magic items and monsters come from D&D."
             },
             {
-              "label": "None of these",
-              "description": "None of these fit; show other options"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             }
           ]
         }
@@ -2394,11 +2560,18 @@
         ],
         "prompt": "Fighting input: Dragon Ball FighterZ or Granblue Fantasy Versus: Rising?",
         "score": 1.2517885813633802,
+        "moreOptions": [
+          {
+            "label": "Blend of both",
+            "description": "Somewhere in between, or a mix of both approaches"
+          }
+        ],
         "answerMap": {
           "Dragon Ball FighterZ": "a",
           "Granblue Fantasy Versus: Rising": "b",
-          "Blend of both": "blend",
+          "Not sure / don't know these games": "unsure",
           "Not in my game": "na",
+          "Blend of both": "blend",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -2417,8 +2590,8 @@
               "preview": "**Granblue Fantasy Versus: Rising** (2023)\n\nFighting input: Simplified inputs\n\nSimple inputs perform skills with a single button press, so newcomers need not memorize complicated controls."
             },
             {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             },
             {
               "label": "Not in my game",
@@ -2459,11 +2632,18 @@
         ],
         "prompt": "Role symmetry: Among Us or Rocket League?",
         "score": 0.8678936040667367,
+        "moreOptions": [
+          {
+            "label": "Blend of both",
+            "description": "Somewhere in between, or a mix of both approaches"
+          }
+        ],
         "answerMap": {
           "Among Us": "a",
           "Rocket League": "b",
-          "Blend of both": "blend",
+          "Not sure / don't know these games": "unsure",
           "Not in my game": "na",
+          "Blend of both": "blend",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -2482,8 +2662,8 @@
               "preview": "**Rocket League** (2015)\n\nRole symmetry: Symmetric\n\nTeams of up to three drive cars with the same boost, jump and flip; only the goal you defend differs."
             },
             {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             },
             {
               "label": "Not in my game",
@@ -2524,11 +2704,18 @@
         ],
         "prompt": "Loss on death: Albion Online or Guild Wars?",
         "score": 0.8679722797408237,
+        "moreOptions": [
+          {
+            "label": "Blend of both",
+            "description": "Somewhere in between, or a mix of both approaches"
+          }
+        ],
         "answerMap": {
           "Albion Online": "a",
           "Guild Wars": "b",
-          "Blend of both": "blend",
+          "Not sure / don't know these games": "unsure",
           "Not in my game": "na",
+          "Blend of both": "blend",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -2547,8 +2734,8 @@
               "preview": "**Guild Wars** (2005)\n\nLoss on death: Nothing lost\n\nDying adds a stacking health and energy penalty up to 60% that clears in town; no items or experience are lost."
             },
             {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             },
             {
               "label": "Not in my game",
@@ -2589,11 +2776,18 @@
         ],
         "prompt": "Combat resource: Dark Souls or DOOM Eternal?",
         "score": 0.8678758591168169,
+        "moreOptions": [
+          {
+            "label": "Blend of both",
+            "description": "Somewhere in between, or a mix of both approaches"
+          }
+        ],
         "answerMap": {
           "Dark Souls": "a",
           "DOOM Eternal": "b",
-          "Blend of both": "blend",
+          "Not sure / don't know these games": "unsure",
           "Not in my game": "na",
+          "Blend of both": "blend",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -2612,8 +2806,8 @@
               "preview": "**DOOM Eternal** (2020)\n\nCombat resource: Resource-loop aggression\n\nNo stamina: chainsaw for ammo, glory kills for health, flame belch for armor reward aggression"
             },
             {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             },
             {
               "label": "Not in my game",
@@ -2654,11 +2848,18 @@
         ],
         "prompt": "Matching: Diablo II or League of Legends?",
         "score": 0.8679567402891621,
+        "moreOptions": [
+          {
+            "label": "Blend of both",
+            "description": "Somewhere in between, or a mix of both approaches"
+          }
+        ],
         "answerMap": {
           "Diablo II": "a",
           "League of Legends": "b",
-          "Blend of both": "blend",
+          "Not sure / don't know these games": "unsure",
           "Not in my game": "na",
+          "Blend of both": "blend",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -2677,8 +2878,8 @@
               "preview": "**League of Legends** (2009)\n\nMatching: Ranked matchmaking\n\nRanked Solo/Duo uses placements and LP to move you through tiers; duo queuing is limited at the top tiers."
             },
             {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             },
             {
               "label": "Not in my game",
@@ -3013,11 +3214,18 @@
         ],
         "prompt": "Combat simulation: Blade & Sorcery or Batman: Arkham Asylum?",
         "score": 0.2502385139098411,
+        "moreOptions": [
+          {
+            "label": "Blend of both",
+            "description": "Somewhere in between, or a mix of both approaches"
+          }
+        ],
         "answerMap": {
           "Blade & Sorcery": "a",
           "Batman: Arkham Asylum": "b",
-          "Blend of both": "blend",
+          "Not sure / don't know these games": "unsure",
           "Not in my game": "na",
+          "Blend of both": "blend",
           "Other": "neither"
         },
         "askUserQuestion": {
@@ -3036,8 +3244,8 @@
               "preview": "**Batman: Arkham Asylum** (2009)\n\nCombat simulation: Animation and stat driven\n\nFreeFlow combat chains animated strikes into seamless combos against groups of henchmen; button presses trigger whole moves"
             },
             {
-              "label": "Blend of both",
-              "description": "Somewhere in between, or a mix of both approaches"
+              "label": "Not sure / don't know these games",
+              "description": "Skip these games for now; the topic comes back later in plain words"
             },
             {
               "label": "Not in my game",

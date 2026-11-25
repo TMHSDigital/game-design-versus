@@ -19,7 +19,9 @@ export type AskUserQuestion = {
 export type RenderedQuestion = Question & {
   prompt: string;
   askUserQuestion: AskUserQuestion;
-  /** Maps each AskUserQuestion option label to the choice to send to versus_answer. */
+  /** Answers that did not fit the 4-option limit of askUserQuestion. Show them in a plain list; they are in answerMap. */
+  moreOptions?: { label: string; description: string }[];
+  /** Maps each AskUserQuestion option label (and each moreOptions label) to the choice to send to versus_answer. */
   answerMap: Record<string, string>;
   score: number;
 };
@@ -142,6 +144,18 @@ function repetition(state: SessionState, module: string, games: string[]): numbe
   return pen;
 }
 
+/** Penalty for comparisons featuring games the user said they do not know. */
+function unknownPenalty(state: SessionState, games: string[]): number {
+  if (!state.unknownGames.length) return 0;
+  const unknown = new Set(state.unknownGames.map(gameKey));
+  return games.some((g) => unknown.has(gameKey(g))) ? ENGINE.unknownGamePenalty : 0;
+}
+
+/** After "Not sure / don't know these games" the axis is asked in plain words instead of games. */
+function wantsPlain(s: AxisState): boolean {
+  return s.unsureCount >= ENGINE.unsurePlainAfter;
+}
+
 function poleOptions(a: Axis, poles: string[]): QuestionOption[] {
   return poles.map((id, i) => {
     const p = a.poles.find((x) => x.id === id);
@@ -169,11 +183,11 @@ export function candidates(k: Knowledge, state: SessionState): Candidate[] {
       const eig = eigBinary(s.dist ?? []);
       const ea = eigArchetype(k, post, binaryOutcomes(a.id));
       const base = imp * eig + ENGINE.archetypeEigWeight * ea + bonus;
-      const comps = (k.comparisonsByAxis.get(a.id) ?? []).filter((c) => !state.usedComparisons.has(c.id));
+      const comps = wantsPlain(s) ? [] : (k.comparisonsByAxis.get(a.id) ?? []).filter((c) => !state.usedComparisons.has(c.id));
       if (comps.length) {
         for (const c of comps) {
           const games = c.options.map((o) => o.game);
-          out.push({ axis: s, comparison: c, options: comparisonOptions(c), format: 'comparison', priority, score: base + familiarity(state, c) - repetition(state, a.module, games) });
+          out.push({ axis: s, comparison: c, options: comparisonOptions(c), format: 'comparison', priority, score: base + familiarity(state, c) - repetition(state, a.module, games) - unknownPenalty(state, games) });
         }
       } else {
         out.push({ axis: s, options: poleOptions(a, a.poles.map((p) => p.id)), format: 'poles', priority, score: base - repetition(state, a.module, []) });
@@ -183,12 +197,13 @@ export function candidates(k: Knowledge, state: SessionState): Candidate[] {
     if (a.kind === 'categorical') {
       const dist = s.poleDist ?? {};
       const remaining = a.poles.filter((p) => !s.excludedPoles.includes(p.id) && !p.noExemplar);
-      const comps = (k.comparisonsByAxis.get(a.id) ?? []).filter(
+      const comps = wantsPlain(s) ? [] : (k.comparisonsByAxis.get(a.id) ?? []).filter(
         (c) => !state.usedComparisons.has(c.id) && c.options.every((o) => !s.excludedPoles.includes(o.pole)),
       );
       for (const c of comps) {
         const shown = c.options.map((o) => o.pole);
-        const score = imp * eigCategorical(dist, shown) + ENGINE.archetypeEigWeight * eigArchetype(k, post, catOutcomes(a, shown)) + bonus + familiarity(state, c) - repetition(state, a.module, c.options.map((o) => o.game));
+        const games = c.options.map((o) => o.game);
+        const score = imp * eigCategorical(dist, shown) + ENGINE.archetypeEigWeight * eigArchetype(k, post, catOutcomes(a, shown)) + bonus + familiarity(state, c) - repetition(state, a.module, games) - unknownPenalty(state, games);
         out.push({ axis: s, comparison: c, options: comparisonOptions(c), format: 'comparison', priority, score });
       }
       // Pole page: most probable remaining poles first. 3 poles plus "None of these" while more remain.
@@ -220,6 +235,7 @@ function isAskable(state: SessionState, s: AxisState): boolean {
   if (s.status !== 'open') return false;
   if (s.applicable === false) return false;
   if (s.lastSkip !== undefined && state.questionCount - s.lastSkip < ENGINE.skipCooldown) return false;
+  if (s.lastUnsure !== undefined && state.questionCount - s.lastUnsure < ENGINE.unsureCooldown) return false;
   return true;
 }
 
@@ -266,6 +282,7 @@ export function nextQuestions(k: Knowledge, state: SessionState, opts: NextOptio
 const BLEND_LABEL = 'Blend of both';
 const NA_LABEL = 'Not in my game';
 const NONE_LABEL = 'None of these';
+const UNSURE_LABEL = "Not sure / don't know these games";
 
 export function render(c: Candidate, questionId: string): RenderedQuestion {
   const a = c.axis.axis;
@@ -301,25 +318,33 @@ export function renderQuestion(q: Question, a: Pick<Axis, 'kind' | 'label' | 'he
     }
     return opt;
   });
-  const room = () => options.length < 4;
+  // Extra answers in priority order; whatever does not fit the 4-option limit goes to moreOptions.
+  // A question that shows games always offers "Not sure" so nobody has to pick between games they do not know.
+  const extras: { label: string; description: string; choice: string }[] = [];
+  const games = !q.multi && q.options.some((o) => o.game);
+  if (games) extras.push({ label: UNSURE_LABEL, description: 'Skip these games for now; the topic comes back later in plain words', choice: 'unsure' });
   if (binary) {
-    if (room() && !q.options.some((o) => o.pole === BLEND_POLE)) {
-      options.push({ label: BLEND_LABEL, description: 'Somewhere in between, or a mix of both approaches' });
-      answerMap[BLEND_LABEL] = 'blend';
-    }
-    if (room()) {
-      options.push({ label: NA_LABEL, description: 'This axis does not apply to my game' });
-      answerMap[NA_LABEL] = 'na';
-    }
-  } else if (!q.multi && room()) {
-    options.push({ label: NONE_LABEL, description: 'None of these fit; show other options' });
-    answerMap[NONE_LABEL] = 'neither';
+    const blend = q.options.some((o) => o.pole === BLEND_POLE)
+      ? []
+      : [{ label: BLEND_LABEL, description: 'Somewhere in between, or a mix of both approaches', choice: 'blend' }];
+    const na = { label: NA_LABEL, description: 'This axis does not apply to my game', choice: 'na' };
+    // With games shown, "Not in my game" (how whole modules get skipped) outranks Blend for the last slot.
+    extras.push(...(games ? [na, ...blend] : [...blend, na]));
+  } else if (!q.multi) {
+    extras.push({ label: NONE_LABEL, description: 'None of these fit; show other options', choice: 'neither' });
+  }
+  const moreOptions: { label: string; description: string }[] = [];
+  for (const x of extras) {
+    answerMap[x.label] = x.choice;
+    if (options.length < 4) options.push({ label: x.label, description: x.description });
+    else moreOptions.push({ label: x.label, description: x.description });
   }
   answerMap['Other'] = 'neither';
   return {
     ...q,
     prompt,
     score,
+    ...(moreOptions.length ? { moreOptions } : {}),
     answerMap,
     askUserQuestion: { question: prompt, header: a.header, multiSelect: q.multi, options },
   };

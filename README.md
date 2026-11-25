@@ -203,7 +203,10 @@ Sourcing the thin axes is the most useful contribution. Read [docs/library-brief
 | `versus_catalog { module?, axis?, game?, query? }` | Browse axes and comparisons |
 
 Choices: `a`, `b`, `c`, `d` (options), `blend`, `neither` (Other, with `note`), `no_pref`, `na` (not in my game),
-`skip`. Multi-select questions take `selected` option keys.
+`unsure` (the user does not know the games; no evidence is recorded, games they do not know are avoided, and the
+topic returns a couple of answers later in plain words), `skip`. Multi-select questions take `selected` option keys.
+Questions that show games always offer "Not sure / don't know these games". When an answer does not fit the
+4-option limit (usually "Blend of both"), it is listed in `moreOptions` and still mapped in `answerMap`.
 
 Resources: `gdv://ontology`, `gdv://axes/{axisId}`, `gdv://comparisons/{axisId}`, `gdv://sessions/{sessionId}`,
 `gdv://sessions/{sessionId}/brief`. Prompts: `versus` (pitch), `versus-resume` (sessionId), `versus-brief`

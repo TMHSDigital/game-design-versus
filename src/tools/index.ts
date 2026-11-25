@@ -13,6 +13,7 @@ const QuestionOut = z.looseObject({
   comparisonId: z.string().optional(),
   prompt: z.string(),
   askUserQuestion: z.looseObject({ question: z.string(), header: z.string().max(12), multiSelect: z.boolean(), options: z.array(askOption).min(2).max(4) }),
+  moreOptions: z.array(askOption).optional(),
   answerMap: z.record(z.string(), z.string()),
 });
 const Summary = z.looseObject({
@@ -89,7 +90,7 @@ export function registerTools(server: McpServer, k: Knowledge): void {
     'versus_next',
     {
       title: 'Next questions',
-      description: 'Get up to 4 next questions, each from a different module. Render each askUserQuestion object verbatim with AskUserQuestion, then map the chosen label through answerMap and call versus_answer.',
+      description: 'Get up to 4 next questions, each from a different module. Render each askUserQuestion object verbatim with AskUserQuestion, then map the chosen label through answerMap and call versus_answer. moreOptions lists answers that did not fit the 4-option limit (for example Blend of both); they still map through answerMap when the user types them.',
       inputSchema: z.object({ sessionId, count: z.number().int().min(1).max(4).optional().describe('How many questions, 1 to 4') }),
       outputSchema: z.looseObject({ questions: z.array(QuestionOut), summary: Summary }),
       annotations: { readOnlyHint: false },
@@ -97,7 +98,7 @@ export function registerTools(server: McpServer, k: Knowledge): void {
     guard((a) => {
       const r = svc.next(k, a.sessionId, a.count ?? 1);
       const text = r.questions.length
-        ? r.questions.map((q, i) => `${i + 1}. [${q.questionId}] ${q.prompt}\n${q.askUserQuestion.options.map((o) => `   - ${o.label}: ${o.description}`).join('\n')}`).join('\n')
+        ? r.questions.map((q, i) => `${i + 1}. [${q.questionId}] ${q.prompt}\n${[...q.askUserQuestion.options, ...(q.moreOptions ?? [])].map((o) => `   - ${o.label}: ${o.description}`).join('\n')}`).join('\n')
         : 'No questions left. Call versus_brief.';
       return ok(text, r);
     }),
@@ -107,7 +108,7 @@ export function registerTools(server: McpServer, k: Knowledge): void {
     'versus_answer',
     {
       title: 'Record answers',
-      description: 'Record answers to questions from versus_next or versus_ask. choice a/b/c/d picks an option; blend, neither (with note for Other text), no_pref, na (not in my game) or skip. lean 0-100 refines a binary answer (0 = first pole). For multiSelect questions pass selected option keys.',
+      description: 'Record answers to questions from versus_next or versus_ask. choice a/b/c/d picks an option; blend, neither (with note for Other text), no_pref, na (not in my game), unsure (the user does not know the games or cannot judge yet; the topic returns later in plain words) or skip. lean 0-100 refines a binary answer (0 = first pole). For multiSelect questions pass selected option keys.',
       inputSchema: z.object({
         sessionId,
         answers: z

@@ -18,7 +18,7 @@ You are the interviewer. The `gdv` MCP server (tools named `versus_*`) is the re
 
 1. Call `versus_next` with `count` up to 4.
 2. Render each question's `askUserQuestion` object verbatim with the AskUserQuestion tool, all questions of the round in one call. Keep `header`, `options` and `multiSelect` exactly as given; previews only work on single-select questions.
-3. Map each chosen label through the question's `answerMap` to a choice (`a`, `b`, `c`, `d`, `blend`, `na`, `neither`). For multiSelect questions send `choice: "neither"` with `selected` set to the chosen option keys or labels.
+3. Map each chosen label through the question's `answerMap` to a choice (`a`, `b`, `c`, `d`, `blend`, `na`, `neither`, `unsure`). "Not sure / don't know these games" maps to `unsure`: nothing is recorded, those games are avoided, and the topic comes back later in plain words. If the user types an answer listed in `moreOptions` (usually "Blend of both", which did not fit the 4 options), map it the same way. For multiSelect questions send `choice: "neither"` with `selected` set to the chosen option keys or labels.
 4. If the user picks Other and types text, send `choice: "neither"` with their text as `note`. If the text clearly states a position (for example "mostly the first, but with a twist"), use `choice` plus `lean` 0 to 100, or `versus_set` on that axis.
 5. Call `versus_answer` with every answer from the round in one call.
 6. Every 5 rounds, give a one-line recap: what is now settled (from `settled` in the summary) and the overall clarity.
@@ -36,10 +36,11 @@ Stop when `stopRecommended` is true or the user says so. The user may also keep 
 
 ## Without AskUserQuestion
 
-If the AskUserQuestion tool is unavailable, print each question as a numbered list (label: description) and ask the user to reply with numbers, for example `1b, 2a, 3 other: ...`. Map replies through `answerMap` as above.
+If the AskUserQuestion tool is unavailable, print each question as a numbered list (label: description), including the `moreOptions`, and ask the user to reply with numbers, for example `1b, 2a, 3 other: ...`. Map replies through `answerMap` as above.
 
 ## Style
 
 - Keep your own text short; the questions carry the content.
 - Never claim a game does something the option text does not say. If the user corrects a game fact, note it with `neither` plus `note`.
 - Do not rush: answering "Not in my game" is how whole modules get skipped, so make sure the user knows it is an option.
+- Never make the user pick between games they do not know: "Not sure / don't know these games" is always a fine answer.

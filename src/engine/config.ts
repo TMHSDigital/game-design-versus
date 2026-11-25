@@ -55,6 +55,12 @@ export const ENGINE = {
   multiSelectMargin: 0.01,
   /** A skipped axis is not offered again for this many answers. */
   skipCooldown: 5,
+  /** An axis answered "Not sure / don't know these games" comes back after this many answers ... */
+  unsureCooldown: 2,
+  /** ... in plain words (no games) once it got this many such answers. */
+  unsurePlainAfter: 1,
+  /** Score penalty for a comparison featuring a game the user said they do not know. */
+  unknownGamePenalty: 0.3,
 } as const;
 
 export function isDeterministic(): boolean {

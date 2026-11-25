@@ -118,6 +118,24 @@ describe('service validation', () => {
 });
 
 describe('answer validation', () => {
+  it('records "not sure" on a game question as no answer and avoids those games next', () => {
+    const s = svc.startSession(k, { title: 'Unsure', seed: 8 });
+    let q = svc.next(k, s.sessionId, 1).questions[0];
+    for (let i = 0; i < 60 && q && !q.options.some((o) => o.game); i++) {
+      svc.answer(k, s.sessionId, [{ questionId: q.questionId, choice: 'skip' }]);
+      q = svc.next(k, s.sessionId, 1).questions[0];
+    }
+    if (!q) throw new Error('no game question reached');
+    const label = Object.keys(q.answerMap).find((l) => q!.answerMap[l] === 'unsure')!;
+    expect(q.askUserQuestion.options.some((o) => o.label === label)).toBe(true);
+    const r = svc.answer(k, s.sessionId, [{ questionId: q.questionId, choice: 'unsure' }]);
+    expect(r.recorded).toBe(1);
+    expect(r.overallClarity.after).toBe(r.overallClarity.before);
+    const st = foldSession(k, loadSession(s.sessionId).events);
+    expect(st.axes.get(q.axis)?.status).toBe('open');
+    expect(st.unknownGames.length).toBeGreaterThan(0);
+  });
+
   function pendingOn(kind: 'categorical' | 'multi') {
     const s = svc.startSession(k, { title: kind, seed: 21 });
     for (let i = 0; i < 60; i++) {

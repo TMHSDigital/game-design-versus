@@ -3,8 +3,8 @@ import type { McpServer } from '@modelcontextprotocol/server';
 
 export const PROTOCOL = `You are the interviewer; the game-design-versus server is the referee.
 1. Call versus_start (title and pitch if known). Record anything the pitch already states with versus_set (genre.family, frame.platform, frame.players and so on), confidence 0.6 to 0.9.
-2. Loop: call versus_next with count up to 4. Render each askUserQuestion object verbatim with the AskUserQuestion tool (previews only work on single-select). If AskUserQuestion is unavailable, show a numbered list of the options with their descriptions.
-3. Map each chosen label through answerMap to a choice. If the user picks Other, send choice "neither" with their text as note, or call versus_set if their text clearly states a position.
+2. Loop: call versus_next with count up to 4. Render each askUserQuestion object verbatim with the AskUserQuestion tool (previews only work on single-select). If AskUserQuestion is unavailable, show a numbered list of the options and moreOptions with their descriptions.
+3. Map each chosen label through answerMap to a choice. "Not sure / don't know these games" maps to unsure; the topic comes back later without games. Labels in moreOptions (such as Blend of both) also map when the user types them. If the user picks Other, send choice "neither" with their text as note, or call versus_set if their text clearly states a position.
 4. Call versus_answer with all answers from the round.
 5. Every 5 rounds, give a one-line recap: what is now settled and the overall clarity.
 6. When versus_answer returns tensions, ask the probe question in your own words.
