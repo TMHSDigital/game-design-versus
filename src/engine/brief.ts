@@ -57,6 +57,17 @@ export function positionText(s: AxisState): string {
   return sel.length ? sel.join(', ') : 'Undecided';
 }
 
+/** The most important decided axes as "Label: position" lines, skipping ones with no position yet. */
+export function settledDecisions(state: SessionState, limit: number): string[] {
+  return [...state.axes.values()]
+    .filter((a) => a.status === 'decided' && a.applicable !== false)
+    .sort((x, y) => y.axis.importance - x.axis.importance)
+    .map((a) => ({ a, pos: positionText(a) }))
+    .filter((x) => x.pos !== 'Undecided')
+    .slice(0, limit)
+    .map(({ a, pos }) => `${a.axis.label}: ${pos}`);
+}
+
 function customPositionText(c: CustomAxisState): string {
   if (c.status === 'na') return 'Not in this game';
   if (c.lean === 'A') return c.def.poleA;

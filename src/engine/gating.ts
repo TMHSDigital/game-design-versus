@@ -75,7 +75,7 @@ export function computeFlags(k: Knowledge, axis: (id: string) => AxisView | unde
       const gate = k.axes.find((a) => a.kind === 'gate' && a.sets?.some((s) => s.flag === f) && (axis(a.id)?.status ?? 'open') !== 'open');
       if (gate) {
         const rule = gate.sets?.find((s) => s.flag === f);
-        next[f] = axis(gate.id)?.status === 'na' || !rule ? false : (evalExpr(rule.when, { flags, axis }) ?? undefined);
+        next[f] = axis(gate.id)?.status === 'na' || !rule ? false : evalExpr(rule.when, { flags, axis });
         continue;
       }
       const results: Tri[] = [];

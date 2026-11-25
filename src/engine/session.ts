@@ -506,7 +506,6 @@ export function isGateLike(s: AxisState): boolean {
 /** A gate-like axis matters while at least one flag it sets is still undetermined. */
 export function gateStillOpen(state: SessionState, s: AxisState): boolean {
   const flags = [...new Set((s.axis.sets ?? []).map((x) => x.flag))];
-  if (s.axis.kind === 'gate') return flags.some((f) => state.flags[f] === undefined);
   return flags.some((f) => state.flags[f] === undefined);
 }
 

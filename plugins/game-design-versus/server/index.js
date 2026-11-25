@@ -75438,7 +75438,7 @@ function computeFlags(k2, axis, overrides = {}) {
       const gate = k2.axes.find((a) => a.kind === "gate" && a.sets?.some((s) => s.flag === f) && (axis(a.id)?.status ?? "open") !== "open");
       if (gate) {
         const rule = gate.sets?.find((s) => s.flag === f);
-        next2[f] = axis(gate.id)?.status === "na" || !rule ? false : evalExpr(rule.when, { flags, axis }) ?? void 0;
+        next2[f] = axis(gate.id)?.status === "na" || !rule ? false : evalExpr(rule.when, { flags, axis });
         continue;
       }
       const results = [];
@@ -76096,7 +76096,6 @@ function isGateLike(s) {
 }
 function gateStillOpen(state, s) {
   const flags = [...new Set((s.axis.sets ?? []).map((x) => x.flag))];
-  if (s.axis.kind === "gate") return flags.some((f) => state.flags[f] === void 0);
   return flags.some((f) => state.flags[f] === void 0);
 }
 function topArchetypes(k2, state, n = 5) {
@@ -76449,6 +76448,9 @@ function positionText(s) {
   const sel = (s.selected ?? []).map((p) => poleLabel(a, p)).filter(Boolean);
   return sel.length ? sel.join(", ") : "Undecided";
 }
+function settledDecisions(state, limit) {
+  return [...state.axes.values()].filter((a) => a.status === "decided" && a.applicable !== false).sort((x, y) => y.axis.importance - x.axis.importance).map((a) => ({ a, pos: positionText(a) })).filter((x) => x.pos !== "Undecided").slice(0, limit).map(({ a, pos }) => `${a.axis.label}: ${pos}`);
+}
 function customPositionText(c) {
   if (c.status === "na") return "Not in this game";
   if (c.lean === "A") return c.def.poleA;
@@ -76784,7 +76786,7 @@ function round2(x) {
 function summarize(k2, f, state) {
   const s = state ?? foldSession(k2, f.events);
   const c = claritySummary(k2, s);
-  const settled = [...s.axes.values()].filter((a) => a.status === "decided" && a.applicable !== false).sort((x, y) => y.axis.importance - x.axis.importance).map((a) => ({ a, pos: positionText(a) })).filter((x) => x.pos !== "Undecided").slice(0, 12).map(({ a, pos }) => `${a.axis.label}: ${pos}`);
+  const settled = settledDecisions(s, 12);
   return {
     sessionId: f.id,
     title: s.title,
@@ -76889,7 +76891,7 @@ function answer(k2, sessionId, answers) {
   const newTensions = after.tensions.filter((t) => !oldT.has(t.id)).map((t) => ({ id: t.id, severity: t.severity, message: t.message, probe: t.probe }));
   const followUpHints = [];
   for (const a of answers) {
-    if (a.choice === "neither" && a.note) followUpHints.push(`The user described their own approach for ${f.events.find((e) => e.type !== "start" && "question" in e && e.question.questionId === a.questionId && true) ? a.questionId : a.questionId}: consider versus_ask with a customAxis or versus_set to capture "${a.note.slice(0, 80)}".`);
+    if (a.choice === "neither" && a.note) followUpHints.push(`The user described their own approach for ${a.questionId}: consider versus_ask with a customAxis or versus_set to capture "${a.note.slice(0, 80)}".`);
     if (a.choice === "blend") followUpHints.push(`${a.questionId}: a blend was chosen; a follow-up with lean 0-100 can pin it down.`);
   }
   for (const t of newTensions) followUpHints.push(`Tension (${t.severity}): ${t.probe}`);

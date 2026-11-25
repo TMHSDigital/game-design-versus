@@ -1,7 +1,7 @@
 /**
  * Engine constants. Values marked SPEC come straight from the product spec. Values marked
  * CALIBRATION are documented deviations needed so the stop rule (overall clarity >= 0.80) is reachable
- * within the question budget; see README "Engine notes".
+ * within the question budget; see README "Calibration notes".
  */
 export const ENGINE = {
   /** SPEC: likelihood of answering A for each bin [-2,-1,0,+1,+2]. B is the mirror. */

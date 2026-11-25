@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { VersusDemo, demoKnowledge } from '../../src/web/demo';
 import type { Choice } from '../../src/engine/session';
+import { settledDecisions } from '../../src/engine/brief';
 
 const k = demoKnowledge();
 
@@ -62,6 +63,16 @@ describe('browser demo adapter', () => {
     const n = d.summary().questionCount;
     expect(d.undo()).toBe(true);
     expect(d.summary().questionCount).toBe(n - 1);
+  });
+
+  it('lists settled decisions like the server, without undecided entries', () => {
+    const d = new VersusDemo(k, { seed: 7 });
+    play(d, 15);
+    const settled = d.summary().settled;
+    expect(settled.length).toBeGreaterThan(0);
+    expect(settled.length).toBeLessThanOrEqual(8);
+    expect(settled.every((x) => !x.endsWith(': Undecided'))).toBe(true);
+    expect(settled).toEqual(settledDecisions(d.state, 8));
   });
 
   it('can undo a lone skip, and only once', () => {

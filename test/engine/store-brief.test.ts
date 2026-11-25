@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { knowledge } from '../../src/engine/data';
 import { loadSession, saveSession, listSessions, migrate, sessionsDir, gdvHome } from '../../src/store/fs-store';
 import * as svc from '../../src/service';
-import { buildBrief, renderBriefMarkdown } from '../../src/engine/brief';
+import { buildBrief, renderBriefMarkdown, settledDecisions } from '../../src/engine/brief';
 import { foldSession, type SessionEvent } from '../../src/engine/session';
 import { PERSONAS, runPersona } from '../../src/engine/simulate';
 
@@ -91,6 +91,17 @@ describe('brief', () => {
     const b = buildBrief(k, foldSession(k, events));
     const stable = { ...b, genre: { ...b.genre, archetypes: b.genre.archetypes.map((a) => a.label) }, systems: b.systems.map((s) => s.module), openQuestions: b.openQuestions.length > 0 };
     expect(stable).toMatchSnapshot();
+  });
+});
+
+describe('settled decisions', () => {
+  it('the service summary uses the shared settled list', () => {
+    const s = svc.startSession(k, { title: 'Settled', seed: 61 });
+    svc.setFact(k, s.sessionId, { axis: 'combat.sim', value: 'physics', confidence: 0.9 });
+    svc.setFact(k, s.sessionId, { axis: 'genre.family', value: ['action'], confidence: 0.9 });
+    const sum = svc.status(k, s.sessionId);
+    expect(sum.settled.length).toBeGreaterThan(0);
+    expect(sum.settled).toEqual(settledDecisions(foldSession(k, loadSession(s.sessionId).events), 12));
   });
 });
 

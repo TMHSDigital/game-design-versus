@@ -129,7 +129,7 @@ export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: str
   const render = () => {
     const s = demo.summary();
     const pct = Math.min(1, s.clarity / STOP_AT);
-    const settled = s.settled.filter((x) => !x.endsWith(': Undecided'));
+    const settled = s.settled;
     const q = current;
     const main = q
       ? `<p class="q-meta"><span>${esc(q.moduleLabel)}</span><span>Question ${s.questionCount + 1}</span></p>

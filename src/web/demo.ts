@@ -10,7 +10,7 @@ import {
   claritySummary, effectiveEvents, foldSession, topArchetypes, type Choice, type Question, type SessionEvent, type SessionState,
 } from '../engine/session';
 import { nextQuestions, type RenderedQuestion } from '../engine/selection';
-import { buildBrief, renderBriefMarkdown, positionText, type Brief } from '../engine/brief';
+import { buildBrief, renderBriefMarkdown, settledDecisions, type Brief } from '../engine/brief';
 import { rankAffinity } from '../engine/affinity';
 
 export type DemoOption = { key: string; label: string; game?: string; year?: number; how?: string; pole: string; poleLabel: string };
@@ -154,11 +154,7 @@ export class VersusDemo {
       stopRecommended: c.stop.recommended,
       modules: c.modules.map((m) => ({ module: m.module, label: this.k.moduleById.get(m.module)?.label ?? m.module, clarity: round(m.clarity), status: m.status })),
       archetypes: topArchetypes(this.k, s, 3).map((a) => ({ label: a.label, p: round(a.p) })),
-      settled: [...s.axes.values()]
-        .filter((a) => a.status === 'decided' && a.applicable !== false)
-        .sort((x, y) => y.axis.importance - x.axis.importance)
-        .slice(0, 8)
-        .map((a) => `${a.axis.label}: ${positionText(a)}`),
+      settled: settledDecisions(s, 8),
       tensions: s.tensions.map((t) => ({ id: t.id, severity: t.severity, message: t.message, probe: t.probe })),
       comparables: rankAffinity(s.elo).slice(0, 5).map((e) => e.game),
     };

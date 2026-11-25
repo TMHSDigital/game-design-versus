@@ -8,7 +8,7 @@ import {
   type SessionEvent, type SessionState, type OptionKey,
 } from './engine/session';
 import { nextQuestions, renderQuestion, type RenderedQuestion } from './engine/selection';
-import { buildBrief, renderBriefMarkdown, positionText, type Brief } from './engine/brief';
+import { buildBrief, renderBriefMarkdown, positionText, settledDecisions, type Brief } from './engine/brief';
 import { loadSession, newSessionId, saveSession, listSessions, type SessionFile } from './store/fs-store';
 import { rankAffinity } from './engine/affinity';
 
@@ -35,13 +35,7 @@ function round(x: number) {
 export function summarize(k: Knowledge, f: SessionFile, state?: SessionState): SessionSummary {
   const s = state ?? foldSession(k, f.events);
   const c = claritySummary(k, s);
-  const settled = [...s.axes.values()]
-    .filter((a) => a.status === 'decided' && a.applicable !== false)
-    .sort((x, y) => y.axis.importance - x.axis.importance)
-    .map((a) => ({ a, pos: positionText(a) }))
-    .filter((x) => x.pos !== 'Undecided')
-    .slice(0, 12)
-    .map(({ a, pos }) => `${a.axis.label}: ${pos}`);
+  const settled = settledDecisions(s, 12);
   return {
     sessionId: f.id,
     title: s.title,
@@ -153,7 +147,7 @@ export function answer(k: Knowledge, sessionId: string, answers: AnswerInput[]) 
   const newTensions = after.tensions.filter((t) => !oldT.has(t.id)).map((t) => ({ id: t.id, severity: t.severity, message: t.message, probe: t.probe }));
   const followUpHints: string[] = [];
   for (const a of answers) {
-    if (a.choice === 'neither' && a.note) followUpHints.push(`The user described their own approach for ${f.events.find((e) => e.type !== 'start' && 'question' in e && e.question.questionId === a.questionId && true) ? a.questionId : a.questionId}: consider versus_ask with a customAxis or versus_set to capture "${a.note.slice(0, 80)}".`);
+    if (a.choice === 'neither' && a.note) followUpHints.push(`The user described their own approach for ${a.questionId}: consider versus_ask with a customAxis or versus_set to capture "${a.note.slice(0, 80)}".`);
     if (a.choice === 'blend') followUpHints.push(`${a.questionId}: a blend was chosen; a follow-up with lean 0-100 can pin it down.`);
   }
   for (const t of newTensions) followUpHints.push(`Tension (${t.severity}): ${t.probe}`);
