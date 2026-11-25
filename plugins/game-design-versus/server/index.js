@@ -76939,14 +76939,14 @@ function ask(k2, sessionId, input2) {
 function setFact(k2, sessionId, input2) {
   const a = k2.axisById.get(input2.axis);
   if (!a) throw new Error(`unknown axis ${input2.axis}`);
+  if (!evidenceFromValue(a, input2.value, input2.confidence)) {
+    throw new Error(`value ${JSON.stringify(input2.value)} does not fit ${a.id} (${a.kind}; poles ${a.poles.map((p) => p.id).join(", ")}${isBinary(a) ? ", or a bin -2..2, or blend" : ""})`);
+  }
   const f = loadSession(sessionId);
   f.events.push({ type: "set", at: now(), axis: a.id, value: input2.value, confidence: input2.confidence, source: input2.source ?? "user_statement" });
   const s = foldSession(k2, f.events);
   const st = s.axes.get(a.id);
-  if (!st || st.evidenceCount === 0 && st.status === "open") {
-    f.events.pop();
-    throw new Error(`value ${JSON.stringify(input2.value)} does not fit ${a.id} (${a.kind}; poles ${a.poles.map((p) => p.id).join(", ")}${isBinary(a) ? ", or a bin -2..2, or blend" : ""})`);
-  }
+  if (!st) throw new Error(`axis ${a.id} has no state`);
   saveSession(f);
   return { axis: a.id, status: st.status, position: positionText(st), clarity: round2(st.clarity), summary: summarize(k2, f, s) };
 }

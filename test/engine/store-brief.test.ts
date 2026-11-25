@@ -93,3 +93,15 @@ describe('brief', () => {
     expect(stable).toMatchSnapshot();
   });
 });
+
+describe('service validation', () => {
+  it('versus_set rejects a value that does not fit, with or without prior evidence', () => {
+    const s = svc.startSession(k, { title: 'Set', seed: 11 });
+    svc.setFact(k, s.sessionId, { axis: 'combat.sim', value: 'physics', confidence: 0.9 });
+    const before = loadSession(s.sessionId).events.length;
+    expect(() => svc.setFact(k, s.sessionId, { axis: 'combat.sim', value: 'banana', confidence: 0.9 })).toThrow(/does not fit/);
+    expect(() => svc.setFact(k, s.sessionId, { axis: 'genre.family', value: ['action', 'banana'], confidence: 0.9 })).toThrow(/does not fit/);
+    expect(() => svc.setFact(k, s.sessionId, { axis: 'genre.family', value: 'banana', confidence: 0.9 })).toThrow(/does not fit/);
+    expect(loadSession(s.sessionId).events.length).toBe(before);
+  });
+});

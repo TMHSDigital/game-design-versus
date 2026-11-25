@@ -4,7 +4,7 @@ import type { Knowledge } from './engine/data';
 import { isBinary, type Axis } from './engine/ontology';
 import { randomSeed } from './engine/prng';
 import {
-  claritySummary, foldSession, topArchetypes, type Choice, type Constraints, type CustomAxis, type Question, type QuestionOption,
+  claritySummary, evidenceFromValue, foldSession, topArchetypes, type Choice, type Constraints, type CustomAxis, type Question, type QuestionOption,
   type SessionEvent, type SessionState, type OptionKey,
 } from './engine/session';
 import { nextQuestions, renderQuestion, type RenderedQuestion } from './engine/selection';
@@ -215,14 +215,14 @@ export function setFact(
 ) {
   const a = k.axisById.get(input.axis);
   if (!a) throw new Error(`unknown axis ${input.axis}`);
+  if (!evidenceFromValue(a, input.value, input.confidence)) {
+    throw new Error(`value ${JSON.stringify(input.value)} does not fit ${a.id} (${a.kind}; poles ${a.poles.map((p) => p.id).join(', ')}${isBinary(a) ? ', or a bin -2..2, or blend' : ''})`);
+  }
   const f = loadSession(sessionId);
   f.events.push({ type: 'set', at: now(), axis: a.id, value: input.value, confidence: input.confidence, source: input.source ?? 'user_statement' });
   const s = foldSession(k, f.events);
   const st = s.axes.get(a.id);
-  if (!st || (st.evidenceCount === 0 && st.status === 'open')) {
-    f.events.pop();
-    throw new Error(`value ${JSON.stringify(input.value)} does not fit ${a.id} (${a.kind}; poles ${a.poles.map((p) => p.id).join(', ')}${isBinary(a) ? ', or a bin -2..2, or blend' : ''})`);
-  }
+  if (!st) throw new Error(`axis ${a.id} has no state`);
   saveSession(f);
   return { axis: a.id, status: st.status, position: positionText(st), clarity: round(st.clarity), summary: summarize(k, f, s) };
 }
