@@ -1,7 +1,9 @@
 import type { Knowledge } from './data';
 import { isBinary, type Archetype } from './ontology';
-import { claritySummary, foldSession, topArchetypes, type Choice, type SessionEvent, type SessionState, type Question } from './session';
+import { claritySummary, foldSession, SYSTEMS_CHECKLIST, topArchetypes, type Choice, type SessionEvent, type SessionState, type Question } from './session';
 import { nextQuestions } from './selection';
+import { ENGINE } from './config';
+import { hashSeed, mulberry32 } from './prng';
 
 export type Persona = {
   id: string;
@@ -29,6 +31,9 @@ export type SimResult = {
   clarity: number;
   reached: boolean;
   stopRecommended: boolean;
+  /** Frame, gates and core settled when the run ended. */
+  coreReady: boolean;
+  stopReasons: string[];
   irrelevantAsked: string[];
   topArchetypes: string[];
   matchRank: number;
@@ -44,6 +49,10 @@ export function personaProfile(k: Knowledge, p: Persona): Archetype['profile'] {
 
 /** How a persona with a hidden profile answers a rendered question. */
 export function personaAnswer(k: Knowledge, profile: Archetype['profile'], q: Question): { choice: Choice; selected?: string[] } {
+  if (q.axis === SYSTEMS_CHECKLIST) {
+    // A system is present unless the profile leans to "none".
+    return { choice: 'neither', selected: q.options.filter((o) => { const v = profile[o.pole]; return typeof v === 'number' && v >= 0; }).map((o) => o.key) };
+  }
   const a = k.axisById.get(q.axis);
   const truth = profile[q.axis];
   if (!a || truth === undefined) return { choice: 'no_pref' };
@@ -90,7 +99,8 @@ export function runPersona(k: Knowledge, p: Persona, opts: { maxQuestions?: numb
     if (!qs.length) break;
     for (const q of qs) {
       const ans = personaAnswer(k, profile, q);
-      if (truth.axes.get(q.axis)?.applicable === false) irrelevant.push(q.axis);
+      const asked = q.axis === SYSTEMS_CHECKLIST ? q.options.map((o) => o.pole) : [q.axis];
+      for (const id of asked) if (truth.axes.get(id)?.applicable === false) irrelevant.push(id);
       trace.push({ axis: q.axis, choice: ans.selected ? `[${ans.selected.join(',')}]` : ans.choice });
       events.push({ type: 'answer', at, question: q, choice: ans.choice, selected: ans.selected });
     }
@@ -104,10 +114,68 @@ export function runPersona(k: Knowledge, p: Persona, opts: { maxQuestions?: numb
     clarity: summary.overall,
     reached: summary.overall >= 0.8,
     stopRecommended: summary.stop.recommended,
+    coreReady: summary.coreReady,
+    stopReasons: summary.stop.reasons,
     irrelevantAsked: irrelevant,
     topArchetypes: top,
     matchRank: top.indexOf(p.archetype) + 1,
     trace,
     state,
+  };
+}
+
+/**
+ * A realistic user: the game mixes two archetypes (per module, or axis by axis), the agent asks 4 questions per
+ * round, and the user sometimes answers blend, "not sure" (on game questions) or no preference. Ideal personas
+ * above test that the engine converges; hybrids test that real sessions end well before the hard cap.
+ */
+export type HybridOptions = { seed: number; mix?: 'module' | 'axis'; pBlend?: number; pUnsure?: number; pNoPref?: number; maxQuestions?: number };
+export type HybridResult = { questions: number; rounds: number; clarity: number; stopRecommended: boolean; coreReady: boolean; stopReasons: string[]; archetypes: [string, string] };
+
+export function runHybrid(k: Knowledge, opts: HybridOptions): HybridResult {
+  const { seed, mix = 'module', pBlend = 0.15, pUnsure = 0.1, pNoPref = 0.04, maxQuestions = ENGINE.maxQuestions } = opts;
+  const rand = mulberry32(hashSeed(seed, 1, 2));
+  const a1 = k.archetypes[Math.floor(rand() * k.archetypes.length)] as Archetype;
+  const a2 = k.archetypes[Math.floor(rand() * k.archetypes.length)] as Archetype;
+  const firstFor = new Map<string, boolean>();
+  const profile: Archetype['profile'] = {};
+  for (const ax of k.axes) {
+    if (mix === 'module' && !firstFor.has(ax.module)) firstFor.set(ax.module, rand() < 0.5);
+    const first = mix === 'module' ? (firstFor.get(ax.module) as boolean) : rand() < 0.5;
+    const v = first ? (a1.profile[ax.id] ?? a2.profile[ax.id]) : (a2.profile[ax.id] ?? a1.profile[ax.id]);
+    if (v !== undefined) profile[ax.id] = v;
+  }
+  const at = '2026-11-23T00:00:00.000Z';
+  const events: SessionEvent[] = [{ type: 'start', at, sessionId: `hybrid-${seed}`, seed }];
+  for (const axis of ['frame.platform', 'frame.players', 'genre.family']) {
+    const v = profile[axis];
+    if (v !== undefined) events.push({ type: 'set', at, axis, value: v, confidence: 0.8, source: 'user_statement' });
+  }
+  let state = foldSession(k, events);
+  let issued = 0;
+  let rounds = 0;
+  while (state.questionCount < maxQuestions) {
+    if (claritySummary(k, state).stop.recommended) break;
+    const qs = nextQuestions(k, state, { count: 4, issued });
+    if (!qs.length) break;
+    issued += qs.length;
+    rounds++;
+    for (const q of qs) {
+      const r = rand();
+      const games = !q.multi && q.options.some((o) => o.game);
+      const a = k.axisById.get(q.axis);
+      let ans: { choice: Choice; selected?: string[] };
+      if (games && r < pUnsure) ans = { choice: 'unsure' };
+      else if (a && isBinary(a) && r < pUnsure + pBlend) ans = { choice: 'blend' };
+      else if (r > 1 - pNoPref) ans = { choice: 'no_pref' };
+      else ans = personaAnswer(k, profile, q);
+      events.push({ type: 'answer', at, question: q, choice: ans.choice, selected: ans.selected });
+    }
+    state = foldSession(k, events);
+  }
+  const sum = claritySummary(k, state);
+  return {
+    questions: state.questionCount, rounds, clarity: sum.overall, stopRecommended: sum.stop.recommended, coreReady: sum.coreReady,
+    stopReasons: sum.stop.reasons, archetypes: [a1.id, a2.id],
   };
 }

@@ -22,6 +22,8 @@ const Summary = z.looseObject({
   overallClarity: z.number(),
   stopRecommended: z.boolean(),
   stopReasons: z.array(z.string()),
+  core: z.looseObject({ settled: z.number(), total: z.number() }),
+  coreReady: z.boolean(),
   modules: z.array(z.looseObject({ module: z.string(), clarity: z.number(), status: z.string() })),
   topArchetypes: z.array(z.looseObject({ id: z.string(), label: z.string(), p: z.number() })),
   settled: z.array(z.string()),
@@ -50,10 +52,12 @@ function guard<A>(fn: (a: A) => Result): (a: A) => Result {
 
 function summaryText(s: svc.SessionSummary): string {
   return [
-    `Session ${s.sessionId}${s.title ? ` (${s.title})` : ''}: ${s.questionCount} questions, overall clarity ${s.overallClarity}.`,
+    `Session ${s.sessionId}${s.title ? ` (${s.title})` : ''}: ${s.questionCount} questions, ${s.core.settled} of ${s.core.total} core decisions settled, overall clarity ${s.overallClarity}.`,
     `Closest archetypes: ${s.topArchetypes.map((a) => `${a.label} ${Math.round(a.p * 100)}%`).join(', ')}.`,
     s.settled.length ? `Settled: ${s.settled.slice(0, 6).join('; ')}.` : 'Nothing settled yet.',
-    s.stopRecommended ? 'Stop recommended: the design is clear enough for a brief.' : `Keep going: ${s.stopReasons.join('; ')}.`,
+    s.stopRecommended
+      ? `Stop recommended: the brief is ready${s.stopReasons.length ? ` (${s.stopReasons.join('; ')})` : ''}. The user may keep going to refine details.`
+      : `Keep going: ${s.stopReasons.join('; ')}.`,
   ].join('\n');
 }
 
@@ -133,16 +137,18 @@ export function registerTools(server: McpServer, k: Knowledge): void {
         tensions: z.array(z.looseObject({ id: z.string(), severity: z.string(), message: z.string(), probe: z.string() })),
         followUpHints: z.array(z.string()),
         stopRecommended: z.boolean(),
+        stopReasons: z.array(z.string()),
+        core: z.looseObject({ settled: z.number(), total: z.number() }),
       }),
     },
     guard((a) => {
       const r = svc.answer(k, a.sessionId, a.answers);
-      const lines = [`Recorded ${r.recorded} answer(s). Clarity ${r.overallClarity.before} -> ${r.overallClarity.after}.`];
+      const lines = [`Recorded ${r.recorded} answer(s). Core decisions settled: ${r.core.settled} of ${r.core.total}. Clarity ${r.overallClarity.before} -> ${r.overallClarity.after}.`];
       if (r.unlockedModules.length) lines.push(`Unlocked: ${r.unlockedModules.join(', ')}.`);
       if (r.skippedModules.length) lines.push(`Skipped: ${r.skippedModules.join(', ')}.`);
       for (const t of r.tensions) lines.push(`Tension (${t.severity}): ${t.message} Probe: ${t.probe}`);
       for (const e of r.errors) lines.push(`Error: ${e}`);
-      if (r.stopRecommended) lines.push('Stop recommended.');
+      if (r.stopRecommended) lines.push(`Stop recommended: the brief is ready${r.stopReasons.length ? ` (${r.stopReasons.join('; ')})` : ''}. Offer to write it; the user may keep going.`);
       return ok(lines.join('\n'), r);
     }),
   );

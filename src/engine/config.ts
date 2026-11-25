@@ -24,11 +24,21 @@ export const ENGINE = {
   noPrefImportance: 0.3,
   /** CALIBRATION: an axis the user answered directly counts as at least this clear. */
   decidedClarityFloor: 0.9,
-  /** SPEC: stop when overall clarity >= this ... */
+  /**
+   * Stop rule ("brief ready"): frame and gates resolved, every core (importance 3) axis at least stopCore clear,
+   * and then either overall clarity >= stopOverall or detailQuestions answers spent on secondary axes. Secondary
+   * axes still open at that point become open questions in the brief; the user can keep going.
+   */
   stopOverall: 0.8,
-  /** SPEC: ... and every importance-3 axis is at least this clear ... */
   stopCore: 0.6,
-  /** SPEC: ... or this many questions were asked. */
+  /** CALIBRATION: two rounds of secondary questions once the core is settled. */
+  detailQuestions: 8,
+  /**
+   * CALIBRATION: recommended length. From here the stop is recommended once frame and gates are resolved; core axes
+   * still open lead the brief's open questions. Hybrid games whose inferences keep shifting would otherwise run long.
+   */
+  softQuestions: 48,
+  /** Hard cap: stop is recommended after this many questions whatever the state. */
   maxQuestions: 60,
   /** SPEC: selection weights. */
   archetypeEigWeight: 0.5,
@@ -59,6 +69,8 @@ export const ENGINE = {
   unsureCooldown: 2,
   /** ... in plain words (no games) once it got this many such answers. */
   unsurePlainAfter: 1,
+  /** After this many such answers the axis is set aside: not asked again, an open question in the brief. */
+  unsureDeferAfter: 2,
   /** Score penalty for a comparison featuring a game the user said they do not know. */
   unknownGamePenalty: 0.3,
 } as const;

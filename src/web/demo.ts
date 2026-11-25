@@ -7,7 +7,7 @@ import { buildKnowledge, rawData, type Knowledge } from '../engine/data';
 import { isBinary } from '../engine/ontology';
 import { randomSeed } from '../engine/prng';
 import {
-  claritySummary, effectiveEvents, foldSession, topArchetypes, type Choice, type Question, type SessionEvent, type SessionState,
+  claritySummary, effectiveEvents, foldSession, SYSTEMS_CHECKLIST, topArchetypes, type Choice, type Question, type SessionEvent, type SessionState,
 } from '../engine/session';
 import { nextQuestions, type RenderedQuestion } from '../engine/selection';
 import { buildBrief, renderBriefMarkdown, settledDecisions, type Brief } from '../engine/brief';
@@ -36,6 +36,10 @@ export type DemoSummary = {
   canUndo: boolean;
   clarity: number;
   stopRecommended: boolean;
+  /** Why the server suggests stopping now, or what is still missing. */
+  stopReasons: string[];
+  /** Core decisions settled so far. */
+  core: { settled: number; total: number };
   modules: { module: string; label: string; clarity: number; status: string }[];
   archetypes: { label: string; p: number }[];
   settled: string[];
@@ -96,7 +100,7 @@ export class VersusDemo {
     return {
       questionId: q.questionId,
       axis: q.axis,
-      axisLabel: a?.label ?? q.axis,
+      axisLabel: q.axis === SYSTEMS_CHECKLIST ? 'Systems' : (a?.label ?? q.axis),
       module: q.module,
       moduleLabel: mod?.label ?? q.module,
       prompt: q.prompt,
@@ -152,6 +156,8 @@ export class VersusDemo {
       canUndo: effectiveEvents(this.events).length > 1,
       clarity: round(c.overall),
       stopRecommended: c.stop.recommended,
+      stopReasons: c.stop.reasons,
+      core: c.core,
       modules: c.modules.map((m) => ({ module: m.module, label: this.k.moduleById.get(m.module)?.label ?? m.module, clarity: round(m.clarity), status: m.status })),
       archetypes: topArchetypes(this.k, s, 3).map((a) => ({ label: a.label, p: round(a.p) })),
       settled: settledDecisions(s, 8),

@@ -4,8 +4,6 @@ import { VersusDemo, demoKnowledge, type DemoQuestion, type DemoAnswerResult } f
 import type { Choice } from '../src/engine/session';
 import { renderMarkdown } from './markdown';
 
-const STOP_AT = 0.8;
-
 const esc = (s: unknown): string =>
   String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] as string);
 
@@ -131,7 +129,8 @@ export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: str
 
   const render = () => {
     const s = demo.summary();
-    const pct = Math.min(1, s.clarity / STOP_AT);
+    // Progress toward a ready brief: core decisions settled, full once the server recommends stopping.
+    const pct = s.stopRecommended ? 1 : s.core.total ? Math.min(0.95, s.core.settled / s.core.total) : 0;
     const settled = s.settled;
     const q = current;
     const main = q
@@ -144,9 +143,9 @@ export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: str
         <div class="stage" aria-live="polite">${main}</div>
         <aside class="panel" aria-label="Session">
           <div class="clar">
-            <div class="clar-row"><span>Clarity</span><b>${s.clarity.toFixed(2)}</b></div>
-            <div class="track" role="progressbar" aria-valuemin="0" aria-valuemax="0.8" aria-valuenow="${s.clarity}" aria-label="Clarity toward 0.80"><span style="width:${(pct * 100).toFixed(1)}%"></span></div>
-            <p class="small">${s.stopRecommended ? 'Clear enough to write the brief.' : `The server suggests stopping at ${STOP_AT.toFixed(2)}.`}</p>
+            <div class="clar-row"><span>Core decisions</span><b>${s.core.settled} / ${s.core.total}</b></div>
+            <div class="track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(pct * 100)}" aria-label="Progress toward a ready brief"><span style="width:${(pct * 100).toFixed(1)}%"></span></div>
+            <p class="small">${s.stopRecommended ? 'The brief is ready. Keep going to refine details, or write it now.' : `Clarity ${s.clarity.toFixed(2)}. The brief is ready once the core is settled.`}</p>
           </div>
           <button type="button" class="btn ${s.stopRecommended ? 'primary' : ''} wide" data-act="finish" ${s.questionCount === 0 ? 'disabled' : ''}>Write the brief</button>
           <button type="button" class="btn ghost wide" data-act="undo" ${s.canUndo ? '' : 'disabled'}>Undo last answer</button>

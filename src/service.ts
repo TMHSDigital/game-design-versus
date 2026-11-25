@@ -4,7 +4,7 @@ import type { Knowledge } from './engine/data';
 import { isBinary, type Axis } from './engine/ontology';
 import { randomSeed } from './engine/prng';
 import {
-  claritySummary, effectiveEvents, evidenceFromValue, foldSession, topArchetypes, type Choice, type Constraints, type CustomAxis, type Question, type QuestionOption,
+  claritySummary, effectiveEvents, evidenceFromValue, foldSession, SYSTEMS_CHECKLIST, topArchetypes, type Choice, type Constraints, type CustomAxis, type Question, type QuestionOption,
   type SessionEvent, type SessionState, type OptionKey,
 } from './engine/session';
 import { nextQuestions, renderQuestion, type RenderedQuestion } from './engine/selection';
@@ -21,6 +21,10 @@ export type SessionSummary = {
   overallClarity: number;
   stopRecommended: boolean;
   stopReasons: string[];
+  /** Core decisions (importance-3 axes that apply) settled so far; a steadier progress measure than clarity. */
+  core: { settled: number; total: number };
+  /** Frame, gates and core are settled: the brief has its foundations. */
+  coreReady: boolean;
   modules: { module: string; clarity: number; status: string; open: number; decided: number }[];
   topArchetypes: { id: string; label: string; p: number }[];
   settled: string[];
@@ -43,6 +47,8 @@ export function summarize(k: Knowledge, f: SessionFile, state?: SessionState): S
     overallClarity: round(c.overall),
     stopRecommended: c.stop.recommended,
     stopReasons: c.stop.reasons,
+    core: c.core,
+    coreReady: c.coreReady,
     modules: c.modules.map((m) => ({ ...m, clarity: round(m.clarity) })),
     topArchetypes: topArchetypes(k, s, 3).map((a) => ({ id: a.id, label: a.label, p: round(a.p) })),
     settled,
@@ -102,8 +108,8 @@ export function next(k: Knowledge, sessionId: string, count = 1): { questions: R
 }
 
 function stripRender(q: RenderedQuestion): Question {
-  const { questionId, axis, module, format, comparisonId, multi, page, pages, options, customAxis, improvised } = q;
-  return { questionId, axis, module, format, comparisonId, multi, page, pages, options, customAxis, improvised };
+  const { questionId, axis, module, format, comparisonId, multi, page, pages, options, customAxis, improvised, phase } = q;
+  return { questionId, axis, module, format, comparisonId, multi, page, pages, options, customAxis, improvised, phase };
 }
 
 export type AnswerInput = { questionId: string; choice: Choice; lean?: number; note?: string; selected?: string[] };
@@ -124,8 +130,9 @@ export function answer(k: Knowledge, sessionId: string, answers: AnswerInput[]) 
       continue;
     }
     const axis = q.customAxis ? undefined : k.axisById.get(q.axis);
-    if (axis && !isBinary(axis) && (a.choice === 'blend' || a.lean !== undefined)) {
-      errors.push(`${a.questionId}: ${a.choice === 'blend' ? 'blend' : 'lean'} only applies to two-pole axes; ${q.axis} is ${axis.kind}`);
+    const kind = q.axis === SYSTEMS_CHECKLIST ? 'a multi-select checklist' : axis && !isBinary(axis) ? axis.kind : undefined;
+    if (kind && (a.choice === 'blend' || a.lean !== undefined)) {
+      errors.push(`${a.questionId}: ${a.choice === 'blend' ? 'blend' : 'lean'} only applies to two-pole axes; ${q.axis} is ${kind}`);
       continue;
     }
     const at = now();
@@ -161,6 +168,8 @@ export function answer(k: Knowledge, sessionId: string, answers: AnswerInput[]) 
     tensions: newTensions,
     followUpHints,
     stopRecommended: afterSum.stop.recommended,
+    stopReasons: afterSum.stop.reasons,
+    core: afterSum.core,
   };
 }
 

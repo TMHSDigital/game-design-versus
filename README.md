@@ -91,37 +91,47 @@ Inside the server:
 | --- | --- |
 | Belief per axis | Each two-pole axis is a probability over 5 bins (strong A, lean A, blend, lean B, strong B). Picking A multiplies in 0.50, 0.30, 0.14, 0.04, 0.02 (B mirrors); a blend multiplies in 0.05, 0.20, 0.50, 0.20, 0.05; an explicit lean of 0 to 100 is a Gaussian with sigma 0.6. |
 | Archetypes | A posterior over 48 archetypes (soulslike action RPG, colony sim, roguelike deckbuilder and more) updates from the same answers and supplies the prior for every axis not yet asked. |
-| Gating | Gate axes set flags such as `has_combat` or `is_multiplayer`. A module whose flag is false is skipped whole. Gating is three-valued, and gates are asked first. |
-| Next question | Importance times expected information gain on the axis, plus 0.5 times the gain on the archetypes, plus gate and familiarity bonuses, minus repetition penalties. A per-session seed picks from the top 3, so sessions replay exactly (`GDV_DETERMINISTIC=1` forces the top pick). |
-| Stopping | Clarity per axis is 1 - H(p)/log(n). The server recommends stopping at overall clarity 0.80 with every frame and gate axis resolved and every core axis at 0.6 or more, or after 60 questions. |
+| Gating | Gate axes set flags such as `has_combat` or `is_multiplayer`. A module whose flag is false is skipped whole. Gating is three-valued, and gates are asked first. Presence gates ("is there crafting at all?") are asked up to four at a time as one "which of these are in your game?" checklist. |
+| Next question | Questions come in phases: core frame axes and gates, then core (importance 3) axes, then refinement. Within a phase: importance times expected information gain on the axis, plus 0.5 times the gain on the archetypes, plus gate and familiarity bonuses, minus repetition penalties. A per-session seed picks from the top 3, so sessions replay exactly (`GDV_DETERMINISTIC=1` forces the top pick). |
+| Stopping | Clarity per axis is 1 - H(p)/log(n). The brief is ready, and the server recommends stopping, when the core frame axes and gates are resolved, every core axis is at 0.6 clarity or more, and either overall clarity reaches 0.80 or two rounds (8 questions) went to refinement. Secondary axes still open become the brief's open questions; the user can keep going. From 48 questions the stop is recommended once frame and gates are resolved, with any open core axis listed first among the open questions; 60 is a hard cap. |
 | Comparable titles | Elo ratings over the games you picked (K 24, start 1500). |
 | Tensions | 35 rules (netcode risk for physics PvP, an MMO on a solo team, the patented Nemesis system and more) fire as answers arrive and come back with a probe question. |
 
-In simulation (`npm run simulate`), 8 personas answering from a hidden profile all reach clarity 0.80 within 45
+In simulation (`npm run simulate`), 8 personas answering from a hidden profile all get a ready brief within 32
 questions, none is asked about a module that does not apply, and each persona's own archetype ranks first.
 
 | Persona | Questions | Clarity | Top archetype |
 | --- | --- | --- | --- |
-| Physics brawler (Half Sword) | 45 | 0.816 | physics_brawler |
-| Business sim (Big Ambitions) | 35 | 0.802 | business_tycoon |
-| 4X (Civilization VI) | 44 | 0.801 | x4 |
-| Cozy farming | 36 | 0.800 | cozy_farming |
-| Extraction shooter | 45 | 0.801 | extraction_shooter |
-| Roguelike deckbuilder | 37 | 0.801 | roguelike_deckbuilder |
-| Survival horror | 43 | 0.801 | survival_horror |
-| Party game | 36 | 0.810 | party_game |
+| Physics brawler (Half Sword) | 32 | 0.795 | physics_brawler |
+| Business sim (Big Ambitions) | 26 | 0.793 | business_tycoon |
+| 4X (Civilization VI) | 30 | 0.767 | x4 |
+| Cozy farming | 27 | 0.796 | cozy_farming |
+| Extraction shooter | 28 | 0.773 | extraction_shooter |
+| Roguelike deckbuilder | 28 | 0.798 | roguelike_deckbuilder |
+| Survival horror | 28 | 0.781 | survival_horror |
+| Party game | 27 | 0.808 | party_game |
+
+Real games are rarely one archetype, so the simulation also runs 40 hybrid users. Each game mixes two archetypes (per
+module, or axis by axis), questions come 4 per round, and the user answers blend 15% of the time, "not sure" on 10%
+of game questions and "no preference" on 4%. Hybrids need a median of 40 (module mix) or 44 (axis mix) questions,
+about 10 rounds, at most 48, and none reaches the 60-question cap.
 
 <details>
 <summary>Calibration notes</summary>
 
-Three documented deviations from a literal reading of the original spec keep the 0.80 stop rule reachable within 45
-to 60 questions. All three live in `src/engine/config.ts`:
+These documented deviations from a literal reading of the original spec keep interviews short. All live in
+`src/engine/config.ts`:
 
 - The prior's uniform share starts at 0.3 and decays to 0.02 as the archetype posterior concentrates.
 - An axis the user answered directly counts as at least 0.9 clear (`decidedClarityFloor`); a "no preference" axis
   counts as settled.
 - Archetype profiles are completed with weak (+-1) rule-based defaults for axes they did not specify, for example a
   single ending unless the story branches.
+- The 0.80 overall target applies only until refinement has had two rounds (`detailQuestions`): a hybrid game has
+  over 100 applicable axes, and no interview can ask them all. Only tier-0 frame axes of core importance and gates
+  are asked first; secondary frame facts (engine, rating, session length) are refinement.
+- From `softQuestions` (48) the stop is recommended once frame and gates are resolved, so hybrids whose inferences
+  keep shifting still end with a usable brief.
 
 Your own answers always set the position of a decided axis; the archetype prior only fills open axes.
 
@@ -132,7 +142,7 @@ Your own answers always set the position of a decided axis; the archetype prior 
 `versus_brief` returns Markdown or JSON with 12 sections after the pitch: frame, experience targets, genre, design
 pillars, core loop, systems spec, comparable titles, USPs and non-goals, scope, risks, open questions and a decision
 log. It states only what you decided or what the evidence strongly implies, and lists the rest as open questions.
-Read [examples/GDD.sample.md](examples/GDD.sample.md) for a full brief from a 45-question session.
+Read [examples/GDD.sample.md](examples/GDD.sample.md) for a full brief from a 32-question session.
 
 ## The library
 
@@ -196,7 +206,7 @@ Sourcing the thin axes is the most useful contribution. Read [docs/library-brief
 | `versus_answer { sessionId, answers: [{ questionId, choice, lean?, note?, selected? }] }` | Record answers; returns clarity deltas, unlocked and skipped modules, tensions and follow-up hints |
 | `versus_ask { sessionId, axis \| customAxis, options: [{ game, how }] }` | Register an improvised (unverified) comparison and get a questionId |
 | `versus_set { sessionId, axis, value, confidence, source }` | Record a fact the user volunteered |
-| `versus_status { sessionId }` | Clarity per module, settled decisions, tensions, archetypes, comparables |
+| `versus_status { sessionId }` | Core decisions settled, clarity per module, settled decisions, tensions, archetypes, comparables |
 | `versus_undo { sessionId }` | Undo the last answer, set or skip |
 | `versus_list {}` | Saved sessions |
 | `versus_brief { sessionId, format: markdown \| json, outPath?, overwrite? }` | The GDD seed brief; a relative outPath resolves against the server's working directory, and an existing file is only replaced with `overwrite: true` |
@@ -258,7 +268,7 @@ confirm before adding any of them to `allowed-tools`.
 npm ci
 npm run check       # typecheck, lint, validate:data, build, test, coverage
 npm run dev         # tsx watch
-npm run simulate    # persona simulation (8 personas)
+npm run simulate    # persona simulation (8 personas, 40 hybrid users)
 npm run inspect     # MCP Inspector against the built bundle (needs Node 22+)
 npm run site        # build the website into _site/ and serve it on http://localhost:4173
 ```

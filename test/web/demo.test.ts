@@ -35,6 +35,29 @@ describe('browser demo adapter', () => {
     expect(markdown).toContain('Design pillars');
   });
 
+  it('plays to a ready brief, labels the systems checklist and reports core progress', () => {
+    const d = new VersusDemo(k, { title: 'Hybrid', seed: 5 });
+    let sawChecklist = false;
+    for (let i = 0; i < 60 && !d.summary().stopRecommended; i++) {
+      const [q] = d.next(1);
+      if (!q) break;
+      if (q.axis === 'systems.checklist') {
+        sawChecklist = true;
+        expect(q.axisLabel).toBe('Systems');
+        expect(q.multi).toBe(true);
+      }
+      if (q.multi) d.answer(q.questionId, 'neither', [q.options[0]!.key]);
+      else d.answer(q.questionId, (i % 5 === 0 && q.comparison ? 'unsure' : (q.options[0]?.key ?? 'a')) as Choice);
+    }
+    const s = d.summary();
+    expect(sawChecklist).toBe(true);
+    expect(s.stopRecommended).toBe(true);
+    expect(s.questionCount).toBeLessThan(52);
+    expect(s.core.total).toBeGreaterThan(0);
+    expect(s.core.settled).toBeLessThanOrEqual(s.core.total);
+    expect(d.brief().markdown).toContain('## 11. Open questions');
+  });
+
   it('reports skipped modules when a gate is answered "not in my game"', () => {
     const d = new VersusDemo(k, { seed: 11 });
     let skipped: string[] = [];

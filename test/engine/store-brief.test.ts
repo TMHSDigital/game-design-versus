@@ -6,7 +6,7 @@ import { knowledge } from '../../src/engine/data';
 import { loadSession, saveSession, listSessions, migrate, sessionsDir, gdvHome } from '../../src/store/fs-store';
 import * as svc from '../../src/service';
 import { buildBrief, renderBriefMarkdown, settledDecisions } from '../../src/engine/brief';
-import { foldSession, type SessionEvent } from '../../src/engine/session';
+import { foldSession, SYSTEMS_CHECKLIST, type SessionEvent } from '../../src/engine/session';
 import { PERSONAS, runPersona } from '../../src/engine/simulate';
 
 const k = knowledge();
@@ -118,6 +118,21 @@ describe('service validation', () => {
 });
 
 describe('answer validation', () => {
+  it('rejects blend on the systems checklist, records a selection, and reports core progress', () => {
+    const s = svc.startSession(k, { title: 'Checklist', seed: 3 });
+    let q = svc.next(k, s.sessionId, 4).questions.find((x) => x.axis === SYSTEMS_CHECKLIST);
+    for (let i = 0; i < 10 && !q; i++) q = svc.next(k, s.sessionId, 4).questions.find((x) => x.axis === SYSTEMS_CHECKLIST);
+    if (!q) throw new Error('no checklist offered');
+    const bad = svc.answer(k, s.sessionId, [{ questionId: q.questionId, choice: 'blend' }]);
+    expect(bad.errors[0]).toMatch(/checklist/);
+    const r = svc.answer(k, s.sessionId, [{ questionId: q.questionId, choice: 'neither', selected: [q.options[0]!.key] }]);
+    expect(r.recorded).toBe(1);
+    expect(r.core.total).toBeGreaterThan(0);
+    const sum = svc.status(k, s.sessionId);
+    expect(sum.core.settled).toBeLessThanOrEqual(sum.core.total);
+    expect(typeof sum.coreReady).toBe('boolean');
+  });
+
   it('records "not sure" on a game question as no answer and avoids those games next', () => {
     const s = svc.startSession(k, { title: 'Unsure', seed: 8 });
     let q = svc.next(k, s.sessionId, 1).questions[0];

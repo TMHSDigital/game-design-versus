@@ -153,7 +153,7 @@ args = ['C:\path\to\game-design-versus\plugins\game-design-versus\server\index.j
     <div><dt>Archetypes</dt><dd>A posterior over {{archetypes}} archetypes (soulslike action RPG, colony sim, roguelike deckbuilder and more) updates from the same answers and fills in every axis you have not been asked.</dd></div>
     <div><dt>Gating</dt><dd>Gate axes set flags such as has_combat or is_multiplayer. A module whose flag is false is skipped whole. Gating is three-valued, so an axis behind an unanswered gate waits.</dd></div>
     <div><dt>Next question</dt><dd>Importance times expected information gain on the axis, plus half the information gain on the archetypes, plus gate and familiarity bonuses. A per-session seed picks from the top three, so a session replays exactly.</dd></div>
-    <div><dt>When to stop</dt><dd>Clarity per axis is 1 minus normalized entropy. The server recommends stopping at overall clarity 0.80 with every frame and gate axis resolved, or after 60 questions.</dd></div>
+    <div><dt>When to stop</dt><dd>Clarity per axis is 1 minus normalized entropy. The brief is ready once the frame, the gates and every core decision are settled and refinement has had two rounds or overall clarity reaches 0.80. What is still open becomes the brief's open questions. Simulated users with hybrid games finish in about ten rounds.</dd></div>
     <div><dt>Tensions</dt><dd>{{tensions}} rules fire as answers arrive, such as physics melee in online PvP or an MMO on a solo team, and come back with a probe question for the agent to ask.</dd></div>
   </dl>
 </section>

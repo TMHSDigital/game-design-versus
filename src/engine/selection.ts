@@ -5,7 +5,7 @@ import { BLEND_POLE, isBinary, type Axis, type Comparison, type Flag } from './o
 import { binaryEntropy, entropy, likForAnswer, normalize, type PoleDist } from './posterior';
 import { evidenceLikelihood, type Evidence } from './archetypes';
 import { hashSeed, mulberry32, pickIndex } from './prng';
-import { gateStillOpen, isGateLike, type AxisState, type Question, type QuestionOption, type SessionState, type OptionKey } from './session';
+import { gateStillOpen, isCoreAxis, isFrameCore, isGateLike, isPresenceGate, SYSTEMS_CHECKLIST, type AxisState, type Question, type QuestionOption, type SessionState, type OptionKey } from './session';
 import { gameKey } from './coverage';
 
 const KEYS: OptionKey[] = ['a', 'b', 'c', 'd'];
@@ -26,7 +26,17 @@ export type RenderedQuestion = Question & {
   score: number;
 };
 
-type Candidate = { axis: AxisState; comparison?: Comparison; options: QuestionOption[]; format: Question['format']; page?: number; pages?: number; score: number; priority: boolean };
+type Candidate = {
+  axis: AxisState; comparison?: Comparison; options: QuestionOption[]; format: Question['format']; page?: number; pages?: number;
+  score: number; priority: boolean;
+  /** Real axes the question settles when it is not the candidate's own axis (the systems checklist). */
+  covers?: string[];
+};
+
+/** Axes a candidate settles. */
+function covered(c: Candidate): string[] {
+  return c.covers ?? [c.axis.axis.id];
+}
 
 /** Answer model over bins: P(answer | bin) for A, B, blend, normalized per bin. */
 function answerModel(): number[][] {
@@ -176,7 +186,9 @@ export function candidates(k: Knowledge, state: SessionState): Candidate[] {
     if (!isAskable(state, s)) continue;
     const a = s.axis;
     const priority = isPriority(state, s);
-    if (anyPriority && !priority) continue;
+    // While frame or gate questions are open, other axes may only fill a round when they surely apply (a gate answer
+    // cannot rule them out), so no question turns out to be irrelevant. Frame and gates still come first (phaseOf).
+    if (anyPriority && !priority && s.applicable !== true) continue;
     const imp = a.importance * s.importanceMult;
     const bonus = gateBonus(k, state, s);
     if (isBinary(a)) {
@@ -228,12 +240,42 @@ export function candidates(k: Knowledge, state: SessionState): Candidate[] {
     const score = imp * eigMulti(inc, shown) + bonus - repetition(state, a.module, []);
     out.push({ axis: s, options: poleOptions(a, shown), format: 'poles', page: s.pagesSeen + 1, pages, priority, score });
   }
+  const checklist = systemsChecklist(state, out);
+  if (checklist) out.push(checklist);
   return out;
+}
+
+/**
+ * One multi-select question over up to 4 open presence gates ("which of these are in your game?"), offered when at
+ * least 2 are open. It settles several gates per question; the individual gate questions stay as a fallback.
+ */
+function systemsChecklist(state: SessionState, out: Candidate[]): Candidate | undefined {
+  const best = new Map<string, number>();
+  for (const c of out) if (isPresenceGate(c.axis.axis)) best.set(c.axis.axis.id, Math.max(best.get(c.axis.axis.id) ?? -Infinity, c.score));
+  const gates = [...state.axes.values()]
+    .filter((s) => best.has(s.axis.id) && s.applicable !== false)
+    .sort((x, y) => (best.get(y.axis.id) ?? 0) - (best.get(x.axis.id) ?? 0) || x.axis.id.localeCompare(y.axis.id))
+    .slice(0, 4);
+  if (gates.length < 2) return undefined;
+  const options: QuestionOption[] = gates.map((s, i) => ({
+    key: KEYS[i] as OptionKey, pole: s.axis.id, label: s.axis.header,
+    how: `${s.axis.poles[1]?.summary ?? s.axis.label}. Leave it unchecked if: ${(s.axis.poles[0]?.summary ?? '').toLowerCase()}.`,
+  }));
+  const axis: Axis = {
+    id: SYSTEMS_CHECKLIST, module: 'frame', label: 'Systems', kind: 'multi', header: 'Systems', importance: 3, tier: 1,
+    questionTemplate: 'Which of these are part of your game, even in a small way? Pick all that apply.',
+    poles: gates.map((s) => ({ id: s.axis.id, label: s.axis.header, summary: s.axis.poles[1]?.summary })),
+  } as Axis;
+  return {
+    axis: { ...(gates[0] as AxisState), axis }, options, format: 'poles', priority: gates.some((s) => isPriority(state, s)),
+    score: gates.reduce((t, s) => t + Math.max(0, best.get(s.axis.id) ?? 0), 0), covers: gates.map((s) => s.axis.id),
+  };
 }
 
 function isAskable(state: SessionState, s: AxisState): boolean {
   if (s.status !== 'open') return false;
   if (s.applicable === false) return false;
+  if (s.deferred) return false;
   if (s.lastSkip !== undefined && state.questionCount - s.lastSkip < ENGINE.skipCooldown) return false;
   if (s.lastUnsure !== undefined && state.questionCount - s.lastUnsure < ENGINE.unsureCooldown) return false;
   return true;
@@ -241,8 +283,14 @@ function isAskable(state: SessionState, s: AxisState): boolean {
 
 /** SPEC: tier 0 and gate axes come first until they are resolved. */
 function isPriority(state: SessionState, s: AxisState): boolean {
-  if (s.axis.tier === 0) return true;
+  if (isFrameCore(s.axis)) return true;
   return isGateLike(s) && gateStillOpen(state, s);
+}
+
+/** 0: frame and gates (priority), 1: core axes not yet clear enough, 2: refinement. */
+function phaseOf(c: Candidate): 0 | 1 | 2 {
+  if (c.priority) return 0;
+  return isCoreAxis(c.axis.axis) && c.axis.clarity < ENGINE.stopCore ? 1 : 2;
 }
 
 export type NextOptions = { count?: number; issued?: number; deterministic?: boolean; exclude?: Set<string> };
@@ -251,20 +299,23 @@ export type NextOptions = { count?: number; issued?: number; deterministic?: boo
 export function nextQuestions(k: Knowledge, state: SessionState, opts: NextOptions = {}): RenderedQuestion[] {
   const count = Math.max(1, Math.min(4, opts.count ?? 1));
   const det = opts.deterministic ?? isDeterministic();
-  let pool = candidates(k, state).filter((c) => !opts.exclude?.has(c.axis.axis.id));
-  // Stable order: score desc, then axis id, then comparison id.
-  pool.sort((x, y) => y.score - x.score || x.axis.axis.id.localeCompare(y.axis.axis.id) || (x.comparison?.id ?? '').localeCompare(y.comparison?.id ?? ''));
+  let pool = candidates(k, state).filter((c) => !covered(c).some((id) => opts.exclude?.has(id)));
+  // Stable order: phase (frame and gates, then core, then detail), score desc, then axis id, then comparison id.
+  pool.sort((x, y) => phaseOf(x) - phaseOf(y) || y.score - x.score || x.axis.axis.id.localeCompare(y.axis.axis.id) || (x.comparison?.id ?? '').localeCompare(y.comparison?.id ?? ''));
   const out: RenderedQuestion[] = [];
   const usedModules = new Set<string>();
   const usedAxes = new Set<string>();
   const rand = mulberry32(hashSeed(state.seed, state.effective.length, opts.issued ?? 0));
   for (let slot = 0; slot < count; slot++) {
-    pool = pool.filter((c) => !usedAxes.has(c.axis.axis.id) && !usedModules.has(c.axis.axis.module));
-    if (!pool.length) break;
+    pool = pool.filter((c) => !covered(c).some((id) => usedAxes.has(id)));
+    // Prefer a module not yet in this round; when only one module is left (say the frame), fill the round anyway.
+    const fresh = pool.filter((c) => !usedModules.has(c.axis.axis.module));
+    const from = fresh.length ? fresh : pool;
+    if (!from.length) break;
     // Only one candidate per axis competes for the top-K pool.
     const seen = new Set<string>();
     const top: Candidate[] = [];
-    for (const c of pool) {
+    for (const c of from) {
       if (seen.has(c.axis.axis.id)) continue;
       seen.add(c.axis.axis.id);
       top.push(c);
@@ -272,9 +323,9 @@ export function nextQuestions(k: Knowledge, state: SessionState, opts: NextOptio
     }
     const pick = det ? top[0] : top[pickIndex(rand, top.length)];
     if (!pick) break;
-    usedAxes.add(pick.axis.axis.id);
+    for (const id of covered(pick)) usedAxes.add(id);
     usedModules.add(pick.axis.axis.module);
-    out.push(render(pick, `${state.id}:q${(opts.issued ?? 0) + slot + 1}`));
+    out.push(render(pick, `${state.id}:q${(opts.issued ?? 0) + slot + 1}`, phaseOf(pick)));
   }
   return out;
 }
@@ -284,12 +335,12 @@ const NA_LABEL = 'Not in my game';
 const NONE_LABEL = 'None of these';
 const UNSURE_LABEL = "Not sure / don't know these games";
 
-export function render(c: Candidate, questionId: string): RenderedQuestion {
+export function render(c: Candidate, questionId: string, phase?: 0 | 1 | 2): RenderedQuestion {
   const a = c.axis.axis;
   const multi = a.kind === 'multi' || a.kind === 'rank';
   const q: Question = {
     questionId, axis: a.id, module: a.module, format: c.format, comparisonId: c.comparison?.id, multi,
-    page: c.page, pages: c.pages, options: c.options,
+    page: c.page, pages: c.pages, options: c.options, ...(phase !== undefined ? { phase } : {}),
   };
   return renderQuestion(q, a, c.score);
 }
@@ -334,6 +385,11 @@ export function renderQuestion(q: Question, a: Pick<Axis, 'kind' | 'label' | 'he
     extras.push({ label: NONE_LABEL, description: 'None of these fit; show other options', choice: 'neither' });
   }
   const moreOptions: { label: string; description: string }[] = [];
+  // Multi-select: "None of these" is no selection at all; AskUserQuestion has no room for it, so it goes to moreOptions.
+  if (q.multi) {
+    moreOptions.push({ label: NONE_LABEL, description: 'None of these apply (send choice neither with no selected keys)' });
+    answerMap[NONE_LABEL] = 'neither';
+  }
   for (const x of extras) {
     answerMap[x.label] = x.choice;
     if (options.length < 4) options.push({ label: x.label, description: x.description });

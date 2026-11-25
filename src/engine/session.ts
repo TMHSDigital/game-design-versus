@@ -29,6 +29,12 @@ export type Question = {
   options: QuestionOption[];
   customAxis?: CustomAxis;
   improvised?: boolean;
+  /**
+   * Interview phase when the question was issued: 0 frame and gates, 1 an unsettled core axis, 2 refinement
+   * (secondary detail, or confirming a core axis the engine already infers). Phase 2 answers count toward the
+   * detail allowance of the stop rule. Missing on older sessions; isDetailAxis stands in.
+   */
+  phase?: 0 | 1 | 2;
 };
 
 export type Constraints = { platform?: string[]; team?: string; timeline?: string };
@@ -64,8 +70,39 @@ export type AxisState = {
   /** How often the user answered "Not sure / don't know these games" on this axis, and when last. */
   unsureCount: number;
   lastUnsure?: number;
+  /** The user stayed unsure even in plain words: not asked again, does not block the stop rule. */
+  deferred: boolean;
   evidenceCount: number;
 };
+
+/**
+ * The systems checklist: one multi-select question over up to 4 presence gates ("which of these are in your
+ * game?"). Each option's pole is a gate axis id. Checked means present, unchecked means none.
+ */
+export const SYSTEMS_CHECKLIST = 'systems.checklist';
+
+/** Gates that ask whether a system exists at all (first pole "none"); these can share the checklist. */
+export function isPresenceGate(a: Axis): boolean {
+  return a.kind === 'gate' && a.poles[0]?.id === 'none';
+}
+
+/** Evidence for a checked presence gate: anything but none or nearly none. */
+const PRESENT_LIK = [0.02, 0.2, 1, 1, 1];
+
+/** Core axes (importance 3) are settled before secondary detail is asked. */
+export function isCoreAxis(a: Axis): boolean {
+  return a.importance === 3;
+}
+
+/** Secondary detail: below core importance and not a gate. */
+export function isDetailAxis(a: Axis): boolean {
+  return a.importance < 3 && a.kind !== 'gate';
+}
+
+/** Frame axes that must be answered before the brief is ready: tier 0 and core importance. */
+export function isFrameCore(a: Axis): boolean {
+  return a.tier === 0 && a.importance === 3;
+}
 
 export type CustomAxisState = {
   def: CustomAxis;
@@ -98,6 +135,8 @@ export type SessionState = {
   /** Games shown in questions the user answered "Not sure / don't know these games". */
   unknownGames: string[];
   questionCount: number;
+  /** Questions answered on secondary detail axes (isDetailAxis), for the stop rule. */
+  detailCount: number;
   tensions: Tension[];
 };
 
@@ -143,6 +182,16 @@ function optionFor(q: Question, choice: Choice): QuestionOption | undefined {
   return q.options.find((o) => o.key === choice);
 }
 
+/** Poles picked on a multi-select question: selected keys, poles or labels, plus a single a-d choice. */
+function pickedPoles(q: Question, choice: Choice, selected: string[] | undefined): Set<string> {
+  const picked = new Set(
+    (selected ?? []).map((s) => q.options.find((o) => o.key === s || o.pole === s || o.label === s)?.pole).filter((x): x is string => !!x),
+  );
+  const single = optionFor(q, choice);
+  if (single) picked.add(single.pole);
+  return picked;
+}
+
 /** Converts a stated value for an axis into evidence. Returns undefined when the value does not fit. */
 export function evidenceFromValue(axis: Axis, value: number | string | string[], confidence: number): Evidence | undefined {
   if (isBinary(axis)) {
@@ -182,6 +231,7 @@ export function foldSession(k: Knowledge, events: SessionEvent[]): SessionState 
   const used = new Set<string>();
   const unknownGames: string[] = [];
   let questionCount = 0;
+  let detailCount = 0;
 
   // Constraints from versus_start become stated facts.
   const cons = start.constraints ?? {};
@@ -238,10 +288,32 @@ export function foldSession(k: Knowledge, events: SessionEvent[]): SessionState 
     }
     if (e.type !== 'answer') continue;
     const q = e.question;
+    if (q.axis === SYSTEMS_CHECKLIST) {
+      questionCount++;
+      history.push({ axis: q.axis, module: q.module, games: [] });
+      log.push({ at: e.at, kind: e.type, axis: q.axis, question: q.questionId, answer: describeChoice(q, e.choice, undefined, e.selected), note: e.note });
+      const picked = pickedPoles(q, e.choice, e.selected);
+      // Only a selection, "None of these" (neither) or "Not in my game" (na) says which systems exist.
+      if (!picked.size && e.choice !== 'neither' && e.choice !== 'na') {
+        for (const o of q.options) raw(o.pole).lastSkip = questionCount;
+        continue;
+      }
+      for (const o of q.options) {
+        const g = k.axisById.get(o.pole);
+        if (!g) continue;
+        const r = raw(g.id);
+        applyEvidence(r, g, { axis: g.id, kind: 'bin', lik: picked.has(o.pole) ? [...PRESENT_LIK] : likForAnswer('A') }, evidence);
+        r.status = 'decided';
+        r.source = 'answer';
+      }
+      if (e.note) for (const o of q.options) raw(o.pole).notes.push(e.note);
+      continue;
+    }
     const a = k.axisById.get(q.axis);
     if (!a) continue;
     const r = raw(a.id);
     questionCount++;
+    if (q.phase !== undefined ? q.phase === 2 : isDetailAxis(a)) detailCount++;
     history.push({ axis: q.axis, module: q.module, games: gamesOf(q) });
     if (q.comparisonId) used.add(q.comparisonId);
     log.push({ at: e.at, kind: e.type, axis: q.axis, question: q.questionId, answer: describeChoice(q, e.choice, e.lean, e.selected), note: e.note });
@@ -253,6 +325,7 @@ export function foldSession(k: Knowledge, events: SessionEvent[]): SessionState 
       // No evidence about the design: the user does not know the games or cannot judge yet.
       r.unsureCount++;
       r.lastUnsure = questionCount;
+      if (r.unsureCount >= ENGINE.unsureDeferAfter) r.importanceMult = Math.min(r.importanceMult, ENGINE.noPrefImportance);
       for (const g of gamesOf(q)) if (!unknownGames.includes(g)) unknownGames.push(g);
       if (e.note) r.notes.push(e.note);
       continue;
@@ -299,11 +372,7 @@ export function foldSession(k: Knowledge, events: SessionEvent[]): SessionState 
       continue;
     }
     // multi and rank pages
-    const picked = new Set(
-      (e.selected ?? []).map((s) => q.options.find((o) => o.key === s || o.pole === s || o.label === s)?.pole).filter((x): x is string => !!x),
-    );
-    const single = optionFor(q, e.choice);
-    if (single) picked.add(single.pole);
+    const picked = pickedPoles(q, e.choice, e.selected);
     const obs = q.options.map((o) => ({ pole: o.pole, selected: picked.has(o.pole) }));
     applyEvidence(r, a, { axis: a.id, kind: 'multi', obs }, evidence);
     let rank = Object.keys(r.rankPoints).length;
@@ -332,7 +401,8 @@ export function foldSession(k: Knowledge, events: SessionEvent[]): SessionState 
       axis: a, status: r.status, applicable: undefined, clarity: 0, importanceMult: r.importanceMult, notes: r.notes,
       source: r.source, ref: r.ref, pagesSeen: r.pagesSeen, seenPoles: [...r.seen], excludedPoles: [...r.excluded],
       ranked: Object.entries(r.rankPoints).sort((x, y) => y[1] - x[1]).map(([p]) => p), lastSkip: r.lastSkip,
-      unsureCount: r.unsureCount, lastUnsure: r.lastUnsure, evidenceCount: r.evidenceCount,
+      unsureCount: r.unsureCount, lastUnsure: r.lastUnsure, deferred: r.status === 'open' && r.unsureCount >= ENGINE.unsureDeferAfter,
+      evidenceCount: r.evidenceCount,
     };
     if (isBinary(a)) {
       st.dist = binPosterior(binPrior(k, a.id, archetypePost), r.binLiks);
@@ -380,7 +450,7 @@ export function foldSession(k: Knowledge, events: SessionEvent[]): SessionState 
   return {
     id: start.sessionId, seed: start.seed, title: start.title, pitch: start.pitch, knownGames: start.knownGames ?? [],
     constraints: cons, createdAt: start.at, effective: eff, axes, custom: customOut, archetypePost, flags, elo, log,
-    history, usedComparisons: used, unknownGames, questionCount, tensions: evaluateTensions(k, ctx),
+    history, usedComparisons: used, unknownGames, questionCount, detailCount, tensions: evaluateTensions(k, ctx),
   };
 }
 
@@ -455,6 +525,7 @@ function describeChoice(q: Question, choice: Choice, lean?: number, selected?: s
     return `selected: ${labels.join(', ')}`;
   }
   const opt = optionFor(q, choice);
+  if (!opt && q.multi && choice === 'neither') return 'none of these';
   const base = opt ? opt.label : choice === 'unsure' ? 'not sure' : choice;
   return lean !== undefined ? `${base} (lean ${lean})` : base;
 }
@@ -478,6 +549,10 @@ export type ClaritySummary = {
   overall: number;
   modules: { module: string; clarity: number; status: 'active' | 'skipped' | 'pending'; open: number; decided: number }[];
   stop: { recommended: boolean; reasons: string[] };
+  /** Core decisions (importance-3 axes that apply): how many are settled, decided or set aside. */
+  core: { settled: number; total: number };
+  /** True once frame, gates and core are settled: the brief has its foundations. */
+  coreReady: boolean;
   questionCount: number;
 };
 
@@ -498,18 +573,34 @@ export function claritySummary(k: Knowledge, state: SessionState): ClaritySummar
     };
   });
   const reasons: string[] = [];
-  const unresolvedFrame = [...state.axes.values()].filter((s) => s.axis.tier === 0 && s.status === 'open');
+  const unresolvedFrame = [...state.axes.values()].filter((s) => isFrameCore(s.axis) && s.status === 'open' && s.applicable !== false && !s.deferred);
   const unresolvedGates = [...state.axes.values()].filter((s) => isGateLike(s) && s.applicable !== false && s.status === 'open' && gateStillOpen(state, s));
-  const weakCore = counted.filter((s) => s.axis.importance === 3 && s.clarity < ENGINE.stopCore);
-  if (overall < ENGINE.stopOverall) reasons.push(`overall clarity ${overall.toFixed(2)} < ${ENGINE.stopOverall}`);
+  const core = counted.filter((s) => isCoreAxis(s.axis));
+  const weakCore = core.filter((s) => !s.deferred && s.clarity < ENGINE.stopCore);
   if (unresolvedFrame.length) reasons.push(`${unresolvedFrame.length} frame axes open`);
   if (unresolvedGates.length) reasons.push(`${unresolvedGates.length} gates open`);
   if (weakCore.length) reasons.push(`${weakCore.length} core axes below ${ENGINE.stopCore}`);
+  const coreReady = reasons.length === 0;
+  // Once the core is settled, secondary detail gets a bounded share; what is left becomes open questions.
+  if (overall < ENGINE.stopOverall && state.detailCount < ENGINE.detailQuestions) {
+    reasons.push(`overall clarity ${overall.toFixed(2)} < ${ENGINE.stopOverall} and ${state.detailCount} of ${ENGINE.detailQuestions} detail questions asked`);
+  }
   const hitMax = state.questionCount >= ENGINE.maxQuestions;
+  const foundations = !unresolvedFrame.length && !unresolvedGates.length;
+  if (!hitMax && reasons.length && foundations && state.questionCount >= ENGINE.softQuestions) {
+    const left = weakCore.length ? `; ${weakCore.length} core ${weakCore.length === 1 ? 'question stays' : 'questions stay'} open in the brief` : '';
+    return {
+      overall, modules,
+      stop: { recommended: true, reasons: [`reached the recommended length of ${ENGINE.softQuestions} questions${left}`] },
+      core: { settled: core.length - weakCore.length, total: core.length }, coreReady, questionCount: state.questionCount,
+    };
+  }
   return {
     overall,
     modules,
     stop: { recommended: hitMax || reasons.length === 0, reasons: hitMax ? [`reached ${ENGINE.maxQuestions} questions`] : reasons },
+    core: { settled: core.length - weakCore.length, total: core.length },
+    coreReady,
     questionCount: state.questionCount,
   };
 }

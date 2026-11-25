@@ -37,14 +37,16 @@ modules that no longer apply. At the end the server writes a GDD seed brief.
 
    3. Map each reply through the question's `answerMap` (label to choice). Typed free text becomes
       `choice: "neither"` with the text as `note`, or a `versus_set` when it clearly states a position.
-      For multi-select questions send `choice: "neither"` plus `selected` option keys. "Not sure / don't know
+      For multi-select questions (including the "Which of these are part of your game?" systems checklist) send
+      `choice: "neither"` plus `selected` option keys; if none apply, send `choice: "neither"` with `selected: []`. "Not sure / don't know
       these games" maps to `unsure`: nothing is recorded and the topic comes back later in plain words. Never
       push the user to pick between games they do not know.
    4. Send all answers of the round in one `versus_answer` call.
-   5. Every 5 rounds, recap in one line what is settled and the overall clarity.
+   5. Every 5 rounds, recap in one line what is settled and the core progress (`core.settled` of `core.total`).
+      Clarity can dip when an answer unlocks a module; core progress is the steadier measure.
    6. Ask the `probe` of any returned tension in your own words.
    7. When the user explains a nuance, improvise a follow-up with `versus_ask` (existing axis or `customAxis`).
-4. Stop when `stopRecommended` is true or the user says so. Call `versus_brief` (markdown) and, if the user agrees,
+4. Stop when `stopRecommended` is true (the brief is ready; say so and offer to keep refining) or the user says so. Call `versus_brief` (markdown) and, if the user agrees,
    save it with `outPath: "docs/design/<slug>-brief.md"`. An existing file is only replaced with `overwrite: true`,
    so ask first.
 

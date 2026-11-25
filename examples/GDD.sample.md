@@ -1,10 +1,10 @@
 # Steel and Momentum
 
-> The player plays in order to beat everyone else, with melee-focused combat range.
+> The player fights in order to reach their goals, with melee-focused combat range.
 
 Steel and Momentum is an action and fighting game. Think Celeste meets Outer Wilds. Original pitch: A physics-driven medieval sword fighter where momentum, edge contact and armor decide every hit. Its pillars: Camera view: Over-shoulder third person; Combat range: Melee-focused; Failure penalty: None (instant retry).
 
-Overall clarity 0.82 after 45 questions.
+Overall clarity 0.8 after 32 questions.
 
 ## 1. Frame
 
@@ -18,7 +18,7 @@ Overall clarity 0.82 after 45 questions.
 | Business model | Flexible (no strong preference) |
 | Team size | 2 to 5 |
 | Timeline | 1 to 2 years |
-| Engine | Flexible (no strong preference) |
+| Engine | Undecided |
 | Audience rating | Mature |
 | Dimensionality | 3D |
 | Realism | Grounded simulation |
@@ -26,7 +26,7 @@ Overall clarity 0.82 after 45 questions.
 ## 2. Experience targets
 
 - MDA aesthetics: Sensation, Challenge, Expression
-- Player motivations: Competition, Excitement, Challenge, Destruction
+- Player motivations: Undecided
 - Tone: Leans Grim
 - Pace: Intense
 - Challenge: Punishing
@@ -36,19 +36,19 @@ Overall clarity 0.82 after 45 questions.
 - Families: Action, Fighting
 - Forms: None
 - Tags: Action, Fighting, Over-shoulder third person, 3D, Local versus
-- Closest archetypes: Physics brawler (100%), Arena FPS (0%), Rhythm game (0%)
+- Closest archetypes: Physics brawler (100%), Fighting game (0%), Platform fighter (0%)
 
 ## 4. Design pillars
 
-1. **Camera view: Over-shoulder third person**. Like Resident Evil 4 (2005) (An over-the-shoulder camera follows Leon; aiming zooms in further and he cannot move while aiming.), not Resident Evil or Half-Life: Alyx.
+1. **Camera view: Over-shoulder third person**. Camera behind and beside the character
 2. **Combat range: Melee-focused**. Like Chivalry 2 (A first-person slasher: clashing swords and deep melee combat on foot or horseback decide most fights, with archers as a side class), not Battlefield 1.
 3. **Failure penalty: None (instant retry)**. Like Celeste (Death returns Madeline to the start of the screen instantly with infinite lives; the only cost is a few seconds.), not Dark Souls or XCOM 2.
 4. **Run structure: Run-based**. Like Risk of Rain 2 (Items stack within a run and are lost on death; only unlocks carry over.), not Borderlands 2.
-5. **World structure: Single arena**. One map or board, replayed
+5. **World structure: Single arena**. Like Rocket League (Every ranked match is played in a standard arena with identical dimensions and boost pads; only the cosmetics of the stadium change.), not Forza Horizon 4 or Mario Kart 8 Deluxe.
 
 ## 5. Core loop
 
-- Seconds: the player plays under constant pressure, reading the situation and executing in the moment; combat is physics-simulated.
+- Seconds: the player fights under constant pressure, reading the situation and executing in the moment; combat is physics-simulated.
 - Minutes: a session of under 20 minutes is one or more runs that reset on failure, toward goals the player sets.
 - Weeks: mastery and variety keep the player returning.
 
@@ -58,27 +58,28 @@ Overall clarity 0.82 after 45 questions.
 
 | Axis | Position | Status | Reference |
 | --- | --- | --- | --- |
-| Camera view | Over-shoulder third person | decided | like Resident Evil 4 (2005) (An over-the-shoulder camera follows Leon; aiming zooms in further and he cannot move while aiming.), not Resident Evil or Half-Life: Alyx |
+| Camera view | Over-shoulder third person | decided |  |
 | Camera control | Leans Player-controlled (lean 26) | inferred |  |
 | Control complexity | Leans Few inputs (lean 26) | inferred |  |
 | Input physicality | Physics-driven input (lean 3) | inferred |  |
 
-### Core loop (clarity 0.7)
+### Core loop (clarity 0.84)
 
 | Axis | Position | Status | Reference |
 | --- | --- | --- | --- |
+| Core verbs | Fight | decided |  |
 | Decision cadence | Moment-to-moment execution (lean 3) | inferred |  |
 | Goal source | Leans Self-directed goals (lean 74) | inferred |  |
 | Run structure | Run-based (lean 81) | decided | like Risk of Rain 2 (Items stack within a run and are lost on death; only unlocks carry over.), not Borderlands 2 |
 | Time model | Real-time (lean 20) | decided | like Command & Conquer (Units and enemy production keep moving while the player issues orders.), not X-COM: UFO Defense |
 
-### Combat (clarity 0.8)
+### Combat (clarity 0.78)
 
 | Axis | Position | Status | Reference |
 | --- | --- | --- | --- |
 | Combat centrality | Core pillar (lean 97) | inferred |  |
 | Combat time model | Real-time | decided |  |
-| Combat simulation | Physics-simulated (lean 20) | decided | like Blade & Sorcery (VR combat where objects have weight, collisions use fine hitboxes, creatures have full body physics and blades can penetrate soft materials), not Batman: Arkham Asylum |
+| Combat simulation | Physics-simulated (lean 3) | inferred |  |
 | Combat range | Melee-focused (lean 20) | decided | like Chivalry 2 (A first-person slasher: clashing swords and deep melee combat on foot or horseback decide most fights, with archers as a side class), not Battlefield 1 |
 | Targeting | Free aim or free swing (lean 97) | inferred |  |
 | Attack input | Directional or stance input (lean 3) | inferred |  |
@@ -102,17 +103,15 @@ Overall clarity 0.82 after 45 questions.
 | Traversal tools | On foot only (lean 3) | inferred |  |
 | Climbing | Authored paths (lean 3) | inferred |  |
 
-### World (clarity 0.79)
+### World (clarity 0.62)
 
 | Axis | Position | Status | Reference |
 | --- | --- | --- | --- |
-| World structure | Single arena | decided |  |
-| World authoring | Handcrafted (lean 25) | inferred |  |
+| World structure | Single arena | decided | like Rocket League (Every ranked match is played in a standard arena with identical dimensions and boost pads; only the cosmetics of the stadium change.), not Forza Horizon 4 or Mario Kart 8 Deluxe |
+| World authoring | Leans Handcrafted (lean 26) | inferred |  |
 | World size | Compact and dense (lean 3) | inferred |  |
 | World persistence | Resets (lean 3) | inferred |  |
 | Destruction | Leans Fully destructible (lean 74) | inferred |  |
-| World time | Flexible (no strong preference) | flexible |  |
-| Setting | Flexible (no strong preference) | flexible |  |
 
 ### Failure and difficulty (clarity 0.82)
 
@@ -169,7 +168,7 @@ Overall clarity 0.82 after 45 questions.
 
 - **Celeste**: borrow failure penalty: Death returns Madeline to the start of the screen instantly with infinite lives; the only cost is a few seconds.
 - **Outer Wilds**: borrow dimensionality: A fully 3D solar system whose planets are packed with hidden locations to reach and explore.
-- **Resident Evil 4 (2005)**: borrow camera view: An over-the-shoulder camera follows Leon; aiming zooms in further and he cannot move while aiming.
+- **Rocket League**: borrow world structure: Every ranked match is played in a standard arena with identical dimensions and boost pads; only the cosmetics of the stadium change.
 - **Animal Crossing**: borrow embodiment: The player walks one villager around town to talk to neighbors and fish.
 - **Arma 3**: borrow realism: A massive military sandbox sold on authentic, true combat gameplay across infantry and vehicle warfare.
 
@@ -190,9 +189,9 @@ Overall clarity 0.82 after 45 questions.
 - No idle module
 - No party module
 - No rhythm module
-- Not long sessions (session length)
-- Not all ages (audience rating)
 - Not stylized arcade (realism)
+- Not persistent campaign (run structure)
+- Not turn-based (time model)
 
 ## 9. Scope
 
@@ -208,7 +207,10 @@ Overall clarity 0.82 after 45 questions.
 
 ## 11. Open questions
 
-- (3) Core verbs: What does the player mostly do, minute to minute? Pick all that apply. (clarity 0.27)
+- (2) Setting: which fits your game? (clarity 0)
+- (2) Player motivations: Which player motivations should the game serve most? (clarity 0.27)
+- (1) Engine: which fits your game? (clarity 0)
+- (1) World time: which fits your game? (clarity 0)
 
 ## 12. Decision log
 
@@ -217,48 +219,35 @@ Overall clarity 0.82 after 45 questions.
 | 2026-11-23T00:00:00.000Z | set | frame.platform | ["pc"] (confidence 0.9) |
 | 2026-11-23T00:00:00.000Z | set | frame.players | "local_versus" (confidence 0.9) |
 | 2026-11-23T00:00:00.000Z | set | genre.family | ["action","fighting"] (confidence 0.9) |
+| 2026-11-23T00:00:00.000Z | answer | systems.checklist | none of these |
 | 2026-11-23T00:00:00.000Z | answer | genre.form | no_pref |
 | 2026-11-23T00:00:00.000Z | answer | frame.team | 2 to 5 |
 | 2026-11-23T00:00:00.000Z | answer | frame.timeline | 1 to 2 years |
-| 2026-11-23T00:00:00.000Z | answer | prog.presence | No progression |
-| 2026-11-23T00:00:00.000Z | answer | ctl.embodiment | Animal Crossing |
+| 2026-11-23T00:00:00.000Z | answer | cam.view | Over-shoulder third person |
 | 2026-11-23T00:00:00.000Z | answer | frame.dimension | Outer Wilds |
-| 2026-11-23T00:00:00.000Z | answer | econ.presence | No economy |
+| 2026-11-23T00:00:00.000Z | answer | systems.checklist | none of these |
 | 2026-11-23T00:00:00.000Z | answer | frame.monetization | no_pref |
-| 2026-11-23T00:00:00.000Z | answer | frame.realism | Arma 3 |
-| 2026-11-23T00:00:00.000Z | answer | frame.input | no_pref |
-| 2026-11-23T00:00:00.000Z | answer | cam.view | Resident Evil 4 (2005) |
-| 2026-11-23T00:00:00.000Z | answer | frame.length | no_pref |
-| 2026-11-23T00:00:00.000Z | answer | mgmt.presence | No management |
-| 2026-11-23T00:00:00.000Z | answer | narr.presence | No story |
-| 2026-11-23T00:00:00.000Z | answer | build.presence | No building |
-| 2026-11-23T00:00:00.000Z | answer | craft.presence | No crafting |
 | 2026-11-23T00:00:00.000Z | answer | combat.range | Chivalry 2 |
-| 2026-11-23T00:00:00.000Z | answer | surv.presence | No survival needs |
-| 2026-11-23T00:00:00.000Z | answer | frame.engine | no_pref |
-| 2026-11-23T00:00:00.000Z | answer | stealth.presence | No stealth |
-| 2026-11-23T00:00:00.000Z | answer | loop.time | Command & Conquer |
-| 2026-11-23T00:00:00.000Z | answer | frame.rating | The Last of Us Part I |
 | 2026-11-23T00:00:00.000Z | answer | move.vehicles | No vehicles |
-| 2026-11-23T00:00:00.000Z | answer | frame.session | Clash Royale |
-| 2026-11-23T00:00:00.000Z | answer | loop.run | Risk of Rain 2 |
+| 2026-11-23T00:00:00.000Z | answer | ctl.embodiment | Animal Crossing |
+| 2026-11-23T00:00:00.000Z | answer | frame.realism | Arma 3 |
 | 2026-11-23T00:00:00.000Z | answer | fail.penalty | Celeste |
-| 2026-11-23T00:00:00.000Z | answer | fail.save | no_pref |
-| 2026-11-23T00:00:00.000Z | answer | combat.defense | no_pref |
-| 2026-11-23T00:00:00.000Z | answer | mp.structure | no_pref |
-| 2026-11-23T00:00:00.000Z | answer | world.structure | Single arena |
-| 2026-11-23T00:00:00.000Z | answer | fight.win | no_pref |
+| 2026-11-23T00:00:00.000Z | answer | loop.run | Risk of Rain 2 |
+| 2026-11-23T00:00:00.000Z | answer | loop.time | Command & Conquer |
 | 2026-11-23T00:00:00.000Z | answer | combat.time_model | Real-time |
+| 2026-11-23T00:00:00.000Z | answer | world.structure | Rocket League |
 | 2026-11-23T00:00:00.000Z | answer | mp.mode | no_pref |
+| 2026-11-23T00:00:00.000Z | answer | mp.structure | no_pref |
+| 2026-11-23T00:00:00.000Z | answer | fight.win | no_pref |
+| 2026-11-23T00:00:00.000Z | answer | exp.aesthetics | selected: Sensation, Challenge, Expression |
+| 2026-11-23T00:00:00.000Z | answer | loop.verb | selected: Fight |
 | 2026-11-23T00:00:00.000Z | answer | mp.size | no_pref |
-| 2026-11-23T00:00:00.000Z | answer | world.setting | no_pref |
+| 2026-11-23T00:00:00.000Z | answer | frame.input | no_pref |
+| 2026-11-23T00:00:00.000Z | answer | combat.defense | no_pref |
+| 2026-11-23T00:00:00.000Z | answer | fail.save | no_pref |
 | 2026-11-23T00:00:00.000Z | answer | fight.input | no_pref |
+| 2026-11-23T00:00:00.000Z | answer | frame.length | no_pref |
 | 2026-11-23T00:00:00.000Z | answer | mp.symmetry | no_pref |
+| 2026-11-23T00:00:00.000Z | answer | mp.matching | no_pref |
 | 2026-11-23T00:00:00.000Z | answer | mp.loss | no_pref |
 | 2026-11-23T00:00:00.000Z | answer | combat.resource | no_pref |
-| 2026-11-23T00:00:00.000Z | answer | mp.matching | no_pref |
-| 2026-11-23T00:00:00.000Z | answer | world.time | no_pref |
-| 2026-11-23T00:00:00.000Z | answer | exp.motivation | selected: Competition, Excitement, Challenge, Destruction |
-| 2026-11-23T00:00:00.000Z | answer | exp.aesthetics | selected: Sensation, Challenge, Expression |
-| 2026-11-23T00:00:00.000Z | answer | exp.motivation | neither |
-| 2026-11-23T00:00:00.000Z | answer | combat.sim | Blade & Sorcery |

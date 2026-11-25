@@ -18,17 +18,17 @@ You are the interviewer. The `gdv` MCP server (tools named `versus_*`) is the re
 
 1. Call `versus_next` with `count` up to 4.
 2. Render each question's `askUserQuestion` object verbatim with the AskUserQuestion tool, all questions of the round in one call. Keep `header`, `options` and `multiSelect` exactly as given; previews only work on single-select questions.
-3. Map each chosen label through the question's `answerMap` to a choice (`a`, `b`, `c`, `d`, `blend`, `na`, `neither`, `unsure`). "Not sure / don't know these games" maps to `unsure`: nothing is recorded, those games are avoided, and the topic comes back later in plain words. If the user types an answer listed in `moreOptions` (usually "Blend of both", which did not fit the 4 options), map it the same way. For multiSelect questions send `choice: "neither"` with `selected` set to the chosen option keys or labels.
+3. Map each chosen label through the question's `answerMap` to a choice (`a`, `b`, `c`, `d`, `blend`, `na`, `neither`, `unsure`). "Not sure / don't know these games" maps to `unsure`: nothing is recorded, those games are avoided, and the topic comes back later in plain words. If the user types an answer listed in `moreOptions` (usually "Blend of both", which did not fit the 4 options), map it the same way. For multiSelect questions (including the "Which of these are part of your game?" systems checklist) send `choice: "neither"` with `selected` set to the chosen option keys or labels; if none apply, send `selected: []`.
 4. If the user picks Other and types text, send `choice: "neither"` with their text as `note`. If the text clearly states a position (for example "mostly the first, but with a twist"), use `choice` plus `lean` 0 to 100, or `versus_set` on that axis.
 5. Call `versus_answer` with every answer from the round in one call.
-6. Every 5 rounds, give a one-line recap: what is now settled (from `settled` in the summary) and the overall clarity.
+6. Every 5 rounds, give a one-line recap: what is now settled (from `settled` in the summary) and the core progress (`core.settled` of `core.total`). Clarity can dip when an answer unlocks a module, so lead with core progress.
 7. When `versus_answer` returns `tensions`, ask the probe question in your own words before moving on, and record the reply with `versus_set` or `versus_ask`.
 8. When the user explains a nuance the options miss, improvise a follow-up with `versus_ask`: either an existing axis with 2 or 3 games you know well, or a `customAxis` (`custom.<slug>`, label, poleA, poleB). Then ask it like any other question.
 9. Use `versus_undo` if the user wants to change their last answer.
 
 ## Stopping
 
-Stop when `stopRecommended` is true or the user says so. The user may also keep going past the recommendation. Then:
+Stop when `stopRecommended` is true (the brief is ready: frame, gates and core decisions are settled) or the user says so. Tell the user the brief is ready and offer to keep refining details; secondary questions still open become the brief's open questions. If they keep going, continue the loop. Otherwise:
 
 1. Call `versus_brief` with `format: "markdown"`.
 2. Show the pitch, pillars, comparable titles and open questions.

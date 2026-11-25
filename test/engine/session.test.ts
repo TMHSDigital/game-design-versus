@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { knowledge } from '../../src/engine/data';
-import { claritySummary, foldSession, type SessionEvent, type Question } from '../../src/engine/session';
+import { claritySummary, foldSession, isCoreAxis, isPresenceGate, SYSTEMS_CHECKLIST, type SessionEvent, type Question } from '../../src/engine/session';
+import { PERSONAS, runPersona } from '../../src/engine/simulate';
 import { candidates, eigBinary, nextQuestions, render } from '../../src/engine/selection';
 import { ENGINE } from '../../src/engine/config';
 import { isBinary } from '../../src/engine/ontology';
@@ -152,8 +153,12 @@ describe('selection', () => {
     const qs = nextQuestions(k, foldSession(k, [start]), { count: 4, deterministic: true });
     expect(qs.length).toBeGreaterThan(0);
     for (const q of qs) {
-      const a = k.axisById.get(q.axis)!;
-      expect(a.tier === 0 || a.kind === 'gate' || (a.sets?.length ?? 0) > 0).toBe(true);
+      // The systems checklist asks several presence gates at once.
+      const ids = q.axis === SYSTEMS_CHECKLIST ? q.options.map((o) => o.pole) : [q.axis];
+      for (const id of ids) {
+        const a = k.axisById.get(id)!;
+        expect(a.tier === 0 || a.kind === 'gate' || (a.sets?.length ?? 0) > 0).toBe(true);
+      }
     }
   });
 
@@ -248,9 +253,92 @@ describe('selection', () => {
       const qs = nextQuestions(k, s, { count: 1, deterministic: true, issued: i });
       if (!qs.length) break;
       const q = qs[0]!;
-      const a = k.axisById.get(q.axis)!;
-      expect(a.module === 'combat' && a.id !== 'stealth.presence' && !a.id.startsWith('stealth.')).toBe(false);
+      for (const id of q.axis === SYSTEMS_CHECKLIST ? q.options.map((o) => o.pole) : [q.axis]) {
+        const a = k.axisById.get(id)!;
+        expect(a.module === 'combat' && a.id !== 'stealth.presence' && !a.id.startsWith('stealth.')).toBe(false);
+      }
       events = [...events, answer(q, q.multi ? 'a' : 'a', q.multi ? { selected: [q.options[0]!.key] } : {})];
     }
+  });
+});
+
+describe('shorter interviews', () => {
+  const presence = k.axes.filter((a) => isPresenceGate(a));
+  const setAll = (ids: string[], value: string | number): SessionEvent[] => ids.map((axis) => ({ type: 'set', at, axis, value, confidence: 1, source: 'user_statement' }));
+  const checklistAt = (events: SessionEvent[]) => {
+    for (let i = 0; i < 8; i++) {
+      const q = nextQuestions(k, foldSession(k, events), { count: 4, deterministic: true, issued: i }).find((x) => x.axis === SYSTEMS_CHECKLIST);
+      if (q) return q;
+    }
+    throw new Error('no systems checklist offered');
+  };
+
+  it('asks several presence gates in one checklist and never repeats them in the same round', () => {
+    const qs = nextQuestions(k, foldSession(k, [start]), { count: 4, deterministic: true });
+    const q = checklistAt([start]);
+    expect(q.multi).toBe(true);
+    expect(q.options.length).toBeGreaterThanOrEqual(2);
+    expect(q.options.length).toBeLessThanOrEqual(4);
+    for (const o of q.options) expect(isPresenceGate(k.axisById.get(o.pole)!)).toBe(true);
+    const covered = qs.flatMap((x) => (x.axis === SYSTEMS_CHECKLIST ? x.options.map((o) => o.pole) : [x.axis]));
+    expect(new Set(covered).size).toBe(covered.length);
+    expect(q.answerMap['None of these']).toBe('neither');
+  });
+
+  it('checked systems turn their module on, unchecked ones off; no preference records nothing', () => {
+    const q = checklistAt([start]);
+    const [first, ...rest] = q.options;
+    const s = foldSession(k, [start, answer(q, 'neither', { selected: [first!.key] })]);
+    const gate = (id: string) => s.axes.get(id)!;
+    expect(gate(first!.pole).status).toBe('decided');
+    expect(gate(first!.pole).lean).not.toBe('A');
+    for (const o of rest) expect(gate(o.pole).lean).toBe('A');
+    const none = foldSession(k, [start, answer(q, 'no_pref')]);
+    for (const o of q.options) {
+      expect(none.axes.get(o.pole)!.status).toBe('open');
+      expect(none.axes.get(o.pole)!.evidenceCount).toBe(0);
+    }
+  });
+
+  it('sets an axis aside after "not sure" twice: not asked again and not blocking the stop', () => {
+    const q = candidates(k, foldSession(k, [start])).find((c) => c.format === 'comparison' && isBinary(c.axis.axis) && c.axis.axis.importance === 3)!;
+    const rq = render(q, 's1:q1');
+    const s = foldSession(k, [start, answer(rq, 'unsure'), answer({ ...rq, questionId: 's1:q2', format: 'poles' }, 'unsure')]);
+    const st = s.axes.get(rq.axis)!;
+    expect(st.deferred).toBe(true);
+    expect(st.importanceMult).toBeLessThan(1);
+    expect(candidates(k, s).some((c) => c.axis.axis.id === rq.axis)).toBe(false);
+  });
+
+  it('fills a round with frame questions when only the frame is left among priority axes', () => {
+    const events: SessionEvent[] = [start, ...setAll(presence.map((a) => a.id), 'core'), ...setAll(['ctl.embodiment'], 'avatar')];
+    const qs = nextQuestions(k, foldSession(k, events), { count: 4, deterministic: true });
+    expect(qs.length).toBe(4);
+    expect(qs.filter((q) => q.phase === 0).length).toBeGreaterThan(1);
+  });
+
+  it('tags each question with its phase; only refinement answers count as detail', () => {
+    const qs = nextQuestions(k, foldSession(k, [start]), { count: 4, deterministic: true });
+    for (const q of qs) expect(q.phase).toBe(0);
+    const detail = candidates(k, foldSession(k, [start])).find((c) => !isCoreAxis(c.axis.axis) && c.axis.axis.kind === 'bipolar')!;
+    const s = foldSession(k, [start, answer(render(detail, 's1:q1', 2), 'a'), answer(qs[0]!, qs[0]!.multi ? 'neither' : 'a')]);
+    expect(s.detailCount).toBe(1);
+  });
+
+  it('recommends stopping at the recommended length once frame and gates are settled, naming open core questions', () => {
+    // Walk an ideal persona until only core axes are missing, then pretend the session is long.
+    let found: ReturnType<typeof foldSession> | undefined;
+    for (let n = 4; n <= 40 && !found; n += 2) {
+      const r = runPersona(k, PERSONAS[1]!, { maxQuestions: n });
+      const reasons = claritySummary(k, r.state).stop.reasons;
+      if (reasons.length && reasons.every((x) => x.includes('core axes') || x.includes('detail questions'))) found = r.state;
+    }
+    expect(found).toBeDefined();
+    const sum = claritySummary(k, { ...found!, questionCount: ENGINE.softQuestions });
+    expect(sum.stop.recommended).toBe(true);
+    expect(sum.stop.reasons.join()).toMatch(/recommended length/);
+    expect(sum.coreReady).toBe(false);
+    const early = claritySummary(k, { ...found!, questionCount: ENGINE.softQuestions - 1 });
+    expect(early.stop.recommended).toBe(false);
   });
 });

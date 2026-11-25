@@ -75345,11 +75345,21 @@ var ENGINE = {
   noPrefImportance: 0.3,
   /** CALIBRATION: an axis the user answered directly counts as at least this clear. */
   decidedClarityFloor: 0.9,
-  /** SPEC: stop when overall clarity >= this ... */
+  /**
+   * Stop rule ("brief ready"): frame and gates resolved, every core (importance 3) axis at least stopCore clear,
+   * and then either overall clarity >= stopOverall or detailQuestions answers spent on secondary axes. Secondary
+   * axes still open at that point become open questions in the brief; the user can keep going.
+   */
   stopOverall: 0.8,
-  /** SPEC: ... and every importance-3 axis is at least this clear ... */
   stopCore: 0.6,
-  /** SPEC: ... or this many questions were asked. */
+  /** CALIBRATION: two rounds of secondary questions once the core is settled. */
+  detailQuestions: 8,
+  /**
+   * CALIBRATION: recommended length. From here the stop is recommended once frame and gates are resolved; core axes
+   * still open lead the brief's open questions. Hybrid games whose inferences keep shifting would otherwise run long.
+   */
+  softQuestions: 48,
+  /** Hard cap: stop is recommended after this many questions whatever the state. */
   maxQuestions: 60,
   /** SPEC: selection weights. */
   archetypeEigWeight: 0.5,
@@ -75380,6 +75390,8 @@ var ENGINE = {
   unsureCooldown: 2,
   /** ... in plain words (no games) once it got this many such answers. */
   unsurePlainAfter: 1,
+  /** After this many such answers the axis is set aside: not asked again, an open question in the brief. */
+  unsureDeferAfter: 2,
   /** Score penalty for a comparison featuring a game the user said they do not know. */
   unknownGamePenalty: 0.3
 };
@@ -75721,6 +75733,20 @@ function evaluateTensions(k2, ctx) {
 
 // src/engine/session.ts
 var CHOICES = ["a", "b", "c", "d", "blend", "neither", "no_pref", "na", "skip", "unsure"];
+var SYSTEMS_CHECKLIST = "systems.checklist";
+function isPresenceGate(a) {
+  return a.kind === "gate" && a.poles[0]?.id === "none";
+}
+var PRESENT_LIK = [0.02, 0.2, 1, 1, 1];
+function isCoreAxis(a) {
+  return a.importance === 3;
+}
+function isDetailAxis(a) {
+  return a.importance < 3 && a.kind !== "gate";
+}
+function isFrameCore(a) {
+  return a.tier === 0 && a.importance === 3;
+}
 function effectiveEvents(events) {
   const stack = [];
   for (const e of events) {
@@ -75749,6 +75775,14 @@ function newRaw() {
 }
 function optionFor(q, choice) {
   return q.options.find((o) => o.key === choice);
+}
+function pickedPoles(q, choice, selected) {
+  const picked = new Set(
+    (selected ?? []).map((s) => q.options.find((o) => o.key === s || o.pole === s || o.label === s)?.pole).filter((x) => !!x)
+  );
+  const single = optionFor(q, choice);
+  if (single) picked.add(single.pole);
+  return picked;
 }
 function evidenceFromValue(axis, value, confidence) {
   if (isBinary(axis)) {
@@ -75787,6 +75821,7 @@ function foldSession(k2, events) {
   const used = /* @__PURE__ */ new Set();
   const unknownGames = [];
   let questionCount = 0;
+  let detailCount = 0;
   const cons = start.constraints ?? {};
   const constraintSets = [];
   if (cons.platform?.length) constraintSets.push({ axis: "frame.platform", value: cons.platform });
@@ -75840,10 +75875,31 @@ function foldSession(k2, events) {
     }
     if (e.type !== "answer") continue;
     const q = e.question;
+    if (q.axis === SYSTEMS_CHECKLIST) {
+      questionCount++;
+      history.push({ axis: q.axis, module: q.module, games: [] });
+      log.push({ at: e.at, kind: e.type, axis: q.axis, question: q.questionId, answer: describeChoice(q, e.choice, void 0, e.selected), note: e.note });
+      const picked2 = pickedPoles(q, e.choice, e.selected);
+      if (!picked2.size && e.choice !== "neither" && e.choice !== "na") {
+        for (const o of q.options) raw(o.pole).lastSkip = questionCount;
+        continue;
+      }
+      for (const o of q.options) {
+        const g = k2.axisById.get(o.pole);
+        if (!g) continue;
+        const r2 = raw(g.id);
+        applyEvidence(r2, g, { axis: g.id, kind: "bin", lik: picked2.has(o.pole) ? [...PRESENT_LIK] : likForAnswer("A") }, evidence);
+        r2.status = "decided";
+        r2.source = "answer";
+      }
+      if (e.note) for (const o of q.options) raw(o.pole).notes.push(e.note);
+      continue;
+    }
     const a = k2.axisById.get(q.axis);
     if (!a) continue;
     const r = raw(a.id);
     questionCount++;
+    if (q.phase !== void 0 ? q.phase === 2 : isDetailAxis(a)) detailCount++;
     history.push({ axis: q.axis, module: q.module, games: gamesOf(q) });
     if (q.comparisonId) used.add(q.comparisonId);
     log.push({ at: e.at, kind: e.type, axis: q.axis, question: q.questionId, answer: describeChoice(q, e.choice, e.lean, e.selected), note: e.note });
@@ -75854,6 +75910,7 @@ function foldSession(k2, events) {
     if (e.choice === "unsure") {
       r.unsureCount++;
       r.lastUnsure = questionCount;
+      if (r.unsureCount >= ENGINE.unsureDeferAfter) r.importanceMult = Math.min(r.importanceMult, ENGINE.noPrefImportance);
       for (const g of gamesOf(q)) if (!unknownGames.includes(g)) unknownGames.push(g);
       if (e.note) r.notes.push(e.note);
       continue;
@@ -75899,11 +75956,7 @@ function foldSession(k2, events) {
       }
       continue;
     }
-    const picked = new Set(
-      (e.selected ?? []).map((s) => q.options.find((o) => o.key === s || o.pole === s || o.label === s)?.pole).filter((x) => !!x)
-    );
-    const single = optionFor(q, e.choice);
-    if (single) picked.add(single.pole);
+    const picked = pickedPoles(q, e.choice, e.selected);
     const obs = q.options.map((o) => ({ pole: o.pole, selected: picked.has(o.pole) }));
     applyEvidence(r, a, { axis: a.id, kind: "multi", obs }, evidence);
     let rank = Object.keys(r.rankPoints).length;
@@ -75939,6 +75992,7 @@ function foldSession(k2, events) {
       lastSkip: r.lastSkip,
       unsureCount: r.unsureCount,
       lastUnsure: r.lastUnsure,
+      deferred: r.status === "open" && r.unsureCount >= ENGINE.unsureDeferAfter,
       evidenceCount: r.evidenceCount
     };
     if (isBinary(a)) {
@@ -75997,6 +76051,7 @@ function foldSession(k2, events) {
     usedComparisons: used,
     unknownGames,
     questionCount,
+    detailCount,
     tensions: evaluateTensions(k2, ctx)
   };
 }
@@ -76063,6 +76118,7 @@ function describeChoice(q, choice, lean, selected) {
     return `selected: ${labels.join(", ")}`;
   }
   const opt = optionFor(q, choice);
+  if (!opt && q.multi && choice === "neither") return "none of these";
   const base = opt ? opt.label : choice === "unsure" ? "not sure" : choice;
   return lean !== void 0 ? `${base} (lean ${lean})` : base;
 }
@@ -76094,18 +76150,36 @@ function claritySummary(k2, state) {
     };
   });
   const reasons = [];
-  const unresolvedFrame = [...state.axes.values()].filter((s) => s.axis.tier === 0 && s.status === "open");
+  const unresolvedFrame = [...state.axes.values()].filter((s) => isFrameCore(s.axis) && s.status === "open" && s.applicable !== false && !s.deferred);
   const unresolvedGates = [...state.axes.values()].filter((s) => isGateLike(s) && s.applicable !== false && s.status === "open" && gateStillOpen(state, s));
-  const weakCore = counted.filter((s) => s.axis.importance === 3 && s.clarity < ENGINE.stopCore);
-  if (overall < ENGINE.stopOverall) reasons.push(`overall clarity ${overall.toFixed(2)} < ${ENGINE.stopOverall}`);
+  const core = counted.filter((s) => isCoreAxis(s.axis));
+  const weakCore = core.filter((s) => !s.deferred && s.clarity < ENGINE.stopCore);
   if (unresolvedFrame.length) reasons.push(`${unresolvedFrame.length} frame axes open`);
   if (unresolvedGates.length) reasons.push(`${unresolvedGates.length} gates open`);
   if (weakCore.length) reasons.push(`${weakCore.length} core axes below ${ENGINE.stopCore}`);
+  const coreReady = reasons.length === 0;
+  if (overall < ENGINE.stopOverall && state.detailCount < ENGINE.detailQuestions) {
+    reasons.push(`overall clarity ${overall.toFixed(2)} < ${ENGINE.stopOverall} and ${state.detailCount} of ${ENGINE.detailQuestions} detail questions asked`);
+  }
   const hitMax = state.questionCount >= ENGINE.maxQuestions;
+  const foundations = !unresolvedFrame.length && !unresolvedGates.length;
+  if (!hitMax && reasons.length && foundations && state.questionCount >= ENGINE.softQuestions) {
+    const left = weakCore.length ? `; ${weakCore.length} core ${weakCore.length === 1 ? "question stays" : "questions stay"} open in the brief` : "";
+    return {
+      overall,
+      modules,
+      stop: { recommended: true, reasons: [`reached the recommended length of ${ENGINE.softQuestions} questions${left}`] },
+      core: { settled: core.length - weakCore.length, total: core.length },
+      coreReady,
+      questionCount: state.questionCount
+    };
+  }
   return {
     overall,
     modules,
     stop: { recommended: hitMax || reasons.length === 0, reasons: hitMax ? [`reached ${ENGINE.maxQuestions} questions`] : reasons },
+    core: { settled: core.length - weakCore.length, total: core.length },
+    coreReady,
     questionCount: state.questionCount
   };
 }
@@ -76155,6 +76229,9 @@ function randomSeed() {
 
 // src/engine/selection.ts
 var KEYS = ["a", "b", "c", "d"];
+function covered(c) {
+  return c.covers ?? [c.axis.axis.id];
+}
 function answerModel() {
   const cols = [likForAnswer("A"), likForAnswer("B"), likForAnswer("blend")];
   return [0, 1, 2, 3, 4].map((b) => normalize(cols.map((c) => c[b])));
@@ -76276,7 +76353,7 @@ function candidates(k2, state) {
     if (!isAskable(state, s)) continue;
     const a = s.axis;
     const priority = isPriority(state, s);
-    if (anyPriority && !priority) continue;
+    if (anyPriority && !priority && s.applicable !== true) continue;
     const imp = a.importance * s.importanceMult;
     const bonus = gateBonus(k2, state, s);
     if (isBinary(a)) {
@@ -76325,34 +76402,74 @@ function candidates(k2, state) {
     const score = imp * eigMulti(inc, shown) + bonus - repetition(state, a.module, []);
     out.push({ axis: s, options: poleOptions(a, shown), format: "poles", page: s.pagesSeen + 1, pages, priority, score });
   }
+  const checklist = systemsChecklist(state, out);
+  if (checklist) out.push(checklist);
   return out;
+}
+function systemsChecklist(state, out) {
+  const best = /* @__PURE__ */ new Map();
+  for (const c of out) if (isPresenceGate(c.axis.axis)) best.set(c.axis.axis.id, Math.max(best.get(c.axis.axis.id) ?? -Infinity, c.score));
+  const gates = [...state.axes.values()].filter((s) => best.has(s.axis.id) && s.applicable !== false).sort((x, y) => (best.get(y.axis.id) ?? 0) - (best.get(x.axis.id) ?? 0) || x.axis.id.localeCompare(y.axis.id)).slice(0, 4);
+  if (gates.length < 2) return void 0;
+  const options = gates.map((s, i) => ({
+    key: KEYS[i],
+    pole: s.axis.id,
+    label: s.axis.header,
+    how: `${s.axis.poles[1]?.summary ?? s.axis.label}. Leave it unchecked if: ${(s.axis.poles[0]?.summary ?? "").toLowerCase()}.`
+  }));
+  const axis = {
+    id: SYSTEMS_CHECKLIST,
+    module: "frame",
+    label: "Systems",
+    kind: "multi",
+    header: "Systems",
+    importance: 3,
+    tier: 1,
+    questionTemplate: "Which of these are part of your game, even in a small way? Pick all that apply.",
+    poles: gates.map((s) => ({ id: s.axis.id, label: s.axis.header, summary: s.axis.poles[1]?.summary }))
+  };
+  return {
+    axis: { ...gates[0], axis },
+    options,
+    format: "poles",
+    priority: gates.some((s) => isPriority(state, s)),
+    score: gates.reduce((t, s) => t + Math.max(0, best.get(s.axis.id) ?? 0), 0),
+    covers: gates.map((s) => s.axis.id)
+  };
 }
 function isAskable(state, s) {
   if (s.status !== "open") return false;
   if (s.applicable === false) return false;
+  if (s.deferred) return false;
   if (s.lastSkip !== void 0 && state.questionCount - s.lastSkip < ENGINE.skipCooldown) return false;
   if (s.lastUnsure !== void 0 && state.questionCount - s.lastUnsure < ENGINE.unsureCooldown) return false;
   return true;
 }
 function isPriority(state, s) {
-  if (s.axis.tier === 0) return true;
+  if (isFrameCore(s.axis)) return true;
   return isGateLike(s) && gateStillOpen(state, s);
+}
+function phaseOf(c) {
+  if (c.priority) return 0;
+  return isCoreAxis(c.axis.axis) && c.axis.clarity < ENGINE.stopCore ? 1 : 2;
 }
 function nextQuestions(k2, state, opts = {}) {
   const count = Math.max(1, Math.min(4, opts.count ?? 1));
   const det = opts.deterministic ?? isDeterministic();
-  let pool = candidates(k2, state).filter((c) => !opts.exclude?.has(c.axis.axis.id));
-  pool.sort((x, y) => y.score - x.score || x.axis.axis.id.localeCompare(y.axis.axis.id) || (x.comparison?.id ?? "").localeCompare(y.comparison?.id ?? ""));
+  let pool = candidates(k2, state).filter((c) => !covered(c).some((id) => opts.exclude?.has(id)));
+  pool.sort((x, y) => phaseOf(x) - phaseOf(y) || y.score - x.score || x.axis.axis.id.localeCompare(y.axis.axis.id) || (x.comparison?.id ?? "").localeCompare(y.comparison?.id ?? ""));
   const out = [];
   const usedModules = /* @__PURE__ */ new Set();
   const usedAxes = /* @__PURE__ */ new Set();
   const rand = mulberry32(hashSeed(state.seed, state.effective.length, opts.issued ?? 0));
   for (let slot = 0; slot < count; slot++) {
-    pool = pool.filter((c) => !usedAxes.has(c.axis.axis.id) && !usedModules.has(c.axis.axis.module));
-    if (!pool.length) break;
+    pool = pool.filter((c) => !covered(c).some((id) => usedAxes.has(id)));
+    const fresh = pool.filter((c) => !usedModules.has(c.axis.axis.module));
+    const from = fresh.length ? fresh : pool;
+    if (!from.length) break;
     const seen = /* @__PURE__ */ new Set();
     const top = [];
-    for (const c of pool) {
+    for (const c of from) {
       if (seen.has(c.axis.axis.id)) continue;
       seen.add(c.axis.axis.id);
       top.push(c);
@@ -76360,9 +76477,9 @@ function nextQuestions(k2, state, opts = {}) {
     }
     const pick2 = det ? top[0] : top[pickIndex(rand, top.length)];
     if (!pick2) break;
-    usedAxes.add(pick2.axis.axis.id);
+    for (const id of covered(pick2)) usedAxes.add(id);
     usedModules.add(pick2.axis.axis.module);
-    out.push(render(pick2, `${state.id}:q${(opts.issued ?? 0) + slot + 1}`));
+    out.push(render(pick2, `${state.id}:q${(opts.issued ?? 0) + slot + 1}`, phaseOf(pick2)));
   }
   return out;
 }
@@ -76370,7 +76487,7 @@ var BLEND_LABEL = "Blend of both";
 var NA_LABEL = "Not in my game";
 var NONE_LABEL = "None of these";
 var UNSURE_LABEL = "Not sure / don't know these games";
-function render(c, questionId) {
+function render(c, questionId, phase) {
   const a = c.axis.axis;
   const multi = a.kind === "multi" || a.kind === "rank";
   const q = {
@@ -76382,7 +76499,8 @@ function render(c, questionId) {
     multi,
     page: c.page,
     pages: c.pages,
-    options: c.options
+    options: c.options,
+    ...phase !== void 0 ? { phase } : {}
   };
   return renderQuestion(q, a, c.score);
 }
@@ -76419,6 +76537,10 @@ function renderQuestion(q, a, score = 0) {
     extras.push({ label: NONE_LABEL, description: "None of these fit; show other options", choice: "neither" });
   }
   const moreOptions = [];
+  if (q.multi) {
+    moreOptions.push({ label: NONE_LABEL, description: "None of these apply (send choice neither with no selected keys)" });
+    answerMap[NONE_LABEL] = "neither";
+  }
   for (const x of extras) {
     answerMap[x.label] = x.choice;
     if (options.length < 4) options.push({ label: x.label, description: x.description });
@@ -76643,7 +76765,7 @@ function buildBrief(k2, state) {
     }
   }
   if (scope.warning) risks.push({ severity: "warn", message: scope.warning });
-  const openQuestions = counted.filter((s) => s.clarity < 0.6).sort((a, b) => b.axis.importance - a.axis.importance || a.clarity - b.clarity || a.axis.id.localeCompare(b.axis.id)).map((s) => ({ axis: s.axis.id, label: s.axis.label, importance: s.axis.importance, clarity: round(s.clarity), question: s.axis.questionTemplate.replace("{label}", s.axis.label).replace("{a}", s.axis.poles[0]?.label ?? "").replace("{b}", s.axis.poles[1]?.label ?? "").replace(" or {c}", "") }));
+  const openQuestions = counted.filter((s) => s.clarity < 0.6).sort((a, b) => b.axis.importance - a.axis.importance || a.clarity - b.clarity || a.axis.id.localeCompare(b.axis.id)).map((s) => ({ axis: s.axis.id, label: s.axis.label, importance: s.axis.importance, clarity: round(s.clarity), ...s.deferred ? { unsure: true } : {}, question: s.axis.questionTemplate.replace("{label}", s.axis.label).replace("{a}", s.axis.poles[0]?.label ?? "").replace("{b}", s.axis.poles[1]?.label ?? "").replace(" or {c}", "") }));
   return {
     title: state.title ?? "Untitled game",
     pitch,
@@ -76740,7 +76862,7 @@ function renderBriefMarkdown(b) {
   L.push("", "## 8. USPs and non-goals", "", "**USPs**", "", ...b.usps.map((u) => `- ${u}`), "", "**Non-goals**", "", ...b.nonGoals.length ? b.nonGoals.map((n) => `- ${n}`) : ["- None recorded"], "");
   L.push("## 9. Scope", "", `- Team: ${b.scope.team}`, `- Timeline: ${b.scope.timeline}`, `- Active modules: ${b.scope.activeModules}`, `- MVP: ${b.scope.mvp}`, `- Vertical slice: ${b.scope.verticalSlice}`, "");
   L.push("## 10. Risks", "", ...b.risks.length ? b.risks.map((r) => `- **${r.severity}**: ${r.message}${r.probe ? ` Probe: ${r.probe}` : ""}`) : ["- None detected"], "");
-  L.push("## 11. Open questions", "", ...b.openQuestions.length ? b.openQuestions.map((q) => `- (${q.importance}) ${q.label}: ${q.question} (clarity ${q.clarity})`) : ["- None below 0.6 clarity"], "");
+  L.push("## 11. Open questions", "", ...b.openQuestions.length ? b.openQuestions.map((q) => `- (${q.importance}) ${q.question.startsWith(`${q.label}:`) ? q.question : `${q.label}: ${q.question}`} (clarity ${q.clarity}${q.unsure ? "; you were not sure yet" : ""})`) : ["- None below 0.6 clarity"], "");
   L.push("## 12. Decision log", "", "| When | Kind | Axis | Answer |", "| --- | --- | --- | --- |", ...b.decisionLog.map((d) => `| ${d.at} | ${d.kind} | ${cell(d.axis ?? "")} | ${cell(`${d.answer}${d.note ? ` (${d.note})` : ""}`)} |`), "");
   return L.join("\n").replace(new RegExp("\\u2014", "g"), ",");
 }
@@ -76826,6 +76948,8 @@ function summarize(k2, f, state) {
     overallClarity: round2(c.overall),
     stopRecommended: c.stop.recommended,
     stopReasons: c.stop.reasons,
+    core: c.core,
+    coreReady: c.coreReady,
     modules: c.modules.map((m) => ({ ...m, clarity: round2(m.clarity) })),
     topArchetypes: topArchetypes(k2, s, 3).map((a) => ({ id: a.id, label: a.label, p: round2(a.p) })),
     settled,
@@ -76883,8 +77007,8 @@ function next(k2, sessionId, count = 1) {
   return { questions: qs, summary: summarize(k2, f, s) };
 }
 function stripRender(q) {
-  const { questionId, axis, module, format, comparisonId, multi, page, pages, options, customAxis, improvised } = q;
-  return { questionId, axis, module, format, comparisonId, multi, page, pages, options, customAxis, improvised };
+  const { questionId, axis, module, format, comparisonId, multi, page, pages, options, customAxis, improvised, phase } = q;
+  return { questionId, axis, module, format, comparisonId, multi, page, pages, options, customAxis, improvised, phase };
 }
 function answer(k2, sessionId, answers) {
   const f = loadSession(sessionId);
@@ -76902,8 +77026,9 @@ function answer(k2, sessionId, answers) {
       continue;
     }
     const axis = q.customAxis ? void 0 : k2.axisById.get(q.axis);
-    if (axis && !isBinary(axis) && (a.choice === "blend" || a.lean !== void 0)) {
-      errors.push(`${a.questionId}: ${a.choice === "blend" ? "blend" : "lean"} only applies to two-pole axes; ${q.axis} is ${axis.kind}`);
+    const kind = q.axis === SYSTEMS_CHECKLIST ? "a multi-select checklist" : axis && !isBinary(axis) ? axis.kind : void 0;
+    if (kind && (a.choice === "blend" || a.lean !== void 0)) {
+      errors.push(`${a.questionId}: ${a.choice === "blend" ? "blend" : "lean"} only applies to two-pole axes; ${q.axis} is ${kind}`);
       continue;
     }
     const at = now();
@@ -76936,7 +77061,9 @@ function answer(k2, sessionId, answers) {
     skippedModules: skipped,
     tensions: newTensions,
     followUpHints,
-    stopRecommended: afterSum.stop.recommended
+    stopRecommended: afterSum.stop.recommended,
+    stopReasons: afterSum.stop.reasons,
+    core: afterSum.core
   };
 }
 function ask(k2, sessionId, input2) {
@@ -77070,6 +77197,8 @@ var Summary = external_exports.looseObject({
   overallClarity: external_exports.number(),
   stopRecommended: external_exports.boolean(),
   stopReasons: external_exports.array(external_exports.string()),
+  core: external_exports.looseObject({ settled: external_exports.number(), total: external_exports.number() }),
+  coreReady: external_exports.boolean(),
   modules: external_exports.array(external_exports.looseObject({ module: external_exports.string(), clarity: external_exports.number(), status: external_exports.string() })),
   topArchetypes: external_exports.array(external_exports.looseObject({ id: external_exports.string(), label: external_exports.string(), p: external_exports.number() })),
   settled: external_exports.array(external_exports.string()),
@@ -77094,10 +77223,10 @@ function guard(fn) {
 }
 function summaryText(s) {
   return [
-    `Session ${s.sessionId}${s.title ? ` (${s.title})` : ""}: ${s.questionCount} questions, overall clarity ${s.overallClarity}.`,
+    `Session ${s.sessionId}${s.title ? ` (${s.title})` : ""}: ${s.questionCount} questions, ${s.core.settled} of ${s.core.total} core decisions settled, overall clarity ${s.overallClarity}.`,
     `Closest archetypes: ${s.topArchetypes.map((a) => `${a.label} ${Math.round(a.p * 100)}%`).join(", ")}.`,
     s.settled.length ? `Settled: ${s.settled.slice(0, 6).join("; ")}.` : "Nothing settled yet.",
-    s.stopRecommended ? "Stop recommended: the design is clear enough for a brief." : `Keep going: ${s.stopReasons.join("; ")}.`
+    s.stopRecommended ? `Stop recommended: the brief is ready${s.stopReasons.length ? ` (${s.stopReasons.join("; ")})` : ""}. The user may keep going to refine details.` : `Keep going: ${s.stopReasons.join("; ")}.`
   ].join("\n");
 }
 function registerTools(server, k2) {
@@ -77167,17 +77296,19 @@ ${[...q.askUserQuestion.options, ...q.moreOptions ?? []].map((o) => `   - ${o.la
         skippedModules: external_exports.array(external_exports.string()),
         tensions: external_exports.array(external_exports.looseObject({ id: external_exports.string(), severity: external_exports.string(), message: external_exports.string(), probe: external_exports.string() })),
         followUpHints: external_exports.array(external_exports.string()),
-        stopRecommended: external_exports.boolean()
+        stopRecommended: external_exports.boolean(),
+        stopReasons: external_exports.array(external_exports.string()),
+        core: external_exports.looseObject({ settled: external_exports.number(), total: external_exports.number() })
       })
     },
     guard((a) => {
       const r = answer(k2, a.sessionId, a.answers);
-      const lines = [`Recorded ${r.recorded} answer(s). Clarity ${r.overallClarity.before} -> ${r.overallClarity.after}.`];
+      const lines = [`Recorded ${r.recorded} answer(s). Core decisions settled: ${r.core.settled} of ${r.core.total}. Clarity ${r.overallClarity.before} -> ${r.overallClarity.after}.`];
       if (r.unlockedModules.length) lines.push(`Unlocked: ${r.unlockedModules.join(", ")}.`);
       if (r.skippedModules.length) lines.push(`Skipped: ${r.skippedModules.join(", ")}.`);
       for (const t of r.tensions) lines.push(`Tension (${t.severity}): ${t.message} Probe: ${t.probe}`);
       for (const e of r.errors) lines.push(`Error: ${e}`);
-      if (r.stopRecommended) lines.push("Stop recommended.");
+      if (r.stopRecommended) lines.push(`Stop recommended: the brief is ready${r.stopReasons.length ? ` (${r.stopReasons.join("; ")})` : ""}. Offer to write it; the user may keep going.`);
       return ok(lines.join("\n"), r);
     })
   );
@@ -77374,10 +77505,10 @@ var PROTOCOL = `You are the interviewer; the game-design-versus server is the re
 2. Loop: call versus_next with count up to 4. Render each askUserQuestion object verbatim with the AskUserQuestion tool (previews only work on single-select). If AskUserQuestion is unavailable, show a numbered list of the options and moreOptions with their descriptions.
 3. Map each chosen label through answerMap to a choice. "Not sure / don't know these games" maps to unsure; the topic comes back later without games. Labels in moreOptions (such as Blend of both) also map when the user types them. If the user picks Other, send choice "neither" with their text as note, or call versus_set if their text clearly states a position.
 4. Call versus_answer with all answers from the round.
-5. Every 5 rounds, give a one-line recap: what is now settled and the overall clarity.
+5. Every 5 rounds, give a one-line recap: what is now settled and the core progress (core.settled of core.total). Multi-select questions, including the systems checklist, take choice "neither" with selected keys (empty if none apply).
 6. When versus_answer returns tensions, ask the probe question in your own words.
 7. When the user explains a nuance the options miss, improvise a follow-up with versus_ask (an existing axis or a customAxis).
-8. Stop when stopRecommended is true or the user says so. Then call versus_brief and offer to save it to docs/design/<slug>-brief.md.`;
+8. Stop when stopRecommended is true (the brief is ready; offer to keep refining) or the user says so. Then call versus_brief and offer to save it to docs/design/<slug>-brief.md.`;
 function registerPrompts(server) {
   server.registerPrompt(
     "versus",

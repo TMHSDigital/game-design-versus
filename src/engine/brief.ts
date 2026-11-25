@@ -20,7 +20,7 @@ export type Brief = {
   nonGoals: string[];
   scope: { team: string; timeline: string; mvp: string; verticalSlice: string; activeModules: number; warning?: string };
   risks: { severity: string; message: string; probe?: string }[];
-  openQuestions: { axis: string; label: string; importance: number; clarity: number; question: string }[];
+  openQuestions: { axis: string; label: string; importance: number; clarity: number; question: string; unsure?: boolean }[];
   decisionLog: { at: string; kind: string; axis?: string; answer: string; note?: string }[];
   clarity: { overall: number; questionCount: number; stopRecommended: boolean };
 };
@@ -240,7 +240,7 @@ export function buildBrief(k: Knowledge, state: SessionState): Brief {
   const openQuestions = counted
     .filter((s) => s.clarity < 0.6)
     .sort((a, b) => b.axis.importance - a.axis.importance || a.clarity - b.clarity || a.axis.id.localeCompare(b.axis.id))
-    .map((s) => ({ axis: s.axis.id, label: s.axis.label, importance: s.axis.importance, clarity: round(s.clarity), question: s.axis.questionTemplate.replace('{label}', s.axis.label).replace('{a}', s.axis.poles[0]?.label ?? '').replace('{b}', s.axis.poles[1]?.label ?? '').replace(' or {c}', '') }));
+    .map((s) => ({ axis: s.axis.id, label: s.axis.label, importance: s.axis.importance, clarity: round(s.clarity), ...(s.deferred ? { unsure: true } : {}), question: s.axis.questionTemplate.replace('{label}', s.axis.label).replace('{a}', s.axis.poles[0]?.label ?? '').replace('{b}', s.axis.poles[1]?.label ?? '').replace(' or {c}', '') }));
 
   return {
     title: state.title ?? 'Untitled game',
@@ -346,7 +346,7 @@ export function renderBriefMarkdown(b: Brief): string {
   L.push('', '## 8. USPs and non-goals', '', '**USPs**', '', ...b.usps.map((u) => `- ${u}`), '', '**Non-goals**', '', ...(b.nonGoals.length ? b.nonGoals.map((n) => `- ${n}`) : ['- None recorded']), '');
   L.push('## 9. Scope', '', `- Team: ${b.scope.team}`, `- Timeline: ${b.scope.timeline}`, `- Active modules: ${b.scope.activeModules}`, `- MVP: ${b.scope.mvp}`, `- Vertical slice: ${b.scope.verticalSlice}`, '');
   L.push('## 10. Risks', '', ...(b.risks.length ? b.risks.map((r) => `- **${r.severity}**: ${r.message}${r.probe ? ` Probe: ${r.probe}` : ''}`) : ['- None detected']), '');
-  L.push('## 11. Open questions', '', ...(b.openQuestions.length ? b.openQuestions.map((q) => `- (${q.importance}) ${q.label}: ${q.question} (clarity ${q.clarity})`) : ['- None below 0.6 clarity']), '');
+  L.push('## 11. Open questions', '', ...(b.openQuestions.length ? b.openQuestions.map((q) => `- (${q.importance}) ${q.question.startsWith(`${q.label}:`) ? q.question : `${q.label}: ${q.question}`} (clarity ${q.clarity}${q.unsure ? '; you were not sure yet' : ''})`) : ['- None below 0.6 clarity']), '');
   L.push('## 12. Decision log', '', '| When | Kind | Axis | Answer |', '| --- | --- | --- | --- |', ...b.decisionLog.map((d) => `| ${d.at} | ${d.kind} | ${cell(d.axis ?? '')} | ${cell(`${d.answer}${d.note ? ` (${d.note})` : ''}`)} |`), '');
   return L.join('\n').replace(new RegExp('\\u2014', 'g'), ',');
 }
