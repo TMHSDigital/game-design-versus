@@ -105,3 +105,30 @@ describe('service validation', () => {
     expect(loadSession(s.sessionId).events.length).toBe(before);
   });
 });
+
+describe('answer validation', () => {
+  function pendingOn(kind: 'categorical' | 'multi') {
+    const s = svc.startSession(k, { title: kind, seed: 21 });
+    for (let i = 0; i < 60; i++) {
+      const q = svc.next(k, s.sessionId, 1).questions[0];
+      if (!q) break;
+      const a = k.axisById.get(q.axis);
+      if (a?.kind === kind && !q.customAxis) return { sessionId: s.sessionId, q };
+      svc.answer(k, s.sessionId, [{ questionId: q.questionId, choice: 'skip' }]);
+    }
+    throw new Error(`no ${kind} question reached`);
+  }
+  for (const kind of ['categorical', 'multi'] as const) {
+    it(`rejects blend and lean on a ${kind} question and keeps it pending`, () => {
+      const { sessionId, q } = pendingOn(kind);
+      const count = svc.status(k, sessionId).questionCount;
+      const r1 = svc.answer(k, sessionId, [{ questionId: q.questionId, choice: 'blend' }]);
+      expect(r1.recorded).toBe(0);
+      expect(r1.errors[0]).toMatch(/only applies to two-pole axes/);
+      const r2 = svc.answer(k, sessionId, [{ questionId: q.questionId, choice: 'a', lean: 30 }]);
+      expect(r2.recorded).toBe(0);
+      expect(svc.status(k, sessionId).questionCount).toBe(count);
+      expect(loadSession(sessionId).pending[q.questionId]).toBeDefined();
+    });
+  }
+});

@@ -76856,6 +76856,11 @@ function answer(k2, sessionId, answers) {
       errors.push(`${a.questionId}: choice ${a.choice} is not an option`);
       continue;
     }
+    const axis = q.customAxis ? void 0 : k2.axisById.get(q.axis);
+    if (axis && !isBinary(axis) && (a.choice === "blend" || a.lean !== void 0)) {
+      errors.push(`${a.questionId}: ${a.choice === "blend" ? "blend" : "lean"} only applies to two-pole axes; ${q.axis} is ${axis.kind}`);
+      continue;
+    }
     const at = now();
     if (a.choice === "skip") f.events.push({ type: "skip", at, question: q });
     else if (q.customAxis) f.events.push({ type: "custom_answer", at, question: q, choice: a.choice, lean: a.lean, note: a.note });

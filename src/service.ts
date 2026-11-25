@@ -129,6 +129,11 @@ export function answer(k: Knowledge, sessionId: string, answers: AnswerInput[]) 
       errors.push(`${a.questionId}: choice ${a.choice} is not an option`);
       continue;
     }
+    const axis = q.customAxis ? undefined : k.axisById.get(q.axis);
+    if (axis && !isBinary(axis) && (a.choice === 'blend' || a.lean !== undefined)) {
+      errors.push(`${a.questionId}: ${a.choice === 'blend' ? 'blend' : 'lean'} only applies to two-pole axes; ${q.axis} is ${axis.kind}`);
+      continue;
+    }
     const at = now();
     if (a.choice === 'skip') f.events.push({ type: 'skip', at, question: q });
     else if (q.customAxis) f.events.push({ type: 'custom_answer', at, question: q, choice: a.choice, lean: a.lean, note: a.note });
