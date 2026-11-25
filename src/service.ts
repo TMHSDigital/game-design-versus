@@ -253,7 +253,9 @@ export function list(k: Knowledge) {
   });
 }
 
-export function brief(k: Knowledge, sessionId: string, format: 'markdown' | 'json', outPath?: string): { brief: Brief; markdown: string; savedTo?: string } {
+export function brief(
+  k: Knowledge, sessionId: string, format: 'markdown' | 'json', outPath?: string, overwrite = false,
+): { brief: Brief; markdown: string; savedTo?: string } {
   const f = loadSession(sessionId);
   const s = foldSession(k, f.events);
   const b = buildBrief(k, s);
@@ -262,7 +264,12 @@ export function brief(k: Knowledge, sessionId: string, format: 'markdown' | 'jso
   if (outPath) {
     savedTo = isAbsolute(outPath) ? outPath : resolve(process.cwd(), outPath);
     mkdirSync(dirname(savedTo), { recursive: true });
-    writeFileSync(savedTo, format === 'json' ? JSON.stringify(b, null, 2) + '\n' : md, 'utf8');
+    try {
+      writeFileSync(savedTo, format === 'json' ? JSON.stringify(b, null, 2) + '\n' : md, { encoding: 'utf8', flag: overwrite ? 'w' : 'wx' });
+    } catch (e) {
+      if ((e as NodeJS.ErrnoException).code === 'EEXIST') throw new Error(`${savedTo} already exists; pass overwrite: true to replace it`, { cause: e });
+      throw e;
+    }
   }
   return { brief: b, markdown: md, savedTo };
 }

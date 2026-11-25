@@ -40,7 +40,8 @@ modules that no longer apply. At the end the server writes a GDD seed brief.
    6. Ask the `probe` of any returned tension in your own words.
    7. When the user explains a nuance, improvise a follow-up with `versus_ask` (existing axis or `customAxis`).
 4. Stop when `stopRecommended` is true or the user says so. Call `versus_brief` (markdown) and, if the user agrees,
-   save it with `outPath: "docs/design/<slug>-brief.md"`.
+   save it with `outPath: "docs/design/<slug>-brief.md"`. An existing file is only replaced with `overwrite: true`,
+   so ask first.
 
 ## Working on this repository
 

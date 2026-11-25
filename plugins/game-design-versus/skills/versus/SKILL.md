@@ -32,7 +32,7 @@ Stop when `stopRecommended` is true or the user says so. The user may also keep 
 
 1. Call `versus_brief` with `format: "markdown"`.
 2. Show the pitch, pillars, comparable titles and open questions.
-3. Ask whether to save it. If yes, call `versus_brief` again with `outPath: "docs/design/<slug>-brief.md"` (slug from the title, lowercase with hyphens), relative to the user's project.
+3. Ask whether to save it. If yes, call `versus_brief` again with `outPath: "docs/design/<slug>-brief.md"` (slug from the title, lowercase with hyphens), relative to the user's project. If that file already exists the call fails; ask before passing `overwrite: true`.
 
 ## Without AskUserQuestion
 

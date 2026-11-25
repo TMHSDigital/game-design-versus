@@ -199,7 +199,7 @@ Sourcing the thin axes is the most useful contribution. Read [docs/library-brief
 | `versus_status { sessionId }` | Clarity per module, settled decisions, tensions, archetypes, comparables |
 | `versus_undo { sessionId }` | Undo the last answer, set or skip |
 | `versus_list {}` | Saved sessions |
-| `versus_brief { sessionId, format: markdown \| json, outPath? }` | The GDD seed brief; a relative outPath resolves against the server's working directory |
+| `versus_brief { sessionId, format: markdown \| json, outPath?, overwrite? }` | The GDD seed brief; a relative outPath resolves against the server's working directory, and an existing file is only replaced with `overwrite: true` |
 | `versus_catalog { module?, axis?, game?, query? }` | Browse axes and comparisons |
 
 Choices: `a`, `b`, `c`, `d` (options), `blend`, `neither` (Other, with `note`), `no_pref`, `na` (not in my game),

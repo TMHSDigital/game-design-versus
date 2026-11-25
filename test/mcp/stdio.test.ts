@@ -107,6 +107,12 @@ describe('MCP over stdio (built bundle)', () => {
     expect(br.isError).toBeFalsy();
     expect(conforms(schema('versus_brief'), br.structuredContent)).toEqual([]);
     expect(readFileSync(out, 'utf8')).toContain('# Test Game');
+    const again = await call('versus_brief', { sessionId, format: 'markdown', outPath: out });
+    expect(again.isError).toBe(true);
+    expect(JSON.stringify(again.content)).toMatch(/already exists; pass overwrite: true/);
+    const replaced = await call('versus_brief', { sessionId, format: 'json', outPath: out, overwrite: true });
+    expect(replaced.isError).toBeFalsy();
+    expect(readFileSync(out, 'utf8')).toMatch(/^\{/);
 
     const ls = await call('versus_list', {});
     expect((ls.structuredContent?.sessions as unknown[]).length).toBe(1);

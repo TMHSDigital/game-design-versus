@@ -76992,7 +76992,7 @@ function list(k2) {
     }
   });
 }
-function brief(k2, sessionId, format, outPath) {
+function brief(k2, sessionId, format, outPath, overwrite = false) {
   const f = loadSession(sessionId);
   const s = foldSession(k2, f.events);
   const b = buildBrief(k2, s);
@@ -77001,7 +77001,12 @@ function brief(k2, sessionId, format, outPath) {
   if (outPath) {
     savedTo = isAbsolute(outPath) ? outPath : resolve(process.cwd(), outPath);
     mkdirSync2(dirname(savedTo), { recursive: true });
-    writeFileSync2(savedTo, format === "json" ? JSON.stringify(b, null, 2) + "\n" : md, "utf8");
+    try {
+      writeFileSync2(savedTo, format === "json" ? JSON.stringify(b, null, 2) + "\n" : md, { encoding: "utf8", flag: overwrite ? "w" : "wx" });
+    } catch (e) {
+      if (e.code === "EEXIST") throw new Error(`${savedTo} already exists; pass overwrite: true to replace it`, { cause: e });
+      throw e;
+    }
   }
   return { brief: b, markdown: md, savedTo };
 }
@@ -77225,18 +77230,19 @@ ${q.askUserQuestion.options.map((o) => `   - ${o.label}: ${o.description}`).join
     "versus_brief",
     {
       title: "Generate the GDD seed brief",
-      description: "Generate the GDD seed brief as Markdown or JSON. With outPath, also write it to disk (relative paths resolve against the server working directory).",
+      description: "Generate the GDD seed brief as Markdown or JSON. With outPath, also write it to disk (relative paths resolve against the server working directory); an existing file is only replaced with overwrite: true.",
       inputSchema: external_exports.object({
         sessionId,
         format: external_exports.enum(["markdown", "json"]).optional().describe("Default markdown"),
-        outPath: external_exports.string().optional().describe("Optional file path to write, for example docs/design/my-game-brief.md")
+        outPath: external_exports.string().optional().describe("Optional file path to write, for example docs/design/my-game-brief.md"),
+        overwrite: external_exports.boolean().optional().describe("Replace outPath if it already exists. Default false: the call fails instead.")
       }),
       outputSchema: external_exports.looseObject({ brief: external_exports.looseObject({ title: external_exports.string(), pitch: external_exports.string() }), markdown: external_exports.string(), savedTo: external_exports.string().optional() }),
       annotations: { idempotentHint: true }
     },
     guard((a) => {
       const format = a.format ?? "markdown";
-      const r = brief(k2, a.sessionId, format, a.outPath);
+      const r = brief(k2, a.sessionId, format, a.outPath, a.overwrite);
       const text = (format === "json" ? JSON.stringify(r.brief, null, 2) : r.markdown) + (r.savedTo ? `
 
 Saved to ${r.savedTo}` : "");

@@ -233,18 +233,19 @@ export function registerTools(server: McpServer, k: Knowledge): void {
     'versus_brief',
     {
       title: 'Generate the GDD seed brief',
-      description: 'Generate the GDD seed brief as Markdown or JSON. With outPath, also write it to disk (relative paths resolve against the server working directory).',
+      description: 'Generate the GDD seed brief as Markdown or JSON. With outPath, also write it to disk (relative paths resolve against the server working directory); an existing file is only replaced with overwrite: true.',
       inputSchema: z.object({
         sessionId,
         format: z.enum(['markdown', 'json']).optional().describe('Default markdown'),
         outPath: z.string().optional().describe('Optional file path to write, for example docs/design/my-game-brief.md'),
+        overwrite: z.boolean().optional().describe('Replace outPath if it already exists. Default false: the call fails instead.'),
       }),
       outputSchema: z.looseObject({ brief: z.looseObject({ title: z.string(), pitch: z.string() }), markdown: z.string(), savedTo: z.string().optional() }),
       annotations: { idempotentHint: true },
     },
     guard((a) => {
       const format = a.format ?? 'markdown';
-      const r = svc.brief(k, a.sessionId, format, a.outPath);
+      const r = svc.brief(k, a.sessionId, format, a.outPath, a.overwrite);
       const text = (format === 'json' ? JSON.stringify(r.brief, null, 2) : r.markdown) + (r.savedTo ? `\n\nSaved to ${r.savedTo}` : '');
       return ok(text, r);
     }),
