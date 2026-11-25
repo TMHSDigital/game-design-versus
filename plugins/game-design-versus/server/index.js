@@ -76934,6 +76934,13 @@ function listSessions() {
 
 // src/service.ts
 var now = () => (/* @__PURE__ */ new Date()).toISOString();
+function customOptionPole(custom2, raw, index) {
+  const pole = raw ?? ["A", "B", "blend"][index];
+  if (pole === "A" || pole === "B" || pole === "blend") return pole;
+  if (pole === custom2.poleA) return "A";
+  if (pole === custom2.poleB) return "B";
+  throw new Error(`unknown pole ${pole} for ${custom2.id}`);
+}
 function round2(x) {
   return Math.round(x * 1e3) / 1e3;
 }
@@ -77076,16 +77083,17 @@ function ask(k2, sessionId, input2) {
   let custom2;
   let options;
   if (input2.customAxis) {
-    custom2 = input2.customAxis;
-    if (!/^custom\.[a-z0-9_-]+$/.test(custom2.id)) throw new Error("customAxis.id must look like custom.<slug>");
+    const def = input2.customAxis;
+    custom2 = def;
+    if (!/^custom\.[a-z0-9_-]+$/.test(def.id)) throw new Error("customAxis.id must look like custom.<slug>");
     axis = {
       kind: "bipolar",
-      label: custom2.label,
-      header: custom2.label.slice(0, 12),
-      questionTemplate: `${custom2.label}: {a} or {b}?`,
-      poles: [{ id: "A", label: custom2.poleA, summary: custom2.poleA }, { id: "B", label: custom2.poleB, summary: custom2.poleB }]
+      label: def.label,
+      header: def.label.slice(0, 12),
+      questionTemplate: `${def.label}: {a} or {b}?`,
+      poles: [{ id: "A", label: def.poleA, summary: def.poleA }, { id: "B", label: def.poleB, summary: def.poleB }]
     };
-    options = input2.options.map((o, i) => ({ key: keys[i], pole: o.pole ?? ["A", "B", "blend"][i], label: o.game, game: o.game, how: o.how, year: o.year }));
+    options = input2.options.map((o, i) => ({ key: keys[i], pole: customOptionPole(def, o.pole, i), label: o.game, game: o.game, how: o.how.slice(0, 160), year: o.year }));
   } else {
     const a = k2.axisById.get(input2.axis);
     if (!a) throw new Error(`unknown axis ${input2.axis}`);
@@ -77321,7 +77329,7 @@ ${[...q.askUserQuestion.options, ...q.moreOptions ?? []].map((o) => `   - ${o.la
         sessionId,
         axis: external_exports.string().optional().describe("Existing axis id, for example combat.sim"),
         customAxis: external_exports.object({ id: external_exports.string().describe("custom.<slug>"), label: external_exports.string(), poleA: external_exports.string(), poleB: external_exports.string() }).optional(),
-        options: external_exports.array(external_exports.object({ game: external_exports.string(), how: external_exports.string().describe("How this game handles this axis, 160 characters or fewer"), pole: external_exports.string().optional(), year: external_exports.number().int().optional() })).min(2).max(3)
+        options: external_exports.array(external_exports.object({ game: external_exports.string(), how: external_exports.string().describe("How this game handles this axis, 160 characters or fewer"), pole: external_exports.string().optional().describe("A, B or blend. A custom axis also accepts its poleA or poleB text."), year: external_exports.number().int().optional() })).min(2).max(3)
       }),
       outputSchema: external_exports.looseObject({ questionId: external_exports.string(), question: QuestionOut })
     },

@@ -14,6 +14,15 @@ import { rankAffinity } from './engine/affinity';
 
 const now = () => new Date().toISOString();
 
+/** Custom axes only know poles A, B and blend. Text equal to poleA or poleB maps to A or B. */
+function customOptionPole(custom: CustomAxis, raw: string | undefined, index: number): string {
+  const pole = raw ?? (['A', 'B', 'blend'][index] as string);
+  if (pole === 'A' || pole === 'B' || pole === 'blend') return pole;
+  if (pole === custom.poleA) return 'A';
+  if (pole === custom.poleB) return 'B';
+  throw new Error(`unknown pole ${pole} for ${custom.id}`);
+}
+
 export type SessionSummary = {
   sessionId: string;
   title?: string;
@@ -187,13 +196,14 @@ export function ask(
   let custom: CustomAxis | undefined;
   let options: QuestionOption[];
   if (input.customAxis) {
-    custom = input.customAxis;
-    if (!/^custom\.[a-z0-9_-]+$/.test(custom.id)) throw new Error('customAxis.id must look like custom.<slug>');
+    const def = input.customAxis;
+    custom = def;
+    if (!/^custom\.[a-z0-9_-]+$/.test(def.id)) throw new Error('customAxis.id must look like custom.<slug>');
     axis = {
-      kind: 'bipolar', label: custom.label, header: custom.label.slice(0, 12), questionTemplate: `${custom.label}: {a} or {b}?`,
-      poles: [{ id: 'A', label: custom.poleA, summary: custom.poleA }, { id: 'B', label: custom.poleB, summary: custom.poleB }],
+      kind: 'bipolar', label: def.label, header: def.label.slice(0, 12), questionTemplate: `${def.label}: {a} or {b}?`,
+      poles: [{ id: 'A', label: def.poleA, summary: def.poleA }, { id: 'B', label: def.poleB, summary: def.poleB }],
     };
-    options = input.options.map((o, i) => ({ key: keys[i] as OptionKey, pole: o.pole ?? (['A', 'B', 'blend'][i] as string), label: o.game, game: o.game, how: o.how, year: o.year }));
+    options = input.options.map((o, i) => ({ key: keys[i] as OptionKey, pole: customOptionPole(def, o.pole, i), label: o.game, game: o.game, how: o.how.slice(0, 160), year: o.year }));
   } else {
     const a = k.axisById.get(input.axis as string);
     if (!a) throw new Error(`unknown axis ${input.axis}`);
