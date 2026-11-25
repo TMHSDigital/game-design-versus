@@ -1,7 +1,7 @@
 import type { Knowledge } from './data';
 import { isBinary, type Axis } from './ontology';
 import { rankAffinity } from './affinity';
-import { claritySummary, countedAxes, topArchetypes, type AxisState, type SessionState } from './session';
+import { claritySummary, countedAxes, topArchetypes, type AxisState, type CustomAxisState, type SessionState } from './session';
 import { gameKey } from './coverage';
 
 export type BriefSystemItem = { axis: string; label: string; position: string; lean?: number; status: string; clarity: number; reference?: string; notes?: string[] };
@@ -55,6 +55,15 @@ export function positionText(s: AxisState): string {
   if (s.status === 'flexible') return s.notes.length ? `Other: ${s.notes.join('; ')}` : 'Flexible (no strong preference)';
   const sel = (s.selected ?? []).map((p) => poleLabel(a, p)).filter(Boolean);
   return sel.length ? sel.join(', ') : 'Undecided';
+}
+
+function customPositionText(c: CustomAxisState): string {
+  if (c.status === 'na') return 'Not in this game';
+  if (c.lean === 'A') return c.def.poleA;
+  if (c.lean === 'B') return c.def.poleB;
+  if (c.lean === 'center') return `Blend of ${c.def.poleA} and ${c.def.poleB}`;
+  if (c.notes.length) return `Other: ${c.notes.join('; ')}`;
+  return c.status === 'flexible' ? 'Flexible (no strong preference)' : 'Undecided';
 }
 
 function referenceText(s: AxisState): string | undefined {
@@ -175,7 +184,7 @@ export function buildBrief(k: Knowledge, state: SessionState): Brief {
     systems.push({
       module: 'custom', label: 'Custom axes', clarity: 1,
       items: [...state.custom.values()].map((c) => ({
-        axis: c.def.id, label: c.def.label, position: c.lean === 'A' ? c.def.poleA : c.lean === 'B' ? c.def.poleB : c.status === 'na' ? 'Not in this game' : `Blend of ${c.def.poleA} and ${c.def.poleB}`,
+        axis: c.def.id, label: c.def.label, position: customPositionText(c),
         status: c.status, clarity: 1, reference: c.ref?.chosen ? `like ${c.ref.chosen.game}` : undefined, notes: c.notes.length ? c.notes : undefined,
       })),
     });

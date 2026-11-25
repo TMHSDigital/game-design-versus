@@ -76449,6 +76449,14 @@ function positionText(s) {
   const sel = (s.selected ?? []).map((p) => poleLabel(a, p)).filter(Boolean);
   return sel.length ? sel.join(", ") : "Undecided";
 }
+function customPositionText(c) {
+  if (c.status === "na") return "Not in this game";
+  if (c.lean === "A") return c.def.poleA;
+  if (c.lean === "B") return c.def.poleB;
+  if (c.lean === "center") return `Blend of ${c.def.poleA} and ${c.def.poleB}`;
+  if (c.notes.length) return `Other: ${c.notes.join("; ")}`;
+  return c.status === "flexible" ? "Flexible (no strong preference)" : "Undecided";
+}
 function referenceText(s) {
   const r = s.ref;
   if (!r?.chosen) return void 0;
@@ -76562,7 +76570,7 @@ function buildBrief(k2, state) {
       items: [...state.custom.values()].map((c) => ({
         axis: c.def.id,
         label: c.def.label,
-        position: c.lean === "A" ? c.def.poleA : c.lean === "B" ? c.def.poleB : c.status === "na" ? "Not in this game" : `Blend of ${c.def.poleA} and ${c.def.poleB}`,
+        position: customPositionText(c),
         status: c.status,
         clarity: 1,
         reference: c.ref?.chosen ? `like ${c.ref.chosen.game}` : void 0,

@@ -132,3 +132,25 @@ describe('answer validation', () => {
     });
   }
 });
+
+describe('custom axes in the brief', () => {
+  const customRow = (choice: 'no_pref' | 'neither' | 'blend' | 'a', note?: string) => {
+    const s = svc.startSession(k, { title: `Custom ${choice}`, seed: 31 });
+    const asked = svc.ask(k, s.sessionId, {
+      customAxis: { id: 'custom.grip', label: 'Grip', poleA: 'Loose', poleB: 'Tight' },
+      options: [{ game: 'G1', how: 'h1' }, { game: 'G2', how: 'h2' }],
+    });
+    svc.answer(k, s.sessionId, [{ questionId: asked.questionId, choice, note }]);
+    return svc.brief(k, s.sessionId, 'json').brief.systems.find((m) => m.module === 'custom')?.items[0]?.position;
+  };
+  it('shows no preference as flexible, not as a blend', () => {
+    expect(customRow('no_pref')).toBe('Flexible (no strong preference)');
+  });
+  it('shows the note for an Other answer', () => {
+    expect(customRow('neither', 'depends on the weapon')).toBe('Other: depends on the weapon');
+  });
+  it('still shows a real blend and a pole pick', () => {
+    expect(customRow('blend')).toBe('Blend of Loose and Tight');
+    expect(customRow('a')).toBe('Loose');
+  });
+});
