@@ -146,7 +146,7 @@ export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: str
             <p class="small">${s.stopRecommended ? 'Clear enough to write the brief.' : `The server suggests stopping at ${STOP_AT.toFixed(2)}.`}</p>
           </div>
           <button type="button" class="btn ${s.stopRecommended ? 'primary' : ''} wide" data-act="finish" ${s.questionCount === 0 ? 'disabled' : ''}>Write the brief</button>
-          <button type="button" class="btn ghost wide" data-act="undo" ${s.questionCount === 0 ? 'disabled' : ''}>Undo last answer</button>
+          <button type="button" class="btn ghost wide" data-act="undo" ${s.canUndo ? '' : 'disabled'}>Undo last answer</button>
           ${log.length ? `<ul class="log">${log.map((l) => `<li class="${l.kind}">${esc(l.text)}${l.probe ? `<span class="probe">${esc(l.probe)}</span>` : ''}</li>`).join('')}</ul>` : ''}
           ${s.questionCount > 0 ? `
             <h4>Closest archetypes</h4>

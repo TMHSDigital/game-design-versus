@@ -7,7 +7,7 @@ import { buildKnowledge, rawData, type Knowledge } from '../engine/data';
 import { isBinary } from '../engine/ontology';
 import { randomSeed } from '../engine/prng';
 import {
-  claritySummary, foldSession, topArchetypes, type Choice, type Question, type SessionEvent, type SessionState,
+  claritySummary, effectiveEvents, foldSession, topArchetypes, type Choice, type Question, type SessionEvent, type SessionState,
 } from '../engine/session';
 import { nextQuestions, type RenderedQuestion } from '../engine/selection';
 import { buildBrief, renderBriefMarkdown, positionText, type Brief } from '../engine/brief';
@@ -32,6 +32,8 @@ export type DemoQuestion = {
 };
 export type DemoSummary = {
   questionCount: number;
+  /** True when there is an answer or skip that undo() would remove. */
+  canUndo: boolean;
   clarity: number;
   stopRecommended: boolean;
   modules: { module: string; label: string; clarity: number; status: string }[];
@@ -136,7 +138,7 @@ export class VersusDemo {
 
   /** Removes the last answer or skip. Returns false when there is nothing to undo. */
   undo(): boolean {
-    if (this.state.questionCount === 0) return false;
+    if (effectiveEvents(this.events).length <= 1) return false;
     this.events.push({ type: 'undo', at: new Date().toISOString() });
     this.pending.clear();
     return true;
@@ -147,6 +149,7 @@ export class VersusDemo {
     const c = claritySummary(this.k, s);
     return {
       questionCount: s.questionCount,
+      canUndo: effectiveEvents(this.events).length > 1,
       clarity: round(c.overall),
       stopRecommended: c.stop.recommended,
       modules: c.modules.map((m) => ({ module: m.module, label: this.k.moduleById.get(m.module)?.label ?? m.module, clarity: round(m.clarity), status: m.status })),

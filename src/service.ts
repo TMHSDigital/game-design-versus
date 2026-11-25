@@ -4,7 +4,7 @@ import type { Knowledge } from './engine/data';
 import { isBinary, type Axis } from './engine/ontology';
 import { randomSeed } from './engine/prng';
 import {
-  claritySummary, evidenceFromValue, foldSession, topArchetypes, type Choice, type Constraints, type CustomAxis, type Question, type QuestionOption,
+  claritySummary, effectiveEvents, evidenceFromValue, foldSession, topArchetypes, type Choice, type Constraints, type CustomAxis, type Question, type QuestionOption,
   type SessionEvent, type SessionState, type OptionKey,
 } from './engine/session';
 import { nextQuestions, renderQuestion, type RenderedQuestion } from './engine/selection';
@@ -241,7 +241,7 @@ export function status(k: Knowledge, sessionId: string) {
 
 export function undo(k: Knowledge, sessionId: string) {
   const f = loadSession(sessionId);
-  if (f.events.length <= 1) throw new Error('nothing to undo');
+  if (effectiveEvents(f.events).length <= 1) throw new Error('nothing to undo');
   f.events.push({ type: 'undo', at: now() });
   f.pending = {};
   saveSession(f);

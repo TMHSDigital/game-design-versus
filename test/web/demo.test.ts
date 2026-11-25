@@ -64,6 +64,17 @@ describe('browser demo adapter', () => {
     expect(d.summary().questionCount).toBe(n - 1);
   });
 
+  it('can undo a lone skip, and only once', () => {
+    const d = new VersusDemo(k, { seed: 3 });
+    expect(d.undo()).toBe(false);
+    const [q] = d.next(1);
+    d.answer(q!.questionId, 'skip');
+    expect(d.summary().canUndo).toBe(true);
+    expect(d.undo()).toBe(true);
+    expect(d.summary().canUndo).toBe(false);
+    expect(d.undo()).toBe(false);
+  });
+
   it('rejects answers to questions it did not issue', () => {
     const d = new VersusDemo(k, { seed: 1 });
     expect(() => d.answer('nope', 'a')).toThrow(/unknown/);

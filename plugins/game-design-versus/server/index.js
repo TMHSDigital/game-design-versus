@@ -76974,7 +76974,7 @@ function status(k2, sessionId) {
 }
 function undo(k2, sessionId) {
   const f = loadSession(sessionId);
-  if (f.events.length <= 1) throw new Error("nothing to undo");
+  if (effectiveEvents(f.events).length <= 1) throw new Error("nothing to undo");
   f.events.push({ type: "undo", at: now() });
   f.pending = {};
   saveSession(f);

@@ -155,6 +155,18 @@ describe('custom axes in the brief', () => {
   });
 });
 
+describe('undo', () => {
+  it('reports nothing to undo once every answer is undone', () => {
+    const s = svc.startSession(k, { title: 'Undo', seed: 51 });
+    const q = svc.next(k, s.sessionId, 1).questions[0]!;
+    svc.answer(k, s.sessionId, [{ questionId: q.questionId, choice: 'a' }]);
+    svc.undo(k, s.sessionId);
+    const before = loadSession(s.sessionId).events.length;
+    expect(() => svc.undo(k, s.sessionId)).toThrow(/nothing to undo/);
+    expect(loadSession(s.sessionId).events.length).toBe(before);
+  });
+});
+
 describe('brief tables', () => {
   it('keeps a note with a pipe and a line break inside one cell', () => {
     const s = svc.startSession(k, { title: 'Pipes', seed: 41 });
