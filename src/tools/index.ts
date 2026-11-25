@@ -162,7 +162,7 @@ export function registerTools(server: McpServer, k: Knowledge): void {
         sessionId,
         axis: z.string().optional().describe('Existing axis id, for example combat.sim'),
         customAxis: z.object({ id: z.string().describe('custom.<slug>'), label: z.string(), poleA: z.string(), poleB: z.string() }).optional(),
-        options: z.array(z.object({ game: z.string(), how: z.string().describe('How this game handles this axis, 160 characters or fewer'), pole: z.string().optional(), year: z.number().int().optional() })).min(2).max(3),
+        options: z.array(z.object({ game: z.string(), how: z.string().describe('How this game handles this axis, 160 characters or fewer'), pole: z.string().optional().describe('A, B or blend. A custom axis also accepts its poleA or poleB text.'), year: z.number().int().optional() })).min(2).max(3),
       }),
       outputSchema: z.looseObject({ questionId: z.string(), question: QuestionOut }),
     },

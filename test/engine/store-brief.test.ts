@@ -197,6 +197,31 @@ describe('custom axes in the brief', () => {
     expect(customRow('blend')).toBe('Blend of Loose and Tight');
     expect(customRow('a')).toBe('Loose');
   });
+
+  it('maps poleA and poleB text on a custom axis and rejects any other pole', () => {
+    const s = svc.startSession(k, { title: 'Grit', seed: 32 });
+    const longHow = 'G'.repeat(180);
+    const asked = svc.ask(k, s.sessionId, {
+      customAxis: { id: 'custom.grit', label: 'Tone', poleA: 'Gritty', poleB: 'Whimsical' },
+      options: [
+        { game: 'Dark Souls', how: longHow, pole: 'Gritty' },
+        { game: 'Kirby', how: 'Light and playful', pole: 'Whimsical' },
+      ],
+    });
+    expect(asked.question.options.map((o) => o.pole)).toEqual(['A', 'B']);
+    expect(asked.question.options[0]?.how).toHaveLength(160);
+    svc.answer(k, s.sessionId, [{ questionId: asked.questionId, choice: 'a' }]);
+    const item = svc.brief(k, s.sessionId, 'json').brief.systems.find((m) => m.module === 'custom')?.items[0];
+    expect(item?.position).toBe('Gritty');
+    expect(item?.reference).toBe('like Dark Souls');
+    expect(() => svc.ask(k, s.sessionId, {
+      customAxis: { id: 'custom.other', label: 'Tone', poleA: 'Gritty', poleB: 'Whimsical' },
+      options: [
+        { game: 'Dark Souls', how: 'Punishing', pole: 'Bleak' },
+        { game: 'Kirby', how: 'Playful', pole: 'B' },
+      ],
+    })).toThrow(/unknown pole Bleak for custom.other/);
+  });
 });
 
 describe('undo', () => {
