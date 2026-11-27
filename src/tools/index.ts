@@ -270,14 +270,34 @@ export function registerTools(server: McpServer, k: Knowledge): void {
     'versus_list',
     {
       title: 'List sessions',
-      description: 'List saved design sessions, most recent first.',
-      inputSchema: z.object({}),
-      outputSchema: z.looseObject({ sessions: z.array(z.looseObject({ sessionId: z.string(), updatedAt: z.string(), questionCount: z.number(), overallClarity: z.number() })) }),
+      description: 'List saved design sessions, most recent first: the 20 most recent by default. query filters by title or session id. Archived sessions (versus_delete) are not listed.',
+      inputSchema: z.object({
+        limit: z.number().int().min(1).max(200).optional().describe('How many sessions to return, default 20'),
+        query: z.string().optional().describe('Case-insensitive text to find in the title or session id'),
+      }),
+      outputSchema: z.looseObject({ sessions: z.array(z.looseObject({ sessionId: z.string(), updatedAt: z.string(), questionCount: z.number(), overallClarity: z.number() })), total: z.number() }),
       annotations: { readOnlyHint: true, idempotentHint: true },
     },
-    guard(() => {
-      const sessions = svc.list(k);
-      return ok(sessions.length ? sessions.map((s) => `${s.sessionId} ${s.title ?? ''} (${s.questionCount} q, clarity ${s.overallClarity}, ${s.updatedAt})`).join('\n') : 'No sessions yet.', { sessions });
+    guard((a) => {
+      const r = svc.list(k, a);
+      const lines = r.sessions.map((s) => `${s.sessionId} ${s.title ?? ''} (${s.questionCount} q, clarity ${s.overallClarity}, ${s.updatedAt})`);
+      if (r.total > r.sessions.length) lines.push(`${r.total - r.sessions.length} more; raise limit or narrow with query.`);
+      return ok(lines.length ? lines.join('\n') : a.query ? `No sessions match "${a.query}".` : 'No sessions yet.', r);
+    }),
+  );
+
+  server.registerTool(
+    'versus_delete',
+    {
+      title: 'Archive a session',
+      description: 'Remove a finished or abandoned session from versus_list by moving its file to the archive folder next to the sessions folder. Nothing is erased: moving the file back restores it. Confirm with the user first.',
+      inputSchema: z.object({ sessionId }),
+      outputSchema: z.looseObject({ sessionId: z.string(), archivedTo: z.string() }),
+      annotations: { readOnlyHint: false, destructiveHint: true, idempotentHint: false },
+    },
+    guard((a) => {
+      const r = svc.archive(a.sessionId);
+      return ok(`Archived ${r.sessionId}${r.title ? ` (${r.title})` : ''} to ${r.archivedTo}.`, r);
     }),
   );
 

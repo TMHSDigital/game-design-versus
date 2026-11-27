@@ -3,7 +3,7 @@ import { mkdtempSync, rmSync, readdirSync, writeFileSync, mkdirSync } from 'node
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { knowledge } from '../../src/engine/data';
-import { loadSession, saveSession, listSessions, migrate, sessionsDir, gdvHome } from '../../src/store/fs-store';
+import { loadSession, saveSession, listSessions, migrate, sessionsDir, gdvHome, archiveDir } from '../../src/store/fs-store';
 import * as svc from '../../src/service';
 import { buildBrief, renderBriefMarkdown, settledDecisions } from '../../src/engine/brief';
 import { foldSession, SYSTEMS_CHECKLIST, type SessionEvent } from '../../src/engine/session';
@@ -461,5 +461,30 @@ describe('importing a demo session', () => {
     expect(() => svc.importSession(k, { path: join(home, 'missing.json') })).toThrow(/cannot read/);
     expect(() => svc.importSession(k, {})).toThrow(/either snapshot or path/);
     expect(count()).toBe(before);
+  });
+});
+
+describe('listing and archiving sessions', () => {
+  it('honors limit and query, newest first, and counts every match', () => {
+    const ids = [1, 2, 3].map((i) => svc.startSession(k, { title: `Zebra Farm ${i}`, seed: 90 + i }).sessionId);
+    svc.startSession(k, { title: 'Unrelated', seed: 99 });
+    const all = svc.list(k, { query: 'zebra farm' });
+    expect(all.total).toBe(3);
+    expect(all.sessions.map((s) => s.sessionId).sort()).toEqual([...ids].sort());
+    const two = svc.list(k, { query: 'ZEBRA', limit: 2 });
+    expect(two.sessions).toHaveLength(2);
+    expect(two.total).toBe(3);
+    expect(svc.list(k, { query: ids[0] }).sessions.map((s) => s.sessionId)).toEqual([ids[0]]);
+    expect(svc.list(k).sessions.length).toBeLessThanOrEqual(20);
+  });
+
+  it('archives a session out of the list into GDV_HOME/archive', () => {
+    const id = svc.startSession(k, { title: 'Abandoned Quokka', seed: 95 }).sessionId;
+    const r = svc.archive(id);
+    expect(r.archivedTo).toBe(join(archiveDir(), `${id}.json`));
+    expect(readdirSync(archiveDir())).toContain(`${id}.json`);
+    expect(readdirSync(sessionsDir())).not.toContain(`${id}.json`);
+    expect(svc.list(k, { query: 'quokka' }).total).toBe(0);
+    expect(() => svc.archive(id)).toThrow(/not found/);
   });
 });

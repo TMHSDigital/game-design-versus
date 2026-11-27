@@ -10,7 +10,7 @@ import {
 } from './engine/session';
 import { nextQuestions, renderQuestion, type RenderedQuestion } from './engine/selection';
 import { buildBrief, renderBriefMarkdown, positionText, settledDecisions, type Brief } from './engine/brief';
-import { loadSession, newSessionId, saveSession, listSessions, type SessionFile } from './store/fs-store';
+import { archiveSession, loadSession, newSessionId, saveSession, listSessions, type SessionFile } from './store/fs-store';
 import { rankAffinity } from './engine/affinity';
 import { parseSessionExport } from './engine/transfer';
 
@@ -392,15 +392,30 @@ export function importSession(k: Knowledge, input: { snapshot?: unknown; path?: 
   return { ...summarize(k, f), importedFrom: start.sessionId, warnings: parsed.warnings };
 }
 
-export function list(k: Knowledge) {
-  return listSessions().map((f) => {
+/** Saved sessions, most recent first. Only the sessions returned are replayed; `total` counts every match. */
+export function list(k: Knowledge, input: { limit?: number; query?: string } = {}) {
+  const q = input.query?.trim().toLowerCase();
+  const titleOf = (f: SessionFile) => {
+    const s = f.events[0];
+    return s?.type === 'start' ? s.title : undefined;
+  };
+  const matches = listSessions().filter((f) => !q || `${f.id} ${titleOf(f) ?? ''}`.toLowerCase().includes(q));
+  const sessions = matches.slice(0, input.limit ?? 20).map((f) => {
     try {
       const s = foldSession(k, f.events);
       return { sessionId: f.id, title: s.title, updatedAt: f.updatedAt, questionCount: s.questionCount, overallClarity: round(claritySummary(k, s).overall) };
     } catch {
-      return { sessionId: f.id, title: undefined, updatedAt: f.updatedAt, questionCount: 0, overallClarity: 0 };
+      return { sessionId: f.id, title: titleOf(f), updatedAt: f.updatedAt, questionCount: 0, overallClarity: 0 };
     }
   });
+  return { sessions, total: matches.length };
+}
+
+/** Moves a session out of versus_list into GDV_HOME/archive (recoverable by moving the file back). */
+export function archive(sessionId: string) {
+  const f = loadSession(sessionId);
+  const s = f.events[0];
+  return { sessionId, title: s?.type === 'start' ? s.title : undefined, archivedTo: archiveSession(sessionId) };
 }
 
 export function brief(

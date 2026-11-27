@@ -74,6 +74,22 @@ export function saveSession(f: SessionFile): void {
   }
 }
 
+/** Archived sessions live here, out of versus_list but recoverable by moving the file back. */
+export function archiveDir(): string {
+  return join(gdvHome(), 'archive');
+}
+
+/** Moves a session file to the archive directory and returns its new path. */
+export function archiveSession(id: string): string {
+  const from = pathFor(id);
+  if (!existsSync(from)) throw new Error(`session not found: ${id}`);
+  mkdirSync(archiveDir(), { recursive: true });
+  const to = join(archiveDir(), `${id}.json`);
+  if (existsSync(to)) throw new Error(`${to} already exists`);
+  renameSync(from, to);
+  return to;
+}
+
 export function sessionExists(id: string): boolean {
   return ID_RE.test(id) && existsSync(pathFor(id));
 }

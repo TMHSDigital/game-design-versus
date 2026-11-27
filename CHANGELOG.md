@@ -37,3 +37,5 @@
   library size or unknown axes come back as warnings.
 - The demo shows the sources of each library comparison under the option cards, and a "Report this comparison" link
   opens a GitHub issue prefilled with the comparison id.
+- `versus_list` takes `limit` (default 20) and `query` (title or session id) and replays only the sessions it
+  returns. `versus_delete` archives a session to `GDV_HOME/archive/` instead of erasing it.

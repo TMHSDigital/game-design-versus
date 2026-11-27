@@ -76944,6 +76944,18 @@ function saveSession(f) {
     throw e;
   }
 }
+function archiveDir() {
+  return join(gdvHome(), "archive");
+}
+function archiveSession(id) {
+  const from = pathFor(id);
+  if (!existsSync(from)) throw new Error(`session not found: ${id}`);
+  mkdirSync(archiveDir(), { recursive: true });
+  const to = join(archiveDir(), `${id}.json`);
+  if (existsSync(to)) throw new Error(`${to} already exists`);
+  renameSync(from, to);
+  return to;
+}
 function listSessions() {
   const dir = sessionsDir();
   if (!existsSync(dir)) return [];
@@ -77374,15 +77386,27 @@ function importSession(k2, input2) {
   saveSession(f);
   return { ...summarize(k2, f), importedFrom: start.sessionId, warnings: parsed.warnings };
 }
-function list(k2) {
-  return listSessions().map((f) => {
+function list(k2, input2 = {}) {
+  const q = input2.query?.trim().toLowerCase();
+  const titleOf = (f) => {
+    const s = f.events[0];
+    return s?.type === "start" ? s.title : void 0;
+  };
+  const matches = listSessions().filter((f) => !q || `${f.id} ${titleOf(f) ?? ""}`.toLowerCase().includes(q));
+  const sessions = matches.slice(0, input2.limit ?? 20).map((f) => {
     try {
       const s = foldSession(k2, f.events);
       return { sessionId: f.id, title: s.title, updatedAt: f.updatedAt, questionCount: s.questionCount, overallClarity: round2(claritySummary(k2, s).overall) };
     } catch {
-      return { sessionId: f.id, title: void 0, updatedAt: f.updatedAt, questionCount: 0, overallClarity: 0 };
+      return { sessionId: f.id, title: titleOf(f), updatedAt: f.updatedAt, questionCount: 0, overallClarity: 0 };
     }
   });
+  return { sessions, total: matches.length };
+}
+function archive(sessionId) {
+  const f = loadSession(sessionId);
+  const s = f.events[0];
+  return { sessionId, title: s?.type === "start" ? s.title : void 0, archivedTo: archiveSession(sessionId) };
 }
 function brief(k2, sessionId, format, outPath, overwrite = false) {
   const f = loadSession(sessionId);
@@ -77656,14 +77680,33 @@ ${[...q.askUserQuestion.options, ...q.moreOptions ?? []].map((o) => `   - ${o.la
     "versus_list",
     {
       title: "List sessions",
-      description: "List saved design sessions, most recent first.",
-      inputSchema: external_exports.object({}),
-      outputSchema: external_exports.looseObject({ sessions: external_exports.array(external_exports.looseObject({ sessionId: external_exports.string(), updatedAt: external_exports.string(), questionCount: external_exports.number(), overallClarity: external_exports.number() })) }),
+      description: "List saved design sessions, most recent first: the 20 most recent by default. query filters by title or session id. Archived sessions (versus_delete) are not listed.",
+      inputSchema: external_exports.object({
+        limit: external_exports.number().int().min(1).max(200).optional().describe("How many sessions to return, default 20"),
+        query: external_exports.string().optional().describe("Case-insensitive text to find in the title or session id")
+      }),
+      outputSchema: external_exports.looseObject({ sessions: external_exports.array(external_exports.looseObject({ sessionId: external_exports.string(), updatedAt: external_exports.string(), questionCount: external_exports.number(), overallClarity: external_exports.number() })), total: external_exports.number() }),
       annotations: { readOnlyHint: true, idempotentHint: true }
     },
-    guard(() => {
-      const sessions = list(k2);
-      return ok(sessions.length ? sessions.map((s) => `${s.sessionId} ${s.title ?? ""} (${s.questionCount} q, clarity ${s.overallClarity}, ${s.updatedAt})`).join("\n") : "No sessions yet.", { sessions });
+    guard((a) => {
+      const r = list(k2, a);
+      const lines = r.sessions.map((s) => `${s.sessionId} ${s.title ?? ""} (${s.questionCount} q, clarity ${s.overallClarity}, ${s.updatedAt})`);
+      if (r.total > r.sessions.length) lines.push(`${r.total - r.sessions.length} more; raise limit or narrow with query.`);
+      return ok(lines.length ? lines.join("\n") : a.query ? `No sessions match "${a.query}".` : "No sessions yet.", r);
+    })
+  );
+  server.registerTool(
+    "versus_delete",
+    {
+      title: "Archive a session",
+      description: "Remove a finished or abandoned session from versus_list by moving its file to the archive folder next to the sessions folder. Nothing is erased: moving the file back restores it. Confirm with the user first.",
+      inputSchema: external_exports.object({ sessionId }),
+      outputSchema: external_exports.looseObject({ sessionId: external_exports.string(), archivedTo: external_exports.string() }),
+      annotations: { readOnlyHint: false, destructiveHint: true, idempotentHint: false }
+    },
+    guard((a) => {
+      const r = archive(a.sessionId);
+      return ok(`Archived ${r.sessionId}${r.title ? ` (${r.title})` : ""} to ${r.archivedTo}.`, r);
     })
   );
   server.registerTool(
