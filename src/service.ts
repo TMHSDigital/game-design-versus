@@ -5,7 +5,7 @@ import { isBinary, type Axis } from './engine/ontology';
 import { randomSeed } from './engine/prng';
 import {
   claritySummary, effectiveEvents, evidenceFromValue, foldSession, SYSTEMS_CHECKLIST, topArchetypes, type Choice, type Constraints, type CustomAxis, type Question, type QuestionOption,
-  type SessionEvent, type SessionState, type OptionKey,
+  type SessionEvent, type SessionState, type OptionKey, type TensionStance,
 } from './engine/session';
 import { nextQuestions, renderQuestion, type RenderedQuestion } from './engine/selection';
 import { buildBrief, renderBriefMarkdown, positionText, settledDecisions, type Brief } from './engine/brief';
@@ -37,7 +37,8 @@ export type SessionSummary = {
   modules: { module: string; clarity: number; status: string; open: number; decided: number }[];
   topArchetypes: { id: string; label: string; p: number }[];
   settled: string[];
-  tensions: { id: string; severity: string; message: string; probe: string }[];
+  /** Active tensions; `response` is set once the user answered the probe (versus_reply). */
+  tensions: { id: string; severity: string; message: string; probe: string; response?: string; stance?: string }[];
   pending: string[];
 };
 
@@ -61,7 +62,10 @@ export function summarize(k: Knowledge, f: SessionFile, state?: SessionState): S
     modules: c.modules.map((m) => ({ ...m, clarity: round(m.clarity) })),
     topArchetypes: topArchetypes(k, s, 3).map((a) => ({ id: a.id, label: a.label, p: round(a.p) })),
     settled,
-    tensions: s.tensions.map((t) => ({ id: t.id, severity: t.severity, message: t.message, probe: t.probe })),
+    tensions: s.tensions.map((t) => {
+      const reply = s.tensionReplies.get(t.id);
+      return { id: t.id, severity: t.severity, message: t.message, probe: t.probe, ...(reply ? { response: reply.response, stance: reply.stance } : {}) };
+    }),
     pending: Object.keys(f.pending),
   };
 }
@@ -174,7 +178,8 @@ export function answer(k: Knowledge, sessionId: string, answers: AnswerInput[]) 
   const unlocked = afterSum.modules.filter((m) => m.status === 'active' && beforeMods.get(m.module)?.status !== 'active').map((m) => m.module);
   const skipped = afterSum.modules.filter((m) => m.status === 'skipped' && beforeMods.get(m.module)?.status !== 'skipped').map((m) => m.module);
   const oldT = new Set(before.tensions.map((t) => t.id));
-  const newTensions = after.tensions.filter((t) => !oldT.has(t.id)).map((t) => ({ id: t.id, severity: t.severity, message: t.message, probe: t.probe }));
+  // A tension the user already answered is not raised again, even if it stopped firing and came back.
+  const newTensions = after.tensions.filter((t) => !oldT.has(t.id) && !after.tensionReplies.has(t.id)).map((t) => ({ id: t.id, severity: t.severity, message: t.message, probe: t.probe }));
   const followUpHints: string[] = [];
   for (const a of answers) {
     if (a.choice === 'neither' && a.note) followUpHints.push(`The user described their own approach for ${a.questionId}: consider versus_ask with a customAxis or versus_set to capture "${a.note.slice(0, 80)}".`);
@@ -257,6 +262,21 @@ export function setFact(
   if (!st) throw new Error(`axis ${a.id} has no state`);
   saveSession(f);
   return { axis: a.id, status: st.status, position: positionText(st), clarity: round(st.clarity), summary: summarize(k, f, s) };
+}
+
+/** Records the user's reply to the probe of an active tension; the brief shows it under that risk. */
+export function reply(k: Knowledge, sessionId: string, input: { tensionId: string; response: string; stance?: TensionStance }) {
+  const response = input.response.trim();
+  if (!response) throw new Error('response must not be empty');
+  const f = loadSession(sessionId);
+  const before = foldSession(k, f.events);
+  if (!before.tensions.some((t) => t.id === input.tensionId)) {
+    const active = before.tensions.map((t) => t.id);
+    throw new Error(`tension ${input.tensionId} is not active; ${active.length ? `active tensions: ${active.join(', ')}` : 'no tensions are active'}`);
+  }
+  f.events.push({ type: 'tension_reply', at: now(), tensionId: input.tensionId, response, stance: input.stance });
+  saveSession(f);
+  return { tensionId: input.tensionId, response, stance: input.stance, summary: summarize(k, f) };
 }
 
 export function status(k: Knowledge, sessionId: string) {

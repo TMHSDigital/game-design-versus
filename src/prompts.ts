@@ -7,7 +7,7 @@ export const PROTOCOL = `You are the interviewer; the game-design-versus server 
 3. Map each chosen label through answerMap to a choice. "Not sure / don't know these games" maps to unsure; the topic comes back later without games. Labels in moreOptions (such as Blend of both) also map when the user types them. If the user picks Other, send choice "neither" with their text as note, or call versus_set if their text clearly states a position.
 4. Call versus_answer with all answers from the round.
 5. Every 5 rounds, give a one-line recap: what is now settled and the core progress (core.settled of core.total). Multi-select questions, including the systems checklist, take choice "neither" with selected keys (empty if none apply).
-6. When versus_answer returns tensions, ask the probe question in your own words.
+6. When versus_answer returns tensions, ask the probe question in your own words and record the reply with versus_reply (tensionId, response, stance accepted, mitigated or will_change). If the reply changes a position, also record it with versus_set.
 7. When the user explains a nuance the options miss, improvise a follow-up with versus_ask (an existing axis or a customAxis).
 8. Stop when stopRecommended is true (the brief is ready; offer to keep refining) or the user says so. Then call versus_brief and offer to save it to docs/design/<slug>-brief.md.`;
 

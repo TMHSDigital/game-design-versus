@@ -35095,8 +35095,8 @@ function serveStdio(factory, options = {}) {
         problem: "the per-request envelope is required on protocol revision 2026-07-28"
       };
       const claimedVersion = envelopeClaimVersion(message.params);
-      let reply;
-      if (issue2 !== void 0) reply = {
+      let reply2;
+      if (issue2 !== void 0) reply2 = {
         jsonrpc: "2.0",
         id: message.id,
         error: {
@@ -35109,7 +35109,7 @@ function serveStdio(factory, options = {}) {
           supported: [...SUPPORTED_MODERN_PROTOCOL_VERSIONS],
           requested: claimedVersion ?? "unknown"
         });
-        reply = {
+        reply2 = {
           jsonrpc: "2.0",
           id: message.id,
           error: {
@@ -35118,11 +35118,11 @@ function serveStdio(factory, options = {}) {
             data: error62.data
           }
         };
-      } else reply = listenRouter.serve(message);
-      await wire.send("error" in reply ? reply : {
+      } else reply2 = listenRouter.serve(message);
+      await wire.send("error" in reply2 ? reply2 : {
         jsonrpc: "2.0",
-        method: reply.method,
-        params: reply.params
+        method: reply2.method,
+        params: reply2.params
       }).catch((error62) => reportError(toError(error62)));
       return true;
     }
@@ -75733,6 +75733,7 @@ function evaluateTensions(k2, ctx) {
 
 // src/engine/session.ts
 var CHOICES = ["a", "b", "c", "d", "blend", "neither", "no_pref", "na", "skip", "unsure"];
+var TENSION_STANCES = ["accepted", "mitigated", "will_change"];
 var SYSTEMS_CHECKLIST = "systems.checklist";
 function isPresenceGate(a) {
   return a.kind === "gate" && a.poles[0]?.id === "none";
@@ -75820,6 +75821,7 @@ function foldSession(k2, events) {
   const history = [];
   const used = /* @__PURE__ */ new Set();
   const unknownGames = [];
+  const tensionReplies = /* @__PURE__ */ new Map();
   let questionCount = 0;
   let detailCount = 0;
   const cons = start.constraints ?? {};
@@ -75839,6 +75841,11 @@ function foldSession(k2, events) {
     log.push({ at: start.at, kind: "set", axis: a.id, answer: `constraint: ${JSON.stringify(c.value)}` });
   }
   for (const e of eff.slice(1)) {
+    if (e.type === "tension_reply") {
+      tensionReplies.set(e.tensionId, { at: e.at, response: e.response, stance: e.stance });
+      log.push({ at: e.at, kind: e.type, answer: `reply to tension ${e.tensionId}${e.stance ? ` (${e.stance})` : ""}`, note: e.response });
+      continue;
+    }
     if (e.type === "set") {
       const a2 = k2.axisById.get(e.axis);
       if (!a2) continue;
@@ -76052,7 +76059,8 @@ function foldSession(k2, events) {
     unknownGames,
     questionCount,
     detailCount,
-    tensions: evaluateTensions(k2, ctx)
+    tensions: evaluateTensions(k2, ctx),
+    tensionReplies
   };
 }
 function applyEvidence(r, a, ev, all) {
@@ -76757,7 +76765,10 @@ function buildBrief(k2, state) {
   const timeline = axisValue(state, "frame.timeline");
   const activeModules = sum.modules.filter((m) => m.status === "active").length;
   const scope = scopeFor(state, activeModules, team, timeline, pillars.map((p) => p.title));
-  const risks = state.tensions.map((t) => ({ severity: t.severity, message: t.message, probe: t.probe }));
+  const risks = state.tensions.map((t) => {
+    const reply2 = state.tensionReplies.get(t.id);
+    return reply2 ? { severity: t.severity, message: t.message, response: reply2.response, ...reply2.stance ? { stance: reply2.stance } : {} } : { severity: t.severity, message: t.message, probe: t.probe };
+  });
   for (const s of state.axes.values()) {
     const c = s.ref?.comparisonId ? k2.comparisonById.get(s.ref.comparisonId) : void 0;
     if (c?.note && /patent/i.test(c.note) && s.ref?.chosen && c.options.some((o) => o.game === s.ref?.chosen?.game && /mordor|patent/i.test(`${o.game} ${c.note}`))) {
@@ -76861,7 +76872,7 @@ function renderBriefMarkdown(b) {
   for (const t of b.comparables.titles) L.push(`- **${t.game}**${t.borrow.length ? `: borrow ${t.borrow.join("; ")}` : ""}`);
   L.push("", "## 8. USPs and non-goals", "", "**USPs**", "", ...b.usps.map((u) => `- ${u}`), "", "**Non-goals**", "", ...b.nonGoals.length ? b.nonGoals.map((n) => `- ${n}`) : ["- None recorded"], "");
   L.push("## 9. Scope", "", `- Team: ${b.scope.team}`, `- Timeline: ${b.scope.timeline}`, `- Active modules: ${b.scope.activeModules}`, `- MVP: ${b.scope.mvp}`, `- Vertical slice: ${b.scope.verticalSlice}`, "");
-  L.push("## 10. Risks", "", ...b.risks.length ? b.risks.map((r) => `- **${r.severity}**: ${r.message}${r.probe ? ` Probe: ${r.probe}` : ""}`) : ["- None detected"], "");
+  L.push("## 10. Risks", "", ...b.risks.length ? b.risks.map((r) => `- **${r.severity}**: ${r.message}${r.response ? ` Response${r.stance ? ` (${r.stance.replace("_", " ")})` : ""}: ${r.response}` : r.probe ? ` Probe: ${r.probe}` : ""}`) : ["- None detected"], "");
   L.push("## 11. Open questions", "", ...b.openQuestions.length ? b.openQuestions.map((q) => `- (${q.importance}) ${q.question.startsWith(`${q.label}:`) ? q.question : `${q.label}: ${q.question}`} (clarity ${q.clarity}${q.unsure ? "; you were not sure yet" : ""})`) : ["- None below 0.6 clarity"], "");
   L.push("## 12. Decision log", "", "| When | Kind | Axis | Answer |", "| --- | --- | --- | --- |", ...b.decisionLog.map((d) => `| ${d.at} | ${d.kind} | ${cell(d.axis ?? "")} | ${cell(`${d.answer}${d.note ? ` (${d.note})` : ""}`)} |`), "");
   return L.join("\n").replace(new RegExp("\\u2014", "g"), ",");
@@ -76960,7 +76971,10 @@ function summarize(k2, f, state) {
     modules: c.modules.map((m) => ({ ...m, clarity: round2(m.clarity) })),
     topArchetypes: topArchetypes(k2, s, 3).map((a) => ({ id: a.id, label: a.label, p: round2(a.p) })),
     settled,
-    tensions: s.tensions.map((t) => ({ id: t.id, severity: t.severity, message: t.message, probe: t.probe })),
+    tensions: s.tensions.map((t) => {
+      const reply2 = s.tensionReplies.get(t.id);
+      return { id: t.id, severity: t.severity, message: t.message, probe: t.probe, ...reply2 ? { response: reply2.response, stance: reply2.stance } : {} };
+    }),
     pending: Object.keys(f.pending)
   };
 }
@@ -77064,7 +77078,7 @@ function answer(k2, sessionId, answers) {
   const unlocked = afterSum.modules.filter((m) => m.status === "active" && beforeMods.get(m.module)?.status !== "active").map((m) => m.module);
   const skipped = afterSum.modules.filter((m) => m.status === "skipped" && beforeMods.get(m.module)?.status !== "skipped").map((m) => m.module);
   const oldT = new Set(before.tensions.map((t) => t.id));
-  const newTensions = after.tensions.filter((t) => !oldT.has(t.id)).map((t) => ({ id: t.id, severity: t.severity, message: t.message, probe: t.probe }));
+  const newTensions = after.tensions.filter((t) => !oldT.has(t.id) && !after.tensionReplies.has(t.id)).map((t) => ({ id: t.id, severity: t.severity, message: t.message, probe: t.probe }));
   const followUpHints = [];
   for (const a of answers) {
     if (a.choice === "neither" && a.note) followUpHints.push(`The user described their own approach for ${a.questionId}: consider versus_ask with a customAxis or versus_set to capture "${a.note.slice(0, 80)}".`);
@@ -77146,6 +77160,19 @@ function setFact(k2, sessionId, input2) {
   if (!st) throw new Error(`axis ${a.id} has no state`);
   saveSession(f);
   return { axis: a.id, status: st.status, position: positionText(st), clarity: round2(st.clarity), summary: summarize(k2, f, s) };
+}
+function reply(k2, sessionId, input2) {
+  const response = input2.response.trim();
+  if (!response) throw new Error("response must not be empty");
+  const f = loadSession(sessionId);
+  const before = foldSession(k2, f.events);
+  if (!before.tensions.some((t) => t.id === input2.tensionId)) {
+    const active = before.tensions.map((t) => t.id);
+    throw new Error(`tension ${input2.tensionId} is not active; ${active.length ? `active tensions: ${active.join(", ")}` : "no tensions are active"}`);
+  }
+  f.events.push({ type: "tension_reply", at: now(), tensionId: input2.tensionId, response, stance: input2.stance });
+  saveSession(f);
+  return { tensionId: input2.tensionId, response, stance: input2.stance, summary: summarize(k2, f) };
 }
 function status(k2, sessionId) {
   const f = loadSession(sessionId);
@@ -77387,6 +77414,24 @@ ${[...q.askUserQuestion.options, ...q.moreOptions ?? []].map((o) => `   - ${o.la
     })
   );
   server.registerTool(
+    "versus_reply",
+    {
+      title: "Record a tension probe reply",
+      description: "Record how the user answered the probe of an active tension (from versus_answer or the summary tensions). The brief shows the reply under that risk instead of the probe, and the tension is not raised again. stance: accepted (keep the risk), mitigated (keep it with a plan) or will_change (the design will change).",
+      inputSchema: external_exports.object({
+        sessionId,
+        tensionId: external_exports.string().describe("Tension id, for example solo_team_mmo"),
+        response: external_exports.string().min(1).describe("The user reply in a sentence or two"),
+        stance: external_exports.enum(TENSION_STANCES).optional()
+      }),
+      outputSchema: external_exports.looseObject({ tensionId: external_exports.string(), response: external_exports.string(), stance: external_exports.string().optional(), summary: Summary })
+    },
+    guard((a) => {
+      const r = reply(k2, a.sessionId, a);
+      return ok(`Recorded the reply to ${r.tensionId}${r.stance ? ` (${r.stance})` : ""}.`, r);
+    })
+  );
+  server.registerTool(
     "versus_status",
     {
       title: "Session status",
@@ -77547,7 +77592,7 @@ var PROTOCOL = `You are the interviewer; the game-design-versus server is the re
 3. Map each chosen label through answerMap to a choice. "Not sure / don't know these games" maps to unsure; the topic comes back later without games. Labels in moreOptions (such as Blend of both) also map when the user types them. If the user picks Other, send choice "neither" with their text as note, or call versus_set if their text clearly states a position.
 4. Call versus_answer with all answers from the round.
 5. Every 5 rounds, give a one-line recap: what is now settled and the core progress (core.settled of core.total). Multi-select questions, including the systems checklist, take choice "neither" with selected keys (empty if none apply).
-6. When versus_answer returns tensions, ask the probe question in your own words.
+6. When versus_answer returns tensions, ask the probe question in your own words and record the reply with versus_reply (tensionId, response, stance accepted, mitigated or will_change). If the reply changes a position, also record it with versus_set.
 7. When the user explains a nuance the options miss, improvise a follow-up with versus_ask (an existing axis or a customAxis).
 8. Stop when stopRecommended is true (the brief is ready; offer to keep refining) or the user says so. Then call versus_brief and offer to save it to docs/design/<slug>-brief.md.`;
 function registerPrompts(server) {

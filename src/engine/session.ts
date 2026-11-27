@@ -38,12 +38,17 @@ export type Question = {
 };
 
 export type Constraints = { platform?: string[]; team?: string; timeline?: string };
+/** How the user answered a tension probe: keep the risk, keep it with a plan, or change the design. */
+export const TENSION_STANCES = ['accepted', 'mitigated', 'will_change'] as const;
+export type TensionStance = (typeof TENSION_STANCES)[number];
+export type TensionReply = { at: string; response: string; stance?: TensionStance };
 export type SessionEvent =
   | { type: 'start'; at: string; sessionId: string; seed: number; title?: string; pitch?: string; knownGames?: string[]; constraints?: Constraints }
   | { type: 'answer'; at: string; question: Question; choice: Choice; lean?: number; note?: string; selected?: string[]; batch?: number }
   | { type: 'custom_answer'; at: string; question: Question; choice: Choice; lean?: number; note?: string; batch?: number }
   | { type: 'set'; at: string; axis: string; value: number | string | string[]; confidence: number; source: string }
   | { type: 'skip'; at: string; question: Question; batch?: number }
+  | { type: 'tension_reply'; at: string; tensionId: string; response: string; stance?: TensionStance }
   | { type: 'undo'; at: string };
 
 export type AxisState = {
@@ -138,6 +143,8 @@ export type SessionState = {
   /** Questions answered on secondary detail axes (isDetailAxis), for the stop rule. */
   detailCount: number;
   tensions: Tension[];
+  /** The latest reply to each tension probe, by tension id. Replies to tensions that no longer fire stay in the log. */
+  tensionReplies: Map<string, TensionReply>;
 };
 
 /** SPEC: undo pops the last non-undo event; folding the remaining events is the state. */
@@ -230,6 +237,7 @@ export function foldSession(k: Knowledge, events: SessionEvent[]): SessionState 
   const history: SessionState['history'] = [];
   const used = new Set<string>();
   const unknownGames: string[] = [];
+  const tensionReplies = new Map<string, TensionReply>();
   let questionCount = 0;
   let detailCount = 0;
 
@@ -252,6 +260,11 @@ export function foldSession(k: Knowledge, events: SessionEvent[]): SessionState 
   }
 
   for (const e of eff.slice(1)) {
+    if (e.type === 'tension_reply') {
+      tensionReplies.set(e.tensionId, { at: e.at, response: e.response, stance: e.stance });
+      log.push({ at: e.at, kind: e.type, answer: `reply to tension ${e.tensionId}${e.stance ? ` (${e.stance})` : ''}`, note: e.response });
+      continue;
+    }
     if (e.type === 'set') {
       const a = k.axisById.get(e.axis);
       if (!a) continue;
@@ -451,6 +464,7 @@ export function foldSession(k: Knowledge, events: SessionEvent[]): SessionState 
     id: start.sessionId, seed: start.seed, title: start.title, pitch: start.pitch, knownGames: start.knownGames ?? [],
     constraints: cons, createdAt: start.at, effective: eff, axes, custom: customOut, archetypePost, flags, elo, log,
     history, usedComparisons: used, unknownGames, questionCount, detailCount, tensions: evaluateTensions(k, ctx),
+    tensionReplies,
   };
 }
 

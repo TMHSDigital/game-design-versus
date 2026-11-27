@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/server';
 import type { Knowledge } from '../engine/data';
-import { CHOICES } from '../engine/session';
+import { CHOICES, TENSION_STANCES } from '../engine/session';
 import * as svc from '../service';
 
 const askOption = z.looseObject({ label: z.string(), description: z.string(), preview: z.string().optional() });
@@ -189,6 +189,25 @@ export function registerTools(server: McpServer, k: Knowledge): void {
     guard((a) => {
       const r = svc.setFact(k, a.sessionId, a);
       return ok(`${r.axis}: ${r.position} (${r.status}, clarity ${r.clarity}).`, r);
+    }),
+  );
+
+  server.registerTool(
+    'versus_reply',
+    {
+      title: 'Record a tension probe reply',
+      description: 'Record how the user answered the probe of an active tension (from versus_answer or the summary tensions). The brief shows the reply under that risk instead of the probe, and the tension is not raised again. stance: accepted (keep the risk), mitigated (keep it with a plan) or will_change (the design will change).',
+      inputSchema: z.object({
+        sessionId,
+        tensionId: z.string().describe('Tension id, for example solo_team_mmo'),
+        response: z.string().min(1).describe('The user reply in a sentence or two'),
+        stance: z.enum(TENSION_STANCES).optional(),
+      }),
+      outputSchema: z.looseObject({ tensionId: z.string(), response: z.string(), stance: z.string().optional(), summary: Summary }),
+    },
+    guard((a) => {
+      const r = svc.reply(k, a.sessionId, a);
+      return ok(`Recorded the reply to ${r.tensionId}${r.stance ? ` (${r.stance})` : ''}.`, r);
     }),
   );
 

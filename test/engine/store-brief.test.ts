@@ -306,3 +306,50 @@ describe('brief tables', () => {
     expect(md).not.toMatch(/^second line/m);
   });
 });
+
+describe('tension replies', () => {
+  const mmoOnSoloTeam = () => {
+    const s = svc.startSession(k, { title: 'Tiny MMO', seed: 71 });
+    svc.setFact(k, s.sessionId, { axis: 'frame.team', value: 'solo', confidence: 1 });
+    svc.setFact(k, s.sessionId, { axis: 'frame.players', value: 'mmo', confidence: 0.8 });
+    return s.sessionId;
+  };
+
+  it('shows the reply under the risk instead of the probe, and undo takes it back', () => {
+    const id = mmoOnSoloTeam();
+    const probe = svc.status(k, id).tensions.find((t) => t.id === 'solo_team_mmo')?.probe;
+    expect(probe).toBeTruthy();
+    expect(svc.brief(k, id, 'markdown').markdown).toContain(`Probe: ${probe}`);
+
+    const r = svc.reply(k, id, { tensionId: 'solo_team_mmo', response: 'A small persistent server, scoped to 50 players.', stance: 'mitigated' });
+    expect(r.summary.tensions.find((t) => t.id === 'solo_team_mmo')?.response).toBe('A small persistent server, scoped to 50 players.');
+    const b = svc.brief(k, id, 'json').brief;
+    const risk = b.risks.find((x) => x.response);
+    expect(risk).toMatchObject({ response: 'A small persistent server, scoped to 50 players.', stance: 'mitigated' });
+    expect(risk?.probe).toBeUndefined();
+    const md = svc.brief(k, id, 'markdown').markdown;
+    expect(md).toContain('Response (mitigated): A small persistent server, scoped to 50 players.');
+    expect(md).not.toContain(`Probe: ${probe}`);
+    expect(b.decisionLog.some((d) => d.kind === 'tension_reply' && d.note === 'A small persistent server, scoped to 50 players.')).toBe(true);
+
+    svc.undo(k, id);
+    expect(svc.brief(k, id, 'markdown').markdown).toContain(`Probe: ${probe}`);
+  });
+
+  it('keeps a reply in the decision log once its tension stops firing', () => {
+    const id = mmoOnSoloTeam();
+    svc.reply(k, id, { tensionId: 'solo_team_mmo', response: 'Fine, it becomes a small-session online game.', stance: 'will_change' });
+    svc.setFact(k, id, { axis: 'frame.players', value: 'online_coop', confidence: 1 });
+    const b = svc.brief(k, id, 'json').brief;
+    expect(b.risks.some((x) => x.response)).toBe(false);
+    expect(b.decisionLog.some((d) => d.kind === 'tension_reply')).toBe(true);
+  });
+
+  it('rejects a reply to a tension that is not active, and an empty reply', () => {
+    const id = mmoOnSoloTeam();
+    const before = loadSession(id).events.length;
+    expect(() => svc.reply(k, id, { tensionId: 'permadeath_long_campaign', response: 'ok' })).toThrow(/not active; active tensions: .*solo_team_mmo/);
+    expect(() => svc.reply(k, id, { tensionId: 'solo_team_mmo', response: '  ' })).toThrow(/empty/);
+    expect(loadSession(id).events.length).toBe(before);
+  });
+});

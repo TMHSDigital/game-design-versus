@@ -26,3 +26,6 @@
   `core.settled` of `core.total` and `coreReady`; with frame and gates settled the stop is recommended at
   `softQuestions` (48), and 60 questions is the hard cap.
 - `versus_brief` refuses to replace an existing file unless `overwrite: true` is passed.
+- `versus_reply` records the user's answer to a tension probe (`response`, optional `stance`: accepted, mitigated or
+  will_change). The brief's Risks section shows the reply instead of the probe, the decision log keeps it, and
+  `versus_answer` does not raise an answered tension again.

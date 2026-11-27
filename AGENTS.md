@@ -44,7 +44,8 @@ modules that no longer apply. At the end the server writes a GDD seed brief.
    4. Send all answers of the round in one `versus_answer` call.
    5. Every 5 rounds, recap in one line what is settled and the core progress (`core.settled` of `core.total`).
       Clarity can dip when an answer unlocks a module; core progress is the steadier measure.
-   6. Ask the `probe` of any returned tension in your own words.
+   6. Ask the `probe` of any returned tension in your own words and record the reply with `versus_reply`
+      (`tensionId`, `response`, `stance`: accepted, mitigated or will_change). The brief shows it under that risk.
    7. When the user explains a nuance, improvise a follow-up with `versus_ask` (existing axis or `customAxis`).
 4. Stop when `stopRecommended` is true (the brief is ready; say so and offer to keep refining) or the user says so. Call `versus_brief` (markdown) and, if the user agrees,
    save it with `outPath: "docs/design/<slug>-brief.md"`. An existing file is only replaced with `overwrite: true`,
