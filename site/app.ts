@@ -41,7 +41,7 @@ function mountStart(root: HTMLElement): void {
       </div>
       <button type="submit" class="btn primary">Start the interview</button>
     </form>
-    <p class="small">About 35 to 45 questions to reach clarity 0.80. Stop whenever you like; the brief marks what is still open.</p>`;
+    <p class="small">Usually 25 to 45 questions until the brief is ready. Stop whenever you like; the brief marks what is still open.</p>`;
   const form = root.querySelector('form') as HTMLFormElement;
   const launch = async (btn: HTMLButtonElement, opts: { title?: string; pitch?: string }, resumeIt: boolean) => {
     const label = btn.textContent;

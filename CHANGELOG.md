@@ -19,3 +19,10 @@
 - Claude Code plugin with `versus` and `versus-brief` skills and the `tmhs-digital` marketplace.
 - Website at https://tmhsdigital.github.io/game-design-versus/ with a playable in-browser interview that runs the
   same engine and verified library (`src/web/demo.ts`), deployed by `.github/workflows/pages.yml`.
+- "Not sure / don't know these games" answer (`unsure`) on every game comparison: nothing is recorded, those games
+  are avoided, the topic returns in plain words, and an axis answered "not sure" twice is set aside as an open
+  question.
+- Brief-ready stop rule: the interview ends once frame, gates and core axes are settled. Summaries report
+  `core.settled` of `core.total` and `coreReady`; with frame and gates settled the stop is recommended at
+  `softQuestions` (48), and 60 questions is the hard cap.
+- `versus_brief` refuses to replace an existing file unless `overwrite: true` is passed.
