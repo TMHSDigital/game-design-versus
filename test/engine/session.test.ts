@@ -310,6 +310,20 @@ describe('shorter interviews', () => {
     expect(candidates(k, s).some((c) => c.axis.axis.id === rq.axis)).toBe(false);
   });
 
+  it('does not count a deferred gate-like axis as an open gate in the stop rule', () => {
+    const gatesOpen = (st: ReturnType<typeof foldSession>) => {
+      const r = claritySummary(k, st).stop.reasons.find((x) => x.endsWith('gates open'));
+      return r ? Number.parseInt(r, 10) : 0;
+    };
+    const s0 = foldSession(k, [start]);
+    const q = candidates(k, s0).find((c) => c.axis.axis.id === 'ctl.embodiment' && c.format === 'comparison')!;
+    expect(q).toBeDefined();
+    const rq = render(q, 's1:q1');
+    const s = foldSession(k, [start, answer(rq, 'unsure'), answer({ ...rq, questionId: 's1:q2', format: 'poles' }, 'unsure')]);
+    expect(s.axes.get('ctl.embodiment')!.deferred).toBe(true);
+    expect(gatesOpen(s)).toBe(gatesOpen(s0) - 1);
+  });
+
   it('fills a round with frame questions when only the frame is left among priority axes', () => {
     const events: SessionEvent[] = [start, ...setAll(presence.map((a) => a.id), 'core'), ...setAll(['ctl.embodiment'], 'avatar')];
     const qs = nextQuestions(k, foldSession(k, events), { count: 4, deterministic: true });

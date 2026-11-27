@@ -76151,7 +76151,7 @@ function claritySummary(k2, state) {
   });
   const reasons = [];
   const unresolvedFrame = [...state.axes.values()].filter((s) => isFrameCore(s.axis) && s.status === "open" && s.applicable !== false && !s.deferred);
-  const unresolvedGates = [...state.axes.values()].filter((s) => isGateLike(s) && s.applicable !== false && s.status === "open" && gateStillOpen(state, s));
+  const unresolvedGates = [...state.axes.values()].filter((s) => isGateLike(s) && s.applicable !== false && s.status === "open" && gateStillOpen(state, s) && !s.deferred);
   const core = counted.filter((s) => isCoreAxis(s.axis));
   const weakCore = core.filter((s) => !s.deferred && s.clarity < ENGINE.stopCore);
   if (unresolvedFrame.length) reasons.push(`${unresolvedFrame.length} frame axes open`);
