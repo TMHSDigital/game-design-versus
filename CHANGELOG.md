@@ -29,3 +29,6 @@
 - `versus_reply` records the user's answer to a tension probe (`response`, optional `stance`: accepted, mitigated or
   will_change). The brief's Risks section shows the reply instead of the probe, the decision log keeps it, and
   `versus_answer` does not raise an answered tension again.
+- `versus_revise` changes an earlier answer without undoing later rounds: a `retract` event takes back every answer,
+  set and constraint on one axis (the decision log keeps them, marked revised) and optionally records the new
+  position. It reports modules the change unlocked or skipped, and `versus_undo` takes it back.

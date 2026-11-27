@@ -51,7 +51,7 @@ describe('MCP over stdio (built bundle)', () => {
   it('lists every tool with input and output schemas', async () => {
     const { tools } = await client.listTools();
     const names = tools.map((t) => t.name).sort();
-    expect(names).toEqual(['versus_answer', 'versus_ask', 'versus_brief', 'versus_catalog', 'versus_list', 'versus_next', 'versus_reply', 'versus_set', 'versus_start', 'versus_status', 'versus_undo']);
+    expect(names).toEqual(['versus_answer', 'versus_ask', 'versus_brief', 'versus_catalog', 'versus_list', 'versus_next', 'versus_reply', 'versus_revise', 'versus_set', 'versus_start', 'versus_status', 'versus_undo']);
     for (const t of tools) {
       expect(t.inputSchema).toBeDefined();
       expect(t.outputSchema).toBeDefined();

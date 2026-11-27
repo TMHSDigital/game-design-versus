@@ -3,6 +3,7 @@ import { dirname, isAbsolute, resolve } from 'node:path';
 import type { Knowledge } from './engine/data';
 import { isBinary, type Axis } from './engine/ontology';
 import { randomSeed } from './engine/prng';
+import { ENGINE } from './engine/config';
 import {
   claritySummary, effectiveEvents, evidenceFromValue, foldSession, SYSTEMS_CHECKLIST, topArchetypes, type Choice, type Constraints, type CustomAxis, type Question, type QuestionOption,
   type SessionEvent, type SessionState, type OptionKey, type TensionStance,
@@ -175,8 +176,7 @@ export function answer(k: Knowledge, sessionId: string, answers: AnswerInput[]) 
   const deltas = afterSum.modules
     .map((m) => ({ module: m.module, before: round(beforeMods.get(m.module)?.clarity ?? 0), after: round(m.clarity) }))
     .filter((d) => d.before !== d.after);
-  const unlocked = afterSum.modules.filter((m) => m.status === 'active' && beforeMods.get(m.module)?.status !== 'active').map((m) => m.module);
-  const skipped = afterSum.modules.filter((m) => m.status === 'skipped' && beforeMods.get(m.module)?.status !== 'skipped').map((m) => m.module);
+  const { unlocked, skipped } = moduleChanges(beforeSum, afterSum);
   const oldT = new Set(before.tensions.map((t) => t.id));
   // A tension the user already answered is not raised again, even if it stopped firing and came back.
   const newTensions = after.tensions.filter((t) => !oldT.has(t.id) && !after.tensionReplies.has(t.id)).map((t) => ({ id: t.id, severity: t.severity, message: t.message, probe: t.probe }));
@@ -198,6 +198,15 @@ export function answer(k: Knowledge, sessionId: string, answers: AnswerInput[]) 
     stopRecommended: afterSum.stop.recommended,
     stopReasons: afterSum.stop.reasons,
     core: afterSum.core,
+  };
+}
+
+/** Modules an event batch unlocked (became active) or skipped (gated out). */
+function moduleChanges(before: ReturnType<typeof claritySummary>, after: ReturnType<typeof claritySummary>) {
+  const was = new Map(before.modules.map((m) => [m.module, m.status]));
+  return {
+    unlocked: after.modules.filter((m) => m.status === 'active' && was.get(m.module) !== 'active').map((m) => m.module),
+    skipped: after.modules.filter((m) => m.status === 'skipped' && was.get(m.module) !== 'skipped').map((m) => m.module),
   };
 }
 
@@ -262,6 +271,43 @@ export function setFact(
   if (!st) throw new Error(`axis ${a.id} has no state`);
   saveSession(f);
   return { axis: a.id, status: st.status, position: positionText(st), clarity: round(st.clarity), summary: summarize(k, f, s) };
+}
+
+/**
+ * Replaces what the user said about one axis, however many rounds ago, without undoing later rounds. With a value the
+ * axis takes that position as if stated fresh; without one it is open again and versus_next can ask it.
+ */
+export function revise(k: Knowledge, sessionId: string, input: { axis: string; value?: number | string | string[]; confidence?: number }) {
+  const f = loadSession(sessionId);
+  const before = foldSession(k, f.events);
+  const a = k.axisById.get(input.axis);
+  const isCustom = !a && before.custom.has(input.axis);
+  if (!a && !isCustom) throw new Error(`unknown axis ${input.axis}`);
+  if (input.value !== undefined) {
+    if (!a) throw new Error(`${input.axis} is a custom axis; revise it without a value and ask it again with versus_ask`);
+    if (!evidenceFromValue(a, input.value, input.confidence ?? ENGINE.reviseConfidence)) {
+      throw new Error(`value ${JSON.stringify(input.value)} does not fit ${a.id} (${a.kind}; poles ${a.poles.map((p) => p.id).join(', ')}${isBinary(a) ? ', or a bin -2..2, or blend' : ''})`);
+    }
+  } else if (a) {
+    const st = before.axes.get(a.id);
+    const recorded = before.log.some((l) => l.axis === a.id && !l.revised) || (st !== undefined && (st.status !== 'open' || st.evidenceCount > 0));
+    if (!recorded) throw new Error(`nothing is recorded on ${a.id} yet`);
+  }
+  const beforeSum = claritySummary(k, before);
+  f.events.push({ type: 'retract', at: now(), axis: input.axis, value: input.value, confidence: input.value === undefined ? undefined : input.confidence });
+  const after = foldSession(k, f.events);
+  saveSession(f);
+  const { unlocked, skipped } = moduleChanges(beforeSum, claritySummary(k, after));
+  const st = a ? after.axes.get(a.id) : undefined;
+  return {
+    axis: input.axis,
+    status: st?.status ?? 'open',
+    position: st ? positionText(st) : 'Undecided',
+    revised: before.log.filter((l) => l.axis === input.axis && !l.revised).length,
+    unlockedModules: unlocked,
+    skippedModules: skipped,
+    summary: summarize(k, f, after),
+  };
 }
 
 /** Records the user's reply to the probe of an active tension; the brief shows it under that risk. */

@@ -75393,7 +75393,9 @@ var ENGINE = {
   /** After this many such answers the axis is set aside: not asked again, an open question in the brief. */
   unsureDeferAfter: 2,
   /** Score penalty for a comparison featuring a game the user said they do not know. */
-  unknownGamePenalty: 0.3
+  unknownGamePenalty: 0.3,
+  /** Confidence of a new position given with versus_revise when the agent passes none. */
+  reviseConfidence: 0.9
 };
 function isDeterministic() {
   return process.env.GDV_DETERMINISTIC === "1";
@@ -75815,7 +75817,7 @@ function foldSession(k2, events) {
     return r;
   };
   const custom2 = /* @__PURE__ */ new Map();
-  const evidence = [];
+  let evidence = [];
   const elo = {};
   const log = [];
   const history = [];
@@ -75840,24 +75842,38 @@ function foldSession(k2, events) {
     if (ev.kind === "multi") r.pagesSeen = ENGINE.maxMultiPages;
     log.push({ at: start.at, kind: "set", axis: a.id, answer: `constraint: ${JSON.stringify(c.value)}` });
   }
+  const applySet = (a, value, confidence) => {
+    const ev = evidenceFromValue(a, value, confidence);
+    if (!ev) return false;
+    const r = raw(a.id);
+    applyEvidence(r, a, ev, evidence);
+    if (confidence >= 0.5) {
+      r.status = "decided";
+      if (ev.kind === "multi") r.pagesSeen = ENGINE.maxMultiPages;
+    }
+    r.source = "user_statement";
+    return true;
+  };
   for (const e of eff.slice(1)) {
     if (e.type === "tension_reply") {
       tensionReplies.set(e.tensionId, { at: e.at, response: e.response, stance: e.stance });
       log.push({ at: e.at, kind: e.type, answer: `reply to tension ${e.tensionId}${e.stance ? ` (${e.stance})` : ""}`, note: e.response });
       continue;
     }
+    if (e.type === "retract") {
+      raws.delete(e.axis);
+      custom2.delete(e.axis);
+      evidence = evidence.filter((ev) => ev.axis !== e.axis);
+      for (const l of log) if (l.axis === e.axis) l.revised = true;
+      const a2 = k2.axisById.get(e.axis);
+      const confidence = e.confidence ?? ENGINE.reviseConfidence;
+      const changed = e.value !== void 0 && a2 !== void 0 && applySet(a2, e.value, confidence);
+      log.push({ at: e.at, kind: e.type, axis: e.axis, answer: changed ? `revised to ${JSON.stringify(e.value)} (confidence ${confidence})` : "reopened" });
+      continue;
+    }
     if (e.type === "set") {
       const a2 = k2.axisById.get(e.axis);
-      if (!a2) continue;
-      const ev = evidenceFromValue(a2, e.value, e.confidence);
-      if (!ev) continue;
-      const r2 = raw(a2.id);
-      applyEvidence(r2, a2, ev, evidence);
-      if (e.confidence >= 0.5) {
-        r2.status = "decided";
-        if (ev.kind === "multi") r2.pagesSeen = ENGINE.maxMultiPages;
-      }
-      r2.source = "user_statement";
+      if (!a2 || !applySet(a2, e.value, e.confidence)) continue;
       log.push({ at: e.at, kind: "set", axis: a2.id, answer: `${JSON.stringify(e.value)} (confidence ${e.confidence})` });
       continue;
     }
@@ -76799,7 +76815,7 @@ function buildBrief(k2, state) {
     scope,
     risks,
     openQuestions,
-    decisionLog: state.log.map((l) => ({ at: l.at, kind: l.kind, axis: l.axis, answer: l.answer, note: l.note })),
+    decisionLog: state.log.map((l) => ({ at: l.at, kind: l.kind, axis: l.axis, answer: l.answer, note: l.note, ...l.revised ? { revised: true } : {} })),
     clarity: { overall: round(sum.overall), questionCount: sum.questionCount, stopRecommended: sum.stop.recommended }
   };
 }
@@ -76874,7 +76890,7 @@ function renderBriefMarkdown(b) {
   L.push("## 9. Scope", "", `- Team: ${b.scope.team}`, `- Timeline: ${b.scope.timeline}`, `- Active modules: ${b.scope.activeModules}`, `- MVP: ${b.scope.mvp}`, `- Vertical slice: ${b.scope.verticalSlice}`, "");
   L.push("## 10. Risks", "", ...b.risks.length ? b.risks.map((r) => `- **${r.severity}**: ${r.message}${r.response ? ` Response${r.stance ? ` (${r.stance.replace("_", " ")})` : ""}: ${r.response}` : r.probe ? ` Probe: ${r.probe}` : ""}`) : ["- None detected"], "");
   L.push("## 11. Open questions", "", ...b.openQuestions.length ? b.openQuestions.map((q) => `- (${q.importance}) ${q.question.startsWith(`${q.label}:`) ? q.question : `${q.label}: ${q.question}`} (clarity ${q.clarity}${q.unsure ? "; you were not sure yet" : ""})`) : ["- None below 0.6 clarity"], "");
-  L.push("## 12. Decision log", "", "| When | Kind | Axis | Answer |", "| --- | --- | --- | --- |", ...b.decisionLog.map((d) => `| ${d.at} | ${d.kind} | ${cell(d.axis ?? "")} | ${cell(`${d.answer}${d.note ? ` (${d.note})` : ""}`)} |`), "");
+  L.push("## 12. Decision log", "", "| When | Kind | Axis | Answer |", "| --- | --- | --- | --- |", ...b.decisionLog.map((d) => `| ${d.at} | ${d.kind} | ${cell(d.axis ?? "")} | ${cell(`${d.revised ? "(revised later) " : ""}${d.answer}${d.note ? ` (${d.note})` : ""}`)} |`), "");
   return L.join("\n").replace(new RegExp("\\u2014", "g"), ",");
 }
 
@@ -77075,8 +77091,7 @@ function answer(k2, sessionId, answers) {
   const afterSum = claritySummary(k2, after);
   const beforeMods = new Map(beforeSum.modules.map((m) => [m.module, m]));
   const deltas = afterSum.modules.map((m) => ({ module: m.module, before: round2(beforeMods.get(m.module)?.clarity ?? 0), after: round2(m.clarity) })).filter((d) => d.before !== d.after);
-  const unlocked = afterSum.modules.filter((m) => m.status === "active" && beforeMods.get(m.module)?.status !== "active").map((m) => m.module);
-  const skipped = afterSum.modules.filter((m) => m.status === "skipped" && beforeMods.get(m.module)?.status !== "skipped").map((m) => m.module);
+  const { unlocked, skipped } = moduleChanges(beforeSum, afterSum);
   const oldT = new Set(before.tensions.map((t) => t.id));
   const newTensions = after.tensions.filter((t) => !oldT.has(t.id) && !after.tensionReplies.has(t.id)).map((t) => ({ id: t.id, severity: t.severity, message: t.message, probe: t.probe }));
   const followUpHints = [];
@@ -77097,6 +77112,13 @@ function answer(k2, sessionId, answers) {
     stopRecommended: afterSum.stop.recommended,
     stopReasons: afterSum.stop.reasons,
     core: afterSum.core
+  };
+}
+function moduleChanges(before, after) {
+  const was = new Map(before.modules.map((m) => [m.module, m.status]));
+  return {
+    unlocked: after.modules.filter((m) => m.status === "active" && was.get(m.module) !== "active").map((m) => m.module),
+    skipped: after.modules.filter((m) => m.status === "skipped" && was.get(m.module) !== "skipped").map((m) => m.module)
   };
 }
 function ask(k2, sessionId, input2) {
@@ -77160,6 +77182,38 @@ function setFact(k2, sessionId, input2) {
   if (!st) throw new Error(`axis ${a.id} has no state`);
   saveSession(f);
   return { axis: a.id, status: st.status, position: positionText(st), clarity: round2(st.clarity), summary: summarize(k2, f, s) };
+}
+function revise(k2, sessionId, input2) {
+  const f = loadSession(sessionId);
+  const before = foldSession(k2, f.events);
+  const a = k2.axisById.get(input2.axis);
+  const isCustom = !a && before.custom.has(input2.axis);
+  if (!a && !isCustom) throw new Error(`unknown axis ${input2.axis}`);
+  if (input2.value !== void 0) {
+    if (!a) throw new Error(`${input2.axis} is a custom axis; revise it without a value and ask it again with versus_ask`);
+    if (!evidenceFromValue(a, input2.value, input2.confidence ?? ENGINE.reviseConfidence)) {
+      throw new Error(`value ${JSON.stringify(input2.value)} does not fit ${a.id} (${a.kind}; poles ${a.poles.map((p) => p.id).join(", ")}${isBinary(a) ? ", or a bin -2..2, or blend" : ""})`);
+    }
+  } else if (a) {
+    const st2 = before.axes.get(a.id);
+    const recorded = before.log.some((l) => l.axis === a.id && !l.revised) || st2 !== void 0 && (st2.status !== "open" || st2.evidenceCount > 0);
+    if (!recorded) throw new Error(`nothing is recorded on ${a.id} yet`);
+  }
+  const beforeSum = claritySummary(k2, before);
+  f.events.push({ type: "retract", at: now(), axis: input2.axis, value: input2.value, confidence: input2.value === void 0 ? void 0 : input2.confidence });
+  const after = foldSession(k2, f.events);
+  saveSession(f);
+  const { unlocked, skipped } = moduleChanges(beforeSum, claritySummary(k2, after));
+  const st = a ? after.axes.get(a.id) : void 0;
+  return {
+    axis: input2.axis,
+    status: st?.status ?? "open",
+    position: st ? positionText(st) : "Undecided",
+    revised: before.log.filter((l) => l.axis === input2.axis && !l.revised).length,
+    unlockedModules: unlocked,
+    skippedModules: skipped,
+    summary: summarize(k2, f, after)
+  };
 }
 function reply(k2, sessionId, input2) {
   const response = input2.response.trim();
@@ -77411,6 +77465,27 @@ ${[...q.askUserQuestion.options, ...q.moreOptions ?? []].map((o) => `   - ${o.la
     guard((a) => {
       const r = setFact(k2, a.sessionId, a);
       return ok(`${r.axis}: ${r.position} (${r.status}, clarity ${r.clarity}).`, r);
+    })
+  );
+  server.registerTool(
+    "versus_revise",
+    {
+      title: "Revise an earlier answer",
+      description: "Change what the user said about one axis, however many rounds ago, without undoing later rounds. Every earlier answer, set and constraint on that axis is taken back (the decision log keeps them, marked revised). With value (same forms as versus_set) the axis takes that position; without value it is open again and versus_next can ask it. Reports modules the change unlocked or skipped. versus_undo takes a revise back.",
+      inputSchema: external_exports.object({
+        sessionId,
+        axis: external_exports.string().describe("Axis id, for example combat.sim; a custom.<slug> axis can only be reopened"),
+        value: external_exports.union([external_exports.number(), external_exports.string(), external_exports.array(external_exports.string())]).optional().describe("The new position, as in versus_set; omit to reopen the axis"),
+        confidence: external_exports.number().min(0).max(1).optional().describe("How sure the user is of the new position, 0 to 1. Default 0.9")
+      }),
+      outputSchema: external_exports.looseObject({ axis: external_exports.string(), status: external_exports.string(), position: external_exports.string(), revised: external_exports.number(), unlockedModules: external_exports.array(external_exports.string()), skippedModules: external_exports.array(external_exports.string()), summary: Summary })
+    },
+    guard((a) => {
+      const r = revise(k2, a.sessionId, a);
+      const lines = [`${r.axis}: ${r.position} (${r.status}); ${r.revised} earlier ${r.revised === 1 ? "entry" : "entries"} marked revised.`];
+      if (r.unlockedModules.length) lines.push(`Unlocked: ${r.unlockedModules.join(", ")}.`);
+      if (r.skippedModules.length) lines.push(`Skipped: ${r.skippedModules.join(", ")}.`);
+      return ok(lines.join("\n"), r);
     })
   );
   server.registerTool(

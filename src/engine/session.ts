@@ -49,6 +49,11 @@ export type SessionEvent =
   | { type: 'set'; at: string; axis: string; value: number | string | string[]; confidence: number; source: string }
   | { type: 'skip'; at: string; question: Question; batch?: number }
   | { type: 'tension_reply'; at: string; tensionId: string; response: string; stance?: TensionStance }
+  /**
+   * Takes back everything recorded on one axis so far (answers, sets, constraints), then records `value` like a
+   * set when given; without a value the axis is open again. Later answers on other axes stay in place.
+   */
+  | { type: 'retract'; at: string; axis: string; value?: number | string | string[]; confidence?: number }
   | { type: 'undo'; at: string };
 
 export type AxisState = {
@@ -118,7 +123,8 @@ export type CustomAxisState = {
   ref?: AxisState['ref'];
 };
 
-export type LogEntry = { at: string; kind: SessionEvent['type']; axis?: string; question?: string; answer: string; note?: string };
+/** `revised` marks an entry whose evidence a later retract (versus_revise) took back. */
+export type LogEntry = { at: string; kind: SessionEvent['type']; axis?: string; question?: string; answer: string; note?: string; revised?: boolean };
 
 export type SessionState = {
   id: string;
@@ -231,7 +237,7 @@ export function foldSession(k: Knowledge, events: SessionEvent[]): SessionState 
     return r;
   };
   const custom = new Map<string, CustomAxisState & { liks: number[][] }>();
-  const evidence: Evidence[] = [];
+  let evidence: Evidence[] = [];
   const elo: EloTable = {};
   const log: LogEntry[] = [];
   const history: SessionState['history'] = [];
@@ -259,24 +265,41 @@ export function foldSession(k: Knowledge, events: SessionEvent[]): SessionState 
     log.push({ at: start.at, kind: 'set', axis: a.id, answer: `constraint: ${JSON.stringify(c.value)}` });
   }
 
+  /** A stated value: evidence, and decided when the user was at least fairly sure. False when it does not fit. */
+  const applySet = (a: Axis, value: number | string | string[], confidence: number): boolean => {
+    const ev = evidenceFromValue(a, value, confidence);
+    if (!ev) return false;
+    const r = raw(a.id);
+    applyEvidence(r, a, ev, evidence);
+    if (confidence >= 0.5) {
+      r.status = 'decided';
+      if (ev.kind === 'multi') r.pagesSeen = ENGINE.maxMultiPages;
+    }
+    r.source = 'user_statement';
+    return true;
+  };
+
   for (const e of eff.slice(1)) {
     if (e.type === 'tension_reply') {
       tensionReplies.set(e.tensionId, { at: e.at, response: e.response, stance: e.stance });
       log.push({ at: e.at, kind: e.type, answer: `reply to tension ${e.tensionId}${e.stance ? ` (${e.stance})` : ''}`, note: e.response });
       continue;
     }
+    if (e.type === 'retract') {
+      // Questions asked stay counted; only what they said about this axis is dropped.
+      raws.delete(e.axis);
+      custom.delete(e.axis);
+      evidence = evidence.filter((ev) => ev.axis !== e.axis);
+      for (const l of log) if (l.axis === e.axis) l.revised = true;
+      const a = k.axisById.get(e.axis);
+      const confidence = e.confidence ?? ENGINE.reviseConfidence;
+      const changed = e.value !== undefined && a !== undefined && applySet(a, e.value, confidence);
+      log.push({ at: e.at, kind: e.type, axis: e.axis, answer: changed ? `revised to ${JSON.stringify(e.value)} (confidence ${confidence})` : 'reopened' });
+      continue;
+    }
     if (e.type === 'set') {
       const a = k.axisById.get(e.axis);
-      if (!a) continue;
-      const ev = evidenceFromValue(a, e.value, e.confidence);
-      if (!ev) continue;
-      const r = raw(a.id);
-      applyEvidence(r, a, ev, evidence);
-      if (e.confidence >= 0.5) {
-        r.status = 'decided';
-        if (ev.kind === 'multi') r.pagesSeen = ENGINE.maxMultiPages;
-      }
-      r.source = 'user_statement';
+      if (!a || !applySet(a, e.value, e.confidence)) continue;
       log.push({ at: e.at, kind: 'set', axis: a.id, answer: `${JSON.stringify(e.value)} (confidence ${e.confidence})` });
       continue;
     }

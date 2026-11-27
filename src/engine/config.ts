@@ -73,6 +73,8 @@ export const ENGINE = {
   unsureDeferAfter: 2,
   /** Score penalty for a comparison featuring a game the user said they do not know. */
   unknownGamePenalty: 0.3,
+  /** Confidence of a new position given with versus_revise when the agent passes none. */
+  reviseConfidence: 0.9,
 } as const;
 
 export function isDeterministic(): boolean {

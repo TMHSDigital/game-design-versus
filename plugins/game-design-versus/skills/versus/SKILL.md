@@ -24,7 +24,7 @@ You are the interviewer. The `gdv` MCP server (tools named `versus_*`) is the re
 6. Every 5 rounds, give a one-line recap: what is now settled (from `settled` in the summary) and the core progress (`core.settled` of `core.total`). Clarity can dip when an answer unlocks a module, so lead with core progress.
 7. When `versus_answer` returns `tensions`, ask the probe question in your own words before moving on, and record the reply with `versus_reply` (`tensionId`, the `response` in a sentence or two, and `stance`: `accepted`, `mitigated` or `will_change`). The brief then shows the reply under that risk instead of the probe. If the reply changes a position, also record it with `versus_set`.
 8. When the user explains a nuance the options miss, improvise a follow-up with `versus_ask`: either an existing axis with 2 or 3 games you know well, or a `customAxis` (`custom.<slug>`, label, poleA, poleB). Then ask it like any other question.
-9. Use `versus_undo` if the user wants to change their last answer; pass `round: true` to take back the whole last round.
+9. Use `versus_undo` if the user wants to change their last answer; pass `round: true` to take back the whole last round. If they change their mind about an earlier answer, use `versus_revise` with the axis and the new `value` (or no value to ask it again); later rounds stay in place.
 
 ## Stopping
 

@@ -206,6 +206,7 @@ Sourcing the thin axes is the most useful contribution. Read [docs/library-brief
 | `versus_answer { sessionId, answers: [{ questionId, choice, lean?, note?, selected? }] }` | Record answers; returns clarity deltas, unlocked and skipped modules, tensions and follow-up hints |
 | `versus_ask { sessionId, axis \| customAxis, options: [{ game, how }] }` | Register an improvised (unverified) comparison and get a questionId |
 | `versus_set { sessionId, axis, value, confidence, source }` | Record a fact the user volunteered |
+| `versus_revise { sessionId, axis, value?, confidence? }` | Replace everything recorded on one axis, however many rounds ago, without undoing later rounds; with `value` the axis takes that position, without it the axis is open again. Reports unlocked and skipped modules |
 | `versus_reply { sessionId, tensionId, response, stance?: accepted \| mitigated \| will_change }` | Record the reply to a tension probe; the brief shows it under that risk instead of the probe, and the tension is not raised again |
 | `versus_status { sessionId }` | Core decisions settled, clarity per module, settled decisions, tensions, archetypes, comparables |
 | `versus_undo { sessionId, round?, steps? }` | Undo the last answer, set or skip; `round: true` undoes the whole last `versus_answer` call, `steps` undoes up to 10 events |

@@ -21,7 +21,7 @@ export type Brief = {
   scope: { team: string; timeline: string; mvp: string; verticalSlice: string; activeModules: number; warning?: string };
   risks: { severity: string; message: string; probe?: string; response?: string; stance?: string }[];
   openQuestions: { axis: string; label: string; importance: number; clarity: number; question: string; unsure?: boolean }[];
-  decisionLog: { at: string; kind: string; axis?: string; answer: string; note?: string }[];
+  decisionLog: { at: string; kind: string; axis?: string; answer: string; note?: string; revised?: boolean }[];
   clarity: { overall: number; questionCount: number; stopRecommended: boolean };
 };
 
@@ -270,7 +270,7 @@ export function buildBrief(k: Knowledge, state: SessionState): Brief {
     scope,
     risks,
     openQuestions,
-    decisionLog: state.log.map((l) => ({ at: l.at, kind: l.kind, axis: l.axis, answer: l.answer, note: l.note })),
+    decisionLog: state.log.map((l) => ({ at: l.at, kind: l.kind, axis: l.axis, answer: l.answer, note: l.note, ...(l.revised ? { revised: true } : {}) })),
     clarity: { overall: round(sum.overall), questionCount: sum.questionCount, stopRecommended: sum.stop.recommended },
   };
 }
@@ -353,6 +353,6 @@ export function renderBriefMarkdown(b: Brief): string {
   L.push('## 9. Scope', '', `- Team: ${b.scope.team}`, `- Timeline: ${b.scope.timeline}`, `- Active modules: ${b.scope.activeModules}`, `- MVP: ${b.scope.mvp}`, `- Vertical slice: ${b.scope.verticalSlice}`, '');
   L.push('## 10. Risks', '', ...(b.risks.length ? b.risks.map((r) => `- **${r.severity}**: ${r.message}${r.response ? ` Response${r.stance ? ` (${r.stance.replace('_', ' ')})` : ''}: ${r.response}` : r.probe ? ` Probe: ${r.probe}` : ''}`) : ['- None detected']), '');
   L.push('## 11. Open questions', '', ...(b.openQuestions.length ? b.openQuestions.map((q) => `- (${q.importance}) ${q.question.startsWith(`${q.label}:`) ? q.question : `${q.label}: ${q.question}`} (clarity ${q.clarity}${q.unsure ? '; you were not sure yet' : ''})`) : ['- None below 0.6 clarity']), '');
-  L.push('## 12. Decision log', '', '| When | Kind | Axis | Answer |', '| --- | --- | --- | --- |', ...b.decisionLog.map((d) => `| ${d.at} | ${d.kind} | ${cell(d.axis ?? '')} | ${cell(`${d.answer}${d.note ? ` (${d.note})` : ''}`)} |`), '');
+  L.push('## 12. Decision log', '', '| When | Kind | Axis | Answer |', '| --- | --- | --- | --- |', ...b.decisionLog.map((d) => `| ${d.at} | ${d.kind} | ${cell(d.axis ?? '')} | ${cell(`${d.revised ? '(revised later) ' : ''}${d.answer}${d.note ? ` (${d.note})` : ''}`)} |`), '');
   return L.join('\n').replace(new RegExp('\\u2014', 'g'), ',');
 }

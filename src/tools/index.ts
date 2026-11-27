@@ -193,6 +193,28 @@ export function registerTools(server: McpServer, k: Knowledge): void {
   );
 
   server.registerTool(
+    'versus_revise',
+    {
+      title: 'Revise an earlier answer',
+      description: 'Change what the user said about one axis, however many rounds ago, without undoing later rounds. Every earlier answer, set and constraint on that axis is taken back (the decision log keeps them, marked revised). With value (same forms as versus_set) the axis takes that position; without value it is open again and versus_next can ask it. Reports modules the change unlocked or skipped. versus_undo takes a revise back.',
+      inputSchema: z.object({
+        sessionId,
+        axis: z.string().describe('Axis id, for example combat.sim; a custom.<slug> axis can only be reopened'),
+        value: z.union([z.number(), z.string(), z.array(z.string())]).optional().describe('The new position, as in versus_set; omit to reopen the axis'),
+        confidence: z.number().min(0).max(1).optional().describe('How sure the user is of the new position, 0 to 1. Default 0.9'),
+      }),
+      outputSchema: z.looseObject({ axis: z.string(), status: z.string(), position: z.string(), revised: z.number(), unlockedModules: z.array(z.string()), skippedModules: z.array(z.string()), summary: Summary }),
+    },
+    guard((a) => {
+      const r = svc.revise(k, a.sessionId, a);
+      const lines = [`${r.axis}: ${r.position} (${r.status}); ${r.revised} earlier ${r.revised === 1 ? 'entry' : 'entries'} marked revised.`];
+      if (r.unlockedModules.length) lines.push(`Unlocked: ${r.unlockedModules.join(', ')}.`);
+      if (r.skippedModules.length) lines.push(`Skipped: ${r.skippedModules.join(', ')}.`);
+      return ok(lines.join('\n'), r);
+    }),
+  );
+
+  server.registerTool(
     'versus_reply',
     {
       title: 'Record a tension probe reply',

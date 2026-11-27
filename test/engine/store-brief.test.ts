@@ -353,3 +353,57 @@ describe('tension replies', () => {
     expect(loadSession(id).events.length).toBe(before);
   });
 });
+
+describe('revising an earlier answer', () => {
+  const at = '2026-11-23T00:00:00.000Z';
+  const physicsAnswer: SessionEvent = { type: 'answer', at, choice: 'a', question: { questionId: 'gdv-rev:q1', axis: 'combat.sim', module: 'combat', format: 'comparison', multi: false, options: [{ key: 'a', pole: 'physics', label: 'Half Sword', game: 'Half Sword', how: 'Physics swings' }, { key: 'b', pole: 'animated', label: 'Skyrim', game: 'Skyrim', how: 'Animation swings' }] } };
+  const start: SessionEvent = { type: 'start', at, sessionId: 'gdv-rev', seed: 1 };
+  const tone: SessionEvent = { type: 'set', at, axis: 'exp.tone', value: 2, confidence: 0.9, source: 'user_statement' };
+
+  it('replaces the earlier answer instead of blending with it, and keeps later answers', () => {
+    const revised = foldSession(k, [start, physicsAnswer, tone, { type: 'retract', at, axis: 'combat.sim', value: 'animated', confidence: 0.9 }]);
+    const fresh = foldSession(k, [start, tone, { type: 'set', at, axis: 'combat.sim', value: 'animated', confidence: 0.9, source: 'user_statement' }]);
+    const sim = revised.axes.get('combat.sim')!;
+    expect(sim.lean).toBe('B');
+    expect(sim.leanPct).toBe(fresh.axes.get('combat.sim')!.leanPct);
+    expect(revised.archetypePost).toEqual(fresh.archetypePost);
+    expect(revised.axes.get('exp.tone')!.status).toBe('decided');
+    expect(revised.questionCount).toBe(1);
+    expect(revised.log.find((l) => l.kind === 'answer')?.revised).toBe(true);
+    const md = renderBriefMarkdown(buildBrief(k, revised));
+    expect(md).toContain('(revised later) Half Sword');
+  });
+
+  it('reopens an axis without a value, so it can be asked again', () => {
+    const s = foldSession(k, [start, physicsAnswer, { type: 'retract', at, axis: 'combat.sim' }]);
+    const sim = s.axes.get('combat.sim')!;
+    expect(sim.status).toBe('open');
+    expect(sim.evidenceCount).toBe(0);
+    expect(sim.ref).toBeUndefined();
+  });
+
+  it('reports modules a revised gate skips or unlocks, and undo restores the earlier position', () => {
+    const s = svc.startSession(k, { title: 'Revise', seed: 81 });
+    svc.setFact(k, s.sessionId, { axis: 'genre.family', value: ['puzzle'], confidence: 1 });
+    svc.setFact(k, s.sessionId, { axis: 'combat.sim', value: 'physics', confidence: 1 });
+    const g = svc.revise(k, s.sessionId, { axis: 'genre.family', value: ['strategy'], confidence: 1 });
+    expect(g.revised).toBe(1);
+    expect(g.unlockedModules).toContain('strategy');
+    expect(g.skippedModules).toContain('puzzle');
+
+    const r = svc.revise(k, s.sessionId, { axis: 'combat.sim', value: 'animated' });
+    expect(r.position).toMatch(/Animat/i);
+    svc.undo(k, s.sessionId);
+    const st = foldSession(k, loadSession(s.sessionId).events).axes.get('combat.sim')!;
+    expect(st.lean).toBe('A');
+  });
+
+  it('rejects unknown axes, values that do not fit, and reopening an axis with nothing recorded', () => {
+    const s = svc.startSession(k, { title: 'Revise errors', seed: 82 });
+    const before = loadSession(s.sessionId).events.length;
+    expect(() => svc.revise(k, s.sessionId, { axis: 'combat.banana' })).toThrow(/unknown axis/);
+    expect(() => svc.revise(k, s.sessionId, { axis: 'combat.sim', value: 'banana' })).toThrow(/does not fit/);
+    expect(() => svc.revise(k, s.sessionId, { axis: 'combat.sim' })).toThrow(/nothing is recorded/);
+    expect(loadSession(s.sessionId).events.length).toBe(before);
+  });
+});
