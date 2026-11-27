@@ -149,6 +149,7 @@ section { scroll-margin-top: 16px; }
 .start { display: flex; gap: 16px; align-items: flex-end; flex-wrap: wrap; }
 .resume { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
 .other { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; margin-top: 12px; }
+.other[hidden] { display: none; }
 .other label { font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .05em; width: 100%; }
 .other input { flex: 1; min-width: 200px; font: 17px var(--serif); padding: 9px 12px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); }
 .other input:focus { border-color: var(--ink); }
