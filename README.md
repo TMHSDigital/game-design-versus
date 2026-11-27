@@ -210,6 +210,7 @@ Sourcing the thin axes is the most useful contribution. Read [docs/library-brief
 | `versus_reply { sessionId, tensionId, response, stance?: accepted \| mitigated \| will_change }` | Record the reply to a tension probe; the brief shows it under that risk instead of the probe, and the tension is not raised again |
 | `versus_status { sessionId }` | Core decisions settled, clarity per module, settled decisions, tensions, archetypes, comparables |
 | `versus_undo { sessionId, round?, steps? }` | Undo the last answer, set or skip; `round: true` undoes the whole last `versus_answer` call, `steps` undoes up to 10 events |
+| `versus_import { path? \| snapshot? }` | Continue a session exported from the browser demo ("Download session (.json)") under a new session id; the log is validated and replayed before it is saved |
 | `versus_list {}` | Saved sessions |
 | `versus_brief { sessionId, format: markdown \| json, outPath?, overwrite? }` | The GDD seed brief; a relative outPath resolves against the server's working directory, and an existing file is only replaced with `overwrite: true` |
 | `versus_catalog { module?, axis?, game?, query? }` | Browse axes and comparisons |

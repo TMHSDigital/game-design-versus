@@ -12,6 +12,7 @@ import {
 import { nextQuestions, type RenderedQuestion } from '../engine/selection';
 import { buildBrief, renderBriefMarkdown, settledDecisions, type Brief } from '../engine/brief';
 import { rankAffinity } from '../engine/affinity';
+import { buildSessionExport, type SessionExport } from '../engine/transfer';
 
 export type DemoOption = { key: string; label: string; game?: string; year?: number; how?: string; pole: string; poleLabel: string };
 export type DemoQuestion = {
@@ -101,6 +102,11 @@ export class VersusDemo {
   /** The state to save for restore(). */
   snapshot(): DemoSnapshot {
     return { events: [...this.events], issued: this.issued };
+  }
+
+  /** A file the MCP server can continue with versus_import. */
+  exportSession(): SessionExport {
+    return buildSessionExport(this.k, this.events, this.issued);
   }
 
   get title(): string | undefined {

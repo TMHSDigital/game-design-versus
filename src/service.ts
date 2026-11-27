@@ -1,4 +1,4 @@
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, isAbsolute, resolve } from 'node:path';
 import type { Knowledge } from './engine/data';
 import { isBinary, type Axis } from './engine/ontology';
@@ -12,6 +12,7 @@ import { nextQuestions, renderQuestion, type RenderedQuestion } from './engine/s
 import { buildBrief, renderBriefMarkdown, positionText, settledDecisions, type Brief } from './engine/brief';
 import { loadSession, newSessionId, saveSession, listSessions, type SessionFile } from './store/fs-store';
 import { rankAffinity } from './engine/affinity';
+import { parseSessionExport } from './engine/transfer';
 
 const now = () => new Date().toISOString();
 
@@ -357,6 +358,38 @@ export function undo(k: Knowledge, sessionId: string, opts: { steps?: number; ro
   f.pending = {};
   saveSession(f);
   return { ...summarize(k, f), undone: n };
+}
+
+/**
+ * Continues a session exported from the browser demo (or another machine) under a new session id. The file is
+ * validated and replayed before anything is saved.
+ */
+export function importSession(k: Knowledge, input: { snapshot?: unknown; path?: string }) {
+  if ((input.snapshot === undefined) === (input.path === undefined)) throw new Error('pass either snapshot or path');
+  let raw = input.snapshot;
+  if (input.path !== undefined) {
+    const p = isAbsolute(input.path) ? input.path : resolve(process.cwd(), input.path);
+    try {
+      raw = readFileSync(p, 'utf8');
+    } catch (e) {
+      throw new Error(`cannot read ${p}: ${(e as Error).message}`, { cause: e });
+    }
+  }
+  if (typeof raw === 'string') {
+    try {
+      raw = JSON.parse(raw) as unknown;
+    } catch (e) {
+      throw new Error(`not a game-design-versus session: invalid JSON (${(e as Error).message})`, { cause: e });
+    }
+  }
+  const parsed = parseSessionExport(k, raw);
+  const [start, ...rest] = parsed.events;
+  if (start?.type !== 'start') throw new Error('not a game-design-versus session');
+  const id = newSessionId();
+  const at = now();
+  const f: SessionFile = { schemaVersion: 1, id, createdAt: at, updatedAt: at, events: [{ ...start, sessionId: id }, ...rest], pending: {}, issued: parsed.issued };
+  saveSession(f);
+  return { ...summarize(k, f), importedFrom: start.sessionId, warnings: parsed.warnings };
 }
 
 export function list(k: Knowledge) {

@@ -8,6 +8,7 @@ import * as svc from '../../src/service';
 import { buildBrief, renderBriefMarkdown, settledDecisions } from '../../src/engine/brief';
 import { foldSession, SYSTEMS_CHECKLIST, type SessionEvent } from '../../src/engine/session';
 import { PERSONAS, runPersona } from '../../src/engine/simulate';
+import { VersusDemo, demoKnowledge } from '../../src/web/demo';
 
 const k = knowledge();
 let home: string;
@@ -405,5 +406,60 @@ describe('revising an earlier answer', () => {
     expect(() => svc.revise(k, s.sessionId, { axis: 'combat.sim', value: 'banana' })).toThrow(/does not fit/);
     expect(() => svc.revise(k, s.sessionId, { axis: 'combat.sim' })).toThrow(/nothing is recorded/);
     expect(loadSession(s.sessionId).events.length).toBe(before);
+  });
+});
+
+describe('importing a demo session', () => {
+  const playDemo = () => {
+    const d = new VersusDemo(demoKnowledge(), { title: 'Carry Over', pitch: 'A farming sim', seed: 13 });
+    for (let i = 0; i < 12; i++) {
+      const [q] = d.next(1);
+      if (!q) break;
+      if (q.multi) d.answer(q.questionId, 'neither', [q.options[0]!.key]);
+      else d.answer(q.questionId, 'a');
+    }
+    d.undo();
+    return d;
+  };
+
+  it('folds to the same summary as the demo and can be continued', () => {
+    const d = playDemo();
+    const demoSum = d.summary();
+    const r = svc.importSession(k, { snapshot: d.exportSession() });
+    expect(r.importedFrom).toBe(d.id);
+    expect(r.sessionId).not.toBe(d.id);
+    expect(r.warnings).toEqual([]);
+    expect(r.questionCount).toBe(demoSum.questionCount);
+    expect(r.overallClarity).toBe(demoSum.clarity);
+    expect(r.core).toEqual(demoSum.core);
+    expect(r.settled.slice(0, 8)).toEqual(demoSum.settled);
+    const f = loadSession(r.sessionId);
+    expect(f.events[0]).toMatchObject({ type: 'start', sessionId: r.sessionId, title: 'Carry Over' });
+    const n = svc.next(k, r.sessionId, 2);
+    expect(n.questions.length).toBeGreaterThan(0);
+    expect(n.questions[0]!.questionId.startsWith(`${r.sessionId}:`)).toBe(true);
+  });
+
+  it('reads an exported file from a path and warns when the library differs', () => {
+    const exp = playDemo().exportSession();
+    const path = join(home, 'carry-over-session.json');
+    writeFileSync(path, JSON.stringify({ ...exp, library: { axes: 1, comparisons: 2 } }));
+    const r = svc.importSession(k, { path });
+    expect(r.questionCount).toBeGreaterThan(0);
+    expect(r.warnings[0]).toMatch(/library of 1 axes and 2 comparisons/);
+  });
+
+  it('rejects invalid files and saves nothing', () => {
+    const exp = playDemo().exportSession();
+    const count = () => readdirSync(sessionsDir()).length;
+    const before = count();
+    expect(() => svc.importSession(k, { snapshot: '{not json' })).toThrow(/invalid JSON/);
+    expect(() => svc.importSession(k, { snapshot: { events: [] } })).toThrow(/not a game-design-versus session/);
+    expect(() => svc.importSession(k, { snapshot: { events: exp.events.slice(1) } })).toThrow(/start event/);
+    const broken = { ...exp, events: [exp.events[0], { type: 'answer', at: 'x', choice: 'a' }] };
+    expect(() => svc.importSession(k, { snapshot: broken })).toThrow(/events\.1/);
+    expect(() => svc.importSession(k, { path: join(home, 'missing.json') })).toThrow(/cannot read/);
+    expect(() => svc.importSession(k, {})).toThrow(/either snapshot or path/);
+    expect(count()).toBe(before);
   });
 });

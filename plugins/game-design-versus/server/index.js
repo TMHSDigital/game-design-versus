@@ -746,10 +746,10 @@ function getEnumValues(entries) {
 function joinValues(array2, separator = "|") {
   return array2.map((val) => stringifyPrimitive(val)).join(separator);
 }
-function jsonStringifyReplacer(_, value) {
-  if (typeof value === "bigint")
-    return value.toString();
-  return value;
+function jsonStringifyReplacer(_, value2) {
+  if (typeof value2 === "bigint")
+    return value2.toString();
+  return value2;
 }
 var Cached = class {
   constructor(getter) {
@@ -786,17 +786,17 @@ function floatSafeRemainder(val, step) {
 }
 var EVALUATING = /* @__PURE__ */ Symbol("evaluating");
 function defineLazy(object2, key, getter) {
-  let value = void 0;
+  let value2 = void 0;
   Object.defineProperty(object2, key, {
     get() {
-      if (value === EVALUATING) {
+      if (value2 === EVALUATING) {
         return void 0;
       }
-      if (value === void 0) {
-        value = EVALUATING;
-        value = getter();
+      if (value2 === void 0) {
+        value2 = EVALUATING;
+        value2 = getter();
       }
-      return value;
+      return value2;
     },
     set(v) {
       Object.defineProperty(object2, key, {
@@ -810,9 +810,9 @@ function defineLazy(object2, key, getter) {
 function objectClone(obj) {
   return Object.create(Object.getPrototypeOf(obj), Object.getOwnPropertyDescriptors(obj));
 }
-function assignProp(target, prop, value) {
+function assignProp(target, prop, value2) {
   Object.defineProperty(target, prop, {
-    value,
+    value: value2,
     writable: true,
     enumerable: true,
     configurable: true
@@ -828,19 +828,19 @@ function sourceShape(schema) {
 function deferProp(target, key, getter) {
   Object.defineProperty(target, key, {
     get() {
-      const value = getter();
-      assignProp(this, key, value);
-      return value;
+      const value2 = getter();
+      assignProp(this, key, value2);
+      return value2;
     },
     enumerable: true,
     configurable: true
   });
 }
-function putProp(target, key, value) {
+function putProp(target, key, value2) {
   if (key in target)
-    assignProp(target, key, value);
+    assignProp(target, key, value2);
   else
-    target[key] = value;
+    target[key] = value2;
 }
 function mirrorShape(target, source, keys, wrap) {
   const raw = sourceShape(source);
@@ -850,8 +850,8 @@ function mirrorShape(target, source, keys, wrap) {
       continue;
     if (desc.get) {
       deferProp(target, key, () => {
-        const value = source._zod.def.shape[key];
-        return wrap ? wrap(value, key) : value;
+        const value2 = source._zod.def.shape[key];
+        return wrap ? wrap(value2, key) : value2;
       });
     } else
       putProp(target, key, wrap ? wrap(desc.value, key) : desc.value);
@@ -1050,9 +1050,9 @@ function createTransparentProxy(getter) {
       target ?? (target = getter());
       return Reflect.get(target, prop, receiver);
     },
-    set(_, prop, value, receiver) {
+    set(_, prop, value2, receiver) {
       target ?? (target = getter());
-      return Reflect.set(target, prop, value, receiver);
+      return Reflect.set(target, prop, value2, receiver);
     },
     has(_, prop) {
       target ?? (target = getter());
@@ -1076,12 +1076,12 @@ function createTransparentProxy(getter) {
     }
   });
 }
-function stringifyPrimitive(value) {
-  if (typeof value === "bigint")
-    return value.toString() + "n";
-  if (typeof value === "string")
-    return `"${value}"`;
-  return `${value}`;
+function stringifyPrimitive(value2) {
+  if (typeof value2 === "bigint")
+    return value2.toString() + "n";
+  if (typeof value2 === "string")
+    return `"${value2}"`;
+  return `${value2}`;
 }
 function optionalKeys(shape) {
   return Object.keys(shape).filter((k2) => {
@@ -1190,15 +1190,15 @@ function partial(Class2, schema, mask, name = "partial") {
   }
   const selected = mask ? new Set(maskedKeys(schema, mask)) : void 0;
   const newShape = {};
-  mirrorShape(newShape, schema, Reflect.ownKeys(sourceShape(schema)), Class2 && ((value, key) => selected && !selected.has(key) ? value : new Class2({ type: "optional", innerType: value })));
+  mirrorShape(newShape, schema, Reflect.ownKeys(sourceShape(schema)), Class2 && ((value2, key) => selected && !selected.has(key) ? value2 : new Class2({ type: "optional", innerType: value2 })));
   return clone(schema, mergeDefs(schema._zod.def, { shape: newShape, checks: [] }));
 }
 function required(Class2, schema, mask) {
   const selected = mask ? new Set(maskedKeys(schema, mask)) : void 0;
   const newShape = {};
-  mirrorShape(newShape, schema, Reflect.ownKeys(sourceShape(schema)), (value, key) => (
+  mirrorShape(newShape, schema, Reflect.ownKeys(sourceShape(schema)), (value2, key) => (
     // overwrite with non-optional
-    selected && !selected.has(key) ? value : new Class2({ type: "nonoptional", innerType: value })
+    selected && !selected.has(key) ? value2 : new Class2({ type: "nonoptional", innerType: value2 })
   ));
   return clone(schema, mergeDefs(schema._zod.def, { shape: newShape }));
 }
@@ -1393,12 +1393,12 @@ function members(proto, table) {
       defineBound(proto, key, desc.value);
   }
 }
-function own(inst, key, value, enumerable = true) {
-  Object.defineProperty(inst, key, { configurable: true, writable: true, enumerable, value });
-  return value;
+function own(inst, key, value2, enumerable = true) {
+  Object.defineProperty(inst, key, { configurable: true, writable: true, enumerable, value: value2 });
+  return value2;
 }
-function hide(inst, key, value) {
-  return own(inst, key, value, false);
+function hide(inst, key, value2) {
+  return own(inst, key, value2, false);
 }
 // @__NO_SIDE_EFFECTS__
 function derived(computes, table) {
@@ -1410,8 +1410,8 @@ function derived(computes, table) {
       get() {
         return own(this, key, compute(this));
       },
-      set(value) {
-        own(this, key, value);
+      set(value2) {
+        own(this, key, value2);
       }
     });
   }
@@ -1423,8 +1423,8 @@ function defineBound(proto, key, fn) {
     get() {
       return this == null ? fn : own(this, key, fn.bind(this));
     },
-    set(value) {
-      own(this, key, value);
+    set(value2) {
+      own(this, key, value2);
     }
   });
 }
@@ -1455,21 +1455,21 @@ function defineLazyInternal(inst, key, compute) {
       const outer = broke;
       broke = false;
       try {
-        const value = compute(this);
+        const value2 = compute(this);
         if (broke)
           delete this[key];
         else
-          Object.defineProperty(this, key, { configurable: true, writable: true, value });
+          Object.defineProperty(this, key, { configurable: true, writable: true, value: value2 });
         broke = broke || outer;
-        return value;
+        return value2;
       } catch (err) {
         delete this[key];
         broke = broke || outer;
         throw err;
       }
     },
-    set(value) {
-      Object.defineProperty(this, key, { configurable: true, writable: true, value });
+    set(value2) {
+      Object.defineProperty(this, key, { configurable: true, writable: true, value: value2 });
     }
   });
 }
@@ -1486,14 +1486,14 @@ function installLazyProp(inst, key, make, enumerable) {
       Object.defineProperty(this, key, desc);
       return desc.value;
     },
-    set(value) {
-      Object.defineProperty(this, key, { configurable: true, writable: true, enumerable, value });
+    set(value2) {
+      Object.defineProperty(this, key, { configurable: true, writable: true, enumerable, value: value2 });
     }
   });
 }
 var CONSTANT_CATCH = "~constantCatch";
-function constantCatch(value) {
-  const fn = () => value;
+function constantCatch(value2) {
+  const fn = () => value2;
   fn[CONSTANT_CATCH] = true;
   return fn;
 }
@@ -1626,8 +1626,8 @@ function _getMessage() {
   internals.message ?? (internals.message = JSON.stringify(internals.def, jsonStringifyReplacer, 2));
   return internals.message;
 }
-function _setMessage(value) {
-  this._zod.message = value;
+function _setMessage(value2) {
+  this._zod.message = value2;
 }
 var _messageDesc = {
   get: _getMessage,
@@ -1650,12 +1650,12 @@ var initializer = (inst, def) => {
       configurable: true,
       enumerable: false,
       get() {
-        const value = () => this.message;
-        Object.defineProperty(this, "toString", { value, configurable: true, writable: true });
-        return value;
+        const value2 = () => this.message;
+        Object.defineProperty(this, "toString", { value: value2, configurable: true, writable: true });
+        return value2;
       },
-      set(value) {
-        Object.defineProperty(this, "toString", { value, configurable: true, writable: true });
+      set(value2) {
+        Object.defineProperty(this, "toString", { value: value2, configurable: true, writable: true });
       }
     });
   }
@@ -1817,9 +1817,9 @@ function finalizeParams(callee, params) {
   return { callee: params?.callee ?? callee, Err: params?.Err };
 }
 var _parse = (_Err) => {
-  const fn = (schema, value, _ctx, _params) => {
+  const fn = (schema, value2, _ctx, _params) => {
     const ctx = _ctx ? { ..._ctx, async: false } : { async: false };
-    const result = schema._zod.run({ value, issues: [] }, ctx);
+    const result = schema._zod.run({ value: value2, issues: [] }, ctx);
     if (result instanceof Promise) {
       throw new $ZodAsyncError();
     }
@@ -1834,9 +1834,9 @@ var _parse = (_Err) => {
 };
 var parse = /* @__PURE__ */ _parse($ZodRealError);
 var _parseAsync = (_Err) => {
-  const fn = async (schema, value, _ctx, params) => {
+  const fn = async (schema, value2, _ctx, params) => {
     const ctx = _ctx ? { ..._ctx, async: true } : { async: true };
-    let result = schema._zod.run({ value, issues: [] }, ctx);
+    let result = schema._zod.run({ value: value2, issues: [] }, ctx);
     if (result instanceof Promise)
       result = await result;
     if (result.issues.length) {
@@ -1849,9 +1849,9 @@ var _parseAsync = (_Err) => {
   return fn;
 };
 var parseAsync = /* @__PURE__ */ _parseAsync($ZodRealError);
-var _safeParse = (_Err) => (schema, value, _ctx) => {
+var _safeParse = (_Err) => (schema, value2, _ctx) => {
   const ctx = _ctx ? { ..._ctx, async: false } : { async: false };
-  const result = schema._zod.run({ value, issues: [] }, ctx);
+  const result = schema._zod.run({ value: value2, issues: [] }, ctx);
   if (result instanceof Promise) {
     throw new $ZodAsyncError();
   }
@@ -1877,9 +1877,9 @@ function failure(Err, issues, ctx) {
     }
   };
 }
-var _safeParseAsync = (_Err) => async (schema, value, _ctx) => {
+var _safeParseAsync = (_Err) => async (schema, value2, _ctx) => {
   const ctx = _ctx ? { ..._ctx, async: true } : { async: true };
-  let result = schema._zod.run({ value, issues: [] }, ctx);
+  let result = schema._zod.run({ value: value2, issues: [] }, ctx);
   if (result instanceof Promise)
     result = await result;
   return result.issues.length ? failure(_Err, result.issues, ctx) : { success: true, data: result.value };
@@ -1887,88 +1887,88 @@ var _safeParseAsync = (_Err) => async (schema, value, _ctx) => {
 var safeParseAsync = /* @__PURE__ */ _safeParseAsync($ZodRealError);
 var COMPILE_INVALID = /* @__PURE__ */ Symbol.for("zod.compile.invalid");
 var COMPILE_FALLBACK = /* @__PURE__ */ Symbol.for("zod.compile.fallback");
-var validate = ((schema, value, _ctx) => {
+var validate = ((schema, value2, _ctx) => {
   const validator = schema._zod.bag.validator;
   if (validator !== void 0) {
-    if (validator(value) !== COMPILE_INVALID)
+    if (validator(value2) !== COMPILE_INVALID)
       return true;
     if (validator.definite === true && _ctx === void 0)
       return false;
   }
-  return validateFallback(schema, value, _ctx);
+  return validateFallback(schema, value2, _ctx);
 });
-function validateFallback(schema, value, _ctx) {
+function validateFallback(schema, value2, _ctx) {
   const ctx = _ctx ? { ..._ctx, async: false, abortEarly: true } : { async: false, abortEarly: true };
   const fallbackRun = schema._zod.bag.fallbackRun;
   let result;
   if (fallbackRun) {
     ctx[COMPILE_FALLBACK] = true;
-    result = fallbackRun({ value, issues: [] }, ctx);
+    result = fallbackRun({ value: value2, issues: [] }, ctx);
   } else {
-    result = schema._zod.run({ value, issues: [] }, ctx);
+    result = schema._zod.run({ value: value2, issues: [] }, ctx);
   }
   if (result instanceof Promise) {
     throw new $ZodAsyncError();
   }
   return result.issues.length === 0;
 }
-var validateAsync = async (schema, value, _ctx) => {
+var validateAsync = async (schema, value2, _ctx) => {
   const ctx = _ctx ? { ..._ctx, async: true, abortEarly: true } : { async: true, abortEarly: true };
-  let result = schema._zod.run({ value, issues: [] }, ctx);
+  let result = schema._zod.run({ value: value2, issues: [] }, ctx);
   if (result instanceof Promise)
     result = await result;
   return result.issues.length === 0;
 };
 var _encode = (_Err) => {
   const parse3 = _parse(_Err);
-  const fn = (schema, value, _ctx, _params) => {
+  const fn = (schema, value2, _ctx, _params) => {
     const ctx = _ctx ? { ..._ctx, direction: "backward" } : { direction: "backward" };
-    return parse3(schema, value, ctx, finalizeParams(fn, _params));
+    return parse3(schema, value2, ctx, finalizeParams(fn, _params));
   };
   return fn;
 };
 var encode = /* @__PURE__ */ _encode($ZodRealError);
 var _decode = (_Err) => {
   const parse3 = _parse(_Err);
-  const fn = (schema, value, _ctx, _params) => {
-    return parse3(schema, value, _ctx, finalizeParams(fn, _params));
+  const fn = (schema, value2, _ctx, _params) => {
+    return parse3(schema, value2, _ctx, finalizeParams(fn, _params));
   };
   return fn;
 };
 var decode = /* @__PURE__ */ _decode($ZodRealError);
 var _encodeAsync = (_Err) => {
   const parseAsync3 = _parseAsync(_Err);
-  const fn = async (schema, value, _ctx, _params) => {
+  const fn = async (schema, value2, _ctx, _params) => {
     const ctx = _ctx ? { ..._ctx, direction: "backward" } : { direction: "backward" };
-    return await parseAsync3(schema, value, ctx, finalizeParams(fn, _params));
+    return await parseAsync3(schema, value2, ctx, finalizeParams(fn, _params));
   };
   return fn;
 };
 var encodeAsync = /* @__PURE__ */ _encodeAsync($ZodRealError);
 var _decodeAsync = (_Err) => {
   const parseAsync3 = _parseAsync(_Err);
-  const fn = async (schema, value, _ctx, _params) => {
-    return await parseAsync3(schema, value, _ctx, finalizeParams(fn, _params));
+  const fn = async (schema, value2, _ctx, _params) => {
+    return await parseAsync3(schema, value2, _ctx, finalizeParams(fn, _params));
   };
   return fn;
 };
 var decodeAsync = /* @__PURE__ */ _decodeAsync($ZodRealError);
-var _safeEncode = (_Err) => (schema, value, _ctx) => {
+var _safeEncode = (_Err) => (schema, value2, _ctx) => {
   const ctx = _ctx ? { ..._ctx, direction: "backward" } : { direction: "backward" };
-  return _safeParse(_Err)(schema, value, ctx);
+  return _safeParse(_Err)(schema, value2, ctx);
 };
 var safeEncode = /* @__PURE__ */ _safeEncode($ZodRealError);
-var _safeDecode = (_Err) => (schema, value, _ctx) => {
-  return _safeParse(_Err)(schema, value, _ctx);
+var _safeDecode = (_Err) => (schema, value2, _ctx) => {
+  return _safeParse(_Err)(schema, value2, _ctx);
 };
 var safeDecode = /* @__PURE__ */ _safeDecode($ZodRealError);
-var _safeEncodeAsync = (_Err) => async (schema, value, _ctx) => {
+var _safeEncodeAsync = (_Err) => async (schema, value2, _ctx) => {
   const ctx = _ctx ? { ..._ctx, direction: "backward" } : { direction: "backward" };
-  return _safeParseAsync(_Err)(schema, value, ctx);
+  return _safeParseAsync(_Err)(schema, value2, ctx);
 };
 var safeEncodeAsync = /* @__PURE__ */ _safeEncodeAsync($ZodRealError);
-var _safeDecodeAsync = (_Err) => async (schema, value, _ctx) => {
-  return _safeParseAsync(_Err)(schema, value, _ctx);
+var _safeDecodeAsync = (_Err) => async (schema, value2, _ctx) => {
+  return _safeParseAsync(_Err)(schema, value2, _ctx);
 };
 var safeDecodeAsync = /* @__PURE__ */ _safeDecodeAsync($ZodRealError);
 
@@ -2774,26 +2774,26 @@ var $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
   get "~standard"() {
     return hide(this, "~standard", standardProps(this));
   },
-  set "~standard"(value) {
-    own(this, "~standard", value);
+  set "~standard"(value2) {
+    own(this, "~standard", value2);
   }
 });
 var toStandardResult = (r, ctx) => r.issues.length ? { issues: r.issues.map((iss) => finalizeIssue(iss, ctx, config())) } : { value: r.value };
-async function validateAsync2(inst, value) {
+async function validateAsync2(inst, value2) {
   const ctx = { async: true };
-  return toStandardResult(await inst._zod.run({ value, issues: [] }, ctx), ctx);
+  return toStandardResult(await inst._zod.run({ value: value2, issues: [] }, ctx), ctx);
 }
 function standardProps(inst) {
   return {
-    validate: (value) => {
+    validate: (value2) => {
       const ctx = { async: false };
       try {
-        const r = inst._zod.run({ value, issues: [] }, ctx);
+        const r = inst._zod.run({ value: value2, issues: [] }, ctx);
         if (!(r instanceof Promise))
           return toStandardResult(r, ctx);
       } catch (_) {
       }
-      return validateAsync2(inst, value);
+      return validateAsync2(inst, value2);
     },
     vendor: "zod",
     version: 1
@@ -2885,8 +2885,8 @@ function parseURLObject(trimmed, def) {
   }
 }
 var asciiTabOrNewline = /[\t\n\r]/g;
-function stripTabAndNewline(value) {
-  return value.replace(asciiTabOrNewline, "");
+function stripTabAndNewline(value2) {
+  return value2.replace(asciiTabOrNewline, "");
 }
 function urlHostnameOk(url2, hostname3) {
   hostname3.lastIndex = 0;
@@ -3013,10 +3013,10 @@ var $ZodIPv4 = /* @__PURE__ */ $constructor("$ZodIPv4", (inst, def) => {
   $ZodStringFormat.init(inst, def);
 });
 var ipv6Alphabet = /^[0-9a-fA-F:.]+$/;
-function isValidIPv6(value) {
-  if (!ipv6Alphabet.test(value))
+function isValidIPv6(value2) {
+  if (!ipv6Alphabet.test(value2))
     return false;
-  return canParseURL(`http://[${value}]`);
+  return canParseURL(`http://[${value2}]`);
 }
 var $ZodIPv6 = /* @__PURE__ */ $constructor("$ZodIPv6", (inst, def) => {
   def.pattern ?? (def.pattern = ipv6);
@@ -3041,8 +3041,8 @@ var $ZodCIDRv4 = /* @__PURE__ */ $constructor("$ZodCIDRv4", (inst, def) => {
   def.pattern ?? (def.pattern = cidrv4);
   $ZodStringFormat.init(inst, def);
 });
-function isValidCIDRv6(value) {
-  const parts = value.split("/");
+function isValidCIDRv6(value2) {
+  const parts = value2.split("/");
   if (parts.length !== 2)
     return false;
   const [address, prefix] = parts;
@@ -3133,9 +3133,9 @@ function isLuhnAlgo(digits) {
   let bit = 1;
   let sum = 0;
   while (length) {
-    const value = digits.charCodeAt(--length) - 48;
+    const value2 = digits.charCodeAt(--length) - 48;
     bit ^= 1;
-    sum += bit ? [0, 2, 4, 6, 8, 1, 3, 5, 7, 9][value] : value;
+    sum += bit ? [0, 2, 4, 6, 8, 1, 3, 5, 7, 9][value2] : value2;
   }
   return sum % 10 === 0;
 }
@@ -3626,11 +3626,11 @@ var $ZodObject = /* @__PURE__ */ $constructor("$ZodObject", (inst, def) => {
   });
   const isObject2 = isObject;
   const catchall = def.catchall;
-  let value;
+  let value2;
   const memo3 = globalConfig.memoizer;
   memo3?.attach(inst);
   inst._zod.parse = (payload, ctx) => {
-    value ?? (value = _normalized.value);
+    value2 ?? (value2 = _normalized.value);
     const input2 = payload.value;
     if (!isObject2(input2)) {
       payload.issues.push({
@@ -3643,10 +3643,10 @@ var $ZodObject = /* @__PURE__ */ $constructor("$ZodObject", (inst, def) => {
     }
     payload.value = memo3 ? memo3.alloc(inst, payload, {}, ctx) : {};
     const proms = [];
-    const shape = value.shape;
+    const shape = value2.shape;
     const abortEarly = ctx?.abortEarly;
     let seen = payload.issues.length;
-    for (const key of value.allKeys) {
+    for (const key of value2.allKeys) {
       if (abortEarly && payload.issues.length !== seen) {
         if (aborted(payload, seen))
           break;
@@ -3773,9 +3773,9 @@ var $ZodObjectJIT = /* @__PURE__ */ $constructor("$ZodObjectJIT", (inst, def) =>
   const allowsEval2 = allowsEval;
   const fastEnabled = jit && allowsEval2.value;
   const catchall = def.catchall;
-  let value;
+  let value2;
   inst._zod.parse = (payload, ctx) => {
-    value ?? (value = _normalized.value);
+    value2 ?? (value2 = _normalized.value);
     const input2 = payload.value;
     if (!isObject2(input2)) {
       payload.issues.push({
@@ -3792,7 +3792,7 @@ var $ZodObjectJIT = /* @__PURE__ */ $constructor("$ZodObjectJIT", (inst, def) =>
       payload = fastpass(payload, ctx);
       if (!catchall)
         return payload;
-      return handleCatchall([], input2, payload, ctx, value, inst, ctx?.abortEarly === true);
+      return handleCatchall([], input2, payload, ctx, value2, inst, ctx?.abortEarly === true);
     }
     return superParse(payload, ctx);
   };
@@ -3823,7 +3823,7 @@ var $ZodUnion = /* @__PURE__ */ $constructor("$ZodUnion", (inst, def) => {
   defineLazyInternal(inst, "optout", (zod) => zod.def.options.some((o) => o._zod.optout === "optional") ? "optional" : void 0);
   defineLazyInternal(inst, "values", (zod) => {
     if (zod.def.options.every((o) => o._zod.values)) {
-      return new Set(zod.def.options.flatMap((option) => Array.from(option._zod.values)));
+      return new Set(zod.def.options.flatMap((option2) => Array.from(option2._zod.values)));
     }
     return void 0;
   });
@@ -3841,8 +3841,8 @@ var $ZodUnion = /* @__PURE__ */ $constructor("$ZodUnion", (inst, def) => {
     }
     let async = false;
     const results = [];
-    for (const option of def.options) {
-      const result = option._zod.run({
+    for (const option2 of def.options) {
+      const result = option2._zod.run({
         value: payload.value,
         issues: []
       }, ctx);
@@ -3901,8 +3901,8 @@ var $ZodXor = /* @__PURE__ */ $constructor("$ZodXor", (inst, def) => {
     }
     let async = false;
     const results = [];
-    for (const option of def.options) {
-      const result = option._zod.run({
+    for (const option2 of def.options) {
+      const result = option2._zod.run({
         value: payload.value,
         issues: []
       }, ctx);
@@ -3920,31 +3920,31 @@ var $ZodXor = /* @__PURE__ */ $constructor("$ZodXor", (inst, def) => {
     });
   };
 });
-function getDiscriminatedOption(union2, value) {
+function getDiscriminatedOption(union2, value2) {
   const internals = union2._zod;
   let map2 = internals.bag.optionsMap;
   if (!map2) {
     map2 = discriminatorMap(internals.def);
     internals.bag.optionsMap = map2;
   }
-  const option = map2.get(value);
-  if (option === null)
-    throw new Error(`Ambiguous discriminator value "${String(value)}"`);
-  return option;
+  const option2 = map2.get(value2);
+  if (option2 === null)
+    throw new Error(`Ambiguous discriminator value "${String(value2)}"`);
+  return option2;
 }
 function discriminatorMap(def) {
   const map2 = /* @__PURE__ */ new Map();
-  for (const option of def.options) {
-    const values = option._zod.propValues?.[def.discriminator];
+  for (const option2 of def.options) {
+    const values = option2._zod.propValues?.[def.discriminator];
     if (!values || values.size === 0)
-      throw new Error(`Invalid discriminated union option at index "${def.options.indexOf(option)}"`);
-    for (const value of values) {
-      if (map2.has(value)) {
-        if (value !== void 0)
-          throw new Error(`Duplicate discriminator value "${String(value)}"`);
-        map2.set(value, null);
+      throw new Error(`Invalid discriminated union option at index "${def.options.indexOf(option2)}"`);
+    for (const value2 of values) {
+      if (map2.has(value2)) {
+        if (value2 !== void 0)
+          throw new Error(`Duplicate discriminator value "${String(value2)}"`);
+        map2.set(value2, null);
       } else {
-        map2.set(value, option);
+        map2.set(value2, option2);
       }
     }
   }
@@ -3957,10 +3957,10 @@ var $ZodDiscriminatedUnion = /* @__PURE__ */ $constructor("$ZodDiscriminatedUnio
   defineLazyInternal(inst, "propValues", (zod) => {
     const propValues = {};
     let undefinedCount = 0;
-    for (const option of zod.def.options) {
-      const pv = option._zod.propValues;
+    for (const option2 of zod.def.options) {
+      const pv = option2._zod.propValues;
       if (!pv || Object.keys(pv).length === 0)
-        throw new Error(`Invalid discriminated union option at index "${zod.def.options.indexOf(option)}"`);
+        throw new Error(`Invalid discriminated union option at index "${zod.def.options.indexOf(option2)}"`);
       if (pv[zod.def.discriminator]?.has(void 0))
         undefinedCount++;
       for (const [k2, v] of Object.entries(pv)) {
@@ -3976,8 +3976,8 @@ var $ZodDiscriminatedUnion = /* @__PURE__ */ $constructor("$ZodDiscriminatedUnio
       propValues[zod.def.discriminator]?.delete(void 0);
     return propValues;
   });
-  def.options.forEach((option, i) => {
-    const propShape = rawShape(option._zod.def);
+  def.options.forEach((option2, i) => {
+    const propShape = rawShape(option2._zod.def);
     if (propShape && !Object.prototype.hasOwnProperty.call(propShape, def.discriminator)) {
       throw new Error(`Invalid discriminated union option at index "${i}"`);
     }
@@ -3994,9 +3994,9 @@ var $ZodDiscriminatedUnion = /* @__PURE__ */ $constructor("$ZodDiscriminatedUnio
       });
       return payload;
     }
-    const value = input2?.[def.discriminator];
-    const opt = disc.value.get(value);
-    if (opt && (value !== void 0 || ctx.direction !== "backward")) {
+    const value2 = input2?.[def.discriminator];
+    const opt = disc.value.get(value2);
+    if (opt && (value2 !== void 0 || ctx.direction !== "backward")) {
       return opt._zod.run(payload, ctx);
     }
     if (def.unionFallback || ctx.direction === "backward") {
@@ -4007,7 +4007,7 @@ var $ZodDiscriminatedUnion = /* @__PURE__ */ $constructor("$ZodDiscriminatedUnio
       errors: [],
       note: "No matching discriminator",
       discriminator: def.discriminator,
-      options: Array.from(disc.value.keys()).filter((value2) => disc.value.get(value2) !== null),
+      options: Array.from(disc.value.keys()).filter((value3) => disc.value.get(value3) !== null),
       input: input2,
       path: [def.discriminator],
       inst
@@ -4426,14 +4426,14 @@ var $ZodMap = /* @__PURE__ */ $constructor("$ZodMap", (inst, def) => {
     payload.value = memo3 ? memo3.alloc(inst, payload, /* @__PURE__ */ new Map(), ctx) : /* @__PURE__ */ new Map();
     const abortEarly = ctx?.abortEarly;
     let seen = payload.issues.length;
-    for (const [key, value] of input2) {
+    for (const [key, value2] of input2) {
       if (abortEarly && payload.issues.length !== seen) {
         if (aborted(payload, seen))
           break;
         seen = payload.issues.length;
       }
       const keyResult = def.keyType._zod.run({ value: key, issues: [] }, ctx);
-      const valueResult = def.valueType._zod.run({ value, issues: [] }, ctx);
+      const valueResult = def.valueType._zod.run({ value: value2, issues: [] }, ctx);
       if (keyResult instanceof Promise || valueResult instanceof Promise) {
         proms.push(Promise.all([keyResult, valueResult]).then(([keyResult2, valueResult2]) => {
           handleMapResult(keyResult2, valueResult2, payload, key, input2, inst, ctx);
@@ -4846,23 +4846,23 @@ function handleCodecAResult(result, def, ctx) {
   if (direction === "forward") {
     const transformed = def.transform(result.value, result);
     if (transformed instanceof Promise) {
-      return transformed.then((value) => handleCodecTxResult(result, value, def.out, ctx));
+      return transformed.then((value2) => handleCodecTxResult(result, value2, def.out, ctx));
     }
     return handleCodecTxResult(result, transformed, def.out, ctx);
   } else {
     const transformed = def.reverseTransform(result.value, result);
     if (transformed instanceof Promise) {
-      return transformed.then((value) => handleCodecTxResult(result, value, def.in, ctx));
+      return transformed.then((value2) => handleCodecTxResult(result, value2, def.in, ctx));
     }
     return handleCodecTxResult(result, transformed, def.in, ctx);
   }
 }
-function handleCodecTxResult(left, value, nextSchema, ctx) {
+function handleCodecTxResult(left, value2, nextSchema, ctx) {
   if (left.issues.length) {
     left.aborted = true;
     return left;
   }
-  return nextSchema._zod.run({ value, issues: left.issues }, ctx);
+  return nextSchema._zod.run({ value: value2, issues: left.issues }, ctx);
 }
 var $ZodPreprocess = /* @__PURE__ */ $constructor("$ZodPreprocess", (inst, def) => {
   $ZodPipe.init(inst, def);
@@ -5119,8 +5119,8 @@ var $ZodCyclicError = class extends Error {
 };
 var STATE = "~memo";
 var NO_ISSUES = [];
-function isRef(value) {
-  return value !== null && typeof value === "object";
+function isRef(value2) {
+  return value2 !== null && typeof value2 === "object";
 }
 function cloneIssues(issues) {
   return issues.map((iss) => iss.path ? { ...iss, path: iss.path.slice() } : { ...iss });
@@ -5247,13 +5247,13 @@ function isRecursive(inst, stack, resolve2) {
         const desc = Object.getOwnPropertyDescriptor(def, key);
         if (!desc || desc.get)
           continue;
-        const value = desc.value;
-        if (!value || typeof value !== "object")
+        const value2 = desc.value;
+        if (!value2 || typeof value2 !== "object")
           continue;
-        if (value._zod)
-          check2(value);
-        else if (Array.isArray(value))
-          for (const el of value)
+        if (value2._zod)
+          check2(value2);
+        else if (Array.isArray(value2))
+          for (const el of value2)
             check2(el);
       }
     }
@@ -5382,9 +5382,9 @@ var memo = {
 function memoizer() {
   return memo;
 }
-function isBackEdge(ctx, value) {
+function isBackEdge(ctx, value2) {
   const backEdges = ctx[STATE]?.backEdges;
-  return backEdges !== void 0 && isRef(value) && backEdges.has(value);
+  return backEdges !== void 0 && isRef(value2) && backEdges.has(value2);
 }
 
 // node_modules/zod/v4/locales/index.js
@@ -13134,13 +13134,13 @@ ${code}
   fn.definite = ctx.definite;
   return fn;
 }
-function addConstant(ctx, value) {
+function addConstant(ctx, value2) {
   for (const [name2, v] of ctx.constants) {
-    if (v === value)
+    if (v === value2)
       return name2;
   }
   const name = `c${ctx.constantCounter++}`;
-  ctx.constants.set(name, value);
+  ctx.constants.set(name, value2);
   return name;
 }
 function addUserConstant(ctx, fn) {
@@ -13150,8 +13150,8 @@ function addUserConstant(ctx, fn) {
 function newVar(ctx) {
   return `v${ctx.varCounter++}`;
 }
-function runtimeRun(schema, value) {
-  const result = schema._zod.run({ value, issues: [] }, {});
+function runtimeRun(schema, value2) {
+  const result = schema._zod.run({ value: value2, issues: [] }, {});
   if (result && typeof result.then === "function")
     return INVALID;
   const r = result;
@@ -13283,27 +13283,27 @@ function codePointLengthVar(doc, ctx, accessor, inDoubt) {
   doc.write(`const ${v} = typeof ${accessor} === "string" && ${inDoubt} ? ${cpLen}(${accessor}) : ${accessor}.length;`);
   return v;
 }
-function numericOperand(value, label) {
-  if (typeof value !== "number" || !Number.isFinite(value)) {
-    throw new ZodCompileUnsupportedError(`${label} bound of type ${typeof value}`);
+function numericOperand(value2, label) {
+  if (typeof value2 !== "number" || !Number.isFinite(value2)) {
+    throw new ZodCompileUnsupportedError(`${label} bound of type ${typeof value2}`);
   }
-  return `${value}`;
+  return `${value2}`;
 }
-function comparisonOperand(ctx, value) {
-  if (typeof value === "bigint")
-    return `${value}n`;
-  if (typeof value === "number") {
-    if (Number.isNaN(value))
+function comparisonOperand(ctx, value2) {
+  if (typeof value2 === "bigint")
+    return `${value2}n`;
+  if (typeof value2 === "number") {
+    if (Number.isNaN(value2))
       throw new ZodCompileUnsupportedError("comparison check with NaN bound");
-    return `${value}`;
+    return `${value2}`;
   }
-  if (value instanceof Date) {
-    if (Number.isNaN(value.getTime())) {
+  if (value2 instanceof Date) {
+    if (Number.isNaN(value2.getTime())) {
       throw new ZodCompileUnsupportedError("comparison check with Invalid Date bound");
     }
-    return addConstant(ctx, value);
+    return addConstant(ctx, value2);
   }
-  throw new ZodCompileUnsupportedError(`comparison check bound of type ${typeof value}`);
+  throw new ZodCompileUnsupportedError(`comparison check bound of type ${typeof value2}`);
 }
 function generateGreaterThanCheck(doc, ctx, def, accessor) {
   const op = def.inclusive ? "<" : "<=";
@@ -13424,8 +13424,8 @@ function generateCustomRefineCheck(doc, ctx, check2, accessor) {
       throw new ZodCompileAsyncError("z.compile: async .superRefine() / check functions are not supported");
     }
     const checkFn = check2._zod.check;
-    const helperFn = (value) => {
-      const fakePayload = { value, issues: [], addIssue: pushIssue };
+    const helperFn = (value2) => {
+      const fakePayload = { value: value2, issues: [], addIssue: pushIssue };
       const result = checkFn(fakePayload);
       if (result instanceof Promise)
         throwAsync();
@@ -14076,24 +14076,24 @@ function generateLiteralCheck(doc, ctx, schema, accessor) {
     doc.write(`if (!${literalSet}.has(${accessor})) return INVALID;`);
     return accessor;
   }
-  const value = values[0];
-  if (typeof value === "number" && Number.isNaN(value)) {
+  const value2 = values[0];
+  if (typeof value2 === "number" && Number.isNaN(value2)) {
     const literalSet = addConstant(ctx, new Set(values));
     doc.write(`if (!${literalSet}.has(${accessor})) return INVALID;`);
     return accessor;
   }
-  if (typeof value === "string") {
-    doc.write(`if (${accessor} !== ${esc(value)}) return INVALID;`);
-  } else if (typeof value === "number" || typeof value === "boolean") {
-    doc.write(`if (${accessor} !== ${value}) return INVALID;`);
-  } else if (value === null) {
+  if (typeof value2 === "string") {
+    doc.write(`if (${accessor} !== ${esc(value2)}) return INVALID;`);
+  } else if (typeof value2 === "number" || typeof value2 === "boolean") {
+    doc.write(`if (${accessor} !== ${value2}) return INVALID;`);
+  } else if (value2 === null) {
     doc.write(`if (${accessor} !== null) return INVALID;`);
-  } else if (value === void 0) {
+  } else if (value2 === void 0) {
     doc.write(`if (${accessor} !== undefined) return INVALID;`);
-  } else if (typeof value === "bigint") {
-    doc.write(`if (${accessor} !== ${value}n) return INVALID;`);
+  } else if (typeof value2 === "bigint") {
+    doc.write(`if (${accessor} !== ${value2}n) return INVALID;`);
   } else {
-    throw new ZodCompileUnsupportedError(`literal type ${typeof value}`);
+    throw new ZodCompileUnsupportedError(`literal type ${typeof value2}`);
   }
   return accessor;
 }
@@ -14288,22 +14288,22 @@ function generateDiscriminatedUnionCheck(doc, ctx, def, accessor) {
   doc.write(`let ${outputVar};`);
   let firstBranch = true;
   const claimed = /* @__PURE__ */ new Set();
-  for (const option of def.options) {
-    const values = option._zod.propValues?.[def.discriminator];
+  for (const option2 of def.options) {
+    const values = option2._zod.propValues?.[def.discriminator];
     if (!values || values.size === 0) {
       throw new ZodCompileUnsupportedError("discriminated union option without static discriminator values");
     }
-    for (const value of values) {
-      if (claimed.has(value)) {
-        throw new ZodCompileUnsupportedError(`duplicate discriminator value ${String(value)}`);
+    for (const value2 of values) {
+      if (claimed.has(value2)) {
+        throw new ZodCompileUnsupportedError(`duplicate discriminator value ${String(value2)}`);
       }
-      claimed.add(value);
+      claimed.add(value2);
     }
-    const conditions = Array.from(values, (value) => literalEquality(ctx, discVar, value));
+    const conditions = Array.from(values, (value2) => literalEquality(ctx, discVar, value2));
     const prefix = firstBranch ? "if" : "else if";
     doc.write(`${prefix} (${conditions.join(" || ")}) {`);
     doc.indented((d) => {
-      const branchOutput = generateCheck(d, ctx, option, accessor);
+      const branchOutput = generateCheck(d, ctx, option2, accessor);
       d.write(`${outputVar} = ${branchOutput};`);
     });
     doc.write(`}`);
@@ -14312,27 +14312,27 @@ function generateDiscriminatedUnionCheck(doc, ctx, def, accessor) {
   doc.write(`else { return INVALID; }`);
   return outputVar;
 }
-function literalEquality(ctx, accessor, value) {
-  if (typeof value === "string")
-    return `${accessor} === ${esc(value)}`;
-  if (typeof value === "number") {
-    if (Number.isNaN(value))
+function literalEquality(ctx, accessor, value2) {
+  if (typeof value2 === "string")
+    return `${accessor} === ${esc(value2)}`;
+  if (typeof value2 === "number") {
+    if (Number.isNaN(value2))
       return `Number.isNaN(${accessor})`;
-    return `${accessor} === ${value}`;
+    return `${accessor} === ${value2}`;
   }
-  if (typeof value === "boolean")
-    return `${accessor} === ${value}`;
-  if (value === null)
+  if (typeof value2 === "boolean")
+    return `${accessor} === ${value2}`;
+  if (value2 === null)
     return `${accessor} === null`;
-  if (value === void 0)
+  if (value2 === void 0)
     return `${accessor} === undefined`;
-  if (typeof value === "bigint")
-    return `${accessor} === ${value}n`;
-  if (typeof value === "symbol") {
-    const symbolConst = addConstant(ctx, value);
+  if (typeof value2 === "bigint")
+    return `${accessor} === ${value2}n`;
+  if (typeof value2 === "symbol") {
+    const symbolConst = addConstant(ctx, value2);
     return `${accessor} === ${symbolConst}`;
   }
-  throw new ZodCompileUnsupportedError(`literal discriminator value ${String(value)}`);
+  throw new ZodCompileUnsupportedError(`literal discriminator value ${String(value2)}`);
 }
 function generateIntersectionCheck(doc, ctx, schema, accessor) {
   const def = schema._zod.def;
@@ -14523,9 +14523,9 @@ function generatePipeCheck(doc, ctx, schema, accessor) {
       throw new ZodCompileAsyncError("z.compile: async transforms in pipes are not supported");
     }
     const transformFn = def.transform;
-    const helperFn = (value) => {
-      const fakePayload = { value, issues: [], addIssue: pushIssue };
-      const result = transformFn(value, fakePayload);
+    const helperFn = (value2) => {
+      const fakePayload = { value: value2, issues: [], addIssue: pushIssue };
+      const result = transformFn(value2, fakePayload);
       if (result instanceof Promise)
         return INVALID;
       return fakePayload.issues.length === 0 ? result : INVALID;
@@ -14559,8 +14559,8 @@ function generateCustomCheck(doc, ctx, schema, accessor) {
   }
   return accessor;
 }
-function runtimeCatch(innerSchema, catchValue, value) {
-  const result = innerSchema._zod.run({ value, issues: [] }, {});
+function runtimeCatch(innerSchema, catchValue, value2) {
+  const result = innerSchema._zod.run({ value: value2, issues: [] }, {});
   if (result && typeof result.then === "function")
     return INVALID;
   const r = result;
@@ -14598,9 +14598,9 @@ function generateTransformCheck(doc, ctx, schema, accessor) {
       throw new ZodCompileAsyncError("z.compile: async transforms are not supported");
     }
     const transformFn = def.transform;
-    const helperFn = (value) => {
-      const fakePayload = { value, issues: [], addIssue: pushIssue };
-      const result = transformFn(value, fakePayload);
+    const helperFn = (value2) => {
+      const fakePayload = { value: value2, issues: [], addIssue: pushIssue };
+      const result = transformFn(value2, fakePayload);
       if (result instanceof Promise)
         return INVALID;
       return fakePayload.issues.length === 0 ? result : INVALID;
@@ -15106,38 +15106,38 @@ function _nan(Class2, params) {
   });
 }
 // @__NO_SIDE_EFFECTS__
-function _lt(value, params) {
+function _lt(value2, params) {
   return new $ZodCheckLessThan({
     check: "less_than",
     ...normalizeParams(params),
-    value,
+    value: value2,
     inclusive: false
   });
 }
 // @__NO_SIDE_EFFECTS__
-function _lte(value, params) {
+function _lte(value2, params) {
   return new $ZodCheckLessThan({
     check: "less_than",
     ...normalizeParams(params),
-    value,
+    value: value2,
     inclusive: true
   });
 }
 // @__NO_SIDE_EFFECTS__
-function _gt(value, params) {
+function _gt(value2, params) {
   return new $ZodCheckGreaterThan({
     check: "greater_than",
     ...normalizeParams(params),
-    value,
+    value: value2,
     inclusive: false
   });
 }
 // @__NO_SIDE_EFFECTS__
-function _gte(value, params) {
+function _gte(value2, params) {
   return new $ZodCheckGreaterThan({
     check: "greater_than",
     ...normalizeParams(params),
-    value,
+    value: value2,
     inclusive: true
   });
 }
@@ -15158,11 +15158,11 @@ function _nonnegative(params) {
   return /* @__PURE__ */ _gte(0, params);
 }
 // @__NO_SIDE_EFFECTS__
-function _multipleOf(value, params) {
+function _multipleOf(value2, params) {
   return new $ZodCheckMultipleOf({
     check: "multiple_of",
     ...normalizeParams(params),
-    value
+    value: value2
   });
 }
 // @__NO_SIDE_EFFECTS__
@@ -15418,10 +15418,10 @@ function _nativeEnum(Class2, entries, params) {
   });
 }
 // @__NO_SIDE_EFFECTS__
-function _literal(Class2, value, params) {
+function _literal(Class2, value2, params) {
   return new Class2({
     type: "literal",
-    values: Array.isArray(value) ? value : [value],
+    values: Array.isArray(value2) ? value2 : [value2],
     ...normalizeParams(params)
   });
 }
@@ -15875,14 +15875,14 @@ function compactTypeUnion(schema) {
   if (!Array.isArray(options) || options.length === 0 || schema.type !== void 0)
     return;
   const types = [];
-  for (const option of options) {
-    if (!option || typeof option !== "object")
+  for (const option2 of options) {
+    if (!option2 || typeof option2 !== "object")
       return;
-    compactTypeUnion(option);
-    const keys = Object.keys(option);
+    compactTypeUnion(option2);
+    const keys = Object.keys(option2);
     if (keys.length !== 1 || keys[0] !== "type")
       return;
-    const type = option.type;
+    const type = option2.type;
     for (const member of Array.isArray(type) ? type : [type]) {
       if (typeof member !== "string")
         return;
@@ -16172,8 +16172,8 @@ function isTransforming(_schema, _ctx) {
     return false;
   }
   if (def.type === "union") {
-    for (const option of def.options) {
-      if (isTransforming(option, ctx))
+    for (const option2 of def.options) {
+      if (isTransforming(option2, ctx))
         return true;
     }
     return false;
@@ -16204,22 +16204,22 @@ var createStandardJSONSchemaMethod = (schema, io, processors = {}) => (params) =
 };
 
 // node_modules/zod/v4/core/json-schema-processors.js
-var narrowMin = (agg, key, value) => {
-  if (agg[key] === void 0 || value > agg[key])
-    agg[key] = value;
+var narrowMin = (agg, key, value2) => {
+  if (agg[key] === void 0 || value2 > agg[key])
+    agg[key] = value2;
 };
-var narrowMax = (agg, key, value) => {
-  if (agg[key] === void 0 || value < agg[key])
-    agg[key] = value;
+var narrowMax = (agg, key, value2) => {
+  if (agg[key] === void 0 || value2 < agg[key])
+    agg[key] = value2;
 };
-var narrowBoth = (agg, value) => {
-  narrowMin(agg, "minimum", value);
-  narrowMax(agg, "maximum", value);
+var narrowBoth = (agg, value2) => {
+  narrowMin(agg, "minimum", value2);
+  narrowMax(agg, "maximum", value2);
 };
-var addDivisor = (agg, value) => {
+var addDivisor = (agg, value2) => {
   agg.multipleOf ?? (agg.multipleOf = []);
-  if (!agg.multipleOf.includes(value))
-    agg.multipleOf.push(value);
+  if (!agg.multipleOf.includes(value2))
+    agg.multipleOf.push(value2);
 };
 var addPattern = (agg, pattern) => {
   agg.patterns ?? (agg.patterns = /* @__PURE__ */ new Set());
@@ -16795,9 +16795,9 @@ var nonoptionalProcessor = (schema, ctx, _json, params) => {
   seen.ref = def.innerType;
 };
 var UNREPRESENTABLE_DEFAULT = /* @__PURE__ */ Symbol();
-function serializeDefaultValue(value, schema, ctx, json3, params) {
+function serializeDefaultValue(value2, schema, ctx, json3, params) {
   let unrepresentable = false;
-  const serialized = JSON.stringify(value, (_, val) => {
+  const serialized = JSON.stringify(value2, (_, val) => {
     if (typeof val !== "bigint")
       return val;
     unrepresentable = true;
@@ -16813,9 +16813,9 @@ var defaultProcessor = (schema, ctx, json3, params) => {
   processSchema(def.innerType, ctx, params);
   const seen = ctx.seen.get(schema);
   seen.ref = def.innerType;
-  const value = serializeDefaultValue(def.defaultValue, schema, ctx, json3, params);
-  if (value !== UNREPRESENTABLE_DEFAULT)
-    json3.default = value;
+  const value2 = serializeDefaultValue(def.defaultValue, schema, ctx, json3, params);
+  if (value2 !== UNREPRESENTABLE_DEFAULT)
+    json3.default = value2;
 };
 var prefaultProcessor = (schema, ctx, json3, params) => {
   const def = schema._zod.def;
@@ -16824,9 +16824,9 @@ var prefaultProcessor = (schema, ctx, json3, params) => {
   seen.ref = def.innerType;
   if (ctx.io !== "input")
     return;
-  const value = serializeDefaultValue(def.defaultValue, schema, ctx, json3, params);
-  if (value !== UNREPRESENTABLE_DEFAULT)
-    json3._prefault = value;
+  const value2 = serializeDefaultValue(def.defaultValue, schema, ctx, json3, params);
+  if (value2 !== UNREPRESENTABLE_DEFAULT)
+    json3._prefault = value2;
 };
 var catchProcessor = (schema, ctx, json3, params) => {
   const def = schema._zod.def;
@@ -16978,8 +16978,8 @@ var JSONSchemaGenerator = class {
   get counter() {
     return this.ctx.counter;
   }
-  set counter(value) {
-    this.ctx.counter = value;
+  set counter(value2) {
+    this.ctx.counter = value2;
   }
   /** @deprecated Access via ctx instead */
   get seen() {
@@ -17255,12 +17255,12 @@ function _lazyMethod(proto, key, make) {
     configurable: true,
     enumerable: false,
     get() {
-      const value = make(this);
-      Object.defineProperty(this, key, { value, configurable: true, writable: true });
-      return value;
+      const value2 = make(this);
+      Object.defineProperty(this, key, { value: value2, configurable: true, writable: true });
+      return value2;
     },
-    set(value) {
-      Object.defineProperty(this, key, { value, configurable: true, writable: true });
+    set(value2) {
+      Object.defineProperty(this, key, { value: value2, configurable: true, writable: true });
     }
   });
 }
@@ -17428,8 +17428,8 @@ var ZodType = /* @__PURE__ */ $constructor("ZodType", (inst, def) => {
       }
     });
   },
-  set "~standard"(value) {
-    util_exports.own(this, "~standard", value);
+  set "~standard"(value2) {
+    util_exports.own(this, "~standard", value2);
   },
   parse: function _parse2(data, params) {
     return parse2(this, data, params, { callee: _parse2 });
@@ -17447,8 +17447,8 @@ var ZodType = /* @__PURE__ */ $constructor("ZodType", (inst, def) => {
   get spa() {
     return this?.safeParseAsync;
   },
-  set spa(value) {
-    util_exports.own(this, "spa", value);
+  set spa(value2) {
+    util_exports.own(this, "spa", value2);
   },
   validate(data, params) {
     return validate(this, data, params);
@@ -17874,23 +17874,23 @@ var ZodNumber = /* @__PURE__ */ $constructor(
     },
     format: (inst) => aggregateChecks(inst).format ?? null
   }, {
-    gt(value, params) {
-      return this.check(_gt(value, params));
+    gt(value2, params) {
+      return this.check(_gt(value2, params));
     },
-    gte(value, params) {
-      return this.check(_gte(value, params));
+    gte(value2, params) {
+      return this.check(_gte(value2, params));
     },
-    min(value, params) {
-      return this.check(_gte(value, params));
+    min(value2, params) {
+      return this.check(_gte(value2, params));
     },
-    lt(value, params) {
-      return this.check(_lt(value, params));
+    lt(value2, params) {
+      return this.check(_lt(value2, params));
     },
-    lte(value, params) {
-      return this.check(_lte(value, params));
+    lte(value2, params) {
+      return this.check(_lte(value2, params));
     },
-    max(value, params) {
-      return this.check(_lte(value, params));
+    max(value2, params) {
+      return this.check(_lte(value2, params));
     },
     int(params) {
       return this.check(int(params));
@@ -17910,11 +17910,11 @@ var ZodNumber = /* @__PURE__ */ $constructor(
     nonpositive(params) {
       return this.check(_lte(0, params));
     },
-    multipleOf(value, params) {
-      return this.check(_multipleOf(value, params));
+    multipleOf(value2, params) {
+      return this.check(_multipleOf(value2, params));
     },
-    step(value, params) {
-      return this.check(_multipleOf(value, params));
+    step(value2, params) {
+      return this.check(_multipleOf(value2, params));
     },
     finite() {
       return this;
@@ -17963,23 +17963,23 @@ var ZodBigInt = /* @__PURE__ */ $constructor(
     maxValue: (inst) => aggregateChecks(inst).maximum ?? null,
     format: (inst) => aggregateChecks(inst).format ?? null
   }, {
-    gte(value, params) {
-      return this.check(_gte(value, params));
+    gte(value2, params) {
+      return this.check(_gte(value2, params));
     },
-    min(value, params) {
-      return this.check(_gte(value, params));
+    min(value2, params) {
+      return this.check(_gte(value2, params));
     },
-    gt(value, params) {
-      return this.check(_gt(value, params));
+    gt(value2, params) {
+      return this.check(_gt(value2, params));
     },
-    lt(value, params) {
-      return this.check(_lt(value, params));
+    lt(value2, params) {
+      return this.check(_lt(value2, params));
     },
-    lte(value, params) {
-      return this.check(_lte(value, params));
+    lte(value2, params) {
+      return this.check(_lte(value2, params));
     },
-    max(value, params) {
-      return this.check(_lte(value, params));
+    max(value2, params) {
+      return this.check(_lte(value2, params));
     },
     positive(params) {
       return this.check(_gt(BigInt(0), params));
@@ -17993,8 +17993,8 @@ var ZodBigInt = /* @__PURE__ */ $constructor(
     nonnegative(params) {
       return this.check(_gte(BigInt(0), params));
     },
-    multipleOf(value, params) {
-      return this.check(_multipleOf(value, params));
+    multipleOf(value2, params) {
+      return this.check(_multipleOf(value2, params));
     }
   })
 );
@@ -18073,8 +18073,8 @@ var ZodDate = /* @__PURE__ */ $constructor(
     $ZodDate.init(inst, def);
     ZodType.init(inst, def);
     inst._zod.processJSONSchema = (ctx, json3, params) => dateProcessor(inst, ctx, json3, params);
-    inst.min = (value, params) => inst.check(_gte(value, params));
-    inst.max = (value, params) => inst.check(_lte(value, params));
+    inst.min = (value2, params) => inst.check(_gte(value2, params));
+    inst.max = (value2, params) => inst.check(_lte(value2, params));
   },
   /* @__PURE__ */ util_exports.derived({
     minDate: (inst) => {
@@ -18366,11 +18366,11 @@ var ZodEnum = /* @__PURE__ */ $constructor("ZodEnum", (inst, def) => {
   const keys = new Set(Object.keys(def.entries));
   inst.extract = (values, params) => {
     const newEntries = {};
-    for (const value of values) {
-      if (keys.has(value)) {
-        newEntries[value] = def.entries[value];
+    for (const value2 of values) {
+      if (keys.has(value2)) {
+        newEntries[value2] = def.entries[value2];
       } else
-        throw new Error(`Key ${value} not found in enum`);
+        throw new Error(`Key ${value2} not found in enum`);
     }
     return new ZodEnum({
       ...def,
@@ -18381,11 +18381,11 @@ var ZodEnum = /* @__PURE__ */ $constructor("ZodEnum", (inst, def) => {
   };
   inst.exclude = (values, params) => {
     const newEntries = { ...def.entries };
-    for (const value of values) {
-      if (keys.has(value)) {
-        delete newEntries[value];
+    for (const value2 of values) {
+      if (keys.has(value2)) {
+        delete newEntries[value2];
       } else
-        throw new Error(`Key ${value} not found in enum`);
+        throw new Error(`Key ${value2} not found in enum`);
     }
     return new ZodEnum({
       ...def,
@@ -18424,10 +18424,10 @@ var ZodLiteral = /* @__PURE__ */ $constructor("ZodLiteral", (inst, def) => {
     }
   });
 });
-function literal(value, params) {
+function literal(value2, params) {
   return new ZodLiteral({
     type: "literal",
-    values: Array.isArray(value) ? value : [value],
+    values: Array.isArray(value2) ? value2 : [value2],
     ...util_exports.normalizeParams(params)
   });
 }
@@ -18939,11 +18939,11 @@ function resolveRef(ref, ctx) {
   throw new Error(`Reference not found: ${ref}`);
 }
 function checkObjectGuards(objectSchema, guards) {
-  const guard2 = z.transform((value) => value).check((payload) => {
-    const value = payload.value;
-    if (typeof value !== "object" || value === null || Array.isArray(value))
+  const guard2 = z.transform((value2) => value2).check((payload) => {
+    const value2 = payload.value;
+    if (typeof value2 !== "object" || value2 === null || Array.isArray(value2))
       return;
-    const keys = Object.getOwnPropertyNames(value);
+    const keys = Object.getOwnPropertyNames(value2);
     if (guards.minProperties !== void 0 && keys.length < guards.minProperties) {
       payload.issues.push({
         origin: "object",
@@ -18951,7 +18951,7 @@ function checkObjectGuards(objectSchema, guards) {
         minimum: guards.minProperties,
         inclusive: true,
         message: `Too small: expected object to have >=${guards.minProperties} properties`,
-        input: value,
+        input: value2,
         inst: objectSchema,
         continue: true
       });
@@ -18963,7 +18963,7 @@ function checkObjectGuards(objectSchema, guards) {
         maximum: guards.maxProperties,
         inclusive: true,
         message: `Too big: expected object to have <=${guards.maxProperties} properties`,
-        input: value,
+        input: value2,
         inst: objectSchema,
         continue: true
       });
@@ -18986,23 +18986,23 @@ function checkObjectGuards(objectSchema, guards) {
   });
   return guard2.pipe(objectSchema);
 }
-function canonicalKey(value, seen) {
-  if (value === null)
+function canonicalKey(value2, seen) {
+  if (value2 === null)
     return "z";
-  const type = typeof value;
+  const type = typeof value2;
   if (type !== "object") {
-    if (type === "number" && Number.isNaN(value))
+    if (type === "number" && Number.isNaN(value2))
       return null;
-    const raw = String(value);
+    const raw = String(value2);
     return `${type[0]}${raw.length}:${raw}`;
   }
-  if (seen.has(value))
+  if (seen.has(value2))
     return null;
-  seen.add(value);
+  seen.add(value2);
   try {
-    if (Array.isArray(value)) {
+    if (Array.isArray(value2)) {
       const parts2 = [];
-      for (const item of value) {
+      for (const item of value2) {
         const key = canonicalKey(item, seen);
         if (key === null)
           return null;
@@ -19010,17 +19010,17 @@ function canonicalKey(value, seen) {
       }
       return `a${parts2.length}:[${parts2.join(",")}]`;
     }
-    const keys = Object.keys(value).sort();
+    const keys = Object.keys(value2).sort();
     const parts = [];
     for (const k2 of keys) {
-      const key = canonicalKey(value[k2], seen);
+      const key = canonicalKey(value2[k2], seen);
       if (key === null)
         return null;
       parts.push(`${k2.length}:${k2}=${key}`);
     }
     return `o${parts.length}:{${parts.join(",")}}`;
   } finally {
-    seen.delete(value);
+    seen.delete(value2);
   }
 }
 var SCHEMA_KEYWORDS = /* @__PURE__ */ new Set([
@@ -19049,14 +19049,14 @@ var SCHEMA_MAP_KEYWORDS = /* @__PURE__ */ new Set([
   "$defs",
   "definitions"
 ]);
-function containsRef(value) {
-  if (typeof value !== "object" || value === null)
+function containsRef(value2) {
+  if (typeof value2 !== "object" || value2 === null)
     return false;
-  if (Array.isArray(value))
-    return value.some(containsRef);
-  if (typeof value.$ref === "string")
+  if (Array.isArray(value2))
+    return value2.some(containsRef);
+  if (typeof value2.$ref === "string")
     return true;
-  return Object.entries(value).some(([key, sub]) => {
+  return Object.entries(value2).some(([key, sub]) => {
     if (SCHEMA_KEYWORDS.has(key))
       return containsRef(sub);
     if (!SCHEMA_MAP_KEYWORDS.has(key) || typeof sub !== "object" || sub === null)
@@ -19068,7 +19068,7 @@ function plural(n) {
   return n === 1 ? "element" : "elements";
 }
 function checkArrayGuards(arraySchema, guards) {
-  const guard2 = z.transform((value) => value).check((payload) => {
+  const guard2 = z.transform((value2) => value2).check((payload) => {
     const items = payload.value;
     if (!Array.isArray(items))
       return;
@@ -19888,9 +19888,9 @@ var ImplementationSchema = BaseMetadataSchema.extend({
   description: string2().optional()
 });
 var FormElicitationCapabilitySchema = intersection(object({ applyDefaults: boolean2().optional() }), JSONObjectSchema);
-var ElicitationCapabilitySchema = preprocess((value) => {
-  if (value && typeof value === "object" && !Array.isArray(value) && Object.keys(value).length === 0) return { form: {} };
-  return value;
+var ElicitationCapabilitySchema = preprocess((value2) => {
+  if (value2 && typeof value2 === "object" && !Array.isArray(value2) && Object.keys(value2).length === 0) return { form: {} };
+  return value2;
 }, intersection(object({
   form: FormElicitationCapabilitySchema.optional(),
   url: JSONObjectSchema.optional()
@@ -20739,22 +20739,22 @@ function stampErrorBrands(instance, ctor) {
     configurable: true
   });
 }
-function brandedHasInstance(cls, value) {
+function brandedHasInstance(cls, value2) {
   try {
-    if (typeof value === "object" && value !== null && Object.prototype.hasOwnProperty.call(cls, "mcpBrand") && typeof cls.mcpBrand === "string" && Object.prototype.hasOwnProperty.call(value, BRANDS)) {
-      const carried = value[BRANDS];
+    if (typeof value2 === "object" && value2 !== null && Object.prototype.hasOwnProperty.call(cls, "mcpBrand") && typeof cls.mcpBrand === "string" && Object.prototype.hasOwnProperty.call(value2, BRANDS)) {
+      const carried = value2[BRANDS];
       if (carried && typeof carried.has === "function" && carried.has(cls.mcpBrand)) return true;
     }
   } catch {
   }
-  return Function.prototype[Symbol.hasInstance].call(cls, value);
+  return Function.prototype[Symbol.hasInstance].call(cls, value2);
 }
 var OAuthError = class OAuthError2 extends Error {
   static {
     Object.defineProperty(this, "mcpBrand", { value: "mcp.OAuthError" });
   }
-  static [Symbol.hasInstance](value) {
-    return brandedHasInstance(this, value);
+  static [Symbol.hasInstance](value2) {
+    return brandedHasInstance(this, value2);
   }
   /**
   * Brand-based type guard: equivalent to `value instanceof this`, as an
@@ -20765,9 +20765,9 @@ var OAuthError = class OAuthError2 extends Error {
   * `.filter(SdkError.isInstance)` (detached calls throw rather than
   * silently matching nothing).
   */
-  static isInstance(value) {
+  static isInstance(value2) {
     if (typeof this !== "function") throw new TypeError("isInstance must be called on the class (e.g. `SdkError.isInstance(value)`); for callbacks use `v => SdkError.isInstance(v)`");
-    return brandedHasInstance(this, value);
+    return brandedHasInstance(this, value2);
   }
   constructor(code, message, errorUri) {
     super(message);
@@ -20820,8 +20820,8 @@ var SdkError = class extends Error {
   static {
     Object.defineProperty(this, "mcpBrand", { value: "mcp.SdkError" });
   }
-  static [Symbol.hasInstance](value) {
-    return brandedHasInstance(this, value);
+  static [Symbol.hasInstance](value2) {
+    return brandedHasInstance(this, value2);
   }
   /**
   * Brand-based type guard: equivalent to `value instanceof this`, as an
@@ -20832,9 +20832,9 @@ var SdkError = class extends Error {
   * `.filter(SdkError.isInstance)` (detached calls throw rather than
   * silently matching nothing).
   */
-  static isInstance(value) {
+  static isInstance(value2) {
     if (typeof this !== "function") throw new TypeError("isInstance must be called on the class (e.g. `SdkError.isInstance(value)`); for callbacks use `v => SdkError.isInstance(v)`");
-    return brandedHasInstance(this, value);
+    return brandedHasInstance(this, value2);
   }
   /**
   * @param code - Stable string code identifying the failure ({@linkcode SdkErrorCode}).
@@ -20872,8 +20872,8 @@ var SdkHttpError = class extends SdkError {
     return this.data.statusText;
   }
 };
-function isPlainObject$7(value) {
-  return value !== null && typeof value === "object" && !Array.isArray(value);
+function isPlainObject$7(value2) {
+  return value2 !== null && typeof value2 === "object" && !Array.isArray(value2);
 }
 function isImpliedCapabilityMember(capability, member, declaredValue) {
   return capability === "elicitation" && member === "form" && declaredValue["form"] === void 0 && declaredValue["url"] === void 0;
@@ -20940,10 +20940,10 @@ var TOOL_RESULT_FOREIGN_FAMILY_KEYS = [
   "inputRequests",
   "requestState"
 ];
-function normalizeContentlessToolResult(value) {
-  if (value === null || typeof value !== "object" || Array.isArray(value) || value.content !== void 0 || TOOL_RESULT_FOREIGN_FAMILY_KEYS.some((key) => key in value)) return value;
+function normalizeContentlessToolResult(value2) {
+  if (value2 === null || typeof value2 !== "object" || Array.isArray(value2) || value2.content !== void 0 || TOOL_RESULT_FOREIGN_FAMILY_KEYS.some((key) => key in value2)) return value2;
   return {
-    ...value,
+    ...value2,
     content: []
   };
 }
@@ -21006,9 +21006,9 @@ function build$1() {
     description: string2().optional()
   });
   const FormElicitationCapabilitySchema2 = intersection(object({ applyDefaults: boolean2().optional() }), JSONObjectSchema$1);
-  const ElicitationCapabilitySchema2 = preprocess((value) => {
-    if (value && typeof value === "object" && !Array.isArray(value) && Object.keys(value).length === 0) return { form: {} };
-    return value;
+  const ElicitationCapabilitySchema2 = preprocess((value2) => {
+    if (value2 && typeof value2 === "object" && !Array.isArray(value2) && Object.keys(value2).length === 0) return { form: {} };
+    return value2;
   }, intersection(object({
     form: FormElicitationCapabilitySchema2.optional(),
     url: JSONObjectSchema$1.optional()
@@ -21809,9 +21809,9 @@ function build$1() {
       ListTasksResultSchema$1,
       CreateTaskResultSchema$1
     ]),
-    CallToolResultWireSchema: unknown().superRefine((value, ctx) => {
-      if (typeof value !== "object" || value === null || Array.isArray(value) || value.content !== void 0) return;
-      for (const key of TOOL_RESULT_FOREIGN_FAMILY_KEYS) if (key in value) {
+    CallToolResultWireSchema: unknown().superRefine((value2, ctx) => {
+      if (typeof value2 !== "object" || value2 === null || Array.isArray(value2) || value2.content !== void 0) return;
+      for (const key of TOOL_RESULT_FOREIGN_FAMILY_KEYS) if (key in value2) {
         ctx.addIssue({
           code: "custom",
           message: `content is required when the body carries '${key}' \u2014 another result family cannot default into an empty tools/call success`
@@ -22011,8 +22011,8 @@ function getNotificationSchema(method) {
 }
 var rev2025RequestMethods = Object.keys(requestMethodKeys$1);
 var rev2025NotificationMethods = Object.keys(notificationMethodKeys$1);
-function isPlainObject$6(value) {
-  return value !== null && typeof value === "object" && !Array.isArray(value);
+function isPlainObject$6(value2) {
+  return value2 !== null && typeof value2 === "object" && !Array.isArray(value2);
 }
 function triState$1(schema, raw) {
   if (schema === void 0) return {
@@ -22036,8 +22036,8 @@ var NOT_IN_ERA$1 = {
 function toolNeedsLegacyWrap(t) {
   return isPlainObject$6(t) && isPlainObject$6(t["outputSchema"]) && isNonObjectJsonSchemaRoot(t["outputSchema"]);
 }
-function toNeutralResult(value) {
-  return value;
+function toNeutralResult(value2) {
+  return value2;
 }
 var rev2025Codec = {
   era: "2025-11-25",
@@ -22160,9 +22160,9 @@ function build() {
     description: string2().optional()
   });
   const FormElicitationCapabilitySchema2 = intersection(object({ applyDefaults: boolean2().optional() }), JSONObjectSchema$1);
-  const ElicitationCapabilitySchema2 = preprocess((value) => {
-    if (value && typeof value === "object" && !Array.isArray(value) && Object.keys(value).length === 0) return { form: {} };
-    return value;
+  const ElicitationCapabilitySchema2 = preprocess((value2) => {
+    if (value2 && typeof value2 === "object" && !Array.isArray(value2) && Object.keys(value2).length === 0) return { form: {} };
+    return value2;
   }, intersection(object({
     form: FormElicitationCapabilitySchema2.optional(),
     url: JSONObjectSchema$1.optional()
@@ -23005,11 +23005,11 @@ function attachCacheHintFallback(result, hint) {
 function cacheHintFallbackOf(result) {
   return result[RESULT_CACHE_HINT_FALLBACK];
 }
-function isValidCacheTtlMs(value) {
-  return typeof value === "number" && Number.isSafeInteger(value) && value >= 0;
+function isValidCacheTtlMs(value2) {
+  return typeof value2 === "number" && Number.isSafeInteger(value2) && value2 >= 0;
 }
-function isValidCacheScope(value) {
-  return value === "public" || value === "private";
+function isValidCacheScope(value2) {
+  return value2 === "public" || value2 === "private";
 }
 function assertValidCacheHint(hint, context) {
   if (hint.ttlMs !== void 0 && !isValidCacheTtlMs(hint.ttlMs)) throw new RangeError(`Invalid cache hint for ${context}: ttlMs must be a non-negative safe integer (got ${String(hint.ttlMs)})`);
@@ -23031,8 +23031,8 @@ var ProtocolError = class ProtocolError2 extends Error {
   static {
     Object.defineProperty(this, "mcpBrand", { value: "mcp.ProtocolError" });
   }
-  static [Symbol.hasInstance](value) {
-    return brandedHasInstance(this, value);
+  static [Symbol.hasInstance](value2) {
+    return brandedHasInstance(this, value2);
   }
   /**
   * Brand-based type guard: equivalent to `value instanceof this`, as an
@@ -23043,9 +23043,9 @@ var ProtocolError = class ProtocolError2 extends Error {
   * `.filter(SdkError.isInstance)` (detached calls throw rather than
   * silently matching nothing).
   */
-  static isInstance(value) {
+  static isInstance(value2) {
     if (typeof this !== "function") throw new TypeError("isInstance must be called on the class (e.g. `SdkError.isInstance(value)`); for callbacks use `v => SdkError.isInstance(v)`");
-    return brandedHasInstance(this, value);
+    return brandedHasInstance(this, value2);
   }
   constructor(code, message, data) {
     super(message);
@@ -23169,8 +23169,8 @@ function fillCacheFields(method, result) {
   delete filled[RESULT_CACHE_HINT_FALLBACK];
   return filled;
 }
-function isPlainObject$5(value) {
-  return value !== null && typeof value === "object" && !Array.isArray(value);
+function isPlainObject$5(value2) {
+  return value2 !== null && typeof value2 === "object" && !Array.isArray(value2);
 }
 function stampServerInfoMeta(result, serverInfo) {
   if (serverInfo === void 0) return result;
@@ -23283,8 +23283,8 @@ function getNotificationSchema2026(method) {
 }
 var rev2026RequestMethods = Object.keys(requestMethodKeys);
 var rev2026NotificationMethods = Object.keys(notificationMethodKeys);
-function isPlainObject$4(value) {
-  return value !== null && typeof value === "object" && !Array.isArray(value);
+function isPlainObject$4(value2) {
+  return value2 !== null && typeof value2 === "object" && !Array.isArray(value2);
 }
 function triState(schema, raw) {
   if (schema === void 0) return {
@@ -23478,8 +23478,8 @@ function isExtensionReusedRequestMethod(method) {
   return method === "tasks/get" || method === "tasks/cancel";
 }
 var ALL_CODECS = [rev2025Codec, rev2026Codec];
-function isPlainObject$3(value) {
-  return value !== null && typeof value === "object" && !Array.isArray(value);
+function isPlainObject$3(value2) {
+  return value2 !== null && typeof value2 === "object" && !Array.isArray(value2);
 }
 function requestMetaOf(params) {
   if (!isPlainObject$3(params)) return void 0;
@@ -23491,8 +23491,8 @@ function hasEnvelopeClaim(params) {
   return meta3 !== void 0 && PROTOCOL_VERSION_META_KEY in meta3;
 }
 function envelopeClaimVersion(params) {
-  const value = requestMetaOf(params)?.[PROTOCOL_VERSION_META_KEY];
-  return typeof value === "string" ? value : void 0;
+  const value2 = requestMetaOf(params)?.[PROTOCOL_VERSION_META_KEY];
+  return typeof value2 === "string" ? value2 : void 0;
 }
 function validateEnvelopeMeta(meta3) {
   return codecForVersion(MODERN_WIRE_REVISION).validateEnvelopeMeta(meta3);
@@ -23665,11 +23665,11 @@ var schemas_exports3 = /* @__PURE__ */ __exportAll({
   UntitledMultiSelectEnumSchemaSchema: () => UntitledMultiSelectEnumSchemaSchema,
   UntitledSingleSelectEnumSchemaSchema: () => UntitledSingleSelectEnumSchemaSchema
 });
-var isJSONRPCRequest = (value) => JSONRPCRequestSchema.safeParse(value).success;
-var isJSONRPCNotification = (value) => JSONRPCNotificationSchema.safeParse(value).success;
-var isJSONRPCResultResponse = (value) => JSONRPCResultResponseSchema.safeParse(value).success;
-var isJSONRPCErrorResponse = (value) => JSONRPCErrorResponseSchema.safeParse(value).success;
-var isInputRequiredResult = (value) => typeof value === "object" && value !== null && !Array.isArray(value) && value.resultType === "input_required";
+var isJSONRPCRequest = (value2) => JSONRPCRequestSchema.safeParse(value2).success;
+var isJSONRPCNotification = (value2) => JSONRPCNotificationSchema.safeParse(value2).success;
+var isJSONRPCResultResponse = (value2) => JSONRPCResultResponseSchema.safeParse(value2).success;
+var isJSONRPCErrorResponse = (value2) => JSONRPCErrorResponseSchema.safeParse(value2).success;
+var isInputRequiredResult = (value2) => typeof value2 === "object" && value2 !== null && !Array.isArray(value2) && value2.resultType === "input_required";
 function assertCompleteRequestPrompt(request) {
   if (request.params.ref.type !== "ref/prompt") throw new TypeError(`Expected CompleteRequestPrompt, but got ${request.params.ref.type}`);
 }
@@ -24022,8 +24022,8 @@ function promptArgumentsFromStandardSchema(schema) {
     required: required2.includes(name)
   }));
 }
-function isJsonObject(value) {
-  return typeof value === "object" && value !== null && !Array.isArray(value);
+function isJsonObject(value2) {
+  return typeof value2 === "object" && value2 !== null && !Array.isArray(value2);
 }
 function convertStandardElicitationSchema(schema) {
   try {
@@ -24064,18 +24064,18 @@ function walkProperty(node2, path, vendor, unsupported) {
   const allowedKeys = typeof node2.type === "string" && Object.hasOwn(PROPERTY_KEYS_BY_TYPE, node2.type) ? PROPERTY_KEYS_BY_TYPE[node2.type] : void 0;
   if (allowedKeys === void 0) return node2;
   const pruned = {};
-  for (const [key, value] of Object.entries(node2)) if (allowedKeys.has(key) || isAnnotationOnlyJsonSchemaKeyword(key)) pruned[key] = value;
+  for (const [key, value2] of Object.entries(node2)) if (allowedKeys.has(key) || isAnnotationOnlyJsonSchemaKeyword(key)) pruned[key] = value2;
   else if (key === "pattern" && node2.type === "string" && typeof node2.format === "string") {
-    if (!SUPPORTED_STRING_FORMATS.has(node2.format)) pruned[key] = value;
-    else if (typeof value !== "string" || !isLibraryFormatPattern(node2.format, value, vendor)) unsupported.push(`${path}.${key}`);
+    if (!SUPPORTED_STRING_FORMATS.has(node2.format)) pruned[key] = value2;
+    else if (typeof value2 !== "string" || !isLibraryFormatPattern(node2.format, value2, vendor)) unsupported.push(`${path}.${key}`);
   } else unsupported.push(`${path}.${key}`);
   return pruned;
 }
 function walkRequestedSchema(converted, vendor) {
   const pruned = {};
   const unsupported = [];
-  for (const [key, value] of Object.entries(converted)) if (key === "properties" && isJsonObject(value)) pruned[key] = Object.fromEntries(Object.entries(value).map(([name, node2]) => [name, walkProperty(node2, `properties.${name}`, vendor, unsupported)]));
-  else if (ROOT_KEYS.has(key)) pruned[key] = value;
+  for (const [key, value2] of Object.entries(converted)) if (key === "properties" && isJsonObject(value2)) pruned[key] = Object.fromEntries(Object.entries(value2).map(([name, node2]) => [name, walkProperty(node2, `properties.${name}`, vendor, unsupported)]));
+  else if (ROOT_KEYS.has(key)) pruned[key] = value2;
   else if (!isAnnotationOnlyJsonSchemaKeyword(key)) unsupported.push(key);
   if (unsupported.length > 0) throw new ProtocolError(ProtocolErrorCode.InvalidParams, `Elicitation requestedSchema contains unsupported JSON Schema constraint(s) after Standard Schema conversion: ${unsupported.join(", ")}`);
   return pruned;
@@ -24088,10 +24088,10 @@ function describeUnsupportedProperties(pruned, fallback) {
 function findDroppedConstraintPaths(original, parsed, path = "") {
   if (Array.isArray(original) && Array.isArray(parsed)) return original.flatMap((item, index) => findDroppedConstraintPaths(item, parsed[index], `${path}[${index}]`));
   if (!isJsonObject(original) || !isJsonObject(parsed)) return [];
-  return Object.entries(original).flatMap(([key, value]) => {
+  return Object.entries(original).flatMap(([key, value2]) => {
     const childPath = path ? `${path}.${key}` : key;
     if (!Object.prototype.hasOwnProperty.call(parsed, key)) return isAnnotationOnlyJsonSchemaKeyword(key) ? [] : [childPath];
-    return findDroppedConstraintPaths(value, parsed[key], childPath);
+    return findDroppedConstraintPaths(value2, parsed[key], childPath);
   });
 }
 function normalizeElicitInputParams(input2) {
@@ -24438,23 +24438,23 @@ function codecResultValidator(codec2, method) {
   return { "~standard": {
     version: 1,
     vendor: "mcp-wire-codec",
-    validate(value) {
-      const outcome = codec2.validateResult(method, value);
+    validate(value2) {
+      const outcome = codec2.validateResult(method, value2);
       if (outcome.ok) return { value: outcome.value };
       return { issues: [{ message: outcome.reason === "invalid" ? outcome.message : `not-in-era: ${method}` }] };
     }
   } };
 }
-function requestStateAccessor(value) {
-  return () => value;
+function requestStateAccessor(value2) {
+  return () => value2;
 }
 var NO_REQUEST_STATE = requestStateAccessor(void 0);
-function withRequestStateValue(ctx, value) {
+function withRequestStateValue(ctx, value2) {
   return {
     ...ctx,
     mcpReq: {
       ...ctx.mcpReq,
-      requestState: requestStateAccessor(value)
+      requestState: requestStateAccessor(value2)
     }
   };
 }
@@ -25198,8 +25198,8 @@ var Protocol = class {
     this._notificationHandlers.delete(method);
   }
 };
-function isPlainObject$1(value) {
-  return value !== null && typeof value === "object" && !Array.isArray(value);
+function isPlainObject$1(value2) {
+  return value2 !== null && typeof value2 === "object" && !Array.isArray(value2);
 }
 function mergeCapabilities(base, additional) {
   const result = { ...base };
@@ -25215,8 +25215,8 @@ function mergeCapabilities(base, additional) {
   }
   return result;
 }
-function isPlainObject2(value) {
-  return typeof value === "object" && value !== null && !Array.isArray(value);
+function isPlainObject2(value2) {
+  return typeof value2 === "object" && value2 !== null && !Array.isArray(value2);
 }
 function partitionInputResponses(inputResponses) {
   const accepted = {};
@@ -25261,18 +25261,18 @@ var require_content_type = /* @__PURE__ */ __commonJSMin(((exports) => {
     if (index !== -1) {
       var key;
       var match;
-      var value;
+      var value2;
       PARAM_REGEXP.lastIndex = index;
       while (match = PARAM_REGEXP.exec(header)) {
         if (match.index !== index) throw new TypeError("invalid parameter format");
         index += match[0].length;
         key = match[1].toLowerCase();
-        value = match[2];
-        if (value.charCodeAt(0) === 34) {
-          value = value.slice(1, -1);
-          if (value.indexOf("\\") !== -1) value = value.replace(QESC_REGEXP, "$1");
+        value2 = match[2];
+        if (value2.charCodeAt(0) === 34) {
+          value2 = value2.slice(1, -1);
+          if (value2.indexOf("\\") !== -1) value2 = value2.replace(QESC_REGEXP, "$1");
         }
-        obj.parameters[key] = value;
+        obj.parameters[key] = value2;
       }
       if (index !== header.length) throw new TypeError("invalid parameter format");
     }
@@ -25449,10 +25449,10 @@ var UriTemplate = class UriTemplate2 {
     const operator = this.getOperator(expr);
     return expr.slice(operator.length).split(",").map((name) => name.replace("*", "").trim()).filter((name) => name.length > 0);
   }
-  encodeValue(value, operator) {
-    UriTemplate2.validateLength(value, MAX_VARIABLE_LENGTH, "Variable value");
-    if (operator === "+" || operator === "#") return encodeURI(value);
-    return encodeURIComponent(value);
+  encodeValue(value2, operator) {
+    UriTemplate2.validateLength(value2, MAX_VARIABLE_LENGTH, "Variable value");
+    if (operator === "+" || operator === "#") return encodeURI(value2);
+    return encodeURIComponent(value2);
   }
   expandPart(part, variables) {
     if (part.operator === "?" || part.operator === "&") {
@@ -25469,9 +25469,9 @@ var UriTemplate = class UriTemplate2 {
       if (values.length === 0) return "";
       return values.map((v) => Array.isArray(v) ? v[0] : v).join(",");
     }
-    const value = variables[part.name];
-    if (value === void 0) return "";
-    const encoded = (Array.isArray(value) ? value : [value]).map((v) => this.encodeValue(v, part.operator));
+    const value2 = variables[part.name];
+    if (value2 === void 0) return "";
+    const encoded = (Array.isArray(value2) ? value2 : [value2]).map((v) => this.encodeValue(v, part.operator));
     switch (part.operator) {
       case "":
         return encoded.join(",");
@@ -25567,9 +25567,9 @@ var UriTemplate = class UriTemplate2 {
     const result = {};
     for (const [i, name_] of names.entries()) {
       const { name, exploded } = name_;
-      const value = match[i + 1];
+      const value2 = match[i + 1];
       const cleanName = name.replace("*", "");
-      result[cleanName] = exploded && value.includes(",") ? value.split(",") : value;
+      result[cleanName] = exploded && value2.includes(",") ? value2.split(",") : value2;
     }
     return result;
   }
@@ -25781,8 +25781,8 @@ var require_scope = /* @__PURE__ */ __commonJSMin(((exports) => {
       super(nameStr);
       this.prefix = prefix;
     }
-    setValue(value, { property, itemIndex }) {
-      this.value = value;
+    setValue(value2, { property, itemIndex }) {
+      this.value = value2;
       this.scopePath = (0, code_1._)`.${new code_1.Name(property)}[${itemIndex}]`;
     }
   };
@@ -25804,12 +25804,12 @@ var require_scope = /* @__PURE__ */ __commonJSMin(((exports) => {
     name(prefix) {
       return new ValueScopeName(prefix, this._newName(prefix));
     }
-    value(nameOrPrefix, value) {
+    value(nameOrPrefix, value2) {
       var _a3;
-      if (value.ref === void 0) throw new Error("CodeGen: ref must be passed in value");
+      if (value2.ref === void 0) throw new Error("CodeGen: ref must be passed in value");
       const name = this.toName(nameOrPrefix);
       const { prefix } = name;
-      const valueKey = (_a3 = value.key) !== null && _a3 !== void 0 ? _a3 : value.ref;
+      const valueKey = (_a3 = value2.key) !== null && _a3 !== void 0 ? _a3 : value2.ref;
       let vs = this._values[prefix];
       if (vs) {
         const _name = vs.get(valueKey);
@@ -25818,8 +25818,8 @@ var require_scope = /* @__PURE__ */ __commonJSMin(((exports) => {
       vs.set(valueKey, name);
       const s = this._scope[prefix] || (this._scope[prefix] = []);
       const itemIndex = s.length;
-      s[itemIndex] = value.ref;
-      name.setValue(value, {
+      s[itemIndex] = value2.ref;
+      name.setValue(value2, {
         property: prefix,
         itemIndex
       });
@@ -26291,8 +26291,8 @@ var require_codegen = /* @__PURE__ */ __commonJSMin(((exports) => {
     scopeName(prefix) {
       return this._extScope.name(prefix);
     }
-    scopeValue(prefixOrName, value) {
-      const name = this._extScope.value(prefixOrName, value);
+    scopeValue(prefixOrName, value2) {
+      const name = this._extScope.value(prefixOrName, value2);
       (this._values[name.prefix] || (this._values[name.prefix] = /* @__PURE__ */ new Set())).add(name);
       return name;
     }
@@ -26333,12 +26333,12 @@ var require_codegen = /* @__PURE__ */ __commonJSMin(((exports) => {
     }
     object(...keyValues) {
       const code = ["{"];
-      for (const [key, value] of keyValues) {
+      for (const [key, value2] of keyValues) {
         if (code.length > 1) code.push(",");
         code.push(key);
-        if (key !== value || this.opts.es5) {
+        if (key !== value2 || this.opts.es5) {
           code.push(":");
-          (0, code_1.addCodeArg)(code, value);
+          (0, code_1.addCodeArg)(code, value2);
         }
       }
       code.push("}");
@@ -26397,10 +26397,10 @@ var require_codegen = /* @__PURE__ */ __commonJSMin(((exports) => {
     break(label) {
       return this._leafNode(new Break(label));
     }
-    return(value) {
+    return(value2) {
       const node2 = new Return();
       this._blockNode(node2);
-      this.code(value);
+      this.code(value2);
       if (node2.nodes.length !== 1) throw new Error('CodeGen: "return" should have one node');
       return this._endBlockNode(Return);
     }
@@ -29159,13 +29159,13 @@ var require_fast_uri = /* @__PURE__ */ __commonJSMin(((exports, module) => {
   }
   function normalizeComparableURI(uri, opts) {
     if (typeof uri !== "string" && typeof uri !== "object") return;
-    let value;
+    let value2;
     try {
-      value = typeof uri === "string" ? uri : serialize(uri, opts);
+      value2 = typeof uri === "string" ? uri : serialize(uri, opts);
     } catch {
       return;
     }
-    const { normalized, malformedAuthorityOrPort, malformedPercentEncoding, malformedSchemeSpecific, malformedHost, malformedScheme } = normalizeStringWithStatus(value, opts);
+    const { normalized, malformedAuthorityOrPort, malformedPercentEncoding, malformedSchemeSpecific, malformedHost, malformedScheme } = normalizeStringWithStatus(value2, opts);
     return malformedAuthorityOrPort || malformedPercentEncoding || malformedSchemeSpecific || malformedHost || malformedScheme ? void 0 : normalized;
   }
   const fastUri = {
@@ -29954,13 +29954,13 @@ var require_ucs2length = /* @__PURE__ */ __commonJSMin(((exports) => {
     const len = str.length;
     let length = 0;
     let pos = 0;
-    let value;
+    let value2;
     while (pos < len) {
       length++;
-      value = str.charCodeAt(pos++);
-      if (value >= 55296 && value <= 56319 && pos < len) {
-        value = str.charCodeAt(pos);
-        if ((value & 64512) === 56320) pos++;
+      value2 = str.charCodeAt(pos++);
+      if (value2 >= 55296 && value2 <= 56319 && pos < len) {
+        value2 = str.charCodeAt(pos);
+        if ((value2 & 64512) === 56320) pos++;
       }
     }
     return length;
@@ -32756,11 +32756,11 @@ var require_formats = /* @__PURE__ */ __commonJSMin(((exports) => {
   }
   const MIN_INT32 = -(2 ** 31);
   const MAX_INT32 = 2 ** 31 - 1;
-  function validateInt32(value) {
-    return Number.isInteger(value) && value <= MAX_INT32 && value >= MIN_INT32;
+  function validateInt32(value2) {
+    return Number.isInteger(value2) && value2 <= MAX_INT32 && value2 >= MIN_INT32;
   }
-  function validateInt64(value) {
-    return Number.isInteger(value);
+  function validateInt64(value2) {
+    return Number.isInteger(value2);
   }
   function validateNumber() {
     return true;
@@ -33971,9 +33971,9 @@ var Server = class extends Protocol {
 function discoverAdvertisedCapabilities(capabilities) {
   return { ...capabilities };
 }
-function toolInputElementCount(value, max) {
+function toolInputElementCount(value2, max) {
   let count = 0;
-  const stack = [value];
+  const stack = [value2];
   while (stack.length > 0) {
     const node2 = stack.pop();
     if (node2 === null || typeof node2 !== "object") continue;
@@ -33990,10 +33990,10 @@ function toolInputElementCount(value, max) {
   }
   return count;
 }
-function resolveMaxToolInputElements(value) {
-  if (value === void 0 || value === Infinity) return void 0;
-  if (typeof value !== "number" || Number.isNaN(value) || value < 1) throw new RangeError(`maxToolInputElements must be a number of at least 1, or Infinity, got ${String(value)}`);
-  return value;
+function resolveMaxToolInputElements(value2) {
+  if (value2 === void 0 || value2 === Infinity) return void 0;
+  if (typeof value2 !== "number" || Number.isNaN(value2) || value2 < 1) throw new RangeError(`maxToolInputElements must be a number of at least 1, or Infinity, got ${String(value2)}`);
+  return value2;
 }
 var McpServer = class {
   /**
@@ -34445,8 +34445,8 @@ var McpServer = class {
       get outputSchemaJson() {
         return outputSchemaJson ??= convertOutputSchemaJson(registeredTool.outputSchema);
       },
-      set outputSchemaJson(value) {
-        outputSchemaJson = value;
+      set outputSchemaJson(value2) {
+        outputSchemaJson = value2;
       },
       annotations,
       icons,
@@ -34652,8 +34652,8 @@ function unwrapOptionalSchema(schema) {
 }
 
 // node_modules/@modelcontextprotocol/server/dist/listenRouter-Bartj63y.mjs
-function listenFilterAccepts(filter, event) {
-  switch (event.kind) {
+function listenFilterAccepts(filter, event2) {
+  switch (event2.kind) {
     case "tools_list_changed":
       return filter.toolsListChanged === true;
     case "prompts_list_changed":
@@ -34661,7 +34661,7 @@ function listenFilterAccepts(filter, event) {
     case "resources_list_changed":
       return filter.resourcesListChanged === true;
     case "resource_updated":
-      return filter.resourceSubscriptions !== void 0 && filter.resourceSubscriptions.includes(event.uri);
+      return filter.resourceSubscriptions !== void 0 && filter.resourceSubscriptions.includes(event2.uri);
   }
 }
 function honoredSubset(requested, capabilities) {
@@ -34789,9 +34789,9 @@ var StdioListenRouter = class {
     if (!CHANGE_NOTIFICATION_METHODS.has(message.method)) return "passthrough";
     const uriParam = message.params?.["uri"];
     const uri = typeof uriParam === "string" ? uriParam : void 0;
-    const event = notificationToServerEvent(message.method, uri);
+    const event2 = notificationToServerEvent(message.method, uri);
     const out = [];
-    for (const [subscriptionId, filter] of this._subs) if (listenFilterAccepts(filter, event)) out.push(stampSubscriptionId({
+    for (const [subscriptionId, filter] of this._subs) if (listenFilterAccepts(filter, event2)) out.push(stampSubscriptionId({
       method: message.method,
       params: message.params ?? {}
     }, subscriptionId));
@@ -35331,8 +35331,8 @@ function serveStdio(factory, options = {}) {
     await closeAll();
   } };
 }
-function toError(value) {
-  return value instanceof Error ? value : new Error(String(value));
+function toError(value2) {
+  return value2 instanceof Error ? value2 : new Error(String(value2));
 }
 
 // node_modules/@modelcontextprotocol/server/dist/index.mjs
@@ -75787,18 +75787,18 @@ function pickedPoles(q, choice, selected) {
   if (single) picked.add(single.pole);
   return picked;
 }
-function evidenceFromValue(axis, value, confidence) {
+function evidenceFromValue(axis, value2, confidence) {
   if (isBinary(axis)) {
     let bin;
-    if (typeof value === "number") bin = Math.max(-2, Math.min(2, Math.round(value)));
-    else if (typeof value === "string") {
-      if (value === axis.poles[0]?.id) bin = -2;
-      else if (value === axis.poles[1]?.id) bin = 2;
-      else if (value === BLEND_POLE || value === "center") bin = 0;
+    if (typeof value2 === "number") bin = Math.max(-2, Math.min(2, Math.round(value2)));
+    else if (typeof value2 === "string") {
+      if (value2 === axis.poles[0]?.id) bin = -2;
+      else if (value2 === axis.poles[1]?.id) bin = 2;
+      else if (value2 === BLEND_POLE || value2 === "center") bin = 0;
     }
     return bin === void 0 ? void 0 : { axis: axis.id, kind: "bin", lik: statedBinLik(bin, confidence) };
   }
-  const vals = Array.isArray(value) ? value : [String(value)];
+  const vals = Array.isArray(value2) ? value2 : [String(value2)];
   if (vals.some((v) => !axis.poles.some((p) => p.id === v))) return void 0;
   if (axis.kind === "categorical") {
     const c = Math.max(0.05, Math.min(1, confidence));
@@ -75842,8 +75842,8 @@ function foldSession(k2, events) {
     if (ev.kind === "multi") r.pagesSeen = ENGINE.maxMultiPages;
     log.push({ at: start.at, kind: "set", axis: a.id, answer: `constraint: ${JSON.stringify(c.value)}` });
   }
-  const applySet = (a, value, confidence) => {
-    const ev = evidenceFromValue(a, value, confidence);
+  const applySet = (a, value2, confidence) => {
+    const ev = evidenceFromValue(a, value2, confidence);
     if (!ev) return false;
     const r = raw(a.id);
     applyEvidence(r, a, ev, evidence);
@@ -76219,7 +76219,7 @@ function topArchetypes(k2, state, n = 5) {
 }
 
 // src/service.ts
-import { writeFileSync as writeFileSync2, mkdirSync as mkdirSync2 } from "node:fs";
+import { readFileSync as readFileSync2, writeFileSync as writeFileSync2, mkdirSync as mkdirSync2 } from "node:fs";
 import { dirname, isAbsolute, resolve } from "node:path";
 
 // src/engine/prng.ts
@@ -76959,6 +76959,94 @@ function listSessions() {
   return out.sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
 }
 
+// src/engine/transfer.ts
+var SESSION_EXPORT_FORMAT = "game-design-versus/session";
+var value = external_exports.union([external_exports.number(), external_exports.string(), external_exports.array(external_exports.string())]);
+var option = external_exports.looseObject({
+  key: external_exports.enum(["a", "b", "c", "d"]),
+  pole: external_exports.string(),
+  label: external_exports.string(),
+  game: external_exports.string().optional(),
+  year: external_exports.number().optional(),
+  how: external_exports.string().optional()
+});
+var question = external_exports.looseObject({
+  questionId: external_exports.string(),
+  axis: external_exports.string(),
+  module: external_exports.string(),
+  format: external_exports.enum(["comparison", "poles"]),
+  comparisonId: external_exports.string().optional(),
+  multi: external_exports.boolean(),
+  options: external_exports.array(option).min(1).max(25),
+  customAxis: external_exports.looseObject({ id: external_exports.string(), label: external_exports.string(), poleA: external_exports.string(), poleB: external_exports.string() }).optional()
+});
+var batch = external_exports.number().int().optional();
+var event = external_exports.discriminatedUnion("type", [
+  external_exports.looseObject({
+    type: external_exports.literal("start"),
+    at: external_exports.string(),
+    sessionId: external_exports.string(),
+    seed: external_exports.number(),
+    title: external_exports.string().optional(),
+    pitch: external_exports.string().optional(),
+    knownGames: external_exports.array(external_exports.string()).optional(),
+    constraints: external_exports.looseObject({ platform: external_exports.array(external_exports.string()).optional(), team: external_exports.string().optional(), timeline: external_exports.string().optional() }).optional()
+  }),
+  external_exports.looseObject({
+    type: external_exports.literal("answer"),
+    at: external_exports.string(),
+    question,
+    choice: external_exports.enum(CHOICES),
+    lean: external_exports.number().min(0).max(100).optional(),
+    note: external_exports.string().optional(),
+    selected: external_exports.array(external_exports.string()).optional(),
+    batch
+  }),
+  external_exports.looseObject({ type: external_exports.literal("custom_answer"), at: external_exports.string(), question, choice: external_exports.enum(CHOICES), lean: external_exports.number().min(0).max(100).optional(), note: external_exports.string().optional(), batch }),
+  external_exports.looseObject({ type: external_exports.literal("set"), at: external_exports.string(), axis: external_exports.string(), value, confidence: external_exports.number().min(0).max(1), source: external_exports.string() }),
+  external_exports.looseObject({ type: external_exports.literal("skip"), at: external_exports.string(), question, batch }),
+  external_exports.looseObject({ type: external_exports.literal("tension_reply"), at: external_exports.string(), tensionId: external_exports.string(), response: external_exports.string(), stance: external_exports.enum(TENSION_STANCES).optional() }),
+  external_exports.looseObject({ type: external_exports.literal("retract"), at: external_exports.string(), axis: external_exports.string(), value: value.optional(), confidence: external_exports.number().min(0).max(1).optional() }),
+  external_exports.looseObject({ type: external_exports.literal("undo"), at: external_exports.string() })
+]);
+var exportSchema = external_exports.looseObject({
+  format: external_exports.literal(SESSION_EXPORT_FORMAT).optional(),
+  version: external_exports.literal(1).optional(),
+  library: external_exports.looseObject({ axes: external_exports.number(), comparisons: external_exports.number() }).optional(),
+  events: external_exports.array(event).min(1).max(5e3),
+  issued: external_exports.number().int().min(0).optional()
+});
+function parseSessionExport(k2, raw) {
+  const r = exportSchema.safeParse(raw);
+  if (!r.success) {
+    const issue2 = r.error.issues[0];
+    throw new Error(`not a game-design-versus session: ${issue2 ? `${issue2.path.join(".") || "file"}: ${issue2.message}` : "invalid"}`);
+  }
+  const events = r.data.events;
+  if (events[0]?.type !== "start" || events.slice(1).some((e) => e.type === "start")) {
+    throw new Error("not a game-design-versus session: the log must begin with its only start event");
+  }
+  try {
+    foldSession(k2, events);
+  } catch (e) {
+    throw new Error(`the session does not replay: ${e.message}`, { cause: e });
+  }
+  const warnings = [];
+  const lib = r.data.library;
+  if (lib && (lib.axes !== k2.axes.length || lib.comparisons !== k2.comparisons.length)) {
+    warnings.push(`exported with a library of ${lib.axes} axes and ${lib.comparisons} comparisons; this server has ${k2.axes.length} and ${k2.comparisons.length}. Answered questions replay from their own options.`);
+  }
+  const unknown2 = /* @__PURE__ */ new Set();
+  for (const e of events) {
+    const axis = "question" in e ? e.question.axis : "axis" in e ? e.axis : void 0;
+    if (!axis || axis === SYSTEMS_CHECKLIST || axis.startsWith("custom.") || k2.axisById.has(axis)) continue;
+    unknown2.add(axis);
+  }
+  if (unknown2.size) warnings.push(`axes this server does not know are ignored: ${[...unknown2].join(", ")}`);
+  const asked = events.filter((e) => e.type === "answer" || e.type === "custom_answer" || e.type === "skip").length;
+  return { events, issued: Math.max(r.data.issued ?? 0, asked), warnings };
+}
+
 // src/service.ts
 var now = () => (/* @__PURE__ */ new Date()).toISOString();
 function customOptionPole(custom2, raw, index) {
@@ -77052,7 +77140,7 @@ function answer(k2, sessionId, answers) {
   const before = foldSession(k2, f.events);
   const beforeSum = claritySummary(k2, before);
   const errors = [];
-  const batch = 1 + Math.max(0, ...f.events.map((e) => "batch" in e && e.batch || 0));
+  const batch2 = 1 + Math.max(0, ...f.events.map((e) => "batch" in e && e.batch || 0));
   for (const a of answers) {
     const q = f.pending[a.questionId];
     if (!q) {
@@ -77081,9 +77169,9 @@ function answer(k2, sessionId, answers) {
       }
     }
     const at = now();
-    if (a.choice === "skip") f.events.push({ type: "skip", at, question: q, batch });
-    else if (q.customAxis) f.events.push({ type: "custom_answer", at, question: q, choice: a.choice, lean: a.lean, note: a.note, batch });
-    else f.events.push({ type: "answer", at, question: q, choice: a.choice, lean: a.lean, note: a.note, selected: a.selected, batch });
+    if (a.choice === "skip") f.events.push({ type: "skip", at, question: q, batch: batch2 });
+    else if (q.customAxis) f.events.push({ type: "custom_answer", at, question: q, choice: a.choice, lean: a.lean, note: a.note, batch: batch2 });
+    else f.events.push({ type: "answer", at, question: q, choice: a.choice, lean: a.lean, note: a.note, selected: a.selected, batch: batch2 });
     delete f.pending[a.questionId];
   }
   saveSession(f);
@@ -77242,12 +77330,12 @@ function undo(k2, sessionId, opts = {}) {
   let n = Math.max(1, Math.floor(opts.steps ?? 1));
   if (opts.round) {
     const last = eff[eff.length - 1];
-    const batch = "batch" in last ? last.batch : void 0;
+    const batch2 = "batch" in last ? last.batch : void 0;
     n = 1;
-    if (batch !== void 0) {
+    if (batch2 !== void 0) {
       while (n < undoable) {
         const e = eff[eff.length - 1 - n];
-        if (!("batch" in e) || e.batch !== batch) break;
+        if (!("batch" in e) || e.batch !== batch2) break;
         n++;
       }
     }
@@ -77258,6 +77346,33 @@ function undo(k2, sessionId, opts = {}) {
   f.pending = {};
   saveSession(f);
   return { ...summarize(k2, f), undone: n };
+}
+function importSession(k2, input2) {
+  if (input2.snapshot === void 0 === (input2.path === void 0)) throw new Error("pass either snapshot or path");
+  let raw = input2.snapshot;
+  if (input2.path !== void 0) {
+    const p = isAbsolute(input2.path) ? input2.path : resolve(process.cwd(), input2.path);
+    try {
+      raw = readFileSync2(p, "utf8");
+    } catch (e) {
+      throw new Error(`cannot read ${p}: ${e.message}`, { cause: e });
+    }
+  }
+  if (typeof raw === "string") {
+    try {
+      raw = JSON.parse(raw);
+    } catch (e) {
+      throw new Error(`not a game-design-versus session: invalid JSON (${e.message})`, { cause: e });
+    }
+  }
+  const parsed = parseSessionExport(k2, raw);
+  const [start, ...rest] = parsed.events;
+  if (start?.type !== "start") throw new Error("not a game-design-versus session");
+  const id = newSessionId();
+  const at = now();
+  const f = { schemaVersion: 1, id, createdAt: at, updatedAt: at, events: [{ ...start, sessionId: id }, ...rest], pending: {}, issued: parsed.issued };
+  saveSession(f);
+  return { ...summarize(k2, f), importedFrom: start.sessionId, warnings: parsed.warnings };
 }
 function list(k2) {
   return listSessions().map((f) => {
@@ -77549,6 +77664,22 @@ ${[...q.askUserQuestion.options, ...q.moreOptions ?? []].map((o) => `   - ${o.la
     guard(() => {
       const sessions = list(k2);
       return ok(sessions.length ? sessions.map((s) => `${s.sessionId} ${s.title ?? ""} (${s.questionCount} q, clarity ${s.overallClarity}, ${s.updatedAt})`).join("\n") : "No sessions yet.", { sessions });
+    })
+  );
+  server.registerTool(
+    "versus_import",
+    {
+      title: "Import a session",
+      description: 'Continue a session exported from the browser demo ("Download session (.json)") or another machine. Pass the file path (relative paths resolve against the server working directory) or the file contents as snapshot. The log is validated and replayed before it is saved under a new session id; then continue with versus_next.',
+      inputSchema: external_exports.object({
+        path: external_exports.string().optional().describe("Path to the exported .json file"),
+        snapshot: external_exports.union([external_exports.string(), external_exports.record(external_exports.string(), external_exports.unknown())]).optional().describe("The exported file contents, as an object or a JSON string")
+      }),
+      outputSchema: Summary.extend({ importedFrom: external_exports.string(), warnings: external_exports.array(external_exports.string()) })
+    },
+    guard((a) => {
+      const r = importSession(k2, a);
+      return ok([`Imported ${r.importedFrom} as a new session.`, ...r.warnings.map((w) => `Warning: ${w}`), summaryText(r)].join("\n"), r);
     })
   );
   server.registerTool(

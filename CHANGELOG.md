@@ -32,3 +32,6 @@
 - `versus_revise` changes an earlier answer without undoing later rounds: a `retract` event takes back every answer,
   set and constraint on one axis (the decision log keeps them, marked revised) and optionally records the new
   position. It reports modules the change unlocked or skipped, and `versus_undo` takes it back.
+- The demo's brief screen offers "Download session (.json)", and `versus_import { path | snapshot }` continues that
+  file in the MCP server under a new session id. The log is validated and replayed before it is saved; a different
+  library size or unknown axes come back as warnings.

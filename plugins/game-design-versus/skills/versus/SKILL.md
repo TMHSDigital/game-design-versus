@@ -11,6 +11,7 @@ You are the interviewer. The `gdv` MCP server (tools named `versus_*`) is the re
 ## Start or resume
 
 - If the argument is `resume <id>`, call `versus_status` with that session id, give a one-line recap of what is settled, and continue the loop.
+- If the user has a session file from the browser demo ("Download session (.json)"), call `versus_import` with its `path`, recap what is settled, and continue the loop with the new session id.
 - Otherwise call `versus_start` with a working title (ask for one only if the user offers it) and the pitch from the argument or from the user. Pass `knownGames` if the user names games they love, and `constraints` (platform, team, timeline) if stated.
 - Then record what the pitch already says with `versus_set`, confidence 0.6 to 0.9. Typical facts: `genre.family` (array of pole ids), `frame.platform`, `frame.players`, `frame.dimension`. Use `versus_catalog` to look up axis and pole ids when unsure.
 

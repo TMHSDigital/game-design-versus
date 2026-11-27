@@ -60,10 +60,12 @@ export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: str
           <span class="brief-actions">
             <button type="button" class="btn" data-act="copy">Copy Markdown</button>
             <button type="button" class="btn" data-act="download">Download .md</button>
+            <button type="button" class="btn" data-act="session">Download session (.json)</button>
             <button type="button" class="btn" data-act="back">Keep answering</button>
             <button type="button" class="btn ghost" data-act="restart">Start over</button>
           </span>
         </div>
+        <p class="small">To keep going with your coding agent, download the session and ask it to continue the file with <code>versus_import</code>.</p>
         <article class="md">${renderMarkdown(markdown)}</article>
       </div>`;
     root.querySelector('[data-act="copy"]')?.addEventListener('click', async (e) => {
@@ -75,13 +77,18 @@ export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: str
         b.textContent = 'Copy failed';
       }
     });
-    root.querySelector('[data-act="download"]')?.addEventListener('click', () => {
-      const url = URL.createObjectURL(new Blob([markdown], { type: 'text/markdown' }));
+    const slug = (opts.title || 'game').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'game';
+    const download = (text: string, type: string, name: string) => {
+      const url = URL.createObjectURL(new Blob([text], { type }));
       const a = document.createElement('a');
       a.href = url;
-      a.download = `${(opts.title || 'game').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'game'}-brief.md`;
+      a.download = name;
       a.click();
       URL.revokeObjectURL(url);
+    };
+    root.querySelector('[data-act="download"]')?.addEventListener('click', () => download(markdown, 'text/markdown', `${slug}-brief.md`));
+    root.querySelector('[data-act="session"]')?.addEventListener('click', () => {
+      download(JSON.stringify(demo.exportSession(), null, 2) + '\n', 'application/json', `${slug}-session.json`);
     });
     root.querySelector('[data-act="back"]')?.addEventListener('click', ask);
     root.querySelector('[data-act="restart"]')?.addEventListener('click', () => {

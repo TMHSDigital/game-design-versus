@@ -282,6 +282,23 @@ export function registerTools(server: McpServer, k: Knowledge): void {
   );
 
   server.registerTool(
+    'versus_import',
+    {
+      title: 'Import a session',
+      description: 'Continue a session exported from the browser demo ("Download session (.json)") or another machine. Pass the file path (relative paths resolve against the server working directory) or the file contents as snapshot. The log is validated and replayed before it is saved under a new session id; then continue with versus_next.',
+      inputSchema: z.object({
+        path: z.string().optional().describe('Path to the exported .json file'),
+        snapshot: z.union([z.string(), z.record(z.string(), z.unknown())]).optional().describe('The exported file contents, as an object or a JSON string'),
+      }),
+      outputSchema: Summary.extend({ importedFrom: z.string(), warnings: z.array(z.string()) }),
+    },
+    guard((a) => {
+      const r = svc.importSession(k, a);
+      return ok([`Imported ${r.importedFrom} as a new session.`, ...r.warnings.map((w) => `Warning: ${w}`), summaryText(r)].join('\n'), r);
+    }),
+  );
+
+  server.registerTool(
     'versus_brief',
     {
       title: 'Generate the GDD seed brief',

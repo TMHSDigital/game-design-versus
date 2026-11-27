@@ -15,7 +15,8 @@ modules that no longer apply. At the end the server writes a GDD seed brief.
 
 ## Interview protocol
 
-1. Call `versus_start` with the pitch (and title, knownGames, constraints when known).
+1. Call `versus_start` with the pitch (and title, knownGames, constraints when known). To continue a session file
+   downloaded from the browser demo, call `versus_import` with its `path` instead and skip step 2.
 2. Record facts the pitch already states with `versus_set` (confidence 0.6 to 0.9), for example
    `genre.family = ["strategy"]`, `frame.platform = ["pc"]`. Use `versus_catalog` to find axis and pole ids.
 3. Loop:
