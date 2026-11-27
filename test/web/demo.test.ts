@@ -137,6 +137,24 @@ describe('browser demo adapter', () => {
     expect(d.brief().markdown).toContain('Stances that shift with stamina');
   });
 
+  it('carries the sources of library comparisons and none for plain pole questions', () => {
+    const d = new VersusDemo(k, { title: 'Sources', seed: 8 });
+    let withCmp: ReturnType<VersusDemo['next']>[number] | undefined;
+    let plain: ReturnType<VersusDemo['next']>[number] | undefined;
+    for (let i = 0; i < 40 && !(withCmp && plain); i++) {
+      const [q] = d.next(1);
+      if (!q) break;
+      if (q.comparisonId) withCmp ??= q;
+      else plain ??= q;
+      if (q.multi) d.answer(q.questionId, 'neither', [q.options[0]!.key]);
+      else d.answer(q.questionId, 'a');
+    }
+    if (!withCmp || !plain) throw new Error('expected both a comparison and a plain question');
+    expect(withCmp.sources).toEqual(k.comparisonById.get(withCmp.comparisonId!)?.sources.map((x) => ({ url: x.url, note: x.note })));
+    expect(withCmp.sources!.length).toBeGreaterThan(0);
+    expect(plain.sources).toBeUndefined();
+  });
+
   it('rejects answers to questions it did not issue', () => {
     const d = new VersusDemo(k, { seed: 1 });
     expect(() => d.answer('nope', 'a')).toThrow(/unknown/);

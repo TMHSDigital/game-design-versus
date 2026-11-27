@@ -8,6 +8,29 @@ import { clearSaved, saveDemo, type SavedDemo } from './saved';
 const esc = (s: unknown): string =>
   String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] as string);
 
+const REPO = 'https://github.com/TMHSDigital/game-design-versus';
+
+/** Source links for a library comparison, plus a prefilled issue to report a wrong description. */
+const sourcesHtml = (q: DemoQuestion): string => {
+  if (!q.comparisonId) return '';
+  const links = (q.sources ?? [])
+    .filter((x) => /^https?:\/\//i.test(x.url))
+    .map((x) => {
+      // The site name keeps the line short; the note (often the option's own description) becomes the tooltip.
+      let host = x.url;
+      try {
+        host = new URL(x.url).hostname.replace(/^www\./, '');
+      } catch {
+        // Keep the raw URL.
+      }
+      return `<a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer"${x.note ? ` title="${esc(x.note)}"` : ''}>${esc(host)}</a>`;
+    });
+  const title = `Comparison ${q.comparisonId}: `;
+  const body = `Comparison: \`${q.comparisonId}\`\nQuestion: ${q.prompt}\n\nWhat is wrong, and a source that shows it:\n`;
+  const report = `${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+  return `<p class="sources">${links.length ? `<span>Sources:</span>${links.join('')}` : ''}<a href="${esc(report)}" target="_blank" rel="noopener noreferrer">Report this comparison</a></p>`;
+};
+
 type Log = { kind: 'skip' | 'unlock' | 'tension'; text: string; probe?: string };
 
 export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: string }, saved?: SavedDemo): void {
@@ -145,6 +168,7 @@ export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: str
         ${q.options.map((_, i) => optionCard(q, i)).join('')}
         ${split ? '<span class="vs" aria-hidden="true">VS</span>' : ''}
       </div>
+      ${sourcesHtml(q)}
       ${bins}
       <div class="extras">${extras}${unsure}
         <button type="button" class="btn" data-act="other" aria-expanded="false" aria-controls="gdv-other">Something else...</button>

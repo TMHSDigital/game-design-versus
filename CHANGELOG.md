@@ -35,3 +35,5 @@
 - The demo's brief screen offers "Download session (.json)", and `versus_import { path | snapshot }` continues that
   file in the MCP server under a new session id. The log is validated and replayed before it is saved; a different
   library size or unknown axes come back as warnings.
+- The demo shows the sources of each library comparison under the option cards, and a "Report this comparison" link
+  opens a GitHub issue prefilled with the comparison id.

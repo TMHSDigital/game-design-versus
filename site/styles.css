@@ -172,6 +172,7 @@ section { scroll-margin-top: 16px; }
 .versus:not(.three) .side.a { clip-path: polygon(0 0, 100% 0, 94% 100%, 0 100%); padding-right: 40px; }
 .versus:not(.three) .side.b { clip-path: polygon(6% 0, 100% 0, 100% 100%, 0 100%); padding-left: 40px; text-align: right; align-items: flex-end; margin-left: -3%; }
 .side:hover { filter: brightness(1.08); }
+.sources { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 10px 0 0; font-size: 13px; color: var(--mute); }
 .side:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
 .side .pole { font: 600 12px var(--mono); text-transform: uppercase; letter-spacing: .08em; opacity: .9; }
 .side .game { font: 700 clamp(22px, 2.6vw, 30px)/1.1 var(--serif); }

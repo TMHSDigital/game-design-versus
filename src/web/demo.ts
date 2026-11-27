@@ -27,6 +27,9 @@ export type DemoQuestion = {
   multi: boolean;
   keep?: number;
   comparison: boolean;
+  /** Library comparison behind the question, with the sources its descriptions come from. */
+  comparisonId?: string;
+  sources?: { url: string; note?: string }[];
   options: DemoOption[];
   /** Belief over the axis before this question, A strong to B strong (binary axes only). */
   bins?: number[];
@@ -132,6 +135,7 @@ export class VersusDemo {
     const mod = this.k.moduleById.get(q.module);
     const binary = a ? isBinary(a) : false;
     const st = s.axes.get(q.axis);
+    const cmp = q.comparisonId ? this.k.comparisonById.get(q.comparisonId) : undefined;
     return {
       questionId: q.questionId,
       axis: q.axis,
@@ -144,6 +148,8 @@ export class VersusDemo {
       multi: q.multi,
       keep: a?.keep,
       comparison: q.format === 'comparison',
+      comparisonId: cmp?.id,
+      sources: cmp?.sources.map((x) => ({ url: x.url, note: x.note })),
       options: q.options.map((o) => ({
         key: o.key, label: o.label, game: o.game, year: o.year, how: o.how, pole: o.pole,
         poleLabel: o.pole === 'blend' ? 'Blend' : (a?.poles.find((p) => p.id === o.pole)?.label ?? o.pole),
