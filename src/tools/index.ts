@@ -94,7 +94,7 @@ export function registerTools(server: McpServer, k: Knowledge): void {
     'versus_next',
     {
       title: 'Next questions',
-      description: 'Get up to 4 next questions, each from a different module. Render each askUserQuestion object verbatim with AskUserQuestion, then map the chosen label through answerMap and call versus_answer. moreOptions lists answers that did not fit the 4-option limit (for example Blend of both); they still map through answerMap when the user types them.',
+      description: 'Get up to 4 next questions, each from a different module. Render each askUserQuestion object verbatim with AskUserQuestion, then map the chosen label through answerMap and call versus_answer. moreOptions lists answers that did not fit the 4-option limit (for example Blend of both); they still map through answerMap when the user types them. Unanswered questions from the previous versus_next call expire; questions from versus_ask stay answerable.',
       inputSchema: z.object({ sessionId, count: z.number().int().min(1).max(4).optional().describe('How many questions, 1 to 4') }),
       outputSchema: z.looseObject({ questions: z.array(QuestionOut), summary: Summary }),
       annotations: { readOnlyHint: false },

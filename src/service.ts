@@ -110,7 +110,8 @@ export function next(k: Knowledge, sessionId: string, count = 1): { questions: R
   const s = foldSession(k, f.events);
   const qs = nextQuestions(k, s, { count, issued: f.issued });
   f.issued += qs.length;
-  f.pending = {};
+  // A new batch replaces the previous one, but improvised versus_ask questions stay answerable.
+  f.pending = Object.fromEntries(Object.entries(f.pending).filter(([, q]) => q.improvised));
   for (const q of qs) f.pending[q.questionId] = stripRender(q);
   saveSession(f);
   return { questions: qs, summary: summarize(k, f, s) };

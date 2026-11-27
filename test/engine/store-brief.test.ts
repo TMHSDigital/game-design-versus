@@ -224,6 +224,26 @@ describe('custom axes in the brief', () => {
   });
 });
 
+describe('pending questions', () => {
+  it('keeps a versus_ask question answerable after versus_next', () => {
+    const s = svc.startSession(k, { title: 'Ask then next', seed: 41 });
+    const asked = svc.ask(k, s.sessionId, {
+      axis: 'combat.sim',
+      options: [
+        { game: 'Half Sword', how: 'Physical weapons' },
+        { game: 'Skyrim', how: 'Animated swings' },
+      ],
+    });
+    const n = svc.next(k, s.sessionId, 3);
+    const r = svc.answer(k, s.sessionId, [
+      { questionId: asked.questionId, choice: 'a' },
+      { questionId: n.questions[0]!.questionId, choice: n.questions[0]!.multi ? 'neither' : 'a', selected: n.questions[0]!.multi ? [] : undefined },
+    ]);
+    expect(r.errors).toEqual([]);
+    expect(r.recorded).toBe(2);
+  });
+});
+
 describe('undo', () => {
   it('reports nothing to undo once every answer is undone', () => {
     const s = svc.startSession(k, { title: 'Undo', seed: 51 });

@@ -77008,7 +77008,7 @@ function next(k2, sessionId, count = 1) {
   const s = foldSession(k2, f.events);
   const qs = nextQuestions(k2, s, { count, issued: f.issued });
   f.issued += qs.length;
-  f.pending = {};
+  f.pending = Object.fromEntries(Object.entries(f.pending).filter(([, q]) => q.improvised));
   for (const q of qs) f.pending[q.questionId] = stripRender(q);
   saveSession(f);
   return { questions: qs, summary: summarize(k2, f, s) };
@@ -77266,7 +77266,7 @@ function registerTools(server, k2) {
     "versus_next",
     {
       title: "Next questions",
-      description: "Get up to 4 next questions, each from a different module. Render each askUserQuestion object verbatim with AskUserQuestion, then map the chosen label through answerMap and call versus_answer. moreOptions lists answers that did not fit the 4-option limit (for example Blend of both); they still map through answerMap when the user types them.",
+      description: "Get up to 4 next questions, each from a different module. Render each askUserQuestion object verbatim with AskUserQuestion, then map the chosen label through answerMap and call versus_answer. moreOptions lists answers that did not fit the 4-option limit (for example Blend of both); they still map through answerMap when the user types them. Unanswered questions from the previous versus_next call expire; questions from versus_ask stay answerable.",
       inputSchema: external_exports.object({ sessionId, count: external_exports.number().int().min(1).max(4).optional().describe("How many questions, 1 to 4") }),
       outputSchema: external_exports.looseObject({ questions: external_exports.array(QuestionOut), summary: Summary }),
       annotations: { readOnlyHint: false }
