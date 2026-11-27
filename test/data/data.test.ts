@@ -98,4 +98,11 @@ describe('coverage targets', () => {
     expect(report.warnings.length > 0).toBe(report.thinBipolarAxes.length > 0);
     expect(report.failures.some((f) => f.includes('bipolar'))).toBe(false);
   });
+  it('names the unverified candidates of each thin axis', () => {
+    const all = buildKnowledge(raw, { allowUnverified: false }).allComparisons;
+    for (const t of report.thinBipolarAxes) {
+      const expected = all.filter((c) => c.axis === t.axis && c.verification.status !== 'verified').map((c) => c.id);
+      expect(t.unverified).toEqual(expected);
+    }
+  });
 });

@@ -181,7 +181,8 @@ Overused games (> 12): none
 ```
 
 Only verified comparisons are served; set `GDV_ALLOW_UNVERIFIED=1` to include the rest. The 10 thin axes are reported
-as warnings, not failures, and unverified candidates already exist for most of them. Until they are sourced, an axis
+as warnings, not failures, and unverified candidates already exist for most of them (`npm run coverage` lists their
+ids under each thin axis). Until they are sourced, an axis
 without a comparison falls back to a plain question about its two poles.
 
 ### Contributing comparisons

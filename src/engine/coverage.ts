@@ -18,7 +18,8 @@ export type CoverageReport = {
   indieShare: number;
   eraShare: Record<string, number>;
   perGenre: Record<string, number>;
-  thinBipolarAxes: { axis: string; count: number }[];
+  /** Bipolar axes under the per-axis target, with the ids of their unverified comparisons (candidates to verify). */
+  thinBipolarAxes: { axis: string; count: number; unverified: string[] }[];
   uncoveredPoles: { axis: string; pole: string }[];
   overusedGames: { game: string; count: number }[];
   topGames: { game: string; count: number }[];
@@ -64,12 +65,15 @@ export function coverageReport(k: Knowledge): CoverageReport {
   }
 
   if (total < T.total) failures.push(`total ${total} < ${T.total}`);
-  const thinBipolarAxes: { axis: string; count: number }[] = [];
+  const thinBipolarAxes: CoverageReport['thinBipolarAxes'] = [];
   const uncoveredPoles: { axis: string; pole: string }[] = [];
   for (const a of k.axes) {
     if (a.kind === 'bipolar') {
       const n = perAxis.get(a.id) ?? 0;
-      if (n < T.perBipolarAxis) thinBipolarAxes.push({ axis: a.id, count: n });
+      if (n < T.perBipolarAxis) {
+        const unverified = k.allComparisons.filter((c) => c.axis === a.id && c.verification.status !== 'verified').map((c) => c.id);
+        thinBipolarAxes.push({ axis: a.id, count: n, unverified });
+      }
     }
     if (a.kind === 'categorical') {
       for (const p of a.poles) if (!p.noExemplar && !poleSeen.has(`${a.id}:${p.id}`)) uncoveredPoles.push({ axis: a.id, pole: p.id });
@@ -120,6 +124,7 @@ export function formatCoverage(r: CoverageReport): string {
     `Eras: ${Object.entries(r.eraShare).map(([e, s]) => `${e} ${pct(s)}`).join(', ')} (each >= 10%)`,
     `Per genre: ${Object.entries(r.perGenre).sort().map(([g, n]) => `${g} ${n}`).join(', ')} (each >= 25)`,
     `Thin bipolar axes (< 4): ${r.thinBipolarAxes.length ? r.thinBipolarAxes.map((t) => `${t.axis}=${t.count}`).join(', ') : 'none'}`,
+    ...r.thinBipolarAxes.filter((t) => t.unverified.length).map((t) => `  ${t.axis} unverified candidates: ${t.unverified.join(', ')}`),
     `Uncovered categorical poles: ${r.uncoveredPoles.length ? r.uncoveredPoles.map((p) => `${p.axis}:${p.pole}`).join(', ') : 'none'}`,
     `Overused games (> 12): ${r.overusedGames.length ? r.overusedGames.map((g) => `${g.game}=${g.count}`).join(', ') : 'none'}`,
     r.failures.length ? `FAIL: ${r.failures.join('; ')}` : 'PASS: all hard coverage targets met',

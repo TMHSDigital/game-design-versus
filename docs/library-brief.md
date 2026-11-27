@@ -109,3 +109,10 @@ Rules for this round:
 3. For NEW items prefer pairs where every game is from 2020 or later (the library is short on the 2020s era), and use
    idle, rhythm and sports games wherever they truthfully fit.
 4. Never edit items in files you do not own. Keep the 2-uses-per-file game limit.
+
+## Quickest way to help: verify a thin-axis candidate
+
+`npm run coverage` lists, under each thin bipolar axis, the ids of its unverified comparisons. Verifying one of
+those is usually faster than writing a new item: check every option against its source (fix or replace the source if
+it does not support the `how` text), then set `verification.status` to "verified" with today's `checkedAt`. Run
+`npm run validate:data` and `npm run coverage` again; the axis drops off the list once it has 4 verified items.

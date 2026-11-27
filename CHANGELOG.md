@@ -39,3 +39,5 @@
   opens a GitHub issue prefilled with the comparison id.
 - `versus_list` takes `limit` (default 20) and `query` (title or session id) and replays only the sessions it
   returns. `versus_delete` archives a session to `GDV_HOME/archive/` instead of erasing it.
+- `npm run coverage` lists the unverified candidate ids under each thin bipolar axis; `docs/library-brief.md` explains
+  that verifying one is the quickest way to help.
