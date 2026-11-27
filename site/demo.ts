@@ -36,9 +36,9 @@ export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: str
     render();
   };
 
-  const record = (choice: Choice, selected?: string[]) => {
+  const record = (choice: Choice, selected?: string[], note?: string) => {
     if (!current) return;
-    const r: DemoAnswerResult = demo.answer(current.questionId, choice, selected);
+    const r: DemoAnswerResult = demo.answer(current.questionId, choice, selected, note);
     const fresh: Log[] = [
       ...r.skippedModules.map((m) => ({ kind: 'skip' as const, text: `${m}: skipped` })),
       ...r.unlockedModules.map((m) => ({ kind: 'unlock' as const, text: `${m}: now in play` })),
@@ -140,9 +140,15 @@ export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: str
       </div>
       ${bins}
       <div class="extras">${extras}${unsure}
+        <button type="button" class="btn" data-act="other" aria-expanded="false" aria-controls="gdv-other">Something else...</button>
         <button type="button" class="btn ghost" data-choice="no_pref">No preference</button>
         <button type="button" class="btn ghost" data-choice="skip">Skip</button>
-      </div>`;
+      </div>
+      <form class="other" id="gdv-other" hidden>
+        <label for="gdv-other-text">In your own words</label>
+        <input id="gdv-other-text" maxlength="300" autocomplete="off" required>
+        <button type="submit" class="btn primary">Record</button>
+      </form>`;
   };
 
   const render = () => {
@@ -183,6 +189,20 @@ export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: str
         ask();
       }
     });
+    const other = root.querySelector<HTMLFormElement>('form.other');
+    const otherBtn = root.querySelector<HTMLButtonElement>('[data-act="other"]');
+    if (other && otherBtn) {
+      otherBtn.addEventListener('click', () => {
+        other.hidden = !other.hidden;
+        otherBtn.setAttribute('aria-expanded', String(!other.hidden));
+        if (!other.hidden) other.querySelector('input')?.focus();
+      });
+      other.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const text = (other.querySelector('input') as HTMLInputElement).value.trim();
+        if (text) record('neither', undefined, text);
+      });
+    }
     const set = root.querySelector<HTMLFieldSetElement>('fieldset.multi');
     if (set) {
       const limit = Number(set.dataset.limit) || Infinity;

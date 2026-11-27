@@ -125,6 +125,18 @@ describe('browser demo adapter', () => {
     expect(() => VersusDemo.restore(k, { events: [], issued: 0 })).toThrow(/not a saved demo session/);
   });
 
+  it('records a free-text Other answer as a note that reaches the brief', () => {
+    const d = new VersusDemo(k, { title: 'Notes', seed: 4 });
+    let q = d.next(1)[0];
+    for (let i = 0; i < 40 && q && q.multi; i++) {
+      d.answer(q.questionId, 'skip');
+      q = d.next(1)[0];
+    }
+    if (!q) throw new Error('no single-select question reached');
+    d.answer(q.questionId, 'neither', undefined, '  Stances that shift with stamina  ');
+    expect(d.brief().markdown).toContain('Stances that shift with stamina');
+  });
+
   it('rejects answers to questions it did not issue', () => {
     const d = new VersusDemo(k, { seed: 1 });
     expect(() => d.answer('nope', 'a')).toThrow(/unknown/);

@@ -146,14 +146,15 @@ export class VersusDemo {
     };
   }
 
-  answer(questionId: string, choice: Choice, selected?: string[]): DemoAnswerResult {
+  /** Records an answer. A free-text Other answer is choice "neither" with the text as note, as in the MCP protocol. */
+  answer(questionId: string, choice: Choice, selected?: string[], note?: string): DemoAnswerResult {
     const q = this.pending.get(questionId);
     if (!q) throw new Error(`unknown or already answered question ${questionId}`);
     const before = this.state;
     const bSum = claritySummary(this.k, before);
     const at = new Date().toISOString();
     if (choice === 'skip') this.events.push({ type: 'skip', at, question: q });
-    else this.events.push({ type: 'answer', at, question: q, choice, selected });
+    else this.events.push({ type: 'answer', at, question: q, choice, selected, note: note?.trim().slice(0, 300) || undefined });
     this.pending.delete(questionId);
     const after = this.state;
     const aSum = claritySummary(this.k, after);
