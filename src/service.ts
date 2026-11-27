@@ -145,6 +145,17 @@ export function answer(k: Knowledge, sessionId: string, answers: AnswerInput[]) 
       errors.push(`${a.questionId}: ${a.choice === 'blend' ? 'blend' : 'lean'} only applies to two-pole axes; ${q.axis} is ${kind}`);
       continue;
     }
+    if (a.selected?.length) {
+      if (!q.multi) {
+        errors.push(`${a.questionId}: selected only applies to multi-select questions; use choice instead`);
+        continue;
+      }
+      const unknown = a.selected.filter((x) => !q.options.some((o) => o.key === x || o.pole === x || o.label === x));
+      if (unknown.length) {
+        errors.push(`${a.questionId}: selected ${unknown.join(', ')} ${unknown.length === 1 ? 'matches' : 'match'} no option; use option keys ${q.options.map((o) => o.key).join(', ')}`);
+        continue;
+      }
+    }
     const at = now();
     if (a.choice === 'skip') f.events.push({ type: 'skip', at, question: q });
     else if (q.customAxis) f.events.push({ type: 'custom_answer', at, question: q, choice: a.choice, lean: a.lean, note: a.note });

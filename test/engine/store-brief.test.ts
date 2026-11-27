@@ -133,6 +133,24 @@ describe('answer validation', () => {
     expect(typeof sum.coreReady).toBe('boolean');
   });
 
+  it('rejects selected entries that match no option, and selected on a single-select question', () => {
+    const s = svc.startSession(k, { title: 'Typos', seed: 3 });
+    let q = svc.next(k, s.sessionId, 4).questions.find((x) => x.axis === SYSTEMS_CHECKLIST);
+    for (let i = 0; i < 10 && !q; i++) q = svc.next(k, s.sessionId, 4).questions.find((x) => x.axis === SYSTEMS_CHECKLIST);
+    if (!q) throw new Error('no checklist offered');
+    const count = svc.status(k, s.sessionId).questionCount;
+    const bad = svc.answer(k, s.sessionId, [{ questionId: q.questionId, choice: 'neither', selected: [q.options[0]!.key, 'nonexistent'] }]);
+    expect(bad.recorded).toBe(0);
+    expect(bad.errors[0]).toMatch(/nonexistent matches no option/);
+    expect(svc.status(k, s.sessionId).questionCount).toBe(count);
+    expect(loadSession(s.sessionId).pending[q.questionId]).toBeDefined();
+
+    const asked = svc.ask(k, s.sessionId, { axis: 'combat.sim', options: [{ game: 'Half Sword', how: 'Physical' }, { game: 'Skyrim', how: 'Animated' }] });
+    const single = svc.answer(k, s.sessionId, [{ questionId: asked.questionId, choice: 'neither', selected: ['a'] }]);
+    expect(single.recorded).toBe(0);
+    expect(single.errors[0]).toMatch(/only applies to multi-select/);
+  });
+
   it('records "not sure" on a game question as no answer and avoids those games next', () => {
     const s = svc.startSession(k, { title: 'Unsure', seed: 8 });
     let q = svc.next(k, s.sessionId, 1).questions[0];

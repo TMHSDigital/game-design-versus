@@ -77038,6 +77038,17 @@ function answer(k2, sessionId, answers) {
       errors.push(`${a.questionId}: ${a.choice === "blend" ? "blend" : "lean"} only applies to two-pole axes; ${q.axis} is ${kind}`);
       continue;
     }
+    if (a.selected?.length) {
+      if (!q.multi) {
+        errors.push(`${a.questionId}: selected only applies to multi-select questions; use choice instead`);
+        continue;
+      }
+      const unknown2 = a.selected.filter((x) => !q.options.some((o) => o.key === x || o.pole === x || o.label === x));
+      if (unknown2.length) {
+        errors.push(`${a.questionId}: selected ${unknown2.join(", ")} ${unknown2.length === 1 ? "matches" : "match"} no option; use option keys ${q.options.map((o) => o.key).join(", ")}`);
+        continue;
+      }
+    }
     const at = now();
     if (a.choice === "skip") f.events.push({ type: "skip", at, question: q });
     else if (q.customAxis) f.events.push({ type: "custom_answer", at, question: q, choice: a.choice, lean: a.lean, note: a.note });
