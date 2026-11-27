@@ -77022,6 +77022,7 @@ function answer(k2, sessionId, answers) {
   const before = foldSession(k2, f.events);
   const beforeSum = claritySummary(k2, before);
   const errors = [];
+  const batch = 1 + Math.max(0, ...f.events.map((e) => "batch" in e && e.batch || 0));
   for (const a of answers) {
     const q = f.pending[a.questionId];
     if (!q) {
@@ -77050,9 +77051,9 @@ function answer(k2, sessionId, answers) {
       }
     }
     const at = now();
-    if (a.choice === "skip") f.events.push({ type: "skip", at, question: q });
-    else if (q.customAxis) f.events.push({ type: "custom_answer", at, question: q, choice: a.choice, lean: a.lean, note: a.note });
-    else f.events.push({ type: "answer", at, question: q, choice: a.choice, lean: a.lean, note: a.note, selected: a.selected });
+    if (a.choice === "skip") f.events.push({ type: "skip", at, question: q, batch });
+    else if (q.customAxis) f.events.push({ type: "custom_answer", at, question: q, choice: a.choice, lean: a.lean, note: a.note, batch });
+    else f.events.push({ type: "answer", at, question: q, choice: a.choice, lean: a.lean, note: a.note, selected: a.selected, batch });
     delete f.pending[a.questionId];
   }
   saveSession(f);
@@ -77152,13 +77153,30 @@ function status(k2, sessionId) {
   const sum = summarize(k2, f, s);
   return { ...sum, comparables: rankAffinity(s.elo).slice(0, 5).map((e) => ({ game: e.game, score: Math.round(e.score) })), flags: s.flags };
 }
-function undo(k2, sessionId) {
+function undo(k2, sessionId, opts = {}) {
   const f = loadSession(sessionId);
-  if (effectiveEvents(f.events).length <= 1) throw new Error("nothing to undo");
-  f.events.push({ type: "undo", at: now() });
+  const eff = effectiveEvents(f.events);
+  const undoable = eff.length - 1;
+  if (undoable <= 0) throw new Error("nothing to undo");
+  let n = Math.max(1, Math.floor(opts.steps ?? 1));
+  if (opts.round) {
+    const last = eff[eff.length - 1];
+    const batch = "batch" in last ? last.batch : void 0;
+    n = 1;
+    if (batch !== void 0) {
+      while (n < undoable) {
+        const e = eff[eff.length - 1 - n];
+        if (!("batch" in e) || e.batch !== batch) break;
+        n++;
+      }
+    }
+  }
+  n = Math.min(n, undoable);
+  const at = now();
+  for (let i = 0; i < n; i++) f.events.push({ type: "undo", at });
   f.pending = {};
   saveSession(f);
-  return summarize(k2, f);
+  return { ...summarize(k2, f), undone: n };
 }
 function list(k2) {
   return listSessions().map((f) => {
@@ -77386,13 +77404,17 @@ ${[...q.askUserQuestion.options, ...q.moreOptions ?? []].map((o) => `   - ${o.la
     "versus_undo",
     {
       title: "Undo last event",
-      description: "Undo the last answer, set or skip. Pending questions are cleared; call versus_next again.",
-      inputSchema: external_exports.object({ sessionId }),
+      description: 'Undo the last answer, set or skip. Pass round: true to undo every answer of the last versus_answer call (the usual meaning of "go back"), or steps to undo several events. Returns how many events were undone. Pending questions are cleared; call versus_next again.',
+      inputSchema: external_exports.object({
+        sessionId,
+        round: external_exports.boolean().optional().describe("Undo all answers recorded by the last versus_answer call"),
+        steps: external_exports.number().int().min(1).max(10).optional().describe("Undo this many events, 1 to 10 (ignored when round is true)")
+      }),
       outputSchema: Summary
     },
     guard((a) => {
-      const r = undo(k2, a.sessionId);
-      return ok(`Undone. ${summaryText(r)}`, r);
+      const r = undo(k2, a.sessionId, { round: a.round, steps: a.steps });
+      return ok(`Undone ${r.undone} ${r.undone === 1 ? "event" : "events"}. ${summaryText(r)}`, r);
     })
   );
   server.registerTool(

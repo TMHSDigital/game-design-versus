@@ -207,7 +207,7 @@ Sourcing the thin axes is the most useful contribution. Read [docs/library-brief
 | `versus_ask { sessionId, axis \| customAxis, options: [{ game, how }] }` | Register an improvised (unverified) comparison and get a questionId |
 | `versus_set { sessionId, axis, value, confidence, source }` | Record a fact the user volunteered |
 | `versus_status { sessionId }` | Core decisions settled, clarity per module, settled decisions, tensions, archetypes, comparables |
-| `versus_undo { sessionId }` | Undo the last answer, set or skip |
+| `versus_undo { sessionId, round?, steps? }` | Undo the last answer, set or skip; `round: true` undoes the whole last `versus_answer` call, `steps` undoes up to 10 events |
 | `versus_list {}` | Saved sessions |
 | `versus_brief { sessionId, format: markdown \| json, outPath?, overwrite? }` | The GDD seed brief; a relative outPath resolves against the server's working directory, and an existing file is only replaced with `overwrite: true` |
 | `versus_catalog { module?, axis?, game?, query? }` | Browse axes and comparisons |

@@ -40,10 +40,10 @@ export type Question = {
 export type Constraints = { platform?: string[]; team?: string; timeline?: string };
 export type SessionEvent =
   | { type: 'start'; at: string; sessionId: string; seed: number; title?: string; pitch?: string; knownGames?: string[]; constraints?: Constraints }
-  | { type: 'answer'; at: string; question: Question; choice: Choice; lean?: number; note?: string; selected?: string[] }
-  | { type: 'custom_answer'; at: string; question: Question; choice: Choice; lean?: number; note?: string }
+  | { type: 'answer'; at: string; question: Question; choice: Choice; lean?: number; note?: string; selected?: string[]; batch?: number }
+  | { type: 'custom_answer'; at: string; question: Question; choice: Choice; lean?: number; note?: string; batch?: number }
   | { type: 'set'; at: string; axis: string; value: number | string | string[]; confidence: number; source: string }
-  | { type: 'skip'; at: string; question: Question }
+  | { type: 'skip'; at: string; question: Question; batch?: number }
   | { type: 'undo'; at: string };
 
 export type AxisState = {

@@ -211,13 +211,17 @@ export function registerTools(server: McpServer, k: Knowledge): void {
     'versus_undo',
     {
       title: 'Undo last event',
-      description: 'Undo the last answer, set or skip. Pending questions are cleared; call versus_next again.',
-      inputSchema: z.object({ sessionId }),
+      description: 'Undo the last answer, set or skip. Pass round: true to undo every answer of the last versus_answer call (the usual meaning of "go back"), or steps to undo several events. Returns how many events were undone. Pending questions are cleared; call versus_next again.',
+      inputSchema: z.object({
+        sessionId,
+        round: z.boolean().optional().describe('Undo all answers recorded by the last versus_answer call'),
+        steps: z.number().int().min(1).max(10).optional().describe('Undo this many events, 1 to 10 (ignored when round is true)'),
+      }),
       outputSchema: Summary,
     },
     guard((a) => {
-      const r = svc.undo(k, a.sessionId);
-      return ok(`Undone. ${summaryText(r)}`, r);
+      const r = svc.undo(k, a.sessionId, { round: a.round, steps: a.steps });
+      return ok(`Undone ${r.undone} ${r.undone === 1 ? 'event' : 'events'}. ${summaryText(r)}`, r);
     }),
   );
 

@@ -272,6 +272,23 @@ describe('undo', () => {
     expect(() => svc.undo(k, s.sessionId)).toThrow(/nothing to undo/);
     expect(loadSession(s.sessionId).events.length).toBe(before);
   });
+
+  it('undoes a whole round with round: true, and several events with steps', () => {
+    const s = svc.startSession(k, { title: 'Undo round', seed: 52 });
+    const pick = (q: { questionId: string; multi: boolean }) => ({ questionId: q.questionId, choice: (q.multi ? 'neither' : 'a') as 'neither' | 'a', selected: q.multi ? [] : undefined });
+    const r1 = svc.next(k, s.sessionId, 2).questions;
+    svc.answer(k, s.sessionId, r1.map(pick));
+    const afterFirst = svc.status(k, s.sessionId).questionCount;
+    const r2 = svc.next(k, s.sessionId, 3).questions;
+    expect(r2.length).toBe(3);
+    svc.answer(k, s.sessionId, r2.map(pick));
+    const u = svc.undo(k, s.sessionId, { round: true });
+    expect(u.undone).toBe(3);
+    expect(u.questionCount).toBe(afterFirst);
+    const u2 = svc.undo(k, s.sessionId, { steps: 10 });
+    expect(u2.undone).toBe(r1.length);
+    expect(u2.questionCount).toBe(0);
+  });
 });
 
 describe('brief tables', () => {

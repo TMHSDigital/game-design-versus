@@ -129,6 +129,8 @@ export function answer(k: Knowledge, sessionId: string, answers: AnswerInput[]) 
   const before = foldSession(k, f.events);
   const beforeSum = claritySummary(k, before);
   const errors: string[] = [];
+  // Events written by one versus_answer call share a batch id, so versus_undo can take back the whole round.
+  const batch = 1 + Math.max(0, ...f.events.map((e) => ('batch' in e && e.batch) || 0));
   for (const a of answers) {
     const q = f.pending[a.questionId];
     if (!q) {
@@ -157,9 +159,9 @@ export function answer(k: Knowledge, sessionId: string, answers: AnswerInput[]) 
       }
     }
     const at = now();
-    if (a.choice === 'skip') f.events.push({ type: 'skip', at, question: q });
-    else if (q.customAxis) f.events.push({ type: 'custom_answer', at, question: q, choice: a.choice, lean: a.lean, note: a.note });
-    else f.events.push({ type: 'answer', at, question: q, choice: a.choice, lean: a.lean, note: a.note, selected: a.selected });
+    if (a.choice === 'skip') f.events.push({ type: 'skip', at, question: q, batch });
+    else if (q.customAxis) f.events.push({ type: 'custom_answer', at, question: q, choice: a.choice, lean: a.lean, note: a.note, batch });
+    else f.events.push({ type: 'answer', at, question: q, choice: a.choice, lean: a.lean, note: a.note, selected: a.selected, batch });
     delete f.pending[a.questionId];
   }
   saveSession(f);
@@ -264,13 +266,31 @@ export function status(k: Knowledge, sessionId: string) {
   return { ...sum, comparables: rankAffinity(s.elo).slice(0, 5).map((e) => ({ game: e.game, score: Math.round(e.score) })), flags: s.flags };
 }
 
-export function undo(k: Knowledge, sessionId: string) {
+/** Undoes the last event, the last `steps` events, or (round) every answer of the last versus_answer call. */
+export function undo(k: Knowledge, sessionId: string, opts: { steps?: number; round?: boolean } = {}) {
   const f = loadSession(sessionId);
-  if (effectiveEvents(f.events).length <= 1) throw new Error('nothing to undo');
-  f.events.push({ type: 'undo', at: now() });
+  const eff = effectiveEvents(f.events);
+  const undoable = eff.length - 1; // the start event stays
+  if (undoable <= 0) throw new Error('nothing to undo');
+  let n = Math.max(1, Math.floor(opts.steps ?? 1));
+  if (opts.round) {
+    const last = eff[eff.length - 1]!;
+    const batch = 'batch' in last ? last.batch : undefined;
+    n = 1;
+    if (batch !== undefined) {
+      while (n < undoable) {
+        const e = eff[eff.length - 1 - n]!;
+        if (!('batch' in e) || e.batch !== batch) break;
+        n++;
+      }
+    }
+  }
+  n = Math.min(n, undoable);
+  const at = now();
+  for (let i = 0; i < n; i++) f.events.push({ type: 'undo', at });
   f.pending = {};
   saveSession(f);
-  return summarize(k, f);
+  return { ...summarize(k, f), undone: n };
 }
 
 export function list(k: Knowledge) {
