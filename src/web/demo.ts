@@ -63,6 +63,9 @@ export function demoKnowledge(): Knowledge {
 
 const round = (x: number) => Math.round(x * 1000) / 1000;
 
+/** What the site saves in the browser to resume an interview: the event log and the question counter. */
+export type DemoSnapshot = { events: SessionEvent[]; issued: number };
+
 export class VersusDemo {
   readonly id: string;
   private events: SessionEvent[];
@@ -72,11 +75,37 @@ export class VersusDemo {
   constructor(
     private readonly k: Knowledge,
     opts: { title?: string; pitch?: string; seed?: number } = {},
+    saved?: DemoSnapshot,
   ) {
+    const start = saved?.events[0];
+    if (saved && start?.type === 'start') {
+      this.id = start.sessionId;
+      this.events = [...saved.events];
+      this.issued = Number.isInteger(saved.issued) && saved.issued >= 0 ? saved.issued : 0;
+      return;
+    }
     this.id = `web-${Date.now().toString(36)}`;
     this.events = [{
       type: 'start', at: new Date().toISOString(), sessionId: this.id, seed: opts.seed ?? randomSeed(), title: opts.title, pitch: opts.pitch,
     }];
+  }
+
+  /** Rebuilds a demo from a saved snapshot. Throws when the snapshot does not start with a start event. */
+  static restore(k: Knowledge, snap: DemoSnapshot): VersusDemo {
+    if (!Array.isArray(snap?.events) || snap.events[0]?.type !== 'start') throw new Error('not a saved demo session');
+    const d = new VersusDemo(k, {}, snap);
+    foldSession(k, d.events); // fail early on a corrupt log
+    return d;
+  }
+
+  /** The state to save for restore(). */
+  snapshot(): DemoSnapshot {
+    return { events: [...this.events], issued: this.issued };
+  }
+
+  get title(): string | undefined {
+    const s = this.events[0];
+    return s?.type === 'start' ? s.title : undefined;
   }
 
   get state(): SessionState {

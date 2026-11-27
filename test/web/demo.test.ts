@@ -109,6 +109,22 @@ describe('browser demo adapter', () => {
     expect(d.undo()).toBe(false);
   });
 
+  it('restores a saved snapshot to the same summary and keeps going', () => {
+    const d = new VersusDemo(k, { title: 'Saved', seed: 9 });
+    play(d, 8);
+    d.undo();
+    const snap = JSON.parse(JSON.stringify(d.snapshot()));
+    const r = VersusDemo.restore(k, snap);
+    expect(r.id).toBe(d.id);
+    expect(r.title).toBe('Saved');
+    expect(r.summary()).toEqual(d.summary());
+    const [a] = d.next(1);
+    const [b] = r.next(1);
+    expect(b?.questionId).toBe(a?.questionId);
+    expect(b?.axis).toBe(a?.axis);
+    expect(() => VersusDemo.restore(k, { events: [], issued: 0 })).toThrow(/not a saved demo session/);
+  });
+
   it('rejects answers to questions it did not issue', () => {
     const d = new VersusDemo(k, { seed: 1 });
     expect(() => d.answer('nope', 'a')).toThrow(/unknown/);

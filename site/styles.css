@@ -147,6 +147,7 @@ section { scroll-margin-top: 16px; }
 .btn.wide { width: 100%; margin-top: 8px; }
 .demo-root { border: 1px solid var(--ink); background: var(--card); padding: 24px; }
 .start { display: flex; gap: 16px; align-items: flex-end; flex-wrap: wrap; }
+.resume { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
 .field { display: flex; flex-direction: column; gap: 6px; min-width: 200px; }
 .field.grow { flex: 1; min-width: 260px; }
 .field label { font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .05em; }

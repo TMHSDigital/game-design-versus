@@ -3,17 +3,33 @@
 import { VersusDemo, demoKnowledge, type DemoQuestion, type DemoAnswerResult } from '../src/web/demo';
 import type { Choice } from '../src/engine/session';
 import { renderMarkdown } from './markdown';
+import { clearSaved, saveDemo, type SavedDemo } from './saved';
 
 const esc = (s: unknown): string =>
   String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] as string);
 
 type Log = { kind: 'skip' | 'unlock' | 'tension'; text: string; probe?: string };
 
-export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: string }): void {
+export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: string }, saved?: SavedDemo): void {
   const k = demoKnowledge();
   let demo = new VersusDemo(k, { title: opts.title || 'My game', pitch: opts.pitch || undefined });
+  if (saved) {
+    try {
+      demo = VersusDemo.restore(k, saved);
+      opts = { title: saved.title, pitch: saved.pitch };
+    } catch {
+      clearSaved();
+    }
+  }
   let current: DemoQuestion | undefined;
   let log: Log[] = [];
+
+  // Saved after every answer and undo, so a reload can pick the interview up again.
+  const persist = () => {
+    const questionCount = demo.summary().questionCount;
+    if (questionCount === 0) clearSaved();
+    else saveDemo({ ...demo.snapshot(), questionCount, title: opts.title, pitch: opts.pitch });
+  };
 
   const ask = () => {
     [current] = demo.next(1);
@@ -30,6 +46,7 @@ export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: str
     ];
     const seen = new Set<string>();
     log = [...fresh, ...log].filter((l) => !seen.has(l.text) && seen.add(l.text)).slice(0, 6);
+    persist();
     ask();
   };
 
@@ -70,6 +87,7 @@ export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: str
     root.querySelector('[data-act="restart"]')?.addEventListener('click', () => {
       demo = new VersusDemo(k, { title: opts.title || 'My game', pitch: opts.pitch || undefined });
       log = [];
+      clearSaved();
       ask();
     });
     root.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -160,7 +178,10 @@ export function mountDemo(root: HTMLElement, opts: { title?: string; pitch?: str
     root.querySelectorAll<HTMLButtonElement>('[data-choice]').forEach((b) => b.addEventListener('click', () => record(b.dataset.choice as Choice)));
     root.querySelector('[data-act="finish"]')?.addEventListener('click', finish);
     root.querySelector('[data-act="undo"]')?.addEventListener('click', () => {
-      if (demo.undo()) ask();
+      if (demo.undo()) {
+        persist();
+        ask();
+      }
     });
     const set = root.querySelector<HTMLFieldSetElement>('fieldset.multi');
     if (set) {

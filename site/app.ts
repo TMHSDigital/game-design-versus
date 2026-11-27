@@ -19,8 +19,17 @@ function wireCopyButtons(): void {
   }
 }
 
+import { clearSaved, loadSaved } from './saved';
+
 function mountStart(root: HTMLElement): void {
-  root.innerHTML = `
+  const saved = loadSaved();
+  const resume = saved
+    ? `<div class="resume">
+        <button type="button" class="btn primary" data-act="resume">Resume your interview (${saved.questionCount} ${saved.questionCount === 1 ? 'question' : 'questions'})</button>
+        <button type="button" class="btn ghost" data-act="discard">Discard it</button>
+      </div>`
+    : '';
+  root.innerHTML = `${resume}
     <form class="start" novalidate>
       <div class="field">
         <label for="gdv-title">Working title <span>optional</span></label>
@@ -34,21 +43,32 @@ function mountStart(root: HTMLElement): void {
     </form>
     <p class="small">About 35 to 45 questions to reach clarity 0.80. Stop whenever you like; the brief marks what is still open.</p>`;
   const form = root.querySelector('form') as HTMLFormElement;
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    const btn = form.querySelector('button') as HTMLButtonElement;
+  const launch = async (btn: HTMLButtonElement, opts: { title?: string; pitch?: string }, resumeIt: boolean) => {
+    const label = btn.textContent;
     btn.disabled = true;
     btn.textContent = 'Loading the library...';
     try {
       const { mountDemo } = await import('./demo');
-      mountDemo(root, { title: String(data.get('title') ?? '').trim(), pitch: String(data.get('pitch') ?? '').trim() });
+      if (!resumeIt) clearSaved();
+      mountDemo(root, opts, resumeIt ? saved : undefined);
     } catch (err) {
       console.error(err);
       btn.disabled = false;
-      btn.textContent = 'Start the interview';
+      btn.textContent = label;
       root.insertAdjacentHTML('beforeend', '<p class="small err">The demo failed to load. Reload the page and try again.</p>');
     }
+  };
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    void launch(form.querySelector('button') as HTMLButtonElement, { title: String(data.get('title') ?? '').trim(), pitch: String(data.get('pitch') ?? '').trim() }, false);
+  });
+  root.querySelector<HTMLButtonElement>('[data-act="resume"]')?.addEventListener('click', (e) => {
+    void launch(e.currentTarget as HTMLButtonElement, {}, true);
+  });
+  root.querySelector('[data-act="discard"]')?.addEventListener('click', () => {
+    clearSaved();
+    mountStart(root);
   });
 }
 
